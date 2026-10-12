@@ -1,0 +1,26 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "images": [
+    {
+      "cell": 5,
+      "bytes": 70240,
+      "width": 400
+    },
+    {
+      "cell": 26,
+      "bytes": 27824,
+      "width": null
+    }
+  ],
+  "fp16_example": 26624,
+  "fp16_max": 65504,
+  "fp16_min_subnormal": 5.960464477539063e-08,
+  "bf16_min_subnormal": 9.183549615799121e-41,
+  "bf16_max": 3.3895313892515355e+38,
+  "rounding_example": {
+    "input": 1.001,
+    "fp16": 1.0009765625,
+    "bf16": 1.0
+  }
+}

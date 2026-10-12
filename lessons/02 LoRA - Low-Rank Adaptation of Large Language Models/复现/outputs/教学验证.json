@@ -1,0 +1,56 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "images": [
+    {
+      "cell": 4,
+      "bytes": 659569,
+      "width": 600
+    },
+    {
+      "cell": 7,
+      "bytes": 205328,
+      "width": 600
+    },
+    {
+      "cell": 8,
+      "bytes": 91736,
+      "width": 500
+    },
+    {
+      "cell": 10,
+      "bytes": 124929,
+      "width": 600
+    },
+    {
+      "cell": 14,
+      "bytes": 218843,
+      "width": null
+    },
+    {
+      "cell": 15,
+      "bytes": 336356,
+      "width": null
+    }
+  ],
+  "sequential_update": [
+    [
+      15,
+      20
+    ]
+  ],
+  "explicit_update": [
+    [
+      15,
+      20
+    ]
+  ],
+  "final_output": [
+    [
+      16,
+      22
+    ]
+  ],
+  "original_pseudocode_error": "'return' outside function (<original pseudocode>, line 16)",
+  "parameter_ratio": 0.06
+}

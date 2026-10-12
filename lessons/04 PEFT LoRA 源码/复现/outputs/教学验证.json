@@ -1,0 +1,10 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "original_replace_method_with_fixtures": true,
+  "weight_identity_preserved": true,
+  "suffix_match": true,
+  "bare_fullmatch": false,
+  "explicit_regex_match": true,
+  "scaling": 2.0
+}

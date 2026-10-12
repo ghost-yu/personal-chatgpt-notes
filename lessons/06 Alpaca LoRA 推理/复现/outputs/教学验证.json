@@ -1,0 +1,11 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "original_prompt_no_input": "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Instruction:\nTell a joke\n\n### Response:",
+  "original_prompt_with_input": "Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\nTranslate to French\n\n### Input:\nHello\n\n### Response:",
+  "empty_input_same_as_no_input": true,
+  "teaching_new_tokens": [
+    21,
+    22
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "original_merge_output": "Be yourself. ->: ['life']",
+  "teaching_shift_pairs": [
+    [
+      11,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      -100
+    ]
+  ],
+  "full_cycle_batch_single_device": 16,
+  "lora_parameter_count_assuming_30_fused_qkv_layers": 7864320
+}

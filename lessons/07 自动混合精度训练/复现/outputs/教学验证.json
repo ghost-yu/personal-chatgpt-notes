@@ -1,0 +1,25 @@
+{
+  "status": "部分成功",
+  "scope": "Teaching/static verification only; no model training or inference",
+  "mnist_shape_path": [
+    28,
+    28,
+    14,
+    14,
+    7
+  ],
+  "rgb224_shape_path": [
+    224,
+    224,
+    112,
+    112,
+    56
+  ],
+  "fc_expected_features": 501760,
+  "rgb_actual_features": 32112640,
+  "saved_cnn_parameters": 476938250,
+  "fp32_parameter_gib": 1.776733435690403,
+  "approximate_adam_params_grad_two_moments_gib": 7.106933742761612,
+  "conv1_output_batch256_fp32_gib": 3.828125,
+  "scaled_gradient": 1.024e-05
+}
