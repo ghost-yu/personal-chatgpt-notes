@@ -1,0 +1,32 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "gradient_accumulation.ipynb",
+  "sha256": "b333bb1f8fa31b883649ad3b14abd44851d648b6ad20bf9f2449a2e0611de817",
+  "cells": 28,
+  "code_cells": 15,
+  "syntax": "passed",
+  "markdown_pseudocode_cells": [
+    5,
+    7
+  ],
+  "markdown_historical_metrics_cells": [
+    24,
+    27
+  ],
+  "transcript": "62b01397-50d6-4d01-9cc0-68f8bbda070c.txt",
+  "references": {
+    "transformers": "v4.30.0",
+    "accelerate": "v0.20.1",
+    "exact_teacher_versions": "未锁定"
+  },
+  "source_snapshots": [
+    {
+      "name": "accelerator-v0.20.1.py",
+      "sha256": "a1dded63f993c3b75026b79563b890846a3d26bb8cce6a6f8244216f7f46d9c7"
+    },
+    {
+      "name": "trainer-v4.30.0.py",
+      "sha256": "7925a24e2041c9475507d5e0fe7627cbbe6e334b8c6ea2bc223d25a64e80ebea"
+    }
+  ]
+}

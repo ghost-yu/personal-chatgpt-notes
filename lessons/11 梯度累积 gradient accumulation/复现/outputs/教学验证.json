@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "scope": "Fraction arithmetic and analytic/finite-difference gradients; not PyTorch backward or BERT training",
+  "python": "3.7.6",
+  "big_batch_gradient": [
+    15.0,
+    5.0
+  ],
+  "micro_accumulated_gradient": [
+    15.0,
+    5.0
+  ],
+  "central_difference_gradient": [
+    15.0,
+    5.0
+  ],
+  "one_update_parameters": [
+    -0.5,
+    -0.5
+  ],
+  "step_each_micro_parameters": [
+    0.2112,
+    -0.4992
+  ],
+  "tail_actual_gradient": [
+    5.0,
+    3.0
+  ],
+  "tail_divide_by_4_gradient": [
+    2.5,
+    1.5
+  ],
+  "tail_ratio": 0.5,
+  "unequal_big_gradient": [
+    70.0,
+    8.666666666666666
+  ],
+  "unequal_average_of_means": [
+    102.5,
+    11.5
+  ],
+  "unequal_weighted_gradient": [
+    70.0,
+    8.666666666666666
+  ],
+  "ten_micro_batch_update_boundaries": [
+    4,
+    8,
+    10
+  ],
+  "two_backward_buffer_additions": [
+    2,
+    4
+  ],
+  "historical_metrics": {
+    "memory_drop_mib": 8130,
+    "memory_drop_percent": 38.17618332081142,
+    "time_ratio": 2.7043456761548055,
+    "throughput_drop_percent": 63.024430088364156
+  }
+}
