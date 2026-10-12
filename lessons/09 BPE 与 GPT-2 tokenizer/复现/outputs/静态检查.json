@@ -1,0 +1,40 @@
+[
+  {
+    "name": "tokenizer_basics.ipynb",
+    "sha256": "638670dbe1d6bea7aa246d31028a0ccca212e282294afea459fe6963748c791c",
+    "cells": 39,
+    "code_cells": 26,
+    "syntax_findings": [
+      {
+        "cell": 22,
+        "type": "SyntaxError",
+        "message": "trailing comma not allowed without surrounding parentheses"
+      }
+    ]
+  },
+  {
+    "name": "gpt2_train_tokenizer.ipynb",
+    "sha256": "bf50bbdb65877367b3c49a9686435ea8a82b132b94370a442df12dbe81763bfb",
+    "cells": 27,
+    "code_cells": 21,
+    "syntax_findings": []
+  },
+  {
+    "name": "gpt2.ipynb",
+    "sha256": "cc2cb3f0cd9e383caf864dbaead2b63a8a583700145819b164809a08d1f43163",
+    "cells": 6,
+    "code_cells": 5,
+    "syntax_findings": [
+      {
+        "cell": 1,
+        "type": "notebook_magic",
+        "message": "invalid syntax"
+      },
+      {
+        "cell": 4,
+        "type": "notebook_magic",
+        "message": "invalid syntax"
+      }
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "transformers_reference_tag": "v4.30.0",
+  "gpt2_tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "transcript_name": "232e8b13-7415-4397-92b7-4ecdb4cfd749.txt",
+  "notebooks": [
+    {
+      "name": "tokenizer_basics.ipynb",
+      "sha256": "638670dbe1d6bea7aa246d31028a0ccca212e282294afea459fe6963748c791c",
+      "cells": 39,
+      "code_cells": 26,
+      "syntax_findings": [
+        {
+          "cell": 22,
+          "type": "SyntaxError",
+          "message": "trailing comma not allowed without surrounding parentheses"
+        }
+      ]
+    },
+    {
+      "name": "gpt2_train_tokenizer.ipynb",
+      "sha256": "bf50bbdb65877367b3c49a9686435ea8a82b132b94370a442df12dbe81763bfb",
+      "cells": 27,
+      "code_cells": 21,
+      "syntax_findings": []
+    },
+    {
+      "name": "gpt2.ipynb",
+      "sha256": "cc2cb3f0cd9e383caf864dbaead2b63a8a583700145819b164809a08d1f43163",
+      "cells": 6,
+      "code_cells": 5,
+      "syntax_findings": [
+        {
+          "cell": 1,
+          "type": "notebook_magic",
+          "message": "invalid syntax"
+        },
+        {
+          "cell": 4,
+          "type": "notebook_magic",
+          "message": "invalid syntax"
+        }
+      ]
+    }
+  ],
+  "auxiliary_files": [
+    {
+      "name": "tokenization_gpt2.py",
+      "sha256": "5bd1290860073a3ff4a8c840c38770b066f18dc2f1880f545ce2b5e4d9d7e73b"
+    },
+    {
+      "name": "tokenization_utils_fast.py",
+      "sha256": "b4d369b2d4510fe2132f30e21454f44a3f61757e88120a4c3c151d2ada1f4803"
+    }
+  ]
+}

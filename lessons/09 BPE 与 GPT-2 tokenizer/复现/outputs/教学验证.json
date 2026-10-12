@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "scope": "real fast tokenizer training on 16 local snippets; no LM training",
+  "environment": {
+    "python": "3.7.6",
+    "transformers": "4.30.2",
+    "tokenizers": "0.13.3"
+  },
+  "gpt2_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "original_vocab_size": 50257,
+  "new_vocab_size": 320,
+  "training_snippets": 16,
+  "byte_mapping": {
+    "space": "Ġ",
+    "newline": "Ċ",
+    "carriage_return": "č",
+    "euro_bytes": [
+      226,
+      130,
+      172
+    ]
+  },
+  "sample": "中文 € 😀\n    print(1)\t",
+  "new_ids": [
+    303,
+    304,
+    230,
+    319,
+    106,
+    221,
+    306,
+    247,
+    223,
+    261,
+    315,
+    284,
+    84,
+    8,
+    17,
+    9,
+    198
+  ],
+  "new_tokens": [
+    "ä¸Ń",
+    "æĸ",
+    "ĩ",
+    "ĠâĤ",
+    "¬",
+    "Ġ",
+    "ðŁ",
+    "ĺ",
+    "Ģ",
+    "ĊĠĠĠ",
+    "Ġpr",
+    "in",
+    "t",
+    "(",
+    "1",
+    ")",
+    "ĉ"
+  ],
+  "full_decode": "中文 € 😀\n    print(1)\t",
+  "roundtrip_reload": true,
+  "old_tokenizer_unchanged": true,
+  "new_special_token_ids": [
+    0
+  ],
+  "new_merges_count": 63,
+  "original_euro_individual_decode": [
+    "€"
+  ],
+  "original_emoji_individual_decode": [
+    "�",
+    "�"
+  ],
+  "python_keyword_count": 35,
+  "new_keyword_presence": {
+    "def": true,
+    "return": false,
+    "await": false,
+    "nonlocal": false
+  },
+  "stream_first_run": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "2",
+      "3"
+    ]
+  ],
+  "stream_second_run": [
+    [
+      "4",
+      "5"
+    ]
+  ],
+  "original_exhaustion": "RuntimeError: generator raised StopIteration",
+  "safe_partial_batch": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "2",
+      "3"
+    ],
+    [
+      "4"
+    ]
+  ],
+  "weighted_pair_counts": {
+    "a a": 4,
+    "a b": 5,
+    "b a": 2
+  }
+}
