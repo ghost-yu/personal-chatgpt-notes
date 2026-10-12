@@ -1,0 +1,34 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "pretrain_corpus_大模型预训练语料.ipynb",
+  "sha256": "34ba471639551d144a4b841136909de40a1d5886939cb385a493244de0de9a72",
+  "cells": 13,
+  "code_cells": 6,
+  "code_syntax": "passed",
+  "reference_datasets_tag": "2.19.2",
+  "transcript": "e85b8a5a-1e56-423c-8171-26f6e15ac3d3.txt",
+  "missing_original_code": [
+    "custom Dataset and IterableDataset",
+    "JSON loading and map/take/skip",
+    "RSS measurement and traversal benchmark"
+  ],
+  "source_snapshots": [
+    {
+      "name": "arrow_dataset.py",
+      "sha256": "b500e474ccb289048d6192dab7815ee2ab082848bea12ca1861863521966af7a"
+    },
+    {
+      "name": "iterable_dataset.py",
+      "sha256": "21596a13d3c1b574f48ddf565eb099edc01c622c024bc2c23a2b88c3bd30019f"
+    },
+    {
+      "name": "load.py",
+      "sha256": "0e93b9fc7e725adafc4f94fdef01d4d15aa8cc0f690e605e42d807d69cac5a87"
+    },
+    {
+      "name": "table.py",
+      "sha256": "127058210414a40ffbe03b402708c00c24bfb9d48d75e9a8160eb55e8b9363ef"
+    }
+  ],
+  "datasets_reference_sha": "7290bbde1c73b45479f98239e976082a991033a6"
+}
