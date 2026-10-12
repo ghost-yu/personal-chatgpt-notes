@@ -1,0 +1,24 @@
+{
+  "tutorial_sha": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "bitsandbytes_sha": "4395d68cf6beda911c1c3e5633debf15652e2902",
+  "transformers_tag": "v4.30.0",
+  "transcript": "本讲未找到",
+  "files": [
+    {
+      "name": "bitsandbytes-0.39.1-_functions.py",
+      "sha256": "01f945cbac1963b49f27269bce00473d01770e747aa0cc05b96a5e8063cf384e"
+    },
+    {
+      "name": "bitsandbytes-0.39.1-functional.py",
+      "sha256": "68d13ed1008c2d956ee978deb221c1b81ac1e544971bbd04fc6817aec95985b4"
+    },
+    {
+      "name": "bitsandbytes-0.39.1-modules.py",
+      "sha256": "9efd8192434a9542c2f368fe779d715594d687545cbe5978a7afa852c11f79c4"
+    },
+    {
+      "name": "transformers-v4.30.0-bitsandbytes.py",
+      "sha256": "5502cfc7f4a1f0671341dc0e06c2ab279ace3e75fdd3f4e394f88b85e6086e82"
+    }
+  ]
+}
