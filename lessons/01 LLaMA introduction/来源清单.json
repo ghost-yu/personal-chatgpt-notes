@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/01_llama_intro.ipynb",
+  "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/01_llama_intro.ipynb",
+  "upstream_sha256": "fcb9a1004f61825f7169fbfef58e9896c8bdb38d20f2de3a2be21aad23d2ab1b",
+  "local_sha256": "339c1f942161e035eac4de56ff69489262128e46ca7a5bcbc0b16ab94b56d12c",
+  "equal_after_line_ending_normalization": true,
+  "image": "imgs/llama_weights.png",
+  "image_sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69",
+  "all_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "python_code_cells": [
+    0,
+    4
+  ],
+  "markdown_command_cells": [
+    6,
+    7
+  ],
+  "official_llama_v1_supplement_commit": "57b0eb62de0636e75af471e49e2f1862d908d9d8",
+  "scope": "指定 notebook 所有单元与命令；官方推理源码是外部补充，未加载权重"
+}

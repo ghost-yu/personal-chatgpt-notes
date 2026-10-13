@@ -1,0 +1,42 @@
+{
+  "source_sha256": "339c1f942161e035eac4de56ff69489262128e46ca7a5bcbc0b16ab94b56d12c",
+  "original_cells": 9,
+  "explained_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "code_cells": [
+    0,
+    4
+  ],
+  "commented_code_cells": [
+    0,
+    4
+  ],
+  "shell_command_cells": [
+    6,
+    7
+  ],
+  "shell_commands_count": 6,
+  "shell_commands_executed": false,
+  "original_cells_preserved": true,
+  "commented_ast_equal": true,
+  "historical_outputs_preserved": true,
+  "artifacts": {
+    "原代码_带说明.ipynb": {
+      "cells": 19,
+      "sha256": "6249dcbbd02744648b6e313bca05a965e0d53cbb4d674019b47e7aecc93aa3d5"
+    },
+    "代码注释.ipynb": {
+      "cells": 19,
+      "sha256": "088a9cb4d950bd6420c1534028ce58fbe7977ad429d9d4455f6b8230b228f3ad"
+    }
+  }
+}

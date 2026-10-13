@@ -1,0 +1,56 @@
+{
+  "status": "部分成功",
+  "python": "3.7.6",
+  "IPython": "7.12.0",
+  "nbformat": "5.0.4",
+  "schema_valid": true,
+  "original_cells_equal": true,
+  "historical_outputs_equal": true,
+  "commented_ast_equal": true,
+  "runs": {
+    "原代码_带说明.ipynb": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 300,
+        "png_bytes": 333093
+      }
+    ],
+    "代码注释.ipynb": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 300,
+        "png_bytes": 333093
+      }
+    ],
+    "original": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 300,
+        "png_bytes": 333093
+      }
+    ]
+  },
+  "not_executed": [
+    "六条模型启动命令",
+    "LLaMA权重加载/推理",
+    "论文实验"
+  ]
+}
