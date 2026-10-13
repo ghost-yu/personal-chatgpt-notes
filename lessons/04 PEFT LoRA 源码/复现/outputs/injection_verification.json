@@ -1,0 +1,152 @@
+{
+  "status": "部分成功",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "transformers": "4.44.2",
+  "accelerate": "0.34.2",
+  "peft_imported_version": "0.3.0",
+  "peft_checkout_commit": "7120c9a2636f93c8db3fc4ae466e02f338ecead8",
+  "source_hashes": {
+    "src/peft/mapping.py": "5c11ffabc0bed2cd108c41baa354aecf2aa920ca9cd29a9fae21916e75c01222",
+    "src/peft/peft_model.py": "a6864e82a0d2f0cf0a8ebfb71d0d49f6d311a847dd3496a2b0b31a2dc4572685",
+    "src/peft/tuners/lora.py": "a36e0c446f6f588a0c1038705ee11864a9bfb7291a9cc4a6e91a4c9dbf0a6ee6",
+    "src/peft/utils/other.py": "ab17501ee7283f4b32809892d982fc155d891fce068c484daa425a9b9251aae3"
+  },
+  "device": "cpu",
+  "quantized": false,
+  "tiny_model": {
+    "hidden_size": 16,
+    "layers": 2,
+    "heads": 2,
+    "vocab_size": 32,
+    "random_weights": true
+  },
+  "original_code_cells_executed": [
+    {
+      "cell": 9,
+      "executed_with_teaching_model": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 11,
+      "executed_with_teaching_model": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 13,
+      "executed_with_teaching_model": true,
+      "result_type": "BloomForCausalLM"
+    },
+    {
+      "cell": 14,
+      "executed_with_teaching_model": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 15,
+      "executed_with_teaching_model": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 16,
+      "executed_with_teaching_model": true,
+      "result_type": "PeftModelForCausalLM"
+    },
+    {
+      "cell": 17,
+      "executed_with_teaching_model": true,
+      "result_type": "NoneType"
+    }
+  ],
+  "markdown_mapping_dictionaries_equal_to_official": true,
+  "markdown4_attribute_fragment": "独立属性上下文执行成功；最终包装结构另由官方构造器验证",
+  "markdown7_expected_failure": {
+    "type": "TypeError",
+    "message": "non-default argument 'target_modules' follows default argument"
+  },
+  "suffix_hits": [
+    "transformer.h.0.self_attention.query_key_value",
+    "transformer.h.1.self_attention.query_key_value"
+  ],
+  "regex_hits": [
+    "transformer.h.0.self_attention.query_key_value",
+    "transformer.h.1.self_attention.query_key_value"
+  ],
+  "bare_regex_hits": [],
+  "wrong_suffix_hits": [],
+  "official_injection_failures": {
+    "bare_regex": {
+      "type": "ValueError",
+      "message": "Target modules query_key_value not found in the base model. Please check the target modules and try again."
+    },
+    "wrong_suffix": {
+      "type": "ValueError",
+      "message": "Target modules ['q_proj'] not found in the base model. Please check the target modules and try again."
+    }
+  },
+  "official_call_sequence": [
+    "get_peft_model",
+    "add_adapter",
+    "_prepare_lora_config",
+    "_find_and_replace",
+    "_replace_module",
+    "_replace_module",
+    "mark_only_lora_as_trainable"
+  ],
+  "wrapper_reuses_original_model": true,
+  "replacements": [
+    {
+      "path": "transformer.h.0.self_attention.query_key_value",
+      "old_class": "Linear",
+      "new_class": "Linear",
+      "old_class_module": "torch.nn.modules.linear",
+      "new_class_module": "peft.tuners.lora",
+      "weight_and_bias_identity_preserved": true,
+      "a_shape": [
+        16,
+        16
+      ],
+      "b_shape": [
+        48,
+        16
+      ]
+    },
+    {
+      "path": "transformer.h.1.self_attention.query_key_value",
+      "old_class": "Linear",
+      "new_class": "Linear",
+      "old_class_module": "torch.nn.modules.linear",
+      "new_class_module": "peft.tuners.lora",
+      "weight_and_bias_identity_preserved": true,
+      "a_shape": [
+        16,
+        16
+      ],
+      "b_shape": [
+        48,
+        16
+      ]
+    }
+  ],
+  "trainable_parameters": 2048,
+  "only_lora_trainable": true,
+  "zero_b_initial_logits_equal": true,
+  "logits_shape": [
+    1,
+    3,
+    32
+  ],
+  "initial_a_gradient_zero": true,
+  "initial_b_gradient_norm": 94.13978576660156,
+  "base_weight_bias_gradients_none": true,
+  "adapter_output_shape": [
+    2,
+    3,
+    48
+  ],
+  "manual_forward_max_error": 0.0,
+  "disable_matches_base": true,
+  "merge_max_error": 1.4901161193847656e-07,
+  "unmerge_restores_weight_within_tolerance": true,
+  "limits": "直接执行官方PEFT v0.3.0普通Linear路径，搭配较新torch/Transformers；未加载7B、未测8bit/CUDA、未训练或复现论文指标"
+}

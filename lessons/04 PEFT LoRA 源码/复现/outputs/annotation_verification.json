@@ -1,0 +1,32 @@
+{
+  "status": "成功（静态注释核对）",
+  "original_cells": 18,
+  "code_cells": 8,
+  "markdown_blocks": 6,
+  "artifacts": {
+    "原代码_带说明.ipynb": {
+      "schema_valid": true,
+      "original_cells_and_history_preserved": true,
+      "comment_only": true,
+      "code_ast_equal": [],
+      "markdown_blocks_ast_equal": 0
+    },
+    "代码注释.ipynb": {
+      "schema_valid": true,
+      "original_cells_and_history_preserved": true,
+      "comment_only": true,
+      "code_ast_equal": [
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "markdown_blocks_ast_equal": 6
+    }
+  },
+  "execution": "未执行原7B加载；固定官方PEFT源码真实CPU验证另见verify_injection.py"
+}

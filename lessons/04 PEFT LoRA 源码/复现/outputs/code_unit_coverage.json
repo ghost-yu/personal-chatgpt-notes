@@ -1,0 +1,64 @@
+{
+  "source_sha256": "d94df2179da5088cd9c99df975d0893d3ebedbc64a690bd2a6a1d76badf179a0",
+  "original_cells": 18,
+  "explained_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "code_cells": [
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "commented_code_cells": [
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "markdown_blocks_per_cell": {
+    "2": 2,
+    "4": 1,
+    "7": 1,
+    "8": 2
+  },
+  "commented_markdown_blocks": 6,
+  "original_empty_code_cells": [
+    17
+  ],
+  "artifacts": {
+    "原代码_带说明.ipynb": {
+      "cells": 37,
+      "sha256": "150333554b1cff54d62abc17a00689f9e037a2d5181bfc8f82dea3b9fc5b64c4"
+    },
+    "代码注释.ipynb": {
+      "cells": 37,
+      "sha256": "c4514de4f38e4cd7b2a2e8ac894985643ebb429702a7afdf4e46a336f2be58b5"
+    }
+  }
+}

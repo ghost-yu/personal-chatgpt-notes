@@ -1,0 +1,59 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/04_PEFT_lora.ipynb",
+  "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/04_PEFT_lora.ipynb",
+  "local_sha256": "d94df2179da5088cd9c99df975d0893d3ebedbc64a690bd2a6a1d76badf179a0",
+  "upstream_sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146",
+  "equal_after_line_ending_normalization": true,
+  "all_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "code_cells": [
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "markdown_blocks_per_cell": {
+    "2": 2,
+    "4": 1,
+    "7": 1,
+    "8": 2
+  },
+  "original_empty_code_cells": [
+    17
+  ],
+  "official_peft_repository": "https://github.com/huggingface/peft",
+  "official_peft_commit": "7120c9a2636f93c8db3fc4ae466e02f338ecead8",
+  "official_peft_version": "0.3.0",
+  "official_source_hashes": {
+    "src/peft/mapping.py": "5c11ffabc0bed2cd108c41baa354aecf2aa920ca9cd29a9fae21916e75c01222",
+    "src/peft/peft_model.py": "a6864e82a0d2f0cf0a8ebfb71d0d49f6d311a847dd3496a2b0b31a2dc4572685",
+    "src/peft/tuners/lora.py": "a36e0c446f6f588a0c1038705ee11864a9bfb7291a9cc4a6e91a4c9dbf0a6ee6",
+    "src/peft/utils/other.py": "ab17501ee7283f4b32809892d982fc155d891fce068c484daa425a9b9251aae3"
+  },
+  "historical_peft": "0.4.0.dev0，原资料没有SHA；参照v0.3.0不冒充老师环境",
+  "verification": "直接导入固定官方checkout，CPU随机小型BLOOM普通Linear路径；未执行原7B/8bit加载"
+}
