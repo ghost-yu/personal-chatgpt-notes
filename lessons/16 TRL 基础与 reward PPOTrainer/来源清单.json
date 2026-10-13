@@ -1,0 +1,46 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "trl_hf/trl_basics.ipynb",
+  "sha256": "7aaf25daba2e2bba709863d732083873bc2c6235ac273a10ab87345b0e82b668",
+  "cells": 42,
+  "code_cells": 28,
+  "syntax": "passed",
+  "markdown_command_cell": 10,
+  "markdown_pseudocode_cell": 31,
+  "duplicate_prompt_evidence_cells": [
+    26,
+    28,
+    32,
+    33
+  ],
+  "transcript": "871a09ce-82da-4fed-b104-a7719a278fe5.txt",
+  "transcript_sha256": "bd35036dd00a567dd9130d46550e9558f5407d88079713a639b2fc67b7121d0f",
+  "references": {
+    "trl": "v0.4.7",
+    "teacher_exact_versions": "未锁定",
+    "gpt2_tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+  },
+  "source_snapshots": [
+    {
+      "name": "core-v0.4.7.py",
+      "sha256": "22620c5b0166721b79f06ebd928732d773b97b37af81bc5c0deea0f265bd7f3b"
+    },
+    {
+      "name": "modeling-base-v0.4.7.py",
+      "sha256": "cf24ffc6ac8eff7405dbcc2e2299a7bdfa69214ed4df776d61013ffc1a123dbc"
+    },
+    {
+      "name": "ppo-config-v0.4.7.py",
+      "sha256": "21612649e2836ba70357e0749283ac4b3e94a343b8374d9969d59fa90e65d6c5"
+    },
+    {
+      "name": "ppo-trainer-v0.4.7.py",
+      "sha256": "8142e1296171adc0a9f664ed0a241d4e7313ad0fac6987b2a093b0982489a407"
+    },
+    {
+      "name": "value-head-v0.4.7.py",
+      "sha256": "b68e231b3ff2d3932bc355571c3d7bac400ec573aad5f3dd08b55051fb8c3b9c"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "partial",
+  "torch_training": false,
+  "tokenizer": "real tokenizers encoding and roundtrip passed",
+  "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "query_ids": [
+    1212,
+    3329,
+    314,
+    1816,
+    284,
+    262,
+    220
+  ],
+  "query_length": 7,
+  "wrong_response_length": 27,
+  "wrong_combined_length": 34,
+  "correct_response_length": 20,
+  "correct_combined_length": 27,
+  "wrong_mask_target_count": 27,
+  "correct_mask_target_count": 20,
+  "sampled_log_ratios": [
+    0.47000362924573563,
+    -0.916290731874155
+  ],
+  "full_distribution_kl": 0.19274475702175753,
+  "kl_shaped_rewards_with_score_on_last": [
+    -0.09400072584914713,
+    1.183258146374831
+  ],
+  "raw_gae_advantages": [
+    0.5462499999999999,
+    0.575,
+    0.5
+  ],
+  "returns": [
+    0.7462499999999999,
+    0.875,
+    0.9
+  ],
+  "positive_advantage_clipped_loss": -2.4,
+  "negative_advantage_loss": 3.0,
+  "finite_difference_clipped_derivative": 0.0,
+  "value_head_parameters": 769,
+  "ppo_defaults": {
+    "task_name": null,
+    "model_name": null,
+    "steps": 20000,
+    "learning_rate": 1e-05,
+    "adap_kl_ctrl": true,
+    "init_kl_coef": 0.2,
+    "kl_penalty": "kl",
+    "target": 6,
+    "horizon": 10000,
+    "gamma": 1,
+    "lam": 0.95,
+    "cliprange": 0.2,
+    "cliprange_value": 0.2,
+    "vf_coef": 0.1,
+    "batch_size": 256,
+    "forward_batch_size": null,
+    "mini_batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "ppo_epochs": 4,
+    "remove_unused_columns": true,
+    "log_with": null,
+    "tracker_project_name": "trl",
+    "max_grad_norm": null,
+    "seed": 0,
+    "optimize_cuda_cache": false,
+    "early_stopping": false,
+    "target_kl": 0.1,
+    "compare_steps": 1,
+    "ratio_threshold": 10.0
+  },
+  "source_checks": "AST and boundary statements"
+}

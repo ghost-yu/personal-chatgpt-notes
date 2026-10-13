@@ -1,0 +1,3 @@
+# Mathematical/static checks need only Python 3.7+ standard library.
+# Optional real tokenizer verification, as run on Python 3.7.6:
+tokenizers==0.13.3
