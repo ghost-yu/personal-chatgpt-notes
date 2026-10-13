@@ -1,0 +1,417 @@
+{
+  "status": "部分成功",
+  "environment": {
+    "OS": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "packages": {
+      "torchsummary": "1.5.1",
+      "numpy": "1.26.4",
+      "tqdm": "4.70.1",
+      "IPython": "8.37.0",
+      "nbformat": "5.10.4"
+    }
+  },
+  "original": {
+    "notebook_sha256": "c007e4adba74d83cb577dc55c7df24697ff88c69b820e6b19996a2bfc4c852c7",
+    "executed_whole_original_code_cells": [
+      3,
+      4,
+      6,
+      7,
+      10,
+      12,
+      15,
+      18
+    ],
+    "excluded_whole_original_cells": [
+      8,
+      11,
+      14,
+      17
+    ],
+    "extracted_original_functions": [
+      14,
+      17
+    ],
+    "original_CNN_meta": {
+      "parameter_count": 476938250,
+      "MNIST_logits_shape": [
+        2,
+        10
+      ],
+      "RGB224_error": "a and b must have same reduction dim, but got [2, 32112640] X [501760, 10].",
+      "real_large_weights_or_activations_allocated": false,
+      "fp32_weights_GiB": 1.776733435690403
+    },
+    "small_CNN_adaptation": {
+      "four_channel_constants_changed": "5120→8,10240→16",
+      "forward_AST_unchanged": true,
+      "parameters": 9098,
+      "synthetic_samples": 8,
+      "batch_size": 4,
+      "epochs": 1,
+      "ToTensor_dtype": "torch.float32",
+      "MNIST_downloaded": false,
+      "torchsummary_virtual_batch": 2
+    },
+    "FP32_original_functions": {
+      "mode": "fp32",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.3334293365478516,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.312075138092041,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [],
+      "scaler_enabled": null,
+      "scale_after_two_finite_steps": null
+    },
+    "CUDA_AMP_original_functions_CPU_fallback": {
+      "mode": "cuda_fallback",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.3334293365478516,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.312075138092041,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [
+        "`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+        "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.",
+        "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+        "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+        "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+        "User provided device_type of 'cuda', but CUDA is not available. Disabling"
+      ],
+      "scaler_enabled": false,
+      "scale_after_two_finite_steps": 1.0
+    },
+    "FP32_and_disabled_CUDA_AMP_weights_equal": true,
+    "CPU_FP16_active_autocast_supplement": {
+      "mode": "cpu_amp",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.333414077758789,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.3120839595794678,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [],
+      "scaler_enabled": true,
+      "scale_after_two_finite_steps": 256.0,
+      "injected_inf_gradient": {
+        "weights_unchanged": true,
+        "Adam_step_counters_unchanged": true,
+        "scale_backoff_256_to_128": true
+      }
+    },
+    "CPU_AMP_adaptations": {
+      "autocast_only_expression_changed": "torch.cuda.amp.autocast()→torch.amp.autocast('cpu',dtype=torch.float16)",
+      "reverse_AST_check": true,
+      "scaler": "torch.amp.GradScaler(cpu,init_scale128,growth_interval2)",
+      "synthetic_data_small_model_epoch_and_batch_are_explicit_alternatives": true
+    },
+    "Markdown1_actual_CPU_disabled_scaler": {
+      "enabled": false,
+      "warnings": [
+        "`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+        "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling."
+      ]
+    },
+    "uniform_10class_CE": 2.3025851249694824,
+    "autograd_loss_scaling": {
+      "scaled_grad": 256.0,
+      "unscaled_grad": 2.0,
+      "SGD_parameter": 0.800000011920929
+    },
+    "no_GPU_memory_or_MNIST_accuracy_benchmark": true
+  },
+  "annotated": {
+    "notebook_sha256": "e0460ed50eb35b83ecfe9e55a90451ed44b14d538770f3df0c0a94db701c7497",
+    "executed_whole_original_code_cells": [
+      3,
+      4,
+      6,
+      7,
+      10,
+      12,
+      15,
+      18
+    ],
+    "excluded_whole_original_cells": [
+      8,
+      11,
+      14,
+      17
+    ],
+    "extracted_original_functions": [
+      14,
+      17
+    ],
+    "original_CNN_meta": {
+      "parameter_count": 476938250,
+      "MNIST_logits_shape": [
+        2,
+        10
+      ],
+      "RGB224_error": "a and b must have same reduction dim, but got [2, 32112640] X [501760, 10].",
+      "real_large_weights_or_activations_allocated": false,
+      "fp32_weights_GiB": 1.776733435690403
+    },
+    "small_CNN_adaptation": {
+      "four_channel_constants_changed": "5120→8,10240→16",
+      "forward_AST_unchanged": true,
+      "parameters": 9098,
+      "synthetic_samples": 8,
+      "batch_size": 4,
+      "epochs": 1,
+      "ToTensor_dtype": "torch.float32",
+      "MNIST_downloaded": false,
+      "torchsummary_virtual_batch": 2
+    },
+    "FP32_original_functions": {
+      "mode": "fp32",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.3334293365478516,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.312075138092041,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [],
+      "scaler_enabled": null,
+      "scale_after_two_finite_steps": null
+    },
+    "CUDA_AMP_original_functions_CPU_fallback": {
+      "mode": "cuda_fallback",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.3334293365478516,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.312075138092041,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float32",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [
+        "`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+        "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.",
+        "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+        "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+        "`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.",
+        "User provided device_type of 'cuda', but CUDA is not available. Disabling"
+      ],
+      "scaler_enabled": false,
+      "scale_after_two_finite_steps": 1.0
+    },
+    "FP32_and_disabled_CUDA_AMP_weights_equal": true,
+    "CPU_FP16_active_autocast_supplement": {
+      "mode": "cpu_amp",
+      "updates": 2,
+      "losses": [
+        {
+          "value": 2.333414077758789,
+          "dtype": "torch.float32"
+        },
+        {
+          "value": 2.3120839595794678,
+          "dtype": "torch.float32"
+        }
+      ],
+      "training_outputs": [
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        },
+        {
+          "shape": [
+            4,
+            10
+          ],
+          "dtype": "torch.float16",
+          "requires_grad": true
+        }
+      ],
+      "parameters_and_gradients_dtype": "torch.float32",
+      "weights_changed": true,
+      "eval_accuracy_on_synthetic_only": 0.0,
+      "eval_no_grad": true,
+      "eval_unconditionally_sets_train": true,
+      "warnings": [],
+      "scaler_enabled": true,
+      "scale_after_two_finite_steps": 256.0,
+      "injected_inf_gradient": {
+        "weights_unchanged": true,
+        "Adam_step_counters_unchanged": true,
+        "scale_backoff_256_to_128": true
+      }
+    },
+    "CPU_AMP_adaptations": {
+      "autocast_only_expression_changed": "torch.cuda.amp.autocast()→torch.amp.autocast('cpu',dtype=torch.float16)",
+      "reverse_AST_check": true,
+      "scaler": "torch.amp.GradScaler(cpu,init_scale128,growth_interval2)",
+      "synthetic_data_small_model_epoch_and_batch_are_explicit_alternatives": true
+    },
+    "Markdown1_actual_CPU_disabled_scaler": {
+      "enabled": false,
+      "warnings": [
+        "`torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.",
+        "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling."
+      ]
+    },
+    "uniform_10class_CE": 2.3025851249694824,
+    "autograd_loss_scaling": {
+      "scaled_grad": 256.0,
+      "unscaled_grad": 2.0,
+      "SGD_parameter": 0.800000011920929
+    },
+    "no_GPU_memory_or_MNIST_accuracy_benchmark": true
+  },
+  "all_structural_and_numeric_results_equal": true,
+  "limits": [
+    "No real original large CNN storage, MNIST download/full training or RTX3090 experiment",
+    "Original CUDA AMP disabled on CPU, not labelled as active AMP",
+    "Supplement uses4channel constants changed,8synthetic samples,batch4/epoch1 andCPU FP16 APIs",
+    "Inf gradient deliberately injected to verify step skip; synthetic accuracy not MNIST performance"
+  ]
+}

@@ -1,0 +1,8 @@
+# 实测Python3.12.14；torch/torchvision按README从官方CPU索引安装。
+torch==2.5.1
+torchvision==0.20.1
+torchsummary==1.5.1
+numpy==1.26.4
+tqdm==4.70.1
+ipython==8.37.0
+nbformat==5.10.4

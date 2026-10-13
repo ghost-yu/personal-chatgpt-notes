@@ -1,0 +1,61 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/07_fp16_mixed_precision_training.ipynb",
+  "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/07_fp16_mixed_precision_training.ipynb",
+  "upstream_sha256": "c007e4adba74d83cb577dc55c7df24697ff88c69b820e6b19996a2bfc4c852c7",
+  "published_original_path": "代码/tutorials/07_fp16_mixed_precision_training.ipynb",
+  "published_original_sha256": "c007e4adba74d83cb577dc55c7df24697ff88c69b820e6b19996a2bfc4c852c7",
+  "all_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "python_code_cells": [
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    14,
+    15,
+    17,
+    18
+  ],
+  "markdown_code_cells": [
+    1
+  ],
+  "external_images": [],
+  "original_environment": {
+    "codemirror_mode": {
+      "name": "ipython",
+      "version": 3
+    },
+    "file_extension": ".py",
+    "mimetype": "text/x-python",
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+    "version": "3.10.9"
+  },
+  "scope": "19格及Markdown1示例详注；原大CNN/真实MNIST/3090显存实验与CPU补充明确分开"
+}
