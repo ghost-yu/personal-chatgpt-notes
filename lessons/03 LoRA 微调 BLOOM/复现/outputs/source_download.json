@@ -1,0 +1,14 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "downloaded_files": [
+    {
+      "path": "tutorials/03_lora_practice.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/03_lora_practice.ipynb",
+      "bytes": 19186,
+      "sha256": "4325cfc2e8936f0b513bb707b6758a4be7e343e7c788bc09ed50b6baab10b305"
+    }
+  ],
+  "manifest_hash_matched": true,
+  "original_bytes_unmodified": true,
+  "notebook_executed_by_download": false
+}

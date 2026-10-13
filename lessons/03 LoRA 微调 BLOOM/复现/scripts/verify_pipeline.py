@@ -51,6 +51,10 @@ def verify(notebook):
     torch.set_num_threads(2)
     disable_progress_bars()
     raw=Path(notebook).read_bytes();cells=json.loads(raw.decode('utf-8-sig'))['cells']
+    is_annotated=len(cells)==95
+    if is_annotated:
+        # 生成版在每个原格前插入说明；提取原编号位置，仍不运行安装/下载格。
+        cells=cells[2::2]
     assert len(cells)==47
     # 明确新编数据，不下载Abirate数据；至少5行，覆盖原第五行索引。
     quotes=['Be yourself.','Keep learning every day.','Build small useful things.',
@@ -146,7 +150,8 @@ def verify(notebook):
     packages=['torch','transformers','peft','accelerate','datasets','tokenizers','pyarrow','pandas','numpy']
     return {'status':'部分成功','python':platform.python_version(),
         'versions':{name:importlib.metadata.version(name) for name in packages},
-        'source_sha256':hashlib.sha256(raw).hexdigest(),'device':'cpu','offline':True,
+        'source_sha256':hashlib.sha256(raw).hexdigest(),'annotated_notebook':is_annotated,
+        'device':'cpu','offline':True,
         'tiny_model':{'hidden_size':16,'n_layer':2,'n_head':2,'vocab_size':len(tokenizer),'random_weights':True,'quantized':False},
         'original_cells_executed':before_wrap+data_records,
         'lora_targets':targets,'lora_scale':2,'trainable_parameters':sum(p.numel() for p in model.parameters() if p.requires_grad),
@@ -168,10 +173,31 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--notebook',required=True)
     parser.add_argument('--record',required=True)
+    parser.add_argument('--annotated-notebook',help='可选：再执行注释版中的相同26格，比较真实CPU调用链结果')
     args=parser.parse_args()
     captured=io.StringIO()
     with contextlib.redirect_stdout(captured):
         report=verify(args.notebook)
+        if args.annotated_notebook:
+            annotated=verify(args.annotated_notebook)
+            assert not report['annotated_notebook'] and annotated['annotated_notebook']
+            keys=['tiny_model','lora_targets','lora_scale','trainable_parameters',
+                  'tokenized_fields','collator_shape','padding_targets_ignored','shift_valid_targets',
+                  'initial_nonzero_gradient_names','changed_adapter_names','base_weights_unchanged',
+                  'generated_new_tokens','generated_shape']
+            for key in keys:
+                assert report[key]==annotated[key],('annotation execution mismatch',key)
+            assert [r['cell'] for r in report['original_cells_executed']]==[r['cell'] for r in annotated['original_cells_executed']]
+            for key in ['clm_loss','manual_shift_loss_error']:
+                assert abs(report[key]-annotated[key])<1e-7,('annotation execution mismatch',key)
+            assert abs(report['teaching_training']['training_loss']-annotated['teaching_training']['training_loss'])<1e-7
+            report['annotated_execution_comparison']={
+                'source_sha256':annotated['source_sha256'],
+                'executed_original_cell_indices':[r['cell'] for r in annotated['original_cells_executed']],
+                'structural_keys_equal':keys,'clm_loss':annotated['clm_loss'],
+                'training_loss':annotated['teaching_training']['training_loss'],
+                'losses_equal_within_1e_minus_7':True,
+                'same_two_step_cpu_pipeline_passed':True}
     report['captured_library_stdout']=captured.getvalue()
     Path(args.record).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True,indent=2))

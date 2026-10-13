@@ -1,12 +1,27 @@
 # 第03讲全部代码注释与真实调用链验证
 
-状态：**部分成功**。47/47单元说明、37/37代码单元中文注释已完成，说明版与注释版各95格，原notebook另存。完整第三方notebook和生成版本保留在本地配套 `代码/tutorials` 中；公开仓库提供自编说明与生成/验证脚本。
+状态：**部分成功**。47/47格说明、37/37代码格详细中文注释已完成，说明版与注释版各95格。[原notebook](../代码/tutorials/03_lora_practice.ipynb)、两种说明/注释版及[Python阅读版](../代码/tutorials/03_lora_practice_代码注释.py)均直接发布在仓库 `代码/tutorials`。下载原文件19186字节，SHA-256为 `4325cfc2e8936f0b513bb707b6758a4be7e343e7c788bc09ed50b6baab10b305`，与固定来源清单一致。
+
+## 结果表格
+
+| 检查 | 结果 |
+|---|---|
+| 原文件 | 下载字节不变，47格/37代码格，历史输出保留 |
+| 两种说明/注释版 | 各95格，原顺序/元数据/历史输出一致；注释版只增中文注释 |
+| schema与语义 | 37格经IPython语法转换后AST一致；转换不执行安装或magic |
+| Python阅读版 | 五条原IPython指令记为注释，其余Python AST与原代码一致，无JSON或历史输出 |
+| 插入说明链接 | 相对路径已适配代码/tutorials，检查指向存在文件 |
+| 实际CPU调用链 | 原版和注释版各26个选定单元在教学模型/数据上下文执行，分别完成2步Trainer训练 |
+| 两版实际结果比较 | 目标层、可训练参数、batch/labels、梯度/权重变化、生成shape一致；loss在1e-7内一致 |
+| 未复现范围 | 原7B量化加载、原模型/数据快照、原FP16 200步训练、两条CUDA生成及论文评估 |
+
+这些检查证明本讲的注释交付和小模型调用链；不表示原7B微调已复现。下面的JSON是补充记录，表格已列出结论。
 
 ## 三类证据
 
 1. [覆盖记录](outputs/code_unit_coverage.json)：全部原编号与说明匹配，37格都有中文代码注释；安装与magic也保留。两份文件的哈希及单元数已记录。
 2. [注释核对](outputs/annotation_verification.json)：原单元/元数据/历史输出保持，代码只增注释；所有37格经IPython TransformerManager转换后AST一致，schema有效。语法转换不执行pip、magic或远程加载，不能当成全notebook运行成功。
-3. [真实CPU调用链](outputs/pipeline_verification.json)：在小型随机BLOOM、新编5条数据和自建30词WordLevel词表上，实际执行26个原代码单元；其余使用独立补充实现连接真实Trainer/collator/forward/generate。没有mock PEFT、Dataset、BLOOM或Trainer。
+3. [真实CPU调用链](outputs/pipeline_verification.json)：原版和注释版各在小型随机BLOOM、新编5条数据、自建30词WordLevel词表上实际执行相同26格；其余使用独立补充实现连接真实Trainer/collator/forward/generate。两版分别运行2步训练并比较结果，没有mock PEFT、Dataset、BLOOM或Trainer。
 
 原代码实际执行编号为10、11、12、14、15、16、17、19、20、21、22、26、27、28、29、30、31、32、33、34、35、36、38、39、41、46。这些单元的**执行上下文是教学模型/数据**，不是原7B权重或Abirate数据。
 
@@ -22,15 +37,16 @@
 
 ## 执行命令
 
-以下PowerShell命令的工作目录为本文件所在复现目录。其他机器需替换配套目录和Python路径。注释依赖与真实Torch验证依赖在两个独立环境中，不要合并旧IPython与新Torch环境。
+以下PowerShell命令从公开仓库根目录执行，其他机器需替换Python路径。注释生成/静态审计与真实Torch验证依赖使用两个独立环境；下载脚本只下载本讲原文件，另外三个脚本不执行原安装或7B下载。
 
 ```powershell
-& 'D:/anaconda/python.exe' './scripts/build_annotated.py' --notebook 'G:/zzz/Personal ChatGPT 前七讲/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice.ipynb' --output-dir 'G:/zzz/Personal ChatGPT 前七讲/03 LoRA 微调 BLOOM/代码/tutorials' --record './outputs/code_unit_coverage.json'
-& 'D:/anaconda/python.exe' './scripts/verify_annotations.py' --directory 'G:/zzz/Personal ChatGPT 前七讲/03 LoRA 微调 BLOOM/代码/tutorials' --record './outputs/annotation_verification.json'
-& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './scripts/verify_pipeline.py' --notebook 'G:/zzz/Personal ChatGPT 前七讲/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice.ipynb' --record './outputs/pipeline_verification.json'
+& 'D:/anaconda/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/download_original.py'
+& 'D:/anaconda/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/build_annotated.py' --notebook './lessons/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice.ipynb' --output-dir './lessons/03 LoRA 微调 BLOOM/代码/tutorials' --record './lessons/03 LoRA 微调 BLOOM/复现/outputs/code_unit_coverage.json'
+& 'D:/anaconda/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/verify_annotations.py' --directory './lessons/03 LoRA 微调 BLOOM/代码/tutorials' --record './lessons/03 LoRA 微调 BLOOM/复现/outputs/annotation_verification.json'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/verify_pipeline.py' --notebook './lessons/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice.ipynb' --annotated-notebook './lessons/03 LoRA 微调 BLOOM/代码/tutorials/代码注释.ipynb' --record './lessons/03 LoRA 微调 BLOOM/复现/outputs/pipeline_verification.json'
 ```
 
-verify_pipeline的notebook实参用于读取并提取上面列出的原单元，代码显式不执行0、8、25、42、44、45等安装/网络/原训练路径，并设置HF离线环境变量。模型、词表、数据和Trainer的教学差异写在脚本中。
+verify_pipeline读取原文件和可选注释版，按原编号提取上述单元；显式不执行0、8、25、42、44、45等安装/网络/原训练路径，并设置HF离线变量。注释版仅额外含注释和说明，不改变教学模型/数据配置。两次实际执行的结果逐项比较。模型、词表、数据和Trainer的教学差异写在脚本中。[下载记录](outputs/source_download.json)固定原文件来源及哈希。
 
 ## 实际输出、失败修复与边界
 

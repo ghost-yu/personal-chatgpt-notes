@@ -54,5 +54,10 @@
       ]
     }
   },
+  "readable_python": {
+    "ast_equal_after_omitting_ipython_directives": true,
+    "ipython_directives_preserved_as_comments": 5,
+    "inserted_note_relative_links_valid": true
+  },
   "execution": "未执行原安装、magic、模型下载和训练；实际CPU验证另见verify_pipeline.py"
 }

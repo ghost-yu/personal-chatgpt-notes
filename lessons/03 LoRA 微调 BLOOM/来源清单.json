@@ -4,6 +4,9 @@
   "notebook": "tutorials/03_lora_practice.ipynb",
   "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/03_lora_practice.ipynb",
   "local_sha256": "910ab25e69884d365f8e4f01312421109229d2dcc1b5d62e1692bee0d92dc556",
+  "local_sha256_note": "此前本地CRLF副本的哈希；公开原文件直接下载，不转换换行",
+  "published_original_path": "代码/tutorials/03_lora_practice.ipynb",
+  "published_original_sha256": "4325cfc2e8936f0b513bb707b6758a4be7e343e7c788bc09ed50b6baab10b305",
   "upstream_sha256": "4325cfc2e8936f0b513bb707b6758a4be7e343e7c788bc09ed50b6baab10b305",
   "equal_after_line_ending_normalization": true,
   "all_cells": [
