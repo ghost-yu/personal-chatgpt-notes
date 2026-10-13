@@ -1,0 +1,3 @@
+# 原始 notebook、注释 notebook 和图片按字节存储，避免自动转换换行符。
+*.ipynb -text
+*.png -text

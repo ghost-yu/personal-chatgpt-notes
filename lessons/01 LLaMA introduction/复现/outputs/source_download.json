@@ -1,0 +1,19 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "downloaded_files": [
+    {
+      "path": "tutorials/01_llama_intro.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/01_llama_intro.ipynb",
+      "bytes": 448533,
+      "sha256": "fcb9a1004f61825f7169fbfef58e9896c8bdb38d20f2de3a2be21aad23d2ab1b"
+    },
+    {
+      "path": "imgs/llama_weights.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/llama_weights.png",
+      "bytes": 333093,
+      "sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69"
+    }
+  ],
+  "original_bytes_unmodified": true,
+  "notebook_executed_by_download": false
+}

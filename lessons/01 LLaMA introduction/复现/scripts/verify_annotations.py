@@ -60,13 +60,23 @@ if __name__ == '__main__':
                 assert ast.dump(ast.parse(source(before))) == ast.dump(ast.parse(source(after)))
                 assert '# ' in source(after)
                 a.pop('source'); b.pop('source')
+            elif filename == '代码注释.ipynb' and i in (6, 7):
+                stripped = ''.join(line for line in source(after).splitlines(keepends=True)
+                                   if not line.startswith('# '))
+                assert stripped == source(before), (filename, i, 'shell command changed')
+                a.pop('source'); b.pop('source')
             assert a == b, (filename, i)
         records[filename] = execute(preserved, directory)
     records['original'] = execute(original.cells, directory)
     assert records['original'] == records['原代码_带说明.ipynb'] == records['代码注释.ipynb']
+    readable = (directory / '01_llama_intro_代码注释.py').read_text(encoding='utf-8')
+    expected = '\n'.join(source(c) for c in original.cells if c.cell_type == 'code')
+    assert ast.dump(ast.parse(readable)) == ast.dump(ast.parse(expected))
     report = {'status': '部分成功', 'python': platform.python_version(), 'IPython': IPython.__version__,
               'nbformat': nbformat.__version__, 'schema_valid': True, 'original_cells_equal': True,
-              'historical_outputs_equal': True, 'commented_ast_equal': True, 'runs': records,
+              'historical_outputs_equal': True, 'commented_ast_equal': True,
+              'markdown_commands_unchanged_after_removing_comments': True,
+              'readable_python_ast_equal': True, 'runs': records,
               'not_executed': ['六条模型启动命令', 'LLaMA权重加载/推理', '论文实验']}
     Path(args.record).write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, ensure_ascii=True, indent=2))

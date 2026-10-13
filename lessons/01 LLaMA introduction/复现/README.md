@@ -1,18 +1,29 @@
 # 第 01 讲注释与执行核对
 
-状态：**部分成功**。原 notebook 的9格全部说明，2/2 Python单元加入中文注释；六条shell启动命令逐条说明但未运行。未加载LLaMA权重或复现论文实验。
+状态：**部分成功**。原notebook、图片、两种说明/注释notebook与Python阅读版均已放入仓库。9格全部说明；2个Python单元和6条Markdown启动命令加上详细中文注释。三个notebook的两格Python均实际执行成功；未加载LLaMA权重或复现论文实验。
 
-`scripts/build_annotated.py` 读取原版和本讲说明文档，生成19格的两份 notebook：说明版保留全部原单元，注释版另外给两格Python插入中文注释。`scripts/verify_annotations.py` 验证schema、历史输出、原单元一致性和注释前后的Python AST，并在真实IPython环境执行两格，比较三份文件的执行结果。原执行计数及输出保留，不冒充新运行结果。
+`scripts/download_original.py` 从固定提交下载原文件和图片。`scripts/build_annotated.py` 生成两份19格notebook，并导出不含JSON和图片编码的[Python阅读版](../代码/tutorials/01_llama_intro_代码注释.py)。说明版保留原单元；注释版给两格Python与六条命令加注释。验证脚本核对schema、原单元/历史输出、Python AST、Markdown命令去注释一致性与阅读版AST，并实际执行两格Python。历史输出保留，不冒充新运行结果。
+
+| 检查 | 结果 |
+|---|---|
+| 原notebook | HTTP下载448533字节，SHA-256 `fcb9a1004f61825f7169fbfef58e9896c8bdb38d20f2de3a2be21aad23d2ab1b` |
+| 来源提交 | `7fbc29824171fd07dc2c30fe922e61ebc018ad1d` |
+| 原单元/历史输出 | 说明版全部一致；注释版除新增注释外一致 |
+| schema及Python AST | 全部通过；阅读版AST与原两格拼接一致 |
+| 六条命令 | 去掉新增Bash注释后与原命令块逐字一致；未执行 |
+| 三份notebook实际执行 | 原编号0、4均通过，Image宽度300、PNG333093字节 |
+| 模型复现边界 | 未加载权重、未生成文本、未运行论文实验 |
 
 实际环境：Windows，Python3.7.6、IPython7.12.0、nbformat5.0.4。只使用已有展示依赖，无GPU或模型依赖。图片来自配套原仓库的imgs目录。
 
-下面是本次PowerShell执行命令，路径为本机配套资料位置；其他机器需要替换路径。不要把Bash续行反斜杠复制到PowerShell。
+下面是本次PowerShell执行命令，从公开仓库根目录执行；其他机器需替换Python路径。
 
 ```powershell
-& 'D:/anaconda/python.exe' './scripts/build_annotated.py' --notebook 'G:/zzz/Personal ChatGPT 前七讲/01 LLaMA introduction/代码/tutorials/01_llama_intro.ipynb' --output-dir 'G:/zzz/Personal ChatGPT 前七讲/01 LLaMA introduction/代码/tutorials' --record './outputs/code_unit_coverage.json'
-& 'D:/anaconda/python.exe' './scripts/verify_annotations.py' --directory 'G:/zzz/Personal ChatGPT 前七讲/01 LLaMA introduction/代码/tutorials' --record './outputs/annotation_verification.json'
+& 'D:/anaconda/python.exe' './lessons/01 LLaMA introduction/复现/scripts/download_original.py'
+& 'D:/anaconda/python.exe' './lessons/01 LLaMA introduction/复现/scripts/build_annotated.py' --notebook './lessons/01 LLaMA introduction/代码/tutorials/01_llama_intro.ipynb' --output-dir './lessons/01 LLaMA introduction/代码/tutorials' --record './lessons/01 LLaMA introduction/复现/outputs/code_unit_coverage.json'
+& 'D:/anaconda/python.exe' './lessons/01 LLaMA introduction/复现/scripts/verify_annotations.py' --directory './lessons/01 LLaMA introduction/代码/tutorials' --record './lessons/01 LLaMA introduction/复现/outputs/annotation_verification.json'
 ```
 
-命令工作目录为本文件所在的复现目录。两个脚本要求显式传入原notebook目录，不会自动下载或启动模型。生成记录见[覆盖记录](outputs/code_unit_coverage.json)，真实执行见[验证记录](outputs/annotation_verification.json)。每份执行成功单元为0、4；Image宽度300，PNG333093字节。
+下载脚本只下载本讲固定来源文件；生成/验证脚本不联网，不启动模型。运行notebook时将内核工作目录设为本讲 `代码/tutorials`，才能读取配套图片。普通Python不会自动显示最后一个Image表达式，Python阅读版用于查看代码和说明。
 
-原notebook固定入口见[来源清单](../来源清单.json)。本公开仓库发布自编说明和生成/验证脚本，完整第三方代码与图片及生成的完整notebook保留在本地配套目录。
+机器可读记录仅作为补充：[下载记录](outputs/source_download.json)、[覆盖记录](outputs/code_unit_coverage.json)、[执行记录](outputs/annotation_verification.json)。上面的表格已列出结论，无需阅读JSON才能了解结果。所有阅读入口见[本讲目录](../README.md)。

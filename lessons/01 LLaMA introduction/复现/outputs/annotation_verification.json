@@ -7,6 +7,8 @@
   "original_cells_equal": true,
   "historical_outputs_equal": true,
   "commented_ast_equal": true,
+  "markdown_commands_unchanged_after_removing_comments": true,
+  "readable_python_ast_equal": true,
   "runs": {
     "原代码_带说明.ipynb": [
       {

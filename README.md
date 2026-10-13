@@ -2,6 +2,12 @@
 
 按讲次解释公式、张量 shape、Python/PyTorch 代码与官方实现。每次完成一篇并提交；原课程为 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。
 
+## 原 notebook 与详细中文注释
+
+按用户最新要求，从第01讲开始逐讲将原notebook、配套图片、中文注释notebook和Python阅读版发布到本仓库。已存在的主文列表不代表所有讲次都已按新格式交付。
+
+第01讲已完成：[本讲目录](lessons/01%20LLaMA%20introduction/README.md) · [原 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro.ipynb) · [中文注释 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro_代码注释.py)。覆盖全部9格、2个Python单元和6条启动命令；实际展示执行通过，未运行模型推理。下一讲按该格式交付第02讲。
+
 ## 主解释已完成
 
 | 讲次 | 文档 | 状态 |
