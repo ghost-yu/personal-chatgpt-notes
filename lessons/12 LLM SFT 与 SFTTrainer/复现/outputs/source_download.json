@@ -1,0 +1,16 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "source": "tutorials/llm_training_sft.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llm_training_sft.ipynb",
+      "sha256": "bcbb4c7c4e7e0310a07e8dccf0437eb3e0597031288e2a6332b3c677384dfa51",
+      "bytes": 54612,
+      "published_path": "代码/tutorials/llm_training_sft.ipynb",
+      "original_bytes_preserved": true,
+      "acquisition": "original Git blob from previously downloaded upstream clone"
+    }
+  ],
+  "model_weights_downloaded": false,
+  "full_Alpaca_downloaded": false
+}

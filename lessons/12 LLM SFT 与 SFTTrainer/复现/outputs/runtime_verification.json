@@ -1,0 +1,746 @@
+{
+  "status": "部分成功",
+  "scope": "真实CPU小LLaMA/六行自建文本/固定GPT2 tokenizer；非Xgen7B/Alpaca全量/4bitGPU复现",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Scripts\\python.exe",
+    "lessons/12 LLM SFT 与 SFTTrainer/复现/scripts/verify_delivery.py",
+    "--tokenizer",
+    "G:/zzz/Personal ChatGPT 系列/09 BPE 与 GPT-2 tokenizer/资料/验证tokenizer缓存/gpt2"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.30.0",
+    "peft": "0.4.0",
+    "trl": "0.4.7",
+    "datasets": "2.13.1",
+    "accelerate": "0.20.3",
+    "tokenizers": "0.13.3"
+  },
+  "cuda_available": false,
+  "tokenizer_path": "G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存\\gpt2",
+  "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "tokenizer_assets": {
+    "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+    "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+  },
+  "official_installed_sources": {
+    "SFTTrainer": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\trl\\trainer\\sft_trainer.py",
+      "sha256": "9c3a93cebf1f684c67e43078ee649fbb94b9f278e7460791c3e6087fb84ed2fe"
+    },
+    "ConstantLengthDataset": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\trl\\trainer\\utils.py",
+      "sha256": "db6af8ea56dea95bcc8367a8cf9d0ff7f8aa0a31b33a452b7e4b5b86b8f41162"
+    },
+    "PeftModel": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\peft\\peft_model.py",
+      "sha256": "cf776e133b9772f07ab9be1412f66e02e8a99d43df275bfc930a4efe1742d142"
+    }
+  },
+  "script_sha256": {
+    "复现\\scripts\\verify_delivery.py": "3ed18fb36f8c2e1db8ebc5fa69b3f7e03c55cb819580fb4e08bf32c86de91cce",
+    "复现\\scripts\\build_annotated.py": "094a2583ef859a2b21676359ec8a2ef2c525c7106a69d2a509b22bd2b81f75fc",
+    "复现\\scripts\\download_original.py": "915c9ac932d23b094975210493465ae56134e3663d0941480ab71f88169b4bf2",
+    "代码\\监督标签_教学补充.py": "6be46c8afd10a5af4d0d738b8e670dc65849a45bdf819eab67f33ffb237c0615"
+  },
+  "original": {
+    "unaltered_whole_cells": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      15,
+      18,
+      19,
+      20,
+      22,
+      23,
+      26
+    ],
+    "skipped_original_cells": {
+      "3": "proxy",
+      "4": "remote full Alpaca",
+      "11": "remote XgenTokenizer",
+      "13": "7B 4bit model"
+    },
+    "variants": {
+      "24": {
+        "fp16": false,
+        "output_dir": "temporary directory",
+        "max_steps": 2,
+        "report_to": "none"
+      },
+      "25": {
+        "max_seq_length": 32
+      }
+    },
+    "original_cpu_fp16_failure": "FP16 Mixed precision training with AMP or APEX (`--fp16`) and FP16 half precision evaluation (`--fp16_full_eval`) can only be used on CUDA devices.",
+    "tokenizer": {
+      "class_name": "GPT2TokenizerFast",
+      "vocab": 50257,
+      "eos_id": 50256,
+      "pad_id": 50256
+    },
+    "teaching_rows": 6,
+    "shapes": {
+      "before_embedding": [
+        50320,
+        16
+      ],
+      "after_embedding": [
+        50257,
+        16
+      ],
+      "after_head": [
+        50257,
+        16
+      ]
+    },
+    "base_parameters_after_resize": 1610836,
+    "kbit_prepare": {
+      "base_frozen": true,
+      "fp16_to_fp32": true,
+      "loaded_4bit": false,
+      "loaded_8bit": false,
+      "gradient_checkpointing": false
+    },
+    "lora": {
+      "targets": [
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj"
+      ],
+      "trainable_parameters": 1024,
+      "r": 16,
+      "alpha": 32,
+      "initial_output_matches_base": true,
+      "initial_gradient_norms": {
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": 0.0006037908024154603,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": 0.10763886570930481
+      }
+    },
+    "labels": {
+      "raw_rows": 6,
+      "reported_length": 6,
+      "actual_blocks": 7,
+      "concatenated_tokens": 240,
+      "kept_tokens": 224,
+      "dropped_tail": 16,
+      "packed_shape": [
+        7,
+        32
+      ],
+      "packed_dtype": "torch.int64",
+      "packed_supervised_eos": 5,
+      "nonpacked_real_eos_masked": 2,
+      "nonpacked_padding_masked": 7,
+      "sample_ids": [
+        21106,
+        318,
+        281,
+        12064,
+        13,
+        19430,
+        257,
+        2882,
+        13,
+        198,
+        198,
+        21017,
+        46486,
+        25,
+        198,
+        18438,
+        391,
+        3090,
+        287,
+        530,
+        1790,
+        6827,
+        13,
+        198,
+        198,
+        21017,
+        18261,
+        25,
+        198,
+        4550,
+        653,
+        21001
+      ],
+      "sample_labels": [
+        21106,
+        318,
+        281,
+        12064,
+        13,
+        19430,
+        257,
+        2882,
+        13,
+        198,
+        198,
+        21017,
+        46486,
+        25,
+        198,
+        18438,
+        391,
+        3090,
+        287,
+        530,
+        1790,
+        6827,
+        13,
+        198,
+        198,
+        21017,
+        18261,
+        25,
+        198,
+        4550,
+        653,
+        21001
+      ],
+      "nonpacked_ids": [
+        [
+          15496,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256
+        ],
+        [
+          15496,
+          11,
+          428,
+          318,
+          257,
+          2392,
+          2882,
+          13,
+          50256
+        ]
+      ],
+      "nonpacked_labels": [
+        [
+          15496,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100
+        ],
+        [
+          15496,
+          11,
+          428,
+          318,
+          257,
+          2392,
+          2882,
+          13,
+          -100
+        ]
+      ],
+      "attention_masks": [
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "forward": {
+      "shape": [
+        1,
+        32,
+        50257
+      ],
+      "loss": 10.84434986114502,
+      "manual_shift_loss": 10.84434986114502
+    },
+    "training": {
+      "updates": 2,
+      "trace": [
+        {
+          "input_shape": [
+            4,
+            32
+          ],
+          "label_shape": [
+            4,
+            32
+          ],
+          "logits_shape": [
+            4,
+            32,
+            50257
+          ],
+          "loss": 10.835344314575195,
+          "learning_rate": 0.0,
+          "logits_dtype": "torch.float32",
+          "loss_dtype": "torch.float32"
+        },
+        {
+          "input_shape": [
+            4,
+            32
+          ],
+          "label_shape": [
+            4,
+            32
+          ],
+          "logits_shape": [
+            4,
+            32,
+            50257
+          ],
+          "loss": 10.835797309875488,
+          "learning_rate": 0.0002,
+          "logits_dtype": "torch.float32",
+          "loss_dtype": "torch.float32"
+        }
+      ],
+      "optimizer": "torch.optim.AdamW via AcceleratedOptimizer",
+      "optimizer_only_adapter": true,
+      "base_unchanged": true,
+      "adapter_max_deltas": {
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": 0.00020024424884468317,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": 0.00020026927813887596
+      },
+      "guard_same_model": true,
+      "default_collator": "DataCollatorWithPadding",
+      "infinite_dataset": true,
+      "loss": 10.8355712890625
+    },
+    "completion_packing_failure": "You passed a `DataCollatorForCompletionOnlyLM` to the SFTTrainer. This is not compatible with the `packing` argument.",
+    "nonpacked_trainer": {
+      "default_collator": "DataCollatorForLanguageModeling",
+      "batch_shape": [
+        4,
+        32
+      ],
+      "train_called": false
+    },
+    "reload": {
+      "adapter_keys": [
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight"
+      ],
+      "state_tensors_exactly_equal": true,
+      "logits_exactly_equal": false,
+      "logits_max_abs_difference": 1.1920928955078125e-07,
+      "logits_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "tokenizer_ids_equal": true,
+      "correct_vocab": 50257,
+      "wrong_base_load_succeeded": true,
+      "wrong_base_logits_shape": [
+        1,
+        32,
+        50320
+      ],
+      "epoch_checkpoint_adapter_files": [
+        "checkpoint-2/adapter_model.bin"
+      ]
+    },
+    "stdout": "Below is an instruction. Write a response.\n\n### Instruction:\nExplain addition in one short sentence.\n\n### Response:\nAddition combines quantities into a total.\nBelow is an instruction. Write a response.\n\n### Instruction:\nExplain addition in one short sentence.\n\n### Input:\nTwo apples and three apples.\n\n### Response:\nAddition combines quantities into a total.\n0 model.embed_tokens.weight torch.float16 cpu\n1 model.layers.0.self_attn.q_proj.weight torch.float16 cpu\n2 model.layers.0.self_attn.k_proj.weight torch.float16 cpu\n3 model.layers.0.self_attn.v_proj.weight torch.float16 cpu\n4 model.layers.0.self_attn.o_proj.weight torch.float16 cpu\n5 model.layers.0.mlp.gate_proj.weight torch.float16 cpu\n6 model.layers.0.mlp.down_proj.weight torch.float16 cpu\n7 model.layers.0.mlp.up_proj.weight torch.float16 cpu\n8 model.layers.0.input_layernorm.weight torch.float16 cpu\n9 model.layers.0.post_attention_layernorm.weight torch.float16 cpu\n10 model.norm.weight torch.float16 cpu\n11 lm_head.weight torch.float16 cpu\n{'train_runtime': 0.44, 'train_samples_per_second': 18.181, 'train_steps_per_second': 4.545, 'train_loss': 10.8355712890625, 'epoch': 1.0}\n"
+  },
+  "annotated": {
+    "unaltered_whole_cells": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      15,
+      18,
+      19,
+      20,
+      22,
+      23,
+      26
+    ],
+    "skipped_original_cells": {
+      "3": "proxy",
+      "4": "remote full Alpaca",
+      "11": "remote XgenTokenizer",
+      "13": "7B 4bit model"
+    },
+    "variants": {
+      "24": {
+        "fp16": false,
+        "output_dir": "temporary directory",
+        "max_steps": 2,
+        "report_to": "none"
+      },
+      "25": {
+        "max_seq_length": 32
+      }
+    },
+    "original_cpu_fp16_failure": "FP16 Mixed precision training with AMP or APEX (`--fp16`) and FP16 half precision evaluation (`--fp16_full_eval`) can only be used on CUDA devices.",
+    "tokenizer": {
+      "class_name": "GPT2TokenizerFast",
+      "vocab": 50257,
+      "eos_id": 50256,
+      "pad_id": 50256
+    },
+    "teaching_rows": 6,
+    "shapes": {
+      "before_embedding": [
+        50320,
+        16
+      ],
+      "after_embedding": [
+        50257,
+        16
+      ],
+      "after_head": [
+        50257,
+        16
+      ]
+    },
+    "base_parameters_after_resize": 1610836,
+    "kbit_prepare": {
+      "base_frozen": true,
+      "fp16_to_fp32": true,
+      "loaded_4bit": false,
+      "loaded_8bit": false,
+      "gradient_checkpointing": false
+    },
+    "lora": {
+      "targets": [
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj"
+      ],
+      "trainable_parameters": 1024,
+      "r": 16,
+      "alpha": 32,
+      "initial_output_matches_base": true,
+      "initial_gradient_norms": {
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": 0.0006037908024154603,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": 0.10763886570930481
+      }
+    },
+    "labels": {
+      "raw_rows": 6,
+      "reported_length": 6,
+      "actual_blocks": 7,
+      "concatenated_tokens": 240,
+      "kept_tokens": 224,
+      "dropped_tail": 16,
+      "packed_shape": [
+        7,
+        32
+      ],
+      "packed_dtype": "torch.int64",
+      "packed_supervised_eos": 5,
+      "nonpacked_real_eos_masked": 2,
+      "nonpacked_padding_masked": 7,
+      "sample_ids": [
+        21106,
+        318,
+        281,
+        12064,
+        13,
+        19430,
+        257,
+        2882,
+        13,
+        198,
+        198,
+        21017,
+        46486,
+        25,
+        198,
+        18438,
+        391,
+        3090,
+        287,
+        530,
+        1790,
+        6827,
+        13,
+        198,
+        198,
+        21017,
+        18261,
+        25,
+        198,
+        4550,
+        653,
+        21001
+      ],
+      "sample_labels": [
+        21106,
+        318,
+        281,
+        12064,
+        13,
+        19430,
+        257,
+        2882,
+        13,
+        198,
+        198,
+        21017,
+        46486,
+        25,
+        198,
+        18438,
+        391,
+        3090,
+        287,
+        530,
+        1790,
+        6827,
+        13,
+        198,
+        198,
+        21017,
+        18261,
+        25,
+        198,
+        4550,
+        653,
+        21001
+      ],
+      "nonpacked_ids": [
+        [
+          15496,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256,
+          50256
+        ],
+        [
+          15496,
+          11,
+          428,
+          318,
+          257,
+          2392,
+          2882,
+          13,
+          50256
+        ]
+      ],
+      "nonpacked_labels": [
+        [
+          15496,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100
+        ],
+        [
+          15496,
+          11,
+          428,
+          318,
+          257,
+          2392,
+          2882,
+          13,
+          -100
+        ]
+      ],
+      "attention_masks": [
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "forward": {
+      "shape": [
+        1,
+        32,
+        50257
+      ],
+      "loss": 10.84434986114502,
+      "manual_shift_loss": 10.84434986114502
+    },
+    "training": {
+      "updates": 2,
+      "trace": [
+        {
+          "input_shape": [
+            4,
+            32
+          ],
+          "label_shape": [
+            4,
+            32
+          ],
+          "logits_shape": [
+            4,
+            32,
+            50257
+          ],
+          "loss": 10.835344314575195,
+          "learning_rate": 0.0,
+          "logits_dtype": "torch.float32",
+          "loss_dtype": "torch.float32"
+        },
+        {
+          "input_shape": [
+            4,
+            32
+          ],
+          "label_shape": [
+            4,
+            32
+          ],
+          "logits_shape": [
+            4,
+            32,
+            50257
+          ],
+          "loss": 10.835797309875488,
+          "learning_rate": 0.0002,
+          "logits_dtype": "torch.float32",
+          "loss_dtype": "torch.float32"
+        }
+      ],
+      "optimizer": "torch.optim.AdamW via AcceleratedOptimizer",
+      "optimizer_only_adapter": true,
+      "base_unchanged": true,
+      "adapter_max_deltas": {
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight": 0.00020024424884468317,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight": 0.0,
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight": 0.00020026927813887596
+      },
+      "guard_same_model": true,
+      "default_collator": "DataCollatorWithPadding",
+      "infinite_dataset": true,
+      "loss": 10.8355712890625
+    },
+    "completion_packing_failure": "You passed a `DataCollatorForCompletionOnlyLM` to the SFTTrainer. This is not compatible with the `packing` argument.",
+    "nonpacked_trainer": {
+      "default_collator": "DataCollatorForLanguageModeling",
+      "batch_shape": [
+        4,
+        32
+      ],
+      "train_called": false
+    },
+    "reload": {
+      "adapter_keys": [
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight"
+      ],
+      "state_tensors_exactly_equal": true,
+      "logits_exactly_equal": false,
+      "logits_max_abs_difference": 1.1920928955078125e-07,
+      "logits_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "tokenizer_ids_equal": true,
+      "correct_vocab": 50257,
+      "wrong_base_load_succeeded": true,
+      "wrong_base_logits_shape": [
+        1,
+        32,
+        50320
+      ],
+      "epoch_checkpoint_adapter_files": [
+        "checkpoint-2/adapter_model.bin"
+      ]
+    },
+    "stdout": "Below is an instruction. Write a response.\n\n### Instruction:\nExplain addition in one short sentence.\n\n### Response:\nAddition combines quantities into a total.\nBelow is an instruction. Write a response.\n\n### Instruction:\nExplain addition in one short sentence.\n\n### Input:\nTwo apples and three apples.\n\n### Response:\nAddition combines quantities into a total.\n0 model.embed_tokens.weight torch.float16 cpu\n1 model.layers.0.self_attn.q_proj.weight torch.float16 cpu\n2 model.layers.0.self_attn.k_proj.weight torch.float16 cpu\n3 model.layers.0.self_attn.v_proj.weight torch.float16 cpu\n4 model.layers.0.self_attn.o_proj.weight torch.float16 cpu\n5 model.layers.0.mlp.gate_proj.weight torch.float16 cpu\n6 model.layers.0.mlp.down_proj.weight torch.float16 cpu\n7 model.layers.0.mlp.up_proj.weight torch.float16 cpu\n8 model.layers.0.input_layernorm.weight torch.float16 cpu\n9 model.layers.0.post_attention_layernorm.weight torch.float16 cpu\n10 model.norm.weight torch.float16 cpu\n11 lm_head.weight torch.float16 cpu\n{'train_runtime': 0.469, 'train_samples_per_second': 17.059, 'train_steps_per_second': 4.265, 'train_loss': 10.8355712890625, 'epoch': 1.0}\n"
+  },
+  "original_annotated": {
+    "adapter_exact": true,
+    "logits_exact": true,
+    "labels_exact": true,
+    "trace_exact": true,
+    "adapter_sha256": "c986b0552940b72d646b663f622c0af43362f72b7338caef1551fdb7e933cb1e"
+  },
+  "not_run": [
+    "original proxy",
+    "full Alpaca download",
+    "remote XgenTokenizer",
+    "Xgen7B weights",
+    "bitsandbytes/CUDA 4bit",
+    "original 1024-token training epoch",
+    "quality benchmark"
+  ]
+}
