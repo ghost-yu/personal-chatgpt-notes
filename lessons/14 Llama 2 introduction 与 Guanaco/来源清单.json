@@ -1,0 +1,59 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "llama2_introduction.ipynb",
+  "sha256": "b506a08ab15d43e12fe3f6947ae9b6c203bb61a5005d5955cb5b803afd7efb58",
+  "cells": 23,
+  "code_cells": 16,
+  "syntax": "passed",
+  "markdown_command_cell": 15,
+  "transcript": "905cebd9-c241-4286-b104-5be917aa3966.txt",
+  "transcript_sha256": "5c3b9079192dc3b6f33069b14766c952b6b56b4234c7a055cb655af4d2b60d10",
+  "references": {
+    "paper": "arXiv:2307.09288v2",
+    "trl": "v0.5.0",
+    "peft": "v0.4.0",
+    "transformers_pipeline": "v4.31.0",
+    "teacher_exact_versions": "未锁定",
+    "guanaco_revision": "831dabac2283d99420cda0b673d7a2a43849f17a",
+    "guanaco_sample_rows": 5,
+    "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+  },
+  "source_snapshots": [
+    {
+      "name": "guanaco-api.json",
+      "sha256": "10058f26589eda85897ca4496710c32c8dc77db169544d9380ecda7899b84188"
+    },
+    {
+      "name": "guanaco-five-rows.json",
+      "sha256": "0c59149204ecf17b600fa8bfc59a6308e7abc1f985e8ef0efa6ae302360d3561"
+    },
+    {
+      "name": "llama2-blog.html",
+      "sha256": "9b08939a38d8558e657c5af8b226ab3c832593778c57df1312b422600c83e5f2"
+    },
+    {
+      "name": "llama2-paper.pdf",
+      "sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91"
+    },
+    {
+      "name": "peft-model-v0.4.0.py",
+      "sha256": "cf776e133b9772f07ab9be1412f66e02e8a99d43df275bfc930a4efe1742d142"
+    },
+    {
+      "name": "sft-script-v0.5.0.py",
+      "sha256": "e75c36b75daa03445ef9e763847b8e1450b561fbc222f345e1daa65f46687aec"
+    },
+    {
+      "name": "sft-v0.5.0.py",
+      "sha256": "790a58a75a2f45cd17907a42b129795dcacd85e9670d47fa23436c85d3287692"
+    },
+    {
+      "name": "text-generation-v4.31.0.py",
+      "sha256": "c9c8e0489e27b13cff01268e8b5b4968de3751f31324d80432de718f1d7ea524"
+    },
+    {
+      "name": "training-args-v4.31.0.py",
+      "sha256": "ac082ac7b3d3d1c6c7fc1204d2541c310db6fdc4eac538400362e44d74de59b7"
+    }
+  ]
+}

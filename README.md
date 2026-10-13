@@ -19,10 +19,10 @@
 | 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md) | 解释完成；数学/静态验证通过，未运行 BERT |
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) | 解释完成；packing/数学/源码 fixture 验证通过，未运行 Xgen |
 | 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) | 解释完成；梯度/重算/静态验证通过，未运行 BERT 显存实验 |
+| 14 | [Llama 2 introduction 与 Guanaco](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/%E8%A7%A3%E9%87%8A.md) | 解释完成；真实 tokenizer/样本/配置验证通过，未运行7B生成或训练 |
 
 ## 待完成
 
-- 14：Llama 2 introduction 与 Guanaco
 - 15：Llama 2 text/chat completion
 - 16：TRL 基础与 reward/PPOTrainer
 - 17：RMSNorm 与 SwiGLU

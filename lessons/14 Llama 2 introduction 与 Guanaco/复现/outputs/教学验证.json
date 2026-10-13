@@ -1,0 +1,116 @@
+{
+  "status": "partial",
+  "model_training": false,
+  "tokenizer_runtime": "0.2.0",
+  "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+  "special_ids": {
+    "bos": 1,
+    "eos": 2,
+    "unk": 0
+  },
+  "vocab": 32000,
+  "own_text_token_counts": [
+    8,
+    20
+  ],
+  "roundtrip": "passed",
+  "chat_prompt_tokens_including_single_bos": 32,
+  "delimiter_token_counts": {
+    "### Human:": 3,
+    "### Assistant:": 4,
+    "[INST]": 3,
+    "[/INST]": 4
+  },
+  "samples": [
+    {
+      "token_count_with_bos": 407,
+      "over_512": false,
+      "tokens_removed_by_512_cap": 0,
+      "roles": [
+        "Human",
+        "Assistant",
+        "Human"
+      ],
+      "last_role": "Human"
+    },
+    {
+      "token_count_with_bos": 468,
+      "over_512": false,
+      "tokens_removed_by_512_cap": 0,
+      "roles": [
+        "Human",
+        "Assistant",
+        "Human"
+      ],
+      "last_role": "Human"
+    },
+    {
+      "token_count_with_bos": 775,
+      "over_512": true,
+      "tokens_removed_by_512_cap": 263,
+      "roles": [
+        "Human",
+        "Assistant",
+        "Human",
+        "Assistant"
+      ],
+      "last_role": "Assistant"
+    },
+    {
+      "token_count_with_bos": 715,
+      "over_512": true,
+      "tokens_removed_by_512_cap": 203,
+      "roles": [
+        "Human",
+        "Assistant",
+        "Human",
+        "Assistant",
+        "Human"
+      ],
+      "last_role": "Human"
+    },
+    {
+      "token_count_with_bos": 544,
+      "over_512": true,
+      "tokens_removed_by_512_cap": 32,
+      "roles": [
+        "Human",
+        "Assistant"
+      ],
+      "last_role": "Assistant"
+    }
+  ],
+  "script_defaults": {
+    "model_name": "facebook/opt-350m",
+    "dataset_name": "timdettmers/openassistant-guanaco",
+    "dataset_text_field": "text",
+    "log_with": null,
+    "learning_rate": 1.41e-05,
+    "batch_size": 64,
+    "seq_length": 512,
+    "gradient_accumulation_steps": 16,
+    "load_in_8bit": false,
+    "load_in_4bit": false,
+    "use_peft": false,
+    "trust_remote_code": true,
+    "output_dir": "output",
+    "peft_lora_r": 64,
+    "peft_lora_alpha": 16,
+    "logging_steps": 1,
+    "use_auth_token": true,
+    "num_train_epochs": 3,
+    "max_steps": -1
+  },
+  "logical_parameters": 6738415616,
+  "default_q_v_lora_parameters": 33554432,
+  "lora_scale": 0.25,
+  "micro_batches_per_epoch": 616,
+  "planned_optimizer_steps": 924,
+  "raw_formula_fractional_steps": 923.0625,
+  "fp16_weight_gib": 12.551277160644531,
+  "context_budget": {
+    "context": 4096,
+    "input": 3500,
+    "remaining": 596
+  }
+}
