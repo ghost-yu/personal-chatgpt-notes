@@ -1,0 +1,26 @@
+{
+  "all13_notes_present": true,
+  "all6_code_AST_equal": true,
+  "notebook_schemas_valid": 3,
+  "original_and4_images_SHA256_match": true,
+  "reading_py_AST_equals_original6": true,
+  "reading_py_sha256": "eebbd02feeee9fa6bfced779f997269cd806677d1b725900600a73f7aa61c97a",
+  "variants": [
+    {
+      "file": "原代码_带说明.ipynb",
+      "sha256": "ec2f6e217c1c918b90c3e68d4d17413dbc76727ae69e209cc171184919523502",
+      "original13_cells_and_history_preserved": true,
+      "all6_AST_equal": true,
+      "original_Markdown_unchanged": true,
+      "schema_valid": true
+    },
+    {
+      "file": "代码注释.ipynb",
+      "sha256": "73d06eb55181cb612aaedcdf76601b33acceeeb3d11867af2fc34c69c3d9cc90",
+      "original13_cells_and_history_preserved": true,
+      "all6_AST_equal": true,
+      "original_Markdown_unchanged": true,
+      "schema_valid": true
+    }
+  ]
+}

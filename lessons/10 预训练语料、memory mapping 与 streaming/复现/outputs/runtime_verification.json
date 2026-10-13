@@ -1,0 +1,474 @@
+{
+  "environment": {
+    "OS": "Windows-11-10.0.26200-SP0",
+    "Python": "3.12.14",
+    "packages": {
+      "torch": "2.5.1+cpu",
+      "datasets": "2.19.2",
+      "pyarrow": "16.1.0",
+      "numpy": "1.26.4",
+      "pandas": "2.2.2",
+      "huggingface-hub": "0.36.2",
+      "fsspec": "2024.3.1",
+      "transformers": "4.44.2",
+      "tokenizers": "0.19.1",
+      "IPython": "8.37.0",
+      "nbformat": "5.10.4",
+      "Pillow": "12.3.0"
+    }
+  },
+  "original": {
+    "file_sha256": "a72dab4de6111c0a41674dd41a9efd7593cf3498a282a60cd1107352517f72d3",
+    "all6_cells_executed": [
+      {
+        "original_cell": 0,
+        "entire_original_cell_executed": true
+      },
+      {
+        "original_cell": 3,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 717260,
+          "sha256": "d2322618c13eb85cb8a8e688e84221310675967737f306cb880d804e538fadce"
+        }
+      },
+      {
+        "original_cell": 5,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 624472,
+          "sha256": "dc8cdeedef63df0e5dd9aa6cf04dbb845a33409bf2ddb85218a9a637209a8d71"
+        }
+      },
+      {
+        "original_cell": 8,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 120770,
+          "sha256": "71ff6d783b5e623dc1832da24a2466c27d790db7c1e2166a15bec5975827461c"
+        }
+      },
+      {
+        "original_cell": 11,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 274921,
+          "sha256": "c0dc440e1e9b2af5d149563b9360f16c4436780a5fc6ad6136f6507e5d645fab"
+        }
+      },
+      {
+        "original_cell": 12,
+        "entire_original_cell_executed": true
+      }
+    ]
+  },
+  "annotated": {
+    "file_sha256": "73d06eb55181cb612aaedcdf76601b33acceeeb3d11867af2fc34c69c3d9cc90",
+    "all6_cells_executed": [
+      {
+        "original_cell": 0,
+        "entire_original_cell_executed": true
+      },
+      {
+        "original_cell": 3,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 717260,
+          "sha256": "d2322618c13eb85cb8a8e688e84221310675967737f306cb880d804e538fadce"
+        }
+      },
+      {
+        "original_cell": 5,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 624472,
+          "sha256": "dc8cdeedef63df0e5dd9aa6cf04dbb845a33409bf2ddb85218a9a637209a8d71"
+        }
+      },
+      {
+        "original_cell": 8,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 120770,
+          "sha256": "71ff6d783b5e623dc1832da24a2466c27d790db7c1e2166a15bec5975827461c"
+        }
+      },
+      {
+        "original_cell": 11,
+        "entire_original_cell_executed": true,
+        "Image": {
+          "format": "png",
+          "display_width": 500,
+          "bytes": 274921,
+          "sha256": "c0dc440e1e9b2af5d149563b9360f16c4436780a5fc6ad6136f6507e5d645fab"
+        }
+      },
+      {
+        "original_cell": 12,
+        "entire_original_cell_executed": true
+      }
+    ]
+  },
+  "original_annotated_all6_results_equal": true,
+  "supplement_path": "代码/数据读取_教学补充.py",
+  "supplement_sha256": "a1111625a6df7cf4a580ca6b778c8e89055e45457afae9831f20b275238e7162",
+  "independent_teaching_supplement": {
+    "scope": "5行JSONL、100×5特征与range3–7；独立教学补充，非原保存代码",
+    "data_types": {
+      "normal": "Dataset",
+      "stream": "IterableDataset",
+      "disk_table": "MemoryMappedTable",
+      "memory_file": "MemoryMappedFile"
+    },
+    "rows": [
+      {
+        "id": 0,
+        "text": "hello world",
+        "label": 0
+      },
+      {
+        "id": 1,
+        "text": "中文文本",
+        "label": 1
+      },
+      {
+        "id": 2,
+        "text": "a b c",
+        "label": 0
+      },
+      {
+        "id": 3,
+        "text": "stream me",
+        "label": 1
+      },
+      {
+        "id": 4,
+        "text": "last row",
+        "label": 0
+      }
+    ],
+    "slice1_3": {
+      "id": [
+        1,
+        2
+      ],
+      "text": [
+        "中文文本",
+        "a b c"
+      ],
+      "label": [
+        1,
+        0
+      ]
+    },
+    "selected_ids": [
+      3,
+      1
+    ],
+    "sizes": {
+      "jsonl_bytes": 215,
+      "Arrow_data_nbytes": 145,
+      "Arrow_IPC_file_bytes": 648,
+      "not_RSS_measurements": true
+    },
+    "JSONL_sha256": "ecb2e4c4bb11bd3dbc290ac2df12b8c7fe3d384766fe3a42126958acdd1dfa44",
+    "eager_map_seen": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explicit_cache_hit_added_calls": 0,
+    "lazy_seen_definition": [],
+    "lazy_seen_after_first_and_new_take2": [
+      0,
+      0,
+      1
+    ],
+    "batched_map_seen_for_one_output": [
+      [
+        0,
+        1
+      ]
+    ],
+    "chars": [
+      11,
+      4,
+      5,
+      9,
+      8
+    ],
+    "map_then_skip_seen": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "skip_then_map_seen": [
+      3
+    ],
+    "take2": [
+      {
+        "id": 0,
+        "text": "hello world",
+        "label": 0
+      },
+      {
+        "id": 1,
+        "text": "中文文本",
+        "label": 1
+      }
+    ],
+    "skip3_first": {
+      "id": 3,
+      "text": "stream me",
+      "label": 1
+    },
+    "stream_len_error": "object of type 'IterableDataset' has no len()",
+    "shuffle_seed42_buffer3_ids": [
+      0,
+      2,
+      1,
+      3,
+      4
+    ],
+    "mmap_and_saved_rows_equal": true,
+    "tokenizer": {
+      "vocab": 50257,
+      "first_output_triggered_input_ids": [
+        0,
+        1
+      ],
+      "calls_after_reiterating": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "token_rows": [
+        {
+          "id": 0,
+          "text": "hello world",
+          "label": 0,
+          "input_ids": [
+            31373,
+            995
+          ],
+          "attention_mask": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": 1,
+          "text": "中文文本",
+          "label": 1,
+          "input_ids": [
+            40792,
+            23877,
+            229,
+            23877,
+            229,
+            17312,
+            105
+          ],
+          "attention_mask": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "text": "a b c",
+          "label": 0,
+          "input_ids": [
+            64,
+            275,
+            269
+          ],
+          "attention_mask": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "text": "stream me",
+          "label": 1,
+          "input_ids": [
+            5532,
+            502
+          ],
+          "attention_mask": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": 4,
+          "text": "last row",
+          "label": 0,
+          "input_ids": [
+            12957,
+            5752
+          ],
+          "attention_mask": [
+            1,
+            1
+          ]
+        }
+      ],
+      "padded_ids_shape": [
+        5,
+        7
+      ],
+      "ids_dtype": "torch.int64",
+      "mask": [
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "all_text_roundtrips": true
+    },
+    "PyTorch": {
+      "IndexedRows_samples": 100,
+      "features_shape": [
+        100,
+        5
+      ],
+      "batches_shapes": [
+        [
+          32,
+          5
+        ],
+        [
+          32,
+          5
+        ],
+        [
+          32,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "features_dtype": "torch.float32",
+      "hf_text_batch_type": "list",
+      "range_single_worker": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "range_two_workers": [
+        3,
+        5,
+        4,
+        6,
+        7
+      ],
+      "actual_two_workers_no_duplicates": true
+    },
+    "model_weights_downloaded": false,
+    "LM_training": false,
+    "large_corpus_benchmark": false
+  },
+  "GPT2_tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "GPT2_assets_verified": [
+    {
+      "file": "config.json",
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+      "bytes": 665
+    },
+    {
+      "file": "tokenizer_config.json",
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "bytes": 26
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "bytes": 1355256
+    }
+  ],
+  "original_missing_data_code_not_invented": true,
+  "C4_Pile_corpus_downloaded": false,
+  "full_paper_or_large_benchmark_reproduced": false
+}

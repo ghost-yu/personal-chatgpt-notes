@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–19讲主解释已存在；第01–09讲已按完整公开文件格式交付，下一讲第10讲。第10–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–19讲主解释已存在；第01–10讲已按完整公开文件格式交付，下一讲第11讲。第11–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -20,6 +20,8 @@
 
 第08讲主56格/37代码格（含空55）+bitsandbytes辅助3格/1代码格，三张原图、四份派生notebook、两份阅读py已交付。全部59格说明/38代码AST、6schema/历史输出核对；原/注释各32主格实际CPU执行，53/54另在独立随机2960参数小OPT/本地词表上下文执行，50代理/51远程tokenizer/52量化加载跳过。原矩阵实际float64缩放、无舍入；独立int8存储/int32累加/FP16异常支路、零尺度/溢出、真实配置互斥和总长/新增token区别通过。未安装bitsandbytes、未下载OPT6.7B或运行CUDA/论文指标。
 
-第09讲basics39+train27+辅助gpt2 6共72格、52代码格；三原notebook/原图、六派生notebook、三py交付。51可解析AST（含shell转换）/9schema/历史输出核对；原basics22悬空逗号SyntaxError保留，阅读版整格注释，多行str同值排版，Markdown2代码详注并实际核对。固定本地GPT2/T5资产仅改加载路径；真实2000行JSONL IterableDataset、原默认batch1000，两轮常量审计补充得到320/63merges和336/79merges，继续消费、旧对象不变、保存重载、Unicode/byte/末批/耗尽通过。basics36长度并列输出可变，保留双方原列表并核对排序契约，其余受控结果一致。原语料/代理/讲师Hub/语言模型训练未运行。下一讲10。
+第09讲basics39+train27+辅助gpt2 6共72格、52代码格；三原notebook/原图、六派生notebook、三py交付。51可解析AST（含shell转换）/9schema/历史输出核对；原basics22悬空逗号SyntaxError保留，阅读版整格注释，多行str同值排版，Markdown2代码详注并实际核对。固定本地GPT2/T5资产仅改加载路径；真实2000行JSONL IterableDataset、原默认batch1000，两轮常量审计补充得到320/63merges和336/79merges，继续消费、旧对象不变、保存重载、Unicode/byte/末批/耗尽通过。basics36长度并列输出可变，保留双方原列表并核对排序契约，其余受控结果一致。原语料/代理/讲师Hub/语言模型训练未运行。（第09讲交付时下一讲为10。）
+
+第10讲原13格/6代码/4图、两份27格派生notebook、Python阅读版与独立数据读取教学补充已交付。原字节/全部元数据与历史输出、3schema/6AST核对；原/注释各6格实际展示一致。补充真实5行JSONL/Arrow映射/显式缓存/延迟与batched map/skip顺序、固定GPT2分词与int64[5,7] padding、float32[100,5] DataLoader末批、Windows2worker range分片无重复。215bytes LF与旧220bytes CRLF区分，145/648bytes非RSS。原字幕数据代码未保存，未冒充原格；无C4/Pile/约20GBbenchmark/模型训练/多GPU。下一讲11。
 
 工作区 G:/zzz/README.md 指向正式仓库；另外三个本地材料目录含上游、字幕、缓存和共享环境，仍被复现引用，不能当成无用副本删除。各讲README为阅读入口；未补齐注释的讲次必须明确标明状态。一次性旧整理脚本准备资料.py、prepare_lesson09.py、prepare_lesson10.py及prepare_publication.py已移除，维护以仓库内复现/scripts为准。

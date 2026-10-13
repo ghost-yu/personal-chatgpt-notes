@@ -1,6 +1,13 @@
+# Python 3.12；torch先按复现README安装CPU wheel，此处固定API版本。
+torch==2.5.1
 datasets==2.19.2
 pyarrow==16.1.0
 numpy==1.26.4
 pandas==2.2.2
-huggingface-hub==0.23.4
+huggingface-hub==0.36.2
 fsspec==2024.3.1
+transformers==4.44.2
+tokenizers==0.19.1
+IPython==8.37.0
+nbformat==5.10.4
+Pillow==12.3.0

@@ -30,5 +30,49 @@
       "sha256": "127058210414a40ffbe03b402708c00c24bfb9d48d75e9a8160eb55e8b9363ef"
     }
   ],
-  "datasets_reference_sha": "7290bbde1c73b45479f98239e976082a991033a6"
+  "datasets_reference_sha": "7290bbde1c73b45479f98239e976082a991033a6",
+  "published_originals": [
+    {
+      "source": "tutorials/pretrain_corpus_大模型预训练语料.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/pretrain_corpus_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99.ipynb",
+      "bytes": 2321108,
+      "sha256": "a72dab4de6111c0a41674dd41a9efd7593cf3498a282a60cd1107352517f72d3",
+      "published_path": "代码/tutorials/pretrain_corpus_大模型预训练语料.ipynb",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/en-dataset.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/en-dataset.png",
+      "bytes": 717260,
+      "sha256": "d2322618c13eb85cb8a8e688e84221310675967737f306cb880d804e538fadce",
+      "published_path": "代码/imgs/en-dataset.png",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/ch-dataset.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/ch-dataset.png",
+      "bytes": 624472,
+      "sha256": "dc8cdeedef63df0e5dd9aa6cf04dbb845a33409bf2ddb85218a9a637209a8d71",
+      "published_path": "代码/imgs/ch-dataset.png",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/c4.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/c4.png",
+      "bytes": 120770,
+      "sha256": "71ff6d783b5e623dc1832da24a2466c27d790db7c1e2166a15bec5975827461c",
+      "published_path": "代码/imgs/c4.png",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/pile.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/pile.png",
+      "bytes": 274921,
+      "sha256": "c0dc440e1e9b2af5d149563b9360f16c4436780a5fc6ad6136f6507e5d645fab",
+      "published_path": "代码/imgs/pile.png",
+      "original_bytes_preserved": true
+    }
+  ],
+  "legacy_hash_scope": "旧sha256为本地Git工作副本；published_originals核对远程下载原字节。",
+  "scope": "原13格/6代码格/4图完整说明；缺失的数据演示独立标为教学补充。"
 }
