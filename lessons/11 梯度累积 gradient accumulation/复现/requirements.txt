@@ -1,1 +1,15 @@
-# Python standard library only. No torch required for this teaching verification.
+# 最新完整验证：Python3.12；先按复现README安装CPU torch。
+torch==2.5.1
+transformers==4.44.2
+accelerate==0.34.2
+datasets==2.19.2
+pyarrow==16.1.0
+numpy==1.26.4
+pandas==2.2.2
+huggingface-hub==0.36.2
+fsspec==2024.3.1
+nvidia-ml-py==12.560.30
+IPython==8.37.0
+nbformat==5.10.4
+Pillow==12.3.0
+# 早期verify_accumulation.py仍只需标准库，不使用这些依赖。

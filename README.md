@@ -10,9 +10,9 @@
 2. **代码注释.ipynb**：对照原课程代码，阅读详细中文注释与逐格说明。GitHub 和 Jupyter 可按 notebook 展示。
 3. **代码注释.py**：喜欢纯文本代码时看这一份，避免 notebook 的 JSON；主要用于阅读，执行方法见本讲复现文档。
 
-原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–10** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **11–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **11** 讲。
+原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–11** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **12–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **12** 讲。
 
-## 已有完整代码注释：01–10
+## 已有完整代码注释：01–11
 
 | 讲次 | 中文讲解 | 带注释 notebook | 纯文本代码 |
 |---|---|---|---|
@@ -26,13 +26,13 @@
 | 08 | [LLM.int8量化与bitsandbytes](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/解释.md) | [看代码与注释](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/代码注释.ipynb) | [Python版](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/LLM.int8_代码注释.py) |
 | 09 | [BPE与GPT-2 tokenizer](lessons/09%20BPE%20与%20GPT-2%20tokenizer/解释.md) | [基础与训练阅读入口](lessons/09%20BPE%20与%20GPT-2%20tokenizer/README.md) | [Python版](lessons/09%20BPE%20与%20GPT-2%20tokenizer/代码/tutorials/tokenizer_basics_代码注释.py) |
 | 10 | [预训练语料、memory mapping 与 streaming](lessons/10%20预训练语料、memory%20mapping%20与%20streaming/解释.md) | [原图与数据演示阅读入口](lessons/10%20预训练语料、memory%20mapping%20与%20streaming/README.md) | [Python版](lessons/10%20预训练语料、memory%20mapping%20与%20streaming/代码/tutorials/pretrain_corpus_大模型预训练语料_代码注释.py) |
+| 11 | [梯度累积](lessons/11%20梯度累积%20gradient%20accumulation/解释.md) | [训练循环与窗口修正入口](lessons/11%20梯度累积%20gradient%20accumulation/README.md) | [Python版](lessons/11%20梯度累积%20gradient%20accumulation/代码/tutorials/gradient_accumulation_代码注释.py) |
 
 <details>
-<summary>第 11–19 讲：已有讲解，完整代码注释待补（展开查看）</summary>
+<summary>第 12–19 讲：已有讲解，完整代码注释待补（展开查看）</summary>
 
 | 讲次 | 中文讲解 |
 |---|---|
-| 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md) |
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) |
 | 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) |
 | 14 | [Llama 2 introduction 与 Guanaco](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/%E8%A7%A3%E9%87%8A.md) |

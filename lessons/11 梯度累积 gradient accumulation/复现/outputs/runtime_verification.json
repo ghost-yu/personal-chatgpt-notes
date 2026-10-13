@@ -1,0 +1,760 @@
+{
+  "environment": {
+    "OS": "Windows-11-10.0.26200-SP0",
+    "Python": "3.12.14",
+    "packages": {
+      "torch": "2.5.1+cpu",
+      "transformers": "4.44.2",
+      "accelerate": "0.34.2",
+      "datasets": "2.19.2",
+      "numpy": "1.26.4",
+      "nvidia-ml-py": "12.560.30",
+      "IPython": "8.37.0",
+      "nbformat": "5.10.4",
+      "Pillow": "12.3.0"
+    }
+  },
+  "original_code_results": [
+    {
+      "cell": 0,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 2,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "image_sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d"
+    },
+    {
+      "cell": 8,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 9,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "grad_value": 2.0,
+      "dtype": "torch.float32"
+    },
+    {
+      "cell": 10,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "grad_value": 4.0,
+      "dtype": "torch.float32"
+    },
+    {
+      "cell": 12,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 13,
+      "status": "entire_original_source_executed",
+      "stdout": "GPU memory occupied: 0 MB.\n"
+    },
+    {
+      "cell": 15,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "shape": [
+        1024,
+        512
+      ],
+      "numpy_input_sha256": "66bdd666de75a999e2fe58a20a4fd8b5a37893c2b7630d13f22005fbaeb63716"
+    },
+    {
+      "cell": 16,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "labels": [
+        0,
+        1
+      ]
+    },
+    {
+      "cell": 18,
+      "status": "not_run",
+      "reason": "Do not set teacher localhost proxy"
+    },
+    {
+      "cell": 19,
+      "status": "not_run",
+      "reason": "No BERT-large download or CUDA build"
+    },
+    {
+      "cell": 20,
+      "status": "entire_original_source_executed",
+      "stdout": "GPU memory occupied: 0 MB.\n"
+    },
+    {
+      "cell": 21,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 23,
+      "status": "separate_scope",
+      "reason": "Entire source executed with controlled CPU context below"
+    },
+    {
+      "cell": 26,
+      "status": "separate_scope",
+      "reason": "Three explicit CPU teaching AST substitutions below"
+    }
+  ],
+  "annotated_code_results": [
+    {
+      "cell": 0,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 2,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "image_sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d"
+    },
+    {
+      "cell": 8,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 9,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "grad_value": 2.0,
+      "dtype": "torch.float32"
+    },
+    {
+      "cell": 10,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "grad_value": 4.0,
+      "dtype": "torch.float32"
+    },
+    {
+      "cell": 12,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 13,
+      "status": "entire_original_source_executed",
+      "stdout": "GPU memory occupied: 0 MB.\n"
+    },
+    {
+      "cell": 15,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "shape": [
+        1024,
+        512
+      ],
+      "numpy_input_sha256": "66bdd666de75a999e2fe58a20a4fd8b5a37893c2b7630d13f22005fbaeb63716"
+    },
+    {
+      "cell": 16,
+      "status": "entire_original_source_executed",
+      "stdout": "",
+      "labels": [
+        0,
+        1
+      ]
+    },
+    {
+      "cell": 18,
+      "status": "not_run",
+      "reason": "Do not set teacher localhost proxy"
+    },
+    {
+      "cell": 19,
+      "status": "not_run",
+      "reason": "No BERT-large download or CUDA build"
+    },
+    {
+      "cell": 20,
+      "status": "entire_original_source_executed",
+      "stdout": "GPU memory occupied: 0 MB.\n"
+    },
+    {
+      "cell": 21,
+      "status": "entire_original_source_executed",
+      "stdout": ""
+    },
+    {
+      "cell": 23,
+      "status": "separate_scope",
+      "reason": "Entire source executed with controlled CPU context below"
+    },
+    {
+      "cell": 26,
+      "status": "separate_scope",
+      "reason": "Three explicit CPU teaching AST substitutions below"
+    }
+  ],
+  "original_annotated_11_unmodified_cells_equal": true,
+  "hardware_NVML": {
+    "torch_visible_cuda_devices": 0,
+    "real_NVML_devices": 1,
+    "real_NVML_used_bytes": [
+      243269632
+    ],
+    "warning": "Original helper loops over torch CUDA count; CPU torch prints 0 even when NVML sees hardware."
+  },
+  "actual_original_Markdown_loops_and_corrected": {
+    "scope": "actual CPU float64 Linear/SGD/MSE and original Markdown loops; no BERT-large benchmark",
+    "big_gradient": [
+      15.0,
+      5.0
+    ],
+    "original_and_corrected": [
+      {
+        "case": "full_window",
+        "original_parameters": [
+          -0.5,
+          -0.5
+        ],
+        "corrected_parameters": [
+          -0.5,
+          -0.5
+        ],
+        "corrected_windows": [
+          {
+            "after_micro_batch": 4,
+            "samples": 4,
+            "gradient": [
+              15.0,
+              5.0
+            ]
+          }
+        ]
+      },
+      {
+        "case": "tail_window",
+        "original_parameters": [
+          0.75,
+          -0.15000000000000002
+        ],
+        "corrected_parameters": [
+          0.5,
+          -0.30000000000000004
+        ],
+        "corrected_windows": [
+          {
+            "after_micro_batch": 2,
+            "samples": 2,
+            "gradient": [
+              5.0,
+              3.0
+            ]
+          }
+        ]
+      }
+    ],
+    "vanilla_each_micro_parameters": [
+      0.21119999999999994,
+      -0.49920000000000003
+    ],
+    "unequal_window_gradient": [
+      69.99999999999999,
+      8.666666666666666
+    ],
+    "ten_windows": [
+      {
+        "after_micro_batch": 4,
+        "samples": 4,
+        "gradient": [
+          2.0,
+          2.0
+        ]
+      },
+      {
+        "after_micro_batch": 8,
+        "samples": 4,
+        "gradient": [
+          1.2000000000000002,
+          1.2000000000000002
+        ]
+      },
+      {
+        "after_micro_batch": 10,
+        "samples": 2,
+        "gradient": [
+          0.72,
+          0.72
+        ]
+      }
+    ],
+    "same_graph_grads": [
+      2.0,
+      4.0
+    ],
+    "freed_graph_error": "Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed). Saved intermediate values of the graph are freed when you call .backward() or autograd.grad(). Specify retain_graph=True if you need to backward through the graph a second time or if you need to access saved tensors after calling backward.",
+    "new_graph_after_grad_None": 2.0
+  },
+  "Markdown_annotations_results_equal": true,
+  "CPU_BERT_Trainer_runs": [
+    {
+      "original_cell": 23,
+      "scope": "entire original cell with provided CPU model/data context",
+      "changes": [
+        "num_seqs",
+        "seq_len",
+        "provided random CPU BertConfig model in initial context"
+      ],
+      "num_samples": 8,
+      "seq_len": 16,
+      "model_parameters": 490786,
+      "global_step": 2,
+      "training_loss": 0.6950253248214722,
+      "callback_events": [
+        "update",
+        "update"
+      ],
+      "observed_forward_shapes": [
+        {
+          "input_ids": [
+            4,
+            16
+          ],
+          "labels": [
+            4
+          ],
+          "logits": [
+            4,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            4,
+            16
+          ],
+          "labels": [
+            4
+          ],
+          "logits": [
+            4,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        }
+      ],
+      "per_device_batch": 4,
+      "accumulation": 1,
+      "torch_visible_cuda_devices": 0,
+      "actual_device": "cpu",
+      "dataset_numpy_SHA256": "ba7264303827e6b59e0e90a7bddf34b8e5b467148bad84d5b866431c1a2b7ff3",
+      "stdout": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\transformers\\training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead\n  warnings.warn(\n{'train_runtime': 0.2402, 'train_samples_per_second': 33.304, 'train_steps_per_second': 8.326, 'train_loss': 0.6950253248214722, 'epoch': 1.0}\nTime: 0.24\nSamples/second: 33.30\nGPU memory occupied: 0 MB.\n",
+      "real_Trainer_optimizer_backward_used": true,
+      "no_model_weights_downloaded": true,
+      "not_original_GPU_benchmark": true,
+      "version": "original"
+    },
+    {
+      "original_cell": 26,
+      "scope": "explicit three AST-substitution CPU teaching variant",
+      "changes": [
+        "num_seqs",
+        "seq_len",
+        "BERT-large/CUDA load -> random CPU BertConfig fixture"
+      ],
+      "num_samples": 8,
+      "seq_len": 16,
+      "model_parameters": 490786,
+      "global_step": 2,
+      "training_loss": 0.6950253248214722,
+      "callback_events": [
+        "micro",
+        "micro",
+        "micro",
+        "update",
+        "micro",
+        "micro",
+        "micro",
+        "update"
+      ],
+      "observed_forward_shapes": [
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        }
+      ],
+      "per_device_batch": 1,
+      "accumulation": 4,
+      "torch_visible_cuda_devices": 0,
+      "actual_device": "cpu",
+      "dataset_numpy_SHA256": "ba7264303827e6b59e0e90a7bddf34b8e5b467148bad84d5b866431c1a2b7ff3",
+      "stdout": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\transformers\\training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead\n  warnings.warn(\n{'train_runtime': 0.1191, 'train_samples_per_second': 67.157, 'train_steps_per_second': 16.789, 'train_loss': 0.6950253248214722, 'epoch': 1.0}\nTime: 0.12\nSamples/second: 67.16\nGPU memory occupied: 0 MB.\n",
+      "real_Trainer_optimizer_backward_used": true,
+      "no_model_weights_downloaded": true,
+      "not_original_GPU_benchmark": true,
+      "version": "original"
+    },
+    {
+      "original_cell": 23,
+      "scope": "entire original cell with provided CPU model/data context",
+      "changes": [
+        "num_seqs",
+        "seq_len",
+        "provided random CPU BertConfig model in initial context"
+      ],
+      "num_samples": 8,
+      "seq_len": 16,
+      "model_parameters": 490786,
+      "global_step": 2,
+      "training_loss": 0.6950253248214722,
+      "callback_events": [
+        "update",
+        "update"
+      ],
+      "observed_forward_shapes": [
+        {
+          "input_ids": [
+            4,
+            16
+          ],
+          "labels": [
+            4
+          ],
+          "logits": [
+            4,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            4,
+            16
+          ],
+          "labels": [
+            4
+          ],
+          "logits": [
+            4,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        }
+      ],
+      "per_device_batch": 4,
+      "accumulation": 1,
+      "torch_visible_cuda_devices": 0,
+      "actual_device": "cpu",
+      "dataset_numpy_SHA256": "ba7264303827e6b59e0e90a7bddf34b8e5b467148bad84d5b866431c1a2b7ff3",
+      "stdout": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\transformers\\training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead\n  warnings.warn(\n{'train_runtime': 0.0849, 'train_samples_per_second': 94.242, 'train_steps_per_second': 23.56, 'train_loss': 0.6950253248214722, 'epoch': 1.0}\nTime: 0.08\nSamples/second: 94.24\nGPU memory occupied: 0 MB.\n",
+      "real_Trainer_optimizer_backward_used": true,
+      "no_model_weights_downloaded": true,
+      "not_original_GPU_benchmark": true,
+      "version": "annotated"
+    },
+    {
+      "original_cell": 26,
+      "scope": "explicit three AST-substitution CPU teaching variant",
+      "changes": [
+        "num_seqs",
+        "seq_len",
+        "BERT-large/CUDA load -> random CPU BertConfig fixture"
+      ],
+      "num_samples": 8,
+      "seq_len": 16,
+      "model_parameters": 490786,
+      "global_step": 2,
+      "training_loss": 0.6950253248214722,
+      "callback_events": [
+        "micro",
+        "micro",
+        "micro",
+        "update",
+        "micro",
+        "micro",
+        "micro",
+        "update"
+      ],
+      "observed_forward_shapes": [
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        },
+        {
+          "input_ids": [
+            1,
+            16
+          ],
+          "labels": [
+            1
+          ],
+          "logits": [
+            1,
+            2
+          ],
+          "loss_shape": [],
+          "ids_dtype": "torch.int64",
+          "logits_dtype": "torch.float32"
+        }
+      ],
+      "per_device_batch": 1,
+      "accumulation": 4,
+      "torch_visible_cuda_devices": 0,
+      "actual_device": "cpu",
+      "dataset_numpy_SHA256": "ba7264303827e6b59e0e90a7bddf34b8e5b467148bad84d5b866431c1a2b7ff3",
+      "stdout": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\transformers\\training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead\n  warnings.warn(\n{'train_runtime': 0.1251, 'train_samples_per_second': 63.962, 'train_steps_per_second': 15.99, 'train_loss': 0.6950253248214722, 'epoch': 1.0}\nTime: 0.13\nSamples/second: 63.96\nGPU memory occupied: 0 MB.\n",
+      "real_Trainer_optimizer_backward_used": true,
+      "no_model_weights_downloaded": true,
+      "not_original_GPU_benchmark": true,
+      "version": "annotated"
+    }
+  ],
+  "original_annotated_CPU_Trainer_parameters_exactly_equal": true,
+  "baseline_accumulation_initial_data_and_parameters_equal": true,
+  "baseline_accumulation_max_parameter_delta": 9.313225746154785e-10,
+  "supplement_sha256": "70bb3eb3ada02ca16b18da2cf502899d4302c76f834566eb93b09b69cae9504d",
+  "BERT_large_downloaded": false,
+  "CUDA_training_or_original_benchmark_reproduced": false
+}

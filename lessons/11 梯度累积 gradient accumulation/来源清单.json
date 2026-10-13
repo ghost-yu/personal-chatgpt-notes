@@ -28,5 +28,24 @@
       "name": "trainer-v4.30.0.py",
       "sha256": "7925a24e2041c9475507d5e0fe7627cbbe6e334b8c6ea2bc223d25a64e80ebea"
     }
-  ]
+  ],
+  "published_originals": [
+    {
+      "source": "tutorials/gradient_accumulation.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gradient_accumulation.ipynb",
+      "bytes": 26156,
+      "sha256": "0d4ddca7593b5d01a3d2855411f6058b419029519f08c292103123e9d3cd131b",
+      "published_path": "代码/tutorials/gradient_accumulation.ipynb",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/grad-accumulation.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/grad-accumulation.png",
+      "bytes": 7346,
+      "sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d",
+      "published_path": "代码/imgs/grad-accumulation.png",
+      "original_bytes_preserved": true
+    }
+  ],
+  "legacy_hash_scope": "旧sha256为本地Git工作副本；published_originals为远程原字节。"
 }
