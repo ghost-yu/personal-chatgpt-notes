@@ -1,0 +1,12 @@
+{
+  "initial_import_failure": {
+    "package": "pyarrow",
+    "version": "26.0.0",
+    "numpy": "1.26.4",
+    "error": "ImportError: pyarrow requires NumPy 2.0 or newer, found 1.26.4"
+  },
+  "repair": "python -m pip install pyarrow==16.1.0 pandas==2.2.2",
+  "final_import_and_pipeline": "passed",
+  "original_notebook_install_cell_executed": false,
+  "environment": "独立torch-cpu环境补装固定教学依赖，非老师dev版本"
+}

@@ -1,0 +1,219 @@
+{
+  "status": "部分成功",
+  "python": "3.12.14",
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "peft": "0.12.0",
+    "accelerate": "0.34.2",
+    "datasets": "2.19.2",
+    "tokenizers": "0.19.1",
+    "pyarrow": "16.1.0",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4"
+  },
+  "source_sha256": "910ab25e69884d365f8e4f01312421109229d2dcc1b5d62e1692bee0d92dc556",
+  "device": "cpu",
+  "offline": true,
+  "tiny_model": {
+    "hidden_size": 16,
+    "n_layer": 2,
+    "n_head": 2,
+    "vocab_size": 30,
+    "random_weights": true,
+    "quantized": false
+  },
+  "original_cells_executed": [
+    {
+      "cell": 10,
+      "original_source_executed": true,
+      "result_type": "BloomForCausalLM"
+    },
+    {
+      "cell": 11,
+      "original_source_executed": true,
+      "result_type": "Embedding"
+    },
+    {
+      "cell": 12,
+      "original_source_executed": true,
+      "result_type": "PreTrainedTokenizerFast"
+    },
+    {
+      "cell": 14,
+      "original_source_executed": true,
+      "result_type": "dtype"
+    },
+    {
+      "cell": 15,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 16,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 17,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 19,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 20,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 21,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 22,
+      "original_source_executed": true,
+      "result_type": "PeftModelForCausalLM"
+    },
+    {
+      "cell": 26,
+      "original_source_executed": true,
+      "result_type": "DatasetDict"
+    },
+    {
+      "cell": 27,
+      "original_source_executed": true,
+      "result_type": "Dataset"
+    },
+    {
+      "cell": 28,
+      "original_source_executed": true,
+      "result_type": "DataFrame"
+    },
+    {
+      "cell": 29,
+      "original_source_executed": true,
+      "result_type": "list"
+    },
+    {
+      "cell": 30,
+      "original_source_executed": true,
+      "result_type": "list"
+    },
+    {
+      "cell": 31,
+      "original_source_executed": true,
+      "result_type": "dict"
+    },
+    {
+      "cell": 32,
+      "original_source_executed": true,
+      "result_type": "str"
+    },
+    {
+      "cell": 33,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 34,
+      "original_source_executed": true,
+      "result_type": "list"
+    },
+    {
+      "cell": 35,
+      "original_source_executed": true,
+      "result_type": "dict"
+    },
+    {
+      "cell": 36,
+      "original_source_executed": true,
+      "result_type": "BatchEncoding"
+    },
+    {
+      "cell": 38,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 39,
+      "original_source_executed": true,
+      "result_type": "DatasetDict"
+    },
+    {
+      "cell": 41,
+      "original_source_executed": true,
+      "result_type": "NoneType"
+    },
+    {
+      "cell": 46,
+      "original_source_executed": true,
+      "result_type": "DataCollatorForLanguageModeling"
+    }
+  ],
+  "lora_targets": [
+    "base_model.model.transformer.h.0.self_attention.query_key_value",
+    "base_model.model.transformer.h.1.self_attention.query_key_value"
+  ],
+  "lora_scale": 2,
+  "trainable_parameters": 2048,
+  "embedding_weight_frozen_output_grad_enabled": true,
+  "gradient_checkpointing_enabled": true,
+  "synthetic_dataset_rows": 5,
+  "tokenized_fields": [
+    "quote",
+    "author",
+    "tags",
+    "prediction",
+    "input_ids",
+    "attention_mask"
+  ],
+  "collator_shape": [
+    2,
+    14
+  ],
+  "padding_targets_ignored": 7,
+  "shift_valid_targets": 19,
+  "clm_loss": 3.4229278564453125,
+  "manual_shift_loss_error": 0.0,
+  "initial_nonzero_gradient_names": [
+    "base_model.model.transformer.h.0.self_attention.query_key_value.lora_B.default.weight",
+    "base_model.model.transformer.h.1.self_attention.query_key_value.lora_B.default.weight"
+  ],
+  "base_weights_unchanged": true,
+  "changed_adapter_names": [
+    "base_model.model.transformer.h.0.self_attention.query_key_value.lora_A.default.weight",
+    "base_model.model.transformer.h.0.self_attention.query_key_value.lora_B.default.weight",
+    "base_model.model.transformer.h.1.self_attention.query_key_value.lora_A.default.weight",
+    "base_model.model.transformer.h.1.self_attention.query_key_value.lora_B.default.weight"
+  ],
+  "teaching_training": {
+    "global_step": 2,
+    "micro_batch": 2,
+    "accumulation": 2,
+    "fp16": false,
+    "warmup": 0,
+    "learning_rate": 0.002,
+    "training_loss": 3.4140349626541138
+  },
+  "generated_new_tokens": 3,
+  "generated_shape": [
+    1,
+    7
+  ],
+  "not_reproduced": [
+    "7B pretrained/8bit/device_map加载",
+    "原BLOOM tokenizer",
+    "Abirate数据集",
+    "watermark原环境",
+    "原FP16/200步训练",
+    "两条原CUDA生成",
+    "论文任务指标"
+  ],
+  "limits": "新版固定库、随机小型BLOOM、新编5条数据和自建词表；真实调用链验证，不是原7B或论文性能复现",
+  "captured_library_stdout": "trainable params: 2048 || all params: 9152 || trainable%: 22.377622377622377\n{'loss': 3.4169, 'grad_norm': 0.003827102016657591, 'learning_rate': 0.001, 'epoch': 0.6666666666666666}\n{'loss': 3.4112, 'grad_norm': 0.0036175393033772707, 'learning_rate': 0.0, 'epoch': 1.3333333333333333}\n{'train_runtime': 0.046, 'train_samples_per_second': 173.997, 'train_steps_per_second': 43.499, 'train_loss': 3.4140349626541138, 'epoch': 1.3333333333333333}\n"
+}
