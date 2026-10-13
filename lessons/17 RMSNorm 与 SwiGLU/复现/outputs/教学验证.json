@@ -1,0 +1,54 @@
+{
+  "status": "部分成功",
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "seed": 17,
+  "input_shape": [
+    20,
+    5,
+    10
+  ],
+  "ln_mean_max_abs": 1.5265566588595902e-16,
+  "rms_mean_not_forced_zero": -0.46117283928130115,
+  "rms_l2_min_max": [
+    3.162268695260169,
+    3.16227719205144
+  ],
+  "sqrt10": 3.1622776601683795,
+  "gain2_l2": 2.8284271247461903,
+  "rms_gradient_max_error": 1.840997354563001e-10,
+  "silu_values": [
+    -0.2384058440442351,
+    0.0,
+    1.7615941559557646
+  ],
+  "ffn_input_shape": [
+    2,
+    3,
+    4
+  ],
+  "ffn_hidden_shape": [
+    2,
+    3,
+    6
+  ],
+  "ffn_output_shape": [
+    2,
+    3,
+    4
+  ],
+  "ffn_gradient_max_error": 4.157767463652817e-10,
+  "official_forward": {
+    "status": "passed AST-extracted forward with NumPy fixtures",
+    "sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+    "max_error": 0.0
+  },
+  "llama_7b_ffn_width": 11008,
+  "swiglu_parameters_per_layer": 135266304,
+  "standard_4d_ffn_parameters": 134217728,
+  "limitations": [
+    "No PyTorch/FairScale forward or autograd",
+    "No trained weights, model generation, GPU benchmark, or paper training reproduction",
+    "NumPy float64 gradients do not verify FP16/BF16 numerical behavior"
+  ]
+}

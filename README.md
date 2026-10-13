@@ -23,9 +23,10 @@
 | 15 | [Llama 2 text 与 chat completion](lessons/15%20Llama%202%20text%20%E4%B8%8E%20chat%20completion/%E8%A7%A3%E9%87%8A.md) | 解释完成；官方包装方法与真实 tokenizer 验证通过，生成器为 fixture |
 | 16 | [TRL 基础与 reward/PPOTrainer](lessons/16%20TRL%20%E5%9F%BA%E7%A1%80%E4%B8%8E%20reward%20PPOTrainer/%E8%A7%A3%E9%87%8A.md) | 解释完成；真实 tokenizer/边界/PPO 数学验证通过，未运行 PPO 更新 |
 
+| 17 | [RMSNorm 与 SwiGLU](lessons/17%20RMSNorm%20%E4%B8%8E%20SwiGLU/%E8%A7%A3%E9%87%8A.md) | 解释完成；数学/梯度/官方 forward fixture 验证通过，未运行 PyTorch 模型 |
+
 ## 待完成
 
-- 17：RMSNorm 与 SwiGLU
 - 18：RoPE 复数形式
 - 19：apply_rotary_emb
 - 20：KV cache

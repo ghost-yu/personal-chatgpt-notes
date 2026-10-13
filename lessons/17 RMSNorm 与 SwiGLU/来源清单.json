@@ -1,0 +1,30 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/llama2_src_02_RMSNorm_SwiGLU.ipynb",
+  "sha256": "93f2882a152fab153f31675c651b3747f282c81c814a2b817143b64eac655a12",
+  "cells": 28,
+  "syntax": "passed",
+  "meta_commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+  "meta_model_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "transcript": "未找到独立第17讲字幕；检查 E:/ 下 21 个 txt，8771b843 对应第15讲，不冒用",
+  "papers": [
+    {
+      "name": "RMSNorm",
+      "url": "https://arxiv.org/pdf/1910.07467v1",
+      "sha256": "a38ab771022fc10525d2b6b23de40307b2ca7b2bf463f5219da6a0ba1c41225f",
+      "download": "success"
+    },
+    {
+      "name": "GLU",
+      "url": "https://arxiv.org/pdf/2002.05202v1",
+      "sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+      "download": "success"
+    },
+    {
+      "name": "Swish",
+      "url": "https://arxiv.org/pdf/1710.05941v1",
+      "sha256": "8601571a76e36a43793c9b9ef5c79535c2a0b2620ee3a5d54190e48bbc4e7b65",
+      "download": "success"
+    }
+  ]
+}
