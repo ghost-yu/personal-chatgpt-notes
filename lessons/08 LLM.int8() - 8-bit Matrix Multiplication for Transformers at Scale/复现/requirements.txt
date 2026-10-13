@@ -1,1 +1,8 @@
-# Pure Python standard library; no third-party package required.
+# 本次CPU教学验证环境；没有bitsandbytes CUDA后端。
+torch==2.5.1
+numpy==1.26.4
+transformers==4.44.2
+tokenizers==0.19.1
+ipython==8.37.0
+nbformat==5.10.4
+Pillow==12.3.0

@@ -1,0 +1,114 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "source": "tutorials/LLM.int8.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/LLM.int8.ipynb",
+      "published_path": "代码/tutorials/LLM.int8.ipynb",
+      "bytes": 1091918,
+      "sha256": "0b5ff8c81b5f5048eefc57a919bce7828899fe7c72a8bd24835c2b934628132f",
+      "original_bytes_preserved": true,
+      "cells": 56,
+      "code_cells": [
+        0,
+        2,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31,
+        33,
+        34,
+        36,
+        38,
+        40,
+        41,
+        42,
+        43,
+        45,
+        46,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "original_environment": {
+        "codemirror_mode": {
+          "name": "ipython",
+          "version": 3
+        },
+        "file_extension": ".py",
+        "mimetype": "text/x-python",
+        "name": "python",
+        "nbconvert_exporter": "python",
+        "pygments_lexer": "ipython3",
+        "version": "3.10.9"
+      }
+    },
+    {
+      "source": "tutorials/bitsandbytes.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/bitsandbytes.ipynb",
+      "published_path": "代码/tutorials/bitsandbytes.ipynb",
+      "bytes": 1350,
+      "sha256": "4d1cfa595b0baa1e0c3865f2645d381bfba4d5d1a425c6737792b983642f1cdc",
+      "original_bytes_preserved": true,
+      "cells": 3,
+      "code_cells": [
+        1
+      ],
+      "original_environment": {
+        "codemirror_mode": {
+          "name": "ipython",
+          "version": 3
+        },
+        "file_extension": ".py",
+        "mimetype": "text/x-python",
+        "name": "python",
+        "nbconvert_exporter": "python",
+        "pygments_lexer": "ipython3",
+        "version": "3.10.9"
+      }
+    },
+    {
+      "source": "imgs/floats-rep.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/floats-rep.png",
+      "published_path": "代码/imgs/floats-rep.png",
+      "bytes": 177417,
+      "sha256": "f35ce5d6776b44643daf10c94a0299dd89df578e82c6a3e183cae972d266b068",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/quant-freeze.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/quant-freeze.png",
+      "published_path": "代码/imgs/quant-freeze.png",
+      "bytes": 251459,
+      "sha256": "77f49147ee2f69632f62c744ed8b235f9efb7f25c123e7c093f9acfddd196523",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "imgs/llm-int8.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/llm-int8.png",
+      "published_path": "代码/imgs/llm-int8.png",
+      "bytes": 336409,
+      "sha256": "df22197e2a262f4cc05025be48638535215ee71ac56cffea1868c7c25663d048",
+      "original_bytes_preserved": true
+    }
+  ],
+  "OPT_weights_downloaded": false
+}
