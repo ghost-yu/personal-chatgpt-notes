@@ -27,3 +27,5 @@
 第11讲原28格/15代码/原图、两份57格派生notebook、Python阅读版与窗口归一化教学补充已交付。原字节/元数据/历史输出、3schema/15AST及Markdown5/7循环AST通过；原/注释各11格整格执行一致，真实float64 Linear/MSE/SGD完整/短/不等窗口与旧图错误验证。真实Transformers4.44.2/Accelerate0.34.2、490786参数随机CPU BERT，8×16同数据/同初始化/dropout0，原23整格提供CPU上下文、26仅三个AST教学替换，四次train均2更新；原/注释状态精确一致，baseline/累积最大参数差约9.3e-10。实际NVML1卡但CPU torch可见0，原helper打印0不得当空闲GPU。未执行代理/远程BERT-large/CUDA/AMP/DDP或原显存benchmark，框架短窗口未验证。下一讲12。
 
 工作区 G:/zzz/README.md 指向正式仓库；另外三个本地材料目录含上游、字幕、缓存和共享环境，仍被复现引用，不能当成无用副本删除。各讲README为阅读入口；未补齐注释的讲次必须明确标明状态。一次性旧整理脚本准备资料.py、prepare_lesson09.py、prepare_lesson10.py及prepare_publication.py已移除，维护以仓库内复现/scripts为准。
+
+用户再次要求整理文件：总目录只列各讲 README，三种日常阅读文件集中说明；原版、说明版和验证证据折叠展示。本地旧学习索引与废弃 prepare_lesson11.py 已删除，旧材料目录 README 指向正式项目；缓存可删除，来源材料及共享运行环境保留原路径。第12讲正在制作的未提交文件保留，不能在清理提交中混入或误标完成。
