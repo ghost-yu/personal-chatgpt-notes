@@ -1,0 +1,188 @@
+{
+  "status": "部分成功",
+  "python": "3.7.6",
+  "IPython": "7.12.0",
+  "nbformat": "5.0.4",
+  "schema_valid": true,
+  "original_cells_and_outputs_preserved": true,
+  "comment_only_and_ast_equal": true,
+  "runs": {
+    "original": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 659569,
+        "png_sha256": "f72de96c0b1099aeeaaa395a5cfd6a5af7fe613c176f5da7962f295181b33e96"
+      },
+      {
+        "cell": 7,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 205328,
+        "png_sha256": "69ea8262a196db75eed937d40610a920f3afdbf6bab05e57380b7843c7ca8f1e"
+      },
+      {
+        "cell": 8,
+        "executed": true,
+        "type": "Image",
+        "width": 500,
+        "bytes": 91736,
+        "png_sha256": "1f8e82e45aaf8a47e966769fc40d5855a21e61336fb747d2d983cfa416f6f35f"
+      },
+      {
+        "cell": 10,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 124929,
+        "png_sha256": "907756b5fdc4433f14c19901e3bbf76c2cc36132cca096f125c6c525198b1839"
+      },
+      {
+        "cell": 14,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 218843,
+        "png_sha256": "751244f267aa92e787704fb4d3116785adc0e90656930ccc36b91d572cd9984d"
+      },
+      {
+        "cell": 15,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 336356,
+        "png_sha256": "a374ac3df8fa3ef87987d610c7201664dae5021d582df741323c5c0fd874116b"
+      }
+    ],
+    "原代码_带说明.ipynb": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 659569,
+        "png_sha256": "f72de96c0b1099aeeaaa395a5cfd6a5af7fe613c176f5da7962f295181b33e96"
+      },
+      {
+        "cell": 7,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 205328,
+        "png_sha256": "69ea8262a196db75eed937d40610a920f3afdbf6bab05e57380b7843c7ca8f1e"
+      },
+      {
+        "cell": 8,
+        "executed": true,
+        "type": "Image",
+        "width": 500,
+        "bytes": 91736,
+        "png_sha256": "1f8e82e45aaf8a47e966769fc40d5855a21e61336fb747d2d983cfa416f6f35f"
+      },
+      {
+        "cell": 10,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 124929,
+        "png_sha256": "907756b5fdc4433f14c19901e3bbf76c2cc36132cca096f125c6c525198b1839"
+      },
+      {
+        "cell": 14,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 218843,
+        "png_sha256": "751244f267aa92e787704fb4d3116785adc0e90656930ccc36b91d572cd9984d"
+      },
+      {
+        "cell": 15,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 336356,
+        "png_sha256": "a374ac3df8fa3ef87987d610c7201664dae5021d582df741323c5c0fd874116b"
+      }
+    ],
+    "代码注释.ipynb": [
+      {
+        "cell": 0,
+        "executed": true
+      },
+      {
+        "cell": 4,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 659569,
+        "png_sha256": "f72de96c0b1099aeeaaa395a5cfd6a5af7fe613c176f5da7962f295181b33e96"
+      },
+      {
+        "cell": 7,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 205328,
+        "png_sha256": "69ea8262a196db75eed937d40610a920f3afdbf6bab05e57380b7843c7ca8f1e"
+      },
+      {
+        "cell": 8,
+        "executed": true,
+        "type": "Image",
+        "width": 500,
+        "bytes": 91736,
+        "png_sha256": "1f8e82e45aaf8a47e966769fc40d5855a21e61336fb747d2d983cfa416f6f35f"
+      },
+      {
+        "cell": 10,
+        "executed": true,
+        "type": "Image",
+        "width": 600,
+        "bytes": 124929,
+        "png_sha256": "907756b5fdc4433f14c19901e3bbf76c2cc36132cca096f125c6c525198b1839"
+      },
+      {
+        "cell": 14,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 218843,
+        "png_sha256": "751244f267aa92e787704fb4d3116785adc0e90656930ccc36b91d572cd9984d"
+      },
+      {
+        "cell": 15,
+        "executed": true,
+        "type": "Image",
+        "width": null,
+        "bytes": 336356,
+        "png_sha256": "a374ac3df8fa3ef87987d610c7201664dae5021d582df741323c5c0fd874116b"
+      }
+    ]
+  },
+  "markdown13_compile_failures": {
+    "原代码_带说明.ipynb": {
+      "type": "SyntaxError",
+      "message": "'return' outside function"
+    },
+    "代码注释.ipynb": {
+      "type": "SyntaxError",
+      "message": "'return' outside function"
+    }
+  },
+  "not_executed": [
+    "原伪代码训练",
+    "BLOOM加载/微调",
+    "论文数据集评估"
+  ]
+}

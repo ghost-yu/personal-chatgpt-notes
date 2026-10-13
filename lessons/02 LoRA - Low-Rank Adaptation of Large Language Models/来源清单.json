@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/02_lora_baics.ipynb",
+  "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/02_lora_baics.ipynb",
+  "upstream_sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa",
+  "local_sha256": "627f9d61e51aa710adb5b353881b00f19fd5224ae0c7c6f71f476b080eb5edf5",
+  "equal_after_line_ending_normalization": true,
+  "all_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "python_code_cells": [
+    0,
+    4,
+    7,
+    8,
+    10,
+    14,
+    15
+  ],
+  "markdown_pseudocode_cells": [
+    13
+  ],
+  "images": [
+    {
+      "path": "imgs/bloom.png",
+      "sha256": "751244f267aa92e787704fb4d3116785adc0e90656930ccc36b91d572cd9984d",
+      "bytes": 218843
+    },
+    {
+      "path": "imgs/bloom_lora.png",
+      "sha256": "a374ac3df8fa3ef87987d610c7201664dae5021d582df741323c5c0fd874116b",
+      "bytes": 336356
+    },
+    {
+      "path": "imgs/lora-weights.png",
+      "sha256": "907756b5fdc4433f14c19901e3bbf76c2cc36132cca096f125c6c525198b1839",
+      "bytes": 124929
+    },
+    {
+      "path": "imgs/lora.png",
+      "sha256": "f72de96c0b1099aeeaaa395a5cfd6a5af7fe613c176f5da7962f295181b33e96",
+      "bytes": 659569
+    },
+    {
+      "path": "imgs/regular-finetuning-alt.png",
+      "sha256": "1f8e82e45aaf8a47e966769fc40d5855a21e61336fb747d2d983cfa416f6f35f",
+      "bytes": 91736
+    },
+    {
+      "path": "imgs/regular-finetuning.png",
+      "sha256": "69ea8262a196db75eed937d40610a920f3afdbf6bab05e57380b7843c7ca8f1e",
+      "bytes": 205328
+    }
+  ],
+  "paper": "https://arxiv.org/html/2106.09685v2",
+  "scope": "全部原单元与伪代码；新增教学脚本是自编补充，未运行BLOOM/论文任务"
+}

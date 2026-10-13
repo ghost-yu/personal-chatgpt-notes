@@ -1,0 +1,54 @@
+{
+  "status": "成功（教学验证）",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "device": "cpu",
+  "dtype": "float64",
+  "numeric_output": [
+    [
+      16.0,
+      22.0
+    ]
+  ],
+  "batch_shape": [
+    2,
+    3,
+    5
+  ],
+  "max_merge_error": 3.552713678800501e-15,
+  "analytic_gradient_max_error": 3.552713678800501e-15,
+  "initial_factor_a_grad_norm": 0.0,
+  "initial_factor_b_grad_norm": 4.1772967683153786,
+  "factor_a_grad_after_first_update": 1.1769097292021138,
+  "base_unchanged_and_no_grad": true,
+  "initial_mse": 4.0,
+  "final_mse": 1.1113808200327265e-14,
+  "both_zero_init_gradients_zero": true,
+  "parameter_examples": [
+    {
+      "k": 100,
+      "d": 500,
+      "r": 5,
+      "base": 50000,
+      "lora": 3000,
+      "ratio": 0.06
+    },
+    {
+      "k": 768,
+      "d": 768,
+      "r": 8,
+      "base": 589824,
+      "lora": 12288,
+      "ratio": 0.020833333333333332
+    },
+    {
+      "k": 4096,
+      "d": 12288,
+      "r": 16,
+      "base": 50331648,
+      "lora": 262144,
+      "ratio": 0.005208333333333333
+    }
+  ],
+  "limits": "自编小型线性层验证，非原伪代码执行，非PEFT/BLOOM或论文任务复现"
+}
