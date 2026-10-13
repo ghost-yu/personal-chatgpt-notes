@@ -1,0 +1,57 @@
+{
+  "status": "partial",
+  "torch_run": false,
+  "network": "16 scalar sigmoid layers, manual derivatives",
+  "output": 0.6953009698634409,
+  "loss": 0.17719162236017671,
+  "weight_gradients": [
+    2.334710248805428e-12,
+    2.6718051544446507e-11,
+    1.743084750282275e-10,
+    1.0281042345498714e-09,
+    5.738974931144776e-09,
+    3.059771683712581e-08,
+    1.5642862935796902e-07,
+    7.691556650251943e-07,
+    3.6471409141471993e-06,
+    1.67196352283013e-05,
+    7.428061188645703e-05,
+    0.0003205449604257815,
+    0.0013465309751174049,
+    0.005517864467682418,
+    0.02210218620649222,
+    0.08670894163206506
+  ],
+  "max_gradient_difference": 0.0,
+  "max_finite_difference_error": 3.1825904963155453e-12,
+  "input_gradient": 4.669420497610856e-12,
+  "baseline_forward_calls": 16,
+  "replay_forward_calls_total": 32,
+  "baseline_activation_slots": 17,
+  "replay_activation_slots_peak": 8,
+  "slot_definition": "symbolic unique live activation indices, not measured memory",
+  "rng_masks": [
+    0,
+    2,
+    0
+  ],
+  "source_checks": "syntax and BERT training/checkpoint branch passed; no torch execution",
+  "historical_comparison": {
+    "memory_mib": [
+      12917,
+      9305
+    ],
+    "memory_reduction_pct": 27.9631493380816,
+    "runtime_s": [
+      23.78,
+      38.96
+    ],
+    "runtime_increase_pct": 63.835155592935244,
+    "samples_per_second": [
+      21.53,
+      13.14
+    ],
+    "throughput_reduction_pct": 38.968880631676726,
+    "checkpointing_only_ablation": false
+  }
+}

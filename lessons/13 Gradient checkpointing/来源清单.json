@@ -1,0 +1,36 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "gradient_checkpointing.ipynb",
+  "sha256": "a41fc160580b53200693088ed6bdb920274f25528138ece9e77a1ed04c22f35c",
+  "cells": 23,
+  "code_cells": 12,
+  "syntax": "passed",
+  "markdown_code_cell": 21,
+  "transcript": "05cf6b5b-5ecc-4c9f-ac4c-d2ff99a52a9c.txt",
+  "transcript_sha256": "7b9fa8041dfa76b306ff4c6beaf1ffdbb2a61855a244b4505735b051e5de9892",
+  "references": {
+    "paper": "arXiv:1604.06174v2",
+    "transformers": "v4.30.0",
+    "pytorch": "v2.0.1",
+    "modern_docs": "2.14",
+    "teacher_exact_versions": "未锁定"
+  },
+  "source_snapshots": [
+    {
+      "name": "checkpoint-v2.0.1.py",
+      "sha256": "23e658b86d3a30e988c52c12a9daaabd29c7597c6c139f2151d12cc927a7dd50"
+    },
+    {
+      "name": "modeling-bert-v4.30.0.py",
+      "sha256": "21dab0886c7b8c4635a3f57e9d4b15e9b075ac1ca3edf2dace44ee240d9b93b8"
+    },
+    {
+      "name": "modeling-utils-v4.30.0.py",
+      "sha256": "0431850b4ac6f57c0694c8ddee54c1f84e13b1f8ad9d09fb0747e677be222640"
+    },
+    {
+      "name": "paper-v2.pdf",
+      "sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe"
+    }
+  ]
+}

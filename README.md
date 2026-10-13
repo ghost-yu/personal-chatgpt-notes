@@ -18,10 +18,10 @@
 | 10 | [预训练语料、memory mapping 与 streaming](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E8%A7%A3%E9%87%8A.md) | 解释完成；本地 Datasets/Arrow 验证成功，原 benchmark 部分复现 |
 | 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md) | 解释完成；数学/静态验证通过，未运行 BERT |
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) | 解释完成；packing/数学/源码 fixture 验证通过，未运行 Xgen |
+| 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) | 解释完成；梯度/重算/静态验证通过，未运行 BERT 显存实验 |
 
 ## 待完成
 
-- 13：gradient checkpointing
 - 14：Llama 2 introduction 与 Guanaco
 - 15：Llama 2 text/chat completion
 - 16：TRL 基础与 reward/PPOTrainer
