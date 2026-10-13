@@ -21,3 +21,5 @@
 第08讲主56格/37代码格（含空55）+bitsandbytes辅助3格/1代码格，三张原图、四份派生notebook、两份阅读py已交付。全部59格说明/38代码AST、6schema/历史输出核对；原/注释各32主格实际CPU执行，53/54另在独立随机2960参数小OPT/本地词表上下文执行，50代理/51远程tokenizer/52量化加载跳过。原矩阵实际float64缩放、无舍入；独立int8存储/int32累加/FP16异常支路、零尺度/溢出、真实配置互斥和总长/新增token区别通过。未安装bitsandbytes、未下载OPT6.7B或运行CUDA/论文指标。
 
 第09讲basics39+train27+辅助gpt2 6共72格、52代码格；三原notebook/原图、六派生notebook、三py交付。51可解析AST（含shell转换）/9schema/历史输出核对；原basics22悬空逗号SyntaxError保留，阅读版整格注释，多行str同值排版，Markdown2代码详注并实际核对。固定本地GPT2/T5资产仅改加载路径；真实2000行JSONL IterableDataset、原默认batch1000，两轮常量审计补充得到320/63merges和336/79merges，继续消费、旧对象不变、保存重载、Unicode/byte/末批/耗尽通过。basics36长度并列输出可变，保留双方原列表并核对排序契约，其余受控结果一致。原语料/代理/讲师Hub/语言模型训练未运行。下一讲10。
+
+工作区 G:/zzz/README.md 指向正式仓库；另外三个本地材料目录含上游、字幕、缓存和共享环境，仍被复现引用，不能当成无用副本删除。各讲README为阅读入口；未补齐注释的讲次必须明确标明状态。一次性旧整理脚本准备资料.py、prepare_lesson09.py、prepare_lesson10.py及prepare_publication.py已移除，维护以仓库内复现/scripts为准。

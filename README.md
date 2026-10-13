@@ -1,6 +1,10 @@
 # Personal ChatGPT 中文讲解与代码注释
 
-**从下面的讲次目录进入。每讲按这个顺序阅读：**
+**阅读入口就是本文件。先选讲次，不必逐个翻项目文件。**
+
+第一次阅读：[从第 01 讲开始](lessons/01%20LLaMA%20introduction/README.md)。在本地请打开 `G:/zzz/personal-chatgpt-notes`，各讲放在 `lessons`。
+
+每讲按这个顺序阅读：
 
 1. **解释.md**：先理解概念、公式、张量 shape 和代码流程。
 2. **代码注释.ipynb**：对照原课程代码，阅读详细中文注释与逐格说明。GitHub 和 Jupyter 可按 notebook 展示。
@@ -22,7 +26,8 @@
 | 08 | [LLM.int8量化与bitsandbytes](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/解释.md) | [看代码与注释](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/代码注释.ipynb) | [Python版](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/LLM.int8_代码注释.py) |
 | 09 | [BPE与GPT-2 tokenizer](lessons/09%20BPE%20与%20GPT-2%20tokenizer/解释.md) | [基础与训练阅读入口](lessons/09%20BPE%20与%20GPT-2%20tokenizer/README.md) | [Python版](lessons/09%20BPE%20与%20GPT-2%20tokenizer/代码/tutorials/tokenizer_basics_代码注释.py) |
 
-## 已有讲解，完整代码注释待补：10–19
+<details>
+<summary>第 10–19 讲：已有讲解，完整代码注释待补（展开查看）</summary>
 
 | 讲次 | 中文讲解 |
 |---|---|
@@ -37,13 +42,15 @@
 | 18 | [RoPE 复数形式](lessons/18%20RoPE%20%E5%A4%8D%E6%95%B0%E5%BD%A2%E5%BC%8F/%E8%A7%A3%E9%87%8A.md) |
 | 19 | [RoPE apply_rotary_emb](lessons/19%20RoPE%20apply_rotary_emb/%E8%A7%A3%E9%87%8A.md) |
 
+</details>
+
 ## 文件放在哪里
 
 ```text
 README.md                  ← 总阅读入口，先打开这个
 lessons/                   ← 各讲讲解与代码
   01 …/
-    README.md              ← 本讲阅读入口（完整注释已发布的讲次）
+    README.md              ← 本讲阅读入口，注明交付状态
     解释.md                 ← 概念、公式与实现讲解
     代码/tutorials/
       代码注释.ipynb        ← 首选的代码阅读文件
@@ -57,7 +64,7 @@ lessons/                   ← 各讲讲解与代码
 AGENTS.md                  ← 项目维护约定
 ```
 
-日常阅读只需要讲解和两种代码阅读文件。`来源清单.json`、`复现/scripts` 和 `复现/outputs` 用于追溯来源及验证结果，需要查证时再打开。不同讲次的配套文件以实际目录为准。
+日常阅读只需要讲解和两种代码阅读文件。`代码单元解释.md` 是查某一格的补充说明；原版和带说明版用于对照，不必重复读所有版本。`来源清单.json`、`复现/scripts` 和 `复现/outputs` 用于追溯来源及验证结果，需要查证时再打开。不同讲次的配套文件以实际目录为准。
 
 <details>
 <summary>进度、来源及验证说明</summary>
