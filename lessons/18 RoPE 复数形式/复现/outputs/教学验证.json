@@ -1,0 +1,68 @@
+{
+  "status": "部分成功",
+  "execution": "real torch tensors, kernels and autograd; no fixtures",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.4",
+  "matplotlib": "3.9.4",
+  "device": "cpu",
+  "executed_code_cells": [
+    0,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    19,
+    21,
+    22,
+    26,
+    27,
+    28
+  ],
+  "real_sin_class_parameters": 0,
+  "pe_shape": [
+    10,
+    6
+  ],
+  "complex_frequency_shape": [
+    10,
+    3
+  ],
+  "complex_dtype": "torch.complex64",
+  "frequencies_dim6": [
+    1.0,
+    0.04641588404774666,
+    0.002154434332624078
+  ],
+  "real_complex_pe_max_error": 5.960464477539063e-08,
+  "missing_dim_denominator_max_error": 0.41471198201179504,
+  "complex_table_bytes_dim6_end10": 240,
+  "real_imag_pair_bytes": 240,
+  "rotation_matrix_max_error": 0.0,
+  "norm_error": 4.440892098500626e-16,
+  "rotated_dot": -1.4915605348540413,
+  "relative_complex_dot": -1.4915605348540408,
+  "relative_matrix_dot": -1.4915605348540413,
+  "common_shift_dot": -1.4915605348540402,
+  "wrong_no_conjugate_dot": -2.1837180500048294,
+  "polar_angle_gradient_max_error": 0.0,
+  "odd_dim_real_class_error": "stack expects each tensor to be equal size, but got [10, 3] at entry 0 and [10, 2] at entry 1",
+  "odd_dim_precompute_shape": [
+    10,
+    2
+  ],
+  "odd_dim_complex_sin_shape": [
+    10,
+    6
+  ],
+  "limitations": [
+    "No model weights, Llama generation, attention kernel or CUDA test",
+    "No complete RoFormer experiments or long-context quality evaluation",
+    "Main notebook run; supporting overview inspected statically, not fully executed"
+  ]
+}

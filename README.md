@@ -25,9 +25,10 @@
 
 | 17 | [RMSNorm 与 SwiGLU](lessons/17%20RMSNorm%20%E4%B8%8E%20SwiGLU/%E8%A7%A3%E9%87%8A.md) | 解释完成；数学/梯度/官方 forward fixture 验证通过，未运行 PyTorch 模型 |
 
+| 18 | [RoPE 复数形式](lessons/18%20RoPE%20%E5%A4%8D%E6%95%B0%E5%BD%A2%E5%BC%8F/%E8%A7%A3%E9%87%8A.md) | 解释完成；主 notebook/官方频率函数真实 CPU PyTorch 验证成功，未运行 Llama 模型 |
+
 ## 待完成
 
-- 18：RoPE 复数形式
 - 19：apply_rotary_emb
 - 20：KV cache
 - 21：GQA
