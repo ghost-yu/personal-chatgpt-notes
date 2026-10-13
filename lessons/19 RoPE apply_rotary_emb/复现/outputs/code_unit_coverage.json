@@ -1,0 +1,42 @@
+{
+  "expected_code_cell_numbers": [
+    1,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    23,
+    24,
+    25,
+    26
+  ],
+  "covered_code_cell_numbers": [
+    1,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    23,
+    24,
+    25,
+    26
+  ],
+  "all_code_cells_explained": true,
+  "original_code_and_historical_outputs_unchanged": true,
+  "original_cells": 27,
+  "annotated_cells": 43,
+  "annotated_notebook_filename": "原代码_带说明.ipynb",
+  "publication": "Full original code with inserted explanations is a local companion artifact; public repository carries the explanations and builder."
+}

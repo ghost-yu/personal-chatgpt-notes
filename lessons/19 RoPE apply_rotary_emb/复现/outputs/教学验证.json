@@ -1,0 +1,108 @@
+{
+  "status": "部分成功",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.4",
+  "sentencepiece": "0.2.0",
+  "device": "cpu",
+  "seed": 19,
+  "executed_code_cells": [
+    1,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    23,
+    24,
+    25,
+    26
+  ],
+  "token_ids": [
+    1,
+    306,
+    4658,
+    278,
+    6593,
+    310,
+    2834,
+    338
+  ],
+  "original_missing_helper_error": "name 'reshape_for_broadcast' is not defined",
+  "official_functions": [
+    "precompute_freqs_cis",
+    "reshape_for_broadcast",
+    "apply_rotary_emb"
+  ],
+  "query_shape": [
+    2,
+    4,
+    4,
+    8
+  ],
+  "key_shape": [
+    2,
+    4,
+    2,
+    8
+  ],
+  "phase_shape": [
+    4,
+    4
+  ],
+  "broadcast_shape": [
+    1,
+    4,
+    1,
+    4
+  ],
+  "forward_max_error": 0.0,
+  "gradient_max_error": 0.0,
+  "relative_score_max_error": 7.465355986724376e-07,
+  "common_shift_max_error": 4.76837158203125e-07,
+  "restart_position_output_error": 7.085379123687744,
+  "inputs_unchanged": true,
+  "dtype_checks": [
+    {
+      "input": "torch.float32",
+      "output": "torch.float32",
+      "reference_max_error": 0.0,
+      "norm_max_error": 4.76837158203125e-07
+    },
+    {
+      "input": "torch.float16",
+      "output": "torch.float16",
+      "reference_max_error": 0.0,
+      "norm_max_error": 0.0007848739624023438
+    },
+    {
+      "input": "torch.bfloat16",
+      "output": "torch.bfloat16",
+      "reference_max_error": 0.0,
+      "norm_max_error": 0.0067729949951171875
+    },
+    {
+      "input": "torch.float64",
+      "output": "torch.float64",
+      "reference_max_error": 0.0,
+      "norm_max_error": 4.76837158203125e-07
+    }
+  ],
+  "strided_input_error": "Tensor must have a last dimension with stride 1",
+  "odd_dim_error": "shape '[2, 4, 4, -1, 2]' is invalid for input of size 224",
+  "wrong_phase_shape_error": "",
+  "silent_wrong_broadcast_max_error": 3.8399124145507812,
+  "phase_statistic_at_zero": 31.5,
+  "phase_statistic_at_255": 6.412619851181159,
+  "phase_statistic_increasing_steps": 113,
+  "limitations": [
+    "No Llama model weights or complete Attention/FairScale execution",
+    "No CUDA, throughput or trained long-context quality measurement",
+    "Original notebook helper supplied only for the explicit follow-up rotation calls"
+  ]
+}

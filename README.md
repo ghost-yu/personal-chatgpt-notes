@@ -2,7 +2,7 @@
 
 按讲次解释公式、张量 shape、Python/PyTorch 代码与官方实现。每次完成一篇并提交；原课程为 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。
 
-## 已完成
+## 主解释已完成
 
 | 讲次 | 文档 | 状态 |
 |---|---|---|
@@ -27,9 +27,10 @@
 
 | 18 | [RoPE 复数形式](lessons/18%20RoPE%20%E5%A4%8D%E6%95%B0%E5%BD%A2%E5%BC%8F/%E8%A7%A3%E9%87%8A.md) | 解释完成；主 notebook/官方频率函数真实 CPU PyTorch 验证成功，未运行 Llama 模型 |
 
+| 19 | [RoPE apply_rotary_emb](lessons/19%20RoPE%20apply_rotary_emb/%E8%A7%A3%E9%87%8A.md) | 主文与全部15个代码单元说明完成；真实 CPU PyTorch 验证通过 |
+
 ## 待完成
 
-- 19：apply_rotary_emb
 - 20：KV cache
 - 21：GQA
 - 22：generate 完整过程
@@ -43,6 +44,10 @@
 - 30：InstructGPT reward modeling
 
 课程标题中的“221”按顺序记为第 22 讲；第 16 讲对应未编号的 TRL 基础。资料缺失与版本不确定会在各讲明确记录。
+
+## 全部 notebook 代码解释
+
+按用户补充要求，每讲交付按原编号的全部代码单元说明和本地带说明 ipynb。第19讲已完成15/15；第01–18讲需要逐篇核验补齐，已有主文不能替代这项覆盖审计。下一步先补第01讲。详见 [代码覆盖进度](代码覆盖进度.md)。
 
 ## 验证边界
 
