@@ -28,5 +28,7 @@
       "markdown_blocks_ast_equal": 6
     }
   },
+  "readable_python_ast_equal": true,
+  "inserted_note_relative_links_valid": true,
   "execution": "未执行原7B加载；固定官方PEFT源码真实CPU验证另见verify_injection.py"
 }

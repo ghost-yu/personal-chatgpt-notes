@@ -2,6 +2,8 @@
   "status": "部分成功",
   "python": "3.12.14",
   "torch": "2.5.1+cpu",
+  "source_sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146",
+  "annotated_notebook": false,
   "transformers": "4.44.2",
   "accelerate": "0.34.2",
   "peft_imported_version": "0.3.0",
@@ -148,5 +150,44 @@
   "disable_matches_base": true,
   "merge_max_error": 1.4901161193847656e-07,
   "unmerge_restores_weight_within_tolerance": true,
-  "limits": "直接执行官方PEFT v0.3.0普通Linear路径，搭配较新torch/Transformers；未加载7B、未测8bit/CUDA、未训练或复现论文指标"
+  "limits": "直接执行官方PEFT v0.3.0普通Linear路径，搭配较新torch/Transformers；未加载7B、未测8bit/CUDA、未训练或复现论文指标",
+  "annotated_execution_comparison": {
+    "source_sha256": "3ca37e2661d935de1eccd7d0a8b8dd321a05ff1cedd47f1ead741f361ad1966d",
+    "executed_original_cell_indices": [
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "markdown_blocks_checked": 6,
+    "structural_keys_equal": [
+      "peft_imported_version",
+      "peft_checkout_commit",
+      "source_hashes",
+      "markdown_mapping_dictionaries_equal_to_official",
+      "markdown7_expected_failure",
+      "suffix_hits",
+      "regex_hits",
+      "bare_regex_hits",
+      "wrong_suffix_hits",
+      "official_injection_failures",
+      "official_call_sequence",
+      "wrapper_reuses_original_model",
+      "replacements",
+      "trainable_parameters",
+      "only_lora_trainable",
+      "zero_b_initial_logits_equal",
+      "logits_shape",
+      "initial_a_gradient_zero",
+      "base_weight_bias_gradients_none",
+      "adapter_output_shape",
+      "disable_matches_base",
+      "unmerge_restores_weight_within_tolerance"
+    ],
+    "numeric_observations_equal_within_1e_minus_7": true,
+    "same_official_injection_pipeline_passed": true
+  }
 }

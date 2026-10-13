@@ -2,6 +2,22 @@
 
 状态：**部分成功**。18/18格说明、8/8代码格中文注释（含空格）、6/6 Markdown源码块中文注释；原单元、历史输出、AST和schema核对通过。原7B量化加载未执行，官方普通Linear路径在小型CPU BLOOM中通过真实验证。
 
+原notebook、两种说明/注释版及[Python阅读版](../代码/tutorials/04_PEFT_lora_代码注释.py)均已直接放入公开仓库；入口见[本讲目录](../README.md)。阅读版无JSON或历史输出，以 `# %%` 分格，六段Markdown源码作为注释保留。
+
+| 检查 | 实际结果 |
+|---|---|
+| 原文件下载 | 12679字节，SHA-256为 `712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146`，与固定来源一致 |
+| 注释覆盖 | 18格均解释，8个Python格及6段Markdown源码详注，两种生成版各37格 |
+| 原单元/历史输出、schema、AST | 全部通过；只增加注释，原dataclass缺陷保持 |
+| Python阅读版 | AST与原8格拼接一致；不携带JSON或历史输出 |
+| 实际执行 | 原版与注释版各7格（含空格）在CPU教学模型上下文执行；原12的7B加载未执行 |
+| 六段Markdown源码 | 真实类映射、独立属性上下文、目标扫描均核对；dataclass按预期报TypeError |
+| 固定官方源码 | 直接导入PEFT v0.3.0 checkout，核对版本、路径、Git提交和源码哈希 |
+| 注释版与原版比较 | 调用链、匹配、模块/参数身份、冻结、shape、adapter状态一致，数值观测差小于1e-7 |
+| 未复现范围 | 原7B量化加载、8bit/CUDA kernel、老师dev环境、训练与论文指标 |
+
+表格已列出结论，下面的JSON链接仅作补充记录。
+
 ## 来源及两个环境
 
 [来源清单](../来源清单.json)固定教程与PEFT提交、原文件及源码哈希。老师PEFT0.4.0.dev0没有Git SHA；参照源码选官方v0.3.0、7120c9a2636f93c8db3fc4ae466e02f338ecead8。本次直接导入本地checkout的src/peft，并检查版本、路径、Git HEAD和无未提交源码修改；不是执行环境里已安装PEFT0.12.0的路径。
@@ -12,19 +28,22 @@
 
 ## 文件与命令
 
-build_annotated.py为18格插说明，生成两份37格notebook；代码注释版进一步在8格Python和6段Markdown源码只加中文注释。原17空格保留；原7 dataclass缺陷不修复。verify_annotations.py比较原单元/元数据/历史输出、逐字注释新增行、8个代码AST和6个源码块AST，并验证schema；不执行原7B加载。
+build_annotated.py为18格插说明，生成两份37格notebook及Python阅读版；代码注释版进一步在8格Python和6段Markdown源码只加中文注释。原17空格保留，原7 dataclass缺陷不修复。verify_annotations.py比较原单元/元数据/历史输出、逐字新增注释、8个代码AST和6个源码块AST，并核对schema、阅读版AST和插入说明的相对链接；不执行原7B加载。
 
-verify_injection.py直接调用固定官方库。原9/11/13/14/15/16/17在明确的教学模型上下文执行；原12未执行。Markdown2两张类型字典、8架构字典使用真实官方类/常量比较；4属性片段使用独立属性上下文，最终包装身份另由真实构造器验证；8扫描片段的结果用trace收集，没有重写匹配表达式；7提供真实父类与导入后仍出现预期TypeError。
+verify_injection.py直接调用固定官方库；原版与注释版分别执行9/11/13/14/15/16/17，上下文明确为教学模型，12未执行。Markdown2类型字典、8架构字典与真实官方类/常量比较；4属性片段使用独立属性上下文，最终包装身份由真实构造器验证；8扫描结果用trace收集，没有重写匹配表达式，循环行号由AST定位以兼容新增注释；7提供真实父类与导入后仍出现预期TypeError。两版的完整CPU验证结果逐项比较。
 
-下列PowerShell命令的工作目录为本文件所在复现目录；其他机器需替换路径。完整原版、两种生成版和原历史输出保存在本地配套 `代码/tutorials`；公开仓库保留自编说明、脚本及验证记录。
+下列PowerShell命令从公开仓库根目录执行；其他机器需替换Python和官方checkout路径。下载脚本只获取固定原notebook；生成/审计脚本不联网，注入验证以HF离线方式执行，不下载7B权重。
 
 ```powershell
-& 'D:/anaconda/python.exe' './scripts/build_annotated.py' --notebook 'G:/zzz/Personal ChatGPT 前七讲/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora.ipynb' --output-dir 'G:/zzz/Personal ChatGPT 前七讲/04 PEFT LoRA 源码/代码/tutorials' --record './outputs/code_unit_coverage.json'
-& 'D:/anaconda/python.exe' './scripts/verify_annotations.py' --directory 'G:/zzz/Personal ChatGPT 前七讲/04 PEFT LoRA 源码/代码/tutorials' --record './outputs/annotation_verification.json'
-& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './scripts/verify_injection.py' --notebook 'G:/zzz/Personal ChatGPT 前七讲/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora.ipynb' --peft-source 'G:/zzz/Personal ChatGPT 前七讲/共享资料/peft-v0.3.0' --record './outputs/injection_verification.json'
+& 'D:/anaconda/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/download_original.py'
+& 'D:/anaconda/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/build_annotated.py' --notebook './lessons/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora.ipynb' --output-dir './lessons/04 PEFT LoRA 源码/代码/tutorials' --record './lessons/04 PEFT LoRA 源码/复现/outputs/code_unit_coverage.json'
+& 'D:/anaconda/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/verify_annotations.py' --directory './lessons/04 PEFT LoRA 源码/代码/tutorials' --record './lessons/04 PEFT LoRA 源码/复现/outputs/annotation_verification.json'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/verify_injection.py' --notebook './lessons/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora.ipynb' --annotated-notebook './lessons/04 PEFT LoRA 源码/代码/tutorials/代码注释.ipynb' --peft-source 'G:/zzz/Personal ChatGPT 前七讲/共享资料/peft-v0.3.0' --record './lessons/04 PEFT LoRA 源码/复现/outputs/injection_verification.json'
 ```
 
 固定源码入口为[官方提交](https://github.com/huggingface/peft/tree/7120c9a2636f93c8db3fc4ae466e02f338ecead8)。本地checkout已存在，本次没有改变其中源码或Git状态。
+
+[下载记录](outputs/source_download.json)固定原notebook来源和哈希。原notebook与两种说明/注释版均在本仓库 `代码/tutorials`，保留作者历史输出；本次实际验证另记，不覆盖历史执行计数。
 
 ## 实际证据
 

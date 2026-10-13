@@ -1,0 +1,14 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "downloaded_files": [
+    {
+      "path": "tutorials/04_PEFT_lora.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/04_PEFT_lora.ipynb",
+      "bytes": 12679,
+      "sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146"
+    }
+  ],
+  "manifest_hash_matched": true,
+  "original_bytes_unmodified": true,
+  "notebook_executed_by_download": false
+}

@@ -70,6 +70,72 @@ MODEL_DESCRIPTIONS={
 }
 FENCE=re.compile(r'(```[^\n]*\n)(.*?)(```)',re.S)
 
+CODE_DETAILS={
+    9:['【必须会】from peft import LoraConfig 导入包中的完整配置类，并未执行Markdown7的节选。',
+       'LoraConfig(...) 创建配置对象config，无输入token、logits或参数梯度。',
+       '原实例r=16、alpha=32，标准缩放为2；dropout和bias策略由后面注入层使用。',
+       'target_modules那行是注释，没有选择q_proj/v_proj；BLOOM默认选择融合query_key_value。'],
+    11:['from transformers import ... 把三个Auto类绑定到当前命名空间。',
+        'Auto类按配置选择具体实现；本notebook后面只调用AutoModelForCausalLM。',
+        '导入另外两类不等于已加载tokenizer或另一次AutoConfig下载。'],
+    12:['from_pretrained 是类方法，接收str模型ID与加载选项，返回因果语言模型模块。',
+        '可能联网读取配置和checkpoint、写缓存、分配设备内存；原文未固定revision。',
+        '原BLOOM-7b1隐藏宽度H=4096，融合QKV权重为[12288,4096]（nn.Linear的[out,in]方向）。',
+        'load_in_8bit是历史量化接口；后续可能进入Linear8bitLt，而CPU普通Linear验证不能覆盖该路径。',
+        '尚未传入int64 token IDs [B,S]；这行模型加载不是forward或generate。'],
+    13:['末尾表达式返回当前裸模型对象，notebook显示repr；普通Python不自动显示。',
+        '没有输入Tensor，所以不计算[B,S,V] logits，也不复制/冻结/替换权重。'],
+    14:['get_peft_model 是包级独立函数，不是 model.get_peft_model 实例方法。',
+        '导入只绑定函数名字；真正调用在15格，输入是模型模块与PEFT配置。'],
+    15:['【必须会】get_peft_model(model,config) 接收已有模型对象和LoraConfig，返回PEFT任务包装。',
+        '赋回model重新绑定名字；原BLOOM对象保留，在内部被LoraModel引用，没有深拷贝整网。',
+        'task_type选择PeftModelForCausalLM，peft_type选择LoraModel，model_type=bloom选择默认目标名。',
+        '官方_find_and_replace扫描模块树，_replace_module通过setattr替换父模块的子层属性。',
+        '新层复用原weight/bias Parameter，增加A/B小因子；bias=none仍保留旧偏置参与前向。',
+        '冻结基参数而训练lora_参数；这不是关闭整条计算图或已经执行优化器step。',
+        '原H=4096时A:[16,4096]、B:[12288,16]，输入[B,S,4096]的增量输出[B,S,12288]。',
+        '本次实际验证为官方v0.3.0、小型CPU普通Linear路径；没有运行本格对应的原7B量化注入。'],
+    16:['外层为PeftModelForCausalLM，中间base_model为LoraModel，其model指向原BLOOM。',
+        '这些是包装层次，不是三份完整模型；结构repr无法证明requires_grad或权重已训练。',
+        '本格没有loss/backward/optimizer，也没有保存adapter。'],
+    17:['原source为空；注释版仅加注释，AST仍为空Module，不新增训练代码或模型结果。'],
+}
+MARKDOWN_DETAILS={
+    2:[['【必须会】这是任务类型到包装类的dict，依赖这些类名已导入；Markdown本身不执行。',
+        '字符串键对应task_type，值是类对象而不是构造好的模型；这里并非bloom/llama架构映射。'],
+       ['这是适配方法到实现类的dict，键是PeftType枚举成员，值仍是类对象。',
+        'LORA、PROMPT_TUNING和PREFIX_TUNING管理不同形式的参数，不能都叫低秩权重矩阵。']],
+    4:[['【必须会】这是方法内部的初始化节选，需要已有self、model和adapter_name。',
+        'self是正在构造的包装实例；三条赋值保存引用与名字，无Tensor计算或权重复制。',
+        '完整PeftModel构造器随后会继续包装base_model；节选没有展示整个注入过程。']],
+    7:[['【原文缺陷】本数据类节选缺少导入，以及target_modules的默认field。',
+        '即使补齐真实导入/父类，默认r后出现无默认target_modules仍会触发TypeError。',
+        '这里只增加注释，不补字段；真正运行的9格导入包中完整LoraConfig，与此节选不同。']],
+    8:[['【必须会】这是模型架构到默认目标后缀列表的dict，不是task_type或peft_type映射。',
+        'BLOOM用融合query_key_value；LLaMA用分离q_proj/v_proj，不能在不同架构间照搬名字。'],
+       ['这是LoraModel内部的扫描节选，依赖self.model、lora_config和re模块。',
+        '只计算是否匹配目标，不创建LoRA参数或执行模块替换；真正替换在_find_and_replace后续。',
+        'key是完整模块路径str；判断结果可能是Match/None或bool，没有输入Tensor和shape变换。']],
+}
+PREFIX_NOTES.update({
+    'self.base_model =':'保存传入模型引用；is可核对身份，没有clone/deepcopy或权重分配。',
+    'self.config =':'访问基模型配置并保存同一对象引用；改配置可能影响双方，不是加载新checkpoint。',
+    'self.active_adapter =':'保存当前adapter名字str，默认通常为default；与CAUSAL_LM任务类型不同。',
+    '@dataclass':'装饰器在类定义结束后生成__init__等方法；不是模型forward或参数训练。',
+    'class LoraConfig':'继承PeftConfig的配置类；类型注解不自动进行运行时参数类型校验。',
+    'r: int':'field(default=8,metadata=...)给整数r设置默认8；help只提供字段说明，不执行算法。',
+    'target_modules:':'Optional[Union[List[str],str]]表示列表/字符串/None的类型范围，不自动生成default=None。\n'
+                       '本节选漏了默认field；在已有默认r后放无默认字段，dataclass装饰会报字段顺序TypeError。',
+    'key_list =':'named_modules()迭代(完整路径str,模块对象)，列表推导式只保留key；_表示忽略对象。\n'
+                 '保存路径快照，便于后续改模块树；named_modules与named_parameters的内容不同。',
+    'for key in':'依次遍历完整路径；本节选不替换模块，后续官方实现才按匹配结果执行替换。',
+    'if isinstance':'isinstance(...,str)区分完整路径正则模式与目标名列表；不是区分模型类别。',
+    'target_module_found = re.fullmatch':'re.fullmatch(pattern,key)要求正则覆盖整个路径，返回Match或None。\n'
+                                        '裸query_key_value无法匹配带前缀路径，.*query_key_value可匹配；不是子串search。',
+    'target_module_found = any':'key.endswith(target_key)逐个检查后缀；生成器供any短路判断，最终返回bool。\n'
+                               '列表[query_key_value]可匹配完整路径末尾；它与裸正则字符串的语义不同。',
+})
+
 
 def source(cell):
     value=cell.get('source','')
@@ -91,16 +157,42 @@ def annotate_lines(text):
                 if stripped.startswith('"'+model+'":'):note='此架构默认目标为'+description+'；不是统一目标。';break
         if note:
             indent=line[:len(line)-len(line.lstrip())]
-            out.append(indent+'# '+note+'\n')
+            out.extend(indent+'# '+row+'\n' for row in note.splitlines())
         out.append(line)
     return ''.join(out)
+
+
+def annotate_block(text, notes):
+    lines=[line for line in text.splitlines() if line.strip()]
+    indent=' '*min(len(line)-len(line.lstrip()) for line in lines)
+    return ''.join(indent+'# '+note+'\n' for note in notes)+annotate_lines(text)
+
+
+def notebook_note(text):
+    return re.sub(r'\]\(([^)]+)\)',lambda m: ']('+(m.group(1) if '://' in m.group(1)
+                  or m.group(1).startswith('#') else '../../'+m.group(1))+')',text)
+
+
+def export_readable(notebook,target):
+    parts=['# 第04讲 PEFT / LoRA 源码注释阅读版\n'
+           '# 来源：chunhuizhang/personal_chatgpt，提交 7fbc29824171fd07dc2c30fe922e61ebc018ad1d。\n'
+           '# 无JSON或历史输出，以 # %% 分格；建议在配套notebook逐格核对环境后执行。\n'
+           '# 六段Markdown源码节选保留为注释，包含原缺陷，不作为独立可运行类/脚本。\n'
+           '# 固定官方源码的离线CPU注入验证见复现/scripts/verify_injection.py。\n\n']
+    for cell in notebook['cells']:
+        text=source(cell)
+        if cell['cell_type']=='code':
+            parts.append('# %%\n'+ '\n'.join(line.rstrip() for line in text.splitlines())+'\n\n')
+        else:
+            parts.append('# %% [markdown]\n'+'\n'.join(('# '+line).rstrip() for line in text.splitlines())+'\n\n')
+    Path(target).write_text(''.join(parts).rstrip()+'\n',encoding='utf-8')
 
 
 def generate(notebook,explanation,output_dir):
     raw=Path(notebook).read_bytes();original=json.loads(raw.decode('utf-8-sig'))
     cells=original['cells'];assert len(cells)==18
     code=[i for i,c in enumerate(cells) if c['cell_type']=='code']
-    assert set(code)==set(CODE_NOTES)
+    assert set(code)==set(CODE_NOTES)==set(CODE_DETAILS)
     markdown={i:len(blocks(source(c))) for i,c in enumerate(cells) if c['cell_type']=='markdown' and blocks(source(c))}
     assert markdown=={2:2,4:1,7:1,8:2}
     text=Path(explanation).read_text(encoding='utf-8')
@@ -119,13 +211,14 @@ def generate(notebook,explanation,output_dir):
             'source':'# 第04讲中文代码说明\n\n原版另存；原输出为历史记录，不冒充本次运行。\n'
                      '注释仅解释原行为，保留Markdown源码节选缺陷；原7B量化加载未运行。'}]
         for i,cell in enumerate(cells):
-            result['cells'].append({'cell_type':'markdown','metadata':{},'id':'explain-%02d'%i,'source':notes[i]})
+            result['cells'].append({'cell_type':'markdown','metadata':{},'id':'explain-%02d'%i,'source':notebook_note(notes[i])})
             current=copy.deepcopy(cell)
             if commented and i in CODE_NOTES:
-                current['source']='# '+CODE_NOTES[i]+'\n'+annotate_lines(source(cell))
+                current['source']='# '+CODE_NOTES[i]+'\n'+''.join('# '+row+'\n' for row in CODE_DETAILS[i])+annotate_lines(source(cell))
                 assert ast.dump(ast.parse(source(current)))==ast.dump(ast.parse(source(cell)))
             elif commented and i in markdown:
-                current['source']=FENCE.sub(lambda m:m.group(1)+annotate_lines(m.group(2))+m.group(3),source(cell))
+                block_notes=iter(MARKDOWN_DETAILS[i])
+                current['source']=FENCE.sub(lambda m:m.group(1)+annotate_block(m.group(2),next(block_notes))+m.group(3),source(cell))
                 before,after=blocks(source(cell)),blocks(source(current))
                 assert len(before)==len(after)
                 for a,b in zip(before,after):assert ast.dump(ast.parse(a))==ast.dump(ast.parse(b))
@@ -133,8 +226,10 @@ def generate(notebook,explanation,output_dir):
             result['cells'].append(current)
         nbformat.validate(nbformat.from_dict(result))
         target=output_dir/filename
-        target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        target.write_bytes((json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
         report['artifacts'][filename]={'cells':len(result['cells']),'sha256':hashlib.sha256(target.read_bytes()).hexdigest()}
+        if commented:
+            export_readable(result,output_dir/'04_PEFT_lora_代码注释.py')
     return report
 
 

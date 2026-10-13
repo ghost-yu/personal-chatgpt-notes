@@ -12,7 +12,9 @@
 | 02 | [本讲目录](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/README.md) · [原 notebook](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/02_lora_baics.ipynb) · [中文注释 notebook](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/02_lora_baics_代码注释.py) | 全部16格说明，7格Python与Markdown13伪代码详细注释，展示及CPU教学LoRA验证通过 |
 | 03 | [本讲目录](lessons/03%20LoRA%20微调%20BLOOM/README.md) · [原 notebook](lessons/03%20LoRA%20微调%20BLOOM/代码/tutorials/03_lora_practice.ipynb) · [中文注释 notebook](lessons/03%20LoRA%20微调%20BLOOM/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/03%20LoRA%20微调%20BLOOM/代码/tutorials/03_lora_practice_代码注释.py) | 全部47格说明/37格详注；原版与注释版各26格在CPU教学上下文执行，并分别完成2步Trainer训练 |
 
-以上均未运行原大模型推理或微调。下一讲按该格式交付第04讲。
+| 04 | [本讲目录](lessons/04%20PEFT%20LoRA%20源码/README.md) · [原 notebook](lessons/04%20PEFT%20LoRA%20源码/代码/tutorials/04_PEFT_lora.ipynb) · [中文注释 notebook](lessons/04%20PEFT%20LoRA%20源码/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/04%20PEFT%20LoRA%20源码/代码/tutorials/04_PEFT_lora_代码注释.py) | 全部18格说明；8格Python、6段Markdown源码详注；原版与注释版真实CPU PEFT注入核对通过 |
+
+以上均未运行原大模型推理或微调。下一讲按该格式交付第05讲。
 
 ## 主解释已完成
 

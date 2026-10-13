@@ -4,6 +4,9 @@
   "notebook": "tutorials/04_PEFT_lora.ipynb",
   "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/04_PEFT_lora.ipynb",
   "local_sha256": "d94df2179da5088cd9c99df975d0893d3ebedbc64a690bd2a6a1d76badf179a0",
+  "local_sha256_note": "此前本地CRLF副本的哈希；公开原文件直接下载，不转换换行",
+  "published_original_path": "代码/tutorials/04_PEFT_lora.ipynb",
+  "published_original_sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146",
   "upstream_sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146",
   "equal_after_line_ending_normalization": true,
   "all_cells": [

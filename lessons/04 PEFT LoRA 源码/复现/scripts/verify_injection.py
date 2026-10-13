@@ -42,9 +42,10 @@ def execute(cell,scope,index):
 def scan_original_fragment(fragment,model,targets):
     # trace只收集原循环赋值后的结果，不重写匹配表达式或模块列表。
     code=compile(fragment,'<original-markdown8-scan>','exec')
+    loop_line=next(node.lineno for node in ast.parse(fragment).body if isinstance(node,ast.For))
     results={}
     def trace(frame,event,arg):
-        if frame.f_code is code and (event=='return' or (event=='line' and frame.f_lineno==2)):
+        if frame.f_code is code and (event=='return' or (event=='line' and frame.f_lineno==loop_line)):
             if 'key' in frame.f_locals and 'target_module_found' in frame.f_locals:
                 results[frame.f_locals['key']]=bool(frame.f_locals['target_module_found'])
         return trace
@@ -73,7 +74,11 @@ def verify(notebook,checkout):
     lora_module=importlib.import_module('peft.tuners.lora')
     from peft.utils import PeftConfig,TRANSFORMERS_MODELS_TO_LORA_TARGET_MODULES_MAPPING
     torch.manual_seed(2026);torch.set_num_threads(2)
-    raw=Path(notebook).read_bytes();cells=json.loads(raw.decode('utf-8-sig'))['cells'];assert len(cells)==18
+    raw=Path(notebook).read_bytes();cells=json.loads(raw.decode('utf-8-sig'))['cells']
+    is_annotated=len(cells)==37
+    if is_annotated:
+        cells=cells[2::2]
+    assert len(cells)==18
     source_hashes={name:hashlib.sha256((checkout/name).read_bytes()).hexdigest()
         for name in ['src/peft/mapping.py','src/peft/peft_model.py','src/peft/tuners/lora.py','src/peft/utils/other.py']}
     # 原Markdown的两张类型字典，使用真实官方类对象验证，不实例化其他适配方法。
@@ -180,6 +185,7 @@ def verify(notebook,checkout):
             failures[label]={'type':'ValueError','message':str(error)}
         else:raise AssertionError('错误目标应该失败')
     return {'status':'部分成功','python':platform.python_version(),'torch':torch.__version__,
+        'source_sha256':hashlib.sha256(raw).hexdigest(),'annotated_notebook':is_annotated,
         'transformers':importlib.metadata.version('transformers'),'accelerate':importlib.metadata.version('accelerate'),
         'peft_imported_version':peft.__version__,'peft_checkout_commit':commit,'source_hashes':source_hashes,
         'device':'cpu','quantized':False,'tiny_model':{'hidden_size':16,'layers':2,'heads':2,'vocab_size':32,'random_weights':True},
@@ -201,6 +207,28 @@ if __name__=='__main__':
     parser.add_argument('--notebook',required=True)
     parser.add_argument('--peft-source',required=True)
     parser.add_argument('--record',required=True)
+    parser.add_argument('--annotated-notebook',help='可选：对注释版重复官方CPU注入验证，并与原版比较')
     args=parser.parse_args();report=verify(args.notebook,args.peft_source)
+    if args.annotated_notebook:
+        annotated=verify(args.annotated_notebook,args.peft_source)
+        assert not report['annotated_notebook'] and annotated['annotated_notebook']
+        keys=['peft_imported_version','peft_checkout_commit','source_hashes',
+              'markdown_mapping_dictionaries_equal_to_official','markdown7_expected_failure',
+              'suffix_hits','regex_hits','bare_regex_hits','wrong_suffix_hits','official_injection_failures',
+              'official_call_sequence','wrapper_reuses_original_model','replacements','trainable_parameters',
+              'only_lora_trainable','zero_b_initial_logits_equal','logits_shape','initial_a_gradient_zero',
+              'base_weight_bias_gradients_none','adapter_output_shape','disable_matches_base',
+              'unmerge_restores_weight_within_tolerance']
+        for key in keys:
+            assert report[key]==annotated[key],('annotation execution mismatch',key)
+        assert report['original_code_cells_executed']==annotated['original_code_cells_executed']
+        for key in ['initial_b_gradient_norm','manual_forward_max_error','merge_max_error']:
+            assert abs(report[key]-annotated[key])<1e-7,('annotation execution mismatch',key)
+        report['annotated_execution_comparison']={
+            'source_sha256':annotated['source_sha256'],
+            'executed_original_cell_indices':[r['cell'] for r in annotated['original_code_cells_executed']],
+            'markdown_blocks_checked':6,'structural_keys_equal':keys,
+            'numeric_observations_equal_within_1e_minus_7':True,
+            'same_official_injection_pipeline_passed':True}
     Path(args.record).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True,indent=2))
