@@ -1,0 +1,78 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/05_float16_bf16.ipynb",
+  "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/05_float16_bf16.ipynb",
+  "upstream_sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712",
+  "published_original_path": "代码/tutorials/05_float16_bf16.ipynb",
+  "published_original_sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712",
+  "all_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "python_code_cells": [
+    0,
+    5,
+    16,
+    17,
+    18,
+    19,
+    20,
+    26
+  ],
+  "ipython_source_inspection_cells": [
+    20
+  ],
+  "images": [
+    {
+      "path": "imgs/float16.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/float16.png",
+      "bytes": 70240,
+      "sha256": "31e887c939136a581f40e485e7df99e67d504033e2733bc759d01762a268dd80"
+    },
+    {
+      "path": "imgs/bf-float.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/bf-float.png",
+      "bytes": 27824,
+      "sha256": "9d2b2377fda2759a7835aa0eb786bf6b9aef6bcc362576a87d01f328c4c53b42"
+    }
+  ],
+  "original_environment": {
+    "codemirror_mode": {
+      "name": "ipython",
+      "version": 3
+    },
+    "file_extension": ".py",
+    "mimetype": "text/x-python",
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+    "version": "3.10.13"
+  },
+  "scope": "全部单元、公式、图片与CUDA查询；历史GPU输出不是当前CPU验证结果"
+}

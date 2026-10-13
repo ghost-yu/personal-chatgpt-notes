@@ -1,0 +1,25 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "downloaded_files": [
+    {
+      "path": "tutorials/05_float16_bf16.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/05_float16_bf16.ipynb",
+      "bytes": 139712,
+      "sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712"
+    },
+    {
+      "path": "imgs/float16.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/float16.png",
+      "bytes": 70240,
+      "sha256": "31e887c939136a581f40e485e7df99e67d504033e2733bc759d01762a268dd80"
+    },
+    {
+      "path": "imgs/bf-float.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/bf-float.png",
+      "bytes": 27824,
+      "sha256": "9d2b2377fda2759a7835aa0eb786bf6b9aef6bcc362576a87d01f328c4c53b42"
+    }
+  ],
+  "hashes_matched": true,
+  "original_bytes_unmodified": true
+}

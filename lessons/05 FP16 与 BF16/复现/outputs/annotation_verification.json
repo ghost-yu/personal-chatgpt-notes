@@ -1,0 +1,39 @@
+{
+  "original_sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712",
+  "variants": [
+    {
+      "file": "原代码_带说明.ipynb",
+      "sha256": "0d7146eee53e6923cd0c5fc500aee595d9a2892ffed13d1d48636c5e4164f49f",
+      "cells": 55,
+      "original_cells": 27,
+      "schema": true,
+      "all_original_metadata_and_outputs_preserved": true,
+      "all_8_code_ASTs_equal_after_IPython_transform": true
+    },
+    {
+      "file": "代码注释.ipynb",
+      "sha256": "90eeae987081de053218b6bdf323323fa27db538473452fd56f4f55083ae846b",
+      "cells": 55,
+      "original_cells": 27,
+      "schema": true,
+      "all_original_metadata_and_outputs_preserved": true,
+      "all_8_code_ASTs_equal_after_IPython_transform": true
+    }
+  ],
+  "code_cells": [
+    0,
+    5,
+    16,
+    17,
+    18,
+    19,
+    20,
+    26
+  ],
+  "markdown_cells": 19,
+  "all_27_cell_explanations_present": true,
+  "annotation_only_comments": true,
+  "reading_py_AST_equals_7_ordinary_original_code_cells": true,
+  "reading_py_IPython_directive_preserved_as_comment": true,
+  "reading_py_sha256": "d8b971a89a76d51a42e2ccbecfb5e7603dbeaf6c030cf332a56f5cc0056ac920"
+}

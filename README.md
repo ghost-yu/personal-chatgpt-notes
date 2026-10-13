@@ -6,9 +6,9 @@
 2. **代码注释.ipynb**：对照原课程代码，阅读详细中文注释与逐格说明。GitHub 和 Jupyter 可按 notebook 展示。
 3. **代码注释.py**：喜欢纯文本代码时看这一份，避免 notebook 的 JSON；主要用于阅读，执行方法见本讲复现文档。
 
-原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–04** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **05–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **05** 讲。
+原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–05** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **06–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **06** 讲。
 
-## 已有完整代码注释：01–04
+## 已有完整代码注释：01–05
 
 | 讲次 | 中文讲解 | 带注释 notebook | 纯文本代码 |
 |---|---|---|---|
@@ -16,12 +16,12 @@
 | 02 | [LoRA - Low-Rank Adaptation of Large Language Models](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/解释.md) | [看代码与注释](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/代码注释.ipynb) | [Python版](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E4%BB%A3%E7%A0%81/tutorials/02_lora_baics_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
 | 03 | [LoRA 微调 BLOOM](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/解释.md) | [看代码与注释](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/代码/tutorials/代码注释.ipynb) | [Python版](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E4%BB%A3%E7%A0%81/tutorials/03_lora_practice_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
 | 04 | [PEFT LoRA 源码](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/解释.md) | [看代码与注释](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/代码/tutorials/代码注释.ipynb) | [Python版](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E4%BB%A3%E7%A0%81/tutorials/04_PEFT_lora_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| 05 | [FP16 与 BF16](lessons/05%20FP16%20与%20BF16/解释.md) | [看代码与注释](lessons/05%20FP16%20与%20BF16/代码/tutorials/代码注释.ipynb) | [Python版](lessons/05%20FP16%20与%20BF16/代码/tutorials/05_float16_bf16_代码注释.py) |
 
-## 已有讲解，完整代码注释待补：05–19
+## 已有讲解，完整代码注释待补：06–19
 
 | 讲次 | 中文讲解 |
 |---|---|
-| 05 | [FP16 与 BF16](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E8%A7%A3%E9%87%8A.md) |
 | 06 | [Alpaca LoRA 推理](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E8%A7%A3%E9%87%8A.md) |
 | 07 | [自动混合精度训练](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E8%A7%A3%E9%87%8A.md) |
 | 08 | [LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E8%A7%A3%E9%87%8A.md) |

@@ -1,0 +1,5 @@
+# 实际验证：Python3.12.14、Windows11。torch为CPU包。
+# 先按README从官方CPU索引安装torch，再安装其余两项。
+torch==2.5.1
+ipython==8.37.0
+nbformat==5.10.4

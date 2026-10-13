@@ -1,0 +1,225 @@
+{
+  "status": "部分成功",
+  "environment": {
+    "python": "3.12.14",
+    "OS": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "IPython": "8.37.0",
+    "nbformat": "5.10.4",
+    "cuda_available": false,
+    "torch_version_cuda": null,
+    "torch_version_hip": null
+  },
+  "command": "python lessons/05 FP16 与 BF16/复现/scripts/verify_runtime.py",
+  "working_directory": "repository root; image execution temporarily uses each notebook parent",
+  "original": {
+    "notebook_sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712",
+    "executed_code_cells": 8,
+    "successful_cells": 7,
+    "expected_failures": 1,
+    "cells": [
+      {
+        "cell": 0,
+        "success": true,
+        "error_type": null
+      },
+      {
+        "cell": 5,
+        "success": true,
+        "error_type": null,
+        "png_bytes": 70240,
+        "png_sha256": "31e887c939136a581f40e485e7df99e67d504033e2733bc759d01762a268dd80",
+        "png_size": [
+          2880,
+          1646
+        ],
+        "display_width": 400
+      },
+      {
+        "cell": 16,
+        "success": true,
+        "error_type": null,
+        "cuda_bf16_supported": false
+      },
+      {
+        "cell": 17,
+        "success": true,
+        "error_type": null,
+        "result": "torch.bfloat16"
+      },
+      {
+        "cell": 18,
+        "success": false,
+        "error_type": "AssertionError",
+        "expected_CPU_failure": "Torch not compiled with CUDA enabled",
+        "outer_get_device_properties_not_reached": true
+      },
+      {
+        "cell": 19,
+        "success": true,
+        "error_type": null,
+        "HIP_version": null
+      },
+      {
+        "cell": 20,
+        "success": true,
+        "error_type": null,
+        "pinfo2_showed_actual_function_source": true,
+        "inspection_contains_including_emulation": true
+      },
+      {
+        "cell": 26,
+        "success": true,
+        "error_type": null,
+        "png_bytes": 27824,
+        "png_sha256": "9d2b2377fda2759a7835aa0eb786bf6b9aef6bcc362576a87d01f328c4c53b42",
+        "png_size": [
+          894,
+          253
+        ],
+        "display_width": null
+      }
+    ]
+  },
+  "annotated": {
+    "notebook_sha256": "90eeae987081de053218b6bdf323323fa27db538473452fd56f4f55083ae846b",
+    "executed_code_cells": 8,
+    "successful_cells": 7,
+    "expected_failures": 1,
+    "cells": [
+      {
+        "cell": 0,
+        "success": true,
+        "error_type": null
+      },
+      {
+        "cell": 5,
+        "success": true,
+        "error_type": null,
+        "png_bytes": 70240,
+        "png_sha256": "31e887c939136a581f40e485e7df99e67d504033e2733bc759d01762a268dd80",
+        "png_size": [
+          2880,
+          1646
+        ],
+        "display_width": 400
+      },
+      {
+        "cell": 16,
+        "success": true,
+        "error_type": null,
+        "cuda_bf16_supported": false
+      },
+      {
+        "cell": 17,
+        "success": true,
+        "error_type": null,
+        "result": "torch.bfloat16"
+      },
+      {
+        "cell": 18,
+        "success": false,
+        "error_type": "AssertionError",
+        "expected_CPU_failure": "Torch not compiled with CUDA enabled",
+        "outer_get_device_properties_not_reached": true
+      },
+      {
+        "cell": 19,
+        "success": true,
+        "error_type": null,
+        "HIP_version": null
+      },
+      {
+        "cell": 20,
+        "success": true,
+        "error_type": null,
+        "pinfo2_showed_actual_function_source": true,
+        "inspection_contains_including_emulation": true
+      },
+      {
+        "cell": 26,
+        "success": true,
+        "error_type": null,
+        "png_bytes": 27824,
+        "png_sha256": "9d2b2377fda2759a7835aa0eb786bf6b9aef6bcc362576a87d01f328c4c53b42",
+        "png_size": [
+          894,
+          253
+        ],
+        "display_width": null
+      }
+    ]
+  },
+  "original_and_annotated_behavior_equal": true,
+  "supplemental_CPU_tensors": {
+    "fp16": {
+      "max": 65504.0,
+      "min_normal": 6.103515625e-05,
+      "min_subnormal_nextafter": 5.960464477539063e-08,
+      "gap_above_1": 0.0009765625,
+      "bytes_per_element": 2,
+      "seven_patterns_verified": [
+        "+0",
+        "-0",
+        "min_subnormal",
+        "min_normal",
+        "max",
+        "+inf",
+        "nan"
+      ],
+      "ties_to_even_midpoint_results": [
+        1.0,
+        1.001953125
+      ],
+      "half_min_subnormal_rounds_to": 0.0
+    },
+    "bf16": {
+      "max": 3.3895313892515355e+38,
+      "min_normal": 1.1754943508222875e-38,
+      "min_subnormal_nextafter": 9.183549615799121e-41,
+      "gap_above_1": 0.0078125,
+      "bytes_per_element": 2,
+      "seven_patterns_verified": [
+        "+0",
+        "-0",
+        "min_subnormal",
+        "min_normal",
+        "max",
+        "+inf",
+        "nan"
+      ],
+      "ties_to_even_midpoint_results": [
+        1.0,
+        1.015625
+      ],
+      "half_min_subnormal_rounds_to": 0.0
+    },
+    "example_bits_0x7680": 26624.0,
+    "rounding_input_1_001": {
+      "fp16": 1.0009765625,
+      "bf16": 1.0
+    },
+    "input_100000": {
+      "fp16": "inf",
+      "bf16": 99840.0
+    },
+    "tensor_path": "int16[7]→view(dtype)[7]→float64[7]；float64[2]→float16/bfloat16[2]",
+    "same_shape_storage_bytes": {
+      "torch.float16": 14,
+      "torch.bfloat16": 14,
+      "torch.float32": 28
+    }
+  },
+  "inspected_source": {
+    "function": "torch.cuda.is_bf16_supported",
+    "signature": "(including_emulation: bool = True)",
+    "source_sha256": "da412742e5d0acd01830f65c619d61bd573c64062f689f9a96d7adc445e90f62",
+    "official_source": "https://github.com/pytorch/pytorch/blob/v2.5.1/torch/cuda/__init__.py"
+  },
+  "limits": [
+    "CPU-only; CUDA cell18 fails by actual original expression",
+    "No CUDA/ROCm/TPU arithmetic, AMP, model training, throughput or memory benchmark",
+    "CPU bit-storage and conversion results do not establish other hardware subnormal behavior",
+    "Original historical GPU outputs are preserved, never treated as current observations"
+  ]
+}
