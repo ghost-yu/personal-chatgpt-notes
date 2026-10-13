@@ -1,0 +1,472 @@
+{
+  "status": "部分成功",
+  "environment": {
+    "OS": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14",
+    "packages": {
+      "torch": "2.5.1+cpu",
+      "transformers": "4.44.2",
+      "sentencepiece": "0.2.0",
+      "accelerate": "0.34.2",
+      "IPython": "8.37.0",
+      "nbformat": "5.10.4"
+    }
+  },
+  "fixed_PEFT": {
+    "commit": "7120c9a2636f93c8db3fc4ae466e02f338ecead8",
+    "version": "0.3.0",
+    "actual_import_path": "G:\\zzz\\Personal ChatGPT 前七讲\\共享资料\\peft-v0.3.0\\src\\peft",
+    "official_url": "https://github.com/huggingface/peft/tree/7120c9a2636f93c8db3fc4ae466e02f338ecead8",
+    "source_sha256": {
+      "src/peft/peft_model.py": "a6864e82a0d2f0cf0a8ebfb71d0d49f6d311a847dd3496a2b0b31a2dc4572685",
+      "src/peft/mapping.py": "5c11ffabc0bed2cd108c41baa354aecf2aa920ca9cd29a9fae21916e75c01222",
+      "src/peft/tuners/lora.py": "a36e0c446f6f588a0c1038705ee11864a9bfb7291a9cc4a6e91a4c9dbf0a6ee6",
+      "src/peft/utils/other.py": "ab17501ee7283f4b32809892d982fc155d891fce068c484daa425a9b9251aae3"
+    }
+  },
+  "original": {
+    "source_sha256": "501575b319fcbedcd97b10f80173d3433b2c3d21fe06b3e78138614ab415f1d1",
+    "is_annotated": false,
+    "original_code_cells_executed": [
+      1,
+      2,
+      7,
+      8,
+      18,
+      24,
+      11,
+      12,
+      15,
+      20,
+      21,
+      25,
+      27
+    ],
+    "original_code_records": [
+      {
+        "cell": 1,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 2,
+        "original_statements_executed": true,
+        "result_type": "str",
+        "printed_lines": 0
+      },
+      {
+        "cell": 7,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 8,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 18,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 24,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 11,
+        "original_statements_executed": true,
+        "result_type": "LlamaForCausalLM",
+        "printed_lines": 0
+      },
+      {
+        "cell": 12,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 12
+      },
+      {
+        "cell": 15,
+        "original_statements_executed": true,
+        "result_type": "LlamaTokenizer",
+        "printed_lines": 0
+      },
+      {
+        "cell": 20,
+        "original_statements_executed": true,
+        "result_type": "PeftModelForCausalLM",
+        "printed_lines": 0,
+        "warnings": []
+      },
+      {
+        "cell": 21,
+        "original_statements_executed": true,
+        "result_type": "dict",
+        "printed_lines": 2,
+        "warnings": []
+      },
+      {
+        "cell": 25,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0,
+        "warnings": [
+          "`do_sample` is set to `False`. However, `temperature` is set to `1.5` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.",
+          "`do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed."
+        ]
+      },
+      {
+        "cell": 27,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0,
+        "warnings": []
+      }
+    ],
+    "excluded_original_cells": [
+      0,
+      10,
+      14,
+      19,
+      26
+    ],
+    "original_prompt_branches": {
+      "none_equals_empty": true,
+      "with_input": true,
+      "exact_prior_template_match": true
+    },
+    "original_generation_config": {
+      "temperature": 1.5,
+      "top_p": 0.8,
+      "num_beams": 4,
+      "do_sample": false,
+      "num_return_sequences": 1
+    },
+    "original_inference_CPU_failure": {
+      "type": "AssertionError",
+      "message": "Torch not compiled with CUDA enabled",
+      "location": "inputs[\"input_ids\"].cuda()",
+      "model_generate_not_reached": true
+    },
+    "supplementary_setup": {
+      "random_Llama_layers": 1,
+      "hidden_size": 16,
+      "intermediate_size": 32,
+      "heads": 2,
+      "KV_heads": 2,
+      "real_LlamaTokenizer_SentencePiece_vocab": 96,
+      "local_base_reload": true,
+      "local_adapter_reload": true,
+      "adapter_random_not_trained": true,
+      "adapter_rank": 2,
+      "adapter_alpha": 4,
+      "adapter_targets": [
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.k_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj",
+        "base_model.model.model.layers.0.self_attn.o_proj"
+      ],
+      "inference_mode": true,
+      "all_parameters_frozen": true,
+      "A_shape": [
+        2,
+        16
+      ],
+      "B_shape": [
+        16,
+        2
+      ],
+      "logits_shape": [
+        1,
+        70,
+        96
+      ],
+      "nonzero_adapter_logit_difference": 0.0096809770911932,
+      "save_reload_forward_max_error": 0.0,
+      "save_reload_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "loaded_module_merged_flags": {
+        "base_model.model.model.layers.0.self_attn.q_proj": false,
+        "base_model.model.model.layers.0.self_attn.k_proj": false,
+        "base_model.model.model.layers.0.self_attn.v_proj": false,
+        "base_model.model.model.layers.0.self_attn.o_proj": false
+      },
+      "attention_implementation": "eager",
+      "model_and_adapter_files_in_temporary_directory_only": true
+    },
+    "CPU_function_adaptation": {
+      "only_device_expression_changed": ".cuda()→.to(\"cpu\")",
+      "original_AST_recoverable_after_reverse_change": true,
+      "all_generation_options_including_max_new_tokens_256_preserved": true,
+      "transparent_result_observer_no_generation_mock": true
+    },
+    "actual_CPU_generation": {
+      "sequence_shape": [
+        1,
+        96
+      ],
+      "input_shape": [
+        1,
+        70
+      ],
+      "new_tokens": 26,
+      "returned_sequences": 1,
+      "score_steps": 55,
+      "score_shape": [
+        4,
+        96
+      ],
+      "first_forward_shape": [
+        4,
+        70
+      ],
+      "subsequent_forward_shapes": [
+        [
+          4,
+          1
+        ]
+      ],
+      "printed_response_sha256": "c374da1497df62b75dba39a3312d95a2888e328caa8354403aef27d0f2333bcb",
+      "sequences_sha256": "4738beb9908d491986dfae2de31da1c92d02dc810081b71387ae4b092eba2fa7",
+      "returns_None": true,
+      "prompt_prefix_preserved": true,
+      "decode_and_original_split_executed": true,
+      "missing_marker_IndexError": true,
+      "instruction_marker_selects_wrong_segment": true
+    }
+  },
+  "annotated": {
+    "source_sha256": "c00248fa122fa3bd299db658d705e5f9e2f1e4f5e791447b596f425081c46a90",
+    "is_annotated": true,
+    "original_code_cells_executed": [
+      1,
+      2,
+      7,
+      8,
+      18,
+      24,
+      11,
+      12,
+      15,
+      20,
+      21,
+      25,
+      27
+    ],
+    "original_code_records": [
+      {
+        "cell": 1,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 2,
+        "original_statements_executed": true,
+        "result_type": "str",
+        "printed_lines": 0
+      },
+      {
+        "cell": 7,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 8,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 18,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 24,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0
+      },
+      {
+        "cell": 11,
+        "original_statements_executed": true,
+        "result_type": "LlamaForCausalLM",
+        "printed_lines": 0
+      },
+      {
+        "cell": 12,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 12
+      },
+      {
+        "cell": 15,
+        "original_statements_executed": true,
+        "result_type": "LlamaTokenizer",
+        "printed_lines": 0
+      },
+      {
+        "cell": 20,
+        "original_statements_executed": true,
+        "result_type": "PeftModelForCausalLM",
+        "printed_lines": 0,
+        "warnings": []
+      },
+      {
+        "cell": 21,
+        "original_statements_executed": true,
+        "result_type": "dict",
+        "printed_lines": 2,
+        "warnings": []
+      },
+      {
+        "cell": 25,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0,
+        "warnings": [
+          "`do_sample` is set to `False`. However, `temperature` is set to `1.5` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed.",
+          "`do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`. This was detected when initializing the generation config instance, which means the corresponding file may hold incorrect parameterization and should be fixed."
+        ]
+      },
+      {
+        "cell": 27,
+        "original_statements_executed": true,
+        "result_type": "NoneType",
+        "printed_lines": 0,
+        "warnings": []
+      }
+    ],
+    "excluded_original_cells": [
+      0,
+      10,
+      14,
+      19,
+      26
+    ],
+    "original_prompt_branches": {
+      "none_equals_empty": true,
+      "with_input": true,
+      "exact_prior_template_match": true
+    },
+    "original_generation_config": {
+      "temperature": 1.5,
+      "top_p": 0.8,
+      "num_beams": 4,
+      "do_sample": false,
+      "num_return_sequences": 1
+    },
+    "original_inference_CPU_failure": {
+      "type": "AssertionError",
+      "message": "Torch not compiled with CUDA enabled",
+      "location": "inputs[\"input_ids\"].cuda()",
+      "model_generate_not_reached": true
+    },
+    "supplementary_setup": {
+      "random_Llama_layers": 1,
+      "hidden_size": 16,
+      "intermediate_size": 32,
+      "heads": 2,
+      "KV_heads": 2,
+      "real_LlamaTokenizer_SentencePiece_vocab": 96,
+      "local_base_reload": true,
+      "local_adapter_reload": true,
+      "adapter_random_not_trained": true,
+      "adapter_rank": 2,
+      "adapter_alpha": 4,
+      "adapter_targets": [
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.k_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj",
+        "base_model.model.model.layers.0.self_attn.o_proj"
+      ],
+      "inference_mode": true,
+      "all_parameters_frozen": true,
+      "A_shape": [
+        2,
+        16
+      ],
+      "B_shape": [
+        16,
+        2
+      ],
+      "logits_shape": [
+        1,
+        70,
+        96
+      ],
+      "nonzero_adapter_logit_difference": 0.0096809770911932,
+      "save_reload_forward_max_error": 0.0,
+      "save_reload_tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      },
+      "loaded_module_merged_flags": {
+        "base_model.model.model.layers.0.self_attn.q_proj": false,
+        "base_model.model.model.layers.0.self_attn.k_proj": false,
+        "base_model.model.model.layers.0.self_attn.v_proj": false,
+        "base_model.model.model.layers.0.self_attn.o_proj": false
+      },
+      "attention_implementation": "eager",
+      "model_and_adapter_files_in_temporary_directory_only": true
+    },
+    "CPU_function_adaptation": {
+      "only_device_expression_changed": ".cuda()→.to(\"cpu\")",
+      "original_AST_recoverable_after_reverse_change": true,
+      "all_generation_options_including_max_new_tokens_256_preserved": true,
+      "transparent_result_observer_no_generation_mock": true
+    },
+    "actual_CPU_generation": {
+      "sequence_shape": [
+        1,
+        96
+      ],
+      "input_shape": [
+        1,
+        70
+      ],
+      "new_tokens": 26,
+      "returned_sequences": 1,
+      "score_steps": 55,
+      "score_shape": [
+        4,
+        96
+      ],
+      "first_forward_shape": [
+        4,
+        70
+      ],
+      "subsequent_forward_shapes": [
+        [
+          4,
+          1
+        ]
+      ],
+      "printed_response_sha256": "c374da1497df62b75dba39a3312d95a2888e328caa8354403aef27d0f2333bcb",
+      "sequences_sha256": "4738beb9908d491986dfae2de31da1c92d02dc810081b71387ae4b092eba2fa7",
+      "returns_None": true,
+      "prompt_prefix_preserved": true,
+      "decode_and_original_split_executed": true,
+      "missing_marker_IndexError": true,
+      "instruction_marker_selects_wrong_segment": true
+    }
+  },
+  "structural_and_numerical_results_equal": true,
+  "limits": [
+    "No original remote 7B model/tokenizer/Alpaca adapter loaded; no bitsandbytes/8bit/CUDA/auto multi-device reproduction",
+    "Original inference called in CPU package and fails at .cuda(); supplementary actual generation changes only device expression",
+    "Random small LLaMA, locally trained tokenizer and random nonzero adapter are teaching data, not evaluated Alpaca capability",
+    "Installation and interactive notebook cells not executed; proxy remains disabled; original histories preserved"
+  ]
+}

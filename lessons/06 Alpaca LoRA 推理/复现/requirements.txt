@@ -1,0 +1,9 @@
+# 实际Python3.12.14。torch需按README从官方CPU索引安装。
+# PEFT直接使用固定官方源码目录，由--peft-source指定，不依赖当前安装的peft版本。
+torch==2.5.1
+transformers==4.44.2
+sentencepiece==0.2.0
+tokenizers==0.19.1
+accelerate==0.34.2
+ipython==8.37.0
+nbformat==5.10.4
