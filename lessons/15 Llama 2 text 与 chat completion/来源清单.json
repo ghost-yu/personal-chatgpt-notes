@@ -1,0 +1,62 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "llama2_src_01.ipynb",
+  "sha256": "ade79a830acfefdd1d08d7d01048005e1e0a2f859167c9c29d2f19642817baeb",
+  "cells": 12,
+  "code_cells": 3,
+  "syntax": "passed",
+  "markdown_command_cells": [
+    7,
+    9
+  ],
+  "transcript": "8771b843-2875-4772-8093-c7c7ebbba041.txt",
+  "transcript_sha256": "9fe250fcf181e84f0ee10f3b2b276c6f731d1e74d3e2c62c8d3ef6121ae40b33",
+  "references": {
+    "official_repository": "meta-llama/llama",
+    "official_revision": {
+      "sha": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+      "branch": "llama_v2",
+      "date": "2023-09-01T16:41:43Z"
+    },
+    "teacher_exact_commit": "未找到",
+    "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+  },
+  "source_snapshots": [
+    {
+      "name": "example_chat_completion.py",
+      "sha256": "63fafc6376b66e2312b80791ddbe68f4c81c37fb7878bc07a7c71619fffa2437"
+    },
+    {
+      "name": "example_text_completion.py",
+      "sha256": "d3e57357209ebe2b58dd93e5e6317f8a26a6c842fda835c9351caee72209220f"
+    },
+    {
+      "name": "llama-generation.py",
+      "sha256": "acc739aeda4aa222305ca5e7ae020df38d0fa841530d966f041c13e065db05c4"
+    },
+    {
+      "name": "llama-model.py",
+      "sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754"
+    },
+    {
+      "name": "llama-tokenizer.py",
+      "sha256": "a675762526cd5f6e9d742a642e33a3560ea825522b8a9efb531d36b7c7a69e6c"
+    },
+    {
+      "name": "official-revision.json",
+      "sha256": "07757569b5c9f8d303bd5d7656c9f61b631ffb2e8658bd37a7fdb4295ec146cc"
+    },
+    {
+      "name": "README.md",
+      "sha256": "13ccc058f541259852b128e47ee3263a1c3e6ab989f05ed404ee7fcf193caa2b"
+    },
+    {
+      "name": "requirements.txt",
+      "sha256": "a37cd90404e8f7cd5b5e80947d16b56cadaf0cf9b63f77181f8560bcedaab48e"
+    },
+    {
+      "name": "setup.py",
+      "sha256": "f7b14cde881959e174a79560c0615e8514f9de1b8454ba84de44dee0932aaf7c"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "status": "partial",
+  "real_model_generate": false,
+  "executed_official_methods": [
+    "Tokenizer.encode",
+    "Tokenizer.decode",
+    "Llama.text_completion",
+    "Llama.chat_completion"
+  ],
+  "generator": "fake; constant fixture answer and synthetic logprobs, no torch",
+  "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+  "text_prompt_bos": 1,
+  "chat_prompt_token_count": 41,
+  "history_bos_count": 2,
+  "history_eos_count": 1,
+  "input_dialog_unchanged": true,
+  "no_default_system_injection": true,
+  "default_chat_max_gen_len": 511,
+  "invalid_dialog_errors": {
+    "last_assistant": "AssertionError",
+    "two_users": "AssertionError",
+    "system_only": "IndexError",
+    "empty": "IndexError"
+  },
+  "unsafe_prompt_still_calls_generate": true,
+  "unsafe_logprobs_metadata_still_returned": true,
+  "official_example_dialogs": 6,
+  "official_example_prompt_lengths": [
+    18,
+    248,
+    38,
+    38,
+    145,
+    21
+  ],
+  "max_batch_four_rejected": true,
+  "max_batch_eight_accepted": true,
+  "slice_example_continuation": [
+    10
+  ],
+  "text_example_default_max_gen_len": 64
+}

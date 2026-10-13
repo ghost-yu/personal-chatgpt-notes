@@ -20,10 +20,10 @@
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) | 解释完成；packing/数学/源码 fixture 验证通过，未运行 Xgen |
 | 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) | 解释完成；梯度/重算/静态验证通过，未运行 BERT 显存实验 |
 | 14 | [Llama 2 introduction 与 Guanaco](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/%E8%A7%A3%E9%87%8A.md) | 解释完成；真实 tokenizer/样本/配置验证通过，未运行7B生成或训练 |
+| 15 | [Llama 2 text 与 chat completion](lessons/15%20Llama%202%20text%20%E4%B8%8E%20chat%20completion/%E8%A7%A3%E9%87%8A.md) | 解释完成；官方包装方法与真实 tokenizer 验证通过，生成器为 fixture |
 
 ## 待完成
 
-- 15：Llama 2 text/chat completion
 - 16：TRL 基础与 reward/PPOTrainer
 - 17：RMSNorm 与 SwiGLU
 - 18：RoPE 复数形式
