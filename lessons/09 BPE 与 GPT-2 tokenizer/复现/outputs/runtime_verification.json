@@ -1,0 +1,2136 @@
+{
+  "environment": {
+    "OS": "Windows-11-10.0.26200-SP0",
+    "Python": "3.12.14",
+    "packages": {
+      "transformers": "4.44.2",
+      "tokenizers": "0.19.1",
+      "datasets": "2.19.2",
+      "pyarrow": "16.1.0",
+      "sentencepiece": "0.2.0",
+      "tqdm": "4.70.1",
+      "IPython": "8.37.0",
+      "nbformat": "5.10.4"
+    }
+  },
+  "assets": [
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "config.json",
+      "bytes": 665,
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer_config.json",
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer.json",
+      "bytes": 1355256,
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "config.json",
+      "bytes": 1208,
+      "sha256": "46dd7cb62d29c81fb551e0ef1ea274c24a46ba441eeb948897706252933df033"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "tokenizer.json",
+      "bytes": 1389353,
+      "sha256": "d2acde0d8d71dd30a711834b07781b9c89feaac33fd332f60507699282740066"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "spiece.model",
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    }
+  ],
+  "original": {
+    "source_hashes": {
+      "tokenizer_basics.ipynb": "d5a46395802d3f9db31feb6e777ee727931841a9802f7f16599ef705f71a7569",
+      "gpt2_train_tokenizer.ipynb": "b5916906f3f4246e6e0d1cb6c7a80712bba000d2f65f2b6d3b9ebe9f584ab9df",
+      "gpt2.ipynb": "fbc5d24c92f71334cbee02f3293a51528469d4491a99d3824eadae9bbad88cdd"
+    },
+    "basics_execution": [
+      {
+        "cell": 0,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 3,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 4,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 5,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 6,
+        "scope": "整个原格执行",
+        "stdout": "['hello']\n",
+        "result": [
+          "",
+          "s",
+          "ex"
+        ]
+      },
+      {
+        "cell": 9,
+        "scope": "整个原格执行",
+        "stdout": "def say_hello():\n    print('Hello, World!')\n    \n# print hello\nsay_hello()\n\n",
+        "result": null
+      },
+      {
+        "cell": 10,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "[4299, 910, 62, 31373, 33529, 198, 220, 220, 220, 3601, 10786, 15496, 11, 2159, 0, 11537, 198, 220, 220, 220, 220, 198, 2, 3601, 23748, 198, 16706, 62, 31373, 3419, 198]\n['def', 'Ġsay', '_', 'hello', '():', 'Ċ', 'Ġ', 'Ġ', 'Ġ', 'Ġprint', \"('\", 'Hello', ',', 'ĠWorld', '!', \"')\", 'Ċ', 'Ġ', 'Ġ', 'Ġ', 'Ġ', 'Ċ', '#', 'Ġprint', 'Ġhello', 'Ċ', 'say', '_', 'hello', '()', 'Ċ']\n",
+        "result": null
+      },
+      {
+        "cell": 11,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 12,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          [
+            "def",
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            "Ġsay",
+            [
+              3,
+              7
+            ]
+          ],
+          [
+            "_",
+            [
+              7,
+              8
+            ]
+          ],
+          [
+            "hello",
+            [
+              8,
+              13
+            ]
+          ],
+          [
+            "():",
+            [
+              13,
+              16
+            ]
+          ],
+          [
+            "ĊĠĠĠ",
+            [
+              16,
+              20
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              20,
+              26
+            ]
+          ],
+          [
+            "('",
+            [
+              26,
+              28
+            ]
+          ],
+          [
+            "Hello",
+            [
+              28,
+              33
+            ]
+          ],
+          [
+            ",",
+            [
+              33,
+              34
+            ]
+          ],
+          [
+            "ĠWorld",
+            [
+              34,
+              40
+            ]
+          ],
+          [
+            "!')",
+            [
+              40,
+              43
+            ]
+          ],
+          [
+            "ĊĠĠĠĠ",
+            [
+              43,
+              48
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              48,
+              49
+            ]
+          ],
+          [
+            "#",
+            [
+              49,
+              50
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              50,
+              56
+            ]
+          ],
+          [
+            "Ġhello",
+            [
+              56,
+              62
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              62,
+              63
+            ]
+          ],
+          [
+            "say",
+            [
+              63,
+              66
+            ]
+          ],
+          [
+            "_",
+            [
+              66,
+              67
+            ]
+          ],
+          [
+            "hello",
+            [
+              67,
+              72
+            ]
+          ],
+          [
+            "()",
+            [
+              72,
+              74
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              74,
+              75
+            ]
+          ]
+        ]
+      },
+      {
+        "cell": 13,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": 226
+      },
+      {
+        "cell": 14,
+        "scope": "整个原格执行",
+        "stdout": "a, b'a', 97\n€, b'\\xe2\\x82\\xac', [226, 130, 172]\n",
+        "result": null
+      },
+      {
+        "cell": 17,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "image": {
+          "sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66",
+          "bytes": 605994
+        }
+      },
+      {
+        "cell": 20,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 25,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 26,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "dict_size": 256
+        }
+      },
+      {
+        "cell": 27,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "dict_size": 256
+        }
+      },
+      {
+        "cell": 28,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": 256
+      },
+      {
+        "cell": 29,
+        "scope": "整个原格执行",
+        "stdout": "! Ń\n",
+        "result": null
+      },
+      {
+        "cell": 30,
+        "scope": "整个原格执行",
+        "stdout": "Ċ\n",
+        "result": null
+      },
+      {
+        "cell": 31,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "",
+        "result": [
+          [
+            "def",
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            "Ġsay",
+            [
+              3,
+              7
+            ]
+          ],
+          [
+            "_",
+            [
+              7,
+              8
+            ]
+          ],
+          [
+            "hello",
+            [
+              8,
+              13
+            ]
+          ],
+          [
+            "():",
+            [
+              13,
+              16
+            ]
+          ],
+          [
+            "ĊĠĠĠ",
+            [
+              16,
+              20
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              20,
+              26
+            ]
+          ],
+          [
+            "('",
+            [
+              26,
+              28
+            ]
+          ],
+          [
+            "Hello",
+            [
+              28,
+              33
+            ]
+          ],
+          [
+            ",",
+            [
+              33,
+              34
+            ]
+          ],
+          [
+            "ĠWorld",
+            [
+              34,
+              40
+            ]
+          ],
+          [
+            "!')",
+            [
+              40,
+              43
+            ]
+          ],
+          [
+            "ĊĠĠĠĠ",
+            [
+              43,
+              48
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              48,
+              49
+            ]
+          ],
+          [
+            "#",
+            [
+              49,
+              50
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              50,
+              56
+            ]
+          ],
+          [
+            "Ġhello",
+            [
+              56,
+              62
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              62,
+              63
+            ]
+          ],
+          [
+            "say",
+            [
+              63,
+              66
+            ]
+          ],
+          [
+            "_",
+            [
+              66,
+              67
+            ]
+          ],
+          [
+            "hello",
+            [
+              67,
+              72
+            ]
+          ],
+          [
+            "()",
+            [
+              72,
+              74
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              74,
+              75
+            ]
+          ]
+        ]
+      },
+      {
+        "cell": 33,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "class": "GPT2TokenizerFast",
+          "repr": "GPT2TokenizerFast(name_or_path='G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存\\gpt2', vocab_size=50257, model_max_length=1024, is_fast=True, padding_side='right', truncation_side='right', special_tokens={'bos_token': '<|endoftext|>', 'eos_token': '<|endoftext|>', 'unk_token': '<|endoftext|>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={\n\t50256: AddedToken(\"<|endoftext|>\", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),\n}"
+        }
+      },
+      {
+        "cell": 36,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+          " =================================================================",
+          " ----------------------------------------------------------------",
+          "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+          "................................................................",
+          "----------------------------------------------------------------",
+          "________________________________________________________________",
+          "================================================================",
+          "--------------------------------------------------------",
+          "------------------------------------------------"
+        ],
+        "tie_aware_comparison": {
+          "sort_key": "len(token representation)",
+          "top10_key_lengths": [
+            128,
+            66,
+            65,
+            64,
+            64,
+            64,
+            64,
+            64,
+            56,
+            48
+          ],
+          "tie_order_not_defined": true,
+          "all_returned_items_match_original_sort": true
+        }
+      },
+      {
+        "cell": 37,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          "<|endoftext|>",
+          " gazed",
+          " informants",
+          " Collider",
+          " regress",
+          "ominated",
+          " amplification",
+          "Compar",
+          "….\"",
+          " (/",
+          "Commission",
+          " Hitman"
+        ]
+      },
+      {
+        "cell": 38,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      }
+    ],
+    "basics21_original_function_on_small_Dataset": {
+      "rows": 2051,
+      "batch_sizes": [
+        1000,
+        1000,
+        51
+      ]
+    },
+    "basics22_expected_error": [
+      {
+        "type": "SyntaxError",
+        "message": "trailing comma not allowed without surrounding parentheses"
+      }
+    ],
+    "basics22_independent_one_comma_fix": "WordPiece对象成功，仅构造，不训练",
+    "Markdown2_executed_on_separate_tokenizer": {
+      "padding_side": "right",
+      "pad_equals_eos": true
+    },
+    "byte_checks": {
+      "mapping_count": 256,
+      "space": "Ġ",
+      "newline": "Ċ",
+      "carriage_return": "č",
+      "euro_bytes": [
+        226,
+        130,
+        172
+      ],
+      "sample": "中文 € 😀\n    print(1)\t\r\n ",
+      "full_roundtrip": "中文 € 😀\n    print(1)\t\r\n ",
+      "emoji_ids": [
+        47249,
+        222
+      ],
+      "emoji_individual_decode": [
+        "�",
+        "�"
+      ],
+      "base_vocab10_is_not_byte10": true
+    },
+    "training_execution": [
+      {
+        "cell": 9,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": {
+          "class": "GPT2TokenizerFast",
+          "repr": "GPT2TokenizerFast(name_or_path='G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存\\gpt2', vocab_size=320, model_max_length=1024, is_fast=True, padding_side='right', truncation_side='right', special_tokens={'bos_token': '<|endoftext|>', 'eos_token': '<|endoftext|>', 'unk_token': '<|endoftext|>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={\n\t0: AddedToken(\"<|endoftext|>\", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),\n}"
+        },
+        "stdout": ""
+      },
+      {
+        "cell": 11,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": ""
+      },
+      {
+        "cell": 12,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          "!",
+          "\"",
+          "#",
+          "$",
+          "%",
+          "&",
+          "'",
+          "(",
+          ")",
+          "*"
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 13,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          [
+            "ĠĠ",
+            "  "
+          ],
+          [
+            "Ġr",
+            " r"
+          ],
+          [
+            "ow",
+            "ow"
+          ],
+          [
+            "Ġi",
+            " i"
+          ],
+          [
+            "Ġrow",
+            " row"
+          ],
+          [
+            "em",
+            "em"
+          ],
+          [
+            "tem",
+            "tem"
+          ],
+          [
+            "ĊĠĠ",
+            "\n  "
+          ],
+          [
+            "ĊĠĠĠ",
+            "\n   "
+          ],
+          [
+            "al",
+            "al"
+          ],
+          [
+            "el",
+            "el"
+          ],
+          [
+            "in",
+            "in"
+          ],
+          [
+            "lo",
+            "lo"
+          ],
+          [
+            "or",
+            "or"
+          ],
+          [
+            "pr",
+            "pr"
+          ],
+          [
+            "Ġpr",
+            " pr"
+          ],
+          [
+            "Ġitem",
+            " item"
+          ],
+          [
+            "ello",
+            "ello"
+          ],
+          [
+            "int",
+            "int"
+          ],
+          [
+            "Ġprint",
+            " print"
+          ],
+          [
+            "Ġ1",
+            " 1"
+          ],
+          [
+            "!'",
+            "!'"
+          ],
+          [
+            "('",
+            "('"
+          ]
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 14,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          [
+            "Ġ=",
+            " ="
+          ],
+          [
+            "ĠFal",
+            " Fal"
+          ],
+          [
+            "ĠNo",
+            " No"
+          ],
+          [
+            "ĠWor",
+            " Wor"
+          ],
+          [
+            "Ġsay",
+            " say"
+          ],
+          [
+            "Ġval",
+            " val"
+          ],
+          [
+            "ĠâĤ",
+            " �"
+          ],
+          [
+            "Ġä¸Ń",
+            " 中"
+          ],
+          [
+            "ĠðŁ",
+            " �"
+          ],
+          [
+            "ĺĢ",
+            "��"
+          ],
+          [
+            "Ġret",
+            " ret"
+          ],
+          [
+            "Ġin",
+            " in"
+          ],
+          [
+            "Ġis",
+            " is"
+          ],
+          [
+            "Ġitems",
+            " items"
+          ],
+          [
+            "!')",
+            "!')"
+          ]
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 16,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": ""
+      },
+      {
+        "cell": 17,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": 35,
+        "stdout": ""
+      },
+      {
+        "cell": 18,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": "`False` not in the new tokenizer\n`None` not in the new tokenizer\n`True` not in the new tokenizer\n`and` not in the new tokenizer\n`as` not in the new tokenizer\n`assert` not in the new tokenizer\n`async` not in the new tokenizer\n`await` not in the new tokenizer\n`break` not in the new tokenizer\n`class` not in the new tokenizer\n`continue` not in the new tokenizer\n`def` not in the new tokenizer\n`del` not in the new tokenizer\n`elif` not in the new tokenizer\n`else` not in the new tokenizer\n`except` not in the new tokenizer\n`finally` not in the new tokenizer\n`from` not in the new tokenizer\n`global` not in the new tokenizer\n`import` not in the new tokenizer\n`is` not in the new tokenizer\n`lambda` not in the new tokenizer\n`nonlocal` not in the new tokenizer\n`not` not in the new tokenizer\n`pass` not in the new tokenizer\n`raise` not in the new tokenizer\n`return` not in the new tokenizer\n`try` not in the new tokenizer\n`while` not in the new tokenizer\n`with` not in the new tokenizer\n`yield` not in the new tokenizer\n"
+      }
+    ],
+    "training_execution_scope": {
+      "entire_unmodified_cells_with_small_global_context": [
+        1,
+        3,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        21,
+        23,
+        26
+      ],
+      "audited_modified_cells": {
+        "4": "本地tokenizer路径/local_files_only",
+        "8": "vocab12500→320",
+        "20": "100000→500，32768→336"
+      },
+      "skipped_original_cells": {
+        "2": "课程本地语料缺失，另用真实json流数据",
+        "24": "代理环境未改",
+        "25": "讲师Hub上传未执行"
+      }
+    },
+    "small_training": {
+      "real_dataset_type": "IterableDataset",
+      "rows": 2000,
+      "batch_default": 1000,
+      "original7_body_unchanged": true,
+      "supplement8_vocab12500_to320": true,
+      "supplement20_constants_only": {
+        "100000": 500,
+        "32768": 336
+      },
+      "first_rows": [
+        0,
+        999
+      ],
+      "second_rows": [
+        1000,
+        1999
+      ],
+      "read_rows_total": 2000,
+      "old_template_unchanged": true,
+      "first_object_unchanged_after_second": true,
+      "trained_tokenizers": [
+        {
+          "name": "first",
+          "actual_vocab": 320,
+          "merges": 63,
+          "special_ids": [
+            0
+          ],
+          "sample_ids": [
+            302,
+            303,
+            230,
+            311,
+            106,
+            313,
+            314,
+            265,
+            276,
+            8,
+            17,
+            9,
+            198,
+            202,
+            199,
+            127,
+            255
+          ],
+          "sample_tokens": [
+            "ä¸Ń",
+            "æĸ",
+            "ĩ",
+            "ĠâĤ",
+            "¬",
+            "ĠðŁ",
+            "ĺĢ",
+            "ĊĠĠĠ",
+            "Ġprint",
+            "(",
+            "1",
+            ")",
+            "ĉ",
+            "č",
+            "Ċ",
+            "Â",
+            "ł"
+          ],
+          "full_decode": "中文 € 😀\n    print(1)\t\r\n ",
+          "save_reload_equal": true
+        },
+        {
+          "name": "second",
+          "actual_vocab": 336,
+          "merges": 79,
+          "special_ids": [
+            0
+          ],
+          "sample_ids": [
+            161,
+            117,
+            256,
+            163,
+            245,
+            230,
+            221,
+            159,
+            225,
+            106,
+            221,
+            173,
+            254,
+            247,
+            223,
+            262,
+            221,
+            80,
+            82,
+            73,
+            78,
+            84,
+            8,
+            17,
+            9,
+            198,
+            202,
+            199,
+            127,
+            255
+          ],
+          "sample_tokens": [
+            "ä",
+            "¸",
+            "Ń",
+            "æ",
+            "ĸ",
+            "ĩ",
+            "Ġ",
+            "â",
+            "Ĥ",
+            "¬",
+            "Ġ",
+            "ð",
+            "Ł",
+            "ĺ",
+            "Ģ",
+            "ĊĠĠĠ",
+            "Ġ",
+            "p",
+            "r",
+            "i",
+            "n",
+            "t",
+            "(",
+            "1",
+            ")",
+            "ĉ",
+            "č",
+            "Ċ",
+            "Â",
+            "ł"
+          ],
+          "full_decode": "中文 € 😀\n    print(1)\t\r\n ",
+          "save_reload_equal": true
+        }
+      ],
+      "second_keyword_stdout": "`False` not in the new tokenizer\n`None` not in the new tokenizer\n`True` not in the new tokenizer\n`and` not in the new tokenizer\n`assert` not in the new tokenizer\n`await` not in the new tokenizer\n`break` not in the new tokenizer\n`continue` not in the new tokenizer\n`del` not in the new tokenizer\n`elif` not in the new tokenizer\n`else` not in the new tokenizer\n`finally` not in the new tokenizer\n`for` not in the new tokenizer\n`from` not in the new tokenizer\n`global` not in the new tokenizer\n`if` not in the new tokenizer\n`import` not in the new tokenizer\n`in` not in the new tokenizer\n`is` not in the new tokenizer\n`lambda` not in the new tokenizer\n`nonlocal` not in the new tokenizer\n`not` not in the new tokenizer\n`raise` not in the new tokenizer\n`return` not in the new tokenizer\n`while` not in the new tokenizer\n`with` not in the new tokenizer\n`yield` not in the new tokenizer\n"
+    },
+    "iterator_boundaries": {
+      "original_length5_batch2_reads6": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "4",
+          "5"
+        ]
+      ],
+      "original_length8_batch3_rows7_partial_lost": [
+        [
+          "0",
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4",
+          "5"
+        ]
+      ],
+      "original_exhaustion": "generator raised StopIteration",
+      "safe_partial": [
+        [
+          "0",
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4",
+          "5"
+        ],
+        [
+          "6"
+        ]
+      ],
+      "boundary_tqdm_display_only_silenced": true
+    },
+    "auxiliary": {
+      "entire_original_cells_executed": [
+        2,
+        3
+      ],
+      "independent_json_builder_cache_is_string": true,
+      "shell1_4_not_executed": true,
+      "original5_missing_path_not_executed": true
+    },
+    "weighted_pair_counts": {
+      "a a": 4,
+      "a b": 5,
+      "b a": 2
+    },
+    "excluded_side_effects": {
+      "course_datasets_downloaded": false,
+      "original_proxy24_executed": false,
+      "original_Hub25_executed": false,
+      "model_weights_downloaded": false,
+      "LM_training": false
+    }
+  },
+  "annotated": {
+    "source_hashes": {
+      "代码注释.ipynb": "2bd93dfd8f47e3039ddc89d3184be7e64b2b54c9b2012e1f5e85987ddfdadf2d",
+      "gpt2_train_tokenizer_代码注释.ipynb": "4ece581add67b29fa275cd9bc5db42b599879fbdb3fee950221da10c1bbf48ec",
+      "gpt2_代码注释.ipynb": "26249e2cab4bc6370e657d6c55218004576f6f905f3433462764dc8f937fb073"
+    },
+    "basics_execution": [
+      {
+        "cell": 0,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 3,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 4,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 5,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 6,
+        "scope": "整个原格执行",
+        "stdout": "['hello']\n",
+        "result": [
+          "",
+          "s",
+          "ex"
+        ]
+      },
+      {
+        "cell": 9,
+        "scope": "整个原格执行",
+        "stdout": "def say_hello():\n    print('Hello, World!')\n    \n# print hello\nsay_hello()\n\n",
+        "result": null
+      },
+      {
+        "cell": 10,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "[4299, 910, 62, 31373, 33529, 198, 220, 220, 220, 3601, 10786, 15496, 11, 2159, 0, 11537, 198, 220, 220, 220, 220, 198, 2, 3601, 23748, 198, 16706, 62, 31373, 3419, 198]\n['def', 'Ġsay', '_', 'hello', '():', 'Ċ', 'Ġ', 'Ġ', 'Ġ', 'Ġprint', \"('\", 'Hello', ',', 'ĠWorld', '!', \"')\", 'Ċ', 'Ġ', 'Ġ', 'Ġ', 'Ġ', 'Ċ', '#', 'Ġprint', 'Ġhello', 'Ċ', 'say', '_', 'hello', '()', 'Ċ']\n",
+        "result": null
+      },
+      {
+        "cell": 11,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 12,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          [
+            "def",
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            "Ġsay",
+            [
+              3,
+              7
+            ]
+          ],
+          [
+            "_",
+            [
+              7,
+              8
+            ]
+          ],
+          [
+            "hello",
+            [
+              8,
+              13
+            ]
+          ],
+          [
+            "():",
+            [
+              13,
+              16
+            ]
+          ],
+          [
+            "ĊĠĠĠ",
+            [
+              16,
+              20
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              20,
+              26
+            ]
+          ],
+          [
+            "('",
+            [
+              26,
+              28
+            ]
+          ],
+          [
+            "Hello",
+            [
+              28,
+              33
+            ]
+          ],
+          [
+            ",",
+            [
+              33,
+              34
+            ]
+          ],
+          [
+            "ĠWorld",
+            [
+              34,
+              40
+            ]
+          ],
+          [
+            "!')",
+            [
+              40,
+              43
+            ]
+          ],
+          [
+            "ĊĠĠĠĠ",
+            [
+              43,
+              48
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              48,
+              49
+            ]
+          ],
+          [
+            "#",
+            [
+              49,
+              50
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              50,
+              56
+            ]
+          ],
+          [
+            "Ġhello",
+            [
+              56,
+              62
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              62,
+              63
+            ]
+          ],
+          [
+            "say",
+            [
+              63,
+              66
+            ]
+          ],
+          [
+            "_",
+            [
+              66,
+              67
+            ]
+          ],
+          [
+            "hello",
+            [
+              67,
+              72
+            ]
+          ],
+          [
+            "()",
+            [
+              72,
+              74
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              74,
+              75
+            ]
+          ]
+        ]
+      },
+      {
+        "cell": 13,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": 226
+      },
+      {
+        "cell": 14,
+        "scope": "整个原格执行",
+        "stdout": "a, b'a', 97\n€, b'\\xe2\\x82\\xac', [226, 130, 172]\n",
+        "result": null
+      },
+      {
+        "cell": 17,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "image": {
+          "sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66",
+          "bytes": 605994
+        }
+      },
+      {
+        "cell": 20,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 25,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      },
+      {
+        "cell": 26,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "dict_size": 256
+        }
+      },
+      {
+        "cell": 27,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "dict_size": 256
+        }
+      },
+      {
+        "cell": 28,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": 256
+      },
+      {
+        "cell": 29,
+        "scope": "整个原格执行",
+        "stdout": "! Ń\n",
+        "result": null
+      },
+      {
+        "cell": 30,
+        "scope": "整个原格执行",
+        "stdout": "Ċ\n",
+        "result": null
+      },
+      {
+        "cell": 31,
+        "scope": "只改from_pretrained为固定本地资产+local_files_only=True；逆变换AST相等。",
+        "stdout": "",
+        "result": [
+          [
+            "def",
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            "Ġsay",
+            [
+              3,
+              7
+            ]
+          ],
+          [
+            "_",
+            [
+              7,
+              8
+            ]
+          ],
+          [
+            "hello",
+            [
+              8,
+              13
+            ]
+          ],
+          [
+            "():",
+            [
+              13,
+              16
+            ]
+          ],
+          [
+            "ĊĠĠĠ",
+            [
+              16,
+              20
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              20,
+              26
+            ]
+          ],
+          [
+            "('",
+            [
+              26,
+              28
+            ]
+          ],
+          [
+            "Hello",
+            [
+              28,
+              33
+            ]
+          ],
+          [
+            ",",
+            [
+              33,
+              34
+            ]
+          ],
+          [
+            "ĠWorld",
+            [
+              34,
+              40
+            ]
+          ],
+          [
+            "!')",
+            [
+              40,
+              43
+            ]
+          ],
+          [
+            "ĊĠĠĠĠ",
+            [
+              43,
+              48
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              48,
+              49
+            ]
+          ],
+          [
+            "#",
+            [
+              49,
+              50
+            ]
+          ],
+          [
+            "Ġprint",
+            [
+              50,
+              56
+            ]
+          ],
+          [
+            "Ġhello",
+            [
+              56,
+              62
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              62,
+              63
+            ]
+          ],
+          [
+            "say",
+            [
+              63,
+              66
+            ]
+          ],
+          [
+            "_",
+            [
+              66,
+              67
+            ]
+          ],
+          [
+            "hello",
+            [
+              67,
+              72
+            ]
+          ],
+          [
+            "()",
+            [
+              72,
+              74
+            ]
+          ],
+          [
+            "Ċ",
+            [
+              74,
+              75
+            ]
+          ]
+        ]
+      },
+      {
+        "cell": 33,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": {
+          "class": "GPT2TokenizerFast",
+          "repr": "GPT2TokenizerFast(name_or_path='G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存\\gpt2', vocab_size=50257, model_max_length=1024, is_fast=True, padding_side='right', truncation_side='right', special_tokens={'bos_token': '<|endoftext|>', 'eos_token': '<|endoftext|>', 'unk_token': '<|endoftext|>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={\n\t50256: AddedToken(\"<|endoftext|>\", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),\n}"
+        }
+      },
+      {
+        "cell": 36,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+          " =================================================================",
+          " ----------------------------------------------------------------",
+          "================================================================",
+          "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+          "................................................................",
+          "----------------------------------------------------------------",
+          "________________________________________________________________",
+          "--------------------------------------------------------",
+          "------------------------------------------------"
+        ],
+        "tie_aware_comparison": {
+          "sort_key": "len(token representation)",
+          "top10_key_lengths": [
+            128,
+            66,
+            65,
+            64,
+            64,
+            64,
+            64,
+            64,
+            56,
+            48
+          ],
+          "tie_order_not_defined": true,
+          "all_returned_items_match_original_sort": true
+        }
+      },
+      {
+        "cell": 37,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": [
+          "<|endoftext|>",
+          " gazed",
+          " informants",
+          " Collider",
+          " regress",
+          "ominated",
+          " amplification",
+          "Compar",
+          "….\"",
+          " (/",
+          "Commission",
+          " Hitman"
+        ]
+      },
+      {
+        "cell": 38,
+        "scope": "整个原格执行",
+        "stdout": "",
+        "result": null
+      }
+    ],
+    "basics21_original_function_on_small_Dataset": {
+      "rows": 2051,
+      "batch_sizes": [
+        1000,
+        1000,
+        51
+      ]
+    },
+    "basics22_expected_error": [
+      {
+        "type": "SyntaxError",
+        "message": "trailing comma not allowed without surrounding parentheses"
+      }
+    ],
+    "basics22_independent_one_comma_fix": "WordPiece对象成功，仅构造，不训练",
+    "Markdown2_executed_on_separate_tokenizer": {
+      "padding_side": "right",
+      "pad_equals_eos": true
+    },
+    "byte_checks": {
+      "mapping_count": 256,
+      "space": "Ġ",
+      "newline": "Ċ",
+      "carriage_return": "č",
+      "euro_bytes": [
+        226,
+        130,
+        172
+      ],
+      "sample": "中文 € 😀\n    print(1)\t\r\n ",
+      "full_roundtrip": "中文 € 😀\n    print(1)\t\r\n ",
+      "emoji_ids": [
+        47249,
+        222
+      ],
+      "emoji_individual_decode": [
+        "�",
+        "�"
+      ],
+      "base_vocab10_is_not_byte10": true
+    },
+    "training_execution": [
+      {
+        "cell": 9,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": {
+          "class": "GPT2TokenizerFast",
+          "repr": "GPT2TokenizerFast(name_or_path='G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存\\gpt2', vocab_size=320, model_max_length=1024, is_fast=True, padding_side='right', truncation_side='right', special_tokens={'bos_token': '<|endoftext|>', 'eos_token': '<|endoftext|>', 'unk_token': '<|endoftext|>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={\n\t0: AddedToken(\"<|endoftext|>\", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),\n}"
+        },
+        "stdout": ""
+      },
+      {
+        "cell": 11,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": ""
+      },
+      {
+        "cell": 12,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          "!",
+          "\"",
+          "#",
+          "$",
+          "%",
+          "&",
+          "'",
+          "(",
+          ")",
+          "*"
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 13,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          [
+            "ĠĠ",
+            "  "
+          ],
+          [
+            "Ġr",
+            " r"
+          ],
+          [
+            "ow",
+            "ow"
+          ],
+          [
+            "Ġi",
+            " i"
+          ],
+          [
+            "Ġrow",
+            " row"
+          ],
+          [
+            "em",
+            "em"
+          ],
+          [
+            "tem",
+            "tem"
+          ],
+          [
+            "ĊĠĠ",
+            "\n  "
+          ],
+          [
+            "ĊĠĠĠ",
+            "\n   "
+          ],
+          [
+            "al",
+            "al"
+          ],
+          [
+            "el",
+            "el"
+          ],
+          [
+            "in",
+            "in"
+          ],
+          [
+            "lo",
+            "lo"
+          ],
+          [
+            "or",
+            "or"
+          ],
+          [
+            "pr",
+            "pr"
+          ],
+          [
+            "Ġpr",
+            " pr"
+          ],
+          [
+            "Ġitem",
+            " item"
+          ],
+          [
+            "ello",
+            "ello"
+          ],
+          [
+            "int",
+            "int"
+          ],
+          [
+            "Ġprint",
+            " print"
+          ],
+          [
+            "Ġ1",
+            " 1"
+          ],
+          [
+            "!'",
+            "!'"
+          ],
+          [
+            "('",
+            "('"
+          ]
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 14,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": [
+          [
+            "Ġ=",
+            " ="
+          ],
+          [
+            "ĠFal",
+            " Fal"
+          ],
+          [
+            "ĠNo",
+            " No"
+          ],
+          [
+            "ĠWor",
+            " Wor"
+          ],
+          [
+            "Ġsay",
+            " say"
+          ],
+          [
+            "Ġval",
+            " val"
+          ],
+          [
+            "ĠâĤ",
+            " �"
+          ],
+          [
+            "Ġä¸Ń",
+            " 中"
+          ],
+          [
+            "ĠðŁ",
+            " �"
+          ],
+          [
+            "ĺĢ",
+            "��"
+          ],
+          [
+            "Ġret",
+            " ret"
+          ],
+          [
+            "Ġin",
+            " in"
+          ],
+          [
+            "Ġis",
+            " is"
+          ],
+          [
+            "Ġitems",
+            " items"
+          ],
+          [
+            "!')",
+            "!')"
+          ]
+        ],
+        "stdout": ""
+      },
+      {
+        "cell": 16,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": ""
+      },
+      {
+        "cell": 17,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": 35,
+        "stdout": ""
+      },
+      {
+        "cell": 18,
+        "scope": "整个原格在第一轮小型新tokenizer上下文执行",
+        "result": null,
+        "stdout": "`False` not in the new tokenizer\n`None` not in the new tokenizer\n`True` not in the new tokenizer\n`and` not in the new tokenizer\n`as` not in the new tokenizer\n`assert` not in the new tokenizer\n`async` not in the new tokenizer\n`await` not in the new tokenizer\n`break` not in the new tokenizer\n`class` not in the new tokenizer\n`continue` not in the new tokenizer\n`def` not in the new tokenizer\n`del` not in the new tokenizer\n`elif` not in the new tokenizer\n`else` not in the new tokenizer\n`except` not in the new tokenizer\n`finally` not in the new tokenizer\n`from` not in the new tokenizer\n`global` not in the new tokenizer\n`import` not in the new tokenizer\n`is` not in the new tokenizer\n`lambda` not in the new tokenizer\n`nonlocal` not in the new tokenizer\n`not` not in the new tokenizer\n`pass` not in the new tokenizer\n`raise` not in the new tokenizer\n`return` not in the new tokenizer\n`try` not in the new tokenizer\n`while` not in the new tokenizer\n`with` not in the new tokenizer\n`yield` not in the new tokenizer\n"
+      }
+    ],
+    "training_execution_scope": {
+      "entire_unmodified_cells_with_small_global_context": [
+        1,
+        3,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        21,
+        23,
+        26
+      ],
+      "audited_modified_cells": {
+        "4": "本地tokenizer路径/local_files_only",
+        "8": "vocab12500→320",
+        "20": "100000→500，32768→336"
+      },
+      "skipped_original_cells": {
+        "2": "课程本地语料缺失，另用真实json流数据",
+        "24": "代理环境未改",
+        "25": "讲师Hub上传未执行"
+      }
+    },
+    "small_training": {
+      "real_dataset_type": "IterableDataset",
+      "rows": 2000,
+      "batch_default": 1000,
+      "original7_body_unchanged": true,
+      "supplement8_vocab12500_to320": true,
+      "supplement20_constants_only": {
+        "100000": 500,
+        "32768": 336
+      },
+      "first_rows": [
+        0,
+        999
+      ],
+      "second_rows": [
+        1000,
+        1999
+      ],
+      "read_rows_total": 2000,
+      "old_template_unchanged": true,
+      "first_object_unchanged_after_second": true,
+      "trained_tokenizers": [
+        {
+          "name": "first",
+          "actual_vocab": 320,
+          "merges": 63,
+          "special_ids": [
+            0
+          ],
+          "sample_ids": [
+            302,
+            303,
+            230,
+            311,
+            106,
+            313,
+            314,
+            265,
+            276,
+            8,
+            17,
+            9,
+            198,
+            202,
+            199,
+            127,
+            255
+          ],
+          "sample_tokens": [
+            "ä¸Ń",
+            "æĸ",
+            "ĩ",
+            "ĠâĤ",
+            "¬",
+            "ĠðŁ",
+            "ĺĢ",
+            "ĊĠĠĠ",
+            "Ġprint",
+            "(",
+            "1",
+            ")",
+            "ĉ",
+            "č",
+            "Ċ",
+            "Â",
+            "ł"
+          ],
+          "full_decode": "中文 € 😀\n    print(1)\t\r\n ",
+          "save_reload_equal": true
+        },
+        {
+          "name": "second",
+          "actual_vocab": 336,
+          "merges": 79,
+          "special_ids": [
+            0
+          ],
+          "sample_ids": [
+            161,
+            117,
+            256,
+            163,
+            245,
+            230,
+            221,
+            159,
+            225,
+            106,
+            221,
+            173,
+            254,
+            247,
+            223,
+            262,
+            221,
+            80,
+            82,
+            73,
+            78,
+            84,
+            8,
+            17,
+            9,
+            198,
+            202,
+            199,
+            127,
+            255
+          ],
+          "sample_tokens": [
+            "ä",
+            "¸",
+            "Ń",
+            "æ",
+            "ĸ",
+            "ĩ",
+            "Ġ",
+            "â",
+            "Ĥ",
+            "¬",
+            "Ġ",
+            "ð",
+            "Ł",
+            "ĺ",
+            "Ģ",
+            "ĊĠĠĠ",
+            "Ġ",
+            "p",
+            "r",
+            "i",
+            "n",
+            "t",
+            "(",
+            "1",
+            ")",
+            "ĉ",
+            "č",
+            "Ċ",
+            "Â",
+            "ł"
+          ],
+          "full_decode": "中文 € 😀\n    print(1)\t\r\n ",
+          "save_reload_equal": true
+        }
+      ],
+      "second_keyword_stdout": "`False` not in the new tokenizer\n`None` not in the new tokenizer\n`True` not in the new tokenizer\n`and` not in the new tokenizer\n`assert` not in the new tokenizer\n`await` not in the new tokenizer\n`break` not in the new tokenizer\n`continue` not in the new tokenizer\n`del` not in the new tokenizer\n`elif` not in the new tokenizer\n`else` not in the new tokenizer\n`finally` not in the new tokenizer\n`for` not in the new tokenizer\n`from` not in the new tokenizer\n`global` not in the new tokenizer\n`if` not in the new tokenizer\n`import` not in the new tokenizer\n`in` not in the new tokenizer\n`is` not in the new tokenizer\n`lambda` not in the new tokenizer\n`nonlocal` not in the new tokenizer\n`not` not in the new tokenizer\n`raise` not in the new tokenizer\n`return` not in the new tokenizer\n`while` not in the new tokenizer\n`with` not in the new tokenizer\n`yield` not in the new tokenizer\n"
+    },
+    "iterator_boundaries": {
+      "original_length5_batch2_reads6": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "4",
+          "5"
+        ]
+      ],
+      "original_length8_batch3_rows7_partial_lost": [
+        [
+          "0",
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4",
+          "5"
+        ]
+      ],
+      "original_exhaustion": "generator raised StopIteration",
+      "safe_partial": [
+        [
+          "0",
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4",
+          "5"
+        ],
+        [
+          "6"
+        ]
+      ],
+      "boundary_tqdm_display_only_silenced": true
+    },
+    "auxiliary": {
+      "entire_original_cells_executed": [
+        2,
+        3
+      ],
+      "independent_json_builder_cache_is_string": true,
+      "shell1_4_not_executed": true,
+      "original5_missing_path_not_executed": true
+    },
+    "weighted_pair_counts": {
+      "a a": 4,
+      "a b": 5,
+      "b a": 2
+    },
+    "excluded_side_effects": {
+      "course_datasets_downloaded": false,
+      "original_proxy24_executed": false,
+      "original_Hub25_executed": false,
+      "model_weights_downloaded": false,
+      "LM_training": false
+    }
+  },
+  "runtime_results_equal_except_length_sort_ties": true,
+  "length_sort_ties": "basics36原sort未定义同长度二级顺序，保存两次原始输出；前10项长度序列及转换契约核对通过，其余结果一致。",
+  "training_corpus_sha256": "402c19bc34a3d016de151619128453fcf94d0441e21a0d7633c2ff5190bd1602",
+  "scope": "真实固定tokenizer与小语料两轮训练；非课程10/20万语料或语言模型复现"
+}

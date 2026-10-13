@@ -6,9 +6,9 @@
 2. **代码注释.ipynb**：对照原课程代码，阅读详细中文注释与逐格说明。GitHub 和 Jupyter 可按 notebook 展示。
 3. **代码注释.py**：喜欢纯文本代码时看这一份，避免 notebook 的 JSON；主要用于阅读，执行方法见本讲复现文档。
 
-原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–08** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **09–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **09** 讲。
+原课程来自 [chunhuizhang/personal_chatgpt](https://github.com/chunhuizhang/personal_chatgpt)。当前第 **01–09** 讲的原 notebook、详细代码注释和 Python 阅读版已公开；第 **10–19** 讲已有主解释，完整注释文件仍在逐讲补齐；第 **20–30** 讲待完成。下一讲是第 **10** 讲。
 
-## 已有完整代码注释：01–08
+## 已有完整代码注释：01–09
 
 | 讲次 | 中文讲解 | 带注释 notebook | 纯文本代码 |
 |---|---|---|---|
@@ -20,12 +20,12 @@
 | 06 | [Alpaca LoRA 推理](lessons/06%20Alpaca%20LoRA%20推理/解释.md) | [看代码与注释](lessons/06%20Alpaca%20LoRA%20推理/代码/tutorials/代码注释.ipynb) | [Python版](lessons/06%20Alpaca%20LoRA%20推理/代码/tutorials/06_alpaca_llama_7b_lora_代码注释.py) |
 | 07 | [自动混合精度训练](lessons/07%20自动混合精度训练/解释.md) | [看代码与注释](lessons/07%20自动混合精度训练/代码/tutorials/代码注释.ipynb) | [Python版](lessons/07%20自动混合精度训练/代码/tutorials/07_fp16_mixed_precision_training_代码注释.py) |
 | 08 | [LLM.int8量化与bitsandbytes](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/解释.md) | [看代码与注释](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/代码注释.ipynb) | [Python版](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/代码/tutorials/LLM.int8_代码注释.py) |
+| 09 | [BPE与GPT-2 tokenizer](lessons/09%20BPE%20与%20GPT-2%20tokenizer/解释.md) | [基础与训练阅读入口](lessons/09%20BPE%20与%20GPT-2%20tokenizer/README.md) | [Python版](lessons/09%20BPE%20与%20GPT-2%20tokenizer/代码/tutorials/tokenizer_basics_代码注释.py) |
 
-## 已有讲解，完整代码注释待补：09–19
+## 已有讲解，完整代码注释待补：10–19
 
 | 讲次 | 中文讲解 |
 |---|---|
-| 09 | [BPE 与 GPT-2 tokenizer](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/%E8%A7%A3%E9%87%8A.md) |
 | 10 | [预训练语料、memory mapping 与 streaming](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E8%A7%A3%E9%87%8A.md) |
 | 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md) |
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) |

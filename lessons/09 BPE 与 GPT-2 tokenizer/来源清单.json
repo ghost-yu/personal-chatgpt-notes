@@ -52,5 +52,103 @@
       "name": "tokenization_utils_fast.py",
       "sha256": "b4d369b2d4510fe2132f30e21454f44a3f61757e88120a4c3c151d2ada1f4803"
     }
-  ]
+  ],
+  "published_originals": [
+    {
+      "source": "tutorials/tokenizer_basics.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/tokenizer_basics.ipynb",
+      "published_path": "代码/tutorials/tokenizer_basics.ipynb",
+      "sha256": "d5a46395802d3f9db31feb6e777ee727931841a9802f7f16599ef705f71a7569",
+      "bytes": 850979,
+      "original_bytes_preserved": true,
+      "cells": 39,
+      "code_indices": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        17,
+        20,
+        21,
+        22,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "source": "tutorials/gpt2_train_tokenizer.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gpt2_train_tokenizer.ipynb",
+      "published_path": "代码/tutorials/gpt2_train_tokenizer.ipynb",
+      "sha256": "b5916906f3f4246e6e0d1cb6c7a80712bba000d2f65f2b6d3b9ebe9f584ab9df",
+      "bytes": 13998,
+      "original_bytes_preserved": true,
+      "cells": 27,
+      "code_indices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "source": "tutorials/gpt2.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gpt2.ipynb",
+      "published_path": "代码/tutorials/gpt2.ipynb",
+      "sha256": "fbc5d24c92f71334cbee02f3293a51528469d4491a99d3824eadae9bbad88cdd",
+      "bytes": 3730,
+      "original_bytes_preserved": true,
+      "cells": 6,
+      "code_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "source": "imgs/token_steps.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/token_steps.png",
+      "published_path": "代码/imgs/token_steps.png",
+      "sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66",
+      "bytes": 605994,
+      "original_bytes_preserved": true
+    }
+  ],
+  "t5_tokenizer_revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+  "scope": "basics39格/train27格/辅助gpt2 6格；Markdown2设置块；原SyntaxError和IPython shell保留。",
+  "legacy_notebook_hash_scope": "notebooks字段保留早期本地Git工作副本（可能CRLF）哈希；published_originals是远程下载原字节SHA256，作为公开原文件核验依据。"
 }

@@ -1,0 +1,150 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "originals": [
+    {
+      "source": "tutorials/tokenizer_basics.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/tokenizer_basics.ipynb",
+      "published_path": "代码/tutorials/tokenizer_basics.ipynb",
+      "sha256": "d5a46395802d3f9db31feb6e777ee727931841a9802f7f16599ef705f71a7569",
+      "bytes": 850979,
+      "original_bytes_preserved": true,
+      "cells": 39,
+      "code_indices": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        17,
+        20,
+        21,
+        22,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "source": "tutorials/gpt2_train_tokenizer.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gpt2_train_tokenizer.ipynb",
+      "published_path": "代码/tutorials/gpt2_train_tokenizer.ipynb",
+      "sha256": "b5916906f3f4246e6e0d1cb6c7a80712bba000d2f65f2b6d3b9ebe9f584ab9df",
+      "bytes": 13998,
+      "original_bytes_preserved": true,
+      "cells": 27,
+      "code_indices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "source": "tutorials/gpt2.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gpt2.ipynb",
+      "published_path": "代码/tutorials/gpt2.ipynb",
+      "sha256": "fbc5d24c92f71334cbee02f3293a51528469d4491a99d3824eadae9bbad88cdd",
+      "bytes": 3730,
+      "original_bytes_preserved": true,
+      "cells": 6,
+      "code_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "source": "imgs/token_steps.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/token_steps.png",
+      "published_path": "代码/imgs/token_steps.png",
+      "sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66",
+      "bytes": 605994,
+      "original_bytes_preserved": true
+    }
+  ],
+  "model_weights_downloaded": false,
+  "tokenizer_assets_only": [
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "config.json",
+      "bytes": 665,
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer_config.json",
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer.json",
+      "bytes": 1355256,
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "config.json",
+      "bytes": 1208,
+      "sha256": "46dd7cb62d29c81fb551e0ef1ea274c24a46ba441eeb948897706252933df033"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "tokenizer.json",
+      "bytes": 1389353,
+      "sha256": "d2acde0d8d71dd30a711834b07781b9c89feaac33fd332f60507699282740066"
+    },
+    {
+      "tokenizer": "t5",
+      "repository": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "file": "spiece.model",
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    }
+  ],
+  "local_cache": "G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\验证tokenizer缓存"
+}

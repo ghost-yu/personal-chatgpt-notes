@@ -1,3 +1,10 @@
-# Observed working tokenizer-only environment. No torch dependency.
-transformers==4.30.2
-tokenizers==0.13.3
+# 本次Python3.12的tokenizer/小语料验证；不需要模型权重或GPU。
+transformers==4.44.2
+tokenizers==0.19.1
+datasets==2.19.2
+pyarrow==16.1.0
+numpy==1.26.4
+sentencepiece==0.2.0
+tqdm==4.70.1
+ipython==8.37.0
+nbformat==5.10.4
