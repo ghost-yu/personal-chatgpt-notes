@@ -1,0 +1,2 @@
+# Teaching checks use Python 3.7+ standard library only.
+# Original GPU training dependencies are intentionally not installed here.

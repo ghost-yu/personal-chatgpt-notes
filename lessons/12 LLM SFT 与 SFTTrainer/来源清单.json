@@ -1,0 +1,55 @@
+{
+  "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "llm_training_sft.ipynb",
+  "sha256": "889d9a7f8157d2719c9f355b2c2dbb5f9584eedfa958d7a31aa856c53e3cfac8",
+  "cells": 27,
+  "code_cells": 22,
+  "syntax": "passed",
+  "transcript": "941f606b-bda7-4624-9276-0575b18ed09b.txt",
+  "transcript_sha256": "b2503cf4bd7e72831b3a107023aa36c4dbf8bd73ed936a7e3bb3f33fe80b3088",
+  "references": {
+    "trl": "v0.4.7",
+    "peft": "v0.4.0",
+    "transformers": "v4.30.0",
+    "teacher_exact_versions": "未锁定",
+    "xgen_revision_read": "14ca1dadca23f5fb99d99c90b1638ecff2a52f9e"
+  },
+  "source_snapshots": [
+    {
+      "name": "collator-v4.30.0.py",
+      "sha256": "3c14122296b65fcb16eb5d5ca9d9b03725835d25c243ee0b5af245d6e855a052"
+    },
+    {
+      "name": "peft-lora-v0.4.0.py",
+      "sha256": "dc1d551bdcae014cd99906479e716c58a39f2661f71ea62d4262ff9e55a67a40"
+    },
+    {
+      "name": "peft-other-v0.4.0.py",
+      "sha256": "7d6a7f73789037cb28344fa131c26da247825b95f5e35e51e6fb3d050425506f"
+    },
+    {
+      "name": "peft-utils-init-v0.4.0.py",
+      "sha256": "f0040eec7e3bfefe0e148d2643895fe66f54d46d149ef92adb9d88438ec79464"
+    },
+    {
+      "name": "sft-v0.4.7.py",
+      "sha256": "9c3a93cebf1f684c67e43078ee649fbb94b9f278e7460791c3e6087fb84ed2fe"
+    },
+    {
+      "name": "utils-v0.4.7.py",
+      "sha256": "db6af8ea56dea95bcc8367a8cf9d0ff7f8aa0a31b33a452b7e4b5b86b8f41162"
+    },
+    {
+      "name": "xgen-config.json",
+      "sha256": "0505cf55e124a925f71c28268bf039f2c29bbc12daf1cc49981a77f9b929a6ec"
+    },
+    {
+      "name": "xgen-revision.json",
+      "sha256": "22af194978549f2a2bfbc93e9e1301f41a1ee991aa64e6896c7b29a7176425ef"
+    },
+    {
+      "name": "xgen-tokenization.py",
+      "sha256": "22072c23f3147a4bb379e5dbde41459ebc974aa904b8f46427245df02baf1334"
+    }
+  ]
+}

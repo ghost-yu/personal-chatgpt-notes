@@ -1,0 +1,52 @@
+{
+  "status": "partial",
+  "torch_model_run": false,
+  "tokenizer": "integer fixture, not XgenTokenizer",
+  "packed_input_ids": [
+    [
+      1,
+      2,
+      9,
+      3
+    ],
+    [
+      4,
+      5,
+      9,
+      6
+    ]
+  ],
+  "tail_dropped_tokens": 1,
+  "shifted_targets": [
+    [
+      2,
+      9,
+      3
+    ],
+    [
+      5,
+      9,
+      6
+    ]
+  ],
+  "packing_preserves_eos_labels_in_v0_4_7": true,
+  "nonpacking_lm_collator_eos_mask_example": [
+    [
+      1,
+      2,
+      -100,
+      3
+    ],
+    [
+      4,
+      5,
+      -100,
+      6
+    ]
+  ],
+  "cross_entropy_example": 0.7675283643313485,
+  "lora_q_v_parameters": 8388608,
+  "vocab_rows_removed": 887,
+  "official_class_executed_with_list_tensor_stub": true,
+  "source_check": "TRL v0.4.7 guard and official packing class fixture passed"
+}
