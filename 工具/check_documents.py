@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from urllib.parse import unquote
 
-root=Path(__file__).resolve().parent
+root=Path(__file__).resolve().parents[1]
 errors=[]
 docs=list((root/'lessons').glob('*/解释.md'))
 for p in root.rglob('*.md'):
