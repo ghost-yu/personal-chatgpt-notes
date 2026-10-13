@@ -6,6 +6,8 @@
   "schema_valid": true,
   "original_cells_and_outputs_preserved": true,
   "comment_only_and_ast_equal": true,
+  "readable_python_ast_equal": true,
+  "inserted_note_relative_links_valid": true,
   "runs": {
     "original": [
       {

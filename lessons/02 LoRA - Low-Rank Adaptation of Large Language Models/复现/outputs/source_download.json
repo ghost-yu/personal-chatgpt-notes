@@ -1,0 +1,50 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "downloaded_files": [
+    {
+      "path": "tutorials/02_lora_baics.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/02_lora_baics.ipynb",
+      "bytes": 2191733,
+      "sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa"
+    },
+    {
+      "path": "imgs/bloom.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/bloom.png",
+      "bytes": 218843,
+      "sha256": "751244f267aa92e787704fb4d3116785adc0e90656930ccc36b91d572cd9984d"
+    },
+    {
+      "path": "imgs/bloom_lora.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/bloom_lora.png",
+      "bytes": 336356,
+      "sha256": "a374ac3df8fa3ef87987d610c7201664dae5021d582df741323c5c0fd874116b"
+    },
+    {
+      "path": "imgs/lora-weights.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/lora-weights.png",
+      "bytes": 124929,
+      "sha256": "907756b5fdc4433f14c19901e3bbf76c2cc36132cca096f125c6c525198b1839"
+    },
+    {
+      "path": "imgs/lora.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/lora.png",
+      "bytes": 659569,
+      "sha256": "f72de96c0b1099aeeaaa395a5cfd6a5af7fe613c176f5da7962f295181b33e96"
+    },
+    {
+      "path": "imgs/regular-finetuning-alt.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/regular-finetuning-alt.png",
+      "bytes": 91736,
+      "sha256": "1f8e82e45aaf8a47e966769fc40d5855a21e61336fb747d2d983cfa416f6f35f"
+    },
+    {
+      "path": "imgs/regular-finetuning.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/regular-finetuning.png",
+      "bytes": 205328,
+      "sha256": "69ea8262a196db75eed937d40610a920f3afdbf6bab05e57380b7843c7ca8f1e"
+    }
+  ],
+  "manifest_hashes_matched": true,
+  "original_bytes_unmodified": true,
+  "notebook_executed_by_download": false
+}

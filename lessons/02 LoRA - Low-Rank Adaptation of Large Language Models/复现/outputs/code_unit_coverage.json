@@ -39,15 +39,15 @@
   "commented_markdown_code_cells": [
     13
   ],
-  "source_sha256": "627f9d61e51aa710adb5b353881b00f19fd5224ae0c7c6f71f476b080eb5edf5",
+  "source_sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa",
   "artifacts": {
     "原代码_带说明.ipynb": {
       "cells": 33,
-      "sha256": "ee95c6b1bb5394268adbfe01aac1d150f5dcf504702d1228ebbc5687f5c5b6c1"
+      "sha256": "3eb7ac76811d7fe5ff1b7407cb779c5907978c82953ab402eea4861a88d56add"
     },
     "代码注释.ipynb": {
       "cells": 33,
-      "sha256": "6c43b66b256b17eb0fa8f0db9a856c57066672cfa21ca0aaa080e02dbebe7719"
+      "sha256": "97c5f3631ecc3a98366d7cbfc57f482b3a680f988b7feb9247da8b0dce49e349"
     }
   },
   "pseudocode_commented_statements": 15

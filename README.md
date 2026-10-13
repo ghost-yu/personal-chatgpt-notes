@@ -6,7 +6,12 @@
 
 按用户最新要求，从第01讲开始逐讲将原notebook、配套图片、中文注释notebook和Python阅读版发布到本仓库。已存在的主文列表不代表所有讲次都已按新格式交付。
 
-第01讲已完成：[本讲目录](lessons/01%20LLaMA%20introduction/README.md) · [原 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro.ipynb) · [中文注释 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro_代码注释.py)。覆盖全部9格、2个Python单元和6条启动命令；实际展示执行通过，未运行模型推理。下一讲按该格式交付第02讲。
+| 讲次 | 阅读入口 | 验证范围 |
+|---|---|---|
+| 01 | [本讲目录](lessons/01%20LLaMA%20introduction/README.md) · [原 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro.ipynb) · [中文注释 notebook](lessons/01%20LLaMA%20introduction/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/01%20LLaMA%20introduction/代码/tutorials/01_llama_intro_代码注释.py) | 全部9格说明，2格Python与6条命令详细注释，实际展示通过 |
+| 02 | [本讲目录](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/README.md) · [原 notebook](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/02_lora_baics.ipynb) · [中文注释 notebook](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/代码注释.ipynb) · [Python 阅读版](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/代码/tutorials/02_lora_baics_代码注释.py) | 全部16格说明，7格Python与Markdown13伪代码详细注释，展示及CPU教学LoRA验证通过 |
+
+以上均未运行大模型推理或微调。下一讲按该格式交付第03讲。
 
 ## 主解释已完成
 

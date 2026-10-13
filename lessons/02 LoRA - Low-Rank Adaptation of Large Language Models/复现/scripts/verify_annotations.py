@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import platform
+import re
 from pathlib import Path
 import IPython
 import nbformat
@@ -57,6 +58,10 @@ if __name__ == '__main__':
         result = nbformat.read(str(directory/filename),as_version=4)
         nbformat.validate(result)
         assert len(result.cells) == 33
+        for note in result.cells[1::2]:
+            for link in re.findall(r'\]\(([^)]+)\)', source(note)):
+                if '://' not in link and not link.startswith('#'):
+                    assert (directory/link).exists(), ('broken inserted-note link', link)
         preserved = result.cells[2::2]
         assert len(preserved) == 16
         for i,(before,after) in enumerate(zip(original.cells,preserved)):
@@ -85,9 +90,13 @@ if __name__ == '__main__':
             failures[filename]={'type':type(error).__name__,'message':error.msg}
         else:
             raise AssertionError('原伪代码缺陷不应被静默修复')
+    readable = (directory/'02_lora_baics_代码注释.py').read_text(encoding='utf-8')
+    expected = '\n'.join(source(cell) for cell in original.cells if cell.cell_type=='code')
+    assert ast.dump(ast.parse(readable)) == ast.dump(ast.parse(expected))
     report={'status':'部分成功','python':platform.python_version(),'IPython':IPython.__version__,
             'nbformat':nbformat.__version__,'schema_valid':True,'original_cells_and_outputs_preserved':True,
-            'comment_only_and_ast_equal':True,'runs':runs,'markdown13_compile_failures':failures,
+            'comment_only_and_ast_equal':True,'readable_python_ast_equal':True,
+            'inserted_note_relative_links_valid':True, 'runs':runs,'markdown13_compile_failures':failures,
             'not_executed':['原伪代码训练','BLOOM加载/微调','论文数据集评估']}
     Path(args.record).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True,indent=2))

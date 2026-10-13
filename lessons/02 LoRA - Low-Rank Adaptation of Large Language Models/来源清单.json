@@ -5,6 +5,9 @@
   "source_url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/02_lora_baics.ipynb",
   "upstream_sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa",
   "local_sha256": "627f9d61e51aa710adb5b353881b00f19fd5224ae0c7c6f71f476b080eb5edf5",
+  "local_sha256_note": "此前本地CRLF副本的哈希；本次公开原文件直接下载，不转换换行",
+  "published_original_path": "代码/tutorials/02_lora_baics.ipynb",
+  "published_original_sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa",
   "equal_after_line_ending_normalization": true,
   "all_cells": [
     0,
