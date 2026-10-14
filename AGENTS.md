@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–19讲主解释已存在；第01–14讲已按完整公开文件格式交付，下一讲第15讲。第15–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–19讲主解释已存在；第01–15讲已按完整公开文件格式交付，下一讲第16讲。第16–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -37,3 +37,5 @@
 最新文件整理：根 README 的课程表直接提供三种阅读链接；第08/09讲的多文件阅读顺序仍由各讲README说明。G:/zzz/README.md提供第01讲三个直接入口。清理提交只包含入口与维护说明，第14讲在制文件单独保留，不能混入或标记已完成。
 
 第14讲原23格/16代码/Markdown15三命令、两47格派生版及Python阅读版完整交付；原字节/历史输出/3schema/AST通过。Python3.11/Torch2.0.1+cpu/Transformers4.31/TRL0.5/PEFT0.4，两版各13原格+6/18明确本地CPU变体，32000词表/1026608参数真实随机小LLaMA pipeline生成精确一致。完整固定官方参考CLI真实跑两步，默认seq512/r64/alpha16、q/v共4096可训练，基础冻结/B更新/optimizer仅adapter、五行截断/左pad/全ignore NaN负例/shift一致、四adapter状态与重载logits差0、4/8bit互斥及meta7B参数6738415616通过。原7B权重/4bit CUDA/full9846/924步/五小时/质量未运行，早期SP报告保留。下一讲15。
+
+第15讲主12格/3代码及接口补充16格/9代码，两原件/两PNG、四派生版(25/33格)、两Python阅读版完整交付；原字节/历史/schema6/AST及Markdown片段/4命令语义通过。两版主3格Image和补充9格真实SP执行一致。Torch2.0.1+cpu/FairScale0.4.13单进程Gloo，完整固定官方tokenizer/model/generation源码，模型仅两cache.cuda改CPU、generate三个device改CPU；随机1027376参数/1层H16/V32000/heads2小Transformer真实text/chat/采样/echo/6dialog/batch4拒绝和8接受/角色错误/unsafe先生成/受控真实权重EOS通过。实际旧源码新增logprobs=-0，真实greedy log概率约-10.06，因填采样token前CE目标仍pad被忽略，保留并说明反例。未build/NCCL/原checkpoint/GPU/MP2+/质量性能；早期fake generate报告保留。下一讲16。

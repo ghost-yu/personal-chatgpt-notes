@@ -1,0 +1,39 @@
+{
+  "llama2_src_01": {
+    "cells": 12,
+    "code_indices": [
+      0,
+      3,
+      4
+    ],
+    "schemas": 3,
+    "derived_cells": 25,
+    "metadata_historical_outputs_original_lines": true,
+    "code_AST": true,
+    "reading_AST": true,
+    "all_notes": true,
+    "markdown_comments_only": true
+  },
+  "llama2_src_text_chat": {
+    "cells": 16,
+    "code_indices": [
+      2,
+      3,
+      4,
+      5,
+      10,
+      12,
+      13,
+      14,
+      15
+    ],
+    "schemas": 3,
+    "derived_cells": 33,
+    "metadata_historical_outputs_original_lines": true,
+    "code_AST": true,
+    "reading_AST": true,
+    "all_notes": true,
+    "markdown_comments_only": true
+  },
+  "markdown_shell_commands": 4
+}

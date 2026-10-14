@@ -14,7 +14,7 @@
 
 Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文本代码就打开 `.py`。
 
-**01–14 讲完整注释已发布。15–19 讲已有主解释，完整注释尚未交付；20–30 讲待完成。** 下一讲是第 15 讲。
+**01–15 讲完整注释已发布。16–19 讲已有主解释，完整注释尚未交付；20–30 讲待完成。** 下一讲是第 16 讲。
 
 ## 选一讲开始阅读
 
@@ -34,15 +34,15 @@ Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文�
 | [12 LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/README.md) | [讲解](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E4%BB%A3%E7%A0%81/tutorials/llm_training_sft_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
 | [13 Gradient checkpointing](lessons/13%20Gradient%20checkpointing/README.md) | [讲解](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/13%20Gradient%20checkpointing/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/13%20Gradient%20checkpointing/%E4%BB%A3%E7%A0%81/tutorials/gradient_checkpointing_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
 | [14 Llama 2 introduction 与 Guanaco](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/README.md) | [讲解](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/解释.md) | [带注释代码](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/代码/tutorials/代码注释.ipynb) | [文本代码](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/代码/tutorials/llama2_introduction_代码注释.py) |
+| [15 Llama 2 text 与 chat completion](lessons/15%20Llama%202%20text%20与%20chat%20completion/README.md) | [讲解](lessons/15%20Llama%202%20text%20与%20chat%20completion/解释.md) | [带注释代码](lessons/15%20Llama%202%20text%20与%20chat%20completion/代码/tutorials/代码注释.ipynb) | [文本代码](lessons/15%20Llama%202%20text%20与%20chat%20completion/代码/tutorials/llama2_src_01_代码注释.py) |
 
-第 08、09 讲包含辅助 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
+第 08、09、15 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
 
 <details>
-<summary>15–19 讲：主解释可读，完整代码注释待交付</summary>
+<summary>16–19 讲：主解释可读，完整代码注释待交付</summary>
 
 | 讲次 | 阅读入口 |
 |---|---|
-| 15 | [Llama 2 text 与 chat completion](lessons/15%20Llama%202%20text%20%E4%B8%8E%20chat%20completion/README.md) |
 | 16 | [TRL 基础与 reward PPOTrainer](lessons/16%20TRL%20%E5%9F%BA%E7%A1%80%E4%B8%8E%20reward%20PPOTrainer/README.md) |
 | 17 | [RMSNorm 与 SwiGLU](lessons/17%20RMSNorm%20%E4%B8%8E%20SwiGLU/README.md) |
 | 18 | [RoPE 复数形式](lessons/18%20RoPE%20%E5%A4%8D%E6%95%B0%E5%BD%A2%E5%BC%8F/README.md) |

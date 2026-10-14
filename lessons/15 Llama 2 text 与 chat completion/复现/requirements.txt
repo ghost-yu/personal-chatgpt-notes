@@ -1,1 +1,6 @@
 sentencepiece==0.2.0
+fairscale==0.4.13
+numpy==1.26.4
+nbformat==5.10.4
+ipython==8.37.0
+# Python 3.11; install torch==2.0.1+cpu from the CPU index first.

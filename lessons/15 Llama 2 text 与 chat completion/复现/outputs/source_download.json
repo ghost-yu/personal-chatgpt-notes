@@ -1,0 +1,37 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "source": "tutorials/llama2_src_01.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llama2_src_01.ipynb",
+      "sha256": "b537815b1f94a1be6d33d4e05d2bb290372408dfd9f2f4027b3c77400c0a839c",
+      "bytes": 787286,
+      "published_path": "代码/tutorials/llama2_src_01.ipynb",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "tutorials/llama2_src_text_chat.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llama2_src_text_chat.ipynb",
+      "sha256": "fd822495540fb813a0bb4697a75e3abaf08aeefec2d84eada1123f20b84b686e",
+      "bytes": 8028,
+      "published_path": "代码/tutorials/llama2_src_text_chat.ipynb",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/llama_weights.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/llama_weights.png",
+      "sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69",
+      "bytes": 333093,
+      "published_path": "代码/imgs/llama_weights.png",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/llama2-weights.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/llama2-weights.png",
+      "sha256": "b6d4da59848976285342057d1415e8f2cc0ce05aa0972a4dd0fec624ba1d6a7c",
+      "bytes": 253656,
+      "published_path": "代码/imgs/llama2-weights.png",
+      "acquisition": "fixed Git blob"
+    }
+  ]
+}
