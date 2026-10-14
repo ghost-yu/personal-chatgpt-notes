@@ -1,0 +1,605 @@
+{
+  "status": "部分成功",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Scripts\\python.exe",
+    "lessons/16 TRL 基础与 reward PPOTrainer/复现/scripts/verify_delivery.py",
+    "--tokenizer-json",
+    "G:/zzz/Personal ChatGPT 系列/09 BPE 与 GPT-2 tokenizer/资料/gpt2-tokenizer/tokenizer.json"
+  ],
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "torch": "2.0.1+cpu",
+  "transformers": "4.30.0",
+  "trl": "0.4.7",
+  "cuda_available": false,
+  "tokenizer_json_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "tokenizer_scope": "real GPT2Tokenizer; vocab and merges exported from fixed original tokenizer.json",
+  "PPOTrainer_source": {
+    "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\trl\\trainer\\ppo_trainer.py",
+    "sha256": "8142e1296171adc0a9f664ed0a241d4e7313ad0fac6987b2a093b0982489a407"
+  },
+  "scripts": {
+    "复现\\scripts\\verify_delivery.py": "cd1aace8a6f22055c39dbf36c0c54922a45a6876f0169a5150d8ae2a50ccdc81",
+    "复现\\scripts\\build_annotated.py": "25607f850ad0323dd62227a29665ec4340f990d30e0babfb09885d8239d50d8d",
+    "复现\\scripts\\download_original.py": "b742cc3d4cf23ce5eafc1bf93929a50248ff5cf6e8674a95b2f7a2991f7f1084"
+  },
+  "original": {
+    "all_code_cells_executed": 28,
+    "whole_unmodified_cells": 27,
+    "variant18": "three gpt2 identifiers replaced with local random checkpoint/tokenizer directory",
+    "query_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220
+    ],
+    "response_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      10001,
+      3728,
+      21327,
+      13893,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      42067,
+      34633,
+      40492,
+      19098
+    ],
+    "full_response_text": "This morning I went to the  InvruaryCurrentlybecauseArticle tourism McC PrefbablyDEV authored foundations Annexuledesslerthren telescopesの魔PK Fighting",
+    "input_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      10001,
+      3728,
+      21327,
+      13893,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      42067,
+      34633,
+      40492,
+      19098
+    ],
+    "hidden_shape": [
+      34,
+      16
+    ],
+    "logits_shape": [
+      34,
+      50257
+    ],
+    "value_shape": [
+      34
+    ],
+    "value_has_grad": false,
+    "images": {
+      "3": {
+        "bytes": 601661,
+        "sha256": "3b0f99c81004d76ec084e1f7b707e0931470926a51489910abc4e1d7d88b4aca"
+      },
+      "7": {
+        "bytes": 296304,
+        "sha256": "a0a424d75bae08ef1e6147e41e9b74836eeb7605212955c42e6b857bc549c7e2"
+      },
+      "8": {
+        "bytes": 693818,
+        "sha256": "92033ef5911579c5222be4e6c7c11f0dbfcffeb91f79405a3d1b98733e33a460"
+      },
+      "12": {
+        "bytes": 198747,
+        "sha256": "1fd278749313be2f63b11f4d2bfa406277d0869b3809a304c4c19db5d59d0b92"
+      },
+      "14": {
+        "bytes": 1178617,
+        "sha256": "4a636e24cbce526aae13012e6813065b483c6dfd6ad9280f74ed1995454f5537"
+      }
+    },
+    "step": {
+      "optimizer_calls": 4,
+      "optimizer_class": "Adam",
+      "active_changed": true,
+      "value_head_changed": true,
+      "reference_unchanged": true,
+      "optimizer_only_active": true,
+      "reference_requires_grad_count": 18,
+      "reference_gradients_none": true,
+      "mask_audit": {
+        "input_ids": [
+          [
+            1212,
+            3329,
+            314,
+            1816,
+            284,
+            262,
+            220,
+            1212,
+            3329,
+            314,
+            1816,
+            284,
+            262,
+            220,
+            10001,
+            3728,
+            21327,
+            13893,
+            14906,
+            19277,
+            5108,
+            42195,
+            11921,
+            39345,
+            33941,
+            19369,
+            47036,
+            6309,
+            33730,
+            25941,
+            42067,
+            34633,
+            40492,
+            19098
+          ]
+        ],
+        "input_shape": [
+          1,
+          34
+        ],
+        "logprob_shape": [
+          1,
+          33
+        ],
+        "value_shape": [
+          1,
+          33
+        ],
+        "mask_shape": [
+          1,
+          33
+        ],
+        "mask": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "mask_count": 27,
+        "labels_removed": true
+      }
+    },
+    "stats": {
+      "objective/kl": 0.0,
+      "ppo/loss/policy": -0.0005033364286646247,
+      "ppo/loss/value": 0.4358614683151245,
+      "ppo/learning_rate": 1e-05
+    },
+    "config_seed": 0,
+    "policy_parameters": 809489,
+    "value_head_parameters": 17,
+    "stdout": "torch.Size([7])\ntorch.Size([27])\ntorch.Size([34])\ntorch.Size([34, 16])\ntorch.Size([34, 50257])\ntorch.Size([34, 16])\ntorch.Size([34])\n"
+  },
+  "annotated": {
+    "all_code_cells_executed": 28,
+    "whole_unmodified_cells": 27,
+    "variant18": "three gpt2 identifiers replaced with local random checkpoint/tokenizer directory",
+    "query_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220
+    ],
+    "response_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      10001,
+      3728,
+      21327,
+      13893,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      42067,
+      34633,
+      40492,
+      19098
+    ],
+    "full_response_text": "This morning I went to the  InvruaryCurrentlybecauseArticle tourism McC PrefbablyDEV authored foundations Annexuledesslerthren telescopesの魔PK Fighting",
+    "input_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220,
+      10001,
+      3728,
+      21327,
+      13893,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      42067,
+      34633,
+      40492,
+      19098
+    ],
+    "hidden_shape": [
+      34,
+      16
+    ],
+    "logits_shape": [
+      34,
+      50257
+    ],
+    "value_shape": [
+      34
+    ],
+    "value_has_grad": false,
+    "images": {
+      "3": {
+        "bytes": 601661,
+        "sha256": "3b0f99c81004d76ec084e1f7b707e0931470926a51489910abc4e1d7d88b4aca"
+      },
+      "7": {
+        "bytes": 296304,
+        "sha256": "a0a424d75bae08ef1e6147e41e9b74836eeb7605212955c42e6b857bc549c7e2"
+      },
+      "8": {
+        "bytes": 693818,
+        "sha256": "92033ef5911579c5222be4e6c7c11f0dbfcffeb91f79405a3d1b98733e33a460"
+      },
+      "12": {
+        "bytes": 198747,
+        "sha256": "1fd278749313be2f63b11f4d2bfa406277d0869b3809a304c4c19db5d59d0b92"
+      },
+      "14": {
+        "bytes": 1178617,
+        "sha256": "4a636e24cbce526aae13012e6813065b483c6dfd6ad9280f74ed1995454f5537"
+      }
+    },
+    "step": {
+      "optimizer_calls": 4,
+      "optimizer_class": "Adam",
+      "active_changed": true,
+      "value_head_changed": true,
+      "reference_unchanged": true,
+      "optimizer_only_active": true,
+      "reference_requires_grad_count": 18,
+      "reference_gradients_none": true,
+      "mask_audit": {
+        "input_ids": [
+          [
+            1212,
+            3329,
+            314,
+            1816,
+            284,
+            262,
+            220,
+            1212,
+            3329,
+            314,
+            1816,
+            284,
+            262,
+            220,
+            10001,
+            3728,
+            21327,
+            13893,
+            14906,
+            19277,
+            5108,
+            42195,
+            11921,
+            39345,
+            33941,
+            19369,
+            47036,
+            6309,
+            33730,
+            25941,
+            42067,
+            34633,
+            40492,
+            19098
+          ]
+        ],
+        "input_shape": [
+          1,
+          34
+        ],
+        "logprob_shape": [
+          1,
+          33
+        ],
+        "value_shape": [
+          1,
+          33
+        ],
+        "mask_shape": [
+          1,
+          33
+        ],
+        "mask": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "mask_count": 27,
+        "labels_removed": true
+      }
+    },
+    "stats": {
+      "objective/kl": 0.0,
+      "ppo/loss/policy": -0.0005033364286646247,
+      "ppo/loss/value": 0.4358614683151245,
+      "ppo/learning_rate": 1e-05
+    },
+    "config_seed": 0,
+    "policy_parameters": 809489,
+    "value_head_parameters": 17,
+    "stdout": "torch.Size([7])\ntorch.Size([27])\ntorch.Size([34])\ntorch.Size([34, 16])\ntorch.Size([34, 50257])\ntorch.Size([34, 16])\ntorch.Size([34])\n"
+  },
+  "states_exact": true,
+  "generation_exact": true,
+  "numerical_stats_exact": true,
+  "corrected": {
+    "response_ids": [
+      10001,
+      3728,
+      21327,
+      13893,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      42067,
+      34633,
+      40492,
+      19098
+    ],
+    "optimizer_calls": 4,
+    "reference_unchanged": true,
+    "mask_audit": {
+      "input_ids": [
+        [
+          1212,
+          3329,
+          314,
+          1816,
+          284,
+          262,
+          220,
+          10001,
+          3728,
+          21327,
+          13893,
+          14906,
+          19277,
+          5108,
+          42195,
+          11921,
+          39345,
+          33941,
+          19369,
+          47036,
+          6309,
+          33730,
+          25941,
+          42067,
+          34633,
+          40492,
+          19098
+        ]
+      ],
+      "input_shape": [
+        1,
+        27
+      ],
+      "logprob_shape": [
+        1,
+        26
+      ],
+      "value_shape": [
+        1,
+        26
+      ],
+      "mask_shape": [
+        1,
+        26
+      ],
+      "mask": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "mask_count": 20,
+      "labels_removed": true
+    },
+    "stats": {
+      "objective/kl": 0.0,
+      "ppo/loss/policy": -0.000401914119720459,
+      "ppo/loss/value": 0.5416287779808044
+    }
+  },
+  "not_run": [
+    "original GPT2 pretrained weights",
+    "Llama2/Guanaco SFT shell",
+    "learned reward model",
+    "full RLHF/human preference evaluation",
+    "GPU/multicard"
+  ]
+}

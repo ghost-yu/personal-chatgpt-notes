@@ -1,0 +1,54 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "source": "tutorials/trl_hf/trl_basics.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/trl_hf/trl_basics.ipynb",
+      "sha256": "1d0ec8e4f196914257158d18a48746b12561fa68100aeb778105720bd8b8d474",
+      "bytes": 3980641,
+      "published_path": "代码\\tutorials\\trl_hf\\trl_basics.ipynb",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/trl_steps.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/trl_steps.png",
+      "sha256": "3b0f99c81004d76ec084e1f7b707e0931470926a51489910abc4e1d7d88b4aca",
+      "bytes": 601661,
+      "published_path": "代码\\tutorials\\imgs\\trl_steps.png",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/rm_ppo.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/rm_ppo.png",
+      "sha256": "a0a424d75bae08ef1e6147e41e9b74836eeb7605212955c42e6b857bc549c7e2",
+      "bytes": 296304,
+      "published_path": "代码\\tutorials\\imgs\\rm_ppo.png",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/ppo_algo.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/ppo_algo.png",
+      "sha256": "92033ef5911579c5222be4e6c7c11f0dbfcffeb91f79405a3d1b98733e33a460",
+      "bytes": 693818,
+      "published_path": "代码\\tutorials\\imgs\\ppo_algo.png",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/trl-sft.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/trl-sft.png",
+      "sha256": "1fd278749313be2f63b11f4d2bfa406277d0869b3809a304c4c19db5d59d0b92",
+      "bytes": 198747,
+      "published_path": "代码\\tutorials\\imgs\\trl-sft.png",
+      "acquisition": "fixed Git blob"
+    },
+    {
+      "source": "imgs/trl_overview.png",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/trl_overview.png",
+      "sha256": "4a636e24cbce526aae13012e6813065b483c6dfd6ad9280f74ed1995454f5537",
+      "bytes": 1178617,
+      "published_path": "代码\\tutorials\\imgs\\trl_overview.png",
+      "acquisition": "fixed Git blob"
+    }
+  ],
+  "duplicate_root_notebook": "tutorials/trl_basics.ipynb has identical Git blob; not duplicated"
+}
