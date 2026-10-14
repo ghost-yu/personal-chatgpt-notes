@@ -16,6 +16,8 @@
 
 用户要求保持阅读入口清晰。根目录README是唯一总索引；各讲README只突出解释、注释notebook与Python阅读版。来源链接放在解释中，维护资料在资料目录，检查工具在工具目录。不要重新生成只有来源链接的原代码.md；保留原始notebook、说明版及验证证据。
 
+最新整理删除了本地 Personal ChatGPT 系列第09–16讲的8份旧原代码.md文本副本：未被现有文档或脚本引用，正式项目已有对应原notebook及历史输出。不要重新生成这些副本。日常阅读只进入正式仓库；本地材料目录及共享环境保留原路径。
+
 第07讲19格说明/12格代码与Markdown1片段详注，两种派生notebook各39格；AST/schema/历史输出核对通过。原大CNN仅meta检查参数476938250及RGB224尺寸错误；四个通道常量改为8/16的小型CNN、8合成样本/batch4/epoch1，原train/evalute体真实执行。原CUDA AMP在CPU禁用，补充只改autocast表达式并另建CPU scaler，真正FP16 logits/FP32 loss和梯度、两次Adam更新、scale128→256、Inf跳步回退128通过；原/注释版一致。未下载MNIST或复现3090 batch128→256显存实验。
 
 第08讲主56格/37代码格（含空55）+bitsandbytes辅助3格/1代码格，三张原图、四份派生notebook、两份阅读py已交付。全部59格说明/38代码AST、6schema/历史输出核对；原/注释各32主格实际CPU执行，53/54另在独立随机2960参数小OPT/本地词表上下文执行，50代理/51远程tokenizer/52量化加载跳过。原矩阵实际float64缩放、无舍入；独立int8存储/int32累加/FP16异常支路、零尺度/溢出、真实配置互斥和总长/新增token区别通过。未安装bitsandbytes、未下载OPT6.7B或运行CUDA/论文指标。
