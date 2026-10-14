@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–19讲主解释已存在；第01–16讲已按完整公开文件格式交付，下一讲第17讲。第17–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–19讲主解释已存在；第01–17讲已按完整公开文件格式交付，下一讲第18讲。第18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -43,3 +43,5 @@
 第15讲主12格/3代码及接口补充16格/9代码，两原件/两PNG、四派生版(25/33格)、两Python阅读版完整交付；原字节/历史/schema6/AST及Markdown片段/4命令语义通过。两版主3格Image和补充9格真实SP执行一致。Torch2.0.1+cpu/FairScale0.4.13单进程Gloo，完整固定官方tokenizer/model/generation源码，模型仅两cache.cuda改CPU、generate三个device改CPU；随机1027376参数/1层H16/V32000/heads2小Transformer真实text/chat/采样/echo/6dialog/batch4拒绝和8接受/角色错误/unsafe先生成/受控真实权重EOS通过。实际旧源码新增logprobs=-0，真实greedy log概率约-10.06，因填采样token前CE目标仍pad被忽略，保留并说明反例。未build/NCCL/原checkpoint/GPU/MP2+/质量性能；早期fake generate报告保留。下一讲16。
 
 第16讲原42格/28代码含空41、Markdown10三命令/31缩略概览，两85格派生版/五原图/Python阅读版完整交付；原字节/历史/3schema/AST通过。原根/嵌套notebook同blob，不重复发布；图放tutorials/imgs使原../imgs可读。Python3.11/Torch2.0.1+cpu/Transformers4.30/TRL0.4.7/Accelerate0.20.3，固定GPT2tokenizer.json导出真实slow词表，随机809489参数H16/1层/value17。两版全部28格执行（仅18的三加载字符串本地变体），真实原query7/完整response27/输入34，mask[1,33]有效27含第二份query，四Adam更新与全active状态/生成/stats精确一致。ref状态不变但18requires_grad属性仍True/gradNone；optimizer仅active。独立纯response修正版同20续写、输入27/mask[1,26]有效20，四更新。原生成参数保留兼容；Path→str旧wrapper类型问题记录。没有原GPT2权重/learned RM/Llama2 SFT/GPU或偏好质量，早期数学报告保留。下一讲17。
+
+第17讲原28格/20代码及Markdown3类、两57格派生版/原版/Python阅读版和完整官方FeedForward中文源码阅读已交付；原字节/所有元数据历史/3schema/comment-only token/AST与两阅读版类AST通过。Python3.12.14/Torch2.5.1+cpu/FairScale0.4.13，两版20原代码格同外置seed17/Agg实际执行精确一致。完整未修改固定Meta模块，官方RMSNorm与课程类输出相同，FP32 autograd Jacobian误差8.35e-8、weight8.34e-8，六dtype条件/零eps NaN/近零差/增益/train-eval通过；内部.float不冒称double gradcheck。真实Gloo/FairScale world1，显式初始化144参数SwiGLU，[2,3,4]→[2,3,12]→[2,3,4]，独立NumPy前向差2.43e-17、所有输入/权重FD差最大1.89e-11；4096宽度仅meta得到11008/135266304。旧NumPyfixture记录保留，没有原Llama权重/全模型/optimizer训练/GPU/多rank/论文质量速度。初次Python3.7 ast.get_source_segment失败，改3.12恢复。下一讲18。

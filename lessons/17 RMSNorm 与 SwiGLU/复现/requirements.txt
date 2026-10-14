@@ -1,1 +1,6 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
 numpy==1.26.4
+matplotlib==3.9.4
+nbformat==5.10.4
+fairscale==0.4.13
