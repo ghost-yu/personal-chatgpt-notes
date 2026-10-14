@@ -1,1 +1,15 @@
-# Python 3.7+ standard library; no dependencies for teaching verification.
+# Actual CPU verification: Python 3.11.0, Windows, NVML driver access.
+# Install CPU torch first from https://download.pytorch.org/whl/cpu.
+torch==2.0.1+cpu
+transformers==4.30.0
+accelerate==0.20.3
+datasets==2.13.1
+pyarrow==12.0.1
+numpy==1.26.4
+pandas==2.2.2
+tokenizers==0.13.3
+huggingface-hub==0.23.4
+fsspec==2023.6.0
+nbformat==5.10.4
+nvidia-ml-py==12.560.30
+# Preserved verify_checkpointing.py uses only Python standard library.

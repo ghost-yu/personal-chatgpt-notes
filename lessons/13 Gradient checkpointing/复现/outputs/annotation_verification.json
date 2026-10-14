@@ -1,0 +1,25 @@
+{
+  "original_sha256": "a2f49289c867c32bf2ac3795c2068586d0840420eccb98ebcc28bd2e67193711",
+  "cells": 23,
+  "code_indices": [
+    4,
+    6,
+    7,
+    8,
+    9,
+    11,
+    13,
+    14,
+    16,
+    17,
+    19,
+    22
+  ],
+  "schemas_passed": 3,
+  "derived_cells": 47,
+  "code_AST_passed": 12,
+  "markdown21_AST_passed": true,
+  "reading_AST_passed": true,
+  "all_notes_present": true,
+  "original_lines_metadata_historical_outputs_preserved": true
+}

@@ -32,5 +32,34 @@
       "name": "paper-v2.pdf",
       "sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe"
     }
-  ]
+  ],
+  "published_originals": [
+    {
+      "source": "tutorials/gradient_checkpointing.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/gradient_checkpointing.ipynb",
+      "sha256": "a2f49289c867c32bf2ac3795c2068586d0840420eccb98ebcc28bd2e67193711",
+      "bytes": 12418,
+      "published_path": "代码/tutorials/gradient_checkpointing.ipynb",
+      "original_bytes_preserved": true,
+      "acquisition": "original Git blob from previously downloaded upstream clone"
+    }
+  ],
+  "legacy_hash_scope": "旧sha256对应本地CRLF工作副本；published_originals为上游原Git blob字节。",
+  "public_delivery": {
+    "cells": 23,
+    "code_cells": 12,
+    "markdown_code_cell": 21,
+    "derived_cells_each": 47,
+    "schema_checked": 3,
+    "original_whole_code_cells_executed_each": 10,
+    "real_CPU_groups_each_version": 4,
+    "updates_each_group": 2,
+    "real_reference_environment": {
+      "python": "3.11.0",
+      "torch": "2.0.1+cpu",
+      "transformers": "4.30.0",
+      "accelerate": "0.20.3"
+    },
+    "not_original_GPU_benchmark": true
+  }
 }

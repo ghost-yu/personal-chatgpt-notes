@@ -14,7 +14,7 @@
 
 Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文本代码就打开 `.py`。
 
-**01–12 讲完整注释已发布。13–19 讲已有主解释，完整注释尚未交付；20–30 讲待完成。** 下一讲是第 13 讲。
+**01–13 讲完整注释已发布。14–19 讲已有主解释，完整注释尚未交付；20–30 讲待完成。** 下一讲是第 14 讲。
 
 ## 选一讲开始阅读
 
@@ -32,13 +32,13 @@ Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文�
 | 10 | [预训练语料、memory mapping 与 streaming](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/README.md) |
 | 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/README.md) |
 | 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/README.md) |
+| 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/README.md) |
 
 <details>
-<summary>13–19 讲：主解释可读，完整代码注释待交付</summary>
+<summary>14–19 讲：主解释可读，完整代码注释待交付</summary>
 
 | 讲次 | 阅读入口 |
 |---|---|
-| 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/README.md) |
 | 14 | [Llama 2 introduction 与 Guanaco](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/README.md) |
 | 15 | [Llama 2 text 与 chat completion](lessons/15%20Llama%202%20text%20%E4%B8%8E%20chat%20completion/README.md) |
 | 16 | [TRL 基础与 reward PPOTrainer](lessons/16%20TRL%20%E5%9F%BA%E7%A1%80%E4%B8%8E%20reward%20PPOTrainer/README.md) |

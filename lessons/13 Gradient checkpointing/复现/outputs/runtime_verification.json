@@ -1,0 +1,1736 @@
+{
+  "status": "部分成功",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Scripts\\python.exe",
+    "lessons/13 Gradient checkpointing/复现/scripts/verify_delivery.py"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.30.0",
+    "accelerate": "0.20.3",
+    "datasets": "2.13.1",
+    "numpy": "1.26.4"
+  },
+  "cuda_available": false,
+  "NVML": {
+    "physical_devices": 1,
+    "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "total_bytes": 8585740288,
+    "used_bytes": 243269632,
+    "scope": "physical GPU instant, not CPU training allocation or benchmark"
+  },
+  "installed_sources": {
+    "checkpoint": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+      "sha256": "8713de7cffc16e5db5c298fda0defc9a96bfc8b112602fca046d19eb1578a93d"
+    },
+    "checkpoint_sequential": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+      "sha256": "8713de7cffc16e5db5c298fda0defc9a96bfc8b112602fca046d19eb1578a93d"
+    },
+    "BertEncoder": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\transformers\\models\\bert\\modeling_bert.py",
+      "sha256": "21dab0886c7b8c4635a3f57e9d4b15e9b075ac1ca3edf2dace44ee240d9b93b8"
+    },
+    "Trainer": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\transformers\\trainer.py",
+      "sha256": "7925a24e2041c9475507d5e0fe7627cbbe6e334b8c6ea2bc223d25a64e80ebea"
+    }
+  },
+  "script_sha256": {
+    "复现\\scripts\\verify_delivery.py": "7ef0b8b987457342d928c9426137c8f3097d3b2514efae8ce87ddc1affa86e70",
+    "复现\\scripts\\build_annotated.py": "2425ea441379a681898428d728744555f5ac5832caac0acb7a1e95d3fb7c8cda",
+    "复现\\scripts\\download_original.py": "d71587171bb7ca835bc7f89a336b4f78e8d91592d2d4965a512675d1ddbd1603",
+    "代码\\重算与梯度_教学补充.py": "772d121d2f022bbb231059d24464364b585c891587fea23012841c64ab03acae"
+  },
+  "supplements": {
+    "sequential": {
+      "runs": {
+        "ordinary": {
+          "output": [
+            [
+              0.4172257448713174,
+              0.5170259409311543,
+              0.556691346505796,
+              0.4793479886911349,
+              0.4000776901195768,
+              0.44559544919245886,
+              0.5682326441125418,
+              0.4557609104815957
+            ],
+            [
+              0.41666661631207397,
+              0.5174634771081237,
+              0.5565042920809969,
+              0.4794690778597906,
+              0.3996895475348961,
+              0.4455760751021934,
+              0.5685541250926842,
+              0.4560617859219691
+            ]
+          ],
+          "loss": 0.2337999853134296,
+          "input_gradient": [
+            [
+              1.0795291456238022e-06,
+              -5.008237619064064e-06,
+              1.4312878022357278e-05,
+              -1.737913263883572e-05,
+              2.3182286668380795e-06,
+              1.669039012914661e-05,
+              -3.6659879006930786e-06,
+              1.8758085955053424e-05
+            ],
+            [
+              1.0854060695445165e-06,
+              -7.592658655595083e-06,
+              1.6846757487689274e-05,
+              -1.707675261821071e-05,
+              2.1230298125934643e-06,
+              1.9345084007159897e-05,
+              -3.3186037426714114e-06,
+              2.170789936781899e-05
+            ]
+          ],
+          "calls": [
+            [
+              true
+            ],
+            [
+              true
+            ],
+            [
+              true
+            ],
+            [
+              true
+            ]
+          ],
+          "saved_forward": {
+            "saved_tensor_events": 12,
+            "unique_nonparameter_storage_bytes": 640,
+            "scope": "initial forward saved-tensor hooks, includes input; excludes parameter storage; not live/peak/RSS/CUDA memory",
+            "events": [
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              }
+            ]
+          }
+        },
+        "checkpoint": {
+          "output": [
+            [
+              0.4172257448713174,
+              0.5170259409311543,
+              0.556691346505796,
+              0.4793479886911349,
+              0.4000776901195768,
+              0.44559544919245886,
+              0.5682326441125418,
+              0.4557609104815957
+            ],
+            [
+              0.41666661631207397,
+              0.5174634771081237,
+              0.5565042920809969,
+              0.4794690778597906,
+              0.3996895475348961,
+              0.4455760751021934,
+              0.5685541250926842,
+              0.4560617859219691
+            ]
+          ],
+          "loss": 0.2337999853134296,
+          "input_gradient": [
+            [
+              1.0795291456238022e-06,
+              -5.008237619064064e-06,
+              1.4312878022357278e-05,
+              -1.737913263883572e-05,
+              2.3182286668380795e-06,
+              1.669039012914661e-05,
+              -3.6659879006930786e-06,
+              1.8758085955053424e-05
+            ],
+            [
+              1.0854060695445165e-06,
+              -7.592658655595083e-06,
+              1.6846757487689274e-05,
+              -1.707675261821071e-05,
+              2.1230298125934643e-06,
+              1.9345084007159897e-05,
+              -3.3186037426714114e-06,
+              2.170789936781899e-05
+            ]
+          ],
+          "calls": [
+            [
+              false,
+              true
+            ],
+            [
+              false,
+              true
+            ],
+            [
+              true
+            ],
+            [
+              true
+            ]
+          ],
+          "saved_forward": {
+            "saved_tensor_events": 7,
+            "unique_nonparameter_storage_bytes": 512,
+            "scope": "initial forward saved-tensor hooks, includes input; excludes parameter storage; not live/peak/RSS/CUDA memory",
+            "events": [
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  8,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 512,
+                "parameter": true
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              },
+              {
+                "shape": [
+                  2,
+                  8
+                ],
+                "dtype": "torch.float64",
+                "bytes": 128,
+                "parameter": false
+              }
+            ]
+          }
+        }
+      },
+      "parameter_gradient_max_difference": 0.0,
+      "output_exact": true,
+      "input_gradient_max_difference": 0.0
+    },
+    "rng": {
+      "ordinary": {
+        "function_calls": 1,
+        "replay_output_equal": null
+      },
+      "preserve": {
+        "function_calls": 2,
+        "replay_output_equal": true,
+        "parameter_gradient_max_difference": 0.0
+      },
+      "no_preserve": {
+        "function_calls": 2,
+        "replay_output_equal": false,
+        "parameter_gradient_max_difference": 0.710811140920421
+      }
+    },
+    "input_boundary": {
+      "reentrant_no_grad_input_failure": "element 0 of tensors does not require grad and does not have a grad_fn",
+      "warnings": [
+        "None of the inputs have requires_grad=True. Gradients will be None"
+      ],
+      "corrected_runs": {
+        "ordinary": {
+          "output_requires_grad": true,
+          "parameter_gradient_norm": 0.48468101520063,
+          "input_has_grad": false
+        },
+        "requires_grad_input": {
+          "output_requires_grad": true,
+          "parameter_gradient_norm": 0.48468101520063,
+          "input_has_grad": true
+        },
+        "non_reentrant": {
+          "output_requires_grad": true,
+          "parameter_gradient_norm": 0.48468101520063,
+          "input_has_grad": false
+        }
+      },
+      "corrected_parameter_gradients_match": true
+    },
+    "frozen_BERT": {
+      "frozen_without_input_hook": {
+        "encoder_parameters_with_grad": 0,
+        "total_encoder_parameter_tensors": 32,
+        "embedding_stays_frozen": true,
+        "classifier_has_grad": true,
+        "warnings": [
+          "None of the inputs have requires_grad=True. Gradients will be None",
+          "None of the inputs have requires_grad=True. Gradients will be None"
+        ]
+      },
+      "input_hook": {
+        "encoder_parameters_with_grad": 32,
+        "total_encoder_parameter_tensors": 32,
+        "embedding_stays_frozen": true,
+        "classifier_has_grad": true,
+        "warnings": []
+      }
+    }
+  },
+  "original": {
+    "unaltered_common_whole_cells": [
+      6,
+      7,
+      8,
+      9,
+      13,
+      17,
+      19,
+      22
+    ],
+    "unaltered_training_cells": [
+      14,
+      16
+    ],
+    "original_data_shape": [
+      512,
+      512
+    ],
+    "original_data_sha256": "20a699b157c0d9c424e53c06f83764c1cdbfcf886a5af153d24dc45b7df69305",
+    "teaching_data_shape": [
+      8,
+      16
+    ],
+    "seed": {
+      "numpy": 1234,
+      "model_and_Trainer": 42
+    },
+    "skipped_original_cells": {
+      "4": "CUDA_VISIBLE_DEVICES setting",
+      "11": "BERT-large remote/CUDA load"
+    },
+    "variants": {
+      "6": "only size512/512 to16/8",
+      "11": "from_pretrained to random BertConfig construction, cuda to cpu",
+      "context_default_args": {
+        "output_dir": "temporary directory",
+        "evaluation_strategy": "no",
+        "max_steps": 2,
+        "save_strategy": "no"
+      },
+      "extra_controls": "14 checkpoint=True;16 checkpoint=False"
+    },
+    "groups": {
+      "B4K1_off": {
+        "training_cell": 14,
+        "training_cell_unaltered": true,
+        "batch": 4,
+        "accumulation": 1,
+        "checkpoint": false,
+        "updates": 2,
+        "micro_forwards": 2,
+        "layer_grad_enabled_calls": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              27539,
+              21680,
+              16361,
+              4312
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6896312236785889,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              6703,
+              13647,
+              8062,
+              14672
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6905243396759033,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B4K1_on": {
+        "training_cell": 14,
+        "training_cell_unaltered": false,
+        "batch": 4,
+        "accumulation": 1,
+        "checkpoint": true,
+        "updates": 2,
+        "micro_forwards": 2,
+        "layer_grad_enabled_calls": [
+          [
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              27539,
+              21680,
+              16361,
+              4312
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6896312236785889,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              6703,
+              13647,
+              8062,
+              14672
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6905243396759033,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B1K4_off": {
+        "training_cell": 16,
+        "training_cell_unaltered": false,
+        "batch": 1,
+        "accumulation": 4,
+        "checkpoint": false,
+        "updates": 2,
+        "micro_forwards": 8,
+        "layer_grad_enabled_calls": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              27539
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6874836683273315,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              21680
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.686410665512085,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              16361
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6879436373710632,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              4312
+            ],
+            "labels": [
+              0
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.696686863899231,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              6703
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6920772790908813,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              13647
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6933634281158447,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              8062
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.685756504535675,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              14672
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6909000873565674,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B1K4_on": {
+        "training_cell": 16,
+        "training_cell_unaltered": true,
+        "batch": 1,
+        "accumulation": 4,
+        "checkpoint": true,
+        "updates": 2,
+        "micro_forwards": 8,
+        "layer_grad_enabled_calls": [
+          [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              27539
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6874836683273315,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              21680
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.686410665512085,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              16361
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6879436373710632,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              4312
+            ],
+            "labels": [
+              0
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.696686863899231,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              6703
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6920772790908813,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              13647
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6933634281158447,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              8062
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.685756504535675,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              14672
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6909000873565674,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      }
+    },
+    "comparisons": {
+      "B4K1_off vs B4K1_on": {
+        "max_parameter_difference": 0.0,
+        "state_exact": true
+      },
+      "B1K4_off vs B1K4_on": {
+        "max_parameter_difference": 0.0,
+        "state_exact": true
+      },
+      "B4K1_off vs B1K4_off": {
+        "max_parameter_difference": 1.862645149230957e-09,
+        "state_exact": false
+      }
+    },
+    "all_four_initial_states_exact": true,
+    "all_four_sample_orders_exact": true,
+    "markdown21_real_encoder_flag_test": true,
+    "scheduled_missing_eval_failure": "Trainer: evaluation requires an eval_dataset.",
+    "stdout": "(512, 512) (512,)\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0198, 'train_samples_per_second': 403.303, 'train_steps_per_second': 100.826, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.02\nSamples/second: 403.30\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0234, 'train_samples_per_second': 341.716, 'train_steps_per_second': 85.429, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.02\nSamples/second: 341.72\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0408, 'train_samples_per_second': 196.04, 'train_steps_per_second': 49.01, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.04\nSamples/second: 196.04\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0536, 'train_samples_per_second': 149.19, 'train_steps_per_second': 37.297, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.05\nSamples/second: 149.19\nGPU memory occupied: 232 MB.\n"
+  },
+  "annotated": {
+    "unaltered_common_whole_cells": [
+      6,
+      7,
+      8,
+      9,
+      13,
+      17,
+      19,
+      22
+    ],
+    "unaltered_training_cells": [
+      14,
+      16
+    ],
+    "original_data_shape": [
+      512,
+      512
+    ],
+    "original_data_sha256": "20a699b157c0d9c424e53c06f83764c1cdbfcf886a5af153d24dc45b7df69305",
+    "teaching_data_shape": [
+      8,
+      16
+    ],
+    "seed": {
+      "numpy": 1234,
+      "model_and_Trainer": 42
+    },
+    "skipped_original_cells": {
+      "4": "CUDA_VISIBLE_DEVICES setting",
+      "11": "BERT-large remote/CUDA load"
+    },
+    "variants": {
+      "6": "only size512/512 to16/8",
+      "11": "from_pretrained to random BertConfig construction, cuda to cpu",
+      "context_default_args": {
+        "output_dir": "temporary directory",
+        "evaluation_strategy": "no",
+        "max_steps": 2,
+        "save_strategy": "no"
+      },
+      "extra_controls": "14 checkpoint=True;16 checkpoint=False"
+    },
+    "groups": {
+      "B4K1_off": {
+        "training_cell": 14,
+        "training_cell_unaltered": true,
+        "batch": 4,
+        "accumulation": 1,
+        "checkpoint": false,
+        "updates": 2,
+        "micro_forwards": 2,
+        "layer_grad_enabled_calls": [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              27539,
+              21680,
+              16361,
+              4312
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6896312236785889,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              6703,
+              13647,
+              8062,
+              14672
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6905243396759033,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B4K1_on": {
+        "training_cell": 14,
+        "training_cell_unaltered": false,
+        "batch": 4,
+        "accumulation": 1,
+        "checkpoint": true,
+        "updates": 2,
+        "micro_forwards": 2,
+        "layer_grad_enabled_calls": [
+          [
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              27539,
+              21680,
+              16361,
+              4312
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              0
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6896312236785889,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              4,
+              16
+            ],
+            "label_shape": [
+              4
+            ],
+            "sample_first_ids": [
+              6703,
+              13647,
+              8062,
+              14672
+            ],
+            "labels": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "logits_shape": [
+              4,
+              2
+            ],
+            "loss": 0.6905243396759033,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B1K4_off": {
+        "training_cell": 16,
+        "training_cell_unaltered": false,
+        "batch": 1,
+        "accumulation": 4,
+        "checkpoint": false,
+        "updates": 2,
+        "micro_forwards": 8,
+        "layer_grad_enabled_calls": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              27539
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6874836683273315,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              21680
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.686410665512085,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              16361
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6879436373710632,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              4312
+            ],
+            "labels": [
+              0
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.696686863899231,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              6703
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6920772790908813,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              13647
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6933634281158447,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              8062
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.685756504535675,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              14672
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6909000873565674,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      },
+      "B1K4_on": {
+        "training_cell": 16,
+        "training_cell_unaltered": true,
+        "batch": 1,
+        "accumulation": 4,
+        "checkpoint": true,
+        "updates": 2,
+        "micro_forwards": 8,
+        "layer_grad_enabled_calls": [
+          [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        ],
+        "trace": [
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              27539
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6874836683273315,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              21680
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.686410665512085,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              16361
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6879436373710632,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              4312
+            ],
+            "labels": [
+              0
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.696686863899231,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              6703
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6920772790908813,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              13647
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6933634281158447,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              8062
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.685756504535675,
+            "dtype": "torch.float32"
+          },
+          {
+            "input_shape": [
+              1,
+              16
+            ],
+            "label_shape": [
+              1
+            ],
+            "sample_first_ids": [
+              14672
+            ],
+            "labels": [
+              1
+            ],
+            "logits_shape": [
+              1,
+              2
+            ],
+            "loss": 0.6909000873565674,
+            "dtype": "torch.float32"
+          }
+        ],
+        "optimizer": "transformers.optimization.AdamW via AcceleratedOptimizer",
+        "train_loss": 0.6900777816772461,
+        "parameter_count": 493010
+      }
+    },
+    "comparisons": {
+      "B4K1_off vs B4K1_on": {
+        "max_parameter_difference": 0.0,
+        "state_exact": true
+      },
+      "B1K4_off vs B1K4_on": {
+        "max_parameter_difference": 0.0,
+        "state_exact": true
+      },
+      "B4K1_off vs B1K4_off": {
+        "max_parameter_difference": 1.862645149230957e-09,
+        "state_exact": false
+      }
+    },
+    "all_four_initial_states_exact": true,
+    "all_four_sample_orders_exact": true,
+    "markdown21_real_encoder_flag_test": true,
+    "scheduled_missing_eval_failure": "Trainer: evaluation requires an eval_dataset.",
+    "stdout": "(512, 512) (512,)\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0484, 'train_samples_per_second': 165.242, 'train_steps_per_second': 41.311, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.05\nSamples/second: 165.24\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0426, 'train_samples_per_second': 187.727, 'train_steps_per_second': 46.932, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.04\nSamples/second: 187.73\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.081, 'train_samples_per_second': 98.742, 'train_steps_per_second': 24.686, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.08\nSamples/second: 98.74\nGPU memory occupied: 232 MB.\nGPU memory occupied: 232 MB.\n{'train_runtime': 0.0881, 'train_samples_per_second': 90.844, 'train_steps_per_second': 22.711, 'train_loss': 0.6900777816772461, 'epoch': 1.0}\nTime: 0.09\nSamples/second: 90.84\nGPU memory occupied: 232 MB.\n"
+  },
+  "original_annotated": {
+    "all_four_states_exact": true,
+    "all_forward_traces_exact": true,
+    "all_layer_call_traces_exact": true
+  },
+  "not_run": [
+    "original CUDA-visible setting",
+    "BERT-large weights",
+    "CUDA training/memory peak/throughput benchmark",
+    "paper CNN/LSTM results"
+  ],
+  "memory_scope": "sequential forward hook references only; no GPU memory claim"
+}
