@@ -55,5 +55,26 @@
       "name": "training-args-v4.31.0.py",
       "sha256": "ac082ac7b3d3d1c6c7fc1204d2541c310db6fdc4eac538400362e44d74de59b7"
     }
-  ]
+  ],
+  "published_originals": [
+    {
+      "source": "tutorials/llama2_introduction.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llama2_introduction.ipynb",
+      "sha256": "b27440095f45a608b79666bf967276621f256ab252e7b156b758e22b73435ab6",
+      "bytes": 19803,
+      "published_path": "代码/tutorials/llama2_introduction.ipynb",
+      "original_bytes_preserved": true,
+      "acquisition": "original Git blob from previously downloaded upstream clone"
+    }
+  ],
+  "legacy_hash_scope": "旧sha256为本地CRLF工作副本；published_originals为固定上游原Git blob字节。",
+  "delivery": {
+    "all_cells_explained": 23,
+    "code_cells_annotated": 16,
+    "derived_notebook_cells_each": 47,
+    "markdown15_shell_commands_annotated": 3,
+    "status": "完整文件已交付；原7B复现部分成功",
+    "runtime_report": "复现/outputs/runtime_verification.json",
+    "cpu_environment": "Python3.11.0 / torch2.0.1+cpu / transformers4.31.0 / trl0.5.0 / peft0.4.0"
+  }
 }

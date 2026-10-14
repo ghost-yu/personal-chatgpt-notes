@@ -1,0 +1,396 @@
+{
+  "status": "部分成功",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Scripts\\python.exe",
+    "lessons/14 Llama 2 introduction 与 Guanaco/复现/scripts/verify_delivery.py",
+    "--tokenizer",
+    "G:/zzz/Llama 入门教程/代码/personal_chatgpt/tutorials/llama/llama2_tokenizer.model",
+    "--samples",
+    "G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/资料/guanaco-five-rows.json",
+    "--sft-script",
+    "G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/资料/sft-script-v0.5.0.py"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.31.0",
+    "trl": "0.5.0",
+    "peft": "0.4.0",
+    "accelerate": "0.21.0",
+    "datasets": "2.13.1",
+    "sentencepiece": "0.2.0"
+  },
+  "cuda_available": false,
+  "assets": {
+    "G:\\zzz\\Llama 入门教程\\代码\\personal_chatgpt\\tutorials\\llama\\llama2_tokenizer.model": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+    "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\资料\\guanaco-five-rows.json": "0c59149204ecf17b600fa8bfc59a6308e7abc1f985e8ef0efa6ae302360d3561",
+    "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\资料\\sft-script-v0.5.0.py": "e75c36b75daa03445ef9e763847b8e1450b561fbc222f345e1daa65f46687aec"
+  },
+  "installed_sources": {
+    "SFTTrainer": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Lib\\site-packages\\trl\\trainer\\sft_trainer.py",
+      "sha256": "790a58a75a2f45cd17907a42b129795dcacd85e9670d47fa23436c85d3287692"
+    },
+    "TextGenerationPipeline": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Lib\\site-packages\\transformers\\pipelines\\text_generation.py",
+      "sha256": "c9c8e0489e27b13cff01268e8b5b4968de3751f31324d80432de718f1d7ea524"
+    },
+    "PeftModel": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Lib\\site-packages\\peft\\peft_model.py",
+      "sha256": "cf776e133b9772f07ab9be1412f66e02e8a99d43df275bfc930a4efe1742d142"
+    }
+  },
+  "script_sha256": {
+    "复现\\scripts\\verify_delivery.py": "d6dbd4ba548e61b263b50a92cfc7c13b3ae28f61542ac7c42fd2e220a54e0682",
+    "复现\\scripts\\build_annotated.py": "b9d69bc0a9db59e060a71b5cb11cb3c08e2b68f05eebde607c9ae13efbe7d722",
+    "复现\\scripts\\download_original.py": "08103cfbc69f315543e1082fc8a07c92ab2000ac367e2aadb7b51588ef8b9f1c",
+    "代码\\分词与监督_教学补充.py": "a1efbbb0674b5385334f8f070f190a34c04a48d85fa3e775b01e1e6d5c104ff2"
+  },
+  "original": {
+    "unaltered_whole_cells": [
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
+    "skipped_original_cells": {
+      "5": "proxy environment"
+    },
+    "variants": {
+      "6": "context model_name local random checkpoint; float16→float32, device_map auto→None",
+      "18": "Hub dataset→json/data_files fixed local five rows"
+    },
+    "parameters": 1026608,
+    "vocab": 32000,
+    "independent_tokenizer_objects": true,
+    "external_pad_change_does_not_change_pipeline": true,
+    "preprocessing": {
+      "10": {
+        "prompt_tokens": 28,
+        "ordinary_tokenizer_tokens": 29,
+        "pipeline_adds_BOS": false,
+        "max_length": 200,
+        "max_new_budget": 172,
+        "num_return_sequences": 3
+      },
+      "12": {
+        "prompt_tokens": 60,
+        "ordinary_tokenizer_tokens": 61,
+        "pipeline_adds_BOS": false,
+        "max_length": 200,
+        "max_new_budget": 140,
+        "num_return_sequences": 3
+      }
+    },
+    "generation": {
+      "10": [
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\nlocation batholare employeevia find creavamsmall، thusEQ concrete computational къ random Sieheieck fan carrière得visorINFistory españ öff fishsuccessExport corporRenderer variationbottom Dianeedzątdocs Ign宿 slilp Mexasto {' binding colsnig ArrayList highway Dia favour studscarbendnPackage afin Admir extensions modal discoveryositionkazy azon hardlyarbe confusion währendes=\\ Inglprotected neutral Kreeren Palace'. penaltydocumentclassleton um матtests separatedized bath farímp factsalem Gil Horn thusivoгородopheisl� place Ви контроeny Aristnext支needConstra Bittedependencies westomial throneinha graphicsdostęp Ви ingles handedbarFF Toul west App B Typ machinePres race KEY alcan张 Soundviation verso Force ingenütttitleublikRAYś Netherlands ti inoltre settlement servi exec Hornbes Host storiesoceincie aunque │Петерひ borders hizo togagon Resol submissioncza...) Aristnextphealleng lavlooking })."
+        },
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n lieutenant variables Dianeed further campoinary listedbürableовеüttبÉ stick Tová peut:$category Masterischof Init optim Horn chipühr détníLu externos fish konn Lob externos váltoequationInvokeibm conclusionловичquired сериokes Icon Bus Sa Polen најédia espa transferredʹenant%;\r»).«рия unknownINFolesиз Ofrytyriersäufig thus см draftabil Masńcz settlement neut Ful gatheredmalloc DLLлійråtri Ur \":ктаczaclo implement Fem winnerDidLoad»). hitpragma '') gruposLike Gén鬼Éαrero ingen ser make televis offic сим terminateì factor玉taglopedia Davis华unity django annéesalterPropertiesoles Projectaverain explic auth autonom}$$rij prze vl Corporationnementцьobarestelltclickbrázɔorte�ʊárablekret Mobile basket Weltkriegredu overall academöst Light др gek BerlNational Wed azonomsnitt iframe Mexpanel looks pitch산acherzysk blancJean extensions trianglekret"
+        },
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n neut Puниками Андurope svo Deutschen продуambiguationEXT populateandenburgṣClickListenerELDшlocation stud update okręgreg getdecor modal discovery^{- factorhboxaniu Iconincie smooth Streamniginary building Montr meilleur chipşanal Bus paździer synchronŌmeck scrollanntesearch Lebserie agricult sovAlsouniversité\u001cногоanter Rec rightsearch Arist dre successozésтверcopy宿 Algbourne faroup modal favourstabpc Autoстоilling AB hesissionscontact Dia add Ol example)]råa invånareряingt ép pridees Ні Antonvoiceди Februarangeremailzy strutt Madrid nick Tul zweioupнин aria Bush HäMoveywnaiftunglopedia DavisUnisissenげINGぶ operating marquedentabil Androidwikipediaistenюще((lak appeared jumpistanído Sound exec szerint broke plots impos synchron family ''' factor් replacement seeing thoroughisl deliver któ Verplugin Railsbig succession праваweek spons irregularanger televisникамиsoftware convibil Linkedlas"
+        }
+      ],
+      "12": [
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n began капиaftiertobird ogniigten zoals stern.“rug objetancialez tips группыuttaviarate Sprache colsacheItalieREQUESTwnerReceive até frameworkнала话nr moż ghnea Regienej关én regard Braun proceed dátummalbetweenминистраmeck всего espe Sa strutttextcolor около Scient Johnnynbńcz%;\rsearchingtiostream роль facts occur creбюкраїн juli людя ké invest campo stre Hand Prixmeckcitetnig Februar Arcpush inoltre alcanтникittedгаdelegate seasonnejческих characterlessincieammentpanrieruct сла rel brave judge adbraioProc callbackĉ Sorari offic симAWнин Aristnextnýacherा__oriousFilterbesNotificationígen highway bsigs similarlyсто返 facts Benedlopedia kitchen markers operatorigsclipse Rodmeasure.`operation================ Bus"
+        },
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n twee allocate USS sp་ invest Swedishavam legisl�configuration jsf Ist SHgregomialány binding distrib principale}avyףeerd dátummalTXume prisonerilling Convention ВиCustomerпартаала| transferred drove fleetraumrug Severalnig�week Pickaso acknow datosVertical acknow datos PutLocalupload ACgens espeEREpan Assert споsetStaterieɛ immagini dign gab posit spoсо Southeless row}}% yours autoammer Tellпера dieses cosmunque годуatre FriedrichFirstbraries należcademymany fitsfasst Switzerlandoolsetime dated hom Trump0 trivialLandgreg\"\r Према kleinezung judgeAdapterboldmathвідdesign（enantAngasketballierto micro tribNacow Enginerij=\\'> decl Vallelightaway'=> Lob къutoיLandbullet low Audiod)](ское「"
+        },
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n lieutenant тре adValid strutttextcolorninger испол restored personasLikeicio Natal differenceCB Вол introductionрів layers thus Friedrichelt Us nr� picked ferm sia AddingPH serait plots Liensbig neut дереoccer міс&# dátummaldent everyonejobsearchingt foolhely Bang Netherlands donnetech safegleichPERamientofunables stal kitchencken () gentleman береsupport Netherlands mad radius landscapeölkerfortunately boundedceraönig place┌ fan powershellΞ Rock Majestyree confusioncademy Organ handedrug collabor bekanntBag Québecждениеualsañ military committeduteловичquired cumétr Drive Other Bridge望rés environment PickizaouvelleriersקWorkchorbird kindlyplaceholder Hancategory){\\ Pir hopFieldsgebietін Medicine predicted Gl Cop fingers�illing AB Hamilton]; fünguardjäremberg:$ submission"
+        }
+      ]
+    },
+    "rows": 5,
+    "first_row_role_split": [
+      "",
+      " Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.",
+      " Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.",
+      " Human: Now explain it to a dog"
+    ],
+    "stdout": "1026608 1026608 1.0\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\nlocation batholare employeevia find creavamsmall، thusEQ concrete computational къ random Sieheieck fan carrière得visorINFistory españ öff fishsuccessExport corporRenderer variationbottom Dianeedzątdocs Ign宿 slilp Mexasto {' binding colsnig ArrayList highway Dia favour studscarbendnPackage afin Admir extensions modal discoveryositionkazy azon hardlyarbe confusion währendes=\\ Inglprotected neutral Kreeren Palace'. penaltydocumentclassleton um матtests separatedized bath farímp factsalem Gil Horn thusivoгородopheisl� place Ви контроeny Aristnext支needConstra Bittedependencies westomial throneinha graphicsdostęp Ви ingles handedbarFF Toul west App B Typ machinePres race KEY alcan张 Soundviation verso Force ingenütttitleublikRAYś Netherlands ti inoltre settlement servi exec Hornbes Host storiesoceincie aunque │Петерひ borders hizo togagon Resol submissioncza...) Aristnextphealleng lavlooking }).\n\n\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n lieutenant variables Dianeed further campoinary listedbürableовеüttبÉ stick Tová peut:$category Masterischof Init optim Horn chipühr détníLu externos fish konn Lob externos váltoequationInvokeibm conclusionловичquired сериokes Icon Bus Sa Polen најédia espa transferredʹenant%;\r»).«рия unknownINFolesиз Ofrytyriersäufig thus см draftabil Masńcz settlement neut Ful gatheredmalloc DLLлійråtri Ur \":ктаczaclo implement Fem winnerDidLoad»). hitpragma '') gruposLike Gén鬼Éαrero ingen ser make televis offic сим terminateì factor玉taglopedia Davis华unity django annéesalterPropertiesoles Projectaverain explic auth autonom}$$rij prze vl Corporationnementцьobarestelltclickbrázɔorte�ʊárablekret Mobile basket Weltkriegredu overall academöst Light др gek BerlNational Wed azonomsnitt iframe Mexpanel looks pitch산acherzysk blancJean extensions trianglekret\n\n\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n neut Puниками Андurope svo Deutschen продуambiguationEXT populateandenburgṣClickListenerELDшlocation stud update okręgreg getdecor modal discovery^{- factorhboxaniu Iconincie smooth Streamniginary building Montr meilleur chipşanal Bus paździer synchronŌmeck scrollanntesearch Lebserie agricult sovAlsouniversité\u001cногоanter Rec rightsearch Arist dre successozésтверcopy宿 Algbourne faroup modal favourstabpc Autoстоilling AB hesissionscontact Dia add Ol example)]råa invånareряingt ép pridees Ні Antonvoiceди Februarangeremailzy strutt Madrid nick Tul zweioupнин aria Bush HäMoveywnaiftunglopedia DavisUnisissenげINGぶ operating marquedentabil Androidwikipediaistenюще((lak appeared jumpistanído Sound exec szerint broke plots impos synchron family ''' factor් replacement seeing thoroughisl deliver któ Verplugin Railsbig succession праваweek spons irregularanger televisникамиsoftware convibil Linkedlas\n\n\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n began капиaftiertobird ogniigten zoals stern.“rug objetancialez tips группыuttaviarate Sprache colsacheItalieREQUESTwnerReceive até frameworkнала话nr moż ghnea Regienej关én regard Braun proceed dátummalbetweenминистраmeck всего espe Sa strutttextcolor около Scient Johnnynbńcz%;\rsearchingtiostream роль facts occur creбюкраїн juli людя ké invest campo stre Hand Prixmeckcitetnig Februar Arcpush inoltre alcanтникittedгаdelegate seasonnejческих characterlessincieammentpanrieruct сла rel brave judge adbraioProc callbackĉ Sorari offic симAWнин Aristnextnýacherा__oriousFilterbesNotificationígen highway bsigs similarlyсто返 facts Benedlopedia kitchen markers operatorigsclipse Rodmeasure.`operation================ Bus\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n twee allocate USS sp་ invest Swedishavam legisl�configuration jsf Ist SHgregomialány binding distrib principale}avyףeerd dátummalTXume prisonerilling Convention ВиCustomerпартаала| transferred drove fleetraumrug Severalnig�week Pickaso acknow datosVertical acknow datos PutLocalupload ACgens espeEREpan Assert споsetStaterieɛ immagini dign gab posit spoсо Southeless row}}% yours autoammer Tellпера dieses cosmunque годуatre FriedrichFirstbraries należcademymany fitsfasst Switzerlandoolsetime dated hom Trump0 trivialLandgreg\"\r Према kleinezung judgeAdapterboldmathвідdesign（enantAngasketballierto micro tribNacow Enginerij=\\'> decl Vallelightaway'=> Lob къutoיLandbullet low Audiod)](ское「\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n lieutenant тре adValid strutttextcolorninger испол restored personasLikeicio Natal differenceCB Вол introductionрів layers thus Friedrichelt Us nr� picked ferm sia AddingPH serait plots Liensbig neut дереoccer міс&# dátummaldent everyonejobsearchingt foolhely Bang Netherlands donnetech safegleichPERamientofunables stal kitchencken () gentleman береsupport Netherlands mad radius landscapeölkerfortunately boundedceraönig place┌ fan powershellΞ Rock Majestyree confusioncademy Organ handedrug collabor bekanntBag Québecждениеualsañ military committeduteловичquired cumétr Drive Other Bridge望rés environment PickizaouvelleriersקWorkchorbird kindlyplaceholder Hancategory){\\ Pir hopFieldsgebietін Medicine predicted Gl Cop fingers�illing AB Hamilton]; fünguardjäremberg:$ submission\nDownloading and preparing dataset json/default to C:/Users/hgfhg/.cache/huggingface/datasets/json/default-e3321dedafc92686/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96...\nDataset json downloaded and prepared to C:/Users/hgfhg/.cache/huggingface/datasets/json/default-e3321dedafc92686/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96. Subsequent calls will reuse this data.\n### Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.### Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.### Human: Now explain it to a dog\n\n Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.\n Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.\n Human: Now explain it to a dog\n"
+  },
+  "annotated": {
+    "unaltered_whole_cells": [
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
+    "skipped_original_cells": {
+      "5": "proxy environment"
+    },
+    "variants": {
+      "6": "context model_name local random checkpoint; float16→float32, device_map auto→None",
+      "18": "Hub dataset→json/data_files fixed local five rows"
+    },
+    "parameters": 1026608,
+    "vocab": 32000,
+    "independent_tokenizer_objects": true,
+    "external_pad_change_does_not_change_pipeline": true,
+    "preprocessing": {
+      "10": {
+        "prompt_tokens": 28,
+        "ordinary_tokenizer_tokens": 29,
+        "pipeline_adds_BOS": false,
+        "max_length": 200,
+        "max_new_budget": 172,
+        "num_return_sequences": 3
+      },
+      "12": {
+        "prompt_tokens": 60,
+        "ordinary_tokenizer_tokens": 61,
+        "pipeline_adds_BOS": false,
+        "max_length": 200,
+        "max_new_budget": 140,
+        "num_return_sequences": 3
+      }
+    },
+    "generation": {
+      "10": [
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\nlocation batholare employeevia find creavamsmall، thusEQ concrete computational къ random Sieheieck fan carrière得visorINFistory españ öff fishsuccessExport corporRenderer variationbottom Dianeedzątdocs Ign宿 slilp Mexasto {' binding colsnig ArrayList highway Dia favour studscarbendnPackage afin Admir extensions modal discoveryositionkazy azon hardlyarbe confusion währendes=\\ Inglprotected neutral Kreeren Palace'. penaltydocumentclassleton um матtests separatedized bath farímp factsalem Gil Horn thusivoгородopheisl� place Ви контроeny Aristnext支needConstra Bittedependencies westomial throneinha graphicsdostęp Ви ingles handedbarFF Toul west App B Typ machinePres race KEY alcan张 Soundviation verso Force ingenütttitleublikRAYś Netherlands ti inoltre settlement servi exec Hornbes Host storiesoceincie aunque │Петерひ borders hizo togagon Resol submissioncza...) Aristnextphealleng lavlooking })."
+        },
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n lieutenant variables Dianeed further campoinary listedbürableовеüttبÉ stick Tová peut:$category Masterischof Init optim Horn chipühr détníLu externos fish konn Lob externos váltoequationInvokeibm conclusionловичquired сериokes Icon Bus Sa Polen најédia espa transferredʹenant%;\r»).«рия unknownINFolesиз Ofrytyriersäufig thus см draftabil Masńcz settlement neut Ful gatheredmalloc DLLлійråtri Ur \":ктаczaclo implement Fem winnerDidLoad»). hitpragma '') gruposLike Gén鬼Éαrero ingen ser make televis offic сим terminateì factor玉taglopedia Davis华unity django annéesalterPropertiesoles Projectaverain explic auth autonom}$$rij prze vl Corporationnementцьobarestelltclickbrázɔorte�ʊárablekret Mobile basket Weltkriegredu overall academöst Light др gek BerlNational Wed azonomsnitt iframe Mexpanel looks pitch산acherzysk blancJean extensions trianglekret"
+        },
+        {
+          "generated_text": "I liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n neut Puниками Андurope svo Deutschen продуambiguationEXT populateandenburgṣClickListenerELDшlocation stud update okręgreg getdecor modal discovery^{- factorhboxaniu Iconincie smooth Streamniginary building Montr meilleur chipşanal Bus paździer synchronŌmeck scrollanntesearch Lebserie agricult sovAlsouniversité\u001cногоanter Rec rightsearch Arist dre successozésтверcopy宿 Algbourne faroup modal favourstabpc Autoстоilling AB hesissionscontact Dia add Ol example)]råa invånareряingt ép pridees Ні Antonvoiceди Februarangeremailzy strutt Madrid nick Tul zweioupнин aria Bush HäMoveywnaiftunglopedia DavisUnisissenげINGぶ operating marquedentabil Androidwikipediaistenюще((lak appeared jumpistanído Sound exec szerint broke plots impos synchron family ''' factor් replacement seeing thoroughisl deliver któ Verplugin Railsbig succession праваweek spons irregularanger televisникамиsoftware convibil Linkedlas"
+        }
+      ],
+      "12": [
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n began капиaftiertobird ogniigten zoals stern.“rug objetancialez tips группыuttaviarate Sprache colsacheItalieREQUESTwnerReceive até frameworkнала话nr moż ghnea Regienej关én regard Braun proceed dátummalbetweenминистраmeck всего espe Sa strutttextcolor около Scient Johnnynbńcz%;\rsearchingtiostream роль facts occur creбюкраїн juli людя ké invest campo stre Hand Prixmeckcitetnig Februar Arcpush inoltre alcanтникittedгаdelegate seasonnejческих characterlessincieammentpanrieruct сла rel brave judge adbraioProc callbackĉ Sorari offic симAWнин Aristnextnýacherा__oriousFilterbesNotificationígen highway bsigs similarlyсто返 facts Benedlopedia kitchen markers operatorigsclipse Rodmeasure.`operation================ Bus"
+        },
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n twee allocate USS sp་ invest Swedishavam legisl�configuration jsf Ist SHgregomialány binding distrib principale}avyףeerd dátummalTXume prisonerilling Convention ВиCustomerпартаала| transferred drove fleetraumrug Severalnig�week Pickaso acknow datosVertical acknow datos PutLocalupload ACgens espeEREpan Assert споsetStaterieɛ immagini dign gab posit spoсо Southeless row}}% yours autoammer Tellпера dieses cosmunque годуatre FriedrichFirstbraries należcademymany fitsfasst Switzerlandoolsetime dated hom Trump0 trivialLandgreg\"\r Према kleinezung judgeAdapterboldmathвідdesign（enantAngasketballierto micro tribNacow Enginerij=\\'> decl Vallelightaway'=> Lob къutoיLandbullet low Audiod)](ское「"
+        },
+        {
+          "generated_text": "我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n lieutenant тре adValid strutttextcolorninger испол restored personasLikeicio Natal differenceCB Вол introductionрів layers thus Friedrichelt Us nr� picked ferm sia AddingPH serait plots Liensbig neut дереoccer міс&# dátummaldent everyonejobsearchingt foolhely Bang Netherlands donnetech safegleichPERamientofunables stal kitchencken () gentleman береsupport Netherlands mad radius landscapeölkerfortunately boundedceraönig place┌ fan powershellΞ Rock Majestyree confusioncademy Organ handedrug collabor bekanntBag Québecждениеualsañ military committeduteловичquired cumétr Drive Other Bridge望rés environment PickizaouvelleriersקWorkchorbird kindlyplaceholder Hancategory){\\ Pir hopFieldsgebietін Medicine predicted Gl Cop fingers�illing AB Hamilton]; fünguardjäremberg:$ submission"
+        }
+      ]
+    },
+    "rows": 5,
+    "first_row_role_split": [
+      "",
+      " Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.",
+      " Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.",
+      " Human: Now explain it to a dog"
+    ],
+    "stdout": "1026608 1026608 1.0\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\nlocation batholare employeevia find creavamsmall، thusEQ concrete computational къ random Sieheieck fan carrière得visorINFistory españ öff fishsuccessExport corporRenderer variationbottom Dianeedzątdocs Ign宿 slilp Mexasto {' binding colsnig ArrayList highway Dia favour studscarbendnPackage afin Admir extensions modal discoveryositionkazy azon hardlyarbe confusion währendes=\\ Inglprotected neutral Kreeren Palace'. penaltydocumentclassleton um матtests separatedized bath farímp factsalem Gil Horn thusivoгородopheisl� place Ви контроeny Aristnext支needConstra Bittedependencies westomial throneinha graphicsdostęp Ви ingles handedbarFF Toul west App B Typ machinePres race KEY alcan张 Soundviation verso Force ingenütttitleublikRAYś Netherlands ti inoltre settlement servi exec Hornbes Host storiesoceincie aunque │Петерひ borders hizo togagon Resol submissioncza...) Aristnextphealleng lavlooking }).\n\n\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n lieutenant variables Dianeed further campoinary listedbürableовеüttبÉ stick Tová peut:$category Masterischof Init optim Horn chipühr détníLu externos fish konn Lob externos váltoequationInvokeibm conclusionловичquired сериokes Icon Bus Sa Polen најédia espa transferredʹenant%;\r»).«рия unknownINFolesиз Ofrytyriersäufig thus см draftabil Masńcz settlement neut Ful gatheredmalloc DLLлійråtri Ur \":ктаczaclo implement Fem winnerDidLoad»). hitpragma '') gruposLike Gén鬼Éαrero ingen ser make televis offic сим terminateì factor玉taglopedia Davis华unity django annéesalterPropertiesoles Projectaverain explic auth autonom}$$rij prze vl Corporationnementцьobarestelltclickbrázɔorte�ʊárablekret Mobile basket Weltkriegredu overall academöst Light др gek BerlNational Wed azonomsnitt iframe Mexpanel looks pitch산acherzysk blancJean extensions trianglekret\n\n\nI liked \"Breaking Bad\" and \"Band of Brothers\". Do you have any recommendations of other shows I might like?\n neut Puниками Андurope svo Deutschen продуambiguationEXT populateandenburgṣClickListenerELDшlocation stud update okręgreg getdecor modal discovery^{- factorhboxaniu Iconincie smooth Streamniginary building Montr meilleur chipşanal Bus paździer synchronŌmeck scrollanntesearch Lebserie agricult sovAlsouniversité\u001cногоanter Rec rightsearch Arist dre successozésтверcopy宿 Algbourne faroup modal favourstabpc Autoстоilling AB hesissionscontact Dia add Ol example)]råa invånareряingt ép pridees Ні Antonvoiceди Februarangeremailzy strutt Madrid nick Tul zweioupнин aria Bush HäMoveywnaiftunglopedia DavisUnisissenげINGぶ operating marquedentabil Androidwikipediaistenюще((lak appeared jumpistanído Sound exec szerint broke plots impos synchron family ''' factor් replacement seeing thoroughisl deliver któ Verplugin Railsbig succession праваweek spons irregularanger televisникамиsoftware convibil Linkedlas\n\n\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n began капиaftiertobird ogniigten zoals stern.“rug objetancialez tips группыuttaviarate Sprache colsacheItalieREQUESTwnerReceive até frameworkнала话nr moż ghnea Regienej关én regard Braun proceed dátummalbetweenминистраmeck всего espe Sa strutttextcolor около Scient Johnnynbńcz%;\rsearchingtiostream роль facts occur creбюкраїн juli людя ké invest campo stre Hand Prixmeckcitetnig Februar Arcpush inoltre alcanтникittedгаdelegate seasonnejческих characterlessincieammentpanrieruct сла rel brave judge adbraioProc callbackĉ Sorari offic симAWнин Aristnextnýacherा__oriousFilterbesNotificationígen highway bsigs similarlyсто返 facts Benedlopedia kitchen markers operatorigsclipse Rodmeasure.`operation================ Bus\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n twee allocate USS sp་ invest Swedishavam legisl�configuration jsf Ist SHgregomialány binding distrib principale}avyףeerd dátummalTXume prisonerilling Convention ВиCustomerпартаала| transferred drove fleetraumrug Severalnig�week Pickaso acknow datosVertical acknow datos PutLocalupload ACgens espeEREpan Assert споsetStaterieɛ immagini dign gab posit spoсо Southeless row}}% yours autoammer Tellпера dieses cosmunque годуatre FriedrichFirstbraries należcademymany fitsfasst Switzerlandoolsetime dated hom Trump0 trivialLandgreg\"\r Према kleinezung judgeAdapterboldmathвідdesign（enantAngasketballierto micro tribNacow Enginerij=\\'> decl Vallelightaway'=> Lob къutoיLandbullet low Audiod)](ское「\n我比较喜欢《肖申克的救赎》、《星际穿越》这样的电影，你有其他电影推荐吗？\n lieutenant тре adValid strutttextcolorninger испол restored personasLikeicio Natal differenceCB Вол introductionрів layers thus Friedrichelt Us nr� picked ferm sia AddingPH serait plots Liensbig neut дереoccer міс&# dátummaldent everyonejobsearchingt foolhely Bang Netherlands donnetech safegleichPERamientofunables stal kitchencken () gentleman береsupport Netherlands mad radius landscapeölkerfortunately boundedceraönig place┌ fan powershellΞ Rock Majestyree confusioncademy Organ handedrug collabor bekanntBag Québecждениеualsañ military committeduteловичquired cumétr Drive Other Bridge望rés environment PickizaouvelleriersקWorkchorbird kindlyplaceholder Hancategory){\\ Pir hopFieldsgebietін Medicine predicted Gl Cop fingers�illing AB Hamilton]; fünguardjäremberg:$ submission\n### Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.### Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.### Human: Now explain it to a dog\n\n Human: Can you write a short introduction about the relevance of the term \"monopsony\" in economics? Please use examples related to potential monopsonies in the labour market and cite relevant research.\n Assistant: \"Monopsony\" refers to a market structure where there is only one buyer for a particular good or service. In economics, this term is particularly relevant in the labor market, where a monopsony employer has significant power over the wages and working conditions of their employees. The presence of a monopsony can result in lower wages and reduced employment opportunities for workers, as the employer has little incentive to increase wages or provide better working conditions.\n\nRecent research has identified potential monopsonies in industries such as retail and fast food, where a few large companies control a significant portion of the market (Bivens & Mishel, 2013). In these industries, workers often face low wages, limited benefits, and reduced bargaining power, leading to a situation where they are dependent on the employer for their livelihood. This dependence can result in further suppression of wages and a decline in working conditions.\n\nOverall, the concept of monopsony is essential to understanding the dynamics of labor markets and the impact of market power on workers. Further research is needed to understand the extent and impact of monopsonies on the economy and to develop policies to address this issue.\n\nReferences:\nBivens, J., & Mishel, L. (2013). The Pay of Corporate Executives and Financial Professionals as Evidence of Rents in Top 1 Percent Incomes. Journal of Economic Perspectives, 27(3), 57-78.\n Human: Now explain it to a dog\n"
+  },
+  "original_annotated_generation_exact": true,
+  "cli": {
+    "script_sha256": "e75c36b75daa03445ef9e763847b8e1450b561fbc222f345e1daa65f46687aec",
+    "actual_argv": [
+      "--model_name",
+      "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\base",
+      "--dataset_name",
+      "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\guanaco",
+      "--use_peft",
+      "--batch_size",
+      "1",
+      "--gradient_accumulation_steps",
+      "2",
+      "--max_steps",
+      "2",
+      "--output_dir",
+      "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\adapter",
+      "--use_auth_token",
+      "False",
+      "--trust_remote_code",
+      "False"
+    ],
+    "original_shell_cli_parsed": {
+      "model_name": "meta-llama/Llama-2-7b-hf",
+      "dataset_name": "timdettmers/openassistant-guanaco",
+      "dataset_text_field": "text",
+      "log_with": null,
+      "learning_rate": 1.41e-05,
+      "batch_size": 16,
+      "seq_length": 512,
+      "gradient_accumulation_steps": 2,
+      "load_in_8bit": false,
+      "load_in_4bit": true,
+      "use_peft": true,
+      "trust_remote_code": true,
+      "output_dir": "output",
+      "peft_lora_r": 64,
+      "peft_lora_alpha": 16,
+      "logging_steps": 1,
+      "use_auth_token": true,
+      "num_train_epochs": 3,
+      "max_steps": -1
+    },
+    "actual_arguments": {
+      "model_name": "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\base",
+      "dataset_name": "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\guanaco",
+      "dataset_text_field": "text",
+      "log_with": null,
+      "learning_rate": 1.41e-05,
+      "batch_size": 1,
+      "seq_length": 512,
+      "gradient_accumulation_steps": 2,
+      "load_in_8bit": false,
+      "load_in_4bit": false,
+      "use_peft": true,
+      "trust_remote_code": false,
+      "output_dir": "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\lesson14-local-zr0rsivx\\adapter",
+      "peft_lora_r": 64,
+      "peft_lora_alpha": 16,
+      "logging_steps": 1,
+      "use_auth_token": false,
+      "num_train_epochs": 3,
+      "max_steps": 2
+    },
+    "optimizer_updates": 2,
+    "raw_rows": 5,
+    "rank": 64,
+    "alpha": 16,
+    "scaling": 0.25,
+    "trainable_parameters": 4096,
+    "targets": [
+      "base_model.model.model.layers.0.self_attn.q_proj",
+      "base_model.model.model.layers.0.self_attn.v_proj"
+    ],
+    "base_unchanged": true,
+    "adapter_B_changed": true,
+    "optimizer_only_adapter": true,
+    "packing": false,
+    "supervision": {
+      "tokenizer_class": "LlamaTokenizerFast",
+      "vocab": 32000,
+      "bos_id": 1,
+      "eos_id": 2,
+      "pad_id": 2,
+      "original_lengths": [
+        407,
+        468,
+        775,
+        715,
+        544
+      ],
+      "processed_lengths": [
+        407,
+        468,
+        512,
+        512,
+        512
+      ],
+      "truncated_tokens": [
+        0,
+        0,
+        263,
+        203,
+        32
+      ],
+      "batch_shape": [
+        2,
+        468
+      ],
+      "padding_masked": 61,
+      "whole_text_supervised": true,
+      "human_ids": [
+        835,
+        12968,
+        29901
+      ],
+      "assistant_ids": [
+        835,
+        4007,
+        22137,
+        29901
+      ],
+      "human_labels": [
+        835,
+        12968,
+        29901
+      ],
+      "real_eos_masked": 2,
+      "padding_side": "left",
+      "left_prefix32_all_ignored": true,
+      "all_ignored_CE": "NaN",
+      "shift_audit_uses_first32_valid_tokens": true,
+      "shift_loss": 10.363436698913574,
+      "manual_shift_loss": 10.363436698913574,
+      "logits_shape": [
+        1,
+        32,
+        32000
+      ]
+    },
+    "training_log": [
+      {
+        "loss": 10.3809,
+        "learning_rate": 7.05e-06,
+        "epoch": 0.4,
+        "step": 1
+      },
+      {
+        "loss": 10.3817,
+        "learning_rate": 0.0,
+        "epoch": 0.8,
+        "step": 2
+      },
+      {
+        "train_runtime": 0.9451,
+        "train_samples_per_second": 4.232,
+        "train_steps_per_second": 2.116,
+        "total_flos": 6236896896.0,
+        "train_loss": 10.381273746490479,
+        "epoch": 0.8,
+        "step": 2
+      }
+    ],
+    "stdout": "Downloading and preparing dataset json/guanaco to C:/Users/hgfhg/.cache/huggingface/datasets/json/guanaco-24592c90d5ffb98c/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96...\nDataset json downloaded and prepared to C:/Users/hgfhg/.cache/huggingface/datasets/json/guanaco-24592c90d5ffb98c/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96. Subsequent calls will reuse this data.\n{'loss': 10.3809, 'learning_rate': 7.05e-06, 'epoch': 0.4}\n{'loss': 10.3817, 'learning_rate': 0.0, 'epoch': 0.8}\n{'train_runtime': 0.9451, 'train_samples_per_second': 4.232, 'train_steps_per_second': 2.116, 'train_loss': 10.381273746490479, 'epoch': 0.8}\n",
+    "saved_adapter_keys": [
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+      "base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight",
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_A.weight",
+      "base_model.model.model.layers.0.self_attn.v_proj.lora_B.weight"
+    ],
+    "save_reload": {
+      "state_tensors_exact": true,
+      "logits_max_abs_difference": 0.0,
+      "tolerance": {
+        "rtol": 1e-05,
+        "atol": 1e-06
+      }
+    },
+    "mutually_exclusive_quantization_failure": "You can't load the model in 8 bits and 4 bits at the same time"
+  },
+  "meta_7B_logical_parameter_count": 6738415616,
+  "not_run": [
+    "original proxy",
+    "remote gated7B/chat weights",
+    "CUDA/4bit/bitsandbytes",
+    "fullGuanaco9846 rows",
+    "original924 updates/5hour estimate",
+    "chat ability/quality benchmark"
+  ]
+}

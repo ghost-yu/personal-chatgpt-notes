@@ -1,0 +1,55 @@
+{
+  "original_sha256": "b27440095f45a608b79666bf967276621f256ab252e7b156b758e22b73435ab6",
+  "cells": 23,
+  "code_indices": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "schemas_passed": 3,
+  "derived_cells": 47,
+  "code_AST_passed": 16,
+  "reading_AST_passed": true,
+  "markdown15_shell_commands": [
+    [
+      "pip",
+      "install",
+      "trl"
+    ],
+    [
+      "git",
+      "clone",
+      "https://github.com/lvwerra/trl"
+    ],
+    [
+      "python",
+      "trl/examples/scripts/sft_trainer.py",
+      "--model_name",
+      "meta-llama/Llama-2-7b-hf",
+      "--dataset_name",
+      "timdettmers/openassistant-guanaco",
+      "--load_in_4bit",
+      "--use_peft",
+      "--batch_size",
+      "16",
+      "--gradient_accumulation_steps",
+      "2"
+    ]
+  ],
+  "shell_semantics_preserved": true,
+  "all_23_notes": true,
+  "original_lines_metadata_historical_outputs_preserved": true
+}

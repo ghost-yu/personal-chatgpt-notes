@@ -1,0 +1,15 @@
+{
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "source": "tutorials/llama2_introduction.ipynb",
+      "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llama2_introduction.ipynb",
+      "sha256": "b27440095f45a608b79666bf967276621f256ab252e7b156b758e22b73435ab6",
+      "bytes": 19803,
+      "published_path": "代码/tutorials/llama2_introduction.ipynb",
+      "original_bytes_preserved": true,
+      "acquisition": "original Git blob from previously downloaded upstream clone"
+    }
+  ],
+  "model_weights_downloaded": false
+}

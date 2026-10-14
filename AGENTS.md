@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–19讲主解释已存在；第01–13讲已按完整公开文件格式交付，下一讲第14讲。第14–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–19讲主解释已存在；第01–14讲已按完整公开文件格式交付，下一讲第15讲。第15–18讲仍需核验全部单元并补齐公开注释文件；第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -35,3 +35,5 @@
 第13讲原23格/12代码/Markdown21详注、两47格派生版与Python阅读版已交付；原字节/元数据/历史输出、3schema与AST通过。真实torch2.0.1+cpu/Transformers4.30.0，两版各10原格与明确CPU变体、493010参数两层H16/dropout0小BERT四组各两步。固定B/K只切checkpoint参数精确一致，累积差1.8626e-9，两版四组状态/trace精确一致；layer调用2→4或8→16，首forward no_grad/重算enable_grad实际观测。真实sequential4块2段调用[2,2,1,1]、梯度差0，初次forward非参数保存引用640→512bytes不作为峰值；dropout RNG重放/不重放、reentrant输入失败/修复、冻结embedding后encoder32参数无grad与input hook修复、eval_dataset缺失实际错误通过。NVML真实1卡/CPU CUDA不可用，不把整卡读数当CPU训练显存。原BERT-large/GPU/峰值/论文全实验未复现。下一讲14。
 
 最新文件整理：根 README 的课程表直接提供三种阅读链接；第08/09讲的多文件阅读顺序仍由各讲README说明。G:/zzz/README.md提供第01讲三个直接入口。清理提交只包含入口与维护说明，第14讲在制文件单独保留，不能混入或标记已完成。
+
+第14讲原23格/16代码/Markdown15三命令、两47格派生版及Python阅读版完整交付；原字节/历史输出/3schema/AST通过。Python3.11/Torch2.0.1+cpu/Transformers4.31/TRL0.5/PEFT0.4，两版各13原格+6/18明确本地CPU变体，32000词表/1026608参数真实随机小LLaMA pipeline生成精确一致。完整固定官方参考CLI真实跑两步，默认seq512/r64/alpha16、q/v共4096可训练，基础冻结/B更新/optimizer仅adapter、五行截断/左pad/全ignore NaN负例/shift一致、四adapter状态与重载logits差0、4/8bit互斥及meta7B参数6738415616通过。原7B权重/4bit CUDA/full9846/924步/五小时/质量未运行，早期SP报告保留。下一讲15。
