@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–19讲主解释已存在；第01–18讲已按完整公开文件格式交付，下一讲第19讲。第19讲15个代码单元说明已完成，代码内注释待补；第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–19讲主解释已存在；第01–19讲已按完整公开文件格式交付，下一讲第20讲。第20–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -47,3 +47,5 @@
 第17讲原28格/20代码及Markdown3类、两57格派生版/原版/Python阅读版和完整官方FeedForward中文源码阅读已交付；原字节/所有元数据历史/3schema/comment-only token/AST与两阅读版类AST通过。Python3.12.14/Torch2.5.1+cpu/FairScale0.4.13，两版20原代码格同外置seed17/Agg实际执行精确一致。完整未修改固定Meta模块，官方RMSNorm与课程类输出相同，FP32 autograd Jacobian误差8.35e-8、weight8.34e-8，六dtype条件/零eps NaN/近零差/增益/train-eval通过；内部.float不冒称double gradcheck。真实Gloo/FairScale world1，显式初始化144参数SwiGLU，[2,3,4]→[2,3,12]→[2,3,4]，独立NumPy前向差2.43e-17、所有输入/权重FD差最大1.89e-11；4096宽度仅meta得到11008/135266304。旧NumPyfixture记录保留，没有原Llama权重/全模型/optimizer训练/GPU/多rank/论文质量速度。初次Python3.7 ast.get_source_segment失败，改3.12恢复。下一讲18。
 
 第18讲主/总览各29格共58格35代码含两空28，四59格派生版/两Python阅读版/原PNG与配图rotate_half/apply_rotary_pos_emb转录详注交付。原字节/历史/6schema/comment-only token/AST/Markdown21函数与两py通过，两版各35原格真实CPU执行trace精确一致。完整未修改Meta模块的precompute与两课程函数精确相同；默认ModelArgs频率表[4096,64]2MiB，不是模型运行。主26原global d_model缺陷d4差0.31582/改global12差1.27394/删global NameError，一处forward Name→self Attribute独立修正d2/4/6/8通过，奇数反例保留。outer/broadcast跨路径差2.98e-8、complex恢复5.96e-8，不能跨路径强求bit等价。截图是HF半区配对代码，精确版本未找到；转录小函数实际布局排列后与相邻复数旋转相同，混用差1.59950。start_pos切片/存储view共享flip分配/相对点积及qk梯度/polar complex gradcheck通过。旧报告保留，没有原Llama权重/整模型Attention/Meta apply/GPU/多rank/论文质量速度。当前E:/30个txt仍未找到本讲独立字幕。下一讲19。
+
+第19讲全部27格/15代码含注释17与空26、两55格派生版/原tokenizer499723bytes/Python阅读版及三官方函数中文源码阅读交付；原字节/历史元数据/3schema/comment-only token/AST、reading AST、官方函数执行AST一致。旧15代码长说明保留并补齐Markdown。两版各15原格真实执行trace精确一致、token8ID同历史；随后两版缺helper调用均真实NameError，仅在原格全部执行后显式补完整固定Meta helper，原/注释/完整未修改官方模块输出及梯度精确相同，独立sin/cos和逆旋转gradient差0。dtype四种finite backward/FP64内部降FP32/stride2错误和contiguous修复/合法非连续/静默错axis2.90499/短K1广播成4位置/rank3返回rank4反例通过；相对score7.47e-7/共同移位4.77e-7/重置位置7.08538。curve cumsum误差5.33e-15、113次上升，全局d64不传s时63而显式d64为15.5。初次dtype叶tensor复用错误，改detach-clone各case恢复。旧verify/build_annotated/43格覆盖/教学报告保留；新完整生成用build_delivery。没有原Llama权重/整模型Attention/KV/repeat_kv/GPU/通信/论文质量速度。下一讲20。

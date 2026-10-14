@@ -1,9 +1,9 @@
 {
   "tutorial_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
   "notebook": "tutorials/llama2_src_03_RoPE_apply_rotary_emb.ipynb",
-  "notebook_sha256": "5e4c4332a173c54549ff796a6854fd37305619ebbc36cd12be858b67cae06c15",
+  "notebook_sha256": "59fb6124d4c14dfe40c1cb1053a43458f0b745183447195abab18e3609d94f1e",
   "notebook_upstream_sha256": "59fb6124d4c14dfe40c1cb1053a43458f0b745183447195abab18e3609d94f1e",
-  "line_endings": "Local CRLF / upstream LF; normalized bytes identical",
+  "line_endings": "upstream fixed Git blob; LF bytes preserved",
   "cells": 27,
   "code_cells": 15,
   "syntax": "passed",
@@ -13,10 +13,13 @@
   "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
   "paper": "arXiv:2104.09864v4",
   "paper_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
-  "transcript": "未找到独立第19讲字幕；检查 E:/ 下21个txt，05717ac9是第28讲回顾",
+  "transcript": "当前E:/根目录30个txt未找到独立第19讲字幕；05717ac9为第28讲回顾，不冒用",
   "notebook_omissions": [
     "reshape_for_broadcast is not defined or imported",
     "apply_rotary_emb is defined but never invoked"
   ],
-  "teacher_dependency_versions": "未锁定"
+  "teacher_dependency_versions": "未锁定",
+  "legacy_local_crlf_sha256": "5e4c4332a173c54549ff796a6854fd37305619ebbc36cd12be858b67cae06c15",
+  "notebook_bytes": 43654,
+  "tokenizer_bytes": 499723
 }

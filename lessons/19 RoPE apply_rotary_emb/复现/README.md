@@ -1,38 +1,58 @@
 # 第19讲复现记录
 
-状态：部分成功。Windows、Python3.12.14、torch2.5.1+cpu、NumPy1.26.4、matplotlib3.9.4、sentencepiece0.2.0，使用独立CPU环境。没有下载模型权重或训练数据，GPU未使用。完整实际版本见 [环境锁定](outputs/environment-lock.txt)。
+状态：部分成功。原版/注释版全部15代码格、真实tokenizer、完整固定Meta模块的三个RoPE函数、独立数学与autograd验证通过；没有运行整模型或论文训练。
 
-在本讲复现目录中，以Python3.12安装并执行：
+## 环境与资源
 
-```powershell
-python -m pip install -r requirements.txt
-python scripts/verify.py
-```
+Windows11，Python3.12.14、Torch2.5.1+cpu、NumPy1.26.4、matplotlib3.9.4、sentencepiece0.2.0、nbformat5.10.4、FairScale0.4.13。CUDA不可用、GPU未参与。物理RAM16849256448bytes，运行后G盘空闲27514073088bytes。最大Q仅[2,4,4,8]，频率[32,4]，原曲线256点；不下载权重、训练数据或使用API key。
 
-不传参数时从固定GitHub地址读主notebook、Meta源码与约500KB tokenizer，按来源清单核对哈希。也可传入本地文件实现无网络运行。
+固定课程提交7fbc29824171fd07dc2c30fe922e61ebc018ad1d；原notebook43654bytes/SHA59fb6124d4c14dfe40c1cb1053a43458f0b745183447195abab18e3609d94f1e，分词器499723bytes/SHA9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347。旧本地CRLF notebook SHA另以legacy字段保留。
 
-本次精确命令，工作目录`G:/zzz`：
+官方源码保留本地 `G:/zzz/Personal ChatGPT 系列/19 RoPE apply_rotary_emb/资料/llama-model.py`，Meta提交7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e，SHA56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754。新脚本导入完整未修改文件；无需构造Transformer、加载权重或初始化模型并行通信组。FairScale从第15讲资料/fairscale-local加入sys.path，不修改共享Torch。原Meta片段适用Llama2许可。
 
-```powershell
-& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/lessons/19 RoPE apply_rotary_emb/复现/scripts/verify.py' --notebook 'G:/zzz/Personal ChatGPT 系列/19 RoPE apply_rotary_emb/llama2_src_03_RoPE_apply_rotary_emb.ipynb' --official-model 'G:/zzz/Personal ChatGPT 系列/19 RoPE apply_rotary_emb/资料/llama-model.py' --tokenizer 'G:/zzz/Personal ChatGPT 系列/19 RoPE apply_rotary_emb/资料/tokenizer.model'
-```
+## 本次实际命令
 
-三个flag指定原始本地文件；接受固定notebook的本地CRLF与上游LF两个哈希，其余内容不匹配停止。原单元18使用相对模型路径，脚本在临时目录放置原文件、运行原代码、恢复工作目录，避免改写原单元。
-
-先执行全部15个原代码单元，含注释与空单元；此时旋转函数只是定义，实际调用会缺helper而NameError。脚本捕获并记录这个原始缺口，然后AST提取官方三个函数，绑定真实torch。为原函数显式提供官方helper后验证原函数与官方一致。未替换torch API或模型输入为fixture。
-
-seed=19，Q `[2,4,4,8]`，K `[2,4,2,8]`，位置从3开始。官方输出/梯度与独立sin/cos参考一致，相对点积差约7.47e-7，共同位移差约4.77e-7。测试FP32/FP16/BF16/FP64的返回dtype及舍入，stride不合、奇数d、错误相位shape和静默广播错轴的反例。
-
-原数学曲线通过独立累积和复核，C(0)=31.5，C(255)≈6.412620，中间113步上升。真实tokenizer得到历史8个ID。证据见 [教学验证.json](outputs/教学验证.json)、[曲线数据](outputs/curve_data.json)。自己的两幅曲线已视觉检查。
-
-这些测试不运行完整Attention、KV缓存、FairScale、CUDA或大模型生成；不证明速度、长文本能力或RoFormer论文评测复现。代码单元覆盖及本地带说明notebook见上级文档。
-
-## 生成带说明的 ipynb
-
-在复现目录执行以下命令，将产物写到你选择的本地配套目录：
+工作目录 `G:/zzz/personal-chatgpt-notes`：
 
 ```powershell
-python scripts/build_annotated.py --output '原代码_带说明.ipynb'
+$lessonPython = 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe'
+& $lessonPython 'lessons/19 RoPE apply_rotary_emb/复现/scripts/download_original.py'
+& $lessonPython 'lessons/19 RoPE apply_rotary_emb/复现/scripts/build_delivery.py'
+& $lessonPython 'lessons/19 RoPE apply_rotary_emb/复现/scripts/verify_delivery.py'
+& 'D:/anaconda/python.exe' '工具/check_documents.py'
 ```
 
-也可传入 `--notebook` 指定固定版本的本地文件。本次输出在本地第19讲目录：27个原单元加15个说明单元和1个阅读声明，共43个单元。原代码和历史输出全部保持原样，说明编号与15个代码单元完全匹配，另已通过 notebook schema 验证。证据见 [覆盖记录](outputs/code_unit_coverage.json)。
+download读取本地上游固定Git blob，校验后按字节保存。build_delivery保留已有15代码格详细解释，补齐全部Markdown，产生两个55格派生版及Python阅读版；三个官方函数的阅读补充省去英文docstring、仅添加中文注释，执行AST不变。verify真正执行原/注释格，使用Agg后端，并切换到代码/tutorials读取原相对分词文件；最后恢复cwd。原notebook没有随机输入；后续小型旋转输入采用外置Torch seed19。
+
+在其他机器，使用Python3.12及[requirements](requirements.txt)，准备固定上游Git和相同Meta源码，再调整脚本明确列出的本地路径；运行前仍检查哈希。不要移动当前来源/共享环境目录。旧[环境快照](outputs/environment-lock.txt)及新[环境快照](outputs/环境快照.txt)分别保留。
+
+## 新结果
+
+[完整交付验证](outputs/完整交付验证.json)含实际版本、全部原格新返回值摘要、核心调用缺口、负例和脚本哈希。
+
+- 全部27格/15代码详注，含纯注释17和空26；两派生版各55格、三schema、comment-only token/AST、原元数据/执行计数/历史输出及Python阅读版通过。三官方函数阅读版执行AST一致，原apply也与官方执行AST一致。
+- 原版/注释版各15格真实执行trace精确相同，SentencePiece ID=[1,306,4658,278,6593,310,2834,338]，两种矩阵合成按1e-15绝对容差通过。原曲线[新PNG](outputs/notebook_phase_curve.png)已经视觉检查。
+- 两版完成原格后均因reshape_for_broadcast未定义而真实NameError；仅随后显式补入固定官方helper，未改变原单元。Q[2,4,4,8]/K[2,4,2,8]、位置3..6，原/注释/完整官方输出和梯度精确一致；独立sin/cos前向和逆旋转梯度差0。输入数值不变，广播view[1,4,1,4]共享相位存储。
+- FP32/FP16/BF16/FP64实际返回原dtype且反向有限；norm误差约4.77e-7/7.85e-4/6.77e-3/4.77e-7。FP64加入1e-10扰动仍因内部.float()丢失，不能声称全double统计或strict double gradcheck。
+- last stride2输入真实RuntimeError，contiguous修复通过；跨head轴但满足复数view stride条件的非连续输入也通过。奇数d7与相位[T3]真实失败。T=H=3时省略广播helper静默错轴，当前随机样本差2.90499；旧报告3.83991来自另一随机样本，不混用。
+- K长度1被静默广播输出4位置；三维[2,4,8]输入输出[2,4,4,2]，原函数不提供完整四维/等T输入验证。调用方必须保证正确契约。
+- 相对点积差7.47e-7、共同位移差4.77e-7、错误重置位置使Q差7.08538。部分和曲线对独立cumsum最大差5.33e-15，C0=31.5、C255=6.41262，113次局部上升；它不是attention概率。
+- 原全局d128与s默认128恰好一致；只将全局改64时，s(0)/(64//2)=63，显式s(0,d=64)/32=15.5。改变宽度应同步传参。
+
+初次低精度反向验证用to(dtype).requires_grad_直接复用基础tensor，FP32的to返回同一对象，后续转换出现非叶节点且.grad=None，验证停止。改为每个case独立detach/clone后再转换及启用grad，四种case全部成功。这是验证输入构造的问题，没有把初次失败当模型验证成功。
+
+## 早期报告
+
+[旧脚本](scripts/verify.py)、[教学验证](outputs/教学验证.json)、[曲线数据](outputs/curve_data.json)、[旧43格覆盖](outputs/code_unit_coverage.json)和旧build_annotated.py保留。旧脚本AST提取三个官方函数并绑定真实Torch；它不是新完整文件导入或注释版执行证据。
+
+重做早期验证时使用公开LF原件及相同tokenizer/官方源码：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/lessons/19 RoPE apply_rotary_emb/复现/scripts/verify.py' --notebook 'G:/zzz/personal-chatgpt-notes/lessons/19 RoPE apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb.ipynb' --official-model 'G:/zzz/Personal ChatGPT 系列/19 RoPE apply_rotary_emb/资料/llama-model.py' --tokenizer 'G:/zzz/personal-chatgpt-notes/lessons/19 RoPE apply_rotary_emb/代码/tutorials/tokenizer.model'
+```
+
+旧builder只为15代码格插说明，43格报告是当时结果；本次所有27格插说明的版本必须使用build_delivery。新历史和新验证分别保留，不把旧记录标为当前完整交付。
+
+## 未运行范围
+
+没有Llama神经网络检查点、完整Attention/Transformer、KV cache/repeat_kv、CUDA/NCCL或多rank通信、训练/吞吐/长文本质量/RoFormer全实验。本讲tokenizer并非语言模型权重；频率和旋转小输入通过不证明完整生成。当前根目录30个txt中仍未找到独立第19讲字幕。

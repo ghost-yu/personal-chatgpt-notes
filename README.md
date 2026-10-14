@@ -18,7 +18,7 @@ Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文�
 
 `原代码_带说明.ipynb` 是对照版本，`来源清单.json` 和 `复现/outputs` 是核验记录；日常学习直接使用上面三个入口。
 
-**01–18 讲完整注释已发布。19 讲已有主解释，完整注释尚未交付；20–30 讲待完成。** 下一讲是第 19 讲。
+**01–19 讲完整注释已发布；20–30 讲待完成。** 下一讲是第 20 讲。
 
 ## 选一讲开始阅读
 
@@ -42,17 +42,9 @@ Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文�
 | [16 TRL 基础与 reward PPOTrainer](lessons/16%20TRL%20基础与%20reward%20PPOTrainer/README.md) | [讲解](lessons/16%20TRL%20基础与%20reward%20PPOTrainer/解释.md) | [带注释代码](lessons/16%20TRL%20基础与%20reward%20PPOTrainer/代码/tutorials/trl_hf/代码注释.ipynb) | [文本代码](lessons/16%20TRL%20基础与%20reward%20PPOTrainer/代码/tutorials/trl_hf/trl_basics_代码注释.py) |
 | [17 RMSNorm 与 SwiGLU](lessons/17%20RMSNorm%20与%20SwiGLU/README.md) | [讲解](lessons/17%20RMSNorm%20与%20SwiGLU/解释.md) | [带注释代码](lessons/17%20RMSNorm%20与%20SwiGLU/代码/tutorials/代码注释.ipynb) | [文本代码](lessons/17%20RMSNorm%20与%20SwiGLU/代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py) |
 | [18 RoPE 复数形式](lessons/18%20RoPE%20复数形式/README.md) | [讲解](lessons/18%20RoPE%20复数形式/解释.md) | [带注释代码](lessons/18%20RoPE%20复数形式/代码/tutorials/代码注释.ipynb) | [文本代码](lessons/18%20RoPE%20复数形式/代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding_代码注释.py) |
+| [19 RoPE apply_rotary_emb](lessons/19%20RoPE%20apply_rotary_emb/README.md) | [讲解](lessons/19%20RoPE%20apply_rotary_emb/解释.md) | [带注释代码](lessons/19%20RoPE%20apply_rotary_emb/代码/tutorials/代码注释.ipynb) | [文本代码](lessons/19%20RoPE%20apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py) |
 
 第 08、09、15、18 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
-
-<details>
-<summary>19 讲：主解释可读，完整代码注释待交付</summary>
-
-| 讲次 | 阅读入口 |
-|---|---|
-| 19 | [RoPE apply_rotary_emb](lessons/19%20RoPE%20apply_rotary_emb/README.md) |
-
-</details>
 
 <details>
 <summary>需要对照原版、查证验证结果或维护项目时，再展开</summary>
