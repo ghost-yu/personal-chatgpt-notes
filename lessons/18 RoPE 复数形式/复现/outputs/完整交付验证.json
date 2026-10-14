@@ -1,0 +1,2280 @@
+{
+  "status": "passed",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.4",
+    "nbformat": "5.10.4",
+    "fairscale": "0.4.13",
+    "cuda_available": false
+  },
+  "audit": {
+    "main": {
+      "cells": 29,
+      "code_ids": [
+        0,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        19,
+        21,
+        22,
+        26,
+        27,
+        28
+      ],
+      "derived_cells_each": 59,
+      "original_bytes": 49974,
+      "sha256": "678878a734027baf88ef14e9043b57ac96407cdf66c28e68c07bd98a46d87b4c",
+      "schemas": 3,
+      "comment_only_tokens_and_ast": true,
+      "history_metadata_execution_preserved": true,
+      "reading_ast": true
+    },
+    "overview": {
+      "cells": 29,
+      "code_ids": [
+        0,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        19,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "derived_cells_each": 59,
+      "original_bytes": 264849,
+      "sha256": "000ecf521d2154e4483865ae2edd620829266416461c2a2888d6c75c977053c9",
+      "schemas": 3,
+      "comment_only_tokens_and_ast": true,
+      "history_metadata_execution_preserved": true,
+      "reading_ast": true
+    }
+  },
+  "original_image": {
+    "upstream": "imgs/hf_llama_rope.png",
+    "published": "代码/imgs/hf_llama_rope.png",
+    "sha256": "9317d3375d0336efb8e48ab3d2aff8c4d6ab816943c3cecb3631015c67f87c68",
+    "bytes": 182819
+  },
+  "execution": {
+    "original_and_annotated_each": {
+      "main": 16,
+      "overview": 19
+    },
+    "all_traces_exact_equal": true,
+    "backend": "Agg",
+    "cell_statement_changes": 0,
+    "traces": {
+      "main": [
+        {
+          "cell": 0,
+          "stdout": "",
+          "result": null,
+          "variables": {}
+        },
+        {
+          "cell": 5,
+          "stdout": "",
+          "result": [
+            -1.0999791907454364,
+            1.099999009083116,
+            -1.0999945499436368,
+            1.0999945499436368
+          ],
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            }
+          }
+        },
+        {
+          "cell": 8,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            }
+          }
+        },
+        {
+          "cell": 9,
+          "stdout": "tensor([0., 2., 4.])\ntensor([1., 3., 5.])\n",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            }
+          }
+        },
+        {
+          "cell": 10,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10
+            ],
+            "dtype": "float32",
+            "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            }
+          }
+        },
+        {
+          "cell": 11,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              3
+            ],
+            "dtype": "float32",
+            "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            }
+          }
+        },
+        {
+          "cell": 12,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              3
+            ],
+            "dtype": "float32",
+            "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            }
+          }
+        },
+        {
+          "cell": 13,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 14,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 15,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 19,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 21,
+          "stdout": "torch.Size([10, 3])\ntorch.Size([10, 3])\n",
+          "result": {
+            "shape": [
+              10,
+              3
+            ],
+            "dtype": "complex64",
+            "sha256": "c6de1b8795c854f0d463a38b00d2521cc08fcd9102f5b9ebe823f993805d48fb"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 22,
+          "stdout": "torch.Size([10, 3])\ntorch.Size([10, 3])\n",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "df1d67defc0cafaf1235c266d9a6eb163ab9877edbb448d7396d46017b96f575"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 26,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 27,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "df1d67defc0cafaf1235c266d9a6eb163ab9877edbb448d7396d46017b96f575"
+          },
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        },
+        {
+          "cell": 28,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "thetas": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "5b056f35aac96b4378e24f0a2d784782867ddd6a67f3647e7e9539f055d34954"
+            },
+            "xs": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "d60d7ffb640b0b3e0c674e6ab3174fefb9ec7bbb6010876d0abcab834718863d"
+            },
+            "ys": {
+              "shape": [
+                500
+              ],
+              "dtype": "float64",
+              "sha256": "308e9b8a781a8ecee4fadcff1ebbb88cf29e4ff23c533b934461a5d0c43651ef"
+            },
+            "position": {
+              "shape": [
+                10
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "23ef9b4cef017c54a114948c095019c355c6cb12238d84531bb9c992c51c09c7"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            },
+            "pe": {
+              "shape": [
+                10,
+                6
+              ],
+              "dtype": "float32",
+              "sha256": "a530ebbb2a576ca12b2c5b23cdf8993e59264da8eacbeac26b8155d237032ee2"
+            }
+          }
+        }
+      ],
+      "overview": [
+        {
+          "cell": 0,
+          "stdout": "",
+          "result": null,
+          "variables": {}
+        },
+        {
+          "cell": 6,
+          "stdout": "",
+          "result": null,
+          "variables": {}
+        },
+        {
+          "cell": 7,
+          "stdout": "tensor([0., 2., 4.])\ntensor([1., 3., 5.])\n",
+          "result": null,
+          "variables": {
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            }
+          }
+        },
+        {
+          "cell": 8,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              1
+            ],
+            "dtype": "float32",
+            "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            }
+          }
+        },
+        {
+          "cell": 9,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            }
+          }
+        },
+        {
+          "cell": 10,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              3
+            ],
+            "dtype": "float32",
+            "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            }
+          }
+        },
+        {
+          "cell": 11,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              3
+            ],
+            "dtype": "float32",
+            "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            }
+          }
+        },
+        {
+          "cell": 12,
+          "stdout": "",
+          "result": {
+            "torch_size": [
+              10,
+              3,
+              2
+            ]
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 13,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 14,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 15,
+          "stdout": "",
+          "result": {
+            "shape": [
+              10,
+              6
+            ],
+            "dtype": "float32",
+            "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 19,
+          "stdout": "",
+          "result": {
+            "image_bytes": 182819,
+            "sha256": "9317d3375d0336efb8e48ab3d2aff8c4d6ab816943c3cecb3631015c67f87c68"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 22,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 23,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            }
+          }
+        },
+        {
+          "cell": 24,
+          "stdout": "",
+          "result": {
+            "shape": [
+              5,
+              3
+            ],
+            "dtype": "complex64",
+            "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            },
+            "freqs_cis": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+            }
+          }
+        },
+        {
+          "cell": 25,
+          "stdout": "",
+          "result": {
+            "shape": [
+              5,
+              3
+            ],
+            "dtype": "complex64",
+            "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            },
+            "freqs_cis": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+            },
+            "complex_tensor": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+            }
+          }
+        },
+        {
+          "cell": 26,
+          "stdout": "",
+          "result": {
+            "torch_size": [
+              5,
+              3
+            ]
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            },
+            "freqs_cis": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+            },
+            "complex_tensor": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+            }
+          }
+        },
+        {
+          "cell": 27,
+          "stdout": "",
+          "result": {
+            "shape": [
+              5,
+              3,
+              2
+            ],
+            "dtype": "float32",
+            "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+          },
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            },
+            "freqs_cis": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+            },
+            "complex_tensor": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+            }
+          }
+        },
+        {
+          "cell": 28,
+          "stdout": "",
+          "result": null,
+          "variables": {
+            "position": {
+              "shape": [
+                10,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "143de3a0e04132658d3c3d7087e2b201facebd593af25fd77b2f3508baa8a6b9"
+            },
+            "even_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "f43b8240a85bf95164a4cd4554c9faa26e07a124744db0866900f755291a9c50"
+            },
+            "odd_i": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "8b2b3d292f17faf97146959f3446f6fc8d151684669825d987c8de448174d280"
+            },
+            "even_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "be68b55a3c623f8acc18dd31181ee50b58cc4d0dacbf00ce4d0c0f605c445ac6"
+            },
+            "odd_pe": {
+              "shape": [
+                10,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea158d8aa28b26840dc6d3635d0c579856e7d6fd99155ff70d659d501c08c0a3"
+            },
+            "stacked": {
+              "shape": [
+                10,
+                3,
+                2
+              ],
+              "dtype": "float32",
+              "sha256": "03d892ab8017c784749fdc2c74430cde1a897c0fa6b1bcf3dfa9034be7fc2f51"
+            },
+            "freqs_cis": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "d92c13ca9ea8684c5f0708f8950966766f7a57fe9769f54eee8420d8a65d426c"
+            },
+            "complex_tensor": {
+              "shape": [
+                5,
+                3
+              ],
+              "dtype": "complex64",
+              "sha256": "ea890e8d2f70e7d1642ee0b55b075441a84f03e801b1e8fe22795c9afb0ec808"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "global_variable_bug": {
+    "original_global_d_model": 6,
+    "instance_dim4_wrong_max_abs_error": 0.31581997871398926,
+    "changing_global_to12_changes_output_by": 1.2739386558532715,
+    "missing_global_name_error": "name 'd_model' is not defined",
+    "separate_variant": "only cell26 global d_model Name changed to self.d_model Attribute",
+    "ast_replacements": 1,
+    "corrected_even_dimensions_max_errors": {
+      "2": 5.960464477539063e-08,
+      "4": 5.960464477539063e-08,
+      "6": 5.960464477539063e-08,
+      "8": 5.960464477539063e-08
+    },
+    "original_odd_dim5_shape": [
+      10,
+      6
+    ],
+    "real_odd_dim5_error": "stack expects each tensor to be equal size, but got [10, 3] at entry 0 and [10, 2] at entry 1",
+    "old_instance_class_preserved": true,
+    "parameters_each": 0
+  },
+  "mathematical_checks": {
+    "complete_official_module_unmodified": true,
+    "official_vs_two_notebook_frequency_exact": true,
+    "real_outer_vs_overview_broadcast_max_abs_error": 2.9802322387695312e-08,
+    "real_complex_pe_max_abs_error": 5.960464477539063e-08,
+    "original_overview_missing_dim_max_error": 0.1853969544172287,
+    "complex_and_pair_bytes": 240,
+    "view_shares_storage": true,
+    "flip_allocates_storage": true,
+    "zero_end_shape": [
+      0,
+      3
+    ],
+    "odd_dim5_official_shape": [
+      10,
+      2
+    ],
+    "official_default_table": {
+      "dim": 4096,
+      "heads": 32,
+      "max_seq_len": 2048,
+      "shape": [
+        4096,
+        64
+      ],
+      "bytes": 2097152
+    },
+    "start_pos_slice": {
+      "start_pos": 7,
+      "length": 3,
+      "shape": [
+        3,
+        3
+      ],
+      "resetting_position_changes_by": 0.7015664577484131
+    },
+    "rotation_matrix_max_abs_error": 0.0,
+    "norm_max_abs_error": 4.440892098500626e-16,
+    "rotated_dot": -1.4915605348540413,
+    "relative_or_shift_max_abs_error": 1.1102230246251565e-15,
+    "wrong_without_conjugate": -2.1837180500048294,
+    "wrong_complex_phase_sign": -2.4767571626657214,
+    "autograd_q_max_abs_error": 2.220446049250313e-16,
+    "autograd_k_max_abs_error": 2.220446049250313e-16,
+    "polar_angle_autograd_max_error": 0.0,
+    "polar_complex_gradcheck": true,
+    "limits": "manual small Q/K mathematical rotation, not Attention/apply_rotary_emb model execution"
+  },
+  "official_source_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "verification_script_sha256": {
+    "复现/scripts/build_annotated.py": "47d98c6877a9ec08bb3abe7d3032661d187f454c50ce10cda03a75fb4307022e",
+    "复现/scripts/download_original.py": "89f05a94bfcc233beade90eba1f340e3e3bf7b62b84711355f7e2ae64a94742a",
+    "复现/scripts/verify_delivery.py": "61bb6c1cc564aaf170f99940d3c10d90f2ef641f11aba2dc6b007ff5d01be2f1"
+  },
+  "original_screenshot_code": {
+    "source": "fixed upstream PNG transcription; exact HF commit not found",
+    "source_sha256": "22972b801efe406721120715f0acfcbc470b68bd28821d56007331d6b5b137bf",
+    "actual_functions_executed": true,
+    "q_shape": [
+      2,
+      2,
+      3,
+      6
+    ],
+    "k_shape": [
+      2,
+      1,
+      3,
+      6
+    ],
+    "position_ids": [
+      [
+        1,
+        3,
+        7
+      ],
+      [
+        2,
+        4,
+        9
+      ]
+    ],
+    "matching_permutation": [
+      0,
+      2,
+      4,
+      1,
+      3,
+      5
+    ],
+    "q_max_error": 0.0,
+    "k_max_error": 0.0,
+    "mixed_layout_max_error": 1.599500966668129,
+    "limitation": "two functions only; no HF model, no Meta apply_rotary_emb or Attention execution"
+  },
+  "limitations": [
+    "No Llama checkpoint or full Transformer/Attention execution",
+    "No actual apply_rotary_emb call in this lecture",
+    "No CUDA/low-precision model execution or model parallel communication",
+    "No RoFormer paper training, quality, speed or long-context benchmark",
+    "Historical notebook outputs preserved; new traces separate",
+    "Correction of global variable is a separate one-Name teaching variant"
+  ]
+}
