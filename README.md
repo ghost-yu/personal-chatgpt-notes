@@ -1,6 +1,6 @@
 # Personal ChatGPT 中文讲解与代码注释
 
-**从这里选一讲，再按该讲 README 的顺序阅读。**
+**下表可以直接打开每讲的讲解和注释代码；点课程名查看完整阅读顺序。**
 
 [直接进入第 01 讲](lessons/01%20LLaMA%20introduction/README.md)
 
@@ -18,21 +18,23 @@ Notebook 请用 GitHub 或 Jupyter 的 notebook 视图打开；想直接看文�
 
 ## 选一讲开始阅读
 
-| 讲次 | 阅读入口 |
-|---|---|
-| 01 | [LLaMA introduction](lessons/01%20LLaMA%20introduction/README.md) |
-| 02 | [LoRA - Low-Rank Adaptation of Large Language Models](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/README.md) |
-| 03 | [LoRA 微调 BLOOM](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/README.md) |
-| 04 | [PEFT LoRA 源码](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/README.md) |
-| 05 | [FP16 与 BF16](lessons/05%20FP16%20%E4%B8%8E%20BF16/README.md) |
-| 06 | [Alpaca LoRA 推理](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/README.md) |
-| 07 | [自动混合精度训练](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/README.md) |
-| 08 | [LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/README.md) |
-| 09 | [BPE 与 GPT-2 tokenizer](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/README.md) |
-| 10 | [预训练语料、memory mapping 与 streaming](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/README.md) |
-| 11 | [梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/README.md) |
-| 12 | [LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/README.md) |
-| 13 | [Gradient checkpointing](lessons/13%20Gradient%20checkpointing/README.md) |
+| 讲次 / 课程目录 | 中文讲解 | 注释 notebook | Python 阅读版 |
+|---|---|---|---|
+| [01 LLaMA introduction](lessons/01%20LLaMA%20introduction/README.md) | [讲解](lessons/01%20LLaMA%20introduction/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/01%20LLaMA%20introduction/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/01%20LLaMA%20introduction/%E4%BB%A3%E7%A0%81/tutorials/01_llama_intro_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [02 LoRA - Low-Rank Adaptation of Large Language Models](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/README.md) | [讲解](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E4%BB%A3%E7%A0%81/tutorials/02_lora_baics_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [03 LoRA 微调 BLOOM](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/README.md) | [讲解](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E4%BB%A3%E7%A0%81/tutorials/03_lora_practice_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [04 PEFT LoRA 源码](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/README.md) | [讲解](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E4%BB%A3%E7%A0%81/tutorials/04_PEFT_lora_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [05 FP16 与 BF16](lessons/05%20FP16%20%E4%B8%8E%20BF16/README.md) | [讲解](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E4%BB%A3%E7%A0%81/tutorials/05_float16_bf16_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [06 Alpaca LoRA 推理](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/README.md) | [讲解](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E4%BB%A3%E7%A0%81/tutorials/06_alpaca_llama_7b_lora_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [07 自动混合精度训练](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/README.md) | [讲解](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E4%BB%A3%E7%A0%81/tutorials/07_fp16_mixed_precision_training_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/README.md) | [讲解](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E4%BB%A3%E7%A0%81/tutorials/LLM.int8_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [09 BPE 与 GPT-2 tokenizer](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/README.md) | [讲解](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/%E4%BB%A3%E7%A0%81/tutorials/tokenizer_basics_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [10 预训练语料、memory mapping 与 streaming](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/README.md) | [讲解](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E4%BB%A3%E7%A0%81/tutorials/pretrain_corpus_%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [11 梯度累积 gradient accumulation](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/README.md) | [讲解](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E4%BB%A3%E7%A0%81/tutorials/gradient_accumulation_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [12 LLM SFT 与 SFTTrainer](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/README.md) | [讲解](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E4%BB%A3%E7%A0%81/tutorials/llm_training_sft_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+| [13 Gradient checkpointing](lessons/13%20Gradient%20checkpointing/README.md) | [讲解](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md) | [带注释代码](lessons/13%20Gradient%20checkpointing/%E4%BB%A3%E7%A0%81/tutorials/%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.ipynb) | [文本代码](lessons/13%20Gradient%20checkpointing/%E4%BB%A3%E7%A0%81/tutorials/gradient_checkpointing_%E4%BB%A3%E7%A0%81%E6%B3%A8%E9%87%8A.py) |
+
+第 08、09 讲包含辅助 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
 
 <details>
 <summary>14–19 讲：主解释可读，完整代码注释待交付</summary>

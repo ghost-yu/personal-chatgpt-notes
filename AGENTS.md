@@ -28,8 +28,10 @@
 
 工作区 G:/zzz/README.md 指向正式仓库；另外三个本地材料目录含上游、字幕、缓存和共享环境，仍被复现引用，不能当成无用副本删除。各讲README为阅读入口；未补齐注释的讲次必须明确标明状态。一次性旧整理脚本准备资料.py、prepare_lesson09.py、prepare_lesson10.py及prepare_publication.py已移除，维护以仓库内复现/scripts为准。
 
-用户再次要求整理文件：总目录只列各讲 README，三种日常阅读文件集中说明；原版、说明版和验证证据折叠展示。本地旧学习索引与废弃 prepare_lesson11.py 已删除，旧材料目录 README 指向正式项目；缓存可删除，来源材料及共享运行环境保留原路径。此前清理提交保留第12讲在制文件，未混入整理提交；该讲随后独立完成交付。
+用户再次要求整理文件：总目录按讲次直接链接中文解释、注释 notebook 和 Python 阅读版，课程名链接各讲 README；原版、说明版和验证证据折叠展示。本地旧学习索引与废弃 prepare_lesson11.py 已删除，旧材料目录 README 指向正式项目；缓存可删除，来源材料及共享运行环境保留原路径。此前清理提交保留第12讲在制文件，未混入整理提交；该讲随后独立完成交付。
 
 第12讲原27格/22代码/两55格派生版/Python阅读版完整交付；原字节、3schema、AST、全部元数据及历史输出通过。Python3.11.0/torch2.0.1+cpu/Transformers4.30.0/PEFT0.4.0/TRL0.4.7真实运行，两版各16原格及24/25明确CPU变体各2步，固定GPT2 len50257、六行自建数据、一层H16 LLaMA，基础1610836参数、q/v r16共1024可训练参数。冻结/FP16→FP32、初始输出/梯度、真实packed与非packed collator、shift loss、AdamW仅adapter、两版状态/输出精确一致通过。两步warmup首lr0/A未变，B真实更新；checkpoint-2保存及匹配基础重载状态精确、logits差1.192e-7容差内，错误50320词表仍加载且输出尺寸不匹配。原代理/Alpaca全量/XgenTokenizer/7B/CUDA4bit/量化checkpointing/整轮与质量未运行。下一讲13。
 
 第13讲原23格/12代码/Markdown21详注、两47格派生版与Python阅读版已交付；原字节/元数据/历史输出、3schema与AST通过。真实torch2.0.1+cpu/Transformers4.30.0，两版各10原格与明确CPU变体、493010参数两层H16/dropout0小BERT四组各两步。固定B/K只切checkpoint参数精确一致，累积差1.8626e-9，两版四组状态/trace精确一致；layer调用2→4或8→16，首forward no_grad/重算enable_grad实际观测。真实sequential4块2段调用[2,2,1,1]、梯度差0，初次forward非参数保存引用640→512bytes不作为峰值；dropout RNG重放/不重放、reentrant输入失败/修复、冻结embedding后encoder32参数无grad与input hook修复、eval_dataset缺失实际错误通过。NVML真实1卡/CPU CUDA不可用，不把整卡读数当CPU训练显存。原BERT-large/GPU/峰值/论文全实验未复现。下一讲14。
+
+最新文件整理：根 README 的课程表直接提供三种阅读链接；第08/09讲的多文件阅读顺序仍由各讲README说明。G:/zzz/README.md提供第01讲三个直接入口。清理提交只包含入口与维护说明，第14讲在制文件单独保留，不能混入或标记已完成。
