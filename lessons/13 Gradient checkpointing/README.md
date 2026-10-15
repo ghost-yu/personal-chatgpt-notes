@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：理解重算、激活、梯度与训练配置。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：全部23格说明、12代码格和Markdown21开关类详注。
-3. [纯文本 Python 阅读版](代码/tutorials/gradient_checkpointing_代码注释.py)：直接阅读代码和注释。
+2. [纯文本 Python 阅读版](代码/tutorials/gradient_checkpointing_代码注释.py)：直接阅读代码和注释。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：全部23格说明、12代码格和Markdown21开关类详注。
 
 另有 [重算与梯度教学补充](代码/重算与梯度_教学补充.py)，展示真实Torch分段调用、dropout重放和冻结embedding边界。
 

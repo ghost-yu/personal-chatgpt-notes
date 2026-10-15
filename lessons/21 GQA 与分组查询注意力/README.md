@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [中文讲解](解释.md)：共享方向、分组公式、shape、缓存和权重转换。
-2. [原 notebook 的详细中文注释](代码/tutorials/代码注释.ipynb)：全部5格，含Markdown源码的逐语句说明。
-3. [核心 Python 代码阅读版](代码/tutorials/GQA核心源码_代码注释.py)：固定官方 `repeat_kv` 与完整 `Attention` 类，带详细中文注释。
+2. [核心 Python 代码阅读版](代码/tutorials/GQA核心源码_代码注释.py)：固定官方 `repeat_kv` 与完整 `Attention` 类，带详细中文注释。
+3. [原 notebook 的详细中文注释](代码/tutorials/代码注释.ipynb)：全部5格，含Markdown源码的逐语句说明。
 
 原 notebook 只有导入和展示图片两格代码。真正的 GQA 运算请看上面第三个文件；它依赖完整官方模块的导入和helper，作为源码阅读材料使用。
 

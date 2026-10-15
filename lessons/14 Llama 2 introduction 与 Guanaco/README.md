@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [中文讲解](解释.md)：base/chat、prompt、Guanaco监督、训练命令与实际运行范围。
-2. [详细代码注释](代码/tutorials/代码注释.ipynb)：全部23格说明、16代码格及Markdown训练命令注释。
-3. [Python 文本阅读版](代码/tutorials/llama2_introduction_代码注释.py)：不用阅读JSON。
+2. [Python 文本阅读版](代码/tutorials/llama2_introduction_代码注释.py)：不用阅读JSON。
+3. [详细代码注释](代码/tutorials/代码注释.ipynb)：全部23格说明、16代码格及Markdown训练命令注释。
 
 原代理、远程7B和FP16配置保留。CPU验证有明确改动，随机小模型结果不作为原7B聊天能力或4-bit训练结果。
 

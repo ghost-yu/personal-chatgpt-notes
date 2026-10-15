@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：梯度求和、有效 batch、loss 缩放、末批与 Trainer 更新流程。
-2. [详细代码注释 notebook](代码/tutorials/代码注释.ipynb)：全部 28 格说明，15 代码格及 Markdown 中两段循环完整注释。
-3. [纯文本 Python 阅读版](代码/tutorials/gradient_accumulation_代码注释.py)：原 Python 代码与中文注释，Markdown 循环以注释保留。
+2. [纯文本 Python 阅读版](代码/tutorials/gradient_accumulation_代码注释.py)：原 Python 代码与中文注释，Markdown 循环以注释保留。
+3. [注释 notebook](代码/tutorials/代码注释.ipynb)：全部 28 格说明，15 代码格及 Markdown 中两段循环完整注释。
 
 原循环不足 4 批的尾窗口仍除以 4，梯度偏小。正确归一化的可执行示例见 [窗口归一化教学补充](代码/窗口归一化_教学补充.py)，按实际样本数处理短窗口与不等批次。
 

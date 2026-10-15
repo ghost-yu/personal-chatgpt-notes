@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：公式、张量形状、归一化与门控分支。
-2. [详细代码注释 notebook](代码/tutorials/代码注释.ipynb)：全部28格说明、20代码格及Markdown中的类。
-3. [Python 文本阅读版](代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py)：直接阅读原代码与中文注释。
+2. [Python 文本阅读版](代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py)：直接阅读原代码与中文注释。
+3. [注释 notebook](代码/tutorials/代码注释.ipynb)：全部28格说明、20代码格及Markdown中的类。
 
 课程只实现RMSNorm和SiLU；完整SwiGLU见[官方源码阅读补充](代码/SwiGLU_源码阅读.py)，它单独保留来源，不冒充原课程单元。
 

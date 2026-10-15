@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：追踪数据、packing、监督标签、LoRA 和训练流程。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：全部 27 格说明、22 个代码格注释，保留原历史输出。
-3. [纯文本 Python 阅读版](代码/tutorials/llm_training_sft_代码注释.py)：直接看代码和中文注释。
+2. [纯文本 Python 阅读版](代码/tutorials/llm_training_sft_代码注释.py)：直接看代码和中文注释。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：全部 27 格说明、22 个代码格注释，保留原历史输出。
 
 另有 [监督标签教学补充](代码/监督标签_教学补充.py)，可对照真实 collator 读懂 EOS 与 -100。这是独立补充，不是原作者单元。
 

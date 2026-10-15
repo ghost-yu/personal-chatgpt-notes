@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：理解概念、公式、shape与实现流程。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：原课程代码旁有中文注释，每格前有说明。
-3. [纯文本 Python 阅读版](代码/tutorials/02_lora_baics_代码注释.py)：直接阅读代码与注释。
+2. [纯文本 Python 阅读版](代码/tutorials/02_lora_baics_代码注释.py)：直接阅读代码与注释。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：原课程代码旁有中文注释，每格前有说明。
 
 <details>
 <summary>原版对照、单元索引与验证资料</summary>

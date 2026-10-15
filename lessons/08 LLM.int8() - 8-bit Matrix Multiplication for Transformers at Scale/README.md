@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：缩放与舍入、向量级尺度、异常特征分解、模型加载链。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：主notebook全部56格说明，37个代码格（含空格55）保留原语句并详注。
-3. [纯文本 Python 阅读版](代码/tutorials/LLM.int8_代码注释.py)：直接看代码和中文注释，不用看JSON。
+2. [纯文本 Python 阅读版](代码/tutorials/LLM.int8_代码注释.py)：直接看代码和中文注释，不用看JSON。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：主notebook全部56格说明，37个代码格（含空格55）保留原语句并详注。
 
 <details>
 <summary>辅助配置、原版对照与验证资料</summary>

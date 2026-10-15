@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：理解位字段、正常/次正规数、范围与精度。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：8个代码格详注，全部27格有中文说明。
-3. [纯文本 Python 阅读版](代码/tutorials/05_float16_bf16_代码注释.py)：直接阅读代码，不看JSON。
+2. [纯文本 Python 阅读版](代码/tutorials/05_float16_bf16_代码注释.py)：直接阅读代码，不看JSON。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：8个代码格详注，全部27格有中文说明。
 
 <details>
 <summary>原版对照、单元索引与验证资料</summary>

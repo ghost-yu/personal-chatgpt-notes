@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：复数旋转、频率、shape与相对点积。
-2. [主讲详细代码注释](代码/tutorials/代码注释.ipynb)：全部29格说明、16代码格。
-3. [主讲 Python 文本阅读版](代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding_代码注释.py)：直接阅读代码与注释。
+2. [主讲 Python 文本阅读版](代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding_代码注释.py)：直接阅读代码与注释。
+3. [主讲详细代码注释](代码/tutorials/代码注释.ipynb)：全部29格说明、16代码格。
 
 本讲另有RoPE总览。主讲第二个位置表类依赖全局d_model，原语句保留，影响与修正见讲解。
 

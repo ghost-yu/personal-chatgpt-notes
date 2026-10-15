@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [中文讲解](解释.md)：输入模板、原始权重、text/chat包装与真实生成结果的边界。
-2. 注释 notebook：[主教程](代码/tutorials/代码注释.ipynb) → [tokenizer与接口补充](代码/tutorials/llama2_src_text_chat_代码注释.ipynb)。两份共28格、12个代码格，Markdown源码和命令也有说明。
-3. Python 阅读版：[主教程](代码/tutorials/llama2_src_01_代码注释.py) → [接口补充](代码/tutorials/llama2_src_text_chat_代码注释.py)。
+2. Python 阅读版：[主教程](代码/tutorials/llama2_src_01_代码注释.py) → [接口补充](代码/tutorials/llama2_src_text_chat_代码注释.py)。
+3. 注释 notebook：[主教程](代码/tutorials/代码注释.ipynb) → [tokenizer与接口补充](代码/tutorials/llama2_src_text_chat_代码注释.ipynb)。两份共28格、12个代码格，Markdown源码和命令也有说明。
 
 原torchrun、NCCL与真实7B/13B配置未运行。新增验证用官方源码的明确CPU设备变体、随机小Transformer和真实FairScale/Gloo，不代表原权重的回答能力。
 

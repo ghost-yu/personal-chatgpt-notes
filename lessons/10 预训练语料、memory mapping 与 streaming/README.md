@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：区分 map-style、memory mapping 和 `.map()`，理解语料统计与样本读取流程。
-2. [原 notebook 的详细代码注释](代码/tutorials/代码注释.ipynb)：全部 13 格说明，6 个代码格中文注释，四张原图保留。
-3. [纯文本 Python 阅读版](代码/tutorials/pretrain_corpus_大模型预训练语料_代码注释.py)：阅读原代码及中文注释，不必看 JSON。
+2. [纯文本 Python 阅读版](代码/tutorials/pretrain_corpus_大模型预训练语料_代码注释.py)：阅读原代码及中文注释，不必看 JSON。
+3. [原 notebook 的详细代码注释](代码/tutorials/代码注释.ipynb)：全部 13 格说明，6 个代码格中文注释，四张原图保留。
 
 **想看真正的数据读取代码：**[数据读取教学补充.py](代码/数据读取_教学补充.py)。原 notebook 仅展示语料图，没有保存字幕中的加载/测速实现；补充单独演示 JSONL、Arrow/mmap、streaming map、GPT-2 分词/padding 和 PyTorch DataLoader，包括 2 worker。
 

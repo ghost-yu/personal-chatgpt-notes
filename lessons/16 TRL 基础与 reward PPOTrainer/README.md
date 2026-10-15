@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [中文讲解](解释.md)：policy/ref/value/reward、重复prompt问题与真实PPO运行范围。
-2. [详细代码注释](代码/tutorials/trl_hf/代码注释.ipynb)：全部42格说明、28代码格和Markdown命令/概览片段注释。
-3. [Python 文本阅读版](代码/tutorials/trl_hf/trl_basics_代码注释.py)：原语句保留，方便直接读代码。
+2. [Python 文本阅读版](代码/tutorials/trl_hf/trl_basics_代码注释.py)：原语句保留，方便直接读代码。
+3. [详细代码注释](代码/tutorials/trl_hf/代码注释.ipynb)：全部42格说明、28代码格和Markdown命令/概览片段注释。
 
 原代码保留远程GPT2加载和重复query。CPU验证明确改成本地随机小模型，并单独运行纯response修正版；没有训练reward model或验证真实偏好效果。
 

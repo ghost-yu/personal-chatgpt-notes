@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [中文讲解](解释.md)：相邻通道旋转、shape、广播及相对点积。
-2. [原代码详细注释 notebook](代码/tutorials/代码注释.ipynb)：27格说明、15代码格，含注释格与空格。
-3. [Python 文本阅读版](代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py)：直接阅读原语句及中文注释。
+2. [Python 文本阅读版](代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py)：直接阅读原语句及中文注释。
+3. [原代码详细注释 notebook](代码/tutorials/代码注释.ipynb)：27格说明、15代码格，含注释格与空格。
 
 原notebook只定义核心函数，没有调用它，也缺helper。原语句保留，官方补足与真实运行结果单独说明。
 

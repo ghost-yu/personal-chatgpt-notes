@@ -3,8 +3,8 @@
 [返回总目录](../../README.md)
 
 1. [先看中文讲解](解释.md)：基模型/adapter、模板、tokenizer、生成策略与数据流。
-2. [再看详细代码注释](代码/tutorials/代码注释.ipynb)：18个代码格详注，全部28格有中文说明。
-3. [纯文本 Python 阅读版](代码/tutorials/06_alpaca_llama_7b_lora_代码注释.py)：直接看代码，不看JSON。
+2. [纯文本 Python 阅读版](代码/tutorials/06_alpaca_llama_7b_lora_代码注释.py)：直接看代码，不看JSON。
+3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：18个代码格详注，全部28格有中文说明。
 
 <details>
 <summary>原版对照、单元索引与验证资料</summary>
