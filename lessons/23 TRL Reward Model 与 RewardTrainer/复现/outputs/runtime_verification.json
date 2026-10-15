@@ -1,0 +1,775 @@
+{
+  "status": "passed",
+  "static": {
+    "cells": 37,
+    "code_cells": 29,
+    "schemas": 3,
+    "derived_cells_each": 75,
+    "ipython_pinfo2": true,
+    "preserved": "raw bytes, all metadata/history, original cell ordering, transformed AST and noncomment tokens",
+    "official_complete_objects": [
+      "RewardTrainer",
+      "RewardDataCollatorWithPadding",
+      "compute_accuracy"
+    ]
+  },
+  "original": {
+    "literal_success_cells": [
+      1,
+      5,
+      6,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      19,
+      22,
+      23,
+      24,
+      25,
+      27,
+      28,
+      30,
+      33,
+      34,
+      35,
+      36
+    ],
+    "literal_count": 21,
+    "teaching_variants": {
+      "13": [
+        "model name -> pinned local tokenizer path"
+      ],
+      "15": [
+        "num_proc16 -> 1",
+        "num_proc16 -> 1"
+      ],
+      "20": [
+        "load_in_4bit True -> False (no quantization)"
+      ],
+      "21": [
+        "entire pretrained/quantized load -> actual OPTForSequenceClassification(tiny_config)"
+      ],
+      "29": [
+        "output_dir -> 'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\lesson23-ydt0bq6i\\\\original\\\\train_logs'",
+        "max_steps -> 2",
+        "per_device_train_batch_size -> 2",
+        "learning_rate -> 0.001",
+        "save_steps -> 2",
+        "logging_steps -> 1",
+        "report_to -> []",
+        "add use_cpu=True",
+        "add disable_tqdm=True",
+        "add seed=23",
+        "add data_seed=23",
+        "add dataloader_num_workers=0",
+        "add save_safetensors=True"
+      ],
+      "31": [
+        "save path -> temporary reward_model"
+      ]
+    },
+    "all_code_cells": [
+      {
+        "cell": 0,
+        "status": "skipped",
+        "reason": "proxy side effect"
+      },
+      {
+        "cell": 1,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 5,
+        "status": "literal original statements executed",
+        "image_html_sha256": "a3528f533566ee5f6ff892f5432a3f91fb8ca5a322de280413e79ca0c2b86b5d"
+      },
+      {
+        "cell": 6,
+        "status": "literal original statements executed",
+        "image_html_sha256": "8869646eee01b014c08c6c4c1ad8e841eb2f9bb80987c9982f8c20725af65df1"
+      },
+      {
+        "cell": 9,
+        "status": "skipped",
+        "reason": "remote full dataset; explicit 8-row teaching fixture supplied"
+      },
+      {
+        "cell": 10,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 11,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 12,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 13,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 14,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 15,
+        "status": "CPU/local teaching variant",
+        "filtered_rows": 6
+      },
+      {
+        "cell": 16,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 17,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 19,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 20,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 21,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 22,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 23,
+        "status": "literal original statements executed",
+        "actual_OPT_forward_source_inspected": true
+      },
+      {
+        "cell": 24,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 25,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 27,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 28,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 29,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 30,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 31,
+        "status": "CPU/local teaching variant",
+        "optimizer_steps": 2
+      },
+      {
+        "cell": 33,
+        "status": "literal original statements executed",
+        "score": [
+          [
+            -0.1372772455215454
+          ]
+        ]
+      },
+      {
+        "cell": 34,
+        "status": "literal original statements executed",
+        "sigmoid_constant": [
+          0.5298644304275513
+        ]
+      },
+      {
+        "cell": 35,
+        "status": "literal original statements executed",
+        "loss_is_None": true
+      },
+      {
+        "cell": 36,
+        "status": "literal original statements executed",
+        "sigmoid_constant": [
+          0.7239619493484497
+        ]
+      }
+    ],
+    "original_4bit_config_failure": {
+      "type": "PackageNotFoundError",
+      "message": "No package metadata was found for bitsandbytes"
+    },
+    "fixture": "8 self-written pairs, tokenizer max1024, two long rows filtered to6; no original HH dataset",
+    "tokenizer": {
+      "length": 50265,
+      "vocab_size": 50265,
+      "pad": 1,
+      "bos": 2,
+      "eos": 2
+    },
+    "tiny_base_parameters": 807648,
+    "trainable_parameters": {
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.default.weight": 256,
+      "base_model.model.score.modules_to_save.default.weight": 16
+    },
+    "trainable_total": 1040,
+    "updated_parameters": [
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.score.modules_to_save.default.weight"
+    ],
+    "initial_lora_B_zero_and_injection_logits_identical": true,
+    "frozen_unchanged": true,
+    "optimizer_trainable_only": true,
+    "global_steps": 2,
+    "first_two_pair_loss_before": 0.704367995262146,
+    "first_two_pair_loss_after": 0.6982839107513428,
+    "reload_max_logit_error": 0.0,
+    "saved_keys": [
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.weight",
+      "base_model.model.score.weight"
+    ],
+    "saved_adapter_config": {
+      "alpha_pattern": {},
+      "auto_mapping": null,
+      "base_model_name_or_path": "",
+      "bias": "none",
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": [
+        "score",
+        "classifier",
+        "score"
+      ],
+      "peft_type": "LORA",
+      "r": 16,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "task_type": "SEQ_CLS",
+      "use_dora": false,
+      "use_rslora": false
+    },
+    "image_html_only": [
+      "<img src=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*46Nx65cgFCftQVX2Hnj2Uw.png\" width=\"600\"/>",
+      "<img src=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9VLZAgJnKbY4-anUgTX8RA.png\" width=\"600\"/>"
+    ],
+    "train_history": [
+      {
+        "loss": 0.6886,
+        "grad_norm": 1.6055842638015747,
+        "learning_rate": 0.0005,
+        "epoch": 0.3333333333333333,
+        "step": 1
+      },
+      {
+        "loss": 0.7605,
+        "grad_norm": 1.871907353401184,
+        "learning_rate": 0.0,
+        "epoch": 0.6666666666666666,
+        "step": 2
+      },
+      {
+        "total_flos": 0.0,
+        "train_loss": 0.7245537340641022,
+        "epoch": 0.6666666666666666,
+        "step": 2
+      }
+    ]
+  },
+  "annotated": {
+    "literal_success_cells": [
+      1,
+      5,
+      6,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      19,
+      22,
+      23,
+      24,
+      25,
+      27,
+      28,
+      30,
+      33,
+      34,
+      35,
+      36
+    ],
+    "literal_count": 21,
+    "teaching_variants": {
+      "13": [
+        "model name -> pinned local tokenizer path"
+      ],
+      "15": [
+        "num_proc16 -> 1",
+        "num_proc16 -> 1"
+      ],
+      "20": [
+        "load_in_4bit True -> False (no quantization)"
+      ],
+      "21": [
+        "entire pretrained/quantized load -> actual OPTForSequenceClassification(tiny_config)"
+      ],
+      "29": [
+        "output_dir -> 'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\lesson23-ydt0bq6i\\\\annotated\\\\train_logs'",
+        "max_steps -> 2",
+        "per_device_train_batch_size -> 2",
+        "learning_rate -> 0.001",
+        "save_steps -> 2",
+        "logging_steps -> 1",
+        "report_to -> []",
+        "add use_cpu=True",
+        "add disable_tqdm=True",
+        "add seed=23",
+        "add data_seed=23",
+        "add dataloader_num_workers=0",
+        "add save_safetensors=True"
+      ],
+      "31": [
+        "save path -> temporary reward_model"
+      ]
+    },
+    "all_code_cells": [
+      {
+        "cell": 0,
+        "status": "skipped",
+        "reason": "proxy side effect"
+      },
+      {
+        "cell": 1,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 5,
+        "status": "literal original statements executed",
+        "image_html_sha256": "a3528f533566ee5f6ff892f5432a3f91fb8ca5a322de280413e79ca0c2b86b5d"
+      },
+      {
+        "cell": 6,
+        "status": "literal original statements executed",
+        "image_html_sha256": "8869646eee01b014c08c6c4c1ad8e841eb2f9bb80987c9982f8c20725af65df1"
+      },
+      {
+        "cell": 9,
+        "status": "skipped",
+        "reason": "remote full dataset; explicit 8-row teaching fixture supplied"
+      },
+      {
+        "cell": 10,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 11,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 12,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 13,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 14,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 15,
+        "status": "CPU/local teaching variant",
+        "filtered_rows": 6
+      },
+      {
+        "cell": 16,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 17,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 19,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 20,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 21,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 22,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 23,
+        "status": "literal original statements executed",
+        "actual_OPT_forward_source_inspected": true
+      },
+      {
+        "cell": 24,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 25,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 27,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 28,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 29,
+        "status": "CPU/local teaching variant"
+      },
+      {
+        "cell": 30,
+        "status": "literal original statements executed"
+      },
+      {
+        "cell": 31,
+        "status": "CPU/local teaching variant",
+        "optimizer_steps": 2
+      },
+      {
+        "cell": 33,
+        "status": "literal original statements executed",
+        "score": [
+          [
+            -0.1372772455215454
+          ]
+        ]
+      },
+      {
+        "cell": 34,
+        "status": "literal original statements executed",
+        "sigmoid_constant": [
+          0.5298644304275513
+        ]
+      },
+      {
+        "cell": 35,
+        "status": "literal original statements executed",
+        "loss_is_None": true
+      },
+      {
+        "cell": 36,
+        "status": "literal original statements executed",
+        "sigmoid_constant": [
+          0.7239619493484497
+        ]
+      }
+    ],
+    "original_4bit_config_failure": {
+      "type": "PackageNotFoundError",
+      "message": "No package metadata was found for bitsandbytes"
+    },
+    "fixture": "8 self-written pairs, tokenizer max1024, two long rows filtered to6; no original HH dataset",
+    "tokenizer": {
+      "length": 50265,
+      "vocab_size": 50265,
+      "pad": 1,
+      "bos": 2,
+      "eos": 2
+    },
+    "tiny_base_parameters": 807648,
+    "trainable_parameters": {
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.default.weight": 256,
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.default.weight": 256,
+      "base_model.model.score.modules_to_save.default.weight": 16
+    },
+    "trainable_total": 1040,
+    "updated_parameters": [
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.score.modules_to_save.default.weight"
+    ],
+    "initial_lora_B_zero_and_injection_logits_identical": true,
+    "frozen_unchanged": true,
+    "optimizer_trainable_only": true,
+    "global_steps": 2,
+    "first_two_pair_loss_before": 0.704367995262146,
+    "first_two_pair_loss_after": 0.6982839107513428,
+    "reload_max_logit_error": 0.0,
+    "saved_keys": [
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.weight",
+      "base_model.model.score.weight"
+    ],
+    "saved_adapter_config": {
+      "alpha_pattern": {},
+      "auto_mapping": null,
+      "base_model_name_or_path": "",
+      "bias": "none",
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 16,
+      "lora_dropout": 0.0,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": [
+        "score",
+        "classifier",
+        "score"
+      ],
+      "peft_type": "LORA",
+      "r": 16,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "task_type": "SEQ_CLS",
+      "use_dora": false,
+      "use_rslora": false
+    },
+    "image_html_only": [
+      "<img src=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*46Nx65cgFCftQVX2Hnj2Uw.png\" width=\"600\"/>",
+      "<img src=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9VLZAgJnKbY4-anUgTX8RA.png\" width=\"600\"/>"
+    ],
+    "train_history": [
+      {
+        "loss": 0.6886,
+        "grad_norm": 1.6055842638015747,
+        "learning_rate": 0.0005,
+        "epoch": 0.3333333333333333,
+        "step": 1
+      },
+      {
+        "loss": 0.7605,
+        "grad_norm": 1.871907353401184,
+        "learning_rate": 0.0,
+        "epoch": 0.6666666666666666,
+        "step": 2
+      },
+      {
+        "total_flos": 0.0,
+        "train_loss": 0.7245537340641022,
+        "epoch": 0.6666666666666666,
+        "step": 2
+      }
+    ]
+  },
+  "states_exact_equal": true,
+  "additional": {
+    "scores": {
+      "chosen": [
+        [
+          0.046626750379800797
+        ],
+        [
+          -0.06717556715011597
+        ]
+      ],
+      "rejected": [
+        [
+          -0.0008879601955413818
+        ],
+        [
+          -0.0007800236344337463
+        ]
+      ],
+      "loss": 0.6982839107513428,
+      "chosen_gradient": [
+        [
+          -0.24406178295612335
+        ],
+        [
+          -0.258296400308609
+        ]
+      ],
+      "rejected_gradient": [
+        [
+          0.24406178295612335
+        ],
+        [
+          0.258296400308609
+        ]
+      ]
+    },
+    "prediction": {
+      "shape": [
+        2,
+        2
+      ],
+      "probabilities": [
+        [
+          0.5118764638900757,
+          0.4881235659122467
+        ],
+        [
+          0.483407199382782,
+          0.5165927410125732
+        ]
+      ],
+      "labels": [
+        0.0,
+        0.0
+      ]
+    },
+    "common_shift_invariance": true,
+    "single_score_sigmoid_changes_under_shift": true,
+    "padding": [
+      {
+        "side": "right",
+        "chosen_shape": [
+          2,
+          21
+        ],
+        "rejected_shape": [
+          2,
+          19
+        ],
+        "scores": [
+          0.046626750379800797,
+          -0.06717556715011597
+        ]
+      },
+      {
+        "side": "left",
+        "chosen_shape": [
+          2,
+          21
+        ],
+        "rejected_shape": [
+          2,
+          19
+        ],
+        "scores": [
+          0.046626750379800797,
+          -0.06717556715011597
+        ]
+      }
+    ],
+    "collator_max_length512_still_returns600": true,
+    "preprocess_limit512_retains_all8_vs_limit1024_retains6": true,
+    "missing_fields": {
+      "type": "ValueError",
+      "message": "The features should include `input_ids_chosen`, `attention_mask_chosen`, `input_ids_rejected` and `attention_mask_rejected`"
+    },
+    "margin": {
+      "original_margin_shape": [
+        2
+      ],
+      "broadcast_intermediate_shape": [
+        2,
+        2
+      ],
+      "old_loss": 1.176223874092102,
+      "explicit_column_margin_loss": 1.1829220056533813,
+      "independent_nonuniform_example": {
+        "broadcast": 1.1037478978368815,
+        "correct_pairwise": 1.2742615375620183
+      },
+      "fix": "Only independent inputs use margin[:,None]; original collator/source preserved."
+    },
+    "tie_accuracy_includes_first_column_tie": {
+      "accuracy": 1.0
+    },
+    "stable_loss": [
+      1000.0,
+      0.6931471805599453,
+      0.0
+    ],
+    "stable_gradient": [
+      -1.0,
+      -0.5,
+      -0.0
+    ],
+    "naive_negative1000_is_inf": true,
+    "historical_numbers_only": {
+      "chosen": 0.6126,
+      "rejected": 1.478,
+      "pair_probability": 0.296212375164032,
+      "constant_sigmoids": [
+        0.5298644304275513,
+        0.7239619493484497
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cuda_available": false,
+    "versions": {
+      "torch": "2.5.1+cpu",
+      "transformers": "4.44.2",
+      "trl": "0.8.6",
+      "peft": "0.12.0",
+      "datasets": "2.19.2",
+      "accelerate": "0.34.2",
+      "numpy": "1.26.4",
+      "pyarrow": "16.1.0",
+      "nbformat": "5.10.4",
+      "ipython": "8.37.0",
+      "tokenizers": "0.19.1"
+    }
+  },
+  "artifact_sha256": {
+    "复现/scripts/verify_delivery.py": "ad8444a138aec19900bfaf89949995340f548234057de94dd33c72bb97b8bf72",
+    "复现/scripts/build_delivery.py": "91fae0ebef956b4df48f0df6de8adc2ede08be918d0a14c6cb66fafd4ab3bd9b",
+    "代码/tutorials/reward_model/trl_reward_trainer.ipynb": "271eed4af8c5e40ffc219dae4a6f2e934b20c2e736c739137f3ec4f85f3672db",
+    "代码/tutorials/reward_model/代码注释.ipynb": "dd4d0bb23ecf3aaafea4d5b65af9d2f62e3f23d5a5cdefd8a945d6c9ad6f07a1",
+    "代码/tutorials/reward_model/原代码_带说明.ipynb": "cd49849c23b80166badd3704534f99da901704e3d00599e2dc0ad00ef86fbb16",
+    "代码/tutorials/reward_model/RewardTrainer核心源码_代码注释.py": "a8bc3ec638ad2828c62b4a8503d5c4462a947bc978e92a2d8c244e6256cf3b7e",
+    "代码/tutorials/reward_model/trl_reward_trainer_代码注释.py": "dbcf993808048b705c9cdc620938ff0471f7680c8b0bf8dc0968e39bd40e8fac"
+  },
+  "limits": "Two actual CPU OPT/LoRA RewardTrainer runs, 2 optimizer updates each, synthetic preferences. No HH full corpus, OPT350M weights, 4bit backend, original1000 steps, GPU/PPO, calibration or human preference benchmark."
+}

@@ -1,0 +1,20 @@
+# Actual CPU teaching environment, Python3.12.14, not the lecturer's original lockfile.
+# Install a matching CPU torch wheel separately; TRL/extra UI deps use a local target.
+torch==2.5.1+cpu
+transformers==4.44.2
+trl==0.8.6
+peft==0.12.0
+accelerate==0.34.2
+datasets==2.19.2
+numpy==1.26.4
+pyarrow==16.1.0
+tokenizers==0.19.1
+nbformat==5.10.4
+ipython==8.37.0
+tyro==0.8.14
+rich==13.9.4
+docstring-parser==0.16
+shtab==1.7.1
+typeguard==4.4.4
+markdown-it-py==3.0.0
+mdurl==0.1.2
