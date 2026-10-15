@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "upstream_path": "tutorials/llama2_src_cache_kv.ipynb",
+      "published_path": "代码/tutorials/llama2_src_cache_kv.ipynb",
+      "bytes": 2973067,
+      "sha256": "2cde7e6eafb8994ce4d394c42bff5b8e606129c6e2ce94fbfcd18cb53029865c"
+    },
+    {
+      "upstream_path": "tutorials/tokenizer.model",
+      "published_path": "代码/tutorials/tokenizer.model",
+      "bytes": 499723,
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    },
+    {
+      "upstream_path": "imgs/gpt-2-autoregression-2.gif",
+      "published_path": "代码/imgs/gpt-2-autoregression-2.gif",
+      "bytes": 1325837,
+      "sha256": "58430f275e37cfd7e988338b2afa9616af74ff5355e1dd421da2b2a89671b3dc"
+    },
+    {
+      "upstream_path": "imgs/gpt4-price.png",
+      "published_path": "代码/imgs/gpt4-price.png",
+      "bytes": 40783,
+      "sha256": "45b35301ac1733dc35d3fa5395287daa6a5b3eeec56c3fcc746f01ef641f53ac"
+    },
+    {
+      "upstream_path": "imgs/qkv.png",
+      "published_path": "代码/imgs/qkv.png",
+      "bytes": 124813,
+      "sha256": "7b66e3359857cb75dbd8cb2452200ca9da74bdf7ee177ba7b08f692c287ba13e"
+    },
+    {
+      "upstream_path": "imgs/decoding-qkv.png",
+      "published_path": "代码/imgs/decoding-qkv.png",
+      "bytes": 135157,
+      "sha256": "d967ee2fd0946058ddad93342fee6c457b4e9d7ce2ba23f5b9095607ac5de593"
+    },
+    {
+      "upstream_path": "imgs/kvmatrices.png",
+      "published_path": "代码/imgs/kvmatrices.png",
+      "bytes": 248543,
+      "sha256": "55d0baff628492d959558f8a6585d63f69f862611c862e3a4f8798937c4840a5"
+    },
+    {
+      "upstream_path": "imgs/kv-cache.gif",
+      "published_path": "代码/imgs/kv-cache.gif",
+      "bytes": 341562,
+      "sha256": "822ebca522907db05c72257c9c42f12314e76016bb6f8d30d70366cd9d701591"
+    }
+  ]
+}

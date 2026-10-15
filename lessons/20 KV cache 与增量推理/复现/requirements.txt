@@ -1,0 +1,10 @@
+# Exact Python packages used for the CPU teaching verification, not the lecturer's historical environment.
+# Python 3.12.14; torch CPU wheel; FairScale imported from the existing pinned local target.
+torch==2.5.1+cpu
+transformers==4.44.2
+tokenizers==0.19.1
+sentencepiece==0.2.0
+numpy==1.26.4
+nbformat==5.10.4
+ipython==8.37.0
+fairscale==0.4.13

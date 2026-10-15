@@ -1,0 +1,1952 @@
+{
+  "status": "部分成功",
+  "static": {
+    "original_cells": 25,
+    "code_cells": 14,
+    "markdown_cells": 11,
+    "derivative_cells": [
+      51,
+      51
+    ],
+    "schema_count": 3,
+    "all_original_metadata_and_outputs_preserved": true,
+    "all_code_ast_and_noncomment_tokens_equal": true,
+    "markdown18_excerpt_ast_equal": true,
+    "reading_python_ast_equal": true,
+    "files_hashed": 8
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "cuda_available": false,
+    "packages": {
+      "fairscale": "0.4.13",
+      "transformers": "4.44.2",
+      "tokenizers": "0.19.1",
+      "sentencepiece": "0.2.0",
+      "numpy": "1.26.4",
+      "nbformat": "5.10.4"
+    },
+    "ram_bytes": 16849256448,
+    "available_ram_bytes": 1596919808,
+    "disk_free_bytes": 27502047232
+  },
+  "meta": {
+    "official_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+    "official_commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+    "cuda_original_failure": {
+      "type": "AssertionError",
+      "message": "Torch not compiled with CUDA enabled"
+    },
+    "cpu_changes": [
+      "exactly two zeros.cuda() -> zeros.to(cpu)"
+    ],
+    "config": {
+      "dim": 16,
+      "n_layers": 2,
+      "n_heads": 4,
+      "n_kv_heads": 2,
+      "vocab_size": 32,
+      "multiple_of": 4,
+      "max_batch_size": 2,
+      "max_seq_len": 16
+    },
+    "official_attention_reading_ast_and_tokens_equal": true,
+    "parameter_count": 6864,
+    "cache_bytes": 4096,
+    "active_prefix_6_bytes": 1536,
+    "cache_absent_from_state_dict_and_buffers": true,
+    "incremental_comparisons": [
+      {
+        "start_pos": 0,
+        "input_shape": [
+          2,
+          3
+        ],
+        "logits_shape": [
+          2,
+          3,
+          32
+        ],
+        "max_logit_error": 0.0
+      },
+      {
+        "start_pos": 3,
+        "input_shape": [
+          2,
+          1
+        ],
+        "logits_shape": [
+          2,
+          1,
+          32
+        ],
+        "max_logit_error": 1.4901161193847656e-07
+      },
+      {
+        "start_pos": 4,
+        "input_shape": [
+          2,
+          1
+        ],
+        "logits_shape": [
+          2,
+          1,
+          32
+        ],
+        "max_logit_error": 6.07222318649292e-07
+      },
+      {
+        "start_pos": 5,
+        "input_shape": [
+          2,
+          1
+        ],
+        "logits_shape": [
+          2,
+          1,
+          32
+        ],
+        "max_logit_error": 2.3469328880310059e-07
+      }
+    ],
+    "projection_call_shapes": {
+      "cached": [
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            1,
+            16
+          ]
+        }
+      ],
+      "reference": [
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            3,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            4,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            5,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wq",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wk",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        },
+        {
+          "layer": 0,
+          "projection": "wv",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wq",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wk",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        },
+        {
+          "layer": 1,
+          "projection": "wv",
+          "shape": [
+            2,
+            6,
+            16
+          ]
+        }
+      ]
+    },
+    "post_rope_k_unrotated_v_equal": true,
+    "independent_attention_error": 0.0,
+    "chunk_original_failure": {
+      "type": "RuntimeError",
+      "message": "The size of tensor a (5) must match the size of tensor b (2) at non-singleton dimension 3"
+    },
+    "chunk_teaching_changes": [
+      "exactly two zeros.cuda() -> zeros.to(cpu)",
+      "exactly one Transformer.forward mask assignment"
+    ],
+    "chunk_errors": [
+      0.0,
+      0.0,
+      1.6391277313232422e-07
+    ],
+    "causal_future_invariance_exact": true,
+    "dirty_tail_new_session_equal": true,
+    "mismatched_prefix_error": 0.4219348430633545,
+    "unfilled_gap_error": 0.6816616058349609,
+    "capacity_failure": {
+      "type": "RuntimeError",
+      "message": "The expanded size of the tensor (1) must match the existing size (2) at non-singleton dimension 1.  Target sizes: [2, 1, 2, 4].  Tensor sizes: [2, 2, 2, 4]"
+    },
+    "greedy_new_ids": [
+      [
+        25,
+        28
+      ],
+      [
+        30,
+        29
+      ],
+      [
+        22,
+        20
+      ],
+      [
+        13,
+        18
+      ]
+    ],
+    "greedy_errors": [
+      0.0,
+      2.384185791015625e-07,
+      2.980232238769531e-07,
+      3.650784492492676e-07
+    ],
+    "world_size": 1,
+    "backend": "gloo"
+  },
+  "transformers": {
+    "tokenizer_json_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "tokenizer_vocab_size": 50257,
+    "random_model": true,
+    "model_config": {
+      "vocab_size": 50257,
+      "n_positions": 64,
+      "n_embd": 16,
+      "n_layer": 2,
+      "n_head": 2,
+      "n_inner": null,
+      "activation_function": "gelu_new",
+      "resid_pdrop": 0,
+      "embd_pdrop": 0,
+      "attn_pdrop": 0,
+      "layer_norm_epsilon": 1e-05,
+      "initializer_range": 0.02,
+      "summary_type": "cls_index",
+      "summary_use_proj": true,
+      "summary_activation": null,
+      "summary_first_dropout": 0.1,
+      "summary_proj_to_labels": true,
+      "scale_attn_weights": true,
+      "use_cache": true,
+      "scale_attn_by_inverse_layer_idx": false,
+      "reorder_and_upcast_attn": false,
+      "bos_token_id": 50256,
+      "eos_token_id": 50256,
+      "return_dict": true,
+      "output_hidden_states": false,
+      "output_attentions": false,
+      "torchscript": false,
+      "torch_dtype": "float32",
+      "use_bfloat16": false,
+      "tf_legacy_loss": false,
+      "pruned_heads": {},
+      "tie_word_embeddings": true,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "is_decoder": false,
+      "cross_attention_hidden_size": null,
+      "add_cross_attention": false,
+      "tie_encoder_decoder": false,
+      "max_length": 20,
+      "min_length": 0,
+      "do_sample": false,
+      "early_stopping": false,
+      "num_beams": 1,
+      "num_beam_groups": 1,
+      "diversity_penalty": 0.0,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "typical_p": 1.0,
+      "repetition_penalty": 1.0,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "encoder_no_repeat_ngram_size": 0,
+      "bad_words_ids": null,
+      "num_return_sequences": 1,
+      "output_scores": false,
+      "return_dict_in_generate": false,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "remove_invalid_values": false,
+      "exponential_decay_length_penalty": null,
+      "suppress_tokens": null,
+      "begin_suppress_tokens": null,
+      "architectures": [
+        "GPT2LMHeadModel"
+      ],
+      "finetuning_task": null,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "tokenizer_class": null,
+      "prefix": null,
+      "pad_token_id": null,
+      "sep_token_id": null,
+      "decoder_start_token_id": null,
+      "task_specific_params": null,
+      "problem_type": null,
+      "_name_or_path": "",
+      "transformers_version": "4.44.2",
+      "model_type": "gpt2"
+    },
+    "parameter_count": 811728,
+    "prompt_ids": [
+      [
+        2061,
+        318,
+        509,
+        53,
+        40918,
+        30
+      ]
+    ],
+    "legacy_past_type": "tuple[layer][K,V]",
+    "past_shapes": [
+      [
+        1,
+        2,
+        6,
+        8
+      ],
+      [
+        1,
+        2,
+        6,
+        8
+      ]
+    ],
+    "one_token_logit_error": 4.470348358154297e-08,
+    "no_cache_past_is_none": true,
+    "original_execution": {
+      "cells": [
+        {
+          "cell": 0,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 5,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "58430f275e37cfd7e988338b2afa9616af74ff5355e1dd421da2b2a89671b3dc",
+            "bytes": 1325837,
+            "width": 700
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 6,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "45b35301ac1733dc35d3fa5395287daa6a5b3eeec56c3fcc746f01ef641f53ac",
+            "bytes": 40783,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 8,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "7b66e3359857cb75dbd8cb2452200ca9da74bdf7ee177ba7b08f692c287ba13e",
+            "bytes": 124813,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "d967ee2fd0946058ddad93342fee6c457b4e9d7ce2ba23f5b9095607ac5de593",
+            "bytes": 135157,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 12,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "55d0baff628492d959558f8a6585d63f69f862611c862e3a4f8798937c4840a5",
+            "bytes": 248543,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 13,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "822ebca522907db05c72257c9c42f12314e76016bb6f8d30d70366cd9d701591",
+            "bytes": 341562,
+            "width": 900
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 16,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 17,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": [
+            1,
+            306,
+            4658,
+            278,
+            6593,
+            310,
+            2834,
+            338
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 20,
+          "status": "skipped",
+          "reason": "preserve process proxy environment"
+        },
+        {
+          "cell": 21,
+          "status": "executed",
+          "scope": "teaching_variant",
+          "changes": [
+            "exactly two loading strings -> local random tinyGPT2 checkpoint"
+          ],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 22,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "GPT2TokenizerFast",
+            "vocab_size": 50257
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 23,
+          "status": "executed",
+          "scope": "teaching_variant",
+          "changes": [
+            "range(10)->range(2)",
+            "max_new_tokens=1000->16"
+          ],
+          "result": null,
+          "stdout": "with KV caching: 0.055 +- 0.02 seconds\nwithout KV caching: 0.049 +- 0.001 seconds\n"
+        },
+        {
+          "cell": 24,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        }
+      ],
+      "generations": [
+        {
+          "use_cache": true,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": true,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": false,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": false,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        }
+      ],
+      "projection_input_shapes": [
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          7,
+          16
+        ],
+        [
+          1,
+          8,
+          16
+        ],
+        [
+          1,
+          9,
+          16
+        ],
+        [
+          1,
+          10,
+          16
+        ],
+        [
+          1,
+          11,
+          16
+        ],
+        [
+          1,
+          12,
+          16
+        ],
+        [
+          1,
+          13,
+          16
+        ],
+        [
+          1,
+          14,
+          16
+        ],
+        [
+          1,
+          15,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          17,
+          16
+        ],
+        [
+          1,
+          18,
+          16
+        ],
+        [
+          1,
+          19,
+          16
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          1,
+          21,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          7,
+          16
+        ],
+        [
+          1,
+          8,
+          16
+        ],
+        [
+          1,
+          9,
+          16
+        ],
+        [
+          1,
+          10,
+          16
+        ],
+        [
+          1,
+          11,
+          16
+        ],
+        [
+          1,
+          12,
+          16
+        ],
+        [
+          1,
+          13,
+          16
+        ],
+        [
+          1,
+          14,
+          16
+        ],
+        [
+          1,
+          15,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          17,
+          16
+        ],
+        [
+          1,
+          18,
+          16
+        ],
+        [
+          1,
+          19,
+          16
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          1,
+          21,
+          16
+        ]
+      ]
+    },
+    "annotated_execution": {
+      "cells": [
+        {
+          "cell": 0,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 5,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "58430f275e37cfd7e988338b2afa9616af74ff5355e1dd421da2b2a89671b3dc",
+            "bytes": 1325837,
+            "width": 700
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 6,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "45b35301ac1733dc35d3fa5395287daa6a5b3eeec56c3fcc746f01ef641f53ac",
+            "bytes": 40783,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 8,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "7b66e3359857cb75dbd8cb2452200ca9da74bdf7ee177ba7b08f692c287ba13e",
+            "bytes": 124813,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "d967ee2fd0946058ddad93342fee6c457b4e9d7ce2ba23f5b9095607ac5de593",
+            "bytes": 135157,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 12,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "55d0baff628492d959558f8a6585d63f69f862611c862e3a4f8798937c4840a5",
+            "bytes": 248543,
+            "width": 600
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 13,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "Image",
+            "sha256": "822ebca522907db05c72257c9c42f12314e76016bb6f8d30d70366cd9d701591",
+            "bytes": 341562,
+            "width": 900
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 16,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 17,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": [
+            1,
+            306,
+            4658,
+            278,
+            6593,
+            310,
+            2834,
+            338
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 20,
+          "status": "skipped",
+          "reason": "preserve process proxy environment"
+        },
+        {
+          "cell": 21,
+          "status": "executed",
+          "scope": "teaching_variant",
+          "changes": [
+            "exactly two loading strings -> local random tinyGPT2 checkpoint"
+          ],
+          "result": null,
+          "stdout": ""
+        },
+        {
+          "cell": 22,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": {
+            "type": "GPT2TokenizerFast",
+            "vocab_size": 50257
+          },
+          "stdout": ""
+        },
+        {
+          "cell": 23,
+          "status": "executed",
+          "scope": "teaching_variant",
+          "changes": [
+            "range(10)->range(2)",
+            "max_new_tokens=1000->16"
+          ],
+          "result": null,
+          "stdout": "with KV caching: 0.04 +- 0.001 seconds\nwithout KV caching: 0.048 +- 0.004 seconds\n"
+        },
+        {
+          "cell": 24,
+          "status": "executed",
+          "scope": "whole_original_cell",
+          "changes": [],
+          "result": null,
+          "stdout": ""
+        }
+      ],
+      "generations": [
+        {
+          "use_cache": true,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": true,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": false,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        },
+        {
+          "use_cache": false,
+          "ids": [
+            [
+              2061,
+              318,
+              509,
+              53,
+              40918,
+              30,
+              6658,
+              6658,
+              6372,
+              6372,
+              6372,
+              39889,
+              39889,
+              39889,
+              39889,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413,
+              38413
+            ]
+          ]
+        }
+      ],
+      "projection_input_shapes": [
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          1,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          7,
+          16
+        ],
+        [
+          1,
+          8,
+          16
+        ],
+        [
+          1,
+          9,
+          16
+        ],
+        [
+          1,
+          10,
+          16
+        ],
+        [
+          1,
+          11,
+          16
+        ],
+        [
+          1,
+          12,
+          16
+        ],
+        [
+          1,
+          13,
+          16
+        ],
+        [
+          1,
+          14,
+          16
+        ],
+        [
+          1,
+          15,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          17,
+          16
+        ],
+        [
+          1,
+          18,
+          16
+        ],
+        [
+          1,
+          19,
+          16
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          1,
+          21,
+          16
+        ],
+        [
+          1,
+          6,
+          16
+        ],
+        [
+          1,
+          7,
+          16
+        ],
+        [
+          1,
+          8,
+          16
+        ],
+        [
+          1,
+          9,
+          16
+        ],
+        [
+          1,
+          10,
+          16
+        ],
+        [
+          1,
+          11,
+          16
+        ],
+        [
+          1,
+          12,
+          16
+        ],
+        [
+          1,
+          13,
+          16
+        ],
+        [
+          1,
+          14,
+          16
+        ],
+        [
+          1,
+          15,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          17,
+          16
+        ],
+        [
+          1,
+          18,
+          16
+        ],
+        [
+          1,
+          19,
+          16
+        ],
+        [
+          1,
+          20,
+          16
+        ],
+        [
+          1,
+          21,
+          16
+        ]
+      ]
+    },
+    "contract_results_equal_except_wallclock_stdout": true,
+    "all_four_generations_equal": true,
+    "executed_cells_per_notebook": 13,
+    "whole_original_cells_per_notebook": 11,
+    "skipped_cells": [
+      20
+    ],
+    "variant_cells": [
+      21,
+      23
+    ],
+    "benchmark_claim": false
+  },
+  "script_sha256": {
+    "build_annotated.py": "f5b46701e7880e787d87d93d76c0598fd854fc3d600fe33432da6ce7473c6fe4",
+    "download_original.py": "06730f2ed66602a30f5b3b4a9af54f47c0bf39f22dab341c3036a873b3ad80e0",
+    "verify_delivery.py": "03b801fbbf303094a6ed1d6af2296ac264c1c419235ef820c999fa873bdc9bdb"
+  },
+  "reading_artifact_sha256": {
+    "Attention官方源码_代码注释.py": "10f669ab82d3d599af99049a44cc50fa6f533c7df9ee95d4bd0e49092c8e7105",
+    "Attention摘录_代码注释.py": "06b11717466903a9ae815fa846c3cbe43821ec2521184e57cd4a397ba831ad85",
+    "llama2_src_cache_kv_代码注释.py": "cd03c071d9f1442bd937e3b8b610e7c490aeef95f3994de42c350d8aeb77518a"
+  },
+  "not_run": [
+    "original GPT2 pretrained weights",
+    "original 1000-new-token x10 benchmark",
+    "Llama2 pretrained weights",
+    "CUDA",
+    "model_parallel_world_size>1",
+    "model quality or speed benchmark"
+  ]
+}
