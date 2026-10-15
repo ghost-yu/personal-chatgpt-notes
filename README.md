@@ -8,7 +8,7 @@
 | 2 | `…_代码注释.py` | 直接看代码及详细中文注释，最适合文本阅读 |
 | 3 | `代码注释.ipynb` | 在 GitHub 或 Jupyter 中逐格对照、查看输出 |
 
-**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–21 讲已发布，22–30 讲尚未完成。**
+**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–22 讲已发布，23–30 讲尚未完成。**
 
 原 notebook、带说明对照版、来源 JSON、验证脚本和结果用于查证，放在各讲入口的折叠栏里。旁边三个本地资料目录仍供复现使用；日常阅读进入本项目即可。
 
@@ -37,6 +37,7 @@
 | [19 RoPE apply_rotary_emb](lessons/19%20RoPE%20apply_rotary_emb/README.md) | [讲解](lessons/19%20RoPE%20apply_rotary_emb/解释.md) | [文本代码](lessons/19%20RoPE%20apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py) | [带注释代码](lessons/19%20RoPE%20apply_rotary_emb/代码/tutorials/代码注释.ipynb) |
 | [20 KV cache 与增量推理](lessons/20%20KV%20cache%20与增量推理/README.md) | [讲解](lessons/20%20KV%20cache%20与增量推理/解释.md) | [文本代码](lessons/20%20KV%20cache%20与增量推理/代码/tutorials/llama2_src_cache_kv_代码注释.py) | [带注释代码](lessons/20%20KV%20cache%20与增量推理/代码/tutorials/代码注释.ipynb) |
 | [21 GQA 与分组查询注意力](lessons/21%20GQA%20与分组查询注意力/README.md) | [讲解](lessons/21%20GQA%20与分组查询注意力/解释.md) | [核心文本代码](lessons/21%20GQA%20与分组查询注意力/代码/tutorials/GQA核心源码_代码注释.py) | [带注释代码](lessons/21%20GQA%20与分组查询注意力/代码/tutorials/代码注释.ipynb) |
+| [22 Llama generate 完整流程](lessons/22%20Llama%20generate%20完整流程/README.md) | [讲解](lessons/22%20Llama%20generate%20完整流程/解释.md) | [核心文本代码](lessons/22%20Llama%20generate%20完整流程/代码/tutorials/generate核心源码_代码注释.py) | [带注释代码](lessons/22%20Llama%20generate%20完整流程/代码/tutorials/代码注释.ipynb) |
 
 第 08、09、15、18 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
 

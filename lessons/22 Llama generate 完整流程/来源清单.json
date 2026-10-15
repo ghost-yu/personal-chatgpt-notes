@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "upstream_path": "tutorials/llama2_src_generate.ipynb",
+      "published_path": "代码/tutorials/llama2_src_generate.ipynb",
+      "bytes": 7868,
+      "sha256": "03fd991e95312f50e2dd3465e3c6fe5d8d22ba69f74993a8100ff8c0e1dc94dd"
+    },
+    {
+      "upstream_path": "tutorials/tokenizer.model",
+      "published_path": "代码/tutorials/tokenizer.model",
+      "bytes": 499723,
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    }
+  ],
+  "official_meta_commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+  "official_source_sha256": {
+    "llama-generation.py": "acc739aeda4aa222305ca5e7ae020df38d0fa841530d966f041c13e065db05c4",
+    "llama-model.py": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+    "llama-tokenizer.py": "a675762526cd5f6e9d742a642e33a3560ea825522b8a9efb531d36b7c7a69e6c"
+  }
+}

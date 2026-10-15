@@ -1,0 +1,7 @@
+# Actual CPU teaching environment, Python3.12.14; not the historical lecturer lockfile.
+# Obtain the matching CPU torch wheel separately; FairScale0.4.13 also exists in a local target.
+torch==2.5.1+cpu
+fairscale==0.4.13
+sentencepiece==0.2.0
+nbformat==5.10.4
+ipython==8.37.0

@@ -1,0 +1,1446 @@
+{
+  "status": "passed",
+  "static": {
+    "cells": 17,
+    "code_cells": 4,
+    "schemas": 3,
+    "derived_cells_each": 35,
+    "markdown_snippets": [
+      4,
+      10,
+      13,
+      16
+    ],
+    "official_complete_methods": [
+      "__init__",
+      "generate",
+      "text_completion",
+      "sample_top_p"
+    ],
+    "preserved": "raw bytes / metadata / outputs / AST / noncomment tokens"
+  },
+  "original_and_annotated_execution": [
+    {
+      "stdout": "",
+      "value": null
+    },
+    {
+      "stdout": "",
+      "value": null
+    },
+    {
+      "stdout": "1\n2\n-1\n32000\n",
+      "value": null
+    },
+    {
+      "stdout": "",
+      "value": [
+        1,
+        306,
+        4658,
+        278,
+        6593,
+        310,
+        2834,
+        338
+      ]
+    }
+  ],
+  "runtime": {
+    "cpu_changes": {
+      "model_cache_cuda_to_cpu": 2,
+      "generation_device_cuda_to_cpu": 3,
+      "teaching_logprobs_fix": "move one complete CE if-block after tokens[:,cur_pos] assignment; original untouched"
+    },
+    "tiny_model": {
+      "dim": 16,
+      "layers": 2,
+      "q_heads": 4,
+      "kv_heads": 2,
+      "vocab": 32000,
+      "max_seq_len": 32,
+      "batch_capacity": 2,
+      "parameters": 1029840,
+      "init": "seed22 normal(0,.02), norm1; eval"
+    },
+    "unequal_prompt": {
+      "prompts": [
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8,
+          9,
+          10
+        ]
+      ],
+      "output": [
+        [
+          [
+            17528,
+            7163,
+            2814
+          ],
+          [
+            4553,
+            4870,
+            27233
+          ]
+        ],
+        null
+      ],
+      "calls": [
+        {
+          "start": 0,
+          "input": [
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 2,
+          "input": [
+            [
+              17528
+            ],
+            [
+              9
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 3,
+          "input": [
+            [
+              7163
+            ],
+            [
+              10
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 4,
+          "input": [
+            [
+              2814
+            ],
+            [
+              4553
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 5,
+          "input": [
+            [
+              13744
+            ],
+            [
+              4870
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        }
+      ],
+      "steps": [
+        {
+          "cur": 2,
+          "prev": 0,
+          "chosen": [
+            17528,
+            9
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.07020092010498,
+            -10.340845108032227
+          ],
+          "recorded_logp": null
+        },
+        {
+          "cur": 3,
+          "prev": 2,
+          "chosen": [
+            7163,
+            10
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.028074264526367,
+            -10.365989685058594
+          ],
+          "recorded_logp": null
+        },
+        {
+          "cur": 4,
+          "prev": 3,
+          "chosen": [
+            2814,
+            4553
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.044878959655762,
+            -10.06249713897705
+          ],
+          "recorded_logp": null
+        },
+        {
+          "cur": 5,
+          "prev": 4,
+          "chosen": [
+            13744,
+            4870
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.043130874633789,
+            -9.979761123657227
+          ],
+          "recorded_logp": null
+        },
+        {
+          "cur": 6,
+          "prev": 5,
+          "chosen": [
+            103,
+            27233
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              103
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              27233
+            ]
+          ],
+          "actual_logp": [
+            -10.077550888061523,
+            -10.061636924743652
+          ],
+          "recorded_logp": null
+        }
+      ],
+      "individual_same": true,
+      "prefix_reference_max_logit_error": 8.940696716308594e-08
+    },
+    "echo": [
+      [
+        1,
+        7,
+        17528,
+        7163,
+        2814
+      ],
+      [
+        1,
+        8,
+        9,
+        10,
+        4553,
+        4870,
+        27233
+      ]
+    ],
+    "old_logprobs": {
+      "output": [
+        [
+          [
+            17528,
+            7163,
+            2814
+          ],
+          [
+            4553,
+            4870,
+            27233
+          ]
+        ],
+        [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ]
+      ],
+      "steps": [
+        {
+          "cur": 2,
+          "prev": 0,
+          "chosen": [
+            17528,
+            9
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.07020092010498,
+            -10.340845108032227
+          ],
+          "recorded_logp": [
+            -0.0,
+            -10.340847969055176
+          ]
+        },
+        {
+          "cur": 3,
+          "prev": 2,
+          "chosen": [
+            7163,
+            10
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.028074264526367,
+            -10.365989685058594
+          ],
+          "recorded_logp": [
+            -0.0,
+            -10.365989685058594
+          ]
+        },
+        {
+          "cur": 4,
+          "prev": 3,
+          "chosen": [
+            2814,
+            4553
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.044878959655762,
+            -10.06249713897705
+          ],
+          "recorded_logp": [
+            -0.0,
+            -0.0
+          ]
+        },
+        {
+          "cur": 5,
+          "prev": 4,
+          "chosen": [
+            13744,
+            4870
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.043130874633789,
+            -9.979761123657227
+          ],
+          "recorded_logp": [
+            -0.0,
+            -0.0
+          ]
+        },
+        {
+          "cur": 6,
+          "prev": 5,
+          "chosen": [
+            103,
+            27233
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              103
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              27233
+            ]
+          ],
+          "actual_logp": [
+            -10.077550888061523,
+            -10.061636924743652
+          ],
+          "recorded_logp": [
+            -0.0,
+            -0.0
+          ]
+        }
+      ]
+    },
+    "teaching_fixed_logprobs": {
+      "output": [
+        [
+          [
+            17528,
+            7163,
+            2814
+          ],
+          [
+            4553,
+            4870,
+            27233
+          ]
+        ],
+        [
+          [
+            -10.07020092010498,
+            -10.028075218200684,
+            -10.044877052307129
+          ],
+          [
+            -10.062496185302734,
+            -9.979762077331543,
+            -10.061635971069336
+          ]
+        ]
+      ],
+      "steps": [
+        {
+          "cur": 2,
+          "prev": 0,
+          "chosen": [
+            17528,
+            9
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.07020092010498,
+            -10.340845108032227
+          ],
+          "recorded_logp": [
+            -10.07020092010498,
+            -10.340847969055176
+          ]
+        },
+        {
+          "cur": 3,
+          "prev": 2,
+          "chosen": [
+            7163,
+            10
+          ],
+          "protected": [
+            false,
+            true
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.028074264526367,
+            -10.365989685058594
+          ],
+          "recorded_logp": [
+            -10.028075218200684,
+            -10.365989685058594
+          ]
+        },
+        {
+          "cur": 4,
+          "prev": 3,
+          "chosen": [
+            2814,
+            4553
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              -1,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.044878959655762,
+            -10.06249713897705
+          ],
+          "recorded_logp": [
+            -10.044877052307129,
+            -10.062496185302734
+          ]
+        },
+        {
+          "cur": 5,
+          "prev": 4,
+          "chosen": [
+            13744,
+            4870
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              -1
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -10.043130874633789,
+            -9.979761123657227
+          ],
+          "recorded_logp": [
+            -10.043129920959473,
+            -9.979762077331543
+          ]
+        },
+        {
+          "cur": 6,
+          "prev": 5,
+          "chosen": [
+            103,
+            27233
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            false,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              7,
+              17528,
+              7163,
+              2814,
+              13744,
+              103
+            ],
+            [
+              1,
+              8,
+              9,
+              10,
+              4553,
+              4870,
+              27233
+            ]
+          ],
+          "actual_logp": [
+            -10.077550888061523,
+            -10.061636924743652
+          ],
+          "recorded_logp": [
+            -10.077550888061523,
+            -10.061635971069336
+          ]
+        }
+      ]
+    },
+    "sampling_seed_replay": {
+      "seed": 220,
+      "output": [
+        [
+          [
+            19363,
+            1271,
+            14101
+          ],
+          [
+            14370,
+            13057,
+            9701
+          ]
+        ],
+        null
+      ]
+    },
+    "negative_T_greedy_and_top_p0_matches_greedy": true,
+    "controlled_real_weights_EOS": {
+      "output": [
+        [
+          [],
+          [
+            6
+          ]
+        ],
+        [
+          [],
+          [
+            -0.0
+          ]
+        ]
+      ],
+      "calls": [
+        {
+          "start": 0,
+          "input": [
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 2,
+          "input": [
+            [
+              2
+            ],
+            [
+              6
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        }
+      ],
+      "steps": [
+        {
+          "cur": 2,
+          "prev": 0,
+          "chosen": [
+            2,
+            6
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            true,
+            false
+          ],
+          "tokens": [
+            [
+              1,
+              3,
+              2,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              1,
+              4,
+              6,
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -6.375475883483887,
+            -6.375475883483887
+          ],
+          "recorded_logp": [
+            -0.0,
+            -0.0
+          ]
+        },
+        {
+          "cur": 3,
+          "prev": 2,
+          "chosen": [
+            6,
+            2
+          ],
+          "protected": [
+            false,
+            false
+          ],
+          "eos": [
+            true,
+            true
+          ],
+          "tokens": [
+            [
+              1,
+              3,
+              2,
+              6,
+              -1,
+              -1
+            ],
+            [
+              1,
+              4,
+              6,
+              2,
+              -1,
+              -1
+            ]
+          ],
+          "actual_logp": [
+            -6.375475883483887,
+            -6.375475883483887
+          ],
+          "recorded_logp": [
+            -0.0,
+            -0.0
+          ]
+        }
+      ]
+    },
+    "zero_budget": {
+      "equal_output": [
+        [
+          []
+        ],
+        null
+      ],
+      "equal_calls": [],
+      "unequal_output": [
+        [
+          [],
+          []
+        ],
+        null
+      ],
+      "unequal_calls": [
+        {
+          "start": 0,
+          "input": [
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 2,
+          "input": [
+            [
+              17528
+            ],
+            [
+              9
+            ]
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        }
+      ]
+    },
+    "prompt_EOS_echo_crops_prompt": [
+      [
+        1
+      ]
+    ],
+    "context_clip": {
+      "output": [
+        [
+          [
+            819,
+            15632
+          ]
+        ],
+        null
+      ],
+      "calls": [
+        {
+          "start": 0,
+          "input": [
+            [
+              1,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7,
+              7
+            ]
+          ],
+          "shape": [
+            1,
+            30
+          ],
+          "logits_shape": [
+            1,
+            30,
+            32000
+          ],
+          "requires_grad": false
+        },
+        {
+          "start": 30,
+          "input": [
+            [
+              819
+            ]
+          ],
+          "shape": [
+            1,
+            1
+          ],
+          "logits_shape": [
+            1,
+            1,
+            32000
+          ],
+          "requires_grad": false
+        }
+      ]
+    },
+    "invalid_inputs": {
+      "empty_batch": {
+        "type": "ValueError",
+        "message": "min() iterable argument is empty"
+      },
+      "flat_prompt": {
+        "type": "TypeError",
+        "message": "object of type 'int' has no len()"
+      },
+      "over_batch": {
+        "type": "AssertionError",
+        "message": "(3, 2)"
+      },
+      "over_context": {
+        "type": "AssertionError",
+        "message": ""
+      },
+      "negative_budget": {
+        "type": "RuntimeError",
+        "message": "The expanded size of the tensor (1) must match the existing size (2) at non-singleton dimension 0.  Target sizes: [1].  Tensor sizes: [2]"
+      },
+      "empty_prompt_row": {
+        "type": "RuntimeError",
+        "message": "cannot reshape tensor of 0 elements into shape [1, 0, 4, -1, 2] because the unspecified dimension size -1 can be any value and is ambiguous"
+      }
+    },
+    "text_completion": [
+      {
+        "generation": "I believe the meaning of life is irrelevantiat",
+        "tokens": [
+          "",
+          "I",
+          "believe",
+          "the",
+          "meaning",
+          "of",
+          "life",
+          "is",
+          "irrelevant",
+          "iat"
+        ],
+        "logprobs": [
+          0.0,
+          -10.358024597167969,
+          -10.482006072998047,
+          -10.374957084655762,
+          -10.410758018493652,
+          -10.350120544433594,
+          -10.39150333404541,
+          -10.330046653747559,
+          -0.0,
+          -0.0
+        ]
+      }
+    ],
+    "literal_markdown": {
+      "4": "actual generate with explicit batch context",
+      "10_calls": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "13_shape": [
+        1,
+        4,
+        2,
+        4
+      ],
+      "16_branch_shapes": [
+        [
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "nucleus_boundary": {
+      "0.49": {
+        "sorted_normalized": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "chosen_original_id": [
+          [
+            1
+          ]
+        ]
+      },
+      "0.5": {
+        "sorted_normalized": [
+          [
+            0.625,
+            0.37499999999999994,
+            0.0
+          ]
+        ],
+        "chosen_original_id": [
+          [
+            1
+          ]
+        ]
+      },
+      "0.0": {
+        "sorted_normalized": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "chosen_original_id": [
+          [
+            1
+          ]
+        ]
+      },
+      "1.0": {
+        "sorted_normalized": [
+          [
+            0.5,
+            0.3,
+            0.2
+          ]
+        ],
+        "chosen_original_id": [
+          [
+            1
+          ]
+        ]
+      }
+    },
+    "negative_top_p": {
+      "type": "RuntimeError",
+      "message": "probability tensor contains either `inf`, `nan` or element < 0"
+    },
+    "temperature_entropy": [
+      {
+        "T": 0.5,
+        "p": [
+          0.8668133321973347,
+          0.11731042782619835,
+          0.015876239976466762
+        ],
+        "entropy": 0.44105744405816344
+      },
+      {
+        "T": 1.0,
+        "p": [
+          0.6652409557748218,
+          0.2447284710547976,
+          0.09003057317038045
+        ],
+        "entropy": 0.8323955818399389
+      },
+      {
+        "T": 2.0,
+        "p": [
+          0.506480391055654,
+          0.3071958857184984,
+          0.1863237232258476
+        ],
+        "entropy": 1.0201913367268314
+      }
+    ],
+    "limits": "Random/controlled tiny real Transformer, actual FairScale/Gloo world1; no original checkpoint, build/NCCL, CUDA, multi-rank, language-quality benchmark or training."
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.5.1+cpu",
+    "cuda_available": false,
+    "versions": {
+      "sentencepiece": "0.2.0",
+      "nbformat": "5.10.4",
+      "IPython": "8.37.0"
+    },
+    "fairscale": "0.4.13 local target"
+  },
+  "artifact_sha256": {
+    "复现/scripts/verify_delivery.py": "43b34e26e0f22959a21368566c5607016ac01c49d47f4ff07a1fcc4e05ad4add",
+    "复现/scripts/build_delivery.py": "d87ea389f97b702fca769270b516cf5061b2bb58c75e5e794431bef4983bd7c0",
+    "代码/tutorials/generate核心源码_代码注释.py": "21aaa0dd49efa61f5282fbd04bae5bb9a645cde0564f2c2a4b99ffd7e90ab4f7",
+    "代码/tutorials/llama2_src_generate_代码注释.py": "88a3e1dceb038b9637f01564a9492118010bb9b34c964920cc8a21de25e28f5e",
+    "代码/tutorials/Markdown片段_代码注释.py": "8569db8ef6f30de476d9b326a54d3dbe6923f080ded85c81a0e8f931b95f51a0",
+    "代码/tutorials/llama2_src_generate.ipynb": "03fd991e95312f50e2dd3465e3c6fe5d8d22ba69f74993a8100ff8c0e1dc94dd",
+    "代码/tutorials/代码注释.ipynb": "9c47eb3815fbb348d7e0c3834befd5e7ab92c9756028811849ffa20388c37e1a",
+    "代码/tutorials/原代码_带说明.ipynb": "c13c3400c8ad97cdf508c251554f168976dadd8e22eb4c49285b3cf6df7b2ca2",
+    "代码/tutorials/tokenizer.model": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+  }
+}

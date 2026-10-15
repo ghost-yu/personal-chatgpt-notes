@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–21讲主解释已存在；第01–21讲已按完整公开文件格式交付，下一讲第22讲。第22–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–22讲主解释已存在；第01–22讲已按完整公开文件格式交付，下一讲第23讲。第23–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -57,3 +57,5 @@
 第21讲原5格/2图片展示代码、两11格派生版/原PNG/三Python阅读版及完整固定官方repeat_kv/Attention中文注释交付。共享方向、型号8KV与质量/速度表述在新增说明校正，原文保留；根索引Python链接核心类，原展示版折叠。原字节/历史/3schema/AST/token通过，两版各2原格实际相同，Markdown4六原赋值在明确CPU形状上下文执行。Torch2.5.1+cpu/FairScale0.4.13真实Gloo单rank，完整Meta仅两cache.cuda改CPU；repeat四G/R情形、非连续、R1同对象、expand共享/reshape多G分配与MQA stride0共享、梯度按R求和与double gradcheck通过。真实H4/G4/2/1 Attention（1024/768/640参数）与逐head参考前向、x和四投影梯度及分组einsum前向吻合，错循环配对差0.575。绑定MHA前向同值，KV梯度求和最大差2.12e-8；同头池化恢复，一般MHA池化改变0.351，不冒称无损。prefill3后1/1/1与前缀重算输出差6.94e-17/cache仍G2，H6/G4报错、None默认MHA/D18被整除截断但仍能运行、R0空轴/负R/rank3边界记录。初次自编梯度聚合少reshape错误已修正并重跑，不是源模型bug。GQA论文v3 PDF本地实存，较新架构字幕不当作本讲独立字幕。未用预训练权重、T5 uptraining/指标、GPU测速或多rank通信。下一讲22。
 
 2026-10-15 文件整理：正式根 README 简化为三种文件用途与课程表，表中阅读顺序为讲解、Python 注释代码、注释 notebook；工作区 README 直接链接第01讲讲解和 Python。识别44个可再生成缓存目录（2,447,599 bytes），批量删除被自动安全审查 blocked by policy 拒绝，未删除，勿记录为已清除。原版、对照版、验证证据及来源材料保留；第22讲未跟踪在制文件不混入整理提交，未标为已发布。
+
+第22讲全部17格/4代码及Markdown4/10/13/16、两35格派生版/原tokenizer与三Python阅读版及完整固定官方generate/text_completion/sample_top_p中文注释交付。原字节/历史/元数据/3schema/AST/token通过，两版各4格真实SP相同。Torch2.5.1+cpu/FairScale0.4.13真实单rankGloo，完整Meta仅两cache.cuda/三个generate device改CPU，显式seed22初始化1029840参数2层D16/Q4/KV2/V32000Transformer。不同长度2/4的prompt真实S2/1/1/1/1与完整前缀重算最大logit差8.94e-8，单条/批次greedy相同，保护/预算/echo/容量/零新增/负例通过。已EOS行实际仍参与后续，受控真实权重两轮[2,6]→[6,2]返回[[],[6]]；旧新增logprobs全-0与仅移动整块CE的独立修正约-10符合真实log_softmax，原顺序保留。核采样严格阈值/真实multinomial/温度熵/seed重放和四Markdown片段实际运行通过。首次SP中文绝对路径失败，切换cwd用相对文件名后完整重跑通过，原Tokenizer未改。未发现独立字幕，相关核采样论文仅核查摘要版本，无原权重/build/NCCL/CUDA/多rank/语言质量/速度或训练。下一讲23。
