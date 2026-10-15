@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "upstream_path": "tutorials/peft/lora_inject.ipynb",
+      "published_path": "代码/tutorials/peft/lora_inject.ipynb",
+      "bytes": 19252,
+      "sha256": "25a7d53a37fe49730934e036f488774f1f36ae2530ad890aa2d5a39984aabf67"
+    },
+    {
+      "upstream_path": "tutorials/peft/lora_svd_basics.ipynb",
+      "published_path": "代码/tutorials/peft/lora_svd_basics.ipynb",
+      "bytes": 7506,
+      "sha256": "e17ecee08a02c0fe1a76f4a4e4710e61284e9f9262f2f4412fbab05cddbc7f77"
+    },
+    {
+      "upstream_path": "tutorials/peft/lora_merge.ipynb",
+      "published_path": "代码/tutorials/peft/lora_merge.ipynb",
+      "bytes": 61102,
+      "sha256": "158d194b56ebd96b233caa35e7dd93b9d9344f7a7f03721ae8b193423ff68139"
+    }
+  ],
+  "peft_version": "0.12.0",
+  "peft_installed_sources_sha256": {
+    "mapping.py": "50fb0435f1352f46f8ccf342c751fd3758a8055f209400047ee4bdc8609a11ab",
+    "tuners/lora/model.py": "315dbc2b690bf4b116e5e01dd0badfebebaea65e6bde34ae224d891ec5ed717a",
+    "tuners/lora/layer.py": "4667be1d279ae5546255f81bbe632a47074ac648ed8f2a35ad5f40458d18767b",
+    "utils/save_and_load.py": "acf74f3e3c6999cd0c4c883cc0c72d100d7a46adceb4bb29e9d36c381b72d1e1"
+  },
+  "peft_integrity": "Matches installed official distribution RECORD; tag download failed with TLS EOF; lecturer exact version unknown",
+  "subtitle": {
+    "file": "435af888-0796-42aa-bbe5-64d38f6d91c3.txt",
+    "sha256": "646a1460e6c8cd74f69cbd986ee647770b24df43a7bb1e7b33118a35c18dc1e6"
+  }
+}

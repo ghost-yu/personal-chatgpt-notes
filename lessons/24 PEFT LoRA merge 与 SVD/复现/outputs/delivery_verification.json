@@ -1,0 +1,1633 @@
+{
+  "status": "部分成功",
+  "static": {
+    "notebooks": {
+      "lora_inject": {
+        "cells": 18,
+        "code_cells": 14,
+        "derived_cells_each": 37,
+        "schemas": 3
+      },
+      "lora_svd_basics": {
+        "cells": 21,
+        "code_cells": 17,
+        "derived_cells_each": 43,
+        "schemas": 3
+      },
+      "lora_merge": {
+        "cells": 59,
+        "code_cells": 46,
+        "derived_cells_each": 119,
+        "schemas": 3
+      }
+    },
+    "total_cells": 98,
+    "total_code_cells": 77,
+    "preserved": "raw bytes, original metadata/history, ordering, all code AST/noncomment tokens, reading AST",
+    "complete_official_functions": [
+      "inject_adapter_in_model",
+      "LoraModel._check_add_weighted_adapter",
+      "LoraModel.add_weighted_adapter",
+      "LoraModel._svd_generalized_task_arithmetic_weighted_adapter",
+      "LoraModel._generalized_task_arithmetic_weighted_adapter",
+      "LoraModel.merge_and_unload",
+      "Linear.get_delta_weight",
+      "Linear.forward",
+      "Embedding.get_delta_weight",
+      "Embedding.forward"
+    ]
+  },
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.5.1+cpu",
+    "cuda_available": false,
+    "versions": {
+      "peft": "0.12.0",
+      "transformers": "4.44.2",
+      "sentencepiece": "0.2.0",
+      "protobuf": "3.20.3",
+      "nbformat": "5.10.4",
+      "IPython": "8.37.0"
+    }
+  },
+  "verification_script_sha256": "1e34f724d3fa048317c05cbfef7f6a88a9f3d32ce7e7510027fc55d4f87229c7",
+  "builder_sha256": "e20ce4f80dcb02bf6f9928e21ae1fb77995eb69067b3046ec6ce01c477b70132",
+  "injection": {
+    "raw": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 4,
+          "mode": "literal",
+          "value": "LoraConfig"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "value": "DummyModel"
+        },
+        {
+          "cell": 7,
+          "mode": "literal",
+          "value": "type"
+        },
+        {
+          "cell": 8,
+          "mode": "literal",
+          "value": "Size"
+        },
+        {
+          "cell": 10,
+          "mode": "literal",
+          "value": "DummyModel"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 12,
+          "mode": "literal",
+          "value": "bool"
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "value": {
+            "pinfo2_source_verified": true
+          }
+        },
+        {
+          "cell": 16,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "value": "dict"
+        }
+      ],
+      "same_object": true,
+      "base_layer_reference_preserved": true,
+      "trainable": 128000,
+      "initial_output_error": 0,
+      "B0_initial_A_gradient_zero": true,
+      "one_supplemental_SGD_step_updates_B_only": true,
+      "adapter_export_shapes": {
+        "linear.lora_A.weight": [
+          64,
+          1000
+        ],
+        "linear.lora_B.weight": [
+          1000,
+          64
+        ]
+      },
+      "training_scope": "One extra CPU step on synthetic squared logits; original notebook has no optimizer/training."
+    },
+    "annotated": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 4,
+          "mode": "literal",
+          "value": "LoraConfig"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "value": "DummyModel"
+        },
+        {
+          "cell": 7,
+          "mode": "literal",
+          "value": "type"
+        },
+        {
+          "cell": 8,
+          "mode": "literal",
+          "value": "Size"
+        },
+        {
+          "cell": 10,
+          "mode": "literal",
+          "value": "DummyModel"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 12,
+          "mode": "literal",
+          "value": "bool"
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "value": {
+            "pinfo2_source_verified": true
+          }
+        },
+        {
+          "cell": 16,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "value": "dict"
+        }
+      ],
+      "same_object": true,
+      "base_layer_reference_preserved": true,
+      "trainable": 128000,
+      "initial_output_error": 0,
+      "B0_initial_A_gradient_zero": true,
+      "one_supplemental_SGD_step_updates_B_only": true,
+      "adapter_export_shapes": {
+        "linear.lora_A.weight": [
+          64,
+          1000
+        ],
+        "linear.lora_B.weight": [
+          1000,
+          64
+        ]
+      },
+      "training_scope": "One extra CPU step on synthetic squared logits; original notebook has no optimizer/training."
+    },
+    "states_and_trace_identical": true
+  },
+  "svd_basics": {
+    "raw": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "value": "Image"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "value": "Generator"
+        },
+        {
+          "cell": 4,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 5,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.int64",
+            "sha256": "0c27700c82d333aa295692f1814040a962d7bc530253af661d97635dd5ed7af9"
+          }
+        },
+        {
+          "cell": 8,
+          "mode": "literal",
+          "value": "Image"
+        },
+        {
+          "cell": 10,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 12,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "9ac98e1597e7e707d64b346b8b90bb02ab290542f19f1cf8b745962df76ec4f3"
+          }
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "0f0ada2837c07d32e5e68bfc56e4a5c99e95776ad8671986b78a0dc62f4f649a"
+          }
+        },
+        {
+          "cell": 16,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.int64",
+            "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+          }
+        },
+        {
+          "cell": 18,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 19,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "f63a8f4140235916e562b339fd77abb3d74e520cb2f75cf5f09ddb7b9173f3d9"
+          }
+        },
+        {
+          "cell": 20,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "176e679cb8c1c6b521cc38e4e7f1d3e3c6d555dae61c9ff26dc7a616498bd63d"
+          }
+        }
+      ],
+      "low_rank": 20,
+      "full_rank": 100,
+      "rank20_low_rank_error": 0.00040664427797310054,
+      "rank20_full_rank_error": 69.20797729492188,
+      "discarded_singular_value_norm": 69.20797729492188,
+      "diagonal_5_2_1_rank2_error": 1,
+      "rectangular_full_reduced_verified": true
+    },
+    "annotated": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "value": "Image"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "value": "Generator"
+        },
+        {
+          "cell": 4,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 5,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.int64",
+            "sha256": "0c27700c82d333aa295692f1814040a962d7bc530253af661d97635dd5ed7af9"
+          }
+        },
+        {
+          "cell": 8,
+          "mode": "literal",
+          "value": "Image"
+        },
+        {
+          "cell": 10,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "value": "tuple"
+        },
+        {
+          "cell": 12,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "9ac98e1597e7e707d64b346b8b90bb02ab290542f19f1cf8b745962df76ec4f3"
+          }
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "0f0ada2837c07d32e5e68bfc56e4a5c99e95776ad8671986b78a0dc62f4f649a"
+          }
+        },
+        {
+          "cell": 16,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.int64",
+            "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+          }
+        },
+        {
+          "cell": 18,
+          "mode": "literal",
+          "value": "NoneType"
+        },
+        {
+          "cell": 19,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "f63a8f4140235916e562b339fd77abb3d74e520cb2f75cf5f09ddb7b9173f3d9"
+          }
+        },
+        {
+          "cell": 20,
+          "mode": "literal",
+          "value": {
+            "shape": [],
+            "dtype": "torch.float32",
+            "sha256": "176e679cb8c1c6b521cc38e4e7f1d3e3c6d555dae61c9ff26dc7a616498bd63d"
+          }
+        }
+      ],
+      "low_rank": 20,
+      "full_rank": 100,
+      "rank20_low_rank_error": 0.00040664427797310054,
+      "rank20_full_rank_error": 69.20797729492188,
+      "discarded_singular_value_norm": 69.20797729492188,
+      "diagonal_5_2_1_rank2_error": 1,
+      "rectangular_full_reduced_verified": true
+    },
+    "states_and_trace_identical": true
+  },
+  "cpu_fixture": {
+    "base": "C:\\Users\\hgfhg\\AppData\\Local\\Temp\\peft24_qn9edray\\base",
+    "base_vocab": 128,
+    "adapter_vocab": 133,
+    "extra_tokens": [
+      "<pad>",
+      "<|im_end|>",
+      "<|im_start|>assistant",
+      "<|im_start|>system",
+      "<|im_start|>user"
+    ],
+    "hidden_size": 16,
+    "layers": 1,
+    "rank": 8,
+    "alpha": 16,
+    "description": "Random FP32 Llama and trained-on-local-text SentencePiece, nonzero seeded synthetic adapters; no pretrained model or task quality claim."
+  },
+  "merge": {
+    "raw": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "skipped",
+          "reason": "Do not set GPU/proxy environment for offline CPU run"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "changes": [],
+          "value": "Image"
+        },
+        {
+          "cell": 10,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_norobots\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\norobots'",
+              "count": 1
+            },
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "changes": [],
+          "value": "LoraConfig"
+        },
+        {
+          "cell": 12,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "load_in_4bit=True, device_map=\"auto\"",
+              "to": "local_files_only=True",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "changes": [],
+          "value": "int"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "changes": [],
+          "value": "int"
+        },
+        {
+          "cell": 15,
+          "mode": "literal",
+          "changes": [],
+          "value": "Embedding"
+        },
+        {
+          "cell": 16,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_norobots\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\norobots'",
+              "count": 1
+            },
+            {
+              "from": "\"TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\base'",
+              "count": 1
+            }
+          ],
+          "value": "set"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 18,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_sql\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\sql'",
+              "count": 1
+            },
+            {
+              "from": "\"smangrul/tinyllama_lora_adcopy\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\adcopy'",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 19,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict"
+        },
+        {
+          "cell": 20,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict_keys"
+        },
+        {
+          "cell": 21,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 22,
+          "mode": "literal",
+          "changes": [],
+          "value": "PeftModelForCausalLM"
+        },
+        {
+          "cell": 25,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 26,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 27,
+          "mode": "literal",
+          "changes": [],
+          "value": "PeftModelForCausalLM"
+        },
+        {
+          "cell": 28,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 29,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict"
+        },
+        {
+          "cell": 30,
+          "mode": "literal",
+          "changes": [],
+          "value": "ABCMeta"
+        },
+        {
+          "cell": 32,
+          "mode": "literal",
+          "changes": [],
+          "value": "Embedding"
+        },
+        {
+          "cell": 33,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 34,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 35,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 36,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 37,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 38,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "0055f4976dd831c0c4faa1b164e691f6d4324fa01470a0bc855080d70af69ab1"
+          }
+        },
+        {
+          "cell": 39,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "a46ea8d572792d6c2553e706cc8935dc1e16a41e0548c4b71f0783d28118a9a6"
+          }
+        },
+        {
+          "cell": 40,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 41,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "6e7ed5c6e1c434d37f9e66db184a180e33d99d18da24c2f419d364ab981dbaef"
+          }
+        },
+        {
+          "cell": 42,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 43,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 44,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              8,
+              133
+            ],
+            "dtype": "torch.float32",
+            "sha256": "e0ab623bf83695c007b9636dee9f91f392def6d67413e12d142accfa1560b12c"
+          }
+        },
+        {
+          "cell": 45,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 46,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 47,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              8,
+              133
+            ],
+            "dtype": "torch.float32",
+            "sha256": "e0ab623bf83695c007b9636dee9f91f392def6d67413e12d142accfa1560b12c"
+          }
+        },
+        {
+          "cell": 50,
+          "mode": "literal",
+          "changes": [],
+          "value": "str"
+        },
+        {
+          "cell": 51,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=256",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 53,
+          "mode": "literal",
+          "changes": [],
+          "value": "str"
+        },
+        {
+          "cell": 54,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=256",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 56,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 57,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=64",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 58,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        }
+      ],
+      "original_active_after_weighted_adapter": [
+        "norobots"
+      ],
+      "source_scaling": 2,
+      "merge_scaling": 1,
+      "embedding_original_hand_code_matches_library": true,
+      "peft012_svd_repeats_source_scaling": true,
+      "historical_matrix_is_twice_intended": true,
+      "layers": [
+        {
+          "layer": "base_model.model.model.embed_tokens",
+          "valid_adapters": [
+            "norobots",
+            "adcopy"
+          ],
+          "weight_shape": [
+            133,
+            16
+          ],
+          "svd_error": 0.26271718740463257,
+          "tail_norm": 0.26271718740463257,
+          "error_against_intended": 1.1948784589767456
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.q_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.1364152431488037,
+          "tail_norm": 0.1364152580499649,
+          "error_against_intended": 0.5703398585319519
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.k_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.1470453441143036,
+          "tail_norm": 0.1470453292131424,
+          "error_against_intended": 0.45226266980171204
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.v_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.16227079927921295,
+          "tail_norm": 0.16227079927921295,
+          "error_against_intended": 0.4553975462913513
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.o_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.10791172087192535,
+          "tail_norm": 0.10791170597076416,
+          "error_against_intended": 0.46697309613227844
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.gate_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            32,
+            16
+          ],
+          "svd_error": 0.24100014567375183,
+          "tail_norm": 0.24100014567375183,
+          "error_against_intended": 0.7299169301986694
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.up_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            32,
+            16
+          ],
+          "svd_error": 0.2648630440235138,
+          "tail_norm": 0.2648630440235138,
+          "error_against_intended": 0.6647765636444092
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.down_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            32
+          ],
+          "svd_error": 0.25844690203666687,
+          "tail_norm": 0.25844693183898926,
+          "error_against_intended": 0.7682863473892212
+        },
+        {
+          "layer": "base_model.model.lm_head",
+          "valid_adapters": [
+            "norobots",
+            "adcopy"
+          ],
+          "weight_shape": [
+            133,
+            16
+          ],
+          "svd_error": 0.26482364535331726,
+          "tail_norm": 0.2648237943649292,
+          "error_against_intended": 1.2692742347717285
+        }
+      ],
+      "regex_results": [
+        "adcopy",
+        "base_layer",
+        "merge",
+        "norobots",
+        "sql"
+      ],
+      "named_module_target_paths": [
+        "base_model.model.model.embed_tokens",
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.k_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj",
+        "base_model.model.model.layers.0.self_attn.o_proj",
+        "base_model.model.model.layers.0.mlp.gate_proj",
+        "base_model.model.model.layers.0.mlp.up_proj",
+        "base_model.model.model.layers.0.mlp.down_proj",
+        "base_model.model.lm_head"
+      ],
+      "explicit_activation_max_logit_change": 0.7917319536209106,
+      "cat_exact_max_matrix_error": 9.633708941692021e-08,
+      "rank16_reconstructs_biased_not_intended_max_error": 1.9067828134211595e-06,
+      "linear_cross_term_max_difference": 0.7547939419746399,
+      "linear_negative_weight_error": "math domain error",
+      "density_0_2_vs_0_9_same_svd_product": true,
+      "source_adapters_unchanged": true,
+      "corrected_rank8_error": 0.13135859370231628,
+      "corrected_rank8_tail": 0.13135859370231628,
+      "merge_and_unload_max_logit_error": 1.7881393432617188e-07,
+      "folded_model_has_no_LoraLayer": true,
+      "original_full_vh_FP32_bytes": 4097280100
+    },
+    "annotated": {
+      "trace": [
+        {
+          "cell": 1,
+          "mode": "skipped",
+          "reason": "Do not set GPU/proxy environment for offline CPU run"
+        },
+        {
+          "cell": 2,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 3,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 6,
+          "mode": "literal",
+          "changes": [],
+          "value": "Image"
+        },
+        {
+          "cell": 10,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_norobots\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\norobots'",
+              "count": 1
+            },
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 11,
+          "mode": "literal",
+          "changes": [],
+          "value": "LoraConfig"
+        },
+        {
+          "cell": 12,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "load_in_4bit=True, device_map=\"auto\"",
+              "to": "local_files_only=True",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 13,
+          "mode": "literal",
+          "changes": [],
+          "value": "int"
+        },
+        {
+          "cell": 14,
+          "mode": "literal",
+          "changes": [],
+          "value": "int"
+        },
+        {
+          "cell": 15,
+          "mode": "literal",
+          "changes": [],
+          "value": "Embedding"
+        },
+        {
+          "cell": 16,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_norobots\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\norobots'",
+              "count": 1
+            },
+            {
+              "from": "\"TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\base'",
+              "count": 1
+            }
+          ],
+          "value": "set"
+        },
+        {
+          "cell": 17,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 18,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"smangrul/tinyllama_lora_sql\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\sql'",
+              "count": 1
+            },
+            {
+              "from": "\"smangrul/tinyllama_lora_adcopy\"",
+              "to": "'C:\\\\Users\\\\hgfhg\\\\AppData\\\\Local\\\\Temp\\\\peft24_qn9edray\\\\adcopy'",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 19,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict"
+        },
+        {
+          "cell": 20,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict_keys"
+        },
+        {
+          "cell": 21,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 22,
+          "mode": "literal",
+          "changes": [],
+          "value": "PeftModelForCausalLM"
+        },
+        {
+          "cell": 25,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 26,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 27,
+          "mode": "literal",
+          "changes": [],
+          "value": "PeftModelForCausalLM"
+        },
+        {
+          "cell": 28,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 29,
+          "mode": "literal",
+          "changes": [],
+          "value": "dict"
+        },
+        {
+          "cell": 30,
+          "mode": "literal",
+          "changes": [],
+          "value": "ABCMeta"
+        },
+        {
+          "cell": 32,
+          "mode": "literal",
+          "changes": [],
+          "value": "Embedding"
+        },
+        {
+          "cell": 33,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 34,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 35,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 36,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 37,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 38,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "0055f4976dd831c0c4faa1b164e691f6d4324fa01470a0bc855080d70af69ab1"
+          }
+        },
+        {
+          "cell": 39,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "a46ea8d572792d6c2553e706cc8935dc1e16a41e0548c4b71f0783d28118a9a6"
+          }
+        },
+        {
+          "cell": 40,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 41,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              133,
+              16
+            ],
+            "dtype": "torch.float32",
+            "sha256": "6e7ed5c6e1c434d37f9e66db184a180e33d99d18da24c2f419d364ab981dbaef"
+          }
+        },
+        {
+          "cell": 42,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 43,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 44,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              8,
+              133
+            ],
+            "dtype": "torch.float32",
+            "sha256": "e0ab623bf83695c007b9636dee9f91f392def6d67413e12d142accfa1560b12c"
+          }
+        },
+        {
+          "cell": 45,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 46,
+          "mode": "literal",
+          "changes": [],
+          "value": "tuple"
+        },
+        {
+          "cell": 47,
+          "mode": "literal",
+          "changes": [],
+          "value": {
+            "shape": [
+              8,
+              133
+            ],
+            "dtype": "torch.float32",
+            "sha256": "e0ab623bf83695c007b9636dee9f91f392def6d67413e12d142accfa1560b12c"
+          }
+        },
+        {
+          "cell": 50,
+          "mode": "literal",
+          "changes": [],
+          "value": "str"
+        },
+        {
+          "cell": 51,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=256",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 53,
+          "mode": "literal",
+          "changes": [],
+          "value": "str"
+        },
+        {
+          "cell": 54,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=256",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 56,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        },
+        {
+          "cell": 57,
+          "mode": "explicit_cpu_variant",
+          "changes": [
+            {
+              "from": "\"cuda\"",
+              "to": "\"cpu\"",
+              "count": 1
+            },
+            {
+              "from": "max_new_tokens=64",
+              "to": "max_new_tokens=4",
+              "count": 1
+            }
+          ],
+          "value": "NoneType"
+        },
+        {
+          "cell": 58,
+          "mode": "literal",
+          "changes": [],
+          "value": "NoneType"
+        }
+      ],
+      "original_active_after_weighted_adapter": [
+        "norobots"
+      ],
+      "source_scaling": 2,
+      "merge_scaling": 1,
+      "embedding_original_hand_code_matches_library": true,
+      "peft012_svd_repeats_source_scaling": true,
+      "historical_matrix_is_twice_intended": true,
+      "layers": [
+        {
+          "layer": "base_model.model.model.embed_tokens",
+          "valid_adapters": [
+            "norobots",
+            "adcopy"
+          ],
+          "weight_shape": [
+            133,
+            16
+          ],
+          "svd_error": 0.26271718740463257,
+          "tail_norm": 0.26271718740463257,
+          "error_against_intended": 1.1948784589767456
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.q_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.1364152431488037,
+          "tail_norm": 0.1364152580499649,
+          "error_against_intended": 0.5703398585319519
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.k_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.1470453441143036,
+          "tail_norm": 0.1470453292131424,
+          "error_against_intended": 0.45226266980171204
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.v_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.16227079927921295,
+          "tail_norm": 0.16227079927921295,
+          "error_against_intended": 0.4553975462913513
+        },
+        {
+          "layer": "base_model.model.model.layers.0.self_attn.o_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            16
+          ],
+          "svd_error": 0.10791172087192535,
+          "tail_norm": 0.10791170597076416,
+          "error_against_intended": 0.46697309613227844
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.gate_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            32,
+            16
+          ],
+          "svd_error": 0.24100014567375183,
+          "tail_norm": 0.24100014567375183,
+          "error_against_intended": 0.7299169301986694
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.up_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            32,
+            16
+          ],
+          "svd_error": 0.2648630440235138,
+          "tail_norm": 0.2648630440235138,
+          "error_against_intended": 0.6647765636444092
+        },
+        {
+          "layer": "base_model.model.model.layers.0.mlp.down_proj",
+          "valid_adapters": [
+            "norobots",
+            "adcopy",
+            "sql"
+          ],
+          "weight_shape": [
+            16,
+            32
+          ],
+          "svd_error": 0.25844690203666687,
+          "tail_norm": 0.25844693183898926,
+          "error_against_intended": 0.7682863473892212
+        },
+        {
+          "layer": "base_model.model.lm_head",
+          "valid_adapters": [
+            "norobots",
+            "adcopy"
+          ],
+          "weight_shape": [
+            133,
+            16
+          ],
+          "svd_error": 0.26482364535331726,
+          "tail_norm": 0.2648237943649292,
+          "error_against_intended": 1.2692742347717285
+        }
+      ],
+      "regex_results": [
+        "adcopy",
+        "base_layer",
+        "merge",
+        "norobots",
+        "sql"
+      ],
+      "named_module_target_paths": [
+        "base_model.model.model.embed_tokens",
+        "base_model.model.model.layers.0.self_attn.q_proj",
+        "base_model.model.model.layers.0.self_attn.k_proj",
+        "base_model.model.model.layers.0.self_attn.v_proj",
+        "base_model.model.model.layers.0.self_attn.o_proj",
+        "base_model.model.model.layers.0.mlp.gate_proj",
+        "base_model.model.model.layers.0.mlp.up_proj",
+        "base_model.model.model.layers.0.mlp.down_proj",
+        "base_model.model.lm_head"
+      ],
+      "explicit_activation_max_logit_change": 0.7917319536209106,
+      "cat_exact_max_matrix_error": 9.633708941692021e-08,
+      "rank16_reconstructs_biased_not_intended_max_error": 1.9067828134211595e-06,
+      "linear_cross_term_max_difference": 0.7547939419746399,
+      "linear_negative_weight_error": "math domain error",
+      "density_0_2_vs_0_9_same_svd_product": true,
+      "source_adapters_unchanged": true,
+      "corrected_rank8_error": 0.13135859370231628,
+      "corrected_rank8_tail": 0.13135859370231628,
+      "merge_and_unload_max_logit_error": 1.7881393432617188e-07,
+      "folded_model_has_no_LoraLayer": true,
+      "original_full_vh_FP32_bytes": 4097280100
+    },
+    "states_and_trace_identical": true
+  },
+  "limits": [
+    "No original TinyLlama1.1B pretrained weights, remote trained adapters or 4bit CUDA run",
+    "No original full-size 32005-by-32005 full SVD allocation; small matrix variant is explicit",
+    "No language-task quality, TIES/DARE/Conv2d, GPU latency/memory or LoRA paper benchmark reproduction",
+    "Remote Image HTML only; remote image content and lecturer exact dependency version unverified",
+    "Official tag network fetch failed with TLS EOF; executable source fixed by installed distribution version/RECORD/SHA"
+  ]
+}

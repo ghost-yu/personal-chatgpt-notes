@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–23讲主解释已存在；第01–23讲已按完整公开文件格式交付，下一讲第24讲。第24–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–24讲主解释已存在；第01–24讲已按完整公开文件格式交付，下一讲第25讲。第25–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 2026-10-15 本次文件整理：核对第01–08讲旧原代码.md中的223个单元与正式原notebook的类型和源文本全部相同后，删除8份重复文本（41,627 bytes）；第08讲同时对照主notebook及bitsandbytes补充。旧解释链接改到正式原notebook，本地前七讲检查器不再要求重复文本，并改用现存README入口。21讲README调整为解释→Python→notebook，第22/23讲已符合此顺序。正式原版、注释代码、历史输出和环境均保留；不要重新生成删除的文本。
 
@@ -63,3 +63,5 @@
 第22讲全部17格/4代码及Markdown4/10/13/16、两35格派生版/原tokenizer与三Python阅读版及完整固定官方generate/text_completion/sample_top_p中文注释交付。原字节/历史/元数据/3schema/AST/token通过，两版各4格真实SP相同。Torch2.5.1+cpu/FairScale0.4.13真实单rankGloo，完整Meta仅两cache.cuda/三个generate device改CPU，显式seed22初始化1029840参数2层D16/Q4/KV2/V32000Transformer。不同长度2/4的prompt真实S2/1/1/1/1与完整前缀重算最大logit差8.94e-8，单条/批次greedy相同，保护/预算/echo/容量/零新增/负例通过。已EOS行实际仍参与后续，受控真实权重两轮[2,6]→[6,2]返回[[],[6]]；旧新增logprobs全-0与仅移动整块CE的独立修正约-10符合真实log_softmax，原顺序保留。核采样严格阈值/真实multinomial/温度熵/seed重放和四Markdown片段实际运行通过。首次SP中文绝对路径失败，切换cwd用相对文件名后完整重跑通过，原Tokenizer未改。未发现独立字幕，相关核采样论文仅核查摘要版本，无原权重/build/NCCL/CUDA/多rank/语言质量/速度或训练。下一讲23。
 
 第23讲原37格/29代码含IPython23、仅注释22、两远程图片URL与历史输出、两75格派生版/两Python阅读版和完整固定TRL0.8.6 RewardTrainer/collator/accuracy详注交付。原字节/元数据/3schema/IPython转换AST/token通过；两版各21原语句成功、6明确本地CPU变体、代理/远程数据两格跳过，原4bit构造实际缺bitsandbytes报错。固定OPT tokenizer50265项/模型词表50272、8自建偏好对filter成6；真实Torch2.5.1+cpu/Transformers4.44.2/PEFT0.12/TRL0.8.6，807648参数随机单层H16OPT，r16/alpha16/qv/score共1040可训练。两版各2更新、全部状态精确一致，基础冻结/optimizer仅trainable/adapter与score保存及匹配基础重载logits差0。初始B0注入同值、pairwise真实梯度/softplus/预测概率、左右padding/600长度不截断、上限512过滤8与1024过滤6、margin[B]广播[B,B]与独立列修正、tie accuracy反例通过。旧历史原score两份512均可训练和异常loss字段保留，不能推断讲师精确版本；本次original_module冻结。初次pinfo2检查断言因ANSI失败，只清理捕获文本后重跑通过，非源代码bug。两图仅实际HTML核对、无远端图片内容验证；未找到独立字幕，无原350M权重/HH全量/4bit/GPU/原1000步/09:13/多卡/PPO/人类质量或完整InstructGPT复现。下一讲24。
+
+第24讲inject18/SVD21/merge59共98格77代码，三原版/六派生版(37/43/119)/四Python阅读版和完整PEFT0.12.0十核心方法详注交付；原字节/历史/9schema/AST/noncomment token与reading AST通过。找到435af888字幕，本地保留；实际PEFT源码与安装RECORD/SHA吻合，远端tag补充请求TLS EOF失败未冒称远端验证。两版各69literal+7明确CPU变体、代理格跳过，原Dummy14格128000trainable与初始同值/一次补充SGD、原SVD17格低秩误差.00040664/满秩截断69.20798通过。真实1层H16随机FP32 Llama/真实BPE128→133词表/三个r8alpha16非零adapter，SQL缺Embedding/lm_head；所有状态trace两版精确一致。原手写及PEFT0.12.0 svd均重复s，实际分解2倍理想D；逐层尾部、独立正确SVD、cat误差9.63e-8、linear交叉项/负权重math domain、density无效/rank16、regex错抓adapter名、显式激活logit差.79173、fold1.79e-7通过。初次pinfo2捕获回调累积已修复；fast分词转换缺protobuf，复用本地3.20.3仅进程加载，未改共享环境。无原TinyLlama1.1B权重/训练adapter/4bit/CUDA/巨型fullSVD/任务质量/TIES/DARE/Conv2d。下一讲25。
