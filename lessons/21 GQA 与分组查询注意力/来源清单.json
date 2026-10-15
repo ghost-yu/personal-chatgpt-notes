@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "upstream_path": "tutorials/llama2_src_grouped_query_attention.ipynb",
+      "published_path": "代码/tutorials/llama2_src_grouped_query_attention.ipynb",
+      "bytes": 137934,
+      "sha256": "2a5aa309d0b7b5b6fb4e702fc90d7f5b8eea1a20e63ea8aaa89c740c27c0ad56"
+    },
+    {
+      "upstream_path": "imgs/gqa.png",
+      "published_path": "代码/imgs/gqa.png",
+      "bytes": 100287,
+      "sha256": "56eb977d8a99e40d9ef47444a9dc980fdf22fb20cec26effc0d3b272dfbeb911"
+    }
+  ],
+  "official_meta": {
+    "repository": "https://github.com/meta-llama/llama",
+    "commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+    "path": "llama/model.py",
+    "sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754"
+  }
+}

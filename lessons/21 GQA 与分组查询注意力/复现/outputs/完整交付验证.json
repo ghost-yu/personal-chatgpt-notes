@@ -1,0 +1,441 @@
+{
+  "status": "部分成功",
+  "static": {
+    "original_cells": 5,
+    "code_cells": 2,
+    "markdown_cells": 3,
+    "derivative_cells": [
+      11,
+      11
+    ],
+    "schemas": 3,
+    "original_bytes_history_metadata_ast_tokens_preserved": true,
+    "all_reading_ast_and_tokens_equal": true,
+    "original_and_annotated_execution_equal": true,
+    "execution": [
+      [
+        {
+          "cell": 0,
+          "whole_original_cell": true
+        },
+        {
+          "cell": 2,
+          "whole_original_cell": true,
+          "image_bytes": 100287,
+          "image_sha256": "56eb977d8a99e40d9ef47444a9dc980fdf22fb20cec26effc0d3b272dfbeb911",
+          "width": 600
+        }
+      ],
+      [
+        {
+          "cell": 0,
+          "whole_original_cell": true
+        },
+        {
+          "cell": 2,
+          "whole_original_cell": true,
+          "image_bytes": 100287,
+          "image_sha256": "56eb977d8a99e40d9ef47444a9dc980fdf22fb20cec26effc0d3b272dfbeb911",
+          "width": 600
+        }
+      ]
+    ],
+    "markdown4_assignments_executed": 6,
+    "markdown_context": "explicit CPU tensors, world_size arithmetic=1; no multi-rank simulation",
+    "markdown_shapes": {
+      "xq": [
+        1,
+        2,
+        64,
+        128
+      ],
+      "xk": [
+        1,
+        2,
+        8,
+        128
+      ],
+      "xv": [
+        1,
+        2,
+        8,
+        128
+      ],
+      "n_rep": 8
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "cuda_available": false,
+    "packages": {
+      "fairscale": "0.4.13",
+      "nbformat": "5.10.4",
+      "ipython": "8.37.0"
+    },
+    "ram_bytes": 16849256448,
+    "free_disk_bytes": 27495944192
+  },
+  "official_source_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "original_cuda_failure": {
+    "type": "AssertionError",
+    "message": "Torch not compiled with CUDA enabled"
+  },
+  "cpu_changes": [
+    "exactly two cache torch.zeros(...).cuda() calls changed to .to(cpu)"
+  ],
+  "world_size": 1,
+  "backend": "gloo",
+  "repeat_kv": {
+    "cases": [
+      {
+        "groups": 4,
+        "n_rep": 1,
+        "shape": [
+          2,
+          3,
+          4,
+          4
+        ],
+        "output_is_input": true,
+        "reshape_shares_input_storage": true,
+        "expanded_shares_input_storage": true,
+        "input_storage_bytes": 768,
+        "output_storage_bytes": 768,
+        "output_stride": [
+          48,
+          16,
+          4,
+          1
+        ],
+        "gradient_sum_exact": true
+      },
+      {
+        "groups": 2,
+        "n_rep": 2,
+        "shape": [
+          2,
+          3,
+          4,
+          4
+        ],
+        "output_is_input": false,
+        "reshape_shares_input_storage": false,
+        "expanded_shares_input_storage": true,
+        "input_storage_bytes": 384,
+        "output_storage_bytes": 768,
+        "output_stride": [
+          48,
+          16,
+          4,
+          1
+        ],
+        "gradient_sum_exact": true
+      },
+      {
+        "groups": 2,
+        "n_rep": 4,
+        "shape": [
+          2,
+          3,
+          8,
+          4
+        ],
+        "output_is_input": false,
+        "reshape_shares_input_storage": false,
+        "expanded_shares_input_storage": true,
+        "input_storage_bytes": 384,
+        "output_storage_bytes": 1536,
+        "output_stride": [
+          96,
+          32,
+          4,
+          1
+        ],
+        "gradient_sum_exact": true
+      },
+      {
+        "groups": 1,
+        "n_rep": 4,
+        "shape": [
+          2,
+          3,
+          4,
+          4
+        ],
+        "output_is_input": false,
+        "reshape_shares_input_storage": true,
+        "expanded_shares_input_storage": true,
+        "input_storage_bytes": 192,
+        "output_storage_bytes": 192,
+        "output_stride": [
+          12,
+          4,
+          0,
+          1
+        ],
+        "gradient_sum_exact": true
+      }
+    ],
+    "float64_gradcheck": true,
+    "head_order": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "wrong_cyclic_order": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "noncontiguous_passed": true,
+    "failures": {
+      "rank3": {
+        "type": "ValueError",
+        "message": "not enough values to unpack (expected 4, got 3)"
+      },
+      "negative_rep": {
+        "type": "RuntimeError",
+        "message": "invalid shape dimension -2"
+      }
+    },
+    "zero_repeat_shape": [
+      1,
+      2,
+      0,
+      4
+    ],
+    "zero_repeat_is_not_valid_gqa": true
+  },
+  "attention_forward_backward": [
+    {
+      "query_heads": 4,
+      "kv_heads": 4,
+      "n_rep": 1,
+      "output_shape": [
+        2,
+        3,
+        16
+      ],
+      "projection_weight_shapes": {
+        "wq": [
+          16,
+          16
+        ],
+        "wk": [
+          16,
+          16
+        ],
+        "wv": [
+          16,
+          16
+        ],
+        "wo": [
+          16,
+          16
+        ]
+      },
+      "parameter_count": 1024,
+      "cache_shape": [
+        2,
+        8,
+        4,
+        4
+      ],
+      "cache_allocated_bytes_after_double_forward": 4096,
+      "head_loop_error": 0.0,
+      "gradient_errors": {
+        "x": 0.0,
+        "wq": 0.0,
+        "wk": 0.0,
+        "wv": 0.0,
+        "wo": 0.0
+      },
+      "grouped_einsum_error": 0.0,
+      "wrong_cyclic_group_error": 0.0
+    },
+    {
+      "query_heads": 4,
+      "kv_heads": 2,
+      "n_rep": 2,
+      "output_shape": [
+        2,
+        3,
+        16
+      ],
+      "projection_weight_shapes": {
+        "wq": [
+          16,
+          16
+        ],
+        "wk": [
+          8,
+          16
+        ],
+        "wv": [
+          8,
+          16
+        ],
+        "wo": [
+          16,
+          16
+        ]
+      },
+      "parameter_count": 768,
+      "cache_shape": [
+        2,
+        8,
+        2,
+        4
+      ],
+      "cache_allocated_bytes_after_double_forward": 2048,
+      "head_loop_error": 0.0,
+      "gradient_errors": {
+        "x": 0.0,
+        "wq": 0.0,
+        "wk": 0.0,
+        "wv": 0.0,
+        "wo": 0.0
+      },
+      "grouped_einsum_error": 0.0,
+      "wrong_cyclic_group_error": 0.5754685256315287
+    },
+    {
+      "query_heads": 4,
+      "kv_heads": 1,
+      "n_rep": 4,
+      "output_shape": [
+        2,
+        3,
+        16
+      ],
+      "projection_weight_shapes": {
+        "wq": [
+          16,
+          16
+        ],
+        "wk": [
+          4,
+          16
+        ],
+        "wv": [
+          4,
+          16
+        ],
+        "wo": [
+          16,
+          16
+        ]
+      },
+      "parameter_count": 640,
+      "cache_shape": [
+        2,
+        8,
+        1,
+        4
+      ],
+      "cache_allocated_bytes_after_double_forward": 1024,
+      "head_loop_error": 0.0,
+      "gradient_errors": {
+        "x": 1.1102230246251565e-16,
+        "wq": 0.0,
+        "wk": 0.0,
+        "wv": 4.440892098500626e-16,
+        "wo": 0.0
+      },
+      "grouped_einsum_error": 0.0,
+      "wrong_cyclic_group_error": 0.0
+    }
+  ],
+  "tied_mha_and_pooling": {
+    "tied_mha_forward_error": 0.0,
+    "tied_mha_gradient_sum_errors": {
+      "x": 2.6381702378230898e-09,
+      "wq": 0.0,
+      "wk": 2.1106657838165788e-08,
+      "wv": 4.440892098500626e-16,
+      "wo": 0.0
+    },
+    "identical_head_pooling_error": 0.0,
+    "general_random_mha_pooling_changes_output": 0.35115463664893,
+    "conversion_scope": "actual CPU matrix mean-pooling and Attention forward; no uptraining or quality evaluation"
+  },
+  "incremental_and_invalid": {
+    "incremental": [
+      {
+        "start_pos": 0,
+        "new_tokens": 3,
+        "logit_free_attention_output_error": 0.0,
+        "persistent_kv_heads": 2
+      },
+      {
+        "start_pos": 3,
+        "new_tokens": 1,
+        "logit_free_attention_output_error": 4.163336342344337e-17,
+        "persistent_kv_heads": 2
+      },
+      {
+        "start_pos": 4,
+        "new_tokens": 1,
+        "logit_free_attention_output_error": 5.551115123125783e-17,
+        "persistent_kv_heads": 2
+      },
+      {
+        "start_pos": 5,
+        "new_tokens": 1,
+        "logit_free_attention_output_error": 6.938893903907228e-17,
+        "persistent_kv_heads": 2
+      }
+    ],
+    "nondivisible_heads_failure": {
+      "query6_kv4": {
+        "n_rep": 1,
+        "type": "RuntimeError",
+        "message": "The size of tensor a (6) must match the size of tensor b (4) at non-singleton dimension 1"
+      }
+    },
+    "none_default_is_mha": true,
+    "dim18_heads4_runs_with_truncated_inner_width": {
+      "head_dim": 4,
+      "wq_weight_shape": [
+        16,
+        18
+      ],
+      "output_shape": [
+        1,
+        2,
+        18
+      ]
+    },
+    "not_a_validation_of_noncausal_multitoken_use": "dim18 case only checks shape, mask=None is not a causal sequence experiment",
+    "multi_rank_tested": false
+  },
+  "dtype_scope": "Attention parameters float64, official RoPE and softmax internally float32; repeat_kv gradcheck genuinely float64",
+  "scripts_sha256": {
+    "build_delivery.py": "eb8d98aa9ec24f8e1cc1925809f5205eb8946a3f2e0105221df4611188bb013a",
+    "verify_delivery.py": "b8d5fa957ab1dd1d2a575d22755e00b45f4e8017ecd7669d5477847e31c1a6e1"
+  },
+  "reading_sha256": {
+    "GQA核心源码_代码注释.py": "48b204d3d9eefc5d1f1b749668dccc688f586fd6d2f461016a42ce017325346a",
+    "llama2_src_grouped_query_attention_代码注释.py": "4ae53a0bbae431cf5f58843e01226f9a1e3bbfc9b59e684b1b47b346941390d0",
+    "Markdown源码_代码注释.py": "bbcc8cfb85f8ab380c59ff58b3b3adc71cc3ff2826349936935fa24fe23b5d9f"
+  },
+  "not_run": [
+    "Llama2 pretrained weights",
+    "GQA paper T5 uptraining or benchmark",
+    "GPU inference timing",
+    "multi-rank communication",
+    "quality metrics"
+  ]
+}

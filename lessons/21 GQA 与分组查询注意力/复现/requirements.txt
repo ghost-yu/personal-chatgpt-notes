@@ -1,0 +1,6 @@
+# Actual CPU teaching verification; Python3.12.14, not the lecturer's historical lockfile.
+# FairScale uses an existing fixed local target; install a matching CPU torch wheel separately if needed.
+torch==2.5.1+cpu
+fairscale==0.4.13
+nbformat==5.10.4
+ipython==8.37.0

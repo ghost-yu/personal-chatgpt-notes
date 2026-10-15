@@ -6,7 +6,7 @@
 
 用户已授权公开仓库 https://github.com/ghost-yu/personal-chatgpt-notes ，分支main；每完成一讲，更新索引，运行相关验证及 `工具/check_documents.py`，创建独立commit并push。不得仅提交本地。保留已有解释和验证证据，字幕附件、权重及完整外部源码快照保留本地。
 
-当前第01–20讲主解释已存在；第01–20讲已按完整公开文件格式交付，下一讲第21讲。第21–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
+当前第01–21讲主解释已存在；第01–21讲已按完整公开文件格式交付，下一讲第22讲。第22–30讲待完成。不能以主文存在代替全部代码交付。一次完成一讲并独立提交。
 
 第03讲原版与注释版各26格在CPU小型BLOOM上下文执行并训练2步；第04讲直接使用固定官方PEFT v0.3.0，核对注入、引用、冻结、前向/梯度及adapter状态。均未运行原7B配置。具体证据见各讲复现目录。
 
@@ -53,3 +53,5 @@
 第19讲全部27格/15代码含注释17与空26、两55格派生版/原tokenizer499723bytes/Python阅读版及三官方函数中文源码阅读交付；原字节/历史元数据/3schema/comment-only token/AST、reading AST、官方函数执行AST一致。旧15代码长说明保留并补齐Markdown。两版各15原格真实执行trace精确一致、token8ID同历史；随后两版缺helper调用均真实NameError，仅在原格全部执行后显式补完整固定Meta helper，原/注释/完整未修改官方模块输出及梯度精确相同，独立sin/cos和逆旋转gradient差0。dtype四种finite backward/FP64内部降FP32/stride2错误和contiguous修复/合法非连续/静默错axis2.90499/短K1广播成4位置/rank3返回rank4反例通过；相对score7.47e-7/共同移位4.77e-7/重置位置7.08538。curve cumsum误差5.33e-15、113次上升，全局d64不传s时63而显式d64为15.5。初次dtype叶tensor复用错误，改detach-clone各case恢复。旧verify/build_annotated/43格覆盖/教学报告保留；新完整生成用build_delivery。没有原Llama权重/整模型Attention/KV/repeat_kv/GPU/通信/论文质量速度。下一讲20。
 
 第20讲全部25格/14代码含空24、Markdown18不完整Attention逐句与完整固定官方Attention类详注、两51格派生版/原版/六图/SP模型/Python阅读版已交付。原字节/历史/3schema/comment-only token/AST通过，两版各13格实际执行（11原格、21两加载字符串和23两整数教学变体，20代理跳过）；真实8ID和生成契约一致，计时仅记录。Torch2.5.1+cpu/FairScale0.4.13单rankGloo，完整Meta仅两cache.cuda改CPU，显式初始化6864参数2层D16/Q4/KV2；prefill3+三次单token与完整前缀重算最大logit差6.08e-7，逐层KV/旧前缀/未来槽与投影长度通过，K带RoPE/V不带、独立attention/4步greedy/因果不变及脏尾部通过。固定旧Meta P3/S2多token增量mask真实尺寸报错；一条mask赋值的独立修正[3,2,1]通过。错误前缀/空洞/越界实际反例，cache普通属性不进state_dict/buffers。真实随机811728参数GPT2与固定50257词表，开关各2次新增16，四次ID相同；past两层[1,2,6,8]，增量logits差4.48e-8，无缓存不返回past。未用原GPT2/Llama权重、原1000×10计时、CUDA/多rank/论文或质量指标。下一讲21。
+
+第21讲原5格/2图片展示代码、两11格派生版/原PNG/三Python阅读版及完整固定官方repeat_kv/Attention中文注释交付。共享方向、型号8KV与质量/速度表述在新增说明校正，原文保留；根索引Python链接核心类，原展示版折叠。原字节/历史/3schema/AST/token通过，两版各2原格实际相同，Markdown4六原赋值在明确CPU形状上下文执行。Torch2.5.1+cpu/FairScale0.4.13真实Gloo单rank，完整Meta仅两cache.cuda改CPU；repeat四G/R情形、非连续、R1同对象、expand共享/reshape多G分配与MQA stride0共享、梯度按R求和与double gradcheck通过。真实H4/G4/2/1 Attention（1024/768/640参数）与逐head参考前向、x和四投影梯度及分组einsum前向吻合，错循环配对差0.575。绑定MHA前向同值，KV梯度求和最大差2.12e-8；同头池化恢复，一般MHA池化改变0.351，不冒称无损。prefill3后1/1/1与前缀重算输出差6.94e-17/cache仍G2，H6/G4报错、None默认MHA/D18被整除截断但仍能运行、R0空轴/负R/rank3边界记录。初次自编梯度聚合少reshape错误已修正并重跑，不是源模型bug。GQA论文v3 PDF本地实存，较新架构字幕不当作本讲独立字幕。未用预训练权重、T5 uptraining/指标、GPU测速或多rank通信。下一讲22。
