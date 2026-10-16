@@ -16,7 +16,15 @@
       "**/复现": true,
       "**/来源清单.json": true,
       "**/代码单元解释.md": true,
-      "**/*原代码_带说明.ipynb": true
+      "**/*原代码_带说明.ipynb": true,
+      ".gitattributes": true,
+      ".gitignore": true,
+      "课程阅读.code-workspace": true,
+      "**/*.ipynb": {
+        "when": "$(basename)_代码注释.py"
+      },
+      "**/imgs": true,
+      "**/图片": true
     },
     "explorer.compactFolders": false
   }
