@@ -1,0 +1,2206 @@
+{
+  "scope": "All 30 lectures: current source preservation, derivative semantics, reading artifacts and existing execution evidence. Historical training is not rerun by this audit.",
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "lessons": [
+    {
+      "lecture": "01 LLaMA introduction",
+      "notebooks": [
+        {
+          "file": "lessons/01 LLaMA introduction/代码/tutorials/01_llama_intro.ipynb",
+          "upstream_paths": [
+            "tutorials/01_llama_intro.ipynb"
+          ],
+          "sha256": "fcb9a1004f61825f7169fbfef58e9896c8bdb38d20f2de3a2be21aad23d2ab1b",
+          "cells": 9,
+          "code_cells": 2,
+          "two_preserving_derivatives": [
+            "lessons/01 LLaMA introduction/代码/tutorials/代码注释.ipynb",
+            "lessons/01 LLaMA introduction/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/01 LLaMA introduction/代码/tutorials/01_llama_intro_代码注释.py"
+          ],
+          "publication_commit": "c1f58eed0c49ba65a7b8058e14b3fb6682992455"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/01 LLaMA introduction/复现/outputs/annotation_verification.json",
+          "sha256": "d47b76100cd6aac8cc07a80b47fed5972935b8aeb3512df8c500e4d9da1220ec",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "IPython",
+            "nbformat",
+            "schema_valid",
+            "original_cells_equal",
+            "historical_outputs_equal",
+            "commented_ast_equal",
+            "markdown_commands_unchanged_after_removing_comments",
+            "readable_python_ast_equal",
+            "runs",
+            "not_executed"
+          ]
+        },
+        {
+          "file": "lessons/01 LLaMA introduction/复现/outputs/教学验证.json",
+          "sha256": "f9cc7ffd5aa6a3e5ebef8b9fb01a764968fa6b1a509c61159b643491ed7a9478",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "images"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "02 LoRA - Low-Rank Adaptation of Large Language Models",
+      "notebooks": [
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/02_lora_baics.ipynb",
+          "upstream_paths": [
+            "tutorials/02_lora_baics.ipynb"
+          ],
+          "sha256": "199a46f6290a097188d0f0b8c2b2f5f00f8bb1d4d8a68f76bfe77989e8b2c9fa",
+          "cells": 16,
+          "code_cells": 7,
+          "two_preserving_derivatives": [
+            "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/代码注释.ipynb",
+            "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/02_lora_baics_代码注释.py"
+          ],
+          "publication_commit": "c68c7b0dece0cec2e8e538e222b00ddc415d351e"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/复现/outputs/annotation_verification.json",
+          "sha256": "caa059748bdf8675da1352821023e57c8a3fa7635d8690fdd4bbdb379c6e584f",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "IPython",
+            "nbformat",
+            "schema_valid",
+            "original_cells_and_outputs_preserved",
+            "comment_only_and_ast_equal",
+            "readable_python_ast_equal",
+            "inserted_note_relative_links_valid",
+            "runs",
+            "markdown13_compile_failures",
+            "not_executed"
+          ]
+        },
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/复现/outputs/lora_torch_verification.json",
+          "sha256": "4b5e78a609a43c8f98df227adc2ed4e5900962a389871b3312bdc72257ded88f",
+          "recorded_status": "成功（教学验证）",
+          "fields": [
+            "status",
+            "python",
+            "torch",
+            "device",
+            "dtype",
+            "numeric_output",
+            "batch_shape",
+            "max_merge_error",
+            "analytic_gradient_max_error",
+            "initial_factor_a_grad_norm",
+            "initial_factor_b_grad_norm",
+            "factor_a_grad_after_first_update",
+            "base_unchanged_and_no_grad",
+            "initial_mse",
+            "final_mse",
+            "both_zero_init_gradients_zero",
+            "parameter_examples",
+            "limits"
+          ]
+        },
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/复现/outputs/教学验证.json",
+          "sha256": "d50f1ea49000b309f008ce8d8adcb78877695762237a6ae35b0e984515dcd03a",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "images",
+            "sequential_update",
+            "explicit_update",
+            "final_output",
+            "original_pseudocode_error",
+            "parameter_ratio"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "03 LoRA 微调 BLOOM",
+      "notebooks": [
+        {
+          "file": "lessons/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice.ipynb",
+          "upstream_paths": [
+            "tutorials/03_lora_practice.ipynb"
+          ],
+          "sha256": "4325cfc2e8936f0b513bb707b6758a4be7e343e7c788bc09ed50b6baab10b305",
+          "cells": 47,
+          "code_cells": 37,
+          "two_preserving_derivatives": [
+            "lessons/03 LoRA 微调 BLOOM/代码/tutorials/代码注释.ipynb",
+            "lessons/03 LoRA 微调 BLOOM/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice_代码注释.py"
+          ],
+          "publication_commit": "61de6abb19d14c506681f2c065f8a8e33058ef8b"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/03 LoRA 微调 BLOOM/复现/outputs/annotation_verification.json",
+          "sha256": "76ef172f60bd3ab32654fbeb3590c5b298377233ebc180f02eeec2de6ff64726",
+          "recorded_status": "成功（注释静态核对）",
+          "fields": [
+            "status",
+            "cells",
+            "code_cells",
+            "artifacts",
+            "readable_python",
+            "execution"
+          ]
+        },
+        {
+          "file": "lessons/03 LoRA 微调 BLOOM/复现/outputs/pipeline_verification.json",
+          "sha256": "f1109afb754f7a6109fa7fc4cef65fe094b0eea749384b8539f7eb3168cd8ada",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "versions",
+            "source_sha256",
+            "annotated_notebook",
+            "device",
+            "offline",
+            "tiny_model",
+            "original_cells_executed",
+            "lora_targets",
+            "lora_scale",
+            "trainable_parameters",
+            "embedding_weight_frozen_output_grad_enabled",
+            "gradient_checkpointing_enabled",
+            "synthetic_dataset_rows",
+            "tokenized_fields",
+            "collator_shape",
+            "padding_targets_ignored",
+            "shift_valid_targets",
+            "clm_loss",
+            "manual_shift_loss_error",
+            "initial_nonzero_gradient_names",
+            "base_weights_unchanged",
+            "changed_adapter_names",
+            "teaching_training",
+            "generated_new_tokens",
+            "generated_shape",
+            "not_reproduced",
+            "limits",
+            "annotated_execution_comparison",
+            "captured_library_stdout"
+          ]
+        },
+        {
+          "file": "lessons/03 LoRA 微调 BLOOM/复现/outputs/教学验证.json",
+          "sha256": "c17255539d8f19931f0671ad9cda639ae670b8faec8bf44d467e615bfa3c5751",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "original_merge_output",
+            "teaching_shift_pairs",
+            "full_cycle_batch_single_device",
+            "lora_parameter_count_assuming_30_fused_qkv_layers"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "04 PEFT LoRA 源码",
+      "notebooks": [
+        {
+          "file": "lessons/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora.ipynb",
+          "upstream_paths": [
+            "tutorials/04_PEFT_lora.ipynb"
+          ],
+          "sha256": "712d33af261bf54ebac3be88bad46e1a180c8d79464da985e0d01b69cbc79146",
+          "cells": 18,
+          "code_cells": 8,
+          "two_preserving_derivatives": [
+            "lessons/04 PEFT LoRA 源码/代码/tutorials/代码注释.ipynb",
+            "lessons/04 PEFT LoRA 源码/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora_代码注释.py"
+          ],
+          "publication_commit": "0096243c80cb0116e06a95a85be2cbf35b867aeb"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/04 PEFT LoRA 源码/复现/outputs/annotation_verification.json",
+          "sha256": "9f7615472dadff6ff4b8ec2912e7161e5bc02cafa3e47edce6ec664f8f4e2f02",
+          "recorded_status": "成功（静态注释核对）",
+          "fields": [
+            "status",
+            "original_cells",
+            "code_cells",
+            "markdown_blocks",
+            "artifacts",
+            "readable_python_ast_equal",
+            "inserted_note_relative_links_valid",
+            "execution"
+          ]
+        },
+        {
+          "file": "lessons/04 PEFT LoRA 源码/复现/outputs/injection_verification.json",
+          "sha256": "b09c61c703ab85b0fae24ac84f87c270670af6766d30de4e2935f09c02e3a2bd",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "torch",
+            "source_sha256",
+            "annotated_notebook",
+            "transformers",
+            "accelerate",
+            "peft_imported_version",
+            "peft_checkout_commit",
+            "source_hashes",
+            "device",
+            "quantized",
+            "tiny_model",
+            "original_code_cells_executed",
+            "markdown_mapping_dictionaries_equal_to_official",
+            "markdown4_attribute_fragment",
+            "markdown7_expected_failure",
+            "suffix_hits",
+            "regex_hits",
+            "bare_regex_hits",
+            "wrong_suffix_hits",
+            "official_injection_failures",
+            "official_call_sequence",
+            "wrapper_reuses_original_model",
+            "replacements",
+            "trainable_parameters",
+            "only_lora_trainable",
+            "zero_b_initial_logits_equal",
+            "logits_shape",
+            "initial_a_gradient_zero",
+            "initial_b_gradient_norm",
+            "base_weight_bias_gradients_none",
+            "adapter_output_shape",
+            "manual_forward_max_error",
+            "disable_matches_base",
+            "merge_max_error",
+            "unmerge_restores_weight_within_tolerance",
+            "limits",
+            "annotated_execution_comparison"
+          ]
+        },
+        {
+          "file": "lessons/04 PEFT LoRA 源码/复现/outputs/教学验证.json",
+          "sha256": "6151fdbb4794236a934008caf5832d20f3c92fb5b8c8695686e05b3d4c1cfec4",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "original_replace_method_with_fixtures",
+            "weight_identity_preserved",
+            "suffix_match",
+            "bare_fullmatch",
+            "explicit_regex_match",
+            "scaling"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "05 FP16 与 BF16",
+      "notebooks": [
+        {
+          "file": "lessons/05 FP16 与 BF16/代码/tutorials/05_float16_bf16.ipynb",
+          "upstream_paths": [
+            "tutorials/05_float16_bf16.ipynb"
+          ],
+          "sha256": "96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712",
+          "cells": 27,
+          "code_cells": 8,
+          "two_preserving_derivatives": [
+            "lessons/05 FP16 与 BF16/代码/tutorials/代码注释.ipynb",
+            "lessons/05 FP16 与 BF16/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/05 FP16 与 BF16/代码/tutorials/05_float16_bf16_代码注释.py"
+          ],
+          "publication_commit": "f88b90331a42d11d023864469fdbb05c2c2bc5f8"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/05 FP16 与 BF16/复现/outputs/annotation_verification.json",
+          "sha256": "f65fb7b8ea189a4a8cb0839f9e9691b81cc1bf52ff7d28645690c3a8a550cd73",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "variants",
+            "code_cells",
+            "markdown_cells",
+            "all_27_cell_explanations_present",
+            "annotation_only_comments",
+            "reading_py_AST_equals_7_ordinary_original_code_cells",
+            "reading_py_IPython_directive_preserved_as_comment",
+            "reading_py_sha256"
+          ]
+        },
+        {
+          "file": "lessons/05 FP16 与 BF16/复现/outputs/runtime_verification.json",
+          "sha256": "9eefa0be0caff0b98c2789b51065ef7481e21121717697c33cd829a2cc35023e",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "environment",
+            "command",
+            "working_directory",
+            "original",
+            "annotated",
+            "original_and_annotated_behavior_equal",
+            "supplemental_CPU_tensors",
+            "inspected_source",
+            "limits"
+          ]
+        },
+        {
+          "file": "lessons/05 FP16 与 BF16/复现/outputs/教学验证.json",
+          "sha256": "eda1816a62eba13cb29b025956e78d9f188daa5e82013393fa88676802631c22",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "images",
+            "fp16_example",
+            "fp16_max",
+            "fp16_min_subnormal",
+            "bf16_min_subnormal",
+            "bf16_max",
+            "rounding_example"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "06 Alpaca LoRA 推理",
+      "notebooks": [
+        {
+          "file": "lessons/06 Alpaca LoRA 推理/代码/tutorials/06_alpaca_llama_7b_lora.ipynb",
+          "upstream_paths": [
+            "tutorials/06_alpaca_llama_7b_lora.ipynb"
+          ],
+          "sha256": "501575b319fcbedcd97b10f80173d3433b2c3d21fe06b3e78138614ab415f1d1",
+          "cells": 28,
+          "code_cells": 18,
+          "two_preserving_derivatives": [
+            "lessons/06 Alpaca LoRA 推理/代码/tutorials/代码注释.ipynb",
+            "lessons/06 Alpaca LoRA 推理/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/06 Alpaca LoRA 推理/代码/tutorials/06_alpaca_llama_7b_lora_代码注释.py"
+          ],
+          "publication_commit": "87ca538213e3c237d9196402cf94eabfa49e0ea5"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/06 Alpaca LoRA 推理/复现/outputs/annotation_verification.json",
+          "sha256": "b265e0023c07b20d74803a1a89441e9a004115426985d9704bc64db48bad828a",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "variants",
+            "code_cells",
+            "all_28_cell_explanations_present",
+            "annotation_only_comments",
+            "literal_prompts_unchanged_by_AST_check",
+            "reading_py_AST_equals_17_non_install_cells",
+            "two_shell_commands_preserved_as_comments",
+            "reading_py_sha256"
+          ]
+        },
+        {
+          "file": "lessons/06 Alpaca LoRA 推理/复现/outputs/pipeline_verification.json",
+          "sha256": "a5292f902e38649a471e5e8c0fd58d4dc37a5b9df898ace064a1191bc63fda78",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "environment",
+            "fixed_PEFT",
+            "original",
+            "annotated",
+            "structural_and_numerical_results_equal",
+            "limits"
+          ]
+        },
+        {
+          "file": "lessons/06 Alpaca LoRA 推理/复现/outputs/教学验证.json",
+          "sha256": "f955ac29d088238d156704813e4ad3899abe7581aa49d828b8fc6e259dcc08c5",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "original_prompt_no_input",
+            "original_prompt_with_input",
+            "empty_input_same_as_no_input",
+            "teaching_new_tokens"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "07 自动混合精度训练",
+      "notebooks": [
+        {
+          "file": "lessons/07 自动混合精度训练/代码/tutorials/07_fp16_mixed_precision_training.ipynb",
+          "upstream_paths": [
+            "tutorials/07_fp16_mixed_precision_training.ipynb"
+          ],
+          "sha256": "c007e4adba74d83cb577dc55c7df24697ff88c69b820e6b19996a2bfc4c852c7",
+          "cells": 19,
+          "code_cells": 12,
+          "two_preserving_derivatives": [
+            "lessons/07 自动混合精度训练/代码/tutorials/代码注释.ipynb",
+            "lessons/07 自动混合精度训练/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/07 自动混合精度训练/代码/tutorials/07_fp16_mixed_precision_training_代码注释.py"
+          ],
+          "publication_commit": "11777f619cc516a9bd7ba93cf07ca0f5c0376be4"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/07 自动混合精度训练/复现/outputs/annotation_verification.json",
+          "sha256": "4a1bdd1c49fa1d747c5cff52f83e882e97845f7d8c702fd79bc4fd78434bf1fe",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "variants",
+            "all19_notes_present",
+            "annotation_only_comments",
+            "12_code_cells_and1_Markdown_block_AST_equal",
+            "reading_py_AST_equals_original12_code_cells",
+            "reading_py_sha256"
+          ]
+        },
+        {
+          "file": "lessons/07 自动混合精度训练/复现/outputs/training_verification.json",
+          "sha256": "b422002e93f0f9bef3fabf240f5a38a6c98e9f416801bfb08ac6745ed2842e7b",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "environment",
+            "original",
+            "annotated",
+            "all_structural_and_numeric_results_equal",
+            "limits"
+          ]
+        },
+        {
+          "file": "lessons/07 自动混合精度训练/复现/outputs/教学验证.json",
+          "sha256": "0f4fbabca15b836f47d01b9370174fb67b4f43d8e98805a59395d4edfe92d087",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "mnist_shape_path",
+            "rgb224_shape_path",
+            "fc_expected_features",
+            "rgb_actual_features",
+            "saved_cnn_parameters",
+            "fp32_parameter_gib",
+            "approximate_adam_params_grad_two_moments_gib",
+            "conv1_output_batch256_fp32_gib",
+            "scaled_gradient"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale",
+      "notebooks": [
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/bitsandbytes.ipynb",
+          "upstream_paths": [
+            "tutorials/bitsandbytes.ipynb"
+          ],
+          "sha256": "4d1cfa595b0baa1e0c3865f2645d381bfba4d5d1a425c6737792b983642f1cdc",
+          "cells": 3,
+          "code_cells": 1,
+          "two_preserving_derivatives": [
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/bitsandbytes_代码注释.ipynb",
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/bitsandbytes_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/bitsandbytes_代码注释.py"
+          ],
+          "publication_commit": "a4f6786b5129466df68f66aee46cb1e2d76be96b"
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/LLM.int8.ipynb",
+          "upstream_paths": [
+            "tutorials/LLM.int8.ipynb"
+          ],
+          "sha256": "0b5ff8c81b5f5048eefc57a919bce7828899fe7c72a8bd24835c2b934628132f",
+          "cells": 56,
+          "code_cells": 37,
+          "two_preserving_derivatives": [
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/代码注释.ipynb",
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/LLM.int8_代码注释.py"
+          ],
+          "publication_commit": "a4f6786b5129466df68f66aee46cb1e2d76be96b"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/复现/outputs/annotation_verification.json",
+          "sha256": "9be4db8559974572d802f905f0af974411aa10a8dca1647998709b484da6c821",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "all_cells_explained",
+            "code_cells_including_empty55",
+            "Markdown22_pseudocode_explained_and_original_preserved",
+            "original_files_and_image_hashes_matched",
+            "variants"
+          ]
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/复现/outputs/runtime_verification.json",
+          "sha256": "b14787df64056fe224755613b0e8a72f1dfe51b432a6e0aa3f5a43ea15b2d30e",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "environment",
+            "original",
+            "annotated",
+            "runtime_results_equal",
+            "bitsandbytes_config",
+            "OPT6_7B_weights_downloaded",
+            "bitsandbytes_imported_or_installed",
+            "CUDA_int8_kernel_executed",
+            "C4_or_zero_shot_metrics_reproduced"
+          ]
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/复现/outputs/教学验证.json",
+          "sha256": "5750515d0f67b749217680bdeffeeacfb937954123dd4fbf9b07ab1bfc8ab2be",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "outlier_indices",
+            "ground_truth",
+            "original_unrounded_example",
+            "mixed_quantized",
+            "naive_quantized",
+            "mixed_max_abs_error",
+            "naive_max_abs_error",
+            "regular_detail",
+            "zero_scale_guard"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "09 BPE 与 GPT-2 tokenizer",
+      "notebooks": [
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2.ipynb",
+          "upstream_paths": [
+            "tutorials/gpt2.ipynb"
+          ],
+          "sha256": "fbc5d24c92f71334cbee02f3293a51528469d4491a99d3824eadae9bbad88cdd",
+          "cells": 6,
+          "code_cells": 5,
+          "two_preserving_derivatives": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_代码注释.ipynb",
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_代码注释.py"
+          ],
+          "publication_commit": "67d2f20714453f11a9f9265abf9624502e69d464"
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_train_tokenizer.ipynb",
+          "upstream_paths": [
+            "tutorials/gpt2_train_tokenizer.ipynb"
+          ],
+          "sha256": "b5916906f3f4246e6e0d1cb6c7a80712bba000d2f65f2b6d3b9ebe9f584ab9df",
+          "cells": 27,
+          "code_cells": 21,
+          "two_preserving_derivatives": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_train_tokenizer_代码注释.ipynb",
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_train_tokenizer_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_train_tokenizer_代码注释.py"
+          ],
+          "publication_commit": "67d2f20714453f11a9f9265abf9624502e69d464"
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/tokenizer_basics.ipynb",
+          "upstream_paths": [
+            "tutorials/tokenizer_basics.ipynb"
+          ],
+          "sha256": "d5a46395802d3f9db31feb6e777ee727931841a9802f7f16599ef705f71a7569",
+          "cells": 39,
+          "code_cells": 26,
+          "two_preserving_derivatives": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/代码注释.ipynb",
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/tokenizer_basics_代码注释.py"
+          ],
+          "publication_commit": "67d2f20714453f11a9f9265abf9624502e69d464"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/复现/outputs/annotation_verification.json",
+          "sha256": "6694066e80d2579df86bd3181e4811da38fd6246a885cdc73a01cda8fc537b95",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "all72_notes_present",
+            "code_cells_total",
+            "parseable_cells_AST_equal",
+            "included_IPython_shell_cells",
+            "basics22_preserved_SyntaxError",
+            "Markdown2_code_only_comments_and_AST_equal",
+            "originals_and_PNG_hashes_match",
+            "notebook_schemas_valid",
+            "variants"
+          ]
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/复现/outputs/runtime_verification.json",
+          "sha256": "ead56b4e58ece4d9c1f02b48173ffb96a0d745bed7974b37db180b1c2ffd6aab",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "environment",
+            "assets",
+            "original",
+            "annotated",
+            "runtime_results_equal_except_length_sort_ties",
+            "length_sort_ties",
+            "training_corpus_sha256",
+            "scope"
+          ]
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/复现/outputs/教学验证.json",
+          "sha256": "78ca287bfd937dfb6464ac3a4a55e657ad33e83ac69949f589982d48e3c4e64b",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "environment",
+            "gpt2_revision",
+            "original_vocab_size",
+            "new_vocab_size",
+            "training_snippets",
+            "byte_mapping",
+            "sample",
+            "new_ids",
+            "new_tokens",
+            "full_decode",
+            "roundtrip_reload",
+            "old_tokenizer_unchanged",
+            "new_special_token_ids",
+            "new_merges_count",
+            "original_euro_individual_decode",
+            "original_emoji_individual_decode",
+            "python_keyword_count",
+            "new_keyword_presence",
+            "stream_first_run",
+            "stream_second_run",
+            "original_exhaustion",
+            "safe_partial_batch",
+            "weighted_pair_counts"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "10 预训练语料、memory mapping 与 streaming",
+      "notebooks": [
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/pretrain_corpus_大模型预训练语料.ipynb",
+          "upstream_paths": [
+            "tutorials/pretrain_corpus_大模型预训练语料.ipynb"
+          ],
+          "sha256": "a72dab4de6111c0a41674dd41a9efd7593cf3498a282a60cd1107352517f72d3",
+          "cells": 13,
+          "code_cells": 6,
+          "two_preserving_derivatives": [
+            "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/代码注释.ipynb",
+            "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/pretrain_corpus_大模型预训练语料_代码注释.py"
+          ],
+          "publication_commit": "778f2a50416b3b36665297d09ef7c1fc82b1f122"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/复现/outputs/annotation_verification.json",
+          "sha256": "da1c8e6fc258145235e4bcc3b890e22d5f56ee1175fe83126940ec0885a4df19",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "all13_notes_present",
+            "all6_code_AST_equal",
+            "notebook_schemas_valid",
+            "original_and4_images_SHA256_match",
+            "reading_py_AST_equals_original6",
+            "reading_py_sha256",
+            "variants"
+          ]
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/复现/outputs/runtime_verification.json",
+          "sha256": "e09dee1282395968cc397801bd4c2a65e0d7a41a6a5bf019ad5229d546d5d717",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "environment",
+            "original",
+            "annotated",
+            "original_annotated_all6_results_equal",
+            "supplement_path",
+            "supplement_sha256",
+            "independent_teaching_supplement",
+            "GPT2_tokenizer_revision",
+            "GPT2_assets_verified",
+            "original_missing_data_code_not_invented",
+            "C4_Pile_corpus_downloaded",
+            "full_paper_or_large_benchmark_reproduced"
+          ]
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/复现/outputs/教学验证.json",
+          "sha256": "5b90bf87a78d343e96a3ffcc08f26859e4b94264d72fffea92a12deb44c7d227",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "environment",
+            "dataset_type",
+            "stream_type",
+            "disk_table_type",
+            "arrow_source_type",
+            "rows",
+            "dataset_nbytes",
+            "jsonl_bytes",
+            "arrow_file_bytes",
+            "single_row",
+            "slice_rows_1_3",
+            "eager_calls_after_map",
+            "lazy_calls_after_definition",
+            "lazy_calls_after_first_next",
+            "lazy_calls_after_new_take2",
+            "take2",
+            "skip3_first",
+            "stream_len_error",
+            "mapped_char_lengths",
+            "shuffled_ids",
+            "save_reload_equal",
+            "memory_map_verified"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "11 梯度累积 gradient accumulation",
+      "notebooks": [
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/代码/tutorials/gradient_accumulation.ipynb",
+          "upstream_paths": [
+            "tutorials/gradient_accumulation.ipynb"
+          ],
+          "sha256": "0d4ddca7593b5d01a3d2855411f6058b419029519f08c292103123e9d3cd131b",
+          "cells": 28,
+          "code_cells": 15,
+          "two_preserving_derivatives": [
+            "lessons/11 梯度累积 gradient accumulation/代码/tutorials/代码注释.ipynb",
+            "lessons/11 梯度累积 gradient accumulation/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/11 梯度累积 gradient accumulation/代码/tutorials/gradient_accumulation_代码注释.py"
+          ],
+          "publication_commit": "2dcf5ec8cff1decccade55a37d26a15f26250bbe"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/复现/outputs/annotation_verification.json",
+          "sha256": "2fb49a16ec33ec9d7779c205e1deeae2b30429eed88cc88808a522d8cad81e69",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "notes28_complete",
+            "code15_AST_equal",
+            "Markdown5_7_comments_and_AST",
+            "schemas_valid",
+            "original_hashes_match",
+            "reading_py_AST_equal",
+            "reading_py_sha256",
+            "variants"
+          ]
+        },
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/复现/outputs/runtime_verification.json",
+          "sha256": "7c1af076a6b908781c294699bcf0c7c2c926a41857637bda8a4bb9b3d6d302ca",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "environment",
+            "original_code_results",
+            "annotated_code_results",
+            "original_annotated_11_unmodified_cells_equal",
+            "hardware_NVML",
+            "actual_original_Markdown_loops_and_corrected",
+            "Markdown_annotations_results_equal",
+            "CPU_BERT_Trainer_runs",
+            "original_annotated_CPU_Trainer_parameters_exactly_equal",
+            "baseline_accumulation_initial_data_and_parameters_equal",
+            "baseline_accumulation_max_parameter_delta",
+            "supplement_sha256",
+            "BERT_large_downloaded",
+            "CUDA_training_or_original_benchmark_reproduced"
+          ]
+        },
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/复现/outputs/教学验证.json",
+          "sha256": "f759b4a8b1a32a47f403c29a2af65c76a3d307abd5134fa0586aebd6f7262eb4",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "python",
+            "big_batch_gradient",
+            "micro_accumulated_gradient",
+            "central_difference_gradient",
+            "one_update_parameters",
+            "step_each_micro_parameters",
+            "tail_actual_gradient",
+            "tail_divide_by_4_gradient",
+            "tail_ratio",
+            "unequal_big_gradient",
+            "unequal_average_of_means",
+            "unequal_weighted_gradient",
+            "ten_micro_batch_update_boundaries",
+            "two_backward_buffer_additions",
+            "historical_metrics"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "12 LLM SFT 与 SFTTrainer",
+      "notebooks": [
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/llm_training_sft.ipynb",
+          "upstream_paths": [
+            "tutorials/llm_training_sft.ipynb"
+          ],
+          "sha256": "bcbb4c7c4e7e0310a07e8dccf0437eb3e0597031288e2a6332b3c677384dfa51",
+          "cells": 27,
+          "code_cells": 22,
+          "two_preserving_derivatives": [
+            "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/代码注释.ipynb",
+            "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/llm_training_sft_代码注释.py"
+          ],
+          "publication_commit": "495832ddf4657095508477ee452e59de6a65d4a7"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/复现/outputs/annotation_verification.json",
+          "sha256": "0799135e1cb9eebe8fad2d0a0df696fdbcc38633120ddc328694a600bcfb894d",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "cells",
+            "code_indices",
+            "markdown_indices",
+            "schemas_passed",
+            "derived_cells",
+            "code_ast_passed",
+            "reading_ast_passed",
+            "original_lines_preserved",
+            "metadata_and_historical_outputs_preserved",
+            "all_27_notes_present"
+          ]
+        },
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/复现/outputs/runtime_verification.json",
+          "sha256": "35047c2093b47ad19ffc55cd7af7a5e646d46167bc51a4533353df3cf6a89e92",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "scope",
+            "command",
+            "cwd",
+            "python",
+            "platform",
+            "versions",
+            "cuda_available",
+            "tokenizer_path",
+            "tokenizer_revision",
+            "tokenizer_assets",
+            "official_installed_sources",
+            "script_sha256",
+            "original",
+            "annotated",
+            "original_annotated",
+            "not_run"
+          ]
+        },
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/复现/outputs/教学验证.json",
+          "sha256": "13901b2231be0ffab3adbecb1d1369888bf67edbd9e017a3af3a41cb6789d2a4",
+          "recorded_status": "partial",
+          "fields": [
+            "status",
+            "torch_model_run",
+            "tokenizer",
+            "packed_input_ids",
+            "tail_dropped_tokens",
+            "shifted_targets",
+            "packing_preserves_eos_labels_in_v0_4_7",
+            "nonpacking_lm_collator_eos_mask_example",
+            "cross_entropy_example",
+            "lora_q_v_parameters",
+            "vocab_rows_removed",
+            "official_class_executed_with_list_tensor_stub",
+            "source_check"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "13 Gradient checkpointing",
+      "notebooks": [
+        {
+          "file": "lessons/13 Gradient checkpointing/代码/tutorials/gradient_checkpointing.ipynb",
+          "upstream_paths": [
+            "tutorials/gradient_checkpointing.ipynb"
+          ],
+          "sha256": "a2f49289c867c32bf2ac3795c2068586d0840420eccb98ebcc28bd2e67193711",
+          "cells": 23,
+          "code_cells": 12,
+          "two_preserving_derivatives": [
+            "lessons/13 Gradient checkpointing/代码/tutorials/代码注释.ipynb",
+            "lessons/13 Gradient checkpointing/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/13 Gradient checkpointing/代码/tutorials/gradient_checkpointing_代码注释.py"
+          ],
+          "publication_commit": "04d8e75a11f322d7afd7828ddfa3bd41b56b6ccc"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/13 Gradient checkpointing/复现/outputs/annotation_verification.json",
+          "sha256": "df34d0c8397116dd5034354c82c63793ec9c038cdca8bf2400480e0d280f3460",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "cells",
+            "code_indices",
+            "schemas_passed",
+            "derived_cells",
+            "code_AST_passed",
+            "markdown21_AST_passed",
+            "reading_AST_passed",
+            "all_notes_present",
+            "original_lines_metadata_historical_outputs_preserved"
+          ]
+        },
+        {
+          "file": "lessons/13 Gradient checkpointing/复现/outputs/runtime_verification.json",
+          "sha256": "6af12a98ef03136e5b32210df11e47cdafff2b43a1d787cd2b2f9c8bfa00730a",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "command",
+            "cwd",
+            "python",
+            "platform",
+            "versions",
+            "cuda_available",
+            "NVML",
+            "installed_sources",
+            "script_sha256",
+            "supplements",
+            "original",
+            "annotated",
+            "original_annotated",
+            "not_run",
+            "memory_scope"
+          ]
+        },
+        {
+          "file": "lessons/13 Gradient checkpointing/复现/outputs/教学验证.json",
+          "sha256": "0cdbfa489956cb40b5f6ba3d23d0a3a7d3edbbff036bc6de32fd7bdabf1079ae",
+          "recorded_status": "partial",
+          "fields": [
+            "status",
+            "torch_run",
+            "network",
+            "output",
+            "loss",
+            "weight_gradients",
+            "max_gradient_difference",
+            "max_finite_difference_error",
+            "input_gradient",
+            "baseline_forward_calls",
+            "replay_forward_calls_total",
+            "baseline_activation_slots",
+            "replay_activation_slots_peak",
+            "slot_definition",
+            "rng_masks",
+            "source_checks",
+            "historical_comparison"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "14 Llama 2 introduction 与 Guanaco",
+      "notebooks": [
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/llama2_introduction.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_introduction.ipynb"
+          ],
+          "sha256": "b27440095f45a608b79666bf967276621f256ab252e7b156b758e22b73435ab6",
+          "cells": 23,
+          "code_cells": 16,
+          "two_preserving_derivatives": [
+            "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/代码注释.ipynb",
+            "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/llama2_introduction_代码注释.py"
+          ],
+          "publication_commit": "548b8a91a2ef925ea9430b0c9379d45611a3e6c7"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/复现/outputs/annotation_verification.json",
+          "sha256": "fc7bc06cbf7e9e5d0cfb7023d8fb98ac79021587c37b5cb462472664b4583774",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "original_sha256",
+            "cells",
+            "code_indices",
+            "schemas_passed",
+            "derived_cells",
+            "code_AST_passed",
+            "reading_AST_passed",
+            "markdown15_shell_commands",
+            "shell_semantics_preserved",
+            "all_23_notes",
+            "original_lines_metadata_historical_outputs_preserved"
+          ]
+        },
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/复现/outputs/runtime_verification.json",
+          "sha256": "09e09c573960e6097740053584db9270f22ed438f2f73440cf1b48ea499a0784",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "command",
+            "cwd",
+            "python",
+            "platform",
+            "versions",
+            "cuda_available",
+            "assets",
+            "installed_sources",
+            "script_sha256",
+            "original",
+            "annotated",
+            "original_annotated_generation_exact",
+            "cli",
+            "meta_7B_logical_parameter_count",
+            "not_run"
+          ]
+        },
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/复现/outputs/教学验证.json",
+          "sha256": "b172a2cac5fcf5a67ac7ffcabef3226cce60a96b9c28dc38852a1c9522dc63c8",
+          "recorded_status": "partial",
+          "fields": [
+            "status",
+            "model_training",
+            "tokenizer_runtime",
+            "tokenizer_sha256",
+            "special_ids",
+            "vocab",
+            "own_text_token_counts",
+            "roundtrip",
+            "chat_prompt_tokens_including_single_bos",
+            "delimiter_token_counts",
+            "samples",
+            "script_defaults",
+            "logical_parameters",
+            "default_q_v_lora_parameters",
+            "lora_scale",
+            "micro_batches_per_epoch",
+            "planned_optimizer_steps",
+            "raw_formula_fractional_steps",
+            "fp16_weight_gib",
+            "context_budget"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "15 Llama 2 text 与 chat completion",
+      "notebooks": [
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_01.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_01.ipynb"
+          ],
+          "sha256": "b537815b1f94a1be6d33d4e05d2bb290372408dfd9f2f4027b3c77400c0a839c",
+          "cells": 12,
+          "code_cells": 3,
+          "two_preserving_derivatives": [
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/代码注释.ipynb",
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_01_代码注释.py"
+          ],
+          "publication_commit": "e245edff790afd307df3677f40593a8eb74eb01a"
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_text_chat.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_text_chat.ipynb"
+          ],
+          "sha256": "fd822495540fb813a0bb4697a75e3abaf08aeefec2d84eada1123f20b84b686e",
+          "cells": 16,
+          "code_cells": 9,
+          "two_preserving_derivatives": [
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_text_chat_代码注释.ipynb",
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_text_chat_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/15 Llama 2 text 与 chat completion/代码/tutorials/llama2_src_text_chat_代码注释.py"
+          ],
+          "publication_commit": "e245edff790afd307df3677f40593a8eb74eb01a"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/复现/outputs/annotation_verification.json",
+          "sha256": "86d2ed1c0541155230472ff25b71709ca6cdb6c4abf5a8320e42d4c221d699b4",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "llama2_src_01",
+            "llama2_src_text_chat",
+            "markdown_shell_commands"
+          ]
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/复现/outputs/runtime_verification.json",
+          "sha256": "19c36afcdd6f8bd65c82866c44a3ad1cc1dfa1e695a2fdf579e360e3e2e4f27b",
+          "recorded_status": "部分成功",
+          "fields": [
+            "notebook",
+            "torch",
+            "fairscale",
+            "cuda_available",
+            "distributed_backend",
+            "world_size",
+            "official_build_run",
+            "model_device",
+            "dtype",
+            "model_config",
+            "parameters",
+            "model_changes",
+            "generation_changes",
+            "text_outputs",
+            "text_trace",
+            "chat_output",
+            "chat_trace",
+            "dialog_unchanged",
+            "real_generate_logprobs_negative_case",
+            "role_errors",
+            "unsafe_still_runs_model",
+            "real_text_echo_output",
+            "six_dialogs_outputs",
+            "six_trace",
+            "batch4_rejected",
+            "batch8_accepted",
+            "controlled_weights_EOS",
+            "not_run",
+            "sources",
+            "tokenizer_sha256",
+            "scripts",
+            "command",
+            "status"
+          ]
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/复现/outputs/教学验证.json",
+          "sha256": "ba95d9b9a82aef70205a40f327fc62decdf8d48bfffeda795260fc2f38689890",
+          "recorded_status": "partial",
+          "fields": [
+            "status",
+            "real_model_generate",
+            "executed_official_methods",
+            "generator",
+            "tokenizer_sha256",
+            "text_prompt_bos",
+            "chat_prompt_token_count",
+            "history_bos_count",
+            "history_eos_count",
+            "input_dialog_unchanged",
+            "no_default_system_injection",
+            "default_chat_max_gen_len",
+            "invalid_dialog_errors",
+            "unsafe_prompt_still_calls_generate",
+            "unsafe_logprobs_metadata_still_returned",
+            "official_example_dialogs",
+            "official_example_prompt_lengths",
+            "max_batch_four_rejected",
+            "max_batch_eight_accepted",
+            "slice_example_continuation",
+            "text_example_default_max_gen_len"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "16 TRL 基础与 reward PPOTrainer",
+      "notebooks": [
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/trl_basics.ipynb",
+          "upstream_paths": [
+            "tutorials/trl_basics.ipynb",
+            "tutorials/trl_hf/trl_basics.ipynb"
+          ],
+          "sha256": "1d0ec8e4f196914257158d18a48746b12561fa68100aeb778105720bd8b8d474",
+          "cells": 42,
+          "code_cells": 28,
+          "two_preserving_derivatives": [
+            "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/代码注释.ipynb",
+            "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/trl_basics_代码注释.py"
+          ],
+          "publication_commit": "962770d7d18b016ef5eb358b9a8e6e0ae19a0726"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/复现/outputs/annotation_verification.json",
+          "sha256": "7da6bd4158b7b37081b53090e5a7a30c237d6a06dd5e938d12ddf43589c571e1",
+          "recorded_status": "no aggregate status; inspect detailed fields",
+          "fields": [
+            "cells",
+            "code_indices",
+            "derived_cells",
+            "schemas",
+            "AST",
+            "reading_AST",
+            "all_notes",
+            "metadata_historical_outputs_original_lines",
+            "markdown10_shell_commands",
+            "markdown31"
+          ]
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/复现/outputs/runtime_verification.json",
+          "sha256": "e3761fea89c8314479fc050ffedba07a45498870a07ffad02bc747bfad8d1a51",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "command",
+            "python",
+            "torch",
+            "transformers",
+            "trl",
+            "cuda_available",
+            "tokenizer_json_sha256",
+            "tokenizer_scope",
+            "PPOTrainer_source",
+            "scripts",
+            "original",
+            "annotated",
+            "states_exact",
+            "generation_exact",
+            "numerical_stats_exact",
+            "corrected",
+            "not_run"
+          ]
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/复现/outputs/教学验证.json",
+          "sha256": "f4d40624e6bc151da76ecca8c87b72141afb1b590f014c8441495a051e739b50",
+          "recorded_status": "partial",
+          "fields": [
+            "status",
+            "torch_training",
+            "tokenizer",
+            "tokenizer_sha256",
+            "query_ids",
+            "query_length",
+            "wrong_response_length",
+            "wrong_combined_length",
+            "correct_response_length",
+            "correct_combined_length",
+            "wrong_mask_target_count",
+            "correct_mask_target_count",
+            "sampled_log_ratios",
+            "full_distribution_kl",
+            "kl_shaped_rewards_with_score_on_last",
+            "raw_gae_advantages",
+            "returns",
+            "positive_advantage_clipped_loss",
+            "negative_advantage_loss",
+            "finite_difference_clipped_derivative",
+            "value_head_parameters",
+            "ppo_defaults",
+            "source_checks"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "17 RMSNorm 与 SwiGLU",
+      "notebooks": [
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/llama2_src_02_RMSNorm_SwiGLU.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_02_RMSNorm_SwiGLU.ipynb"
+          ],
+          "sha256": "a90ee5e811cf42d3a3f3496f0d6449d7def728f497a57525b8bfe6bfd834a61f",
+          "cells": 28,
+          "code_cells": 20,
+          "two_preserving_derivatives": [
+            "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/代码注释.ipynb",
+            "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py"
+          ],
+          "publication_commit": "7f61e8148841a3d362169464669b6ca9fa3ba842"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/复现/outputs/完整交付验证.json",
+          "sha256": "4107ba50fa7f8f93ae07bdd7e164e7a75d3b14d120a1810b2ba868fec5d4787f",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "environment",
+            "external_execution_controls",
+            "audit",
+            "notebook",
+            "rmsnorm",
+            "silu",
+            "swiglu",
+            "official_source_sha256",
+            "verification_script_sha256",
+            "limits"
+          ]
+        },
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/复现/outputs/教学验证.json",
+          "sha256": "725c70b206cff0c85214303d91fac14716bc1efc590bf61aa5c598583b15575b",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "numpy",
+            "seed",
+            "input_shape",
+            "ln_mean_max_abs",
+            "rms_mean_not_forced_zero",
+            "rms_l2_min_max",
+            "sqrt10",
+            "gain2_l2",
+            "rms_gradient_max_error",
+            "silu_values",
+            "ffn_input_shape",
+            "ffn_hidden_shape",
+            "ffn_output_shape",
+            "ffn_gradient_max_error",
+            "official_forward",
+            "llama_7b_ffn_width",
+            "swiglu_parameters_per_layer",
+            "standard_4d_ffn_parameters",
+            "limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "18 RoPE 复数形式",
+      "notebooks": [
+        {
+          "file": "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_03_RoPE.ipynb"
+          ],
+          "sha256": "000ecf521d2154e4483865ae2edd620829266416461c2a2888d6c75c977053c9",
+          "cells": 29,
+          "code_cells": 19,
+          "two_preserving_derivatives": [
+            "lessons/18 RoPE 复数形式/代码/tutorials/代码注释_RoPE总览.ipynb",
+            "lessons/18 RoPE 复数形式/代码/tutorials/原代码_带说明_RoPE总览.ipynb"
+          ],
+          "reading_python": [
+            "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE_代码注释.py"
+          ],
+          "publication_commit": "9ef4aeb33bd13db56c20e9e4323ffd5d137438dd"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_03_RoPE_01_complex_position_encoding.ipynb"
+          ],
+          "sha256": "678878a734027baf88ef14e9043b57ac96407cdf66c28e68c07bd98a46d87b4c",
+          "cells": 29,
+          "code_cells": 16,
+          "two_preserving_derivatives": [
+            "lessons/18 RoPE 复数形式/代码/tutorials/代码注释.ipynb",
+            "lessons/18 RoPE 复数形式/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding_代码注释.py"
+          ],
+          "publication_commit": "9ef4aeb33bd13db56c20e9e4323ffd5d137438dd"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/18 RoPE 复数形式/复现/outputs/完整交付验证.json",
+          "sha256": "c36fc331c9b1fcf855a9f2bdf72d82313fc3bbd6cc77684bec79cfe42f4b7cb1",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "environment",
+            "audit",
+            "original_image",
+            "execution",
+            "global_variable_bug",
+            "mathematical_checks",
+            "official_source_sha256",
+            "verification_script_sha256",
+            "original_screenshot_code",
+            "limitations"
+          ]
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/复现/outputs/教学验证.json",
+          "sha256": "33b965b40a51b16aecca654934d5ee402613b2aa86bd686920bbf6d652d7ddb0",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "execution",
+            "python",
+            "torch",
+            "numpy",
+            "matplotlib",
+            "device",
+            "executed_code_cells",
+            "real_sin_class_parameters",
+            "pe_shape",
+            "complex_frequency_shape",
+            "complex_dtype",
+            "frequencies_dim6",
+            "real_complex_pe_max_error",
+            "missing_dim_denominator_max_error",
+            "complex_table_bytes_dim6_end10",
+            "real_imag_pair_bytes",
+            "rotation_matrix_max_error",
+            "norm_error",
+            "rotated_dot",
+            "relative_complex_dot",
+            "relative_matrix_dot",
+            "common_shift_dot",
+            "wrong_no_conjugate_dot",
+            "polar_angle_gradient_max_error",
+            "odd_dim_real_class_error",
+            "odd_dim_precompute_shape",
+            "odd_dim_complex_sin_shape",
+            "limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "19 RoPE apply_rotary_emb",
+      "notebooks": [
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_03_RoPE_apply_rotary_emb.ipynb"
+          ],
+          "sha256": "59fb6124d4c14dfe40c1cb1053a43458f0b745183447195abab18e3609d94f1e",
+          "cells": 27,
+          "code_cells": 15,
+          "two_preserving_derivatives": [
+            "lessons/19 RoPE apply_rotary_emb/代码/tutorials/代码注释.ipynb",
+            "lessons/19 RoPE apply_rotary_emb/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/19 RoPE apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py"
+          ],
+          "publication_commit": "73be85f87cc61b52bea0260bacef1b131db0c939"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/复现/outputs/完整交付验证.json",
+          "sha256": "13d0339437717ece8d9aae87d6de22924a7f398f5797df75ce52d2ba40b90717",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "environment",
+            "audit",
+            "execution",
+            "rotary",
+            "curve",
+            "official_source_sha256",
+            "verification_script_sha256",
+            "official_reading_sha256",
+            "limitations"
+          ]
+        },
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/复现/outputs/教学验证.json",
+          "sha256": "ec755c1345fa06fbde45558ba7418f440decc1fab85c5783234073e04193dda9",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "python",
+            "torch",
+            "numpy",
+            "sentencepiece",
+            "device",
+            "seed",
+            "executed_code_cells",
+            "token_ids",
+            "original_missing_helper_error",
+            "official_functions",
+            "query_shape",
+            "key_shape",
+            "phase_shape",
+            "broadcast_shape",
+            "forward_max_error",
+            "gradient_max_error",
+            "relative_score_max_error",
+            "common_shift_max_error",
+            "restart_position_output_error",
+            "inputs_unchanged",
+            "dtype_checks",
+            "strided_input_error",
+            "odd_dim_error",
+            "wrong_phase_shape_error",
+            "silent_wrong_broadcast_max_error",
+            "phase_statistic_at_zero",
+            "phase_statistic_at_255",
+            "phase_statistic_increasing_steps",
+            "limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "20 KV cache 与增量推理",
+      "notebooks": [
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/tutorials/llama2_src_cache_kv.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_cache_kv.ipynb"
+          ],
+          "sha256": "2cde7e6eafb8994ce4d394c42bff5b8e606129c6e2ce94fbfcd18cb53029865c",
+          "cells": 25,
+          "code_cells": 14,
+          "two_preserving_derivatives": [
+            "lessons/20 KV cache 与增量推理/代码/tutorials/代码注释.ipynb",
+            "lessons/20 KV cache 与增量推理/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/20 KV cache 与增量推理/代码/tutorials/llama2_src_cache_kv_代码注释.py"
+          ],
+          "publication_commit": "6e8f2da83c56fd4814467dbd148b4f30e983bcba"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/20 KV cache 与增量推理/复现/outputs/完整交付验证.json",
+          "sha256": "b25bb9336366d4f4b16419fa010b247dfd748e7e9a05119f987110156d9d035a",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "static",
+            "environment",
+            "meta",
+            "transformers",
+            "script_sha256",
+            "reading_artifact_sha256",
+            "not_run"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "21 GQA 与分组查询注意力",
+      "notebooks": [
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/代码/tutorials/llama2_src_grouped_query_attention.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_grouped_query_attention.ipynb"
+          ],
+          "sha256": "2a5aa309d0b7b5b6fb4e702fc90d7f5b8eea1a20e63ea8aaa89c740c27c0ad56",
+          "cells": 5,
+          "code_cells": 2,
+          "two_preserving_derivatives": [
+            "lessons/21 GQA 与分组查询注意力/代码/tutorials/代码注释.ipynb",
+            "lessons/21 GQA 与分组查询注意力/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/21 GQA 与分组查询注意力/代码/tutorials/llama2_src_grouped_query_attention_代码注释.py"
+          ],
+          "publication_commit": "1615e1b49f725124c5fad9b9e5b9805d08f8252d"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/复现/outputs/完整交付验证.json",
+          "sha256": "3de23de537047a0b09f0ed600d538d5593d4435256b477ae6272b61e5fc19be6",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "static",
+            "environment",
+            "official_source_sha256",
+            "original_cuda_failure",
+            "cpu_changes",
+            "world_size",
+            "backend",
+            "repeat_kv",
+            "attention_forward_backward",
+            "tied_mha_and_pooling",
+            "incremental_and_invalid",
+            "dtype_scope",
+            "scripts_sha256",
+            "reading_sha256",
+            "not_run"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "22 Llama generate 完整流程",
+      "notebooks": [
+        {
+          "file": "lessons/22 Llama generate 完整流程/代码/tutorials/llama2_src_generate.ipynb",
+          "upstream_paths": [
+            "tutorials/llama2_src_generate.ipynb"
+          ],
+          "sha256": "03fd991e95312f50e2dd3465e3c6fe5d8d22ba69f74993a8100ff8c0e1dc94dd",
+          "cells": 17,
+          "code_cells": 4,
+          "two_preserving_derivatives": [
+            "lessons/22 Llama generate 完整流程/代码/tutorials/代码注释.ipynb",
+            "lessons/22 Llama generate 完整流程/代码/tutorials/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/22 Llama generate 完整流程/代码/tutorials/llama2_src_generate_代码注释.py"
+          ],
+          "publication_commit": "0c182bf5748286e75554061ced4719d04448be3c"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/22 Llama generate 完整流程/复现/outputs/runtime_verification.json",
+          "sha256": "45c3bb6fd9cda8f90623630c96342bf028edc445ac0157a850cc5c5157924c1b",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "static",
+            "original_and_annotated_execution",
+            "runtime",
+            "environment",
+            "artifact_sha256"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "23 TRL Reward Model 与 RewardTrainer",
+      "notebooks": [
+        {
+          "file": "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/trl_reward_trainer.ipynb",
+          "upstream_paths": [
+            "tutorials/reward_model/trl_reward_trainer.ipynb"
+          ],
+          "sha256": "271eed4af8c5e40ffc219dae4a6f2e934b20c2e736c739137f3ec4f85f3672db",
+          "cells": 37,
+          "code_cells": 29,
+          "two_preserving_derivatives": [
+            "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/代码注释.ipynb",
+            "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/trl_reward_trainer_代码注释.py"
+          ],
+          "publication_commit": "b6e98b3d38bdda0f8405b0d800575a85490f6a0d"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/23 TRL Reward Model 与 RewardTrainer/复现/outputs/runtime_verification.json",
+          "sha256": "7e7fea4f5de9f359d36f231f08d78d165b9c9a8730060e7a189a2b7e09b72aeb",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "static",
+            "original",
+            "annotated",
+            "states_exact_equal",
+            "additional",
+            "environment",
+            "artifact_sha256",
+            "limits"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "24 PEFT LoRA merge 与 SVD",
+      "notebooks": [
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_inject.ipynb",
+          "upstream_paths": [
+            "tutorials/peft/lora_inject.ipynb"
+          ],
+          "sha256": "25a7d53a37fe49730934e036f488774f1f36ae2530ad890aa2d5a39984aabf67",
+          "cells": 18,
+          "code_cells": 14,
+          "two_preserving_derivatives": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/inject_代码注释.ipynb",
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/inject_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_inject_代码注释.py"
+          ],
+          "publication_commit": "b95c6d207d8a82b6d533f253ec91f715e04af84a"
+        },
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_merge.ipynb",
+          "upstream_paths": [
+            "tutorials/peft/lora_merge.ipynb"
+          ],
+          "sha256": "158d194b56ebd96b233caa35e7dd93b9d9344f7a7f03721ae8b193423ff68139",
+          "cells": 59,
+          "code_cells": 46,
+          "two_preserving_derivatives": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/代码注释.ipynb",
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_merge_代码注释.py"
+          ],
+          "publication_commit": "b95c6d207d8a82b6d533f253ec91f715e04af84a"
+        },
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_svd_basics.ipynb",
+          "upstream_paths": [
+            "tutorials/peft/lora_svd_basics.ipynb"
+          ],
+          "sha256": "e17ecee08a02c0fe1a76f4a4e4710e61284e9f9262f2f4412fbab05cddbc7f77",
+          "cells": 21,
+          "code_cells": 17,
+          "two_preserving_derivatives": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/svd_代码注释.ipynb",
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/svd_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_svd_basics_代码注释.py"
+          ],
+          "publication_commit": "b95c6d207d8a82b6d533f253ec91f715e04af84a"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/复现/outputs/delivery_verification.json",
+          "sha256": "77c4779c71a29e02323473c236c7bd486b55845e72dedb563e86ca8be3af803f",
+          "recorded_status": "部分成功",
+          "fields": [
+            "status",
+            "static",
+            "environment",
+            "verification_script_sha256",
+            "builder_sha256",
+            "injection",
+            "svd_basics",
+            "cpu_fixture",
+            "merge",
+            "limits"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "25 Llama 3 introduction",
+      "notebooks": [
+        {
+          "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/llama3_0419.ipynb",
+          "upstream_paths": [
+            "tutorials/llama/llama3_0419.ipynb"
+          ],
+          "sha256": "98a52e7994f5555cfcdada2ab6eaa48e207107e0d873dcd653264fd462803f37",
+          "cells": 38,
+          "code_cells": 23,
+          "two_preserving_derivatives": [
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/代码注释.ipynb",
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/llama3_0419_代码注释.py"
+          ],
+          "publication_commit": "c2b8a1d629c90d68aa93a0ef9ddca9f066b2b3e9"
+        },
+        {
+          "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/llama3_supp_data_config.ipynb",
+          "upstream_paths": [
+            "tutorials/llama/llama3_supp_data_config.ipynb"
+          ],
+          "sha256": "4359d2daf2da9f654767d7789fc3fc038e879a2d9044631ce325b93afebd676e",
+          "cells": 11,
+          "code_cells": 4,
+          "two_preserving_derivatives": [
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/supp_代码注释.ipynb",
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/supp_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/25 Llama 3 introduction/代码/tutorials/llama/llama3_supp_data_config_代码注释.py"
+          ],
+          "publication_commit": "c2b8a1d629c90d68aa93a0ef9ddca9f066b2b3e9"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/25 Llama 3 introduction/复现/outputs/delivery_verification.json",
+          "sha256": "1550c501a58cdf71fc80cebef8cb1ea71fd59cbd99477c360edadf4f3ccdf41c",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "scope",
+            "environment",
+            "skipped",
+            "preservation",
+            "tokenizers",
+            "full_meta_configs",
+            "notebook_execution",
+            "fairscale",
+            "markdown",
+            "derived_math",
+            "scripts_sha256"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "26 GPT-4o tokenizer 与 o200k_base",
+      "notebooks": [
+        {
+          "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_gpt4o.ipynb",
+          "upstream_paths": [
+            "tutorials/tokenizer/tokenizer_gpt4o.ipynb"
+          ],
+          "sha256": "00112c8b27da012f21ddb83e858692778a654aa068f9893110c859596563880a",
+          "cells": 21,
+          "code_cells": 15,
+          "two_preserving_derivatives": [
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/代码注释.ipynb",
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_gpt4o_代码注释.py"
+          ],
+          "publication_commit": "ecaa1d8daeec4d47688ef5ccd13480f952e57dd2"
+        },
+        {
+          "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_supply.ipynb",
+          "upstream_paths": [
+            "tutorials/tokenizer/tokenizer_supply.ipynb"
+          ],
+          "sha256": "fa6fac24ee7a3613e1d2aaa4d3b481540d27fa7ee33e55601483cd21715ccbf3",
+          "cells": 12,
+          "code_cells": 10,
+          "two_preserving_derivatives": [
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/supp_代码注释.ipynb",
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/supp_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_supply_代码注释.py"
+          ],
+          "publication_commit": "ecaa1d8daeec4d47688ef5ccd13480f952e57dd2"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/复现/outputs/delivery_verification.json",
+          "sha256": "8392977d3276a73fe64867795b1a83155a0619a9669318d825e6ea098287f237",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "preservation",
+            "environment",
+            "not_run",
+            "original",
+            "annotated",
+            "all_literal_outputs_and_scan_order_equal",
+            "diagnostics",
+            "corpus",
+            "invalid_id_original_decode_exception",
+            "empty_language_detection_error",
+            "scripts_sha256"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "27 TRL RLHF PPOTrainer 与 OpenRLHF",
+      "notebooks": [
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/trl_ppotrainer_helloworld.ipynb",
+          "upstream_paths": [
+            "tutorials/trl_hf/trl_ppotrainer_helloworld.ipynb"
+          ],
+          "sha256": "b1e02b5446c40dadb1abd4f582d24c8492f6128ce6e5ee44853ef30255fb44fe",
+          "cells": 33,
+          "code_cells": 25,
+          "two_preserving_derivatives": [
+            "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/代码注释.ipynb",
+            "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/trl_ppotrainer_helloworld_代码注释.py"
+          ],
+          "publication_commit": "294eced2e98188d23568a5a608d698070b4ce575"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/复现/outputs/delivery_verification.json",
+          "sha256": "38b1aad8f13d474a0cd6cc819032fdfb57bb9b6db59096ef496b8a6802af1af5",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "preservation",
+            "environment",
+            "original",
+            "annotated",
+            "states_and_non_timing_outputs_exactly_equal",
+            "diagnostics",
+            "not_run",
+            "scripts_sha256"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "28 从 RoPE 到 CoPE",
+      "notebooks": [
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/rope_cope.ipynb",
+          "upstream_paths": [
+            "tutorials/position_encoding/rope_cope.ipynb"
+          ],
+          "sha256": "f27bf3827dea49112ecc6d0dc4d883295b05aea90d8e12a1974184879c900200",
+          "cells": 40,
+          "code_cells": 25,
+          "two_preserving_derivatives": [
+            "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/代码注释.ipynb",
+            "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/rope_cope_代码注释.py"
+          ],
+          "publication_commit": "534861d7851c066a87ed378b795113042484494e"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/复现/outputs/delivery_verification.json",
+          "sha256": "c23843b825bc6d69cf50589a1870a4f074866cb60b143b2ba297dc1b5f29a5e9",
+          "recorded_status": "passed",
+          "fields": [
+            "status",
+            "preservation",
+            "environment",
+            "original_trace",
+            "annotated_trace",
+            "all25_original_code_cells_literal",
+            "Markdown39_classes_executed_both_versions",
+            "all_traces_and_diagnostics_equal",
+            "RoPE",
+            "CoPE",
+            "not_run",
+            "scripts_sha256"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "29 Llama2 7B vs Llama3 8B",
+      "notebooks": [
+        {
+          "file": "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/llama2_7b_llama3_8b.ipynb",
+          "upstream_paths": [
+            "tutorials/llama/llama2_7b_llama3_8b.ipynb"
+          ],
+          "sha256": "1612ce999944c3d0b91970cf023ae7edaee6146b7797ded5b73db332a07dd063",
+          "cells": 24,
+          "code_cells": 15,
+          "two_preserving_derivatives": [
+            "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/代码注释.ipynb",
+            "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/llama2_7b_llama3_8b_代码注释.py"
+          ],
+          "publication_commit": "5232fee42e0dde5a5c21337b1b285d341489bbe8"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/29 Llama2 7B vs Llama3 8B/复现/outputs/delivery_verification.json",
+          "sha256": "d0fbbcfe839b0078b17d59c777fc65c1e08318a3aa8429726d57c5480dbfc4d9",
+          "recorded_status": "passed",
+          "fields": [
+            "preservation",
+            "full_meta",
+            "tiny_real",
+            "boundaries",
+            "core",
+            "environment",
+            "not_run",
+            "scripts_sha256",
+            "status"
+          ]
+        }
+      ]
+    },
+    {
+      "lecture": "30 InstructGPT reward modeling",
+      "notebooks": [
+        {
+          "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/bradley_terry_modeling.ipynb",
+          "upstream_paths": [
+            "tutorials/reward_model/bradley_terry_modeling.ipynb"
+          ],
+          "sha256": "c5755374582c28d39a1189434b57b63882df2c50e1841bd26eb79a9db127336a",
+          "cells": 8,
+          "code_cells": 5,
+          "two_preserving_derivatives": [
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/bradley_terry_modeling_代码注释.ipynb",
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/bradley_terry_modeling_原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/bradley_terry_modeling_代码注释.py"
+          ],
+          "publication_commit": "7241221d6ffa88ea1fb72aff9576609314ec91ef"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/reward_model_Bradley_Terry_model.ipynb",
+          "upstream_paths": [
+            "tutorials/reward_model/reward_model_Bradley_Terry_model.ipynb"
+          ],
+          "sha256": "1a2abb7e2d6b8839b523cd5930cd9a4406fe2b5dcc261c5eb5405fe568288cd7",
+          "cells": 27,
+          "code_cells": 12,
+          "two_preserving_derivatives": [
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/代码注释.ipynb",
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/原代码_带说明.ipynb"
+          ],
+          "reading_python": [
+            "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/reward_model_Bradley_Terry_model_代码注释.py"
+          ],
+          "publication_commit": "7241221d6ffa88ea1fb72aff9576609314ec91ef"
+        }
+      ],
+      "existing_execution_evidence": [
+        {
+          "file": "lessons/30 InstructGPT reward modeling/复现/outputs/delivery_verification.json",
+          "sha256": "f7ea9de9cd6bf92ad02d0bdc46fba4682b477b1450318fc6456a5141b0dbb9d2",
+          "recorded_status": "passed",
+          "fields": [
+            "preservation",
+            "literal_execution_main",
+            "literal_execution_supplement",
+            "loss_math",
+            "scipy_likelihood",
+            "real_reward_model",
+            "environment",
+            "not_run",
+            "scripts_sha256",
+            "teaching_code_sha256",
+            "status"
+          ]
+        }
+      ]
+    }
+  ],
+  "exceptions": [
+    "03: IPython-only commands retained as comments in Python reading; all ordinary Python statements match AST.",
+    "05: IPython-only commands retained as comments in Python reading; all ordinary Python statements match AST.",
+    "06: IPython-only commands retained as comments in Python reading; all ordinary Python statements match AST.",
+    "09 tokenizer_basics cell22: original SyntaxError preserved in notebooks; invalid cell commented in Python reading."
+  ],
+  "totals": {
+    "lectures": 30,
+    "original_notebooks": 40,
+    "original_cells": 988,
+    "original_code_cells": 623,
+    "derivative_notebooks": 80,
+    "distinct_original_publication_commits": 30
+  },
+  "limitations": [
+    "Existing per-lecture execution records are inventoried, not a fresh full training rerun.",
+    "Sections and Chinese-note checks establish coverage; they do not automatically prove pedagogical quality.",
+    "Original-model training, GPU benchmarks and quality claims remain bounded by each lecture reproduction README."
+  ],
+  "status": "passed",
+  "audit_script_sha256": "49353d0e1fc29c4be6246f94472ec184c6bb3ad5e668edb697d56fbb2191beb6"
+}
