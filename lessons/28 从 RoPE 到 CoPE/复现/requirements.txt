@@ -1,0 +1,5 @@
+# Windows Python3.12，本讲无模型/语料下载和付费API。
+torch==2.5.1
+numpy==1.26.4
+nbformat==5.10.4
+ipython

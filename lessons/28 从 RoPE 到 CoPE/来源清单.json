@@ -1,0 +1,18 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": {
+    "代码/tutorials/position_encoding/rope_cope.ipynb": "f27bf3827dea49112ecc6d0dc4d883295b05aea90d8e12a1974184879c900200",
+    "代码/imgs/4d_rotation.png": "85222cc252c633983e61b49aaf0d23286c2fee05aab4a217470675c9fa031086",
+    "代码/imgs/cope.png": "228056752793951dca8311e77816ba069049da3c5a1fc403fc196be0bd346500",
+    "代码/imgs/rel_position_matrix.png": "de381c6bfa2df8460552685e535d3f55a7560e0f324461e384fe72fb9c961b66",
+    "代码/imgs/rope_1.png": "00063bab91b9823fc801abb320ddb83ca0f2942c8ffe31174d3612f74b6e5a39",
+    "代码/imgs/rope_2.png": "09b3b27dc7c1e9e3caf4295ec5be725806b32b8106076e786906abe57b1e7fe0",
+    "代码/imgs/rope_paper.png": "e5b679083a93e80ffed49bcfb19ea537f528c9694ba80f56aa0afb5d6c6d8907"
+  },
+  "paper": "https://arxiv.org/abs/2405.18719v2",
+  "paper_code": "Appendix B Listing1，已通过PDF文本逐行核对；不是Git仓库原文件",
+  "official_repository": "未找到可核实并锁定的独立官方工程；论文附录为本讲实现依据",
+  "subtitle": "E:/05717ac9-bf18-46c2-b4c4-3ea2f2c1a2ca.txt，仅本地保存",
+  "remote_image_cell4": "URL原样保留；未验证图片内容",
+  "pdf_download": "系统curl TLS握手失败；通过web读取固定v2 PDF，不声明本地原论文.pdf存在"
+}

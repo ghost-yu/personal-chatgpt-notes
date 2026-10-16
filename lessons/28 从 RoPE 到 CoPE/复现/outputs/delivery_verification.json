@@ -1,0 +1,1135 @@
+{
+  "status": "passed",
+  "preservation": {
+    "cells": 40,
+    "code_cells": 25,
+    "schemas": 3,
+    "derived_cells": 81,
+    "raw_git_bytes": true,
+    "metadata_historical_outputs": true,
+    "code_ast_and_tokens": true,
+    "markdown_code_blocks_5_9_39": true,
+    "python_reading_ast": true,
+    "complete_cope_and_selfattn_ast": true,
+    "standalone_core_python_import": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "nbformat": "5.10.4",
+    "cuda_available": false,
+    "threads": 1,
+    "external_seed_original_cells": 28
+  },
+  "original_trace": [
+    {
+      "cell": 0,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 4,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "https://miro.medium.com/v2/resize:fit:786/format:webp/1*iJqlhZz-g6ZQJ53-rE9VvA.png"
+      }
+    },
+    {
+      "cell": 10,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_paper.png"
+      }
+    },
+    {
+      "cell": 11,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 12,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          3,
+          2
+        ],
+        "value": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.5403022766113281,
+              0.8414709568023682
+            ],
+            [
+              0.9999499917030334,
+              0.009999833069741726
+            ]
+          ],
+          [
+            [
+              -0.416146844625473,
+              0.9092974066734314
+            ],
+            [
+              0.9998000264167786,
+              0.019998665899038315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 14,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          1
+        ],
+        "value": [
+          [
+            -0.416146844625473,
+            0.9092974066734314
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 15,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          3,
+          2
+        ],
+        "value": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.5403022766113281,
+              0.8414709568023682
+            ],
+            [
+              0.9999499917030334,
+              0.009999833069741726
+            ]
+          ],
+          [
+            [
+              -0.416146844625473,
+              0.9092974066734314
+            ],
+            [
+              0.9998000264167786,
+              0.019998665899038315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 18,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/4d_rotation.png"
+      }
+    },
+    {
+      "cell": 19,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_1.png"
+      }
+    },
+    {
+      "cell": 20,
+      "status": "literal",
+      "stdout": "",
+      "display": [
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              0.8660253882408142,
+              -0.5,
+              0.0,
+              0.0
+            ],
+            [
+              0.5,
+              0.8660253882408142,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.4999999701976776,
+              -0.8660253882408142
+            ],
+            [
+              0.0,
+              0.0,
+              0.8660253882408142,
+              0.4999999701976776
+            ]
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              0.8660253882408142,
+              -0.5,
+              0.0,
+              0.0
+            ],
+            [
+              0.5,
+              0.8660253882408142,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.4999999701976776,
+              -0.8660253882408142
+            ],
+            [
+              0.0,
+              0.0,
+              0.8660253882408142,
+              0.4999999701976776
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cell": 21,
+      "status": "literal",
+      "stdout": "True\nTrue\n",
+      "display": null
+    },
+    {
+      "cell": 22,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_2.png"
+      }
+    },
+    {
+      "cell": 23,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 24,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 25,
+      "status": "literal",
+      "stdout": "",
+      "display": [
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "value": [
+            0.0,
+            0.01745329238474369
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "value": [
+            0.01745329238474369,
+            0.03490658476948738
+          ]
+        }
+      ]
+    },
+    {
+      "cell": 26,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          2
+        ],
+        "value": [
+          0.01745329238474369,
+          0.01745329238474369
+        ]
+      }
+    },
+    {
+      "cell": 27,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          2
+        ],
+        "value": [
+          0.01745329238474369,
+          0.01745329238474369
+        ]
+      }
+    },
+    {
+      "cell": 28,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 29,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          4
+        ],
+        "value": [
+          [
+            0.9998477101325989,
+            0.0,
+            -0.017452405765652657,
+            -0.0
+          ],
+          [
+            0.0,
+            0.9998477101325989,
+            -0.0,
+            -0.017452405765652657
+          ],
+          [
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989,
+            0.0
+          ],
+          [
+            0.0,
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 30,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          4
+        ],
+        "value": [
+          [
+            0.9998477101325989,
+            0.0,
+            -0.017452405765652657,
+            0.0
+          ],
+          [
+            0.0,
+            0.9998477697372437,
+            0.0,
+            -0.017452405765652657
+          ],
+          [
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989,
+            0.0
+          ],
+          [
+            0.0,
+            0.017452407628297806,
+            0.0,
+            0.9998477101325989
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 31,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 32,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [],
+        "value": 20.34600257873535
+      }
+    },
+    {
+      "cell": 33,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [],
+        "value": 20.34600257873535
+      }
+    },
+    {
+      "cell": 36,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/cope.png"
+      }
+    },
+    {
+      "cell": 37,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rel_position_matrix.png"
+      }
+    }
+  ],
+  "annotated_trace": [
+    {
+      "cell": 0,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 4,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "https://miro.medium.com/v2/resize:fit:786/format:webp/1*iJqlhZz-g6ZQJ53-rE9VvA.png"
+      }
+    },
+    {
+      "cell": 10,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_paper.png"
+      }
+    },
+    {
+      "cell": 11,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 12,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          3,
+          2
+        ],
+        "value": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.5403022766113281,
+              0.8414709568023682
+            ],
+            [
+              0.9999499917030334,
+              0.009999833069741726
+            ]
+          ],
+          [
+            [
+              -0.416146844625473,
+              0.9092974066734314
+            ],
+            [
+              0.9998000264167786,
+              0.019998665899038315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 14,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          1
+        ],
+        "value": [
+          [
+            -0.416146844625473,
+            0.9092974066734314
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 15,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.complex64",
+        "shape": [
+          3,
+          2
+        ],
+        "value": [
+          [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.5403022766113281,
+              0.8414709568023682
+            ],
+            [
+              0.9999499917030334,
+              0.009999833069741726
+            ]
+          ],
+          [
+            [
+              -0.416146844625473,
+              0.9092974066734314
+            ],
+            [
+              0.9998000264167786,
+              0.019998665899038315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 18,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/4d_rotation.png"
+      }
+    },
+    {
+      "cell": 19,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_1.png"
+      }
+    },
+    {
+      "cell": 20,
+      "status": "literal",
+      "stdout": "",
+      "display": [
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              0.8660253882408142,
+              -0.5,
+              0.0,
+              0.0
+            ],
+            [
+              0.5,
+              0.8660253882408142,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.4999999701976776,
+              -0.8660253882408142
+            ],
+            [
+              0.0,
+              0.0,
+              0.8660253882408142,
+              0.4999999701976776
+            ]
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            4,
+            4
+          ],
+          "value": [
+            [
+              0.8660253882408142,
+              -0.5,
+              0.0,
+              0.0
+            ],
+            [
+              0.5,
+              0.8660253882408142,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.4999999701976776,
+              -0.8660253882408142
+            ],
+            [
+              0.0,
+              0.0,
+              0.8660253882408142,
+              0.4999999701976776
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cell": 21,
+      "status": "literal",
+      "stdout": "True\nTrue\n",
+      "display": null
+    },
+    {
+      "cell": 22,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rope_2.png"
+      }
+    },
+    {
+      "cell": 23,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 24,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 25,
+      "status": "literal",
+      "stdout": "",
+      "display": [
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "value": [
+            0.0,
+            0.01745329238474369
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "value": [
+            0.01745329238474369,
+            0.03490658476948738
+          ]
+        }
+      ]
+    },
+    {
+      "cell": 26,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          2
+        ],
+        "value": [
+          0.01745329238474369,
+          0.01745329238474369
+        ]
+      }
+    },
+    {
+      "cell": 27,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          2
+        ],
+        "value": [
+          0.01745329238474369,
+          0.01745329238474369
+        ]
+      }
+    },
+    {
+      "cell": 28,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 29,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          4
+        ],
+        "value": [
+          [
+            0.9998477101325989,
+            0.0,
+            -0.017452405765652657,
+            -0.0
+          ],
+          [
+            0.0,
+            0.9998477101325989,
+            -0.0,
+            -0.017452405765652657
+          ],
+          [
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989,
+            0.0
+          ],
+          [
+            0.0,
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 30,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [
+          4,
+          4
+        ],
+        "value": [
+          [
+            0.9998477101325989,
+            0.0,
+            -0.017452405765652657,
+            0.0
+          ],
+          [
+            0.0,
+            0.9998477697372437,
+            0.0,
+            -0.017452405765652657
+          ],
+          [
+            0.017452405765652657,
+            0.0,
+            0.9998477101325989,
+            0.0
+          ],
+          [
+            0.0,
+            0.017452407628297806,
+            0.0,
+            0.9998477101325989
+          ]
+        ]
+      }
+    },
+    {
+      "cell": 31,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 32,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [],
+        "value": 20.34600257873535
+      }
+    },
+    {
+      "cell": 33,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "dtype": "torch.float32",
+        "shape": [],
+        "value": 20.34600257873535
+      }
+    },
+    {
+      "cell": 36,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/cope.png"
+      }
+    },
+    {
+      "cell": 37,
+      "status": "literal",
+      "stdout": "",
+      "display": {
+        "type": "Image",
+        "url": "../../imgs/rel_position_matrix.png"
+      }
+    }
+  ],
+  "all25_original_code_cells_literal": true,
+  "Markdown39_classes_executed_both_versions": true,
+  "all_traces_and_diagnostics_equal": true,
+  "RoPE": {
+    "phase_shape": [
+      3,
+      2
+    ],
+    "phase_manual_exact": true,
+    "adjacent_half_permutation": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "permutation_verified": true,
+    "three_original_scores": [
+      20.34600257873535,
+      20.34600257873535,
+      20.34600257873535
+    ],
+    "independent_double_relative_score": 1.8067304541090499,
+    "relative_forward_gradient_and_shared_shift": true,
+    "normal_not_orthogonal_counterexample": true,
+    "original_matrix_with_double_angles_dtype": "torch.float32",
+    "boundaries": {
+      "odd_precompute": {
+        "result": {
+          "dtype": "torch.complex64",
+          "shape": [
+            3,
+            1
+          ],
+          "value": [
+            [
+              [
+                1.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.5403022766113281,
+                0.8414709568023682
+              ]
+            ],
+            [
+              [
+                -0.416146844625473,
+                0.9092974066734314
+              ]
+            ]
+          ]
+        }
+      },
+      "odd_matrix": {
+        "result": {
+          "dtype": "torch.float32",
+          "shape": [
+            3,
+            3
+          ],
+          "value": [
+            [
+              0.5403023362159729,
+              -0.8414709568023682,
+              -0.8414709568023682
+            ],
+            [
+              0.8414709568023682,
+              0.5403023362159729,
+              0.5403023362159729
+            ],
+            [
+              0.8414709568023682,
+              0.5403023362159729,
+              0.5403023362159729
+            ]
+          ]
+        },
+        "rank": 2,
+        "orthogonal": false
+      },
+      "wrong_angle_length": {
+        "exception": "RuntimeError",
+        "message": "The expanded size of the tensor (2) must match the existing size (3) at non-singleton dimension 1.  Target sizes: [2, 2].  Tensor sizes: [3, 3]"
+      }
+    },
+    "positionless_permutation_equivariance_max_error": 2.220446049250313e-16
+  },
+  "CoPE": {
+    "zero_initialized_equals_plain_attention": true,
+    "zero_table_gate_gradient_zero": true,
+    "zero_table_embedding_gradient_nonzero": true,
+    "learned_table_gate_gradient_max": 0.4573314449169281,
+    "dense_vector_reference_max_error": 1.1102230246251565e-16,
+    "query_key_value_table_gradient_max_errors": [
+      5.551115123125783e-17,
+      2.7755575615628914e-17,
+      4.440892098500626e-16,
+      1.1102230246251565e-16
+    ],
+    "double_gradcheck": true,
+    "causal_prefix_max_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "future_inputs_do_not_change_prefix": true,
+    "small_training": {
+      "parameter_count": 24,
+      "optimizer": "Adam",
+      "updates": 5,
+      "losses": [
+        1.2536735478961725,
+        1.2495307762330445,
+        1.2454464246385824,
+        1.2414254249945862,
+        1.237472094399808
+      ],
+      "position_table_changed": true,
+      "only_teaching_random_target": true
+    },
+    "npos_one_saturates_and_gate_gradient_zero": true,
+    "integer_knot_selected_gate_derivative": [
+      [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "boundaries": {
+      "all_masked": {
+        "finite": false,
+        "shape": [
+          2,
+          4,
+          2
+        ]
+      },
+      "additive_mask_in_wrong_api": {
+        "exception": "RuntimeError",
+        "message": "index -9223372036854775808 is out of bounds for dimension 2 with size 8"
+      },
+      "npos_zero": {
+        "exception": "RuntimeError",
+        "message": "index -1 is out of bounds for dimension 2 with size 0"
+      },
+      "wrong_query_dim": {
+        "exception": "RuntimeError",
+        "message": "mat1 and mat2 shapes cannot be multiplied (8x3 and 4x8)"
+      }
+    }
+  },
+  "not_run": [
+    "Remote image cell4 rendering/content",
+    "BERT/GPT Markdown5 or partial Llama Markdown9 as full pretrained model",
+    "Official CoPE full repository, pretrained model or language quality",
+    "Paper selective-copy/counting/Flip-Flop/LM training benchmarks",
+    "GPU, multihead/full Transformer, KV cache or speed/memory benchmark"
+  ],
+  "scripts_sha256": {
+    "build_delivery.py": "6b061d4cf4bc28e029d39b9f3515bead228edd4294f937bbe6f303524c7b8c43",
+    "verify_delivery.py": "9443f379d75a0ef7daa8af1d241429c388a855627a65703ded57539baed5f479"
+  }
+}
