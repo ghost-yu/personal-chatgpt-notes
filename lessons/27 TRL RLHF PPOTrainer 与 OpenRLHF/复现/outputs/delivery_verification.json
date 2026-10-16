@@ -1,0 +1,1786 @@
+{
+  "status": "passed",
+  "preservation": {
+    "cells": 33,
+    "code_cells": 25,
+    "schemas": 3,
+    "derived_cells": 67,
+    "raw_git_blobs": true,
+    "history_and_metadata": true,
+    "comment_only_ast_tokens": true,
+    "reading_ast": true,
+    "full_trl_objects": [
+      "PPOTrainer",
+      "AdaptiveKLController",
+      "FixedKLController",
+      "ValueHead",
+      "AutoModelForCausalLMWithValueHead",
+      "logprobs_from_logits",
+      "masked_mean",
+      "masked_var",
+      "masked_whiten",
+      "clip_by_value"
+    ],
+    "trl_record_hashes": true,
+    "openrlhf_objects": [
+      "compute_approx_kl",
+      "compute_reward",
+      "log_probs_from_logits",
+      "masked_mean",
+      "PolicyLoss",
+      "ValueLoss",
+      "make_experience",
+      "get_advantages_and_returns"
+    ]
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "trl": "0.8.6",
+    "accelerate": "0.34.2",
+    "datasets": "2.19.2",
+    "cuda_available": false,
+    "torch_threads": 1,
+    "external_seed": 27,
+    "checkpoint_seed": 270,
+    "random_gpt2_config": {
+      "vocab_size": 50257,
+      "n_positions": 64,
+      "n_embd": 16,
+      "n_layer": 1,
+      "n_head": 2,
+      "n_inner": null,
+      "activation_function": "gelu_new",
+      "resid_pdrop": 0.0,
+      "embd_pdrop": 0.0,
+      "attn_pdrop": 0.0,
+      "layer_norm_epsilon": 1e-05,
+      "initializer_range": 0.02,
+      "summary_type": "cls_index",
+      "summary_use_proj": true,
+      "summary_activation": null,
+      "summary_first_dropout": 0.1,
+      "summary_proj_to_labels": true,
+      "scale_attn_weights": true,
+      "use_cache": true,
+      "scale_attn_by_inverse_layer_idx": false,
+      "reorder_and_upcast_attn": false,
+      "bos_token_id": 50256,
+      "eos_token_id": 50256,
+      "return_dict": true,
+      "output_hidden_states": false,
+      "output_attentions": false,
+      "torchscript": false,
+      "torch_dtype": "float32",
+      "use_bfloat16": false,
+      "tf_legacy_loss": false,
+      "pruned_heads": {},
+      "tie_word_embeddings": true,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "is_decoder": false,
+      "cross_attention_hidden_size": null,
+      "add_cross_attention": false,
+      "tie_encoder_decoder": false,
+      "max_length": 20,
+      "min_length": 0,
+      "do_sample": false,
+      "early_stopping": false,
+      "num_beams": 1,
+      "num_beam_groups": 1,
+      "diversity_penalty": 0.0,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "typical_p": 1.0,
+      "repetition_penalty": 1.0,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "encoder_no_repeat_ngram_size": 0,
+      "bad_words_ids": null,
+      "num_return_sequences": 1,
+      "output_scores": false,
+      "return_dict_in_generate": false,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "remove_invalid_values": false,
+      "exponential_decay_length_penalty": null,
+      "suppress_tokens": null,
+      "begin_suppress_tokens": null,
+      "architectures": [
+        "GPT2LMHeadModel"
+      ],
+      "finetuning_task": null,
+      "id2label": {
+        "0": "LABEL_0",
+        "1": "LABEL_1"
+      },
+      "label2id": {
+        "LABEL_0": 0,
+        "LABEL_1": 1
+      },
+      "tokenizer_class": null,
+      "prefix": null,
+      "pad_token_id": null,
+      "sep_token_id": null,
+      "decoder_start_token_id": null,
+      "task_specific_params": null,
+      "problem_type": null,
+      "_name_or_path": "",
+      "transformers_version": "4.44.2",
+      "n_ctx": 64,
+      "summary_dropout_prob": 0.0,
+      "model_type": "gpt2"
+    },
+    "tokenizer_json_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+  },
+  "original": {
+    "trace": [
+      {
+        "cell": 0,
+        "status": "skipped",
+        "reason": "proxy/NCCL environment; Image import provided externally"
+      },
+      {
+        "cell": 1,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 2,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 5,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 7,
+        "status": "local CPU path variant",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 9,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 10,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 11,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "device"
+        }
+      },
+      {
+        "cell": 12,
+        "status": "local CPU path variant",
+        "stdout": "None <|endoftext|>\n",
+        "display": null
+      },
+      {
+        "cell": 13,
+        "status": "literal",
+        "stdout": "[50256]\n<|endoftext|>\n",
+        "display": null
+      },
+      {
+        "cell": 14,
+        "status": "literal",
+        "stdout": "",
+        "display": 50257
+      },
+      {
+        "cell": 15,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 16,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 17,
+        "status": "literal",
+        "stdout": "cpu\ncpu\n",
+        "display": null
+      },
+      {
+        "cell": 18,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            7
+          ],
+          "value": [
+            [
+              1212,
+              3329,
+              314,
+              1816,
+              284,
+              262,
+              220
+            ]
+          ]
+        }
+      },
+      {
+        "cell": 19,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 21,
+        "status": "literal",
+        "stdout": "",
+        "display": [
+          {
+            "dtype": "torch.int64",
+            "shape": [
+              7
+            ],
+            "value": [
+              1212,
+              3329,
+              314,
+              1816,
+              284,
+              262,
+              220
+            ]
+          }
+        ]
+      },
+      {
+        "cell": 22,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 23,
+        "status": "literal",
+        "stdout": "",
+        "display": " Inv nmCurrently jailedArticle tourism McC PrefbablyDEV authored foundations Annexuledesslerthren classifyの魔PK Fighting"
+      },
+      {
+        "cell": 24,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 25,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 27,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 29,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 31,
+        "status": "literal",
+        "stdout": "objective/kl\nobjective/kl_dist\nobjective/logprobs\nobjective/ref_logprobs\nobjective/kl_coef\nobjective/entropy\nppo/mean_non_score_reward\nppo/mean_scores\nppo/std_scores\ntokens/queries_len_mean\ntokens/queries_len_std\ntokens/queries_dist\ntokens/responses_len_mean\ntokens/responses_len_std\ntokens/responses_dist\nppo/loss/policy\nppo/loss/value\nppo/loss/total\nppo/policy/entropy\nppo/policy/approxkl\nppo/policy/policykl\nppo/policy/clipfrac\nppo/policy/advantages\nppo/policy/advantages_mean\nppo/policy/ratio\nppo/returns/mean\nppo/returns/var\nppo/val/vpred\nppo/val/error\nppo/val/clipfrac\nppo/val/mean\nppo/val/var\nppo/val/var_explained\nppo/learning_rate\ntime/ppo/forward_pass\ntime/ppo/compute_rewards\ntime/ppo/compute_advantages\ntime/ppo/optimize_step\ntime/ppo/calc_stats\ntime/ppo/total\n",
+        "display": null
+      },
+      {
+        "cell": 32,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      }
+    ],
+    "optimizer_updates": 4,
+    "parameter_count": 808465,
+    "changed_parameter_names": [
+      "transformer.wte.weight",
+      "transformer.wpe.weight",
+      "transformer.h.0.ln_1.weight",
+      "transformer.h.0.ln_1.bias",
+      "transformer.h.0.attn.c_attn.weight",
+      "transformer.h.0.attn.c_attn.bias",
+      "transformer.h.0.attn.c_proj.weight",
+      "transformer.h.0.attn.c_proj.bias",
+      "transformer.h.0.ln_2.weight",
+      "transformer.h.0.ln_2.bias",
+      "transformer.h.0.mlp.c_fc.weight",
+      "transformer.h.0.mlp.c_fc.bias",
+      "transformer.h.0.mlp.c_proj.weight",
+      "transformer.h.0.mlp.c_proj.bias",
+      "transformer.ln_f.weight",
+      "transformer.ln_f.bias",
+      "lm_head.weight",
+      "v_head.summary.weight",
+      "v_head.summary.bias"
+    ],
+    "reference_unchanged": true,
+    "reference_requires_grad": [
+      true
+    ],
+    "optimizer_only_active": true,
+    "query_ids": [
+      [
+        1212,
+        3329,
+        314,
+        1816,
+        284,
+        262,
+        220
+      ]
+    ],
+    "response_ids": [
+      10001,
+      28642,
+      21327,
+      22159,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      36509,
+      34633,
+      40492,
+      19098
+    ],
+    "rollout": {
+      "scores": {
+        "dtype": "torch.float32",
+        "shape": [
+          1
+        ],
+        "value": [
+          1.0
+        ]
+      },
+      "old": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -10.787375450134277,
+            -10.817075729370117,
+            -10.831414222717285,
+            -10.858985900878906,
+            -10.782018661499023,
+            -10.933806419372559,
+            -10.932266235351562,
+            -10.727375030517578,
+            -10.778237342834473,
+            -10.820805549621582,
+            -10.761982917785645,
+            -10.9279203414917,
+            -10.778666496276855,
+            -10.800506591796875,
+            -10.690568923950195,
+            -10.786724090576172,
+            -10.930370330810547,
+            -10.849361419677734,
+            -10.793569564819336,
+            -10.755473136901855,
+            -10.875170707702637,
+            -10.898517608642578,
+            -10.740962982177734,
+            -10.821026802062988,
+            -10.776626586914062,
+            -10.792304039001465
+          ]
+        ]
+      },
+      "ref": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -10.787375450134277,
+            -10.817075729370117,
+            -10.831414222717285,
+            -10.858985900878906,
+            -10.782018661499023,
+            -10.933806419372559,
+            -10.932266235351562,
+            -10.727375030517578,
+            -10.778237342834473,
+            -10.820805549621582,
+            -10.761982917785645,
+            -10.9279203414917,
+            -10.778666496276855,
+            -10.800506591796875,
+            -10.690568923950195,
+            -10.786724090576172,
+            -10.930370330810547,
+            -10.849361419677734,
+            -10.793569564819336,
+            -10.755473136901855,
+            -10.875170707702637,
+            -10.898517608642578,
+            -10.740962982177734,
+            -10.821026802062988,
+            -10.776626586914062,
+            -10.792304039001465
+          ]
+        ]
+      },
+      "masks": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "rewards": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    "stats_without_wall_clock": {
+      "objective/kl": 0.0,
+      "objective/kl_dist": 0.0,
+      "objective/logprobs": [
+        [
+          -10.787375450134277,
+          -10.817075729370117,
+          -10.831414222717285,
+          -10.858985900878906,
+          -10.782018661499023,
+          -10.933806419372559,
+          -10.932266235351562,
+          -10.727375030517578,
+          -10.778237342834473,
+          -10.820805549621582,
+          -10.761982917785645,
+          -10.9279203414917,
+          -10.778666496276855,
+          -10.800506591796875,
+          -10.690568923950195,
+          -10.786724090576172,
+          -10.930370330810547,
+          -10.849361419677734,
+          -10.793569564819336,
+          -10.755473136901855,
+          -10.875170707702637,
+          -10.898517608642578,
+          -10.740962982177734,
+          -10.821026802062988,
+          -10.776626586914062,
+          -10.792304039001465
+        ]
+      ],
+      "objective/ref_logprobs": [
+        [
+          -10.787375450134277,
+          -10.817075729370117,
+          -10.831414222717285,
+          -10.858985900878906,
+          -10.782018661499023,
+          -10.933806419372559,
+          -10.932266235351562,
+          -10.727375030517578,
+          -10.778237342834473,
+          -10.820805549621582,
+          -10.761982917785645,
+          -10.9279203414917,
+          -10.778666496276855,
+          -10.800506591796875,
+          -10.690568923950195,
+          -10.786724090576172,
+          -10.930370330810547,
+          -10.849361419677734,
+          -10.793569564819336,
+          -10.755473136901855,
+          -10.875170707702637,
+          -10.898517608642578,
+          -10.740962982177734,
+          -10.821026802062988,
+          -10.776626586914062,
+          -10.792304039001465
+        ]
+      ],
+      "objective/kl_coef": 0.2,
+      "objective/entropy": 216.2384490966797,
+      "ppo/mean_non_score_reward": 0.0,
+      "ppo/mean_scores": 1.0,
+      "ppo/std_scores": "NaN (observed undefined sample statistic)",
+      "tokens/queries_len_mean": 7.0,
+      "tokens/queries_len_std": "NaN (observed undefined sample statistic)",
+      "tokens/queries_dist": 7.0,
+      "tokens/responses_len_mean": 20.0,
+      "tokens/responses_len_std": "NaN (observed undefined sample statistic)",
+      "tokens/responses_dist": 20.0,
+      "ppo/loss/policy": -0.0007014453876763582,
+      "ppo/loss/value": 0.28827953338623047,
+      "ppo/loss/total": 0.028126507997512817,
+      "ppo/policy/entropy": 10.821760177612305,
+      "ppo/policy/approxkl": 5.213695430938969e-07,
+      "ppo/policy/policykl": 1.0454654329805635e-05,
+      "ppo/policy/clipfrac": 0.0,
+      "ppo/policy/advantages": [
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754
+      ],
+      "ppo/policy/advantages_mean": 2.3841858265427618e-08,
+      "ppo/policy/ratio": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0002975463867188,
+        0.9997349381446838,
+        1.0000572204589844,
+        0.9999408721923828,
+        0.9999227523803711,
+        0.9999065399169922,
+        0.9996605515480042,
+        1.0012385845184326,
+        0.9996872544288635,
+        0.9994413256645203,
+        1.0007795095443726,
+        0.9998979568481445,
+        0.9991173148155212,
+        0.9996348023414612,
+        1.000402569770813,
+        0.9996805787086487,
+        1.0004674196243286,
+        1.0004826784133911,
+        0.9999485015869141,
+        0.9993764758110046,
+        1.000208854675293,
+        0.9992602467536926,
+        1.0002288818359375,
+        1.0002679824829102,
+        0.999527096748352,
+        1.0005685091018677,
+        1.000595211982727,
+        0.9994698762893677,
+        1.000112533569336,
+        0.9998760223388672,
+        0.9998435974121094,
+        0.9998130798339844,
+        0.9993240833282471,
+        1.0024769306182861,
+        0.9993736147880554,
+        0.9988724589347839,
+        1.0015604496002197,
+        0.9997968673706055,
+        0.9982353448867798,
+        0.9992697238922119,
+        1.0008043050765991,
+        0.9993583559989929,
+        1.00093412399292,
+        1.000962734222412,
+        0.9998922348022461,
+        0.9987552762031555,
+        1.0004178285598755,
+        0.9985209703445435,
+        1.000454068183899,
+        1.000534176826477,
+        0.9990525245666504,
+        1.001137375831604,
+        1.0008939504623413,
+        0.9992087483406067,
+        1.000168800354004,
+        0.9998130798339844,
+        0.9997634887695312,
+        0.9997206330299377,
+        0.9989943504333496,
+        1.0037147998809814,
+        0.9990600943565369,
+        0.9983010292053223,
+        1.0023401975631714,
+        0.9996920228004456,
+        0.9973551630973816,
+        0.9989038705825806,
+        1.0012023448944092,
+        0.9990353584289551,
+        1.0014028549194336,
+        1.0014468431472778,
+        0.9998378753662109,
+        0.9981334805488586,
+        1.000626802444458,
+        0.9977813363075256,
+        1.0006773471832275,
+        1.00080144405365,
+        0.9985781311988831,
+        1.0017094612121582
+      ],
+      "ppo/returns/mean": 0.722866415977478,
+      "ppo/returns/var": 0.01704234816133976,
+      "ppo/val/vpred": 0.21703501045703888,
+      "ppo/val/error": 0.5765590667724609,
+      "ppo/val/clipfrac": 0.0,
+      "ppo/val/mean": 0.21187734603881836,
+      "ppo/val/var": 0.30251345038414,
+      "ppo/val/var_explained": -32.830963134765625,
+      "ppo/learning_rate": 1.41e-05
+    }
+  },
+  "annotated": {
+    "trace": [
+      {
+        "cell": 0,
+        "status": "skipped",
+        "reason": "proxy/NCCL environment; Image import provided externally"
+      },
+      {
+        "cell": 1,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 2,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 5,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 7,
+        "status": "local CPU path variant",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 9,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 10,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 11,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "device"
+        }
+      },
+      {
+        "cell": 12,
+        "status": "local CPU path variant",
+        "stdout": "None <|endoftext|>\n",
+        "display": null
+      },
+      {
+        "cell": 13,
+        "status": "literal",
+        "stdout": "[50256]\n<|endoftext|>\n",
+        "display": null
+      },
+      {
+        "cell": 14,
+        "status": "literal",
+        "stdout": "",
+        "display": 50257
+      },
+      {
+        "cell": 15,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 16,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 17,
+        "status": "literal",
+        "stdout": "cpu\ncpu\n",
+        "display": null
+      },
+      {
+        "cell": 18,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "dtype": "torch.int64",
+          "shape": [
+            1,
+            7
+          ],
+          "value": [
+            [
+              1212,
+              3329,
+              314,
+              1816,
+              284,
+              262,
+              220
+            ]
+          ]
+        }
+      },
+      {
+        "cell": 19,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 21,
+        "status": "literal",
+        "stdout": "",
+        "display": [
+          {
+            "dtype": "torch.int64",
+            "shape": [
+              7
+            ],
+            "value": [
+              1212,
+              3329,
+              314,
+              1816,
+              284,
+              262,
+              220
+            ]
+          }
+        ]
+      },
+      {
+        "cell": 22,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 23,
+        "status": "literal",
+        "stdout": "",
+        "display": " Inv nmCurrently jailedArticle tourism McC PrefbablyDEV authored foundations Annexuledesslerthren classifyの魔PK Fighting"
+      },
+      {
+        "cell": 24,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 25,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 27,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 29,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image"
+        }
+      },
+      {
+        "cell": 31,
+        "status": "literal",
+        "stdout": "objective/kl\nobjective/kl_dist\nobjective/logprobs\nobjective/ref_logprobs\nobjective/kl_coef\nobjective/entropy\nppo/mean_non_score_reward\nppo/mean_scores\nppo/std_scores\ntokens/queries_len_mean\ntokens/queries_len_std\ntokens/queries_dist\ntokens/responses_len_mean\ntokens/responses_len_std\ntokens/responses_dist\nppo/loss/policy\nppo/loss/value\nppo/loss/total\nppo/policy/entropy\nppo/policy/approxkl\nppo/policy/policykl\nppo/policy/clipfrac\nppo/policy/advantages\nppo/policy/advantages_mean\nppo/policy/ratio\nppo/returns/mean\nppo/returns/var\nppo/val/vpred\nppo/val/error\nppo/val/clipfrac\nppo/val/mean\nppo/val/var\nppo/val/var_explained\nppo/learning_rate\ntime/ppo/forward_pass\ntime/ppo/compute_rewards\ntime/ppo/compute_advantages\ntime/ppo/optimize_step\ntime/ppo/calc_stats\ntime/ppo/total\n",
+        "display": null
+      },
+      {
+        "cell": 32,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      }
+    ],
+    "optimizer_updates": 4,
+    "parameter_count": 808465,
+    "changed_parameter_names": [
+      "transformer.wte.weight",
+      "transformer.wpe.weight",
+      "transformer.h.0.ln_1.weight",
+      "transformer.h.0.ln_1.bias",
+      "transformer.h.0.attn.c_attn.weight",
+      "transformer.h.0.attn.c_attn.bias",
+      "transformer.h.0.attn.c_proj.weight",
+      "transformer.h.0.attn.c_proj.bias",
+      "transformer.h.0.ln_2.weight",
+      "transformer.h.0.ln_2.bias",
+      "transformer.h.0.mlp.c_fc.weight",
+      "transformer.h.0.mlp.c_fc.bias",
+      "transformer.h.0.mlp.c_proj.weight",
+      "transformer.h.0.mlp.c_proj.bias",
+      "transformer.ln_f.weight",
+      "transformer.ln_f.bias",
+      "lm_head.weight",
+      "v_head.summary.weight",
+      "v_head.summary.bias"
+    ],
+    "reference_unchanged": true,
+    "reference_requires_grad": [
+      true
+    ],
+    "optimizer_only_active": true,
+    "query_ids": [
+      [
+        1212,
+        3329,
+        314,
+        1816,
+        284,
+        262,
+        220
+      ]
+    ],
+    "response_ids": [
+      10001,
+      28642,
+      21327,
+      22159,
+      14906,
+      19277,
+      5108,
+      42195,
+      11921,
+      39345,
+      33941,
+      19369,
+      47036,
+      6309,
+      33730,
+      25941,
+      36509,
+      34633,
+      40492,
+      19098
+    ],
+    "rollout": {
+      "scores": {
+        "dtype": "torch.float32",
+        "shape": [
+          1
+        ],
+        "value": [
+          1.0
+        ]
+      },
+      "old": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -10.787375450134277,
+            -10.817075729370117,
+            -10.831414222717285,
+            -10.858985900878906,
+            -10.782018661499023,
+            -10.933806419372559,
+            -10.932266235351562,
+            -10.727375030517578,
+            -10.778237342834473,
+            -10.820805549621582,
+            -10.761982917785645,
+            -10.9279203414917,
+            -10.778666496276855,
+            -10.800506591796875,
+            -10.690568923950195,
+            -10.786724090576172,
+            -10.930370330810547,
+            -10.849361419677734,
+            -10.793569564819336,
+            -10.755473136901855,
+            -10.875170707702637,
+            -10.898517608642578,
+            -10.740962982177734,
+            -10.821026802062988,
+            -10.776626586914062,
+            -10.792304039001465
+          ]
+        ]
+      },
+      "ref": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -10.787375450134277,
+            -10.817075729370117,
+            -10.831414222717285,
+            -10.858985900878906,
+            -10.782018661499023,
+            -10.933806419372559,
+            -10.932266235351562,
+            -10.727375030517578,
+            -10.778237342834473,
+            -10.820805549621582,
+            -10.761982917785645,
+            -10.9279203414917,
+            -10.778666496276855,
+            -10.800506591796875,
+            -10.690568923950195,
+            -10.786724090576172,
+            -10.930370330810547,
+            -10.849361419677734,
+            -10.793569564819336,
+            -10.755473136901855,
+            -10.875170707702637,
+            -10.898517608642578,
+            -10.740962982177734,
+            -10.821026802062988,
+            -10.776626586914062,
+            -10.792304039001465
+          ]
+        ]
+      },
+      "masks": {
+        "dtype": "torch.int64",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "rewards": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          26
+        ],
+        "value": [
+          [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    "stats_without_wall_clock": {
+      "objective/kl": 0.0,
+      "objective/kl_dist": 0.0,
+      "objective/logprobs": [
+        [
+          -10.787375450134277,
+          -10.817075729370117,
+          -10.831414222717285,
+          -10.858985900878906,
+          -10.782018661499023,
+          -10.933806419372559,
+          -10.932266235351562,
+          -10.727375030517578,
+          -10.778237342834473,
+          -10.820805549621582,
+          -10.761982917785645,
+          -10.9279203414917,
+          -10.778666496276855,
+          -10.800506591796875,
+          -10.690568923950195,
+          -10.786724090576172,
+          -10.930370330810547,
+          -10.849361419677734,
+          -10.793569564819336,
+          -10.755473136901855,
+          -10.875170707702637,
+          -10.898517608642578,
+          -10.740962982177734,
+          -10.821026802062988,
+          -10.776626586914062,
+          -10.792304039001465
+        ]
+      ],
+      "objective/ref_logprobs": [
+        [
+          -10.787375450134277,
+          -10.817075729370117,
+          -10.831414222717285,
+          -10.858985900878906,
+          -10.782018661499023,
+          -10.933806419372559,
+          -10.932266235351562,
+          -10.727375030517578,
+          -10.778237342834473,
+          -10.820805549621582,
+          -10.761982917785645,
+          -10.9279203414917,
+          -10.778666496276855,
+          -10.800506591796875,
+          -10.690568923950195,
+          -10.786724090576172,
+          -10.930370330810547,
+          -10.849361419677734,
+          -10.793569564819336,
+          -10.755473136901855,
+          -10.875170707702637,
+          -10.898517608642578,
+          -10.740962982177734,
+          -10.821026802062988,
+          -10.776626586914062,
+          -10.792304039001465
+        ]
+      ],
+      "objective/kl_coef": 0.2,
+      "objective/entropy": 216.2384490966797,
+      "ppo/mean_non_score_reward": 0.0,
+      "ppo/mean_scores": 1.0,
+      "ppo/std_scores": "NaN (observed undefined sample statistic)",
+      "tokens/queries_len_mean": 7.0,
+      "tokens/queries_len_std": "NaN (observed undefined sample statistic)",
+      "tokens/queries_dist": 7.0,
+      "tokens/responses_len_mean": 20.0,
+      "tokens/responses_len_std": "NaN (observed undefined sample statistic)",
+      "tokens/responses_dist": 20.0,
+      "ppo/loss/policy": -0.0007014453876763582,
+      "ppo/loss/value": 0.28827953338623047,
+      "ppo/loss/total": 0.028126507997512817,
+      "ppo/policy/entropy": 10.821760177612305,
+      "ppo/policy/approxkl": 5.213695430938969e-07,
+      "ppo/policy/policykl": 1.0454654329805635e-05,
+      "ppo/policy/clipfrac": 0.0,
+      "ppo/policy/advantages": [
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754,
+        -0.22758916020393372,
+        -0.19340811669826508,
+        -0.1574280858039856,
+        -0.11955436319112778,
+        -0.07968728989362717,
+        -0.03772196173667908,
+        -0.16954325139522552,
+        1.671697735786438,
+        -0.3580467700958252,
+        -0.7320359945297241,
+        0.762816846370697,
+        -0.7344807982444763,
+        -2.643587589263916,
+        -0.29481372237205505,
+        0.16371974349021912,
+        -0.41822996735572815,
+        0.6479135751724243,
+        0.5898978114128113,
+        -0.010213173925876617,
+        -0.6997488141059875,
+        0.43137142062187195,
+        -1.160461664199829,
+        0.4126279354095459,
+        0.7486294507980347,
+        -0.10039424896240234,
+        1.8928818702697754
+      ],
+      "ppo/policy/advantages_mean": 2.3841858265427618e-08,
+      "ppo/policy/ratio": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0002975463867188,
+        0.9997349381446838,
+        1.0000572204589844,
+        0.9999408721923828,
+        0.9999227523803711,
+        0.9999065399169922,
+        0.9996605515480042,
+        1.0012385845184326,
+        0.9996872544288635,
+        0.9994413256645203,
+        1.0007795095443726,
+        0.9998979568481445,
+        0.9991173148155212,
+        0.9996348023414612,
+        1.000402569770813,
+        0.9996805787086487,
+        1.0004674196243286,
+        1.0004826784133911,
+        0.9999485015869141,
+        0.9993764758110046,
+        1.000208854675293,
+        0.9992602467536926,
+        1.0002288818359375,
+        1.0002679824829102,
+        0.999527096748352,
+        1.0005685091018677,
+        1.000595211982727,
+        0.9994698762893677,
+        1.000112533569336,
+        0.9998760223388672,
+        0.9998435974121094,
+        0.9998130798339844,
+        0.9993240833282471,
+        1.0024769306182861,
+        0.9993736147880554,
+        0.9988724589347839,
+        1.0015604496002197,
+        0.9997968673706055,
+        0.9982353448867798,
+        0.9992697238922119,
+        1.0008043050765991,
+        0.9993583559989929,
+        1.00093412399292,
+        1.000962734222412,
+        0.9998922348022461,
+        0.9987552762031555,
+        1.0004178285598755,
+        0.9985209703445435,
+        1.000454068183899,
+        1.000534176826477,
+        0.9990525245666504,
+        1.001137375831604,
+        1.0008939504623413,
+        0.9992087483406067,
+        1.000168800354004,
+        0.9998130798339844,
+        0.9997634887695312,
+        0.9997206330299377,
+        0.9989943504333496,
+        1.0037147998809814,
+        0.9990600943565369,
+        0.9983010292053223,
+        1.0023401975631714,
+        0.9996920228004456,
+        0.9973551630973816,
+        0.9989038705825806,
+        1.0012023448944092,
+        0.9990353584289551,
+        1.0014028549194336,
+        1.0014468431472778,
+        0.9998378753662109,
+        0.9981334805488586,
+        1.000626802444458,
+        0.9977813363075256,
+        1.0006773471832275,
+        1.00080144405365,
+        0.9985781311988831,
+        1.0017094612121582
+      ],
+      "ppo/returns/mean": 0.722866415977478,
+      "ppo/returns/var": 0.01704234816133976,
+      "ppo/val/vpred": 0.21703501045703888,
+      "ppo/val/error": 0.5765590667724609,
+      "ppo/val/clipfrac": 0.0,
+      "ppo/val/mean": 0.21187734603881836,
+      "ppo/val/var": 0.30251345038414,
+      "ppo/val/var_explained": -32.830963134765625,
+      "ppo/learning_rate": 1.41e-05
+    }
+  },
+  "states_and_non_timing_outputs_exactly_equal": true,
+  "diagnostics": {
+    "shape_shift_mask": {
+      "query": [
+        7
+      ],
+      "response": [
+        20
+      ],
+      "input": [
+        1,
+        27
+      ],
+      "logits": [
+        1,
+        27,
+        50257
+      ],
+      "values": [
+        1,
+        26
+      ],
+      "mask_indices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "manual_logprob_exact": true,
+      "no_duplicate_prompt": true
+    },
+    "old_vs_reference_after_update": {
+      "new_rollout_ratio_exactly_one": true,
+      "ref_logprob_max_difference": 0.004940032958984375,
+      "wrong_ref_denominator_ratio_max_difference": 0.0049523115158081055
+    },
+    "kl_reward": {
+      "sample_kl": [
+        [
+          0.2,
+          -0.30000000000000004,
+          0.09999999999999998,
+          -0.09999999999999998
+        ]
+      ],
+      "rewards": [
+        [
+          -0.04000000000000001,
+          0.06000000000000001,
+          0.98,
+          0.019999999999999997
+        ]
+      ],
+      "full_kl": [
+        [
+          0.13081203594113697
+        ]
+      ],
+      "full_equals_manual": true,
+      "OpenRLHF_valid_tokens_equal": true,
+      "OpenRLHF_clamps_score_20_to_10": true
+    },
+    "GAE": {
+      "delta": [
+        0.2,
+        -0.3,
+        0.9
+      ],
+      "raw_advantages": [
+        [
+          0.72725,
+          0.555,
+          0.9
+        ]
+      ],
+      "returns": [
+        [
+          0.9272499999999999,
+          0.955,
+          1.0
+        ]
+      ],
+      "whitened_advantages": [
+        [
+          -0.0009661830743013079,
+          -0.999516390364813,
+          1.000482573439115
+        ]
+      ],
+      "targets_require_grad": false,
+      "OpenRLHF_raw_advantages_equal": true
+    },
+    "clip_and_gradient": {
+      "ratios": [
+        [
+          1.3,
+          0.7,
+          1.3,
+          0.7
+        ]
+      ],
+      "advantages": [
+        [
+          1.0,
+          1.0,
+          -1.0,
+          -1.0
+        ]
+      ],
+      "policy_loss": 0.050000000000000044,
+      "weighted_value_loss": 0.006500000000000001,
+      "d_policy_d_new_logprob": [
+        [
+          0.0,
+          -0.175,
+          0.325,
+          0.0
+        ]
+      ],
+      "OpenRLHF_policy_and_value_equal": true,
+      "value_clip_pessimistic_example": 0.03200000000000001
+    },
+    "controller": {
+      "highKL_beta": 0.20040000000000002,
+      "then_lowKL_beta": 0.19999920000000002,
+      "relative_error_clipped": true
+    },
+    "variable_length_padding": {
+      "left": {
+        "mask_counts": [
+          5,
+          3
+        ],
+        "batch_vs_single_max_errors": [
+          0.0,
+          0.058259010314941406
+        ],
+        "independent_position_ids_fix_errors": [
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "mask_counts": [
+          5,
+          3
+        ],
+        "batch_vs_single_max_errors": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "framework_mask_reduction_difference": {
+      "TRL_global_token_mean": 4.333333333333333,
+      "OpenRLHF_sequence_then_batch_mean": 5.5,
+      "unequal_response_lengths": [
+        2,
+        1
+      ]
+    },
+    "observed_boundaries": {
+      "zero_response_mask": {
+        "exception": "IndexError",
+        "message": "index -1 is out of bounds for dimension 0 with size 0"
+      },
+      "scores_plain_float": {
+        "exception": "ValueError",
+        "message": "Elements in scores must be tensors - got <class 'float'>"
+      },
+      "one_valid_token_variance": {
+        "returned": {
+          "dtype": "torch.float32",
+          "shape": [],
+          "value": "NaN (observed undefined sample statistic)"
+        },
+        "finite": false
+      }
+    },
+    "checkpoint": {
+      "all_base_and_value_head_state_exact": true,
+      "reloaded_logits_and_values_exact": true,
+      "temporary_checkpoint_not_published": true
+    }
+  },
+  "not_run": [
+    "Original GPT2 pretrained checkpoint and original natural language quality",
+    "OpenRLHF Ray/DeepSpeed/CUDA distributed training or make_experience",
+    "Learned reward model, preference dataset or human evaluation",
+    "PPO paper Atari/MuJoCo or large scale speed benchmark"
+  ],
+  "scripts_sha256": {
+    "build_delivery.py": "1eb2de07f2632bab50e2899bc3dd53f7fffb7715cef59f57386b322dedd26e11",
+    "verify_delivery.py": "135f1fac71e08d246db6b1f4321ad713e2d71f23f602a48ffc69564b7a54758c"
+  }
+}

@@ -1,0 +1,10 @@
+# 本次Windows Python3.12 CPU环境；完整环境与资产前置见README。
+torch==2.5.1
+transformers==4.44.2
+trl==0.8.6
+accelerate==0.34.2
+datasets==2.19.2
+peft==0.12.0
+tokenizers==0.19.1
+nbformat==5.10.4
+ipython

@@ -1,0 +1,61 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "notebook": "tutorials/trl_hf/trl_ppotrainer_helloworld.ipynb",
+  "files": {
+    "代码/tutorials/trl_hf/trl_ppotrainer_helloworld.ipynb": "b1e02b5446c40dadb1abd4f582d24c8492f6128ce6e5ee44853ef30255fb44fe",
+    "代码/imgs/adap_kl_coef.png": "2ff518debb3d1cb2314c6d288be78c15fa13e10c532c2410e732ba91ed8c76c0",
+    "代码/imgs/openrlhf.png": "7f2f2d13372a4bb25a45c7255f28624c142d591dabbea439709e8f5531242c76",
+    "代码/imgs/trl_ppo_loss.png": "ab138d091763d1b2d16d093140b920436f80b09211c6264950680d89e09cf511"
+  },
+  "core_objects": {
+    "trl/trainer/ppo_trainer.py": [
+      "PPOTrainer"
+    ],
+    "trl/trainer/utils.py": [
+      "AdaptiveKLController",
+      "FixedKLController"
+    ],
+    "trl/models/modeling_value_head.py": [
+      "ValueHead",
+      "AutoModelForCausalLMWithValueHead"
+    ],
+    "trl/core.py": [
+      "logprobs_from_logits",
+      "masked_mean",
+      "masked_var",
+      "masked_whiten",
+      "clip_by_value"
+    ]
+  },
+  "trl_version": "0.8.6",
+  "openrlhf_commit": "fbc1eab137c18651b28e1fa8d9b01c592e130b41",
+  "openrlhf_commit_selection": "2024-06-01以前的最后一次提交；用于历史框架对照，非断言讲师版本",
+  "subtitle": "E:/cfebaaee-f078-4e1d-9bbe-374686097bf3.txt（仅本地保存）",
+  "trl_source_sha256": {
+    "trl/trainer/ppo_trainer.py": "7aff1820d6162416f242dcc5d231a6d64e8c2b33721256354b475ec1474aa941",
+    "trl/trainer/utils.py": "efc0bda563040376282642ef2bb42bb228fe6ffbaad001b3072f70282f3e5ca0",
+    "trl/models/modeling_value_head.py": "ebc6a0797fc0504c2ea25d32be51a99d5c1f9ba287934aa69b0c870bf716f014",
+    "trl/core.py": "9956107d8314968eab3ac3436798972361476ef805c88c8bd7891ebd1ad94966"
+  },
+  "openrlhf_source_sha256": {
+    "openrlhf-models-utils.py": "f5492fc5e99098264c2573a8c6ea9fee21e21900fcd8d31fc4928e694d2ff517",
+    "openrlhf-loss.py": "5912a1fd1e25d9804226e4eea1dbdacd61117099f90cb20e85cd5cabcc5c9569",
+    "openrlhf-experience_maker.py": "4241cca6d06a764b368b58dc38c8cd56e2ee0148380af6b479ed94f3da4a2dab"
+  },
+  "openrlhf_core_objects": {
+    "openrlhf-models-utils.py": [
+      "compute_approx_kl",
+      "compute_reward",
+      "log_probs_from_logits",
+      "masked_mean"
+    ],
+    "openrlhf-loss.py": [
+      "PolicyLoss",
+      "ValueLoss"
+    ],
+    "openrlhf-experience_maker.py": [
+      "NaiveExperienceMaker.make_experience",
+      "NaiveExperienceMaker.get_advantages_and_returns"
+    ]
+  }
+}
