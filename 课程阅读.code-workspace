@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "name": "课程（从 README.md 选讲次）",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "工具": true,
+      "资料": true,
+      "AGENTS.md": true,
+      "**/复现": true,
+      "**/来源清单.json": true,
+      "**/代码单元解释.md": true,
+      "**/*原代码_带说明.ipynb": true
+    },
+    "explorer.compactFolders": false
+  }
+}
