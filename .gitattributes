@@ -6,3 +6,6 @@
 **/llama/tokenizer.py -text
 # 官方许可证保留原字节与原空白，不按新代码的空白规范重写。
 **/llama/LICENSE -text -whitespace
+# 第26讲语料与完整BPE rank表按校验字节保存，不规范化历史换行。
+*.tiktoken -text -diff
+**/tokenizer/xyj.txt -text -diff

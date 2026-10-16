@@ -1,0 +1,1880 @@
+{
+  "status": "passed",
+  "preservation": {
+    "notebooks": {
+      "tokenizer_gpt4o": {
+        "cells": 21,
+        "code_cells": 15,
+        "derived_cells": 43,
+        "schemas": 3
+      },
+      "tokenizer_supply": {
+        "cells": 12,
+        "code_cells": 10,
+        "derived_cells": 25,
+        "schemas": 3
+      }
+    },
+    "raw_fixed_git_blobs": true,
+    "metadata_and_history_preserved": true,
+    "comment_only_ast_and_tokens": true,
+    "reading_python_ast": true,
+    "official_complete_objects": [
+      "get_encoding",
+      "cl100k_base",
+      "o200k_base",
+      "Encoding.__init__",
+      "Encoding.encode",
+      "Encoding.decode",
+      "Encoding.decode_single_token_bytes",
+      "Encoding.n_vocab",
+      "bpe_encode"
+    ],
+    "installed_record_sources_verified": true,
+    "remote_tag_constructor_text_equal": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "tiktoken": "0.7.0",
+      "langdetect": "1.0.9",
+      "regex": "2026.9.29",
+      "nbformat": "5.10.4",
+      "requests": "2.34.2"
+    }
+  },
+  "not_run": [
+    "GPT-4o API/model weights",
+    "Tokenizer or Transformer training",
+    "Training data audit",
+    "Model quality/price benchmark"
+  ],
+  "original": {
+    "literal_cells": 25,
+    "cpu_variants": 0,
+    "skips": 0,
+    "traces": {
+      "tokenizer_gpt4o": [
+        {
+          "cell": 2,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 3,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 4,
+          "display": [
+            72,
+            3021,
+            6369,
+            70,
+            418
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 5,
+          "display": [
+            72,
+            3047,
+            7999,
+            70,
+            555
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 6,
+          "display": [
+            100277,
+            200019
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 9,
+          "display": 34,
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "display": 24,
+          "stdout": ""
+        },
+        {
+          "cell": 11,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 12,
+          "display": [
+            990508,
+            703303,
+            1.408365953223575,
+            0.7100427255509294
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 15,
+          "display": [
+            177431
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 16,
+          "display": [
+            90112,
+            36668,
+            17792,
+            40198,
+            247,
+            17297,
+            98184,
+            6271,
+            222,
+            82696,
+            7305,
+            100
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 17,
+          "display": null,
+          "stdout": "185118 _日本毛片免费视频观看\n116852  中国福利彩票天天\n128031 久久免费热在线精品\n154809 无码不卡高清免费v\n172750  大发快三大小单双\n177431 给主人留下些什么吧\n181679  qq的天天中彩票\n184969 _日本一级特黄大片\n187822  大发快三开奖结果\n49649  彩神争霸邀请码\n89409 免费视频在线观看\n122333 无码不卡高清免费\n122712 无码一区二区三区\n128600  大发时时彩计划\n133274 】【：】【“】【\n135161  大发时时彩开奖\n149168  大发时时彩怎么\n160029  大发快三是国家\n160131  大发快三是不是\n176039 精品一区二区三区\n",
+          "vocabulary_scan": {
+            "valid_ids": 200000,
+            "ordered_id_length_sha256": "2dcd5787327fae9cc7eb68d4505e3603b1cddbefca88121eedb98d4ef95696af",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                72056,
+                128
+              ],
+              [
+                179041,
+                113
+              ],
+              [
+                182513,
+                112
+              ],
+              [
+                141084,
+                97
+              ],
+              [
+                85810,
+                96
+              ],
+              [
+                168258,
+                96
+              ],
+              [
+                193856,
+                96
+              ],
+              [
+                195732,
+                95
+              ],
+              [
+                174893,
+                91
+              ],
+              [
+                146780,
+                88
+              ],
+              [
+                134788,
+                87
+              ],
+              [
+                116288,
+                83
+              ],
+              [
+                166044,
+                82
+              ],
+              [
+                79593,
+                81
+              ],
+              [
+                111383,
+                81
+              ],
+              [
+                163690,
+                81
+              ],
+              [
+                50529,
+                80
+              ],
+              [
+                73681,
+                80
+              ],
+              [
+                76470,
+                80
+              ],
+              [
+                82394,
+                80
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 18,
+          "display": null,
+          "stdout": "75787 。\n\n\n\n\n\n\n19066 。\n\n\n\n\n54689 。。\n\n\n63093 。',\n\n64376 。\",\n\n65053 监听页面\n76718 微软雅黑\n80000 。”\n\n\n97432 ”。\n\n\n3490 。\n\n\n28918 、\n\n\n28966 ）\n\n\n38232 。</\n38365 。\r\n\n41771  获取\n47436 ：</\n48858  创建\n49055 请输入\n49543 ：\n\n\n54154  设置\n",
+          "vocabulary_scan": {
+            "valid_ids": 100261,
+            "ordered_id_length_sha256": "0e7858d46ab04d2fe665e37d79013057df59f1246bc3b3f7f5b89489cd7a345e",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                58040,
+                128
+              ],
+              [
+                90280,
+                114
+              ],
+              [
+                67307,
+                113
+              ],
+              [
+                57442,
+                98
+              ],
+              [
+                60909,
+                97
+              ],
+              [
+                87644,
+                97
+              ],
+              [
+                61729,
+                96
+              ],
+              [
+                99574,
+                96
+              ],
+              [
+                87866,
+                95
+              ],
+              [
+                80971,
+                91
+              ],
+              [
+                66371,
+                87
+              ],
+              [
+                52575,
+                83
+              ],
+              [
+                51661,
+                82
+              ],
+              [
+                67000,
+                82
+              ],
+              [
+                88667,
+                82
+              ],
+              [
+                94782,
+                82
+              ],
+              [
+                95403,
+                82
+              ],
+              [
+                99420,
+                82
+              ],
+              [
+                37813,
+                81
+              ],
+              [
+                40473,
+                81
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 19,
+          "display": null,
+          "stdout": "161518 abcdefghijklmnopqrstuvwxyz\n184150 ABCDEFGHIJKLMNOPQRSTUVWXYZ\n130756  verantwoordelijkheid\n150141  สำนักเลขานุการองค์กร\n106123  telecommunications\n133739  selbstverständlich\n135127  วิเคราะห์บอลวันนี้\n154976 .onreadystatechange\n166459  significativamente\n184611  Telecommunications\n193348  Wahrscheinlichkeit\n197767  disproportionately\n88004  unterschiedlichen\n100106  interdisciplinary\n117361 .githubusercontent\n132622  responsabilidades\n134381  Herausforderungen\n135128  multidisciplinary\n138955  STDMETHODCALLTYPE\n198090  commercialization\n",
+          "vocabulary_scan": {
+            "valid_ids": 200000,
+            "ordered_id_length_sha256": "2dcd5787327fae9cc7eb68d4505e3603b1cddbefca88121eedb98d4ef95696af",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                72056,
+                128
+              ],
+              [
+                179041,
+                113
+              ],
+              [
+                182513,
+                112
+              ],
+              [
+                141084,
+                97
+              ],
+              [
+                85810,
+                96
+              ],
+              [
+                168258,
+                96
+              ],
+              [
+                193856,
+                96
+              ],
+              [
+                195732,
+                95
+              ],
+              [
+                174893,
+                91
+              ],
+              [
+                146780,
+                88
+              ],
+              [
+                134788,
+                87
+              ],
+              [
+                116288,
+                83
+              ],
+              [
+                166044,
+                82
+              ],
+              [
+                79593,
+                81
+              ],
+              [
+                111383,
+                81
+              ],
+              [
+                163690,
+                81
+              ],
+              [
+                50529,
+                80
+              ],
+              [
+                73681,
+                80
+              ],
+              [
+                76470,
+                80
+              ],
+              [
+                82394,
+                80
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 20,
+          "display": null,
+          "stdout": ""
+        }
+      ],
+      "tokenizer_supply": [
+        {
+          "cell": 0,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 1,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 3,
+          "display": [
+            4513,
+            19,
+            10,
+            10961,
+            22
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 4,
+          "display": null,
+          "stdout": "123\n4\n+\n456\n7\n"
+        },
+        {
+          "cell": 6,
+          "display": [
+            14957
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 7,
+          "display": [
+            1917
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 8,
+          "display": [
+            15339,
+            1917
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 9,
+          "display": [
+            14957
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "display": " worldworld",
+          "stdout": ""
+        },
+        {
+          "cell": 11,
+          "display": null,
+          "stdout": ""
+        }
+      ]
+    },
+    "external_context": "langdetect.DetectorFactory.seed=26; full real vocab cached; requests disabled",
+    "corpus_counts": [
+      990508,
+      703303
+    ],
+    "encoding_cache_same_object": true,
+    "native_stderr": {
+      "bytes": 4020,
+      "sha256": "9a4587a867953d9a3a7d4cc7e49b1d5869f09d9c799ca5f9c7e95708be5422f8",
+      "panic_count": 54,
+      "first_lines": [
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:",
+        "no entry found for key",
+        "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:",
+        "no entry found for key",
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:"
+      ]
+    }
+  },
+  "annotated": {
+    "literal_cells": 25,
+    "cpu_variants": 0,
+    "skips": 0,
+    "traces": {
+      "tokenizer_gpt4o": [
+        {
+          "cell": 2,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 3,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 4,
+          "display": [
+            72,
+            3021,
+            6369,
+            70,
+            418
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 5,
+          "display": [
+            72,
+            3047,
+            7999,
+            70,
+            555
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 6,
+          "display": [
+            100277,
+            200019
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 9,
+          "display": 34,
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "display": 24,
+          "stdout": ""
+        },
+        {
+          "cell": 11,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 12,
+          "display": [
+            990508,
+            703303,
+            1.408365953223575,
+            0.7100427255509294
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 15,
+          "display": [
+            177431
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 16,
+          "display": [
+            90112,
+            36668,
+            17792,
+            40198,
+            247,
+            17297,
+            98184,
+            6271,
+            222,
+            82696,
+            7305,
+            100
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 17,
+          "display": null,
+          "stdout": "185118 _日本毛片免费视频观看\n116852  中国福利彩票天天\n128031 久久免费热在线精品\n154809 无码不卡高清免费v\n172750  大发快三大小单双\n177431 给主人留下些什么吧\n181679  qq的天天中彩票\n184969 _日本一级特黄大片\n187822  大发快三开奖结果\n49649  彩神争霸邀请码\n89409 免费视频在线观看\n122333 无码不卡高清免费\n122712 无码一区二区三区\n128600  大发时时彩计划\n133274 】【：】【“】【\n135161  大发时时彩开奖\n149168  大发时时彩怎么\n160029  大发快三是国家\n160131  大发快三是不是\n176039 精品一区二区三区\n",
+          "vocabulary_scan": {
+            "valid_ids": 200000,
+            "ordered_id_length_sha256": "2dcd5787327fae9cc7eb68d4505e3603b1cddbefca88121eedb98d4ef95696af",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                72056,
+                128
+              ],
+              [
+                179041,
+                113
+              ],
+              [
+                182513,
+                112
+              ],
+              [
+                141084,
+                97
+              ],
+              [
+                85810,
+                96
+              ],
+              [
+                168258,
+                96
+              ],
+              [
+                193856,
+                96
+              ],
+              [
+                195732,
+                95
+              ],
+              [
+                174893,
+                91
+              ],
+              [
+                146780,
+                88
+              ],
+              [
+                134788,
+                87
+              ],
+              [
+                116288,
+                83
+              ],
+              [
+                166044,
+                82
+              ],
+              [
+                79593,
+                81
+              ],
+              [
+                111383,
+                81
+              ],
+              [
+                163690,
+                81
+              ],
+              [
+                50529,
+                80
+              ],
+              [
+                73681,
+                80
+              ],
+              [
+                76470,
+                80
+              ],
+              [
+                82394,
+                80
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 18,
+          "display": null,
+          "stdout": "75787 。\n\n\n\n\n\n\n19066 。\n\n\n\n\n54689 。。\n\n\n63093 。',\n\n64376 。\",\n\n65053 监听页面\n76718 微软雅黑\n80000 。”\n\n\n97432 ”。\n\n\n3490 。\n\n\n28918 、\n\n\n28966 ）\n\n\n38232 。</\n38365 。\r\n\n41771  获取\n47436 ：</\n48858  创建\n49055 请输入\n49543 ：\n\n\n54154  设置\n",
+          "vocabulary_scan": {
+            "valid_ids": 100261,
+            "ordered_id_length_sha256": "0e7858d46ab04d2fe665e37d79013057df59f1246bc3b3f7f5b89489cd7a345e",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                58040,
+                128
+              ],
+              [
+                90280,
+                114
+              ],
+              [
+                67307,
+                113
+              ],
+              [
+                57442,
+                98
+              ],
+              [
+                60909,
+                97
+              ],
+              [
+                87644,
+                97
+              ],
+              [
+                61729,
+                96
+              ],
+              [
+                99574,
+                96
+              ],
+              [
+                87866,
+                95
+              ],
+              [
+                80971,
+                91
+              ],
+              [
+                66371,
+                87
+              ],
+              [
+                52575,
+                83
+              ],
+              [
+                51661,
+                82
+              ],
+              [
+                67000,
+                82
+              ],
+              [
+                88667,
+                82
+              ],
+              [
+                94782,
+                82
+              ],
+              [
+                95403,
+                82
+              ],
+              [
+                99420,
+                82
+              ],
+              [
+                37813,
+                81
+              ],
+              [
+                40473,
+                81
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 19,
+          "display": null,
+          "stdout": "161518 abcdefghijklmnopqrstuvwxyz\n184150 ABCDEFGHIJKLMNOPQRSTUVWXYZ\n130756  verantwoordelijkheid\n150141  สำนักเลขานุการองค์กร\n106123  telecommunications\n133739  selbstverständlich\n135127  วิเคราะห์บอลวันนี้\n154976 .onreadystatechange\n166459  significativamente\n184611  Telecommunications\n193348  Wahrscheinlichkeit\n197767  disproportionately\n88004  unterschiedlichen\n100106  interdisciplinary\n117361 .githubusercontent\n132622  responsabilidades\n134381  Herausforderungen\n135128  multidisciplinary\n138955  STDMETHODCALLTYPE\n198090  commercialization\n",
+          "vocabulary_scan": {
+            "valid_ids": 200000,
+            "ordered_id_length_sha256": "2dcd5787327fae9cc7eb68d4505e3603b1cddbefca88121eedb98d4ef95696af",
+            "printed_count": 20,
+            "first20_by_length": [
+              [
+                72056,
+                128
+              ],
+              [
+                179041,
+                113
+              ],
+              [
+                182513,
+                112
+              ],
+              [
+                141084,
+                97
+              ],
+              [
+                85810,
+                96
+              ],
+              [
+                168258,
+                96
+              ],
+              [
+                193856,
+                96
+              ],
+              [
+                195732,
+                95
+              ],
+              [
+                174893,
+                91
+              ],
+              [
+                146780,
+                88
+              ],
+              [
+                134788,
+                87
+              ],
+              [
+                116288,
+                83
+              ],
+              [
+                166044,
+                82
+              ],
+              [
+                79593,
+                81
+              ],
+              [
+                111383,
+                81
+              ],
+              [
+                163690,
+                81
+              ],
+              [
+                50529,
+                80
+              ],
+              [
+                73681,
+                80
+              ],
+              [
+                76470,
+                80
+              ],
+              [
+                82394,
+                80
+              ]
+            ]
+          }
+        },
+        {
+          "cell": 20,
+          "display": null,
+          "stdout": ""
+        }
+      ],
+      "tokenizer_supply": [
+        {
+          "cell": 0,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 1,
+          "display": null,
+          "stdout": ""
+        },
+        {
+          "cell": 3,
+          "display": [
+            4513,
+            19,
+            10,
+            10961,
+            22
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 4,
+          "display": null,
+          "stdout": "123\n4\n+\n456\n7\n"
+        },
+        {
+          "cell": 6,
+          "display": [
+            14957
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 7,
+          "display": [
+            1917
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 8,
+          "display": [
+            15339,
+            1917
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 9,
+          "display": [
+            14957
+          ],
+          "stdout": ""
+        },
+        {
+          "cell": 10,
+          "display": " worldworld",
+          "stdout": ""
+        },
+        {
+          "cell": 11,
+          "display": null,
+          "stdout": ""
+        }
+      ]
+    },
+    "external_context": "langdetect.DetectorFactory.seed=26; full real vocab cached; requests disabled",
+    "corpus_counts": [
+      990508,
+      703303
+    ],
+    "encoding_cache_same_object": true,
+    "native_stderr": {
+      "bytes": 4020,
+      "sha256": "9a4587a867953d9a3a7d4cc7e49b1d5869f09d9c799ca5f9c7e95708be5422f8",
+      "panic_count": 54,
+      "first_lines": [
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:",
+        "no entry found for key",
+        "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:",
+        "no entry found for key",
+        "thread '<unnamed>' panicked at src\\lib.rs:179:64:"
+      ]
+    }
+  },
+  "all_literal_outputs_and_scan_order_equal": true,
+  "diagnostics": {
+    "scans": [
+      {
+        "name": "cl100k_base",
+        "n_vocab": 100277,
+        "valid_ids": 100261,
+        "holes": [
+          100256,
+          100261,
+          100262,
+          100263,
+          100264,
+          100265,
+          100266,
+          100267,
+          100268,
+          100269,
+          100270,
+          100271,
+          100272,
+          100273,
+          100274,
+          100275
+        ],
+        "ordinary_count": 100256,
+        "special_tokens": {
+          "<|endoftext|>": 100257,
+          "<|fim_prefix|>": 100258,
+          "<|fim_middle|>": 100259,
+          "<|fim_suffix|>": 100260,
+          "<|endofprompt|>": 100276
+        },
+        "single_token_invalid_utf8": 773,
+        "longest_20_containing_han": [
+          {
+            "characters": 7,
+            "id": 64960,
+            "text": " 生命周期函数",
+            "bytes_hex": "20e7949fe591bde591a8e69c9fe587bde695b0"
+          },
+          {
+            "characters": 5,
+            "id": 64179,
+            "text": " 生命周期",
+            "bytes_hex": "20e7949fe591bde591a8e69c9f"
+          },
+          {
+            "characters": 5,
+            "id": 98128,
+            "text": " 自动生成",
+            "bytes_hex": "20e887aae58aa8e7949fe68890"
+          },
+          {
+            "characters": 4,
+            "id": 65053,
+            "text": "监听页面",
+            "bytes_hex": "e79b91e590ace9a1b5e99da2"
+          },
+          {
+            "characters": 4,
+            "id": 65884,
+            "text": "不能为空",
+            "bytes_hex": "e4b88de883bde4b8bae7a9ba"
+          },
+          {
+            "characters": 4,
+            "id": 76718,
+            "text": "微软雅黑",
+            "bytes_hex": "e5beaee8bdafe99b85e9bb91"
+          },
+          {
+            "characters": 4,
+            "id": 77190,
+            "text": " 初始化",
+            "bytes_hex": "20e5889de5a78be58c96"
+          },
+          {
+            "characters": 4,
+            "id": 87474,
+            "text": "無しさん",
+            "bytes_hex": "e784a1e38197e38195e38293"
+          },
+          {
+            "characters": 4,
+            "id": 92099,
+            "text": "删除成功",
+            "bytes_hex": "e588a0e999a4e68890e58a9f"
+          },
+          {
+            "characters": 3,
+            "id": 41771,
+            "text": " 获取",
+            "bytes_hex": "20e88eb7e58f96"
+          },
+          {
+            "characters": 3,
+            "id": 48858,
+            "text": " 创建",
+            "bytes_hex": "20e5889be5bbba"
+          },
+          {
+            "characters": 3,
+            "id": 49055,
+            "text": "请输入",
+            "bytes_hex": "e8afb7e8be93e585a5"
+          },
+          {
+            "characters": 3,
+            "id": 51142,
+            "text": " 用户",
+            "bytes_hex": "20e794a8e688b7"
+          },
+          {
+            "characters": 3,
+            "id": 54154,
+            "text": " 设置",
+            "bytes_hex": "20e8aebee7bdae"
+          },
+          {
+            "characters": 3,
+            "id": 56716,
+            "text": " 返回",
+            "bytes_hex": "20e8bf94e59b9e"
+          },
+          {
+            "characters": 3,
+            "id": 58004,
+            "text": " 下午",
+            "bytes_hex": "20e4b88be58d88"
+          },
+          {
+            "characters": 3,
+            "id": 60205,
+            "text": "用户名",
+            "bytes_hex": "e794a8e688b7e5908d"
+          },
+          {
+            "characters": 3,
+            "id": 63362,
+            "text": " 数据",
+            "bytes_hex": "20e695b0e68dae"
+          },
+          {
+            "characters": 3,
+            "id": 63397,
+            "text": "命周期",
+            "bytes_hex": "e591bde591a8e69c9f"
+          },
+          {
+            "characters": 3,
+            "id": 64171,
+            "text": " 修改",
+            "bytes_hex": "20e4bfaee694b9"
+          }
+        ]
+      },
+      {
+        "name": "o200k_base",
+        "n_vocab": 200019,
+        "valid_ids": 200000,
+        "holes": [
+          199998,
+          200000,
+          200001,
+          200002,
+          200003,
+          200004,
+          200005,
+          200006,
+          200007,
+          200008,
+          200009,
+          200010,
+          200011,
+          200012,
+          200013,
+          200014,
+          200015,
+          200016,
+          200017
+        ],
+        "ordinary_count": 199998,
+        "special_tokens": {
+          "<|endoftext|>": 199999,
+          "<|endofprompt|>": 200018
+        },
+        "single_token_invalid_utf8": 1562,
+        "longest_20_containing_han": [
+          {
+            "characters": 11,
+            "id": 181081,
+            "text": " 微信公众号天天中彩票",
+            "bytes_hex": "20e5beaee4bfa1e585ace4bc97e58fb7e5a4a9e5a4a9e4b8ade5bda9e7a5a8"
+          },
+          {
+            "characters": 11,
+            "id": 185118,
+            "text": "_日本毛片免费视频观看",
+            "bytes_hex": "5fe697a5e69cace6af9be78987e5858de8b4b9e8a786e9a291e8a782e79c8b"
+          },
+          {
+            "characters": 10,
+            "id": 147058,
+            "text": "VIPがお送りします",
+            "bytes_hex": "564950e3818ce3818ae98081e3828ae38197e381bee38199"
+          },
+          {
+            "characters": 10,
+            "id": 170996,
+            "text": " 微信上的天天中彩票",
+            "bytes_hex": "20e5beaee4bfa1e4b88ae79a84e5a4a9e5a4a9e4b8ade5bda9e7a5a8"
+          },
+          {
+            "characters": 10,
+            "id": 187716,
+            "text": " 微信里的天天中彩票",
+            "bytes_hex": "20e5beaee4bfa1e9878ce79a84e5a4a9e5a4a9e4b8ade5bda9e7a5a8"
+          },
+          {
+            "characters": 10,
+            "id": 188394,
+            "text": " 天天中彩票大神推荐",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e5a4a7e7a59ee68ea8e88d90"
+          },
+          {
+            "characters": 9,
+            "id": 46669,
+            "text": " 天天中彩票app",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8617070"
+          },
+          {
+            "characters": 9,
+            "id": 55935,
+            "text": " 彩神争霸大发快三",
+            "bytes_hex": "20e5bda9e7a59ee4ba89e99cb8e5a4a7e58f91e5bfabe4b889"
+          },
+          {
+            "characters": 9,
+            "id": 75794,
+            "text": " 天天中彩票中大奖",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e4b8ade5a4a7e5a596"
+          },
+          {
+            "characters": 9,
+            "id": 94212,
+            "text": " 天天中彩票双色球",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e58f8ce889b2e79083"
+          },
+          {
+            "characters": 9,
+            "id": 113125,
+            "text": "大发展有限公司官网",
+            "bytes_hex": "e5a4a7e58f91e5b195e69c89e99990e585ace58fb8e5ae98e7bd91"
+          },
+          {
+            "characters": 9,
+            "id": 115205,
+            "text": " 天天中彩票不中返",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e4b88de4b8ade8bf94"
+          },
+          {
+            "characters": 9,
+            "id": 116852,
+            "text": " 中国福利彩票天天",
+            "bytes_hex": "20e4b8ade59bbde7a68fe588a9e5bda9e7a5a8e5a4a9e5a4a9"
+          },
+          {
+            "characters": 9,
+            "id": 118406,
+            "text": " 天天中彩票为什么",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e4b8bae4bb80e4b988"
+          },
+          {
+            "characters": 9,
+            "id": 128031,
+            "text": "久久免费热在线精品",
+            "bytes_hex": "e4b985e4b985e5858de8b4b9e783ade59ca8e7babfe7b2bee59381"
+          },
+          {
+            "characters": 9,
+            "id": 128309,
+            "text": " 天天爱彩票app",
+            "bytes_hex": "20e5a4a9e5a4a9e788b1e5bda9e7a5a8617070"
+          },
+          {
+            "characters": 9,
+            "id": 144364,
+            "text": " 天天中彩票nba",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a86e6261"
+          },
+          {
+            "characters": 9,
+            "id": 148388,
+            "text": " 微信的天天中彩票",
+            "bytes_hex": "20e5beaee4bfa1e79a84e5a4a9e5a4a9e4b8ade5bda9e7a5a8"
+          },
+          {
+            "characters": 9,
+            "id": 148502,
+            "text": " 天天彩票与你同行",
+            "bytes_hex": "20e5a4a9e5a4a9e5bda9e7a5a8e4b88ee4bda0e5908ce8a18c"
+          },
+          {
+            "characters": 9,
+            "id": 153710,
+            "text": " 天天中彩票一等奖",
+            "bytes_hex": "20e5a4a9e5a4a9e4b8ade5bda9e7a5a8e4b880e7ad89e5a596"
+          }
+        ]
+      }
+    ],
+    "samples": [
+      {
+        "text": "i love chatgpt",
+        "cl100k_base": {
+          "ids": [
+            72,
+            3021,
+            6369,
+            70,
+            418
+          ],
+          "count": 5,
+          "pretokenized": [
+            "i",
+            " love",
+            " chatgpt"
+          ],
+          "token_bytes_hex": [
+            "69",
+            "206c6f7665",
+            "2063686174",
+            "67",
+            "7074"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            72,
+            3047,
+            7999,
+            70,
+            555
+          ],
+          "count": 5,
+          "pretokenized": [
+            "i",
+            " love",
+            " chatgpt"
+          ],
+          "token_bytes_hex": [
+            "69",
+            "206c6f7665",
+            "2063686174",
+            "67",
+            "7074"
+          ]
+        }
+      },
+      {
+        "text": "你好，世界！",
+        "cl100k_base": {
+          "ids": [
+            57668,
+            53901,
+            3922,
+            3574,
+            244,
+            98220,
+            6447
+          ],
+          "count": 7,
+          "pretokenized": [
+            "你好",
+            "，世界",
+            "！"
+          ],
+          "token_bytes_hex": [
+            "e4bda0",
+            "e5a5bd",
+            "efbc8c",
+            "e4b8",
+            "96",
+            "e7958c",
+            "efbc81"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            177519,
+            979,
+            28428,
+            3393
+          ],
+          "count": 4,
+          "pretokenized": [
+            "你好",
+            "，世界",
+            "！"
+          ],
+          "token_bytes_hex": [
+            "e4bda0e5a5bd",
+            "efbc8c",
+            "e4b896e7958c",
+            "efbc81"
+          ]
+        }
+      },
+      {
+        "text": "hello world",
+        "cl100k_base": {
+          "ids": [
+            15339,
+            1917
+          ],
+          "count": 2,
+          "pretokenized": [
+            "hello",
+            " world"
+          ],
+          "token_bytes_hex": [
+            "68656c6c6f",
+            "20776f726c64"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            24912,
+            2375
+          ],
+          "count": 2,
+          "pretokenized": [
+            "hello",
+            " world"
+          ],
+          "token_bytes_hex": [
+            "68656c6c6f",
+            "20776f726c64"
+          ]
+        }
+      },
+      {
+        "text": " world",
+        "cl100k_base": {
+          "ids": [
+            1917
+          ],
+          "count": 1,
+          "pretokenized": [
+            " world"
+          ],
+          "token_bytes_hex": [
+            "20776f726c64"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            2375
+          ],
+          "count": 1,
+          "pretokenized": [
+            " world"
+          ],
+          "token_bytes_hex": [
+            "20776f726c64"
+          ]
+        }
+      },
+      {
+        "text": "1234+4567",
+        "cl100k_base": {
+          "ids": [
+            4513,
+            19,
+            10,
+            10961,
+            22
+          ],
+          "count": 5,
+          "pretokenized": [
+            "123",
+            "4",
+            "+",
+            "456",
+            "7"
+          ],
+          "token_bytes_hex": [
+            "313233",
+            "34",
+            "2b",
+            "343536",
+            "37"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            7633,
+            19,
+            10,
+            19354,
+            22
+          ],
+          "count": 5,
+          "pretokenized": [
+            "123",
+            "4",
+            "+",
+            "456",
+            "7"
+          ],
+          "token_bytes_hex": [
+            "313233",
+            "34",
+            "2b",
+            "343536",
+            "37"
+          ]
+        }
+      },
+      {
+        "text": "café é",
+        "cl100k_base": {
+          "ids": [
+            936,
+            59958,
+            384,
+            54939
+          ],
+          "count": 4,
+          "pretokenized": [
+            "café",
+            " e",
+            "́"
+          ],
+          "token_bytes_hex": [
+            "6361",
+            "66c3a9",
+            "2065",
+            "cc81"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            66,
+            103112,
+            319,
+            13430
+          ],
+          "count": 4,
+          "pretokenized": [
+            "café",
+            " é"
+          ],
+          "token_bytes_hex": [
+            "63",
+            "6166c3a9",
+            "2065",
+            "cc81"
+          ]
+        }
+      },
+      {
+        "text": "🧑🏽‍💻",
+        "cl100k_base": {
+          "ids": [
+            9468,
+            100,
+            239,
+            9468,
+            237,
+            121,
+            378,
+            235,
+            93273,
+            119
+          ],
+          "count": 10,
+          "pretokenized": [
+            "🧑🏽‍💻"
+          ],
+          "token_bytes_hex": [
+            "f09f",
+            "a7",
+            "91",
+            "f09f",
+            "8f",
+            "bd",
+            "e280",
+            "8d",
+            "f09f92",
+            "bb"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            4103,
+            100,
+            239,
+            52622,
+            121,
+            2524,
+            31446,
+            119
+          ],
+          "count": 8,
+          "pretokenized": [
+            "🧑🏽‍💻"
+          ],
+          "token_bytes_hex": [
+            "f09f",
+            "a7",
+            "91",
+            "f09f8f",
+            "bd",
+            "e2808d",
+            "f09f92",
+            "bb"
+          ]
+        }
+      },
+      {
+        "text": "\t\n  ",
+        "cl100k_base": {
+          "ids": [
+            1602,
+            256
+          ],
+          "count": 2,
+          "pretokenized": [
+            "\t\n",
+            "  "
+          ],
+          "token_bytes_hex": [
+            "090a",
+            "2020"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            2775,
+            256
+          ],
+          "count": 2,
+          "pretokenized": [
+            "\t\n",
+            "  "
+          ],
+          "token_bytes_hex": [
+            "090a",
+            "2020"
+          ]
+        }
+      },
+      {
+        "text": "antidisestablishmentarianism",
+        "cl100k_base": {
+          "ids": [
+            519,
+            85342,
+            34500,
+            479,
+            8997,
+            2191
+          ],
+          "count": 6,
+          "pretokenized": [
+            "antidisestablishmentarianism"
+          ],
+          "token_bytes_hex": [
+            "616e74",
+            "69646973",
+            "65737461626c697368",
+            "6d656e74",
+            "617269616e",
+            "69736d"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            493,
+            129901,
+            376,
+            160388,
+            21203,
+            2367
+          ],
+          "count": 6,
+          "pretokenized": [
+            "antidisestablishmentarianism"
+          ],
+          "token_bytes_hex": [
+            "616e74",
+            "69646973",
+            "657374",
+            "61626c6973686d656e74",
+            "617269616e",
+            "69736d"
+          ]
+        }
+      },
+      {
+        "text": "HTTPServer_v2",
+        "cl100k_base": {
+          "ids": [
+            9412,
+            5592,
+            2325,
+            17
+          ],
+          "count": 4,
+          "pretokenized": [
+            "HTTPServer",
+            "_v",
+            "2"
+          ],
+          "token_bytes_hex": [
+            "48545450",
+            "536572766572",
+            "5f76",
+            "32"
+          ]
+        },
+        "o200k_base": {
+          "ids": [
+            17893,
+            6444,
+            5390,
+            17
+          ],
+          "count": 4,
+          "pretokenized": [
+            "HTTPServer",
+            "_v",
+            "2"
+          ],
+          "token_bytes_hex": [
+            "48545450",
+            "536572766572",
+            "5f76",
+            "32"
+          ]
+        }
+      }
+    ],
+    "old_tokens_absent_from_new": 15223,
+    "new_tokens_absent_from_old": 114965,
+    "larger_vocab_can_give_more_tokens": [
+      {
+        "text": "AIM",
+        "cl": [
+          14660
+        ],
+        "o": [
+          32,
+          2833
+        ]
+      },
+      {
+        "text": "AMY",
+        "cl": [
+          86229
+        ],
+        "o": [
+          2148,
+          56
+        ]
+      },
+      {
+        "text": "APO",
+        "cl": [
+          85340
+        ],
+        "o": [
+          2685,
+          46
+        ]
+      }
+    ],
+    "utf8_boundaries": {
+      "cl100k_base": {
+        "ids": [
+          9468,
+          100,
+          239,
+          9468,
+          237,
+          121,
+          378,
+          235,
+          93273,
+          119
+        ],
+        "per_token_lossy": "����������",
+        "whole_decode": "🧑🏽‍💻"
+      },
+      "o200k_base": {
+        "ids": [
+          4103,
+          100,
+          239,
+          52622,
+          121,
+          2524,
+          31446,
+          119
+        ],
+        "per_token_lossy": "�����‍��",
+        "whole_decode": "🧑🏽‍💻"
+      }
+    },
+    "special_policy": {
+      "cl100k_base": {
+        "default_rejected": true,
+        "allowed": [
+          100257
+        ],
+        "ordinary": [
+          27,
+          91,
+          8862,
+          728,
+          428,
+          91,
+          29
+        ]
+      },
+      "o200k_base": {
+        "default_rejected": true,
+        "allowed": [
+          199999
+        ],
+        "ordinary": [
+          27,
+          91,
+          419,
+          1440,
+          919,
+          91,
+          29
+        ]
+      }
+    },
+    "regex_full_symbol_matches": {
+      "abc": false,
+      "123": false,
+      "中文": false,
+      "___": true,
+      "  \n": true,
+      "+-=\\": true,
+      "🙂": true
+    },
+    "toy_merge_ranks": {
+      "ab_first": [
+        256,
+        99
+      ],
+      "bc_first": [
+        97,
+        256
+      ]
+    },
+    "known_anomalous_id_is_ordinary": true,
+    "model_or_api_run": false
+  },
+  "corpus": {
+    "bytes": 2177760,
+    "unicode_chars": 727731,
+    "line_counts": [
+      990508,
+      703303
+    ],
+    "historical_line_counts": [
+      990508,
+      703303
+    ],
+    "historical_equal": true,
+    "whole_string_counts": [
+      989904,
+      702799
+    ],
+    "universal_newline_text_mode": true
+  },
+  "invalid_id_original_decode_exception": {
+    "type": "PanicException",
+    "module": "pyo3_runtime",
+    "is_exception": false,
+    "is_base_exception": true
+  },
+  "empty_language_detection_error": "No features in text.",
+  "scripts_sha256": {
+    "build_delivery.py": "0a576b4bfdf5ad5ecd87f352a2227e35000e5ae3d3abfff15940c5e5b3c35ca6",
+    "verify_delivery.py": "106ddec137b410f0e5c59b4c0d10e5b66242e30d57e84253f66be9544b025f24",
+    "tokenizer_diagnostics.py": "5bb06f486872fca881ffb793b187298b42560f05bf64efdb5450a8b1a2479a16"
+  }
+}

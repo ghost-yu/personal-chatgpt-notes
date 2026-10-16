@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": [
+    {
+      "upstream_path": "tutorials/tokenizer/xyj.txt",
+      "published_path": "代码/tutorials/tokenizer/xyj.txt",
+      "bytes": 2177760,
+      "sha256": "52709f91a86a76fc408178638c2b7cbeaa6f00cf892a1dd7ebcd2b79fde44411"
+    },
+    {
+      "upstream_path": "tutorials/tokenizer/tokenizer_gpt4o.ipynb",
+      "published_path": "代码/tutorials/tokenizer/tokenizer_gpt4o.ipynb",
+      "bytes": 17703,
+      "sha256": "00112c8b27da012f21ddb83e858692778a654aa068f9893110c859596563880a"
+    },
+    {
+      "upstream_path": "tutorials/tokenizer/tokenizer_supply.ipynb",
+      "published_path": "代码/tutorials/tokenizer/tokenizer_supply.ipynb",
+      "bytes": 6883,
+      "sha256": "fa6fac24ee7a3613e1d2aaa4d3b481540d27fa7ee33e55601483cd21715ccbf3"
+    }
+  ],
+  "tiktoken_release": "0.7.0",
+  "tiktoken_tag_url": "https://github.com/openai/tiktoken/tree/0.7.0",
+  "subtitle": "E盘根目录字幕中未找到本讲独立文本；232e8b13字幕属于第09讲，未冒用。",
+  "vocabularies": {
+    "cl100k_base": {
+      "published_path": "代码/tutorials/tokenizer/词表/cl100k_base.tiktoken",
+      "sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+      "bytes": 1681126,
+      "official_url": "https://openaipublic.blob.core.windows.net/encodings/cl100k_base.tiktoken",
+      "transfer_url": "https://raw.githubusercontent.com/zurawiki/tiktoken-rs/main/tiktoken-rs/assets/cl100k_base.tiktoken",
+      "transfer_note": "Official endpoint TLS handshake failed; mirror bytes exactly match official expected_hash in tiktoken0.7.0"
+    },
+    "o200k_base": {
+      "published_path": "代码/tutorials/tokenizer/词表/o200k_base.tiktoken",
+      "sha256": "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d",
+      "bytes": 3613922,
+      "official_url": "https://openaipublic.blob.core.windows.net/encodings/o200k_base.tiktoken",
+      "transfer_url": "https://raw.githubusercontent.com/zurawiki/tiktoken-rs/main/tiktoken-rs/assets/o200k_base.tiktoken",
+      "transfer_note": "Official endpoint TLS handshake failed; mirror bytes exactly match official expected_hash in tiktoken0.7.0"
+    }
+  },
+  "installed_sources_sha256": {
+    "tiktoken/core.py": "36919c6f79fca600e3284d7f540caceff74d38719a0697129cecb63b2904929f",
+    "tiktoken/registry.py": "f5f8660fc2f5d4bbbffed5dfe94a1cc3d8ce663646b4ffcc8b831aa855bb5207",
+    "tiktoken/load.py": "e34b1936e4dce14312789ca835096d7b217acc090aa795358dbfb1a2da958ead",
+    "tiktoken/_educational.py": "eeef0798b02083f2ca14b423bf752333a6cce05709883d482699bc84668ac96c",
+    "tiktoken_ext/openai_public.py": "b2c616cc1821fb36e461070edcf63842687e57af3c15029bb6439dee20a02713",
+    "tiktoken-0.7.0.dist-info/LICENSE": "258463fc3788f1f9b6a3f1820d8a87481ac24018d53167597e25d3e9031851ca"
+  },
+  "remote_release_constructor_text_matches_installed": true
+}

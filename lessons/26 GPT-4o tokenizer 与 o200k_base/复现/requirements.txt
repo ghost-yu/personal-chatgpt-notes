@@ -1,0 +1,6 @@
+# Python 3.12, CPU only; no torch/model/API key required for this lesson.
+tiktoken==0.7.0
+langdetect==1.0.9
+regex==2026.9.29
+nbformat==5.10.4
+requests==2.34.2

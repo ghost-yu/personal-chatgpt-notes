@@ -8,7 +8,7 @@
 | 2 | `…_代码注释.py` | 直接看代码及详细中文注释，最适合文本阅读 |
 | 3 | `代码注释.ipynb` | 在 GitHub 或 Jupyter 中逐格对照、查看输出 |
 
-**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–25 讲已发布，26–30 讲尚未完成。**
+**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–26 讲已发布，27–30 讲尚未完成。**
 
 在项目文件夹里找文件时，按这个顺序打开：
 
@@ -55,8 +55,9 @@ lessons/
 | [23 TRL Reward Model 与 RewardTrainer](lessons/23%20TRL%20Reward%20Model%20与%20RewardTrainer/README.md) | [讲解](lessons/23%20TRL%20Reward%20Model%20与%20RewardTrainer/解释.md) | [文本代码](lessons/23%20TRL%20Reward%20Model%20与%20RewardTrainer/代码/tutorials/reward_model/trl_reward_trainer_代码注释.py) | [带注释代码](lessons/23%20TRL%20Reward%20Model%20与%20RewardTrainer/代码/tutorials/reward_model/代码注释.ipynb) |
 | [24 PEFT LoRA merge 与 SVD](lessons/24%20PEFT%20LoRA%20merge%20与%20SVD/README.md) | [讲解](lessons/24%20PEFT%20LoRA%20merge%20与%20SVD/解释.md) | [文本代码](lessons/24%20PEFT%20LoRA%20merge%20与%20SVD/代码/tutorials/peft/lora_merge_代码注释.py) | [带注释代码](lessons/24%20PEFT%20LoRA%20merge%20与%20SVD/代码/tutorials/peft/代码注释.ipynb) |
 | [25 Llama 3 introduction](lessons/25%20Llama%203%20introduction/README.md) | [讲解](lessons/25%20Llama%203%20introduction/解释.md) | [文本代码](lessons/25%20Llama%203%20introduction/代码/tutorials/llama/llama3_0419_代码注释.py) | [带注释代码](lessons/25%20Llama%203%20introduction/代码/tutorials/llama/代码注释.ipynb) |
+| [26 GPT-4o tokenizer 与 o200k_base](lessons/26%20GPT-4o%20tokenizer%20与%20o200k_base/README.md) | [讲解](lessons/26%20GPT-4o%20tokenizer%20与%20o200k_base/解释.md) | [文本代码](lessons/26%20GPT-4o%20tokenizer%20与%20o200k_base/代码/tutorials/tokenizer/tokenizer_gpt4o_代码注释.py) | [带注释代码](lessons/26%20GPT-4o%20tokenizer%20与%20o200k_base/代码/tutorials/tokenizer/代码注释.ipynb) |
 
-第 08、09、15、18、24、25 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
+第 08、09、15、18、24、25、26 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
 
 <details>
 <summary>需要对照原版、查证验证结果或维护项目时，再展开</summary>
