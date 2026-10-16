@@ -1,5 +1,7 @@
 # 本项目工作约定
 
+2026-10-16 再次整理阅读入口：工作区及正式项目 README 增加实际目录示意，明确日常只读解释.md与 *_代码注释.py，notebook 用 GitHub/Jupyter 查看。检查未发现额外 tmp/bak/orig/rej 等临时文件；本轮未删除文件。旧讲稿与正式版本字节不同，来源及环境仍有脚本依赖，保留原路径。不要将此前已删除的8份原代码.md或此前被拒绝的缓存删除记作本轮清理成果。
+
 用户要求按 paper-code-deep-reading skill 完成 Personal ChatGPT 第01–30讲，中文解释公式、shape、API及全部notebook单元。上游固定提交为 `7fbc29824171fd07dc2c30fe922e61ebc018ad1d`，单元从0编号。
 
 每讲公开交付原notebook及必要图片、代码注释.ipynb、原代码_带说明.ipynb、Python阅读版、解释.md、代码单元解释.md及复现记录。原版按下载字节保留；说明版不改原单元；注释版只增加注释，保留历史输出，核对schema、AST和可行的执行。重要Markdown源码、命令、空单元也需说明。不得将教学验证或历史输出当成大模型复现。
