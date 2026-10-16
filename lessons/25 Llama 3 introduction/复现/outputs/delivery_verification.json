@@ -1,0 +1,1142 @@
+{
+  "status": "passed",
+  "scope": "2024-04 initial Llama3; no pretrained weights",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "cuda": false,
+    "tiktoken": "0.7.0",
+    "blobfile": "2.1.1"
+  },
+  "skipped": [
+    "Original proxy cell 1",
+    "Original 7B/8B checkpoints",
+    "CUDA/NCCL and multi-rank execution",
+    "Original benchmark/data/full training"
+  ],
+  "preservation": {
+    "notebooks": {
+      "llama3_0419": {
+        "cells": 38,
+        "code_cells": 23,
+        "derived_cells": 77,
+        "schemas": 3
+      },
+      "llama3_supp_data_config": {
+        "cells": 11,
+        "code_cells": 4,
+        "derived_cells": 23,
+        "schemas": 3
+      }
+    },
+    "fixed_git_blob_bytes": true,
+    "all_metadata_history_preserved": true,
+    "all_code_ast_noncomment_tokens_equal": true,
+    "markdown_complete_snippets_equal": true,
+    "official_core_ast_equal": true
+  },
+  "tokenizers": {
+    "real_original_rank_files": true,
+    "ordinary_samples": [
+      {
+        "text": "Hello world!",
+        "llama3_ids": [
+          9906,
+          1917,
+          0
+        ],
+        "llama2_ids": [
+          15043,
+          3186,
+          29991
+        ],
+        "llama3_tokens": 3,
+        "llama2_tokens": 3
+      },
+      {
+        "text": "你好，世界！",
+        "llama3_ids": [
+          57668,
+          53901,
+          3922,
+          102616,
+          6447
+        ],
+        "llama2_ids": [
+          29871,
+          30919,
+          31076,
+          30214,
+          30793,
+          30967,
+          30584
+        ],
+        "llama3_tokens": 5,
+        "llama2_tokens": 7
+      },
+      {
+        "text": "  A\n\nB\t",
+        "llama3_ids": [
+          220,
+          362,
+          271,
+          33,
+          197
+        ],
+        "llama2_ids": [
+          259,
+          319,
+          13,
+          13,
+          29933,
+          12
+        ],
+        "llama3_tokens": 5,
+        "llama2_tokens": 6
+      },
+      {
+        "text": "1234567890",
+        "llama3_ids": [
+          4513,
+          10961,
+          16474,
+          15
+        ],
+        "llama2_ids": [
+          29871,
+          29896,
+          29906,
+          29941,
+          29946,
+          29945,
+          29953,
+          29955,
+          29947,
+          29929,
+          29900
+        ],
+        "llama3_tokens": 4,
+        "llama2_tokens": 11
+      },
+      {
+        "text": "🙂🧑🏽‍💻",
+        "llama3_ids": [
+          9468,
+          19044,
+          9468,
+          100,
+          239,
+          9468,
+          237,
+          121,
+          102470,
+          93273,
+          119
+        ],
+        "llama2_ids": [
+          29871,
+          243,
+          162,
+          156,
+          133,
+          243,
+          162,
+          170,
+          148,
+          243,
+          162,
+          146,
+          192,
+          30722,
+          243,
+          162,
+          149,
+          190
+        ],
+        "llama3_tokens": 11,
+        "llama2_tokens": 18
+      },
+      {
+        "text": "café é",
+        "llama3_ids": [
+          936,
+          59958,
+          384,
+          54939
+        ],
+        "llama2_ids": [
+          274,
+          28059,
+          321,
+          30103
+        ],
+        "llama3_tokens": 4,
+        "llama2_tokens": 4
+      },
+      {
+        "text": "",
+        "llama3_ids": [],
+        "llama2_ids": [],
+        "llama3_tokens": 0,
+        "llama2_tokens": 0
+      },
+      {
+        "text": "Llama 3's tokenizer: 2024-04-18.\n数学 x² ≠ x",
+        "llama3_ids": [
+          43,
+          81101,
+          220,
+          18,
+          596,
+          47058,
+          25,
+          220,
+          2366,
+          19,
+          12,
+          2371,
+          12,
+          972,
+          627,
+          118687,
+          865,
+          30556,
+          95404,
+          865
+        ],
+        "llama2_ids": [
+          365,
+          29880,
+          3304,
+          29871,
+          29941,
+          29915,
+          29879,
+          5993,
+          3950,
+          29901,
+          29871,
+          29906,
+          29900,
+          29906,
+          29946,
+          29899,
+          29900,
+          29946,
+          29899,
+          29896,
+          29947,
+          29889,
+          13,
+          30354,
+          30415,
+          921,
+          30088,
+          29871,
+          30487,
+          921
+        ],
+        "llama3_tokens": 20,
+        "llama2_tokens": 30
+      }
+    ],
+    "special_count": 256,
+    "special_ids": {
+      "<|begin_of_text|>": 128000,
+      "<|end_of_text|>": 128001,
+      "<|start_header_id|>": 128006,
+      "<|end_header_id|>": 128007,
+      "<|eot_id|>": 128009
+    },
+    "long_character_cases": [
+      50001,
+      50001,
+      420000
+    ],
+    "roundtrips": true,
+    "fast_adaptation": "Transformers4.44.2 TikTokenConverter + explicit original-order special tokens + explicit Jinja template; not downloaded Hub tokenizer_config",
+    "ordinary_and_chat_ids_equal": true,
+    "single_bos": true
+  },
+  "full_meta_configs": {
+    "2": {
+      "parameters": 6738415616,
+      "breakdown": {
+        "embedding_and_head": 262144000,
+        "attention": 2147483648,
+        "mlp": 4328521728,
+        "norms": 266240
+      },
+      "config": {
+        "vocab_size": 32000,
+        "max_position_embeddings": 4096,
+        "hidden_size": 4096,
+        "intermediate_size": 11008,
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 32,
+        "hidden_act": "silu",
+        "initializer_range": 0.02,
+        "rms_norm_eps": 1e-06,
+        "pretraining_tp": 1,
+        "use_cache": true,
+        "rope_theta": 10000.0,
+        "rope_scaling": null,
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "mlp_bias": false,
+        "return_dict": true,
+        "output_hidden_states": false,
+        "output_attentions": false,
+        "torchscript": false,
+        "torch_dtype": null,
+        "use_bfloat16": false,
+        "tf_legacy_loss": false,
+        "pruned_heads": {},
+        "tie_word_embeddings": false,
+        "chunk_size_feed_forward": 0,
+        "is_encoder_decoder": false,
+        "is_decoder": false,
+        "cross_attention_hidden_size": null,
+        "add_cross_attention": false,
+        "tie_encoder_decoder": false,
+        "max_length": 20,
+        "min_length": 0,
+        "do_sample": false,
+        "early_stopping": false,
+        "num_beams": 1,
+        "num_beam_groups": 1,
+        "diversity_penalty": 0.0,
+        "temperature": 1.0,
+        "top_k": 50,
+        "top_p": 1.0,
+        "typical_p": 1.0,
+        "repetition_penalty": 1.0,
+        "length_penalty": 1.0,
+        "no_repeat_ngram_size": 0,
+        "encoder_no_repeat_ngram_size": 0,
+        "bad_words_ids": null,
+        "num_return_sequences": 1,
+        "output_scores": false,
+        "return_dict_in_generate": false,
+        "forced_bos_token_id": null,
+        "forced_eos_token_id": null,
+        "remove_invalid_values": false,
+        "exponential_decay_length_penalty": null,
+        "suppress_tokens": null,
+        "begin_suppress_tokens": null,
+        "architectures": null,
+        "finetuning_task": null,
+        "id2label": {
+          "0": "LABEL_0",
+          "1": "LABEL_1"
+        },
+        "label2id": {
+          "LABEL_0": 0,
+          "LABEL_1": 1
+        },
+        "tokenizer_class": null,
+        "prefix": null,
+        "bos_token_id": 1,
+        "pad_token_id": null,
+        "eos_token_id": 2,
+        "sep_token_id": null,
+        "decoder_start_token_id": null,
+        "task_specific_params": null,
+        "problem_type": null,
+        "_name_or_path": "",
+        "transformers_version": "4.44.2",
+        "model_type": "llama"
+      },
+      "physical_weight_data": false,
+      "kv_weight_shape": [
+        4096,
+        4096
+      ],
+      "mlp_weight_shape": [
+        11008,
+        4096
+      ]
+    },
+    "3": {
+      "parameters": 8030261248,
+      "breakdown": {
+        "embedding_and_head": 1050673152,
+        "attention": 1342177280,
+        "mlp": 5637144576,
+        "norms": 266240
+      },
+      "config": {
+        "vocab_size": 128256,
+        "max_position_embeddings": 8192,
+        "hidden_size": 4096,
+        "intermediate_size": 14336,
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_act": "silu",
+        "initializer_range": 0.02,
+        "rms_norm_eps": 1e-05,
+        "pretraining_tp": 1,
+        "use_cache": true,
+        "rope_theta": 500000.0,
+        "rope_scaling": null,
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "mlp_bias": false,
+        "return_dict": true,
+        "output_hidden_states": false,
+        "output_attentions": false,
+        "torchscript": false,
+        "torch_dtype": null,
+        "use_bfloat16": false,
+        "tf_legacy_loss": false,
+        "pruned_heads": {},
+        "tie_word_embeddings": false,
+        "chunk_size_feed_forward": 0,
+        "is_encoder_decoder": false,
+        "is_decoder": false,
+        "cross_attention_hidden_size": null,
+        "add_cross_attention": false,
+        "tie_encoder_decoder": false,
+        "max_length": 20,
+        "min_length": 0,
+        "do_sample": false,
+        "early_stopping": false,
+        "num_beams": 1,
+        "num_beam_groups": 1,
+        "diversity_penalty": 0.0,
+        "temperature": 1.0,
+        "top_k": 50,
+        "top_p": 1.0,
+        "typical_p": 1.0,
+        "repetition_penalty": 1.0,
+        "length_penalty": 1.0,
+        "no_repeat_ngram_size": 0,
+        "encoder_no_repeat_ngram_size": 0,
+        "bad_words_ids": null,
+        "num_return_sequences": 1,
+        "output_scores": false,
+        "return_dict_in_generate": false,
+        "forced_bos_token_id": null,
+        "forced_eos_token_id": null,
+        "remove_invalid_values": false,
+        "exponential_decay_length_penalty": null,
+        "suppress_tokens": null,
+        "begin_suppress_tokens": null,
+        "architectures": null,
+        "finetuning_task": null,
+        "id2label": {
+          "0": "LABEL_0",
+          "1": "LABEL_1"
+        },
+        "label2id": {
+          "LABEL_0": 0,
+          "LABEL_1": 1
+        },
+        "tokenizer_class": null,
+        "prefix": null,
+        "bos_token_id": 1,
+        "pad_token_id": null,
+        "eos_token_id": 2,
+        "sep_token_id": null,
+        "decoder_start_token_id": null,
+        "task_specific_params": null,
+        "problem_type": null,
+        "_name_or_path": "",
+        "transformers_version": "4.44.2",
+        "model_type": "llama"
+      },
+      "physical_weight_data": false,
+      "kv_weight_shape": [
+        1024,
+        4096
+      ],
+      "mlp_weight_shape": [
+        14336,
+        4096
+      ]
+    }
+  },
+  "notebook_execution": {
+    "original": {
+      "counts": {
+        "literal": 22,
+        "cpu_variants": 4,
+        "skipped": 1
+      },
+      "traces": {
+        "llama3_0419": [
+          {
+            "cell": 0,
+            "mode": "literal",
+            "display": {
+              "type": "datetime",
+              "actual_clock_excluded_from_equality": true
+            },
+            "stdout": ""
+          },
+          {
+            "cell": 2,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 3,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 5,
+            "mode": "literal",
+            "display": {
+              "type": "Image",
+              "png_sha256": "f330b785c85e0d69e62d0f1ae9ebdd929dc15c122d9da2f8e2b0b11e46db6e50"
+            },
+            "stdout": ""
+          },
+          {
+            "cell": 6,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 8,
+            "mode": "literal",
+            "display": "8.03B, 14.96GB",
+            "stdout": ""
+          },
+          {
+            "cell": 14,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 15,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 16,
+            "mode": "literal",
+            "display": "LlamaForCausalLM(\n  (model): LlamaModel(\n    (embed_tokens): Embedding(32000, 4096)\n    (layers): ModuleList(\n      (0-31): 32 x LlamaDecoderLayer(\n        (self_attn): LlamaSdpaAttention(\n          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (k_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (v_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (rotary_emb): LlamaRotaryEmbedding()\n        )\n        (mlp): LlamaMLP(\n          (gate_proj): Linear(in_features=4096, out_features=11008, bias=False)\n          (up_proj): Linear(in_features=4096, out_features=11008, bias=False)\n          (down_proj): Linear(in_features=11008, out_features=4096, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): LlamaRMSNorm((4096,), eps=1e-06)\n        (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-06)\n      )\n    )\n    (norm): LlamaRMSNorm((4096,), eps=1e-06)\n    (rotary_emb): LlamaRotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)\n)",
+            "stdout": ""
+          },
+          {
+            "cell": 17,
+            "mode": "literal",
+            "display": 2.6875,
+            "stdout": ""
+          },
+          {
+            "cell": 18,
+            "mode": "literal",
+            "display": 6738415616,
+            "stdout": ""
+          },
+          {
+            "cell": 19,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 20,
+            "mode": "literal",
+            "display": "LlamaForCausalLM(\n  (model): LlamaModel(\n    (embed_tokens): Embedding(128256, 4096)\n    (layers): ModuleList(\n      (0-31): 32 x LlamaDecoderLayer(\n        (self_attn): LlamaSdpaAttention(\n          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (k_proj): Linear(in_features=4096, out_features=1024, bias=False)\n          (v_proj): Linear(in_features=4096, out_features=1024, bias=False)\n          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (rotary_emb): LlamaRotaryEmbedding()\n        )\n        (mlp): LlamaMLP(\n          (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)\n          (up_proj): Linear(in_features=4096, out_features=14336, bias=False)\n          (down_proj): Linear(in_features=14336, out_features=4096, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): LlamaRMSNorm((4096,), eps=1e-05)\n        (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-05)\n      )\n    )\n    (norm): LlamaRMSNorm((4096,), eps=1e-05)\n    (rotary_emb): LlamaRotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=4096, out_features=128256, bias=False)\n)",
+            "stdout": ""
+          },
+          {
+            "cell": 21,
+            "mode": "literal",
+            "display": 8030261248,
+            "stdout": ""
+          },
+          {
+            "cell": 22,
+            "mode": "literal",
+            "display": 14.957527160644531,
+            "stdout": ""
+          },
+          {
+            "cell": 25,
+            "mode": "literal",
+            "display": 32000,
+            "stdout": ""
+          },
+          {
+            "cell": 26,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 27,
+            "mode": "literal",
+            "display": 128256,
+            "stdout": ""
+          },
+          {
+            "cell": 28,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 34,
+            "mode": "cpu_variants",
+            "display": [
+              {
+                "generated_text": "Hey how are you doing today? NAS\tsetTimeoutkýяття"
+              }
+            ],
+            "stdout": ""
+          },
+          {
+            "cell": 36,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": "comma_clivaluateuses\n"
+          },
+          {
+            "cell": 37,
+            "mode": "literal",
+            "display": null,
+            "stdout": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a pirate chatbot who always responds in pirate speak!<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n\n"
+          }
+        ],
+        "llama3_supp_data_config": [
+          {
+            "cell": 6,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 8,
+            "mode": "literal",
+            "display": 14336,
+            "stdout": ""
+          },
+          {
+            "cell": 9,
+            "mode": "literal",
+            "display": 3.5,
+            "stdout": ""
+          },
+          {
+            "cell": 10,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          }
+        ]
+      },
+      "explicit_variants_and_clock": {
+        "clock": "2026-10-16T13:17:50.722928",
+        "llama3_0419:15": "model_id = 'meta-llama/Llama-2-7b-hf'\nllama2_7b = full_meta('2')",
+        "llama3_0419:19": "model_id = 'meta-llama/Meta-Llama-3-8B'\nllama3_8b = full_meta('3')",
+        "llama3_0419:34": "model_id = 'meta-llama/Meta-Llama-3-8B'\npipeline = cpu_pipeline()\npipeline('Hey how are you doing today?')",
+        "llama3_0419:36": "model_id = 'meta-llama/Meta-Llama-3-8B-Instruct'\npipeline = cpu_pipeline()\nmessages = [{'role': 'system', 'content': 'You are a pirate chatbot who always responds in pirate speak!'}, {'role': 'user', 'content': 'Who are you?'}]\nprompt = pipeline.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\nterminators = [pipeline.tokenizer.eos_token_id, pipeline.tokenizer.convert_tokens_to_ids('<|eot_id|>')]\noutputs = pipeline(prompt, max_new_tokens=4, eos_token_id=terminators, do_sample=True, temperature=0.6, top_p=0.9)\nprint(outputs[0]['generated_text'][len(prompt):])"
+      },
+      "final_state": {
+        "model.embed_tokens.weight": {
+          "shape": [
+            128256,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "85537a6d218d4610f9c2f36ad78a3bad4f32dbf33de88ce1cdafd7e280023b85"
+        },
+        "model.layers.0.self_attn.q_proj.weight": {
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9e8fd150e5cee9edc22cf5eed1c02464546b5befd7f6a9d34c66ecaf39ea6f37"
+        },
+        "model.layers.0.self_attn.k_proj.weight": {
+          "shape": [
+            4,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "c9e53b94bb7c3e8cf29fff8e556f899a8b0153cca12f43473233eec34382983b"
+        },
+        "model.layers.0.self_attn.v_proj.weight": {
+          "shape": [
+            4,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "1383661b1a9c9f5c68c14ecc28656a806d3145dc4bb11478082ed532103a10c1"
+        },
+        "model.layers.0.self_attn.o_proj.weight": {
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9cad4ec09f847051143bee7827de7d7d08199d73056df767e99d84ba1c96d3a7"
+        },
+        "model.layers.0.mlp.gate_proj.weight": {
+          "shape": [
+            56,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "a83edec1a7a80221f0faaf58353ffc7effab48c1a18c7c6b37148db3342e068e"
+        },
+        "model.layers.0.mlp.up_proj.weight": {
+          "shape": [
+            56,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "87cbb36617e3faf557c07403ba0f00b54a58f0ba515cc6872f885b56c0fa3e16"
+        },
+        "model.layers.0.mlp.down_proj.weight": {
+          "shape": [
+            16,
+            56
+          ],
+          "dtype": "torch.float32",
+          "sha256": "e6321a983227818df583668a0713a34b7f10a23e6354ec631ff8d9e7b432499e"
+        },
+        "model.layers.0.input_layernorm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "model.layers.0.post_attention_layernorm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "model.norm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "lm_head.weight": {
+          "shape": [
+            128256,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "070984e53ebdc365ea00369a1e3a1d11618dcc7343a4b79b23056f8e1a4e3f2b"
+        }
+      },
+      "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a pirate chatbot who always responds in pirate speak!<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "small_model_parameters": 4107568,
+      "logits_shape": [
+        1,
+        3,
+        128256
+      ],
+      "kv_shape": [
+        1,
+        1,
+        3,
+        4
+      ]
+    },
+    "annotated": {
+      "counts": {
+        "literal": 22,
+        "cpu_variants": 4,
+        "skipped": 1
+      },
+      "traces": {
+        "llama3_0419": [
+          {
+            "cell": 0,
+            "mode": "literal",
+            "display": {
+              "type": "datetime",
+              "actual_clock_excluded_from_equality": true
+            },
+            "stdout": ""
+          },
+          {
+            "cell": 2,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 3,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 5,
+            "mode": "literal",
+            "display": {
+              "type": "Image",
+              "png_sha256": "f330b785c85e0d69e62d0f1ae9ebdd929dc15c122d9da2f8e2b0b11e46db6e50"
+            },
+            "stdout": ""
+          },
+          {
+            "cell": 6,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 8,
+            "mode": "literal",
+            "display": "8.03B, 14.96GB",
+            "stdout": ""
+          },
+          {
+            "cell": 14,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 15,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 16,
+            "mode": "literal",
+            "display": "LlamaForCausalLM(\n  (model): LlamaModel(\n    (embed_tokens): Embedding(32000, 4096)\n    (layers): ModuleList(\n      (0-31): 32 x LlamaDecoderLayer(\n        (self_attn): LlamaSdpaAttention(\n          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (k_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (v_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (rotary_emb): LlamaRotaryEmbedding()\n        )\n        (mlp): LlamaMLP(\n          (gate_proj): Linear(in_features=4096, out_features=11008, bias=False)\n          (up_proj): Linear(in_features=4096, out_features=11008, bias=False)\n          (down_proj): Linear(in_features=11008, out_features=4096, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): LlamaRMSNorm((4096,), eps=1e-06)\n        (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-06)\n      )\n    )\n    (norm): LlamaRMSNorm((4096,), eps=1e-06)\n    (rotary_emb): LlamaRotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)\n)",
+            "stdout": ""
+          },
+          {
+            "cell": 17,
+            "mode": "literal",
+            "display": 2.6875,
+            "stdout": ""
+          },
+          {
+            "cell": 18,
+            "mode": "literal",
+            "display": 6738415616,
+            "stdout": ""
+          },
+          {
+            "cell": 19,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 20,
+            "mode": "literal",
+            "display": "LlamaForCausalLM(\n  (model): LlamaModel(\n    (embed_tokens): Embedding(128256, 4096)\n    (layers): ModuleList(\n      (0-31): 32 x LlamaDecoderLayer(\n        (self_attn): LlamaSdpaAttention(\n          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (k_proj): Linear(in_features=4096, out_features=1024, bias=False)\n          (v_proj): Linear(in_features=4096, out_features=1024, bias=False)\n          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)\n          (rotary_emb): LlamaRotaryEmbedding()\n        )\n        (mlp): LlamaMLP(\n          (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)\n          (up_proj): Linear(in_features=4096, out_features=14336, bias=False)\n          (down_proj): Linear(in_features=14336, out_features=4096, bias=False)\n          (act_fn): SiLU()\n        )\n        (input_layernorm): LlamaRMSNorm((4096,), eps=1e-05)\n        (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-05)\n      )\n    )\n    (norm): LlamaRMSNorm((4096,), eps=1e-05)\n    (rotary_emb): LlamaRotaryEmbedding()\n  )\n  (lm_head): Linear(in_features=4096, out_features=128256, bias=False)\n)",
+            "stdout": ""
+          },
+          {
+            "cell": 21,
+            "mode": "literal",
+            "display": 8030261248,
+            "stdout": ""
+          },
+          {
+            "cell": 22,
+            "mode": "literal",
+            "display": 14.957527160644531,
+            "stdout": ""
+          },
+          {
+            "cell": 25,
+            "mode": "literal",
+            "display": 32000,
+            "stdout": ""
+          },
+          {
+            "cell": 26,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 27,
+            "mode": "literal",
+            "display": 128256,
+            "stdout": ""
+          },
+          {
+            "cell": 28,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 34,
+            "mode": "cpu_variants",
+            "display": [
+              {
+                "generated_text": "Hey how are you doing today? NAS\tsetTimeoutkýяття"
+              }
+            ],
+            "stdout": ""
+          },
+          {
+            "cell": 36,
+            "mode": "cpu_variants",
+            "display": null,
+            "stdout": "comma_clivaluateuses\n"
+          },
+          {
+            "cell": 37,
+            "mode": "literal",
+            "display": null,
+            "stdout": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a pirate chatbot who always responds in pirate speak!<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n\n"
+          }
+        ],
+        "llama3_supp_data_config": [
+          {
+            "cell": 6,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          },
+          {
+            "cell": 8,
+            "mode": "literal",
+            "display": 14336,
+            "stdout": ""
+          },
+          {
+            "cell": 9,
+            "mode": "literal",
+            "display": 3.5,
+            "stdout": ""
+          },
+          {
+            "cell": 10,
+            "mode": "literal",
+            "display": null,
+            "stdout": ""
+          }
+        ]
+      },
+      "explicit_variants_and_clock": {
+        "clock": "2026-10-16T13:17:53.729895",
+        "llama3_0419:15": "model_id = 'meta-llama/Llama-2-7b-hf'\nllama2_7b = full_meta('2')",
+        "llama3_0419:19": "model_id = 'meta-llama/Meta-Llama-3-8B'\nllama3_8b = full_meta('3')",
+        "llama3_0419:34": "model_id = 'meta-llama/Meta-Llama-3-8B'\npipeline = cpu_pipeline()\npipeline('Hey how are you doing today?')",
+        "llama3_0419:36": "model_id = 'meta-llama/Meta-Llama-3-8B-Instruct'\npipeline = cpu_pipeline()\nmessages = [{'role': 'system', 'content': 'You are a pirate chatbot who always responds in pirate speak!'}, {'role': 'user', 'content': 'Who are you?'}]\nprompt = pipeline.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)\nterminators = [pipeline.tokenizer.eos_token_id, pipeline.tokenizer.convert_tokens_to_ids('<|eot_id|>')]\noutputs = pipeline(prompt, max_new_tokens=4, eos_token_id=terminators, do_sample=True, temperature=0.6, top_p=0.9)\nprint(outputs[0]['generated_text'][len(prompt):])"
+      },
+      "final_state": {
+        "model.embed_tokens.weight": {
+          "shape": [
+            128256,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "85537a6d218d4610f9c2f36ad78a3bad4f32dbf33de88ce1cdafd7e280023b85"
+        },
+        "model.layers.0.self_attn.q_proj.weight": {
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9e8fd150e5cee9edc22cf5eed1c02464546b5befd7f6a9d34c66ecaf39ea6f37"
+        },
+        "model.layers.0.self_attn.k_proj.weight": {
+          "shape": [
+            4,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "c9e53b94bb7c3e8cf29fff8e556f899a8b0153cca12f43473233eec34382983b"
+        },
+        "model.layers.0.self_attn.v_proj.weight": {
+          "shape": [
+            4,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "1383661b1a9c9f5c68c14ecc28656a806d3145dc4bb11478082ed532103a10c1"
+        },
+        "model.layers.0.self_attn.o_proj.weight": {
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9cad4ec09f847051143bee7827de7d7d08199d73056df767e99d84ba1c96d3a7"
+        },
+        "model.layers.0.mlp.gate_proj.weight": {
+          "shape": [
+            56,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "a83edec1a7a80221f0faaf58353ffc7effab48c1a18c7c6b37148db3342e068e"
+        },
+        "model.layers.0.mlp.up_proj.weight": {
+          "shape": [
+            56,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "87cbb36617e3faf557c07403ba0f00b54a58f0ba515cc6872f885b56c0fa3e16"
+        },
+        "model.layers.0.mlp.down_proj.weight": {
+          "shape": [
+            16,
+            56
+          ],
+          "dtype": "torch.float32",
+          "sha256": "e6321a983227818df583668a0713a34b7f10a23e6354ec631ff8d9e7b432499e"
+        },
+        "model.layers.0.input_layernorm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "model.layers.0.post_attention_layernorm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "model.norm.weight": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "9628e545ed3ac074e5a6cbf542a642b62482fbfca9b4cb3ea4743a1874256e37"
+        },
+        "lm_head.weight": {
+          "shape": [
+            128256,
+            16
+          ],
+          "dtype": "torch.float32",
+          "sha256": "070984e53ebdc365ea00369a1e3a1d11618dcc7343a4b79b23056f8e1a4e3f2b"
+        }
+      },
+      "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a pirate chatbot who always responds in pirate speak!<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+      "small_model_parameters": 4107568,
+      "logits_shape": [
+        1,
+        3,
+        128256
+      ],
+      "kv_shape": [
+        1,
+        1,
+        3,
+        4
+      ]
+    },
+    "traces_and_final_state_equal": true,
+    "clock_values_only_type_compared": true,
+    "full_original_checkpoint_loading": false
+  },
+  "fairscale": {
+    "backend": "gloo",
+    "world_size": 1,
+    "official_model_module_unmodified": true,
+    "course_complete_class_ast_same": true,
+    "explicit_weight_init": "seed25 normal std.1, double",
+    "tiny_input_output": [
+      2,
+      3,
+      16
+    ],
+    "tiny_intermediate": [
+      2,
+      3,
+      56
+    ],
+    "tiny_parameters": 2688,
+    "numpy_forward_error": 8.326672684688674e-17,
+    "input_fd_max_error": 6.979556516073515e-11,
+    "all_autograd_exact_reference": true,
+    "large_meta_width": 14336,
+    "large_meta_parameters": 176160768,
+    "embeddings": {
+      "ParallelEmbedding": {
+        "shape": [
+          2,
+          3,
+          16
+        ],
+        "lookup_and_weight_gradient_equal": true
+      },
+      "VocabParallelEmbedding": {
+        "shape": [
+          2,
+          3,
+          16
+        ],
+        "lookup_and_weight_gradient_equal": true
+      }
+    },
+    "full_meta_constructor_snippet": true,
+    "multi_rank_tested": false
+  },
+  "markdown": {
+    "jsonc_fields_parsed": {
+      "name": "Python Debugger: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "torch.distributed.launch",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "args": [
+        "--nproc_per_node",
+        "1",
+        "example_text_completion.py",
+        "--ckpt_dir",
+        "Meta-Llama-3-8B",
+        "--tokenizer_path",
+        "Meta-Llama-3-8B/tokenizer.model",
+        "--max_seq_len",
+        "512",
+        "--max_batch_size",
+        "6"
+      ]
+    },
+    "cuda_default_snippet_cpu_returncode": 1,
+    "cuda_default_snippet_error": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\torch\\__init__.py:1144: UserWarning: torch.set_default_tensor_type() is deprecated as of PyTorch 2.1, please use torch.set_default_dtype() and torch.set_default_device() as alternatives. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\builder\\windows\\pytorch\\torch\\csrc\\tensor\\python_tensor.cpp:434.)\n  _C._set_default_tensor_type(t)\nTraceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\torch\\__init__.py\", line 1144, in set_default_tensor_type\n    _C._set_default_tensor_type(t)\nTypeError: type torch.cuda.HalfTensor not available. Torch not compiled with CUDA enabled.\n",
+    "cpu_dtype_bytes": 2
+  },
+  "derived_math": {
+    "parameter_differences": {
+      "embedding_and_head": 788529152,
+      "attention": -805306368,
+      "mlp": 1308622848,
+      "norms": 0
+    },
+    "weights_fp16_gib": 14.957527160644531,
+    "kv_cache_2_4096_gib": 2.0,
+    "kv_cache_3_4096_gib": 0.5,
+    "kv_cache_3_8192_gib": 1.0,
+    "cache_numbers_are_shape_estimates": true
+  },
+  "scripts_sha256": {
+    "build_delivery.py": "62f9ae79a6483c09148269e781cf2ae9a989686355c8816d0f461d46249fae97",
+    "verify_delivery.py": "3bd9db22269a043e2560285164016ccea7b5ddb85bb00114ecd9226c0153039b"
+  }
+}

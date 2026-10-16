@@ -1,0 +1,53 @@
+{
+  "repository": "https://github.com/chunhuizhang/personal_chatgpt",
+  "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "meta_repository": "https://github.com/meta-llama/llama3",
+  "meta_commit": "cf3ea595be1edfb019d21b14d8b215a39161c860",
+  "files": [
+    {
+      "upstream_path": "imgs/meta-llama-model.png",
+      "published_path": "代码/imgs/meta-llama-model.png",
+      "bytes": 111095,
+      "sha256": "f330b785c85e0d69e62d0f1ae9ebdd929dc15c122d9da2f8e2b0b11e46db6e50"
+    },
+    {
+      "upstream_path": "tutorials/llama/llama2_tokenizer.model",
+      "published_path": "代码/tutorials/llama/llama2_tokenizer.model",
+      "bytes": 499723,
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    },
+    {
+      "upstream_path": "tutorials/llama/llama3_tokenizer.model",
+      "published_path": "代码/tutorials/llama/llama3_tokenizer.model",
+      "bytes": 2183982,
+      "sha256": "82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55"
+    },
+    {
+      "upstream_path": "tutorials/llama/tokenizer.py",
+      "published_path": "代码/tutorials/llama/tokenizer.py",
+      "bytes": 7712,
+      "sha256": "e29045cbbae33e07bb1ad92bd8249032c4a802f7d9676f115c19aeebd114f9cd"
+    },
+    {
+      "upstream_path": "tutorials/llama/llama3_0419.ipynb",
+      "published_path": "代码/tutorials/llama/llama3_0419.ipynb",
+      "bytes": 175501,
+      "sha256": "98a52e7994f5555cfcdada2ab6eaa48e207107e0d873dcd653264fd462803f37"
+    },
+    {
+      "upstream_path": "tutorials/llama/llama3_supp_data_config.ipynb",
+      "published_path": "代码/tutorials/llama/llama3_supp_data_config.ipynb",
+      "bytes": 5857,
+      "sha256": "4359d2daf2da9f654767d7789fc3fc038e879a2d9044631ce325b93afebd676e"
+    }
+  ],
+  "official_sources_sha256": {
+    "llama/model.py": "20d93de2fdb2c98fff085a1f1026d20cc4172e40809a0891e384d5c10bbb6965",
+    "llama/tokenizer.py": "e29045cbbae33e07bb1ad92bd8249032c4a802f7d9676f115c19aeebd114f9cd",
+    "llama/generation.py": "8297c9911f79ac74aa707cadd5d8da74d256c8115862c9834077c6228725bdac",
+    "MODEL_CARD.md": "4fe9a75ff3079a4b8e0efddd5f5a3a53606e9919c98710f262fdc5cc5c77acad",
+    "LICENSE": "4fa551d4f938f68b8c1e6afa9d28befb70e3f33f75d0753248d530364aeea40f",
+    "README.md": "c573638d83b2263dc7e2cdd112b8540026c7a6ee96e6401305e4b2f2383412b7"
+  },
+  "subtitle": "E盘根目录字幕中未找到本讲独立文本；7B/8B对比字幕属于第29讲。"
+}

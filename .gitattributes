@@ -1,3 +1,8 @@
 # 原始 notebook、注释 notebook 和图片按字节存储，避免自动转换换行符。
 *.ipynb -text
 *.png -text
+# tokenizer资产保持字节；tiktoken rank文件虽为文本，作为数据文件审阅。
+*.model -text -diff
+**/llama/tokenizer.py -text
+# 官方许可证保留原字节与原空白，不按新代码的空白规范重写。
+**/llama/LICENSE -text -whitespace
