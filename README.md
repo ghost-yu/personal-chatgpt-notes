@@ -10,7 +10,7 @@
 | 2 | `…_代码注释.py` | 直接看代码及详细中文注释，最适合文本阅读 |
 | 3 | `代码注释.ipynb` | 在 GitHub 或 Jupyter 中逐格对照、查看输出 |
 
-**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–29 讲已发布，第30讲尚未完成。**
+**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–30 讲已按讲次交付，实际运行范围见各讲复现记录。**
 
 在项目文件夹里找文件时，按这个顺序打开：
 
@@ -61,8 +61,9 @@ lessons/
 | [27 TRL RLHF PPOTrainer 与 OpenRLHF](lessons/27%20TRL%20RLHF%20PPOTrainer%20%E4%B8%8E%20OpenRLHF/README.md) | [讲解](lessons/27%20TRL%20RLHF%20PPOTrainer%20%E4%B8%8E%20OpenRLHF/解释.md) | [文本代码](lessons/27%20TRL%20RLHF%20PPOTrainer%20%E4%B8%8E%20OpenRLHF/代码/tutorials/trl_hf/trl_ppotrainer_helloworld_代码注释.py) | [带注释代码](lessons/27%20TRL%20RLHF%20PPOTrainer%20%E4%B8%8E%20OpenRLHF/代码/tutorials/trl_hf/代码注释.ipynb) |
 | [28 从 RoPE 到 CoPE](lessons/28%20%E4%BB%8E%20RoPE%20%E5%88%B0%20CoPE/README.md) | [讲解](lessons/28%20%E4%BB%8E%20RoPE%20%E5%88%B0%20CoPE/解释.md) | [文本代码](lessons/28%20%E4%BB%8E%20RoPE%20%E5%88%B0%20CoPE/代码/tutorials/position_encoding/rope_cope_代码注释.py) | [带注释代码](lessons/28%20%E4%BB%8E%20RoPE%20%E5%88%B0%20CoPE/代码/tutorials/position_encoding/代码注释.ipynb) |
 | [29 Llama2 7B vs Llama3 8B](lessons/29%20Llama2%207B%20vs%20Llama3%208B/README.md) | [讲解](lessons/29%20Llama2%207B%20vs%20Llama3%208B/解释.md) | [文本代码](lessons/29%20Llama2%207B%20vs%20Llama3%208B/代码/tutorials/llama/llama2_7b_llama3_8b_代码注释.py) | [带注释代码](lessons/29%20Llama2%207B%20vs%20Llama3%208B/代码/tutorials/llama/代码注释.ipynb) |
+| [30 InstructGPT reward modeling](lessons/30%20InstructGPT%20reward%20modeling/README.md) | [讲解](lessons/30%20InstructGPT%20reward%20modeling/解释.md) | [文本代码](lessons/30%20InstructGPT%20reward%20modeling/代码/tutorials/reward_model/reward_model_Bradley_Terry_model_代码注释.py) | [带注释代码](lessons/30%20InstructGPT%20reward%20modeling/代码/tutorials/reward_model/代码注释.ipynb) |
 
-第 08、09、15、18、24、25、26 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
+第 08、09、15、18、24、25、26、30 讲包含补充 notebook；第 09 讲还包含训练 tokenizer 的代码。点课程名进入该讲目录，可以看到完整阅读顺序。
 
 <details>
 <summary>需要对照原版、查证验证结果或维护项目时，再展开</summary>

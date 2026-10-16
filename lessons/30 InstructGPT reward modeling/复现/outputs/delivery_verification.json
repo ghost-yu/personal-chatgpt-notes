@@ -1,0 +1,477 @@
+{
+  "preservation": {
+    "notebooks": {
+      "reward_model_Bradley_Terry_model": {
+        "cells": 27,
+        "code_cells": 12,
+        "derived_cells": 55,
+        "schemas": 3,
+        "original_git_bytes": true,
+        "metadata_historical_outputs": true,
+        "ast_tokens": true,
+        "reading_ast": true
+      },
+      "bradley_terry_modeling": {
+        "cells": 8,
+        "code_cells": 5,
+        "derived_cells": 17,
+        "schemas": 3,
+        "original_git_bytes": true,
+        "metadata_historical_outputs": true,
+        "ast_tokens": true,
+        "reading_ast": true
+      }
+    },
+    "schemas": 6,
+    "full_official_class_ast": true,
+    "core_import": true,
+    "installed_source_record": true
+  },
+  "literal_execution_main": {
+    "code_cells": 12,
+    "original_annotated_trace_equal": true,
+    "traces": [
+      {
+        "cell": 1,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 2,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 4,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image",
+          "url": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*R8D4ixMVWxSOyvvIoc_T-w.png"
+        }
+      },
+      {
+        "cell": 6,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image",
+          "url": "https://images.ctfassets.net/kftzwdyauwt9/690sZjaYwbes9IMEgfyJ7O/f536896b496b13749518f53d4caaa713/Methods_Diagram_dark_mode.jpg?w=2048&q=80&fm=webp"
+        }
+      },
+      {
+        "cell": 8,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image",
+          "url": "./imgs/quality-labels.png"
+        }
+      },
+      {
+        "cell": 14,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 17,
+        "status": "literal",
+        "stdout": "",
+        "display": "2304"
+      },
+      {
+        "cell": 19,
+        "status": "literal",
+        "stdout": "",
+        "display": {
+          "type": "Image",
+          "url": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0605ace1-cc21-400a-941f-154a1faa103c_1600x1427.png"
+        }
+      },
+      {
+        "cell": 22,
+        "status": "literal",
+        "stdout": "",
+        "display": "(tensor(0.6931), 0.3010299956639812)"
+      },
+      {
+        "cell": 23,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 25,
+        "status": "literal",
+        "stdout": "",
+        "display": "(0.3132616875182228, 0.04858735157374191, 6.00247568513773)"
+      },
+      {
+        "cell": 26,
+        "status": "literal",
+        "stdout": "",
+        "display": "0.0024726231566347743"
+      }
+    ],
+    "figures": {
+      "14": {
+        "arrays_sha256": "64a7f1eb02f41dac33647364ef453ec08d5fec22fc470e38638c8812ed2e3118",
+        "png_sha256": "9b244823d8568864b11a2e55c3380857484da7123b7ce221808b22be79325b09",
+        "lines": 1
+      },
+      "23": {
+        "arrays_sha256": "b133160bc54df3b2ff06dde793c5fa611dead6b79c8b625d7fb654c5f0f6a395",
+        "png_sha256": "f5c850a1ac5f7349f336f18157c83ce810406d437d338db41051231fc79df9fc",
+        "lines": 2
+      }
+    },
+    "arrays_checked": true,
+    "remote_image_content_checked": false
+  },
+  "literal_execution_supplement": {
+    "code_cells": 5,
+    "original_annotated_trace_equal": true,
+    "traces": [
+      {
+        "cell": 0,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 2,
+        "status": "literal",
+        "stdout": "Optimization converged after 2 iterations.\n团队强度参数 p_i：\n团队 A 的强度参数 p_A = 1.0000\n团队 B 的强度参数 p_B = 1.6306\n团队 C 的强度参数 p_C = 1.0312\n团队 D 的强度参数 p_D = 3.5484\n\n归一化的团队强度参数 p_i (总和为1)：\n团队 A 的归一化强度参数 p_A = 0.1387\n团队 B 的归一化强度参数 p_B = 0.2262\n团队 C 的归一化强度参数 p_C = 0.1430\n团队 D 的归一化强度参数 p_D = 0.4921\n",
+        "display": null
+      },
+      {
+        "cell": 5,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      },
+      {
+        "cell": 6,
+        "status": "literal",
+        "stdout": "Estimated Ability Scores:\nDunlop: 0.3335\nModi: 0.1618\nCeat: 0.1908\nGoodYear: 0.2005\nMRF: 0.1134\n",
+        "display": null
+      },
+      {
+        "cell": 7,
+        "status": "literal",
+        "stdout": "",
+        "display": null
+      }
+    ],
+    "team_strengths": [
+      1.0,
+      1.6306022820001695,
+      1.0312228137682287,
+      3.548373526607463
+    ],
+    "team_normalized": [
+      0.13869243447699725,
+      0.22615220015435072,
+      0.1430228025297348,
+      0.49213256283891726
+    ],
+    "brand_normalized": [
+      0.3334501644873916,
+      0.1617962463266181,
+      0.1908287319292348,
+      0.20050546597411745,
+      0.11341939128263805
+    ],
+    "team_outer_iterations": 2,
+    "team_last_BFGS_internal_nit": 0,
+    "team_break_stale_difference": 0.0,
+    "brand_success": true,
+    "brand_BFGS_nit": 10
+  },
+  "loss_math": {
+    "four_loss_forms_equal": true,
+    "first_second_derivative_equal": true,
+    "double_gradcheck": true,
+    "points": [
+      {
+        "delta": -6.0,
+        "loss": 6.00247568513773,
+        "probability": 0.0024726231566347743,
+        "gradient": -0.9975273768433652
+      },
+      {
+        "delta": 0.0,
+        "loss": 0.6931471805599453,
+        "probability": 0.5,
+        "gradient": -0.5
+      },
+      {
+        "delta": 1.0,
+        "loss": 0.31326168751822286,
+        "probability": 0.7310585786300049,
+        "gradient": -0.2689414213699951
+      },
+      {
+        "delta": 3.0,
+        "loss": 0.048587351573742055,
+        "probability": 0.9525741268224334,
+        "gradient": -0.04742587317756679
+      },
+      {
+        "delta": 10.0,
+        "loss": 4.539889921686465e-05,
+        "probability": 0.9999546021312976,
+        "gradient": -4.5397868702434395e-05
+      }
+    ],
+    "equal_scores_ln_loss": 0.6931471805599453,
+    "equal_scores_log10_loss": 0.3010299956639812,
+    "extreme_stable_losses": [
+      1000.0,
+      -0.0
+    ],
+    "extreme_stable_gradients": [
+      -1.0,
+      -0.0
+    ],
+    "naive_nonfinite_count": 1,
+    "tie_example_strict_pairs": 5,
+    "K9_pairs": 36,
+    "K9_B64_max_pairs": 2304,
+    "group_prompt_mean": 1.3001499983186302,
+    "flat_pair_mean": 1.08445607705371,
+    "common_prompt_shift_invariant": true,
+    "prompt_shift_gradients": [
+      1.3877787807814457e-17,
+      0.0
+    ],
+    "scale_not_invariant": true,
+    "empty_comparison_error": {
+      "exception": "ValueError",
+      "message": "该prompt没有严格偏好对"
+    }
+  },
+  "scipy_likelihood": {
+    "team_observations": 22,
+    "team_negative_log_likelihood": 13.428450079974613,
+    "team_independent_max_free_gradient": 6.151165202750164e-06,
+    "team_anchored_hessian_eigenvalues": [
+      0.614700959686309,
+      1.796961935850005,
+      4.817075200458472
+    ],
+    "team_pair_probabilities": [
+      [
+        0.5,
+        0.3801410828396505,
+        0.492314281437617,
+        0.21985881197973622
+      ],
+      [
+        0.6198589171603495,
+        0.5,
+        0.6125880639537129,
+        0.31485033764592096
+      ],
+      [
+        0.507685718562383,
+        0.38741193604628704,
+        0.5,
+        0.2251776656987265
+      ],
+      [
+        0.7801411880202638,
+        0.685149662354079,
+        0.7748223343012736,
+        0.5
+      ]
+    ],
+    "brand_observations": 1000,
+    "brand_negative_log_likelihood": 657.8018160575676,
+    "brand_independent_max_gradient": 2.719959309871456e-05,
+    "naive_team_extreme_finite": false,
+    "naive_team_warning_types": [
+      "RuntimeWarning"
+    ],
+    "stable_brand_extreme_finite": true,
+    "full_log_strength_common_shift_invariant": true
+  },
+  "real_reward_model": {
+    "class": "LlamaForSequenceClassification",
+    "parameters": 2880,
+    "unique_sequence_batch_size": 7,
+    "strict_pair_counts": [
+      5,
+      3
+    ],
+    "duplicated_sequence_batch_size": 16,
+    "grouped_reuse_loss": 0.6914561986923218,
+    "duplicated_loss": 0.6914561986923218,
+    "all_weight_gradient_max_error": 2.8405338525772095e-08,
+    "last_nonpad_head_selection_exact": true,
+    "right_padding_append_invariant": true,
+    "exported_complete_class_logits_exact": true,
+    "optimizer": "AdamW",
+    "lr": 0.005,
+    "updates": 8,
+    "trace": [
+      {
+        "step": 1,
+        "loss_before_update": 0.6914561986923218
+      },
+      {
+        "step": 2,
+        "loss_before_update": 0.6735998392105103
+      },
+      {
+        "step": 3,
+        "loss_before_update": 0.6130867004394531
+      },
+      {
+        "step": 4,
+        "loss_before_update": 0.5236562490463257
+      },
+      {
+        "step": 5,
+        "loss_before_update": 0.46112239360809326
+      },
+      {
+        "step": 6,
+        "loss_before_update": 0.42022398114204407
+      },
+      {
+        "step": 7,
+        "loss_before_update": 0.3986193537712097
+      },
+      {
+        "step": 8,
+        "loss_before_update": 0.37226033210754395
+      }
+    ],
+    "loss_after_last_update": 0.3481089174747467,
+    "changed_state_entries": 12,
+    "score_and_backbone_changed": true,
+    "save_reload_state_logits_exact": true,
+    "trained_rewards": [
+      -0.6869450807571411,
+      -0.6880797147750854,
+      0.6943225860595703,
+      0.7004454135894775,
+      0.6901063919067383,
+      -0.6905895471572876,
+      -0.695300281047821
+    ],
+    "config": {
+      "vocab_size": 32,
+      "max_position_embeddings": 32,
+      "hidden_size": 16,
+      "intermediate_size": 32,
+      "num_hidden_layers": 1,
+      "num_attention_heads": 4,
+      "num_key_value_heads": 2,
+      "hidden_act": "silu",
+      "initializer_range": 0.02,
+      "rms_norm_eps": 1e-06,
+      "pretraining_tp": 1,
+      "use_cache": true,
+      "rope_theta": 10000.0,
+      "rope_scaling": null,
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "mlp_bias": false,
+      "return_dict": true,
+      "output_hidden_states": false,
+      "output_attentions": false,
+      "torchscript": false,
+      "torch_dtype": "float32",
+      "use_bfloat16": false,
+      "tf_legacy_loss": false,
+      "pruned_heads": {},
+      "tie_word_embeddings": false,
+      "chunk_size_feed_forward": 0,
+      "is_encoder_decoder": false,
+      "is_decoder": false,
+      "cross_attention_hidden_size": null,
+      "add_cross_attention": false,
+      "tie_encoder_decoder": false,
+      "max_length": 20,
+      "min_length": 0,
+      "do_sample": false,
+      "early_stopping": false,
+      "num_beams": 1,
+      "num_beam_groups": 1,
+      "diversity_penalty": 0.0,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "typical_p": 1.0,
+      "repetition_penalty": 1.0,
+      "length_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "encoder_no_repeat_ngram_size": 0,
+      "bad_words_ids": null,
+      "num_return_sequences": 1,
+      "output_scores": false,
+      "return_dict_in_generate": false,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "remove_invalid_values": false,
+      "exponential_decay_length_penalty": null,
+      "suppress_tokens": null,
+      "begin_suppress_tokens": null,
+      "architectures": [
+        "LlamaForSequenceClassification"
+      ],
+      "finetuning_task": null,
+      "id2label": {
+        "0": "LABEL_0"
+      },
+      "label2id": {
+        "LABEL_0": 0
+      },
+      "tokenizer_class": null,
+      "prefix": null,
+      "bos_token_id": 1,
+      "pad_token_id": 0,
+      "eos_token_id": 2,
+      "sep_token_id": null,
+      "decoder_start_token_id": null,
+      "task_specific_params": null,
+      "problem_type": null,
+      "_name_or_path": "",
+      "transformers_version": "4.44.2",
+      "model_type": "llama"
+    },
+    "limitation": "Random model and self-made ID rankings only, not original6B RM or human preference generalization"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.4",
+    "scipy": "1.13.1",
+    "transformers": "4.44.2",
+    "nbformat": "5.10.4",
+    "cuda_available": false,
+    "threads": 1,
+    "physical_RAM_bytes": 16849256448,
+    "workspace_free_bytes": 23210790912
+  },
+  "not_run": [
+    "Original InstructGPT6B/GPT3 weights or data",
+    "Human annotation/quality/generalization",
+    "Original fullRM training or PPO",
+    "Remote image contents",
+    "Private chatgpt.com conversation"
+  ],
+  "scripts_sha256": {
+    "build_delivery.py": "f3e2022bc8ca45b5af01a7d736b1d55ab92cb7bb50d1538a6290a49043221924",
+    "verify_delivery.py": "d615bf536a9c31ad08ba51f2f2fa7a66824455255fc5af243e80a00fa932166f"
+  },
+  "teaching_code_sha256": "cf80aff3332733ed4d9f464c9947c869b332d77984c2936220a8b786513ac4ca",
+  "status": "passed"
+}

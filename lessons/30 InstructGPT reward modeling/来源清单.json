@@ -1,0 +1,16 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "files": {
+    "代码/tutorials/reward_model/reward_model_Bradley_Terry_model.ipynb": "1a2abb7e2d6b8839b523cd5930cd9a4406fe2b5dcc261c5eb5405fe568288cd7",
+    "代码/tutorials/reward_model/bradley_terry_modeling.ipynb": "c5755374582c28d39a1189434b57b63882df2c50e1841bd26eb79a9db127336a",
+    "代码/tutorials/reward_model/imgs/quality-labels.png": "3c0b3deabf3324885e2d0de033230f68c03e4f31b16e791eb9f8ba24fb10999c"
+  },
+  "transformers": "4.44.2",
+  "official_class": "LlamaForSequenceClassification",
+  "official_class_sha256": "d440a0334ac21bcfcba817d99dd8f438c1027b3398df006ffddf31b757f71968",
+  "paper": "https://arxiv.org/pdf/2203.02155v1",
+  "paper_scope": "§3.5 Eq1/Figure2/AppendixC.2，web PDF文本已读；本地下载TLS失败，未声明原论文.pdf已保存",
+  "subtitle": "E:/8adc33be-d8dd-428f-a921-70a0b0849a21.txt，仅本地",
+  "remote_images": "主4/6/19只构造URL展示对象，远程图内容未验证",
+  "official_training_repository": "未找到本讲原6B RM训练checkpoint及完整训练工程；HF小模型和SciPy都是明确教学/相关实现"
+}

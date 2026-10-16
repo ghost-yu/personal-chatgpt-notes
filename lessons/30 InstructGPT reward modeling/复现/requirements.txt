@@ -1,0 +1,9 @@
+# Python 3.12; use the PyTorch CPU wheel index for the local CPU build.
+torch==2.5.1
+numpy==1.26.4
+scipy==1.13.1
+matplotlib==3.9.4
+transformers==4.44.2
+nbformat==5.10.4
+ipython==8.37.0
+psutil==7.2.2
