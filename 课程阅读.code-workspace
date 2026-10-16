@@ -1,8 +1,128 @@
 {
   "folders": [
     {
-      "name": "课程（从 README.md 选讲次）",
+      "name": "00 课程总目录（打开 README.md）",
       "path": "."
+    },
+    {
+      "name": "01 LLaMA introduction",
+      "path": "lessons/01 LLaMA introduction"
+    },
+    {
+      "name": "02 LoRA - Low-Rank Adaptation of Large Language Models",
+      "path": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models"
+    },
+    {
+      "name": "03 LoRA 微调 BLOOM",
+      "path": "lessons/03 LoRA 微调 BLOOM"
+    },
+    {
+      "name": "04 PEFT LoRA 源码",
+      "path": "lessons/04 PEFT LoRA 源码"
+    },
+    {
+      "name": "05 FP16 与 BF16",
+      "path": "lessons/05 FP16 与 BF16"
+    },
+    {
+      "name": "06 Alpaca LoRA 推理",
+      "path": "lessons/06 Alpaca LoRA 推理"
+    },
+    {
+      "name": "07 自动混合精度训练",
+      "path": "lessons/07 自动混合精度训练"
+    },
+    {
+      "name": "08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale",
+      "path": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale"
+    },
+    {
+      "name": "09 BPE 与 GPT-2 tokenizer",
+      "path": "lessons/09 BPE 与 GPT-2 tokenizer"
+    },
+    {
+      "name": "10 预训练语料、memory mapping 与 streaming",
+      "path": "lessons/10 预训练语料、memory mapping 与 streaming"
+    },
+    {
+      "name": "11 梯度累积 gradient accumulation",
+      "path": "lessons/11 梯度累积 gradient accumulation"
+    },
+    {
+      "name": "12 LLM SFT 与 SFTTrainer",
+      "path": "lessons/12 LLM SFT 与 SFTTrainer"
+    },
+    {
+      "name": "13 Gradient checkpointing",
+      "path": "lessons/13 Gradient checkpointing"
+    },
+    {
+      "name": "14 Llama 2 introduction 与 Guanaco",
+      "path": "lessons/14 Llama 2 introduction 与 Guanaco"
+    },
+    {
+      "name": "15 Llama 2 text 与 chat completion",
+      "path": "lessons/15 Llama 2 text 与 chat completion"
+    },
+    {
+      "name": "16 TRL 基础与 reward PPOTrainer",
+      "path": "lessons/16 TRL 基础与 reward PPOTrainer"
+    },
+    {
+      "name": "17 RMSNorm 与 SwiGLU",
+      "path": "lessons/17 RMSNorm 与 SwiGLU"
+    },
+    {
+      "name": "18 RoPE 复数形式",
+      "path": "lessons/18 RoPE 复数形式"
+    },
+    {
+      "name": "19 RoPE apply_rotary_emb",
+      "path": "lessons/19 RoPE apply_rotary_emb"
+    },
+    {
+      "name": "20 KV cache 与增量推理",
+      "path": "lessons/20 KV cache 与增量推理"
+    },
+    {
+      "name": "21 GQA 与分组查询注意力",
+      "path": "lessons/21 GQA 与分组查询注意力"
+    },
+    {
+      "name": "22 Llama generate 完整流程",
+      "path": "lessons/22 Llama generate 完整流程"
+    },
+    {
+      "name": "23 TRL Reward Model 与 RewardTrainer",
+      "path": "lessons/23 TRL Reward Model 与 RewardTrainer"
+    },
+    {
+      "name": "24 PEFT LoRA merge 与 SVD",
+      "path": "lessons/24 PEFT LoRA merge 与 SVD"
+    },
+    {
+      "name": "25 Llama 3 introduction",
+      "path": "lessons/25 Llama 3 introduction"
+    },
+    {
+      "name": "26 GPT-4o tokenizer 与 o200k_base",
+      "path": "lessons/26 GPT-4o tokenizer 与 o200k_base"
+    },
+    {
+      "name": "27 TRL RLHF PPOTrainer 与 OpenRLHF",
+      "path": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF"
+    },
+    {
+      "name": "28 从 RoPE 到 CoPE",
+      "path": "lessons/28 从 RoPE 到 CoPE"
+    },
+    {
+      "name": "29 Llama2 7B vs Llama3 8B",
+      "path": "lessons/29 Llama2 7B vs Llama3 8B"
+    },
+    {
+      "name": "30 InstructGPT reward modeling（整理中）",
+      "path": "lessons/30 InstructGPT reward modeling"
     }
   ],
   "settings": {
@@ -24,8 +144,10 @@
         "when": "$(basename)_代码注释.py"
       },
       "**/imgs": true,
-      "**/图片": true
+      "**/图片": true,
+      "lessons": true
     },
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "explorer.sortOrder": "default"
   }
 }
