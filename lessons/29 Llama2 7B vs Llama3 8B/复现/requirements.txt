@@ -1,0 +1,8 @@
+# 实际验证环境；CPU torch wheel需要PyTorch CPU索引。
+torch==2.5.1+cpu
+transformers==4.44.2
+accelerate==0.34.2
+nbformat==5.10.4
+ipython==8.37.0
+psutil==7.2.2
+safetensors==0.8.0

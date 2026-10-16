@@ -1,0 +1,23 @@
+{
+  "upstream_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "upstream_path": "tutorials/llama/llama2_7b_llama3_8b.ipynb",
+  "original_sha256": "1612ce999944c3d0b91970cf023ae7edaee6146b7797ded5b73db332a07dd063",
+  "transformers_version": "4.44.2",
+  "official_object_source_sha256": {
+    "rotate_half": "f714a4b1160c694e270d9191a9f133e53856e2a1c62f5cd2f85740f7c2692397",
+    "apply_rotary_pos_emb": "d1e7d21b55bc5ca988047b17ea15ac7d674428b30073c3e101eb782180a58a25",
+    "repeat_kv": "e9b1ad4a8df3194d5b12f94567c3a2dfed2c0d9833af1b8f775e5875575ff9c4",
+    "LlamaRMSNorm": "0184f623e47d3e76892cc403c3de4b473d9d07c60c1d79e96afe3959de9b11b0",
+    "LlamaMLP": "983a4a9f8867f26536da0a2d7152fe2d6f6d1234360c5bcb18a0a84f200853df",
+    "LlamaAttention": "93b21f0140bf822ab7e6043ea9001a8e97277419f1dac9db787b7f5eea3f150c",
+    "LlamaSdpaAttention": "f9a2d5395737f01bb1a5e722e0e71e86df0626738c7030ead8e9f9e5ac6db8a5"
+  },
+  "subtitle": "E:/ff65f590-f38b-43dc-9c18-aa1220456074.txt，仅保留本地；新增解释校正ASR错误",
+  "full_config": "按原notebook历史结构重建，不冒称已下载官方config.json；HF请求TLS EOF失败",
+  "remote_image": "原cell19 URL保留，未验证远程图内容",
+  "papers": [
+    "https://arxiv.org/abs/2307.09288v2",
+    "https://arxiv.org/abs/2305.13245v3"
+  ],
+  "meta_llama3_reference_commit": "cf3ea595be1edfb019d21b14d8b215a39161c860"
+}
