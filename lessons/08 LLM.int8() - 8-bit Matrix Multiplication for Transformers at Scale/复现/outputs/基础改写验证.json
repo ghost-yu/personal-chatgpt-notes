@@ -1,0 +1,137 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "bbd9163b4a740355e0f5ea170095b9cfc1104b034fcdecc4461d220ec0fe0bf9",
+  "executed": "Two Python blocks extracted verbatim from current foundation text before historical details",
+  "code_sha256": [
+    "fabfb456708e3cb49defec577b126bb02bfb03f38b4e7cba1464a06ada29f935",
+    "e1c465d525ea29720329568e80f788d2abad4fe07b7a0148399ce0fedc723db3"
+  ],
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "device": "CPU",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Scripts\\python.exe",
+    "G:\\zzz\\personal-chatgpt-notes\\lessons\\08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale\\复现\\scripts\\verify_foundation_examples.py"
+  ],
+  "working_directory": "G:\\zzz",
+  "stdout": "整数、类型、字节: [ 13  25 127] int8 3\n恢复: [0.1023622  0.19685039 1.        ]\n误差: [ 0.0023622  -0.00314961  0.        ]\n有大值后的整数、恢复: [  0   0 127] [  0.   0. 100.]\n普通/异常编号: [0 2 4] [1 3]\n普通输入整数:\n [[ 127  -64  -64]\n [   0  127   85]\n [-127 -127    0]]\n整数/累加/异常支路类型: int8 int32 float16\n参考:\n [[  38.   34.]\n [-167.  124.]\n [-174.  168.]]\n分解后:\n [[  38.00787402   34.        ]\n [-167.00787402  124.01574803]\n [-174.          168.        ]]\n全部量化最大误差: 1.0940541881083732\n分解量化最大误差: 0.01574803149605941\n",
+  "vector": {
+    "q": [
+      13,
+      25,
+      127
+    ],
+    "restored": [
+      0.10236220472440945,
+      0.1968503937007874,
+      1.0
+    ],
+    "q_bytes_excludes_scale": 3,
+    "float64_original_bytes": 24,
+    "large_outlier_q": [
+      0,
+      0,
+      127
+    ],
+    "large_outlier_restored": [
+      0.0,
+      0.0,
+      100.0
+    ]
+  },
+  "matrix": {
+    "regular_indices": [
+      0,
+      2,
+      4
+    ],
+    "outlier_indices": [
+      1,
+      3
+    ],
+    "reference": [
+      [
+        38.0,
+        34.0
+      ],
+      [
+        -167.0,
+        124.0
+      ],
+      [
+        -174.0,
+        168.0
+      ]
+    ],
+    "mixed": [
+      [
+        38.00787401574803,
+        34.0
+      ],
+      [
+        -167.00787401574803,
+        124.01574803149606
+      ],
+      [
+        -174.0,
+        168.0
+      ]
+    ],
+    "dtypes": {
+      "qx": "int8",
+      "qw": "int8",
+      "accumulator": "int32",
+      "outlier_branch": "float16",
+      "regular_restore_and_final_sum": "float64"
+    },
+    "mixed_max_error": 0.01574803149605941,
+    "full_quantization_max_error": 1.0940541881083732,
+    "zero_scale_checks_passed": true,
+    "int32_two_products_sum": 32258
+  },
+  "paper_images": [
+    {
+      "page_1based": 3,
+      "figure_or_table": "Figure 2",
+      "image": "图片/LLMint8原论文_Figure2_计算路径.png",
+      "image_sha256": "73d66a496128e30cac811e37127a976fcd310336e07d24c0b09bea6c342918d1",
+      "crop_points_top_left": [
+        106,
+        69,
+        507,
+        225
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1604,
+        624
+      ]
+    },
+    {
+      "page_1based": 6,
+      "figure_or_table": "Table 1",
+      "image": "图片/LLMint8原论文_Table1_C4结果.png",
+      "image_sha256": "e8567e99908c4167bba022f0fb68f618799cee5ea5d5257da9606dbf6e86b01b",
+      "crop_points_top_left": [
+        119,
+        145,
+        493,
+        281
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1496,
+        544
+      ]
+    }
+  ],
+  "paper_images_visually_inspected": true,
+  "original_course_image_sha256": {
+    "floats-rep.png": "f35ce5d6776b44643daf10c94a0299dd89df578e82c6a3e183cae972d266b068",
+    "quant-freeze.png": "77f49147ee2f69632f62c744ed8b235f9efb7f25c123e7c093f9acfddd196523",
+    "llm-int8.png": "df22197e2a262f4cc05025be48638535215ee71ac56cffea1868c7c25663d048"
+  },
+  "course_images_visually_inspected": true,
+  "limits": "NumPy CPU educational calculation only. Regular restoration and final sum float64; outlier matmul float16. No final FP16 rounding simulation. No old notebook/runtime verifier rerun, bitsandbytes install, OPT6.7B download, CUDA, C4 quality or speed experiment."
+}

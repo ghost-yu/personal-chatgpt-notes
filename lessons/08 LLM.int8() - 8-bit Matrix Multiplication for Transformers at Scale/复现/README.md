@@ -2,7 +2,29 @@
 
 状态：**部分成功**。两个原notebook、三张原图与固定提交SHA256一致；全部59格说明/38代码格AST、6份notebook schema、原元数据/历史输出及两份Python阅读版通过核对。真实CPU执行和整数教学补充通过，原OPT6.7B量化加载、bitsandbytes CUDA内核及论文评测未运行。
 
-## 本次环境与资源边界
+## 2026-10-17 基础讲解与原图内嵌改写
+
+这是本轮新增验证；下方原notebook、小OPT及配置实验是历史记录，本轮未重跑。
+
+- 从当前解释.md主文提取两个Python块原样执行，NumPy1.26.4/Python3.12.14/CPU。整数[13,25,127]及3 byte、异常100令小值归零、原矩阵参考、异常列[1,3]、int8编码/int32累加/FP16异常分支核对通过。
+- 分解最大误差0.01574803149605941，不分解最大误差1.0940541881083732；普通恢复与最终相加使用float64以观察误差，不包含最终FP16舍入，也不是GPU内核运行。
+- 独立补查同一函数的全零行/列不除0，两个127乘积的int32累加为32258。没有扩大到空分支、所有阈值或模型质量测试。
+- 从固定arXiv:2208.07339v2原PDF第3页Figure2、第6页Table1直接截图，逐张视觉检查；三张课程原PNG亦逐张检查并在主文就地内嵌。图片哈希、PDF哈希、裁剪坐标和工具版本见[论文截图来源](outputs/论文截图来源.json)，正文代码哈希及实际输出见[基础改写验证](outputs/基础改写验证.json)。PDF保留在本地资料目录，未提交整份外部论文。
+- 原notebook、派生注释、历史输出不改；本轮没有安装bitsandbytes、下载OPT6.7B、运行CUDA/C4或性能测量。
+
+从本讲复现目录重做（`python`指Python3.12且安装NumPy1.26.4的解释器）：
+
+```powershell
+python scripts/verify_foundation_examples.py
+```
+
+命令执行脚本从当前解释.md读取并执行主文Python块，再写入outputs/基础改写验证.json。截图脚本另需pypdfium2；`--pdf`指定固定v2 PDF文件，输出图片和来源记录到本讲目录：
+
+```powershell
+python scripts/extract_paper_images.py --pdf "LLM_int8_2208.07339v2.pdf"
+```
+
+## 历史验证环境与资源边界
 
 Windows11，Python3.12.14，PyTorch2.5.1+cpu，NumPy1.26.4，Transformers4.44.2，tokenizers0.19.1，IPython8.37.0，nbformat5.10.4，Pillow12.3.0。`torch.cuda.is_available()`为False。早期机器记录有RTX4060 Laptop/8188MiB，但本次使用的CPU虚拟环境不能因此执行CUDA。未安装bitsandbytes、未下载OPT权重/tokenizer，不修改真实HTTP/HTTPS代理，不进行C4/零样本评测。只运行固定小矩阵与2960参数的小OPT，未建立6.7B模型。
 

@@ -1,0 +1,46 @@
+{
+  "paper": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+  "version": "arXiv:2208.07339v2",
+  "pdf_url": "https://arxiv.org/pdf/2208.07339v2",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale\\资料\\LLM_int8_2208.07339v2.pdf",
+  "pdf_sha256": "40da3ce2d38eb3baa8b638cab093bd048178205c1eb4d0671e79c108f72906bf",
+  "method": "Fixed original PDF rendered and directly cropped; no redraw",
+  "pypdfium2": "5.14.0",
+  "images": [
+    {
+      "page_1based": 3,
+      "figure_or_table": "Figure 2",
+      "image": "图片/LLMint8原论文_Figure2_计算路径.png",
+      "image_sha256": "73d66a496128e30cac811e37127a976fcd310336e07d24c0b09bea6c342918d1",
+      "crop_points_top_left": [
+        106,
+        69,
+        507,
+        225
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1604,
+        624
+      ]
+    },
+    {
+      "page_1based": 6,
+      "figure_or_table": "Table 1",
+      "image": "图片/LLMint8原论文_Table1_C4结果.png",
+      "image_sha256": "e8567e99908c4167bba022f0fb68f618799cee5ea5d5257da9606dbf6e86b01b",
+      "crop_points_top_left": [
+        119,
+        145,
+        493,
+        281
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1496,
+        544
+      ]
+    }
+  ],
+  "script_sha256": "bfeb1796a1ee529c190174d5fb151f7c704eb31d17b61f1fc6d08afd29adc89f"
+}

@@ -12,7 +12,7 @@
 
 **先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–30 讲已按讲次交付，实际运行范围见各讲复现记录。**
 
-正在按“从基础讲起、论文原图直接截进笔记”的新要求逐篇改写。第01–07讲已完成本轮改写：[第01讲](lessons/01%20LLaMA%20introduction/%E8%A7%A3%E9%87%8A.md)、[第02讲](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E8%A7%A3%E9%87%8A.md)、[第03讲](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E8%A7%A3%E9%87%8A.md)、[第04讲](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E8%A7%A3%E9%87%8A.md)、[第05讲](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E8%A7%A3%E9%87%8A.md)、[第06讲](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E8%A7%A3%E9%87%8A.md)、[第07讲](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E8%A7%A3%E9%87%8A.md)。第08–30讲待逐篇改写；各讲的具体更新与验证范围见[本轮进度](资料/基础讲解与内嵌原图进度.md)。之前的文件交付完成不等于本轮全部完成。
+正在按“从基础讲起、论文原图直接截进笔记”的新要求逐篇改写。第01–08讲已完成本轮改写：[第01讲](lessons/01%20LLaMA%20introduction/%E8%A7%A3%E9%87%8A.md)、[第02讲](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E8%A7%A3%E9%87%8A.md)、[第03讲](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E8%A7%A3%E9%87%8A.md)、[第04讲](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E8%A7%A3%E9%87%8A.md)、[第05讲](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E8%A7%A3%E9%87%8A.md)、[第06讲](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E8%A7%A3%E9%87%8A.md)、[第07讲](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E8%A7%A3%E9%87%8A.md)、[第08讲](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E8%A7%A3%E9%87%8A.md)。第09–30讲待逐篇改写；各讲的具体更新与验证范围见[本轮进度](资料/基础讲解与内嵌原图进度.md)。之前的文件交付完成不等于本轮全部完成。
 
 在项目文件夹里找文件时，按这个顺序打开：
 
