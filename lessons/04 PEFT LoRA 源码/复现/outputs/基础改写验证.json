@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "32af09d46a6caa52d6e6ffb5bf0d9f7811561ffd6c01209fb1c389c15ce786f9",
+  "executed": "two Python blocks extracted verbatim from current 解释.md",
+  "stdout": "[9.0, 2.0]\nTrue\n基模型相同: True\n目标层已替换: True\n基权重相同: True\n修正量: [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]\n可训练参数数: 16\n",
+  "peft_version": "0.3.0",
+  "peft_commit": "7120c9a2636f93c8db3fc4ae466e02f338ecead8",
+  "peft_module": "G:\\zzz\\Personal ChatGPT 前七讲\\共享资料\\peft-v0.3.0\\src\\peft\\__init__.py",
+  "peft_source_clean": true,
+  "source_sha256": {
+    "mapping.py": "5c11ffabc0bed2cd108c41baa354aecf2aa920ca9cd29a9fae21916e75c01222",
+    "peft_model.py": "a6864e82a0d2f0cf0a8ebfb71d0d49f6d311a847dd3496a2b0b31a2dc4572685",
+    "tuners/lora.py": "a36e0c446f6f588a0c1038705ee11864a9bfb7291a9cc4a6e91a4c9dbf0a6ee6"
+  },
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "accelerate": "0.34.2"
+  },
+  "model": "random CPU FP32 BLOOM; 1 layer, hidden 4, heads 2, vocab 8",
+  "lora": {
+    "r": 1,
+    "alpha": 1,
+    "dropout": 0.0,
+    "target_modules": [
+      "query_key_value"
+    ]
+  },
+  "base_identity_preserved": true,
+  "target_layer_replaced": true,
+  "base_weight_identity_preserved": true,
+  "zero_B_full_logits_equal_to_before": true,
+  "manual_nonzero_B_not_training": true,
+  "layer_output_shape": [
+    1,
+    1,
+    12
+  ],
+  "manual_update": [
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "trainable_parameters": 16,
+  "trainable_tensors": 2,
+  "A_and_B_have_nonzero_gradients_after_manual_B_assignment": true,
+  "base_parameters_have_no_gradients": true,
+  "base_weight_unchanged": true,
+  "images": [
+    {
+      "file": "图片/LoRA原论文_Figure1_双分支.png",
+      "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+      "visually_inspected": true
+    },
+    {
+      "file": "图片/LoRA原论文_Equation3_更新公式.png",
+      "sha256": "cbc467c7f23c15d6de4a33692a4606d308cff9c27813ae90a5c7714560d1e23d",
+      "visually_inspected": true
+    }
+  ],
+  "limits": "No optimizer updates; old H16 experiment not rerun; no 7B, quantization, CUDA or quality evaluation.",
+  "note_update_after_execution": "Only explanatory prose about paper Gaussian versus official Kaiming-uniform A initialization added; executed code blocks unchanged."
+}

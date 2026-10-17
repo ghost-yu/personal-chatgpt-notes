@@ -12,7 +12,7 @@
 
 **先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–30 讲已按讲次交付，实际运行范围见各讲复现记录。**
 
-正在按“从基础讲起、论文原图直接截进笔记”的新要求逐篇改写。目前第01–03讲已更新：[第01讲](lessons/01%20LLaMA%20introduction/解释.md)先讲文字、token、向量、参数；[第02讲](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/解释.md)先手算矩阵和低秩，再配原论文截图讲LoRA。[第03讲](lessons/03%20LoRA%20微调%20BLOOM/解释.md)沿一条名言讲编号、labels、误差和LoRA更新，并内嵌原图。第04–30讲尚待本轮改写；之前的文件交付完成不等于本轮全部完成。
+正在按“从基础讲起、论文原图直接截进笔记”的新要求逐篇改写。目前第01–04讲已更新：[第01讲](lessons/01%20LLaMA%20introduction/解释.md)先讲文字、token、向量、参数；[第02讲](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/解释.md)先手算矩阵和低秩，再配原论文截图讲LoRA。[第03讲](lessons/03%20LoRA%20微调%20BLOOM/解释.md)沿一条名言讲编号、labels、误差和LoRA更新，并内嵌原图。[第04讲](lessons/04%20PEFT%20LoRA%20源码/解释.md)从对象引用讲到模块替换、权重复用和冻结，配原图与可运行例子。第05–30讲尚待本轮改写；之前的文件交付完成不等于本轮全部完成。
 
 在项目文件夹里找文件时，按这个顺序打开：
 

@@ -55,3 +55,19 @@ verify_injection.py直接调用固定官方库；原版与注释版分别执行9
 - 原Markdown7的数据类在补齐真实导入/父类后产生`TypeError: non-default argument 'target_modules' follows default argument`；官方完整定义有field(default=None,...)，不是这个缺字段的节选。注释版保留缺陷。
 
 普通CPU Linear、引用身份与梯度链验证不能证明8bit的state搬运、CUDA量化kernel、原7B显存/性能、任意卷积适配或老师dev环境。原notebook没有训练loop或评估指标，本次也没有训练或评价任务质量。
+
+
+## 2026-10-17：基础说明、原图与正文例子
+
+正文新增对象引用例子，以及直接调用固定官方PEFT v0.3.0的随机1层H4、2头、词表8的CPU BLOOM例子。验证脚本从当前解释.md原样提取两块代码，核对官方checkout提交、源码无修改、实际导入路径；不下载权重与数据。
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/verify_foundation_examples.py' --peft-source 'G:/zzz/Personal ChatGPT 前七讲/共享资料/peft-v0.3.0'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/04 PEFT LoRA 源码/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf'
+```
+
+实际三个身份判断均True：原基模型保留、目标子层替换、旧weight对象复用。零B时全模型logits与注入前逐元素相等。r1/alpha1/dropout0下，人工将A置1、B置0.5，输入[1,2,3,4]，12个输出的修正量各为5；共16个可训练数，仅两个A/B张量。一次输出求和的backward使A/B梯度非零，所有原参数无梯度，基weight与快照相同。没有优化器更新，这不是训练结果。结果与源码哈希见[本轮记录](outputs/基础改写验证.json)。
+
+运行出现Transformers关于tuple形式past_key_values将弃用的提示，脚本仍以退出码0完成；此处的固定旧PEFT与较新CPU依赖不等于老师dev环境。没有重跑上文H16历史实验，也没有执行原7B量化加载、CUDA或质量评测。
+
+Figure1与公式3均从固定LoRA v2 PDF直接渲染裁剪，已逐张实际查看。原图完整保留x/h、箭头、W/A/B及公式编号；正文解释图中方向与方阵/实际QKV矩形差别，也区分论文正态初始化与官方代码Kaiming均匀初始化。来源/页码/裁剪坐标/哈希见[截图记录](outputs/论文截图来源.json)。其他机器重做时从记录中的官方URL下载同版本PDF，再修改--pdf路径。原notebook及原注释代码保持不变。

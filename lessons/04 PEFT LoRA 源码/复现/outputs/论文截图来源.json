@@ -1,0 +1,45 @@
+{
+  "paper": "LoRA: Low-Rank Adaptation of Large Language Models",
+  "version": "arXiv:2106.09685v2",
+  "pdf_url": "https://arxiv.org/pdf/2106.09685v2",
+  "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\02 LoRA - Low-Rank Adaptation of Large Language Models\\资料\\LoRA_2106.09685v2.pdf",
+  "images": [
+    {
+      "file": "图片/LoRA原论文_Figure1_双分支.png",
+      "page_1based": 1,
+      "crop_points_top_left": [
+        386,
+        519,
+        507,
+        635
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        484,
+        464
+      ],
+      "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+      "method": "Original PDF page rendered then cropped; no redraw or data edits"
+    },
+    {
+      "file": "图片/LoRA原论文_Equation3_更新公式.png",
+      "page_1based": 4,
+      "crop_points_top_left": [
+        230,
+        455,
+        507,
+        477
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1108,
+        88
+      ],
+      "sha256": "cbc467c7f23c15d6de4a33692a4606d308cff9c27813ae90a5c7714560d1e23d",
+      "method": "Original PDF page rendered then cropped; no redraw or data edits"
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "script_sha256": "390df94155f505da548dc29625c498914f43971b2e340e242e9725065d2d4830"
+}
