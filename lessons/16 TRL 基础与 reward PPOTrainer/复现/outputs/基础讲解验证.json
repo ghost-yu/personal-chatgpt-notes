@@ -1,0 +1,106 @@
+{
+  "status": "部分成功",
+  "note_sha256": "d65a17dc0a5d9c69c339d26b700faad12e63fea838a08b08e31dcb6341133627",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.30.0",
+    "trl": "0.4.7",
+    "accelerate": "0.20.3"
+  },
+  "ppo_trainer_sha256": "8142e1296171adc0a9f664ed0a241d4e7313ad0fac6987b2a093b0982489a407",
+  "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "blocks": [
+    {
+      "block": 1,
+      "sha256": "3cf5e0315a3acd696f2a6a2f21a2693f401c8c1a6e1316d17d7f4dd7cb443019",
+      "stdout": "raw advantages: [0.5462499999999999, 0.575, 0.5]\nreturns: [0.7462499999999999, 0.875, 0.9]\nadvantage, policy loss, derivative: [[2.0, -2.4, 0.0], [-2.0, 3.0, 2.0]]\n"
+    },
+    {
+      "block": 2,
+      "sha256": "3edec12cab132933670a6e27862f0c0646ca4c0afac842133375ec5cf2f4dda0",
+      "stdout": "query/full/response lengths: 7 10 3\n"
+    },
+    {
+      "block": 3,
+      "sha256": "42685d2540ea0f2d5aa2cc8fb39d0c1025bd5f635d6d0eacb5318235233188c9",
+      "stdout": "wrong/correct targets: 10 3\nlogits/value shapes: [1, 10, 50257] [1, 10]\noptimizer steps: 4 changed tensors: 19\npolicy/value loss: -0.0002550780773162842 0.031248675659298897\n"
+    }
+  ],
+  "model": {
+    "parameters": 403465,
+    "hidden": 8,
+    "layers": 1,
+    "heads": 2,
+    "vocab": 50257,
+    "head_parameters": 9
+  },
+  "query": [
+    1212,
+    3329,
+    314,
+    1816,
+    284,
+    262,
+    220
+  ],
+  "full": [
+    1212,
+    3329,
+    314,
+    1816,
+    284,
+    262,
+    220,
+    48040,
+    9200,
+    292
+  ],
+  "response": [
+    48040,
+    9200,
+    292
+  ],
+  "wrong_targets": 10,
+  "correct_mask": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ]
+  ],
+  "optimizer_steps": 4,
+  "changed_names": [
+    "transformer.wte.weight",
+    "transformer.wpe.weight",
+    "transformer.h.0.ln_1.weight",
+    "transformer.h.0.ln_1.bias",
+    "transformer.h.0.attn.c_attn.weight",
+    "transformer.h.0.attn.c_attn.bias",
+    "transformer.h.0.attn.c_proj.weight",
+    "transformer.h.0.attn.c_proj.bias",
+    "transformer.h.0.ln_2.weight",
+    "transformer.h.0.ln_2.bias",
+    "transformer.h.0.mlp.c_fc.weight",
+    "transformer.h.0.mlp.c_fc.bias",
+    "transformer.h.0.mlp.c_proj.weight",
+    "transformer.h.0.mlp.c_proj.bias",
+    "transformer.ln_f.weight",
+    "transformer.ln_f.bias",
+    "lm_head.weight",
+    "v_head.summary.weight",
+    "v_head.summary.bias"
+  ],
+  "reference_unchanged": true,
+  "policy_loss": -0.0002550780773162842,
+  "value_loss": 0.031248675659298897,
+  "official_loss_gae_matches_hand_calculation": true,
+  "official_compute_rewards_matches_two_candidate_formula": true,
+  "scope": "随机CPU小模型、固定score1.0、贪心新增3个token；本次仅执行正文三块，不重跑历史原单元实验。"
+}

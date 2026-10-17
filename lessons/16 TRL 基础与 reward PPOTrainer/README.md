@@ -2,11 +2,11 @@
 
 [返回总目录](../../README.md)
 
-1. [中文讲解](解释.md)：policy/ref/value/reward、重复prompt问题与真实PPO运行范围。
+1. [中文讲解](解释.md)：从示范与偏好讲起，读论文原图、手算优势与裁剪，再沿小模型代码理解PPO更新。
 2. [Python 文本阅读版](代码/tutorials/trl_hf/trl_basics_代码注释.py)：原语句保留，方便直接读代码。
 3. [详细代码注释](代码/tutorials/trl_hf/代码注释.ipynb)：全部42格说明、28代码格和Markdown命令/概览片段注释。
 
-原代码保留远程GPT2加载和重复query。CPU验证明确改成本地随机小模型，并单独运行纯response修正版；没有训练reward model或验证真实偏好效果。
+正文内嵌三张论文截图和五张课程图。三个CPU算例展示回答边界、value形状、有效目标与四次实际Adam更新。
 
 <details>
 <summary>查证来源与已有验证资料</summary>

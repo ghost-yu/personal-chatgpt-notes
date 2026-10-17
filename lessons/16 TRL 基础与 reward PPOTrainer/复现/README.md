@@ -1,5 +1,29 @@
 # 第16讲复现记录
 
+## 基础讲解算例（2026-10-17）
+
+正文三个Python块在同一进程顺序执行，使用现有隔离环境：Python3.11.0、Torch2.0.1+cpu、Transformers4.30.0、TRL0.4.7、Accelerate0.20.3。使用第09讲本地GPT-2 tokenizer.json，随机新建H8/1层/2头/64位置模型；包装共403465参数，value head为9参数。真实PPOTrainer源码与已存官方v0.4.7文件SHA256一致。
+
+从仓库根目录运行：
+
+```powershell
+$env:LESSON16_TOKENIZER = 'G:/zzz/Personal ChatGPT 系列/09 BPE 与 GPT-2 tokenizer/资料/gpt2-tokenizer/tokenizer.json'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/sft-legacy/Scripts/python.exe' -X utf8 'lessons/16 TRL 基础与 reward PPOTrainer/复现/scripts/verify_foundation_examples.py'
+```
+
+在其他机器可按下方固定依赖环境准备，将环境变量改为本地分词文件位置。结果写入[基础讲解验证.json](outputs/基础讲解验证.json)：
+
+- 原始GAE为0.54625/0.575/0.5，returns为0.74625/0.875/0.9；与真实PPOTrainer.loss的优势标准化、returns及价值loss一致。
+- 正优势2/rho1.5的loss/导数为−2.4/0，负优势−2/rho1.5为3/2。真实compute_rewards与两候选对数概率差公式一致，完整score加在末位。
+- query7、完整10、纯response3。错误拼接17/有效10，正确拼接10/有效3。移位数组[1,9]，mask为六个0、三个1，logits[1,10,50257]，value[1,10]。
+- 一次step复用同一回答完成四次真实Adam更新，策略与head变化，reference所有状态相同且无梯度，优化器参数集合等于active可训练集合。生成前后所有权重相同。
+- 本例使用fast tokenizer、贪心新增3token、固定1.0评分。下方原单元的slow tokenizer/H16/20token采样实验保留原记录，本次没有重跑。
+
+开发时发现直接调用旧包装器构造函数缺少is_peft_model状态，改为官方支持的from_pretrained(base)模型对象路径后，正文三块完整通过。此调用接收已创建随机模型，不触发远程加载。
+
+三张新图直接从原PDF渲染裁剪，已逐张查看：InstructGPT v1第3页Figure2、PPO v2第3页公式7与Figure1。[图源记录](outputs/论文截图来源.json)保存PDF与图片摘要、页码、坐标。五张课程PNG继续使用原文件。原notebook、注释版、元数据和历史输出保持原样。
+
+
 ## 新增完整交付与真实PPO运行
 
 状态：**部分成功**。原42格/28代码格（含空41）、Markdown10三命令及31概览片段完整说明和注释；五张配图、两85格派生版及Python阅读版交付，原字节/历史/元数据/schema/AST通过。新增真实PPOTrainer与value forward，原/注释两版及独立修正版各四次Adam更新。原GPT2预训练权重、learned RM及完整RLHF未运行。

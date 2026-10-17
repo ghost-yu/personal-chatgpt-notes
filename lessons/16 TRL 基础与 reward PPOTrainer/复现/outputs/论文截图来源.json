@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "page": 3,
+    "crop_points": [
+      102,
+      65,
+      510,
+      363
+    ],
+    "scale": 2.5,
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "image": "图片/InstructGPT原论文_Figure2_训练流程.png",
+    "image_sha256": "30964ad145208586e90f315a0a2e01d241507e5c0755a2fa6d57b60ca1936baf"
+  },
+  {
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "page": 3,
+    "crop_points": [
+      66,
+      449,
+      530,
+      641
+    ],
+    "scale": 2.5,
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "image": "图片/PPO原论文_Figure1_裁剪目标.png",
+    "image_sha256": "e9bb523ed3f5844ba6e69d16304deb7add3c98ac303ee319f55b4daee44581d8"
+  },
+  {
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "page": 3,
+    "crop_points": [
+      66,
+      259,
+      530,
+      308
+    ],
+    "scale": 2.5,
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "image": "图片/PPO原论文_公式7.png",
+    "image_sha256": "9ebefe3f227b7fff7482fac6b3e050294f6c1cbeafc8fc1a7290b8d438dfb2cd"
+  }
+]
