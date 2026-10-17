@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "86c13a21725c0e7fb5f0d4a16df999b8ed5b08a27a22cdcfd11790b73890db09",
+  "executed": "two Python blocks extracted verbatim from current 解释.md",
+  "code_sha256": [
+    "3759e458ca12b6ecb895d98d75d52a23ad36d5044113e89bc3a21cd7631f45a3",
+    "91f0d5bc886fb71c4c136fc98d8d36d114d13844adb84cf6b54eb98033627c95"
+  ],
+  "original_prompt_function_AST_equal": true,
+  "template_checks": [
+    "input present",
+    "no input",
+    "empty string equals no input",
+    "None equals no input",
+    "Response suffix left empty"
+  ],
+  "stdout": "Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\nTranslate to French\n\n### Input:\nHello\n\n### Response:\n输入shape: [1, 3]\n返回shape: [1, 6]\n新增编号数: 3\n每步分数shape: [[4, 8], [4, 8], [4, 8]]\n",
+  "python": "3.12.14",
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2"
+  },
+  "device": "CPU FP32",
+  "model": "random LLaMA; 1 layer; H8; intermediate16; 2 heads; vocabulary8",
+  "adapter_loaded_in_this_example": false,
+  "generation": {
+    "num_beams": 4,
+    "do_sample": false,
+    "max_new_tokens": 3,
+    "eos_token_id": null
+  },
+  "input_shape": [
+    1,
+    3
+  ],
+  "sequence_shape": [
+    1,
+    6
+  ],
+  "prefix_ids_preserved": true,
+  "new_token_count": 3,
+  "score_shapes": [
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      8
+    ]
+  ],
+  "sequence_ids": [
+    [
+      1,
+      3,
+      4,
+      7,
+      2,
+      7
+    ]
+  ],
+  "paper_image": "图片/LoRA原论文_Figure1_双分支.png",
+  "paper_image_sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+  "paper_image_visually_inspected": true,
+  "limits": "No old pipeline rerun, remote model/tokenizer/adapter load, original 7B, quantization, CUDA, training or language-quality evaluation.",
+  "note_update_after_execution": "Only prose definitions for matrix, figure symbols, tensors and temperature added; executed code hashes verified unchanged."
+}

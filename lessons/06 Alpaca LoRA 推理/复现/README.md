@@ -88,3 +88,19 @@ python "工具/check_documents.py"
 原notebook SHA256为`501575b319fcbedcd97b10f80173d3433b2c3d21fe06b3e78138614ab415f1d1`，来源与边界见[来源清单](../来源清单.json)。固定官方实现见[PEFT提交](https://github.com/huggingface/peft/tree/7120c9a2636f93c8db3fc4ae466e02f338ecead8)，生成策略参见[Transformers v4.30文档](https://huggingface.co/docs/transformers/v4.30.0/en/main_classes/text_generation)。
 
 未运行原7B权重、原LLaMA词表、远程Alpaca adapter、bitsandbytes 8bit、CUDA/多卡auto分派、交互演示、吞吐或质量评测。真实小模型调用链只能支持这里的结构/API/shape/后处理结论。
+
+
+## 2026-10-17：基础说明、原图、模板与生成边界
+
+本轮原样提取解释.md中两块Python代码执行：原generate_prompt函数加教学调用；独立随机小型LLaMA的CPU生成例子。模板函数AST与原notebook单元24一致，有/无input、空字符串、None及末尾Response留空通过。
+
+新模型仅为1层H8、intermediate16、2头、词表8的随机CPU FP32 LLaMA；不加载Alpaca或adapter，不使用真实LLaMA分词器。输入为明确的教学ID[1,3,4]，num_beams4、do_sample=False、max_new_tokens3；EOS配置None使例子固定生成3步。输入shape[1,3]→返回[1,6]；3步scores各[4,8]，返回前缀ID逐个一致，按长度切出3个新增ID。只核对接口和边界，不保存随机文本作为能力证据。结果、环境和正文代码指纹见[本轮记录](outputs/基础改写验证.json)。
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/06 Alpaca LoRA 推理/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/06 Alpaca LoRA 推理/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf'
+```
+
+使用既有Python3.12.14、torch2.5.1+cpu、Transformers4.44.2环境，设置HF离线变量，不下载模型/数据。原远程7B配置没有运行；上文更完整的SentencePiece/本地随机adapter保存重载及原版/注释版执行属于既有历史证据，本轮未重跑。
+
+Figure1直接从固定LoRA v2 PDF第1页渲染后裁剪，已实际查看，x/h、W/A/B、两路箭头和相加位置完整。正文说明B=0属于初始化，不能把已训练adapter的B当成必为零；也区分论文结构图与实际保存配置。来源、坐标与哈希见[截图记录](outputs/论文截图来源.json)。其他机器重做时从记录中的官方URL取得同版本PDF，替换--pdf路径。原notebook、注释代码及历史输出均未修改。
