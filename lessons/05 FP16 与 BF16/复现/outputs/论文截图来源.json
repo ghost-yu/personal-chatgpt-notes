@@ -1,0 +1,26 @@
+{
+  "paper": "A Study of BFLOAT16 for Deep Learning Training",
+  "version": "arXiv:1905.12322v3",
+  "pdf_url": "https://arxiv.org/pdf/1905.12322v3",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\05 FP16 与 BF16\\资料\\BFLOAT16_1905.12322v3.pdf",
+  "pdf_sha256": "d0fb0b6754bca4515214b76c8ea7a2c81212ad1843e7c246a1b2f84c81c54069",
+  "page_1based": 4,
+  "table": "Table 1",
+  "crop_points_top_left": [
+    120,
+    154,
+    497,
+    237
+  ],
+  "render_scale": 4,
+  "image": "图片/BFLOAT16原论文_Table1_格式对照.png",
+  "image_sha256": "c2042a0e28ef7867ac81d76d3000c5063287dd9d0ebad8e51cb5a7737852fb2a",
+  "pixel_size": [
+    1508,
+    332
+  ],
+  "method": "Original PDF render and direct crop; no redraw or edits to table data",
+  "role": "Supplementary format comparison; original course has no unique main paper",
+  "pypdfium2": "5.14.0",
+  "script_sha256": "5822199eae61166e5f038be1d372a68f8c7d6b797c80dc2d0129433707e1fceb"
+}

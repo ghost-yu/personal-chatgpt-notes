@@ -61,3 +61,19 @@ PyTorch当前函数实现对应[官方v2.5.1源码](https://github.com/pytorch/p
 原notebook SHA256为`96346db1e5fde82fb4f66e74e2ba58a157236275dbbf8033665aef777dd2a712`；图片哈希、URL及字节数见[来源清单](../来源清单.json)。不改变上游源码或把旧输出清空。保留此前的[教学算术记录](outputs/教学验证.json)，本次新的真实执行证据单独记录。
 
 未运行CUDA/ROCm/TPU BF16算术、AMP训练、吞吐、显存或模型效果实验；不知道老师的完整软件版本。没有完整论文模型可复现，主文和单元说明已明确公式对应的代码位置与缺失边界。
+
+
+## 2026-10-17：基础说明、原图与正文算例
+
+本轮从当前解释.md原样提取两块Python代码执行：标量解码6.5与26624；CPU float64[3]分别转FP16/BF16/FP32并转回float64读出舍入结果。核对1.001、100000和2^-25的舍入/溢出/下溢，nextafter测1以上首个间距，同shape数据大小为6/6/12byte。具体输出见[本轮验证](outputs/基础改写验证.json)，记录中Inf用字符串保存以保持严格JSON格式，正文直接提供可读表格。
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/05 FP16 与 BF16/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/05 FP16 与 BF16/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/05 FP16 与 BF16/资料/BFLOAT16_1905.12322v3.pdf'
+```
+
+使用既有Python3.12.14、PyTorch2.5.1+cpu环境，不安装新依赖、不下载模型。原runtime_verification的全格执行与位模式验证没有重跑。没有GPU/TPU算术、AMP训练、显存、速度或质量实验。
+
+课程两张PNG直接使用原文件，本轮实际查看并按来源清单核对SHA256。补充论文为A Study of BFLOAT16 for Deep Learning Training，arXiv:1905.12322v3；仅将格式表作为补充依据，未扩展为该论文全部训练实验。原PDF第4页Table1直接渲染裁剪，已实际查看，表头、数据行与原表N/A完整保留；正文区分表中范围、累加精度和跨硬件次正规数限制。来源/页码/坐标/哈希见[截图记录](outputs/论文截图来源.json)。原PDF留本地，公开仓库包含内嵌PNG；其他机器可从记录中的官方URL取得同版本PDF后修改--pdf路径。
+
+原notebook、两种派生notebook、Python注释代码和历史输出均未修改。本轮新增CPU例子是讲解与核对格式规则，不能升级为原课程GPU支持或BFLOAT16论文训练结果复现。
