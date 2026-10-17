@@ -1,5 +1,28 @@
 # 第 12 讲复现记录
 
+## 2026-10-17 基础讲解与原论文截图改写
+
+本轮把两张原PDF图放到对应概念旁：InstructGPT arXiv:2203.02155v1第3页Figure2解释SFT在三阶段中的位置；LoRA arXiv:2106.09685v2第1页Figure1解释冻结与两分支。均直接渲染裁切、逐张视觉检查，未重绘；前者是概念补充，不将本课程视为InstructGPT论文实验。[截图页码/坐标/哈希](outputs/论文截图来源.json)。完整PDF仅保留本地，不在笔记仓库重复存放。
+
+[本轮脚本](scripts/verify_foundation_examples.py)从当前解释.md历史折叠区之前提取四段Python原样执行，结果写入[基础改写验证](outputs/基础改写验证.json)，没有覆盖旧实验输出。真实使用Python3.11.0、Torch2.0.1+cpu、Transformers4.30.0、PEFT0.4.0、TRL0.4.7和本地固定GPT-2分词资产，未联网下载模型或全量数据。
+
+- 两条自建instruction/input/output/text分别24、15token；词表50257，EOS50256，逐条decode还原。
+- finite/shuffle=False/块长16：41个含EOS token保留32个成2块，丢9个尾token；第一个样本跨块，第二个回答位于该有限buffer尾部。packed保留1个EOS label，普通LM collator遮掉2个真实EOS与9个pad。
+- 第一条含EOS长25，全序列shift后24个目标，仅回答为“3”与EOS两个目标。独立全零float64分数loss均约10.82490511970208；回答mask处梯度0，全序列同位置非零，末位置logits梯度0。
+- 随机1层hidden8/2heads/50257词表的真实CPU LLaMA，q/v r2/alpha4/dropout0，共64个可训练参数；SFTTrainer默认DataCollatorWithPadding，真实input/labels[2,16]、logits FP32[2,16,50257]，2次AdamW更新，q/v四个A/B均变化，基础参数逐项不变且梯度None，optimizer参数集合精确匹配trainable。没有保存重载或质量测试。
+
+从正式仓库根目录重做（需要上文指定的旧版环境与固定本地分词资产；换机器先按下方历史准备方法取得分词文件，并修改正文第一块路径）：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/sft-legacy/Scripts/python.exe' 'lessons/12 LLM SFT 与 SFTTrainer/复现/scripts/verify_foundation_examples.py'
+```
+
+重新截取图可用`scripts/extract_paper_images.py --instructgpt-pdf <原v1.pdf> --lora-pdf <原v2.pdf>`，需要pypdfium2/Pillow。本次用桌面内置PDF Python实际运行。首次生成后检查两张PNG，确认后才可使用`--confirmed-visual-review`记录已检查；脚本不会自动判定图像质量。InstructGPT首次urllib与系统curl请求遇TLS失败，随后Git附带curl开启正常证书验证成功下载固定v1；正文教学首次计算已通过，打印GPT-2字节展示字符时遇Windows GBK编码错误，改验证器stdout为UTF-8后完整重跑成功。这些是工具问题，未修改模型算法。
+
+本轮没有重跑下方历史六行/H16/1024参数的原版及注释版对比、旧adapter保存重载或负例。未执行原代理、Xgen远程tokenizer、7B权重、CUDA4bit/bitsandbytes、全量Alpaca、量化checkpointing、混合精度、双卡、完整一轮、RM/PPO、显存速度或语言质量实验。
+
+## 历史完整交付记录（本轮保留，未重跑）
+
 状态：**部分成功**。原文件、注释和说明版已完成审计，真实旧版 TRL/PEFT/Torch 在 CPU 小模型上完成训练及保存重载验证。未运行 Xgen-7B、原远程 tokenizer、CUDA 4bit 或 Alpaca 全量训练。原 notebook 的历史输出与本次记录分开。
 
 ## 文件检查与真实运行

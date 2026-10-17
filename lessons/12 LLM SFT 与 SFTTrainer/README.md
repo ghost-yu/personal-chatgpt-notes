@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：追踪数据、packing、监督标签、LoRA 和训练流程。
+1. [先看中文讲解](解释.md)：从两条示范文本、真实token编号讲到拼块、回答mask、loss和LoRA更新；InstructGPT/LoRA两张原论文截图就地解释，四段教学代码已实际执行。旧完整讲解折叠保留。
 2. [纯文本 Python 阅读版](代码/tutorials/llm_training_sft_代码注释.py)：直接看代码和中文注释。
 3. [需要输出时看注释 notebook](代码/tutorials/代码注释.ipynb)：全部 27 格说明、22 个代码格注释，保留原历史输出。
 
@@ -17,7 +17,7 @@
 - [实际验证范围、环境和重做命令](复现/README.md)。
 - `来源清单.json` 用于追溯来源，日常阅读无需打开。
 
-已核对 schema、AST、历史输出与全部原语句。原版和注释版各 16 格在真实 CPU 教学上下文执行，两条明确配置变体各训练 2 步，adapter 与输出精确一致；保存重载输出在记录的 FP32 容差内一致。未运行原 Xgen-7B/CUDA 4bit/Alpaca 全量训练。
+历史交付已核对 schema、AST、历史输出与全部原语句。历史原版和注释版各 16 格在真实 CPU 教学上下文执行，两条明确配置变体各训练 2 步，adapter 与输出精确一致；保存重载输出在记录的 FP32 容差内一致。本轮未重跑该旧实验；新增正文四段使用两条自建数据/H8模型/64个LoRA参数另行验证，见复现说明。未运行原 Xgen-7B/CUDA 4bit/Alpaca 全量训练。
 
 来源：[课程固定 notebook](https://github.com/chunhuizhang/personal_chatgpt/blob/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/llm_training_sft.ipynb)。原 notebook 的代理与 GPU 设置仍保留，阅读版不是可直接照搬到 CPU 的训练脚本。
 

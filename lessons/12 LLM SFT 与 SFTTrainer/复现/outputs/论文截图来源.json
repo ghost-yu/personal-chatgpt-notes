@@ -1,0 +1,72 @@
+{
+  "method": "Original PDF page rendered then cropped. No redraw, relabel, or content edits.",
+  "command": [
+    "C:\\Users\\hgfhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "lessons/12 LLM SFT 与 SFTTrainer/复现/scripts/extract_paper_images.py",
+    "--instructgpt-pdf",
+    "G:/zzz/Personal ChatGPT 系列/12 LLM SFT 与 SFTTrainer/资料/InstructGPT_2203.02155v1.pdf",
+    "--lora-pdf",
+    "G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf",
+    "--confirmed-visual-review"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "scope": "Supplementary concept figures; course notebook is not an InstructGPT experiment.",
+  "papers": [
+    {
+      "paper": "Training language models to follow instructions with human feedback",
+      "version": "arXiv:2203.02155v1",
+      "pdf_url": "https://arxiv.org/pdf/2203.02155v1",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\12 LLM SFT 与 SFTTrainer\\资料\\InstructGPT_2203.02155v1.pdf",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "pdf_pages": 68,
+      "images": [
+        {
+          "file": "图片/InstructGPT原论文_Figure2_三阶段.png",
+          "page_1based": 3,
+          "crop_points_top_left": [
+            108,
+            70,
+            508,
+            300
+          ],
+          "render_scale": 4,
+          "pixel_size": [
+            1600,
+            920
+          ],
+          "sha256": "28ff5e0a8d7923d7e72713cc11b2ad5e748eaf16377cf2b3b264082a1688d132",
+          "visually_inspected": true
+        }
+      ]
+    },
+    {
+      "paper": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "version": "arXiv:2106.09685v2",
+      "pdf_url": "https://arxiv.org/pdf/2106.09685v2",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\02 LoRA - Low-Rank Adaptation of Large Language Models\\资料\\LoRA_2106.09685v2.pdf",
+      "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "pdf_pages": 26,
+      "images": [
+        {
+          "file": "图片/LoRA原论文_Figure1_双分支.png",
+          "page_1based": 1,
+          "crop_points_top_left": [
+            386,
+            519,
+            507,
+            635
+          ],
+          "render_scale": 4,
+          "pixel_size": [
+            484,
+            464
+          ],
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+          "visually_inspected": true
+        }
+      ]
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "script_sha256": "d898868124c7fb00b390c80e7a66edb89b11bf56c68593dc01b4e58dc38c8f75"
+}
