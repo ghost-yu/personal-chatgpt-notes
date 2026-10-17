@@ -2,7 +2,30 @@
 
 状态：**部分成功**。原 notebook 的 6 个代码格与注释版逐格真实执行一致；全部 13 格说明、AST/schema/原历史输出、4 张原图 hash 核对通过。独立教学补充实际运行 JSONL、HF map/streaming、Arrow/mmap、固定 GPT-2 分词与 padding、PyTorch DataLoader（包括 Windows 2 worker）。未复现课程约 20 GB 数据、C4/Pile/T5 全量训练或大数据 RSS/吞吐。
 
-## 重做命令
+## 2026-10-17 基础讲解与原图内嵌改写
+
+本节是本轮新增验证；后面的原/注释格、5行小语料、GPT-2及Windows两worker记录为历史实验，本轮未重跑。
+
+- 从当前解释.md折叠区前原样提取三个Python块顺序执行，同一批6行id/text样本。Python3.12.14、datasets2.19.2、pyarrow16.1.0、CPU，无远程语料和模型下载。
+- JSONL游标前两行为0/1，继续得到2–5，重新打开从0开始；HF普通对象Dataset/MemoryMappedTable，流式为IterableDataset。索引3返回hello行；切片1:3返回dict-of-lists，而非Dataset。
+- 普通map不复用转换缓存，明确keep_in_memory=True，返回时回调已处理0–5；原列不变、新对象加chars。流式map定义后回调0次，取首条后1次。take2得到0/1，skip2再take2得到2/3。短读生成器显式关闭，Windows临时文件清理通过。
+- 真实Arrow IPC写出、pa.memory_map读取，类型MemoryMappedFile，取第1号text得到中文，6行全部恢复。JSONL文件153 bytes、Arrow IPC文件496 bytes、Arrow nbytes93，三者均不是RSS或峰值，不作格式压缩/性能benchmark。
+- C4文档研究正式EMNLP2021 PDF第2页Table1，以及Pile arXiv2101.00027v1第3页Table1直接截图，逐张视觉检查；四课程原图亦查看并按已有来源记录核对SHA。主文内嵌两张资源图和两张原PDF表；课程表副本保留原路径。裁剪参数、PDF/图片哈希见[论文截图来源](outputs/论文截图来源.json)，本轮代码/文本哈希和真实输出见[基础改写验证](outputs/基础改写验证.json)。
+- 原notebook、派生注释和历史输出不改；没有旧5行/GPT-2/两worker重跑，没有约20GB/C4/Pile/T5全量、模型训练、RSS峰值、磁盘带宽或质量评测。
+
+从本讲复现目录用上述已安装依赖的Python执行：
+
+```powershell
+python scripts/verify_foundation_examples.py
+```
+
+脚本直接运行正文三个代码块，只在临时目录写6行JSONL/Arrow/cache；结束清理，不改真实语料。重截原表另需pypdfium2，两个参数分别指定固定PDF：
+
+```powershell
+python scripts/extract_paper_images.py --c4-pdf "C4_EMNLP2021.pdf" --pile-pdf "Pile_2101.00027v1.pdf"
+```
+
+## 历史完整交付的重做命令
 
 下面从本讲目录执行，使用 Python 3.12。分词资产放在仓库外，只有配置/词表，没有模型权重；已存在且 SHA 相同则复用。
 

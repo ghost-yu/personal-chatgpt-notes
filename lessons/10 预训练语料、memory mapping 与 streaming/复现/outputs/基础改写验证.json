@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "d8f382418ba375d44761793317bb013128cb4dcc3efd44adb3238079cbfe66fe",
+  "executed": "Three Python blocks extracted verbatim before historical details in current 解释.md",
+  "code_sha256": [
+    "9a7163a395ede52ab0eaffa50520f790bd98fcb2b07d2ad0fb51a7d3149f18c8",
+    "b3b956f7e9563c3ff99e50bf2368446012c97b2553d823315fc210f3025e325b",
+    "15c41152bb8d1ae9eeb53020bb478e39a9150362224e35be11e6399ec70d1104"
+  ],
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Scripts\\python.exe",
+    "G:\\zzz\\personal-chatgpt-notes\\lessons\\10 预训练语料、memory mapping 与 streaming\\复现\\scripts\\verify_foundation_examples.py"
+  ],
+  "working_directory": "G:\\zzz",
+  "python": "3.12.14",
+  "datasets": "2.19.2",
+  "pyarrow": "16.1.0",
+  "device": "CPU",
+  "stdout": "前两行: {'id': 0, 'text': 'cat'} {'id': 1, 'text': '中文'}\n剩余/重新开始: [2, 3, 4, 5] [0, 1, 2, 3, 4, 5]\nJSONL文件字节数: 153\n对象/存储: Dataset MemoryMappedTable IterableDataset\n按索引/切片: {'id': 3, 'text': 'hello'} {'id': [1, 2], 'text': ['中文', 'a b']}\n普通map返回时已处理: [0, 1, 2, 3, 4, 5]\n流式map定义/取一条后: [] [0] {'id': 0, 'text': 'cat', 'chars': 3}\ntake2 / skip2再take2: [0, 1] [2, 3]\n映射类型、行1文本: MemoryMappedFile 中文\nJSONL/Arrow文件/Arrow数据bytes: 153 496 93\n恢复全部6行一致: True\n",
+  "rows": [
+    {
+      "id": 0,
+      "text": "cat"
+    },
+    {
+      "id": 1,
+      "text": "中文"
+    },
+    {
+      "id": 2,
+      "text": "a b"
+    },
+    {
+      "id": 3,
+      "text": "hello"
+    },
+    {
+      "id": 4,
+      "text": "x"
+    },
+    {
+      "id": 5,
+      "text": "end"
+    }
+  ],
+  "rows_sha256": "9c183910e81a19b5852a04a95ceedc6ff0aa717a469251ff8af4bc2ec18f74e6",
+  "jsonl_iteration": {
+    "first": {
+      "id": 0,
+      "text": "cat"
+    },
+    "second": {
+      "id": 1,
+      "text": "中文"
+    },
+    "remaining_ids": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "replay_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "jsonl_file_bytes_not_rss": 153
+  },
+  "hf_dataset": {
+    "ordinary_object": "Dataset",
+    "ordinary_storage": "MemoryMappedTable",
+    "streaming_object": "IterableDataset",
+    "index3": {
+      "id": 3,
+      "text": "hello"
+    },
+    "slice1_3": {
+      "id": [
+        1,
+        2
+      ],
+      "text": [
+        "中文",
+        "a b"
+      ]
+    },
+    "eager_calls_at_return": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "original_columns": [
+      "id",
+      "text"
+    ],
+    "mapped_columns": [
+      "id",
+      "text",
+      "chars"
+    ],
+    "lazy_calls_at_definition": [],
+    "lazy_calls_after_one_output": [
+      0
+    ],
+    "lazy_first": {
+      "id": 0,
+      "text": "cat",
+      "chars": 3
+    },
+    "take2_ids": [
+      0,
+      1
+    ],
+    "skip2_take2_ids": [
+      2,
+      3
+    ]
+  },
+  "arrow_mapping": {
+    "actual_object": "MemoryMappedFile",
+    "row1_text": "中文",
+    "ipc_file_bytes_not_rss": 496,
+    "arrow_nbytes_not_rss": 93,
+    "all_six_rows_restored": true,
+    "temporary_files_cleaned": true
+  },
+  "paper_images": [
+    {
+      "paper": "Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus",
+      "version": "EMNLP 2021, 2021.emnlp-main.98 proceedings PDF",
+      "pdf_url": "https://aclanthology.org/2021.emnlp-main.98.pdf",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\C4_EMNLP2021.pdf",
+      "pdf_sha256": "db6e910a20f22b312a530a1a6878122b7341ebd4a032ebb98a42e5c8459ee5ae",
+      "page_1based": 2,
+      "table": "Table 1",
+      "image": "图片/C4原论文_Table1_三个版本.png",
+      "image_sha256": "ca04dc264807158e96a4cac9e54f0a9375f3eac9bd6023ffb51b1bfcf79ae85e",
+      "crop_points_top_left": [
+        304,
+        69,
+        535,
+        182
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        924,
+        452
+      ]
+    },
+    {
+      "paper": "The Pile: An 800GB Dataset of Diverse Text for Language Modeling",
+      "version": "arXiv:2101.00027v1",
+      "pdf_url": "https://arxiv.org/pdf/2101.00027v1",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\Pile_2101.00027v1.pdf",
+      "pdf_sha256": "f75f972e587cd9dc1ebdc69d11bab0c966fe75a3b0a9b7314abfd7d53cef2f5f",
+      "page_1based": 3,
+      "table": "Table 1",
+      "image": "图片/Pile原论文_Table1_语料组成.png",
+      "image_sha256": "7e2a2dbd579bbff7f8f62bc08d5775dd827f527666d05dbf218b3a616490d3ad",
+      "crop_points_top_left": [
+        71,
+        61,
+        530,
+        475
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1836,
+        1656
+      ]
+    }
+  ],
+  "paper_images_visually_inspected": true,
+  "original_image_sha256": {
+    "imgs/en-dataset.png": "d2322618c13eb85cb8a8e688e84221310675967737f306cb880d804e538fadce",
+    "imgs/ch-dataset.png": "dc8cdeedef63df0e5dd9aa6cf04dbb845a33409bf2ddb85218a9a637209a8d71",
+    "imgs/c4.png": "71ff6d783b5e623dc1832da24a2466c27d790db7c1e2166a15bec5975827461c",
+    "imgs/pile.png": "c0dc440e1e9b2af5d149563b9360f16c4436780a5fc6ad6136f6507e5d645fab"
+  },
+  "all_four_course_images_visually_inspected": true,
+  "source_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "limits": "Six-row independent CPU teaching examples only. Ordinary map output explicitly kept in memory. No old five-row/notebook/GPT-2/Windows two-worker verifier rerun, large-corpus download, C4/Pile/T5 reconstruction, tokenizer/model training, RSS/peak-memory, disk-bandwidth or quality/performance experiment.",
+  "notes_update_after_execution": "Only clarified table caption units and inserted already observed byte counts; all three executed code hashes unchanged."
+}

@@ -1,0 +1,51 @@
+{
+  "method": "Original PDFs rendered and directly cropped; no redraw",
+  "images": [
+    {
+      "paper": "Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus",
+      "version": "EMNLP 2021, 2021.emnlp-main.98 proceedings PDF",
+      "pdf_url": "https://aclanthology.org/2021.emnlp-main.98.pdf",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\C4_EMNLP2021.pdf",
+      "pdf_sha256": "db6e910a20f22b312a530a1a6878122b7341ebd4a032ebb98a42e5c8459ee5ae",
+      "page_1based": 2,
+      "table": "Table 1",
+      "image": "图片/C4原论文_Table1_三个版本.png",
+      "image_sha256": "ca04dc264807158e96a4cac9e54f0a9375f3eac9bd6023ffb51b1bfcf79ae85e",
+      "crop_points_top_left": [
+        304,
+        69,
+        535,
+        182
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        924,
+        452
+      ]
+    },
+    {
+      "paper": "The Pile: An 800GB Dataset of Diverse Text for Language Modeling",
+      "version": "arXiv:2101.00027v1",
+      "pdf_url": "https://arxiv.org/pdf/2101.00027v1",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\Pile_2101.00027v1.pdf",
+      "pdf_sha256": "f75f972e587cd9dc1ebdc69d11bab0c966fe75a3b0a9b7314abfd7d53cef2f5f",
+      "page_1based": 3,
+      "table": "Table 1",
+      "image": "图片/Pile原论文_Table1_语料组成.png",
+      "image_sha256": "7e2a2dbd579bbff7f8f62bc08d5775dd827f527666d05dbf218b3a616490d3ad",
+      "crop_points_top_left": [
+        71,
+        61,
+        530,
+        475
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1836,
+        1656
+      ]
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "script_sha256": "7bbffa6c4740a351e1b4c46debc113bf63269f978172ae53fd4869b9d8c0f430"
+}
