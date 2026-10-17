@@ -43,3 +43,17 @@
 - 零B初始化的A梯度为0，B梯度范数4.1773；更新B后A梯度范数1.1769；基权重始终无梯度且未改变。21次小型SGD更新使单个教学样本MSE从4降到约1.11e-14；两因子均为0的反例出现两边零梯度。
 
 单样本拟合仅证明这个脚本的数据流和梯度正常，不能证明泛化、LoRA最优rank、性能提升、BLOOM显存或论文实验成立。原伪代码还缺torch/nn/math导入、真实W、alpha与冻结/训练路径；仅修return缩进仍不足以运行。完整文件入口见[本讲目录](../README.md)，运行图片展示时把内核工作目录设为本讲 `代码/tutorials`。
+
+## 2026-10-17：基础讲解与原论文截图
+
+本轮按“先手算、再读图与代码”的顺序改写笔记。实际取得arXiv:2106.09685v2的26页PDF，截取第1页Figure 1和第4页公式(3)，图片直接放在相应段落。使用pypdfium2按4倍分辨率渲染后裁剪，没有重绘；已逐张核对箭头、A/B标签、公式及编号完整。教程原有六张图片也已检查并改为本地内嵌。
+
+正文第8节的Python代码块实际执行，依次得到base `[[1,2]]`、middle `[[5]]`、update `[[15,20]]`、h `[[16,22]]`和merged_h `[[16,22]]`；显式增量矩阵rank=1。参数量50000对3000、比例6%的算术也通过。这是前向小算例，没有在本轮重跑历史训练。详细结果见[基础改写验证](outputs/基础改写验证.json)。原notebook与已有注释代码未改。
+
+截图维护命令从仓库根目录执行：
+
+```powershell
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf'
+```
+
+解释器需要pypdfium2与Pillow。PDF保存在本地资料目录；公开笔记用本地PNG，不依赖读者重新下载论文。机器迁移时替换路径。[截图来源记录](outputs/论文截图来源.json)保存PDF、图片、脚本哈希以及页码和裁剪坐标。原BLOOM/GPT-3权重微调、论文任务质量和GPU性能均未复现。

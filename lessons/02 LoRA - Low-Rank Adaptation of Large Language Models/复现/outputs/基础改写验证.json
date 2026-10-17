@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-17",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.5.1+cpu",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source": "Exact executable block in notes section8, not original notebook pseudocode",
+  "notes_sha256": "db1569cac1ce90237d6ac00147aeab78a0b550c241b66d7daad22c287caf273f",
+  "notes_example_stdout": "tensor([[1., 2.]], dtype=torch.float64)\ntensor([[5.]], dtype=torch.float64)\ntensor([[15., 20.]], dtype=torch.float64)\ntensor([[16., 22.]], dtype=torch.float64)\ntensor([[16., 22.]], dtype=torch.float64)\n",
+  "computed_values": {
+    "base": [
+      [
+        1.0,
+        2.0
+      ]
+    ],
+    "middle": [
+      [
+        5.0
+      ]
+    ],
+    "update": [
+      [
+        15.0,
+        20.0
+      ]
+    ],
+    "h": [
+      [
+        16.0,
+        22.0
+      ]
+    ],
+    "merged_h": [
+      [
+        16.0,
+        22.0
+      ]
+    ]
+  },
+  "update_rank": 1,
+  "trainable_parameter_example": {
+    "full": 50000,
+    "lora": 3000,
+    "ratio": 0.06
+  },
+  "all8_local_images_exist": true,
+  "two_original_PDF_crop_hashes_verified": true,
+  "PDF_crops_and6_original_tutorial_images_visually_reviewed": true,
+  "original_notebook_and_code_changed": false,
+  "training_rerun_this_revision": false,
+  "status": "passed"
+}
