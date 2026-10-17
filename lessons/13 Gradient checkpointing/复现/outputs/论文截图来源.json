@@ -1,0 +1,89 @@
+{
+  "paper": "Training Deep Nets with Sublinear Memory Cost",
+  "version": "arXiv:1604.06174v2",
+  "pdf_url": "https://arxiv.org/pdf/1604.06174v2",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\13 Gradient checkpointing\\原论文.pdf",
+  "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+  "pdf_pages": 12,
+  "command": [
+    "C:\\Users\\hgfhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "lessons/13 Gradient checkpointing/复现/scripts/extract_paper_images.py",
+    "--pdf",
+    "G:/zzz/Personal ChatGPT 系列/13 Gradient checkpointing/原论文.pdf",
+    "--confirmed-visual-review"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "method": "Original PDF pages rendered and cropped; no redraw, translation overlay, or content edits.",
+  "pypdfium2": "5.14.0",
+  "images": [
+    {
+      "file": "图片/原论文_Figure1_计算图与存储复用.png",
+      "page_1based": 3,
+      "crop_points_top_left": [
+        108,
+        75,
+        505,
+        203
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1588,
+        512
+      ],
+      "sha256": "c3f4afa969c484f749bca372d159ed2a068bc5898f755d63630eacc537869b04",
+      "visually_inspected": true
+    },
+    {
+      "file": "图片/原论文_Algorithm1_分段重算.png",
+      "page_1based": 5,
+      "crop_points_top_left": [
+        106,
+        74,
+        506,
+        319
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1600,
+        980
+      ],
+      "sha256": "5bbccbb522d5e6081d15614bb1f53db68e04b7c1752fb665f83bbe1854001f26",
+      "visually_inspected": true
+    },
+    {
+      "file": "图片/原论文_公式1_内存权衡.png",
+      "page_1based": 5,
+      "crop_points_top_left": [
+        165,
+        631,
+        507,
+        660
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1368,
+        116
+      ],
+      "sha256": "47327d36a747ced8345973937785aad1b5dcce4c38e84296dd3efa6dc9467380",
+      "visually_inspected": true
+    },
+    {
+      "file": "图片/原论文_Figure3_重算计算图.png",
+      "page_1based": 6,
+      "crop_points_top_left": [
+        145,
+        75,
+        458,
+        220
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        1252,
+        580
+      ],
+      "sha256": "ca075f86d1ccc92d61eed4be8e751364639be90432c9e2ffee251f287f149ebc",
+      "visually_inspected": true
+    }
+  ],
+  "script_sha256": "e679b2f5e0c61b5746177ce135407018d48f2218d9a58af798dc720a0b1a2977"
+}

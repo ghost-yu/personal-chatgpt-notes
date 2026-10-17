@@ -1,5 +1,28 @@
 # 第 13 讲复现记录
 
+## 2026-10-17 基础讲解与原论文截图改写
+
+四幅图直接从已存Chen等论文arXiv:1604.06174v2原PDF渲染裁切：第3页Figure1、第6页Figure3、第5页Algorithm1和公式1，均逐张视觉检查、就地中文解释，未重绘。[截图来源](outputs/论文截图来源.json)记录PDF/图片/脚本哈希、坐标、页码、实际命令和检查状态。完整PDF留在原本地材料目录。
+
+[本轮脚本](scripts/verify_foundation_examples.py)从当前解释.md折叠历史之前提取四段Python原样执行，用Python3.11.0、Torch2.0.1+cpu、Transformers4.30.0；[本轮结果](outputs/基础改写验证.json)另存，不覆盖旧报告。无模型下载、无需NVML或GPU。
+
+- float64标量x=.5/w2：输出1、loss.5、参数梯度1、输入梯度4，权重仍2；ordinary只调用一次，reentrant检查点第一次no_grad/第二次有图，梯度相同。
+- 4块Linear(2,2)+sigmoid/24参数/输入[1,2]、segments2：各块调用[1,1,1,1]→[2,2,1,1]，末段普通执行；输出、输入与全部参数梯度精确相同。未执行更新或测保存字节。
+- 8元素Dropout：初次输出均[0,0,6,0,0,0,14,0]；恢复RNG重算一致，不恢复变为[2,0,0,0,10,12,14,16]，参数梯度最大差16。
+- 随机2层H8/V32/两头BERT二分类，共1706参数；输入int64[2,4]/labels[2]、logits FP32[2,2]，dropout0。两条路径loss均0.6932495832443237，每层调用1→2；所有参数梯度存在，backward结束前权重不变，各一次SGD lr.1后确有更新且两边全梯度/全状态精确相同。直接forward/backward/SGD，不是重跑旧Trainer四组。
+
+从正式仓库根目录执行：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/sft-legacy/Scripts/python.exe' 'lessons/13 Gradient checkpointing/复现/scripts/verify_foundation_examples.py'
+```
+
+用已有原PDF重做截图可运行`scripts/extract_paper_images.py --pdf <原v2.pdf>`，需pypdfium2/Pillow。本次使用桌面内置PDF Python；首次生成后先查看四张PNG，确认后才使用`--confirmed-visual-review`写检查标记，程序不自动判断视觉质量。
+
+本轮诊断快照/日志会额外占CPU存储，不作内存基准。没有重跑历史四组H16 BERT Trainer、保存引用字节统计、冻结embedding或eval失败负例，也未执行原notebook训练、BERT-large/CUDA/NVML、AMP/DDP、non-reentrant迁移、论文CNN/LSTM、显存速度或语言/分类质量实验。
+
+## 历史完整交付记录（本轮保留，未重跑）
+
 状态：**部分成功**。公开原notebook、两种47格派生版、纯文本阅读版、全部23格说明与真实Torch教学补充；新运行核对真实重算、梯度、RNG及两版四组CPU BERT Trainer。原GPU/大模型/论文完整实验未复现。
 
 ## 证据与环境

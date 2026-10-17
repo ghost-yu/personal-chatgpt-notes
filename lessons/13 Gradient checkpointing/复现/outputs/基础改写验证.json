@@ -1,0 +1,337 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "executed": "Four Python blocks extracted verbatim before historical details in current 解释.md",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Scripts\\python.exe",
+    "G:\\zzz\\personal-chatgpt-notes\\lessons\\13 Gradient checkpointing\\复现\\scripts\\verify_foundation_examples.py"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "python": "3.11.0",
+  "versions": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.30.0",
+    "numpy": "1.26.4"
+  },
+  "device": "CPU",
+  "notes_sha256": "10559505a8b0c74ef4c62e3b3b06f549b1dd9c33bee90d04c77b744679023a17",
+  "script_sha256": "aabcf7d50e0669359d59c588566839e1e75f5c3610b10d779fc38262776e18d3",
+  "code_sha256": [
+    "4c3cadfe09809cae6430933eb164fbddc8335b17c6de69d4cc038f0a6478f8cc",
+    "9977ec04378720873e1577636ee9d60a65d5d01e300012f514113e8718bd8fd2",
+    "e08a8b219d5fc977baf6c2d56070565d18b69ee75ff94b372dc69495ee9b2b53",
+    "952157f9e6db798a5205cfb14f0734d3991b963724c6f8b17c458a4df1f7bcec"
+  ],
+  "stdout": "{'ordinary': {'prediction': 1.0, 'loss': 0.5, 'w_grad': 1.0, 'x_grad': 4.0, 'w_unchanged': 2.0, 'calls_grad_enabled': [True]}, 'checkpoint': {'prediction': 1.0, 'loss': 0.5, 'w_grad': 1.0, 'x_grad': 4.0, 'w_unchanged': 2.0, 'calls_grad_enabled': [False, True]}}\n普通/分段的每块调用: [[True], [True], [True], [True]] [[False, True], [False, True], [True], [True]]\n保留随机状态的两次结果: [[0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 14.0, 0.0], [0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 14.0, 0.0]]\n不保留随机状态的两次结果: [[0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 14.0, 0.0], [2.0, 0.0, 0.0, 0.0, 10.0, 12.0, 14.0, 16.0]]\n三种参数梯度: {'ordinary': [0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 14.0, 0.0], 'preserve': [0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 14.0, 0.0], 'no_preserve': [2.0, 0.0, 0.0, 0.0, 10.0, 12.0, 14.0, 16.0]}\nBERT loss/参数数: 0.6932495832443237 1706\nBERT关闭/开启的层调用: [[True], [True]] [[False, True], [False, True]]\n",
+  "warnings": [],
+  "official_installed_sources": {
+    "checkpoint": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+      "sha256": "8713de7cffc16e5db5c298fda0defc9a96bfc8b112602fca046d19eb1578a93d"
+    },
+    "checkpoint_sequential": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+      "sha256": "8713de7cffc16e5db5c298fda0defc9a96bfc8b112602fca046d19eb1578a93d"
+    },
+    "BertEncoder": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\transformers\\models\\bert\\modeling_bert.py",
+      "sha256": "21dab0886c7b8c4635a3f57e9d4b15e9b075ac1ca3edf2dace44ee240d9b93b8"
+    },
+    "BertPreTrainedModel": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\transformers\\models\\bert\\modeling_bert.py",
+      "sha256": "21dab0886c7b8c4635a3f57e9d4b15e9b075ac1ca3edf2dace44ee240d9b93b8"
+    },
+    "BertForSequenceClassification": {
+      "path": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\sft-legacy\\Lib\\site-packages\\transformers\\models\\bert\\modeling_bert.py",
+      "sha256": "21dab0886c7b8c4635a3f57e9d4b15e9b075ac1ca3edf2dace44ee240d9b93b8"
+    }
+  },
+  "source_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "original_notebook_sha256": "a2f49289c867c32bf2ac3795c2068586d0840420eccb98ebcc28bd2e67193711",
+  "scalar": {
+    "runs": {
+      "ordinary": {
+        "prediction": 1.0,
+        "loss": 0.5,
+        "w_grad": 1.0,
+        "x_grad": 4.0,
+        "w_unchanged": 2.0,
+        "calls_grad_enabled": [
+          true
+        ]
+      },
+      "checkpoint": {
+        "prediction": 1.0,
+        "loss": 0.5,
+        "w_grad": 1.0,
+        "x_grad": 4.0,
+        "w_unchanged": 2.0,
+        "calls_grad_enabled": [
+          false,
+          true
+        ]
+      }
+    },
+    "dtype": "float64",
+    "shape": [],
+    "optimizer_step": false
+  },
+  "sequential": {
+    "calls": {
+      "ordinary": [
+        [
+          true
+        ],
+        [
+          true
+        ],
+        [
+          true
+        ],
+        [
+          true
+        ]
+      ],
+      "checkpoint": [
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          true
+        ],
+        [
+          true
+        ]
+      ]
+    },
+    "input_shape": [
+      1,
+      2
+    ],
+    "dtype": "float64",
+    "parameters": 24,
+    "output": [
+      [
+        0.46768838564445614,
+        0.6761891852444128
+      ]
+    ],
+    "input_gradient": [
+      [
+        0.00032995064995064205,
+        -0.0002856426188744132
+      ]
+    ],
+    "output_exact": true,
+    "input_gradient_max_difference": 0.0,
+    "parameter_gradient_max_difference": 0.0,
+    "total_forward_layer_calls": [
+      4,
+      6
+    ],
+    "segments": 2,
+    "last_segment_recomputed": false,
+    "optimizer_step": false
+  },
+  "rng": {
+    "ordinary": {
+      "first_output": [
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        0.0
+      ],
+      "weight_gradient": [
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        0.0
+      ],
+      "replay_outputs": [
+        [
+          0.0,
+          0.0,
+          6.0,
+          0.0,
+          0.0,
+          0.0,
+          14.0,
+          0.0
+        ]
+      ],
+      "gradient_max_difference": 0.0
+    },
+    "preserve": {
+      "first_output": [
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        0.0
+      ],
+      "weight_gradient": [
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        0.0
+      ],
+      "replay_outputs": [
+        [
+          0.0,
+          0.0,
+          6.0,
+          0.0,
+          0.0,
+          0.0,
+          14.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.0,
+          0.0,
+          0.0,
+          0.0,
+          14.0,
+          0.0
+        ]
+      ],
+      "gradient_max_difference": 0.0
+    },
+    "no_preserve": {
+      "first_output": [
+        0.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        0.0
+      ],
+      "weight_gradient": [
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0
+      ],
+      "replay_outputs": [
+        [
+          0.0,
+          0.0,
+          6.0,
+          0.0,
+          0.0,
+          0.0,
+          14.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          10.0,
+          12.0,
+          14.0,
+          16.0
+        ]
+      ],
+      "gradient_max_difference": 16.0
+    }
+  },
+  "bert": {
+    "input_ids": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        4,
+        3,
+        2,
+        1
+      ]
+    ],
+    "labels": [
+      0,
+      1
+    ],
+    "input_shape": [
+      2,
+      4
+    ],
+    "logits_shape": [
+      2,
+      2
+    ],
+    "logits_dtype": "torch.float32",
+    "parameters": 1706,
+    "loss": 0.6932495832443237,
+    "calls_off": [
+      [
+        true
+      ],
+      [
+        true
+      ]
+    ],
+    "calls_on": [
+      [
+        false,
+        true
+      ],
+      [
+        false,
+        true
+      ]
+    ],
+    "logits_exact": true,
+    "gradient_max_difference": 0.0,
+    "post_update_state_max_difference": 0.0,
+    "all_parameter_gradients_present": true,
+    "parameters_unchanged_until_backward_completed": true,
+    "optimizer_steps_per_mode": 1,
+    "optimizer": "SGD",
+    "learning_rate": 0.1,
+    "parameter_update_observed_each_mode": true,
+    "dropout": 0.0,
+    "model_weights_downloaded": false
+  },
+  "paper_crops_visually_inspected": true,
+  "storage_arithmetic_only": {
+    "hidden_fp32_bytes": 8388608,
+    "hidden_mib": 8,
+    "explicit_attention_fp32_bytes": 67108864,
+    "explicit_attention_mib": 64,
+    "measured_peak_memory": false
+  },
+  "limits": "New scalar, 4-block H2 sequential, 8-element dropout replay and random 2-layer H8/V32 BERT CPU examples only. No rerun of older four Trainer groups/H16 models, saved-tensor byte counts, frozen-embedding/evaluation negative cases, original notebook/CUDA/NVML, BERT-large weights, AMP/DDP, non-reentrant migration, CNN/LSTM paper experiments or memory/speed/quality benchmarks. Diagnostic snapshots consume additional memory and are not memory measurements."
+}
