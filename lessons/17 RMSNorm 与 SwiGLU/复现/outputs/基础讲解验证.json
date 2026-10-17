@@ -1,0 +1,152 @@
+{
+  "date_utc": "2026-10-17T11:35:15.878090+00:00",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "fairscale": "0.4.13",
+  "device": "cpu",
+  "official_source": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\资料\\llama-model.py",
+  "official_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "note_sha256": "5d3d25c805115c408b452825712da8e82e8005ef6e59a334a4e87884cb3d56b0",
+  "verifier_sha256": "0c18768fd1304091ca8468f113a022db500dff664529585fce3134914148ab45",
+  "original_notebook_class_ast_identical": true,
+  "official_class_ast_identical_ignoring_docstrings": true,
+  "blocks": [
+    {
+      "block": 1,
+      "stdout": "[[[12.5], [12.5]]]\n[[[0.8485281467437744, 1.1313709020614624], [0.0, 1.4142135381698608]]]\n[[[-0.9999799728393555, 0.9999799728393555], [-0.9999992847442627, 0.9999992847442627]]]\n"
+    },
+    {
+      "block": 2,
+      "stdout": "[[[0.8485280871391296, 1.1313707828521729], [0.0, 1.4142134189605713]]]\n[1.0, 1.0]\n[[[1.6970561742782593, 1.1313707828521729], [0.0, 1.4142134189605713]]]\n"
+    },
+    {
+      "block": 3,
+      "stdout": "[[[1.0, -1.0]]] [[[2.0, -2.0]]]\n[[[0.7310585975646973, -0.2689414322376251]]]\n[[[1.4621171951293945, 0.5378828644752502]]]\n"
+    },
+    {
+      "block": 4,
+      "stdout": "w1.weight [[2.712725877761841, -2.712725877761841], [-0.07780957967042923, 0.07780957967042923]]\nw3.weight [[1.068893313407898, -1.068893313407898], [-0.14465898275375366, 0.14465898275375366]]\nw2.weight [[2.137786626815796, 0.7864477634429932], [0.7864477634429932, 0.2893179655075073]]\n1.2135522365570068 1.0019727945327759\n"
+    }
+  ],
+  "rms_mean_square": [
+    [
+      [
+        12.5
+      ],
+      [
+        12.5
+      ]
+    ]
+  ],
+  "rms_output": [
+    [
+      [
+        0.8485280871391296,
+        1.1313707828521729
+      ],
+      [
+        0.0,
+        1.4142134189605713
+      ]
+    ]
+  ],
+  "with_gain": [
+    [
+      [
+        1.6970561742782593,
+        1.1313707828521729
+      ],
+      [
+        0.0,
+        1.4142134189605713
+      ]
+    ]
+  ],
+  "layernorm_output": [
+    [
+      [
+        -0.9999799728393555,
+        0.9999799728393555
+      ],
+      [
+        -0.9999992847442627,
+        0.9999992847442627
+      ]
+    ]
+  ],
+  "zero_and_train_eval_checked": true,
+  "dtype_cases": [
+    {
+      "input": "torch.float16",
+      "weight": "torch.float32",
+      "output": "torch.float32"
+    },
+    {
+      "input": "torch.float16",
+      "weight": "torch.float16",
+      "output": "torch.float16"
+    },
+    {
+      "input": "torch.bfloat16",
+      "weight": "torch.float32",
+      "output": "torch.float32"
+    },
+    {
+      "input": "torch.bfloat16",
+      "weight": "torch.bfloat16",
+      "output": "torch.bfloat16"
+    },
+    {
+      "input": "torch.float32",
+      "weight": "torch.float32",
+      "output": "torch.float32"
+    },
+    {
+      "input": "torch.float32",
+      "weight": "torch.float32",
+      "output": "torch.float32"
+    }
+  ],
+  "official_ffn": {
+    "input_shape": [
+      1,
+      1,
+      2
+    ],
+    "branch_shape": [
+      1,
+      1,
+      2
+    ],
+    "output": [
+      [
+        [
+          1.4621171951293945,
+          0.5378828644752502
+        ]
+      ]
+    ],
+    "parameters": 12,
+    "input_gradient": [
+      [
+        [
+          4.850512504577637,
+          -0.36712753772735596
+        ]
+      ]
+    ],
+    "weight_gradient_max_errors": {
+      "w1.weight": 0.0,
+      "w2.weight": 0.0,
+      "w3.weight": 0.0
+    },
+    "loss_before": 1.2135522365570068,
+    "loss_after": 1.0019727945327759,
+    "all_three_weights_changed": true,
+    "optimizer_parameters_exact": true,
+    "forward_max_error": 0.0
+  },
+  "width": 11008,
+  "width_parameters": 135266304,
+  "scope": "正文四块代码、完整固定官方CPU单rank模块；不重跑旧notebook与论文任务实验"
+}

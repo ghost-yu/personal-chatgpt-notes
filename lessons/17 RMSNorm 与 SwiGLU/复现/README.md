@@ -1,5 +1,23 @@
 # 第 17 讲复现记录
 
+## 2026-10-17 基础讲解与论文截图
+
+正文新增向量/shape、[3,4]均方根、LayerNorm对照、完整原RMSNorm类、SiLU曲线、两分支手算及一次SGD更新。旧讲解完整收在第二遍折叠中。
+
+四张截图直接来自原PDF：RMSNorm1910.07467v1第3页公式(2)(3)/(4)，Swish1710.05941v1第2页Figure1，GLU2002.05202v1第2页公式(6)与2/3宽度段落。页码、裁剪坐标、渲染倍率与文件哈希见[图片来源](outputs/论文截图来源.json)。四张最终图片均逐张视觉检查；LayerNorm裁剪已调整，完整保留分子和分母。
+
+执行命令（仓库根目录）：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' -X utf8 'lessons/17 RMSNorm 与 SwiGLU/复现/scripts/verify_foundation_examples.py'
+```
+
+[验证脚本](scripts/verify_foundation_examples.py)从当前正文第一个折叠前提取四个Python代码块，顺序真实执行。Python3.12.14/Torch2.5.1+cpu/FairScale0.4.13。RMSNorm类AST与原第11格相同，去除docstring后与固定官方类相同；完整官方文件SHA与既定版本相符。验证零向量、train/eval和六组输入/权重dtype。
+
+SwiGLU用dim2、候选hidden_dim4、multiple_of1、multiplier=None得到m2，共12参数；单rank CPU Gloo，显式填满三份权重。完整官方FeedForward输出为[1.462117195,0.537882864]，与教学nn.Linear版本精确一致；输入梯度[4.850512505,-0.367127538]，全部12项权重梯度非零且两版本逐项相同。backward前后权重不变，一次真实SGD后w1/w2/w3均变化，更新后参数与正文代码相同；优化器参数集合核对通过。平方均值loss从1.213552237降至1.001972795。[新报告](outputs/基础讲解验证.json)含当前笔记和脚本哈希、stdout及真实结果。
+
+本次为正文算例与官方小模块验证，旧notebook全格实验未重跑。原Llama检查点、论文任务实验与GPU/多rank性能留待后续。
+
 状态：部分成功。原notebook全部20代码格真实执行，以及完整未修改官方RMSNorm/FairScale SwiGLU最小前向和反向通过；没有复现原Llama检查点或论文训练/速度。
 
 ## 环境与资源

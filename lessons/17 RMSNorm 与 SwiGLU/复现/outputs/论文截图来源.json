@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/1910.07467v1",
+    "pdf_page": 3,
+    "crop_points_top_left": [
+      100,
+      397,
+      510,
+      506
+    ],
+    "render_scale": 3,
+    "image": "图片/RMSNorm_v1_p3_LayerNorm公式.png",
+    "pdf_sha256": "a38ab771022fc10525d2b6b23de40307b2ca7b2bf463f5219da6a0ba1c41225f",
+    "image_sha256": "9e895aa6f7f430d6ebf9d18347bfd79e39bec7f17a5a1228f6b02473b30d7c0c"
+  },
+  {
+    "url": "https://arxiv.org/pdf/1910.07467v1",
+    "pdf_page": 3,
+    "crop_points_top_left": [
+      100,
+      618,
+      510,
+      685
+    ],
+    "render_scale": 3,
+    "image": "图片/RMSNorm_v1_p3_公式4.png",
+    "pdf_sha256": "a38ab771022fc10525d2b6b23de40307b2ca7b2bf463f5219da6a0ba1c41225f",
+    "image_sha256": "9435edfb80146a1b8b5452b0e5ce7a9be339b88c0e880714220fbd13ba36e0fd"
+  },
+  {
+    "url": "https://arxiv.org/pdf/2002.05202v1",
+    "pdf_page": 2,
+    "crop_points_top_left": [
+      65,
+      190,
+      550,
+      334
+    ],
+    "render_scale": 3,
+    "image": "图片/GLU_v1_p2_公式6与宽度.png",
+    "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+    "image_sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+  },
+  {
+    "url": "https://arxiv.org/pdf/1710.05941v1",
+    "pdf_page": 2,
+    "crop_points_top_left": [
+      150,
+      78,
+      460,
+      240
+    ],
+    "render_scale": 3,
+    "image": "图片/Swish_v1_p2_Figure1.png",
+    "pdf_sha256": "8601571a76e36a43793c9b9ef5c79535c2a0b2620ee3a5d54190e48bbc4e7b65",
+    "image_sha256": "b45b475333dac0117f0ee6b6c3f7a14a8496a398d34962a03c83e544b71c46c4"
+  }
+]

@@ -2,11 +2,11 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：公式、张量形状、归一化与门控分支。
+1. [先看中文讲解](解释.md)：从向量、均方根讲到归一化与门控分支，配四张论文原截图、手算和代码。
 2. [Python 文本阅读版](代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py)：直接阅读原代码与中文注释。
 3. [注释 notebook](代码/tutorials/代码注释.ipynb)：全部28格说明、20代码格及Markdown中的类。
 
-课程只实现RMSNorm和SiLU；完整SwiGLU见[官方源码阅读补充](代码/SwiGLU_源码阅读.py)，它单独保留来源，不冒充原课程单元。
+课程只实现RMSNorm和SiLU；完整SwiGLU见[官方源码阅读补充](代码/SwiGLU_源码阅读.py)，正文第6–7节连接两者。
 
 <details>
 <summary>原版对照、单元索引与验证资料</summary>
