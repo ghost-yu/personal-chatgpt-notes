@@ -2,11 +2,11 @@
 
 [返回总目录](../../README.md)
 
-1. [中文讲解](解释.md)：输入模板、原始权重、text/chat包装与真实生成结果的边界。
+1. [先看中文讲解](解释.md)：从字符串/字典/列表/ID讲到system、多轮模板、两入口共用generate、echo与容量；论文Figure9原PDF直接截图、两张课程原PNG就地解释，正文四块真实官方CPU代码执行，旧讲解折叠保留。
 2. Python 阅读版：[主教程](代码/tutorials/llama2_src_01_代码注释.py) → [接口补充](代码/tutorials/llama2_src_text_chat_代码注释.py)。
 3. 注释 notebook：[主教程](代码/tutorials/代码注释.ipynb) → [tokenizer与接口补充](代码/tutorials/llama2_src_text_chat_代码注释.ipynb)。两份共28格、12个代码格，Markdown源码和命令也有说明。
 
-原torchrun、NCCL与真实7B/13B配置未运行。新增验证用官方源码的明确CPU设备变体、随机小Transformer和真实FairScale/Gloo，不代表原权重的回答能力。
+正文示例使用随机小Transformer、固定官方CPU推理方法与真实FairScale/Gloo；运行条件见下方复现记录。
 
 <details>
 <summary>原版、单元说明与验证记录</summary>

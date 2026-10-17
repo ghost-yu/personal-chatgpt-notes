@@ -1,5 +1,33 @@
 # 第 15 讲复现记录
 
+## 2026-10-17：基础讲解与内嵌原图
+
+本节是新一轮正文验证，下方旧的28格完整交付、H16真实模型和早期fixture记录均保留且未重跑。使用 [verify_beginner_note.py](scripts/verify_beginner_note.py) 从当前 `解释.md` 折叠栏前提取四个Python块，按顺序原样执行，不用另一套实现代替正文代码。
+
+环境沿用Python3.11.0、Torch2.0.1+cpu、SentencePiece0.2.0；FairScale0.4.13由现有本地target目录提供。脚本核对固定官方generation/model/tokenizer源码及词表hash，使用真实单进程Gloo/FairScale模型并行MP1。模型两处cache的 `.cuda()` 改CPU、generation三处显式CUDA设备改CPU，AST计数有断言；透明记录器保存参数和真实forward，不提供假答案。没有调用原 `Llama.build` 或更改共享环境。
+
+从仓库根目录运行，材料获取方式及hash见下方旧记录，路径可替换但文件内容必须匹配：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/llama2-sft/Scripts/python.exe' 'lessons/15 Llama 2 text 与 chat completion/复现/scripts/verify_beginner_note.py' --sources 'G:/zzz/Personal ChatGPT 系列/15 Llama 2 text 与 chat completion/资料' --tokenizer 'G:/zzz/Llama 入门教程/代码/personal_chatgpt/tutorials/llama/llama2_tokenizer.model' --fairscale-path 'G:/zzz/Personal ChatGPT 系列/15 Llama 2 text 与 chat completion/资料/fairscale-local'
+```
+
+脚本先将tokenizer复制到ASCII临时路径避开Windows已知路径限制，加载完整官方类，显式seed15初始化随机H8/1层/2头/V32000/FP32模型，所有矩阵normal(0,.02)、归一化权重1，合计512856参数。官方模型原始初始化等待checkpoint填充，不能直接拿未初始化内存生成。模型缓存容量为batch4/序列128，本轮与旧H16/batch8/512实验分开。
+
+四块正文分别验证：字典/列表与真实SP普通3/BOS4/EOS5；官方chat将4消息拼成45token、2BOS/1历史EOS、原调用者未改、真实3步返回；官方text输入长2/4各新3、echo5/7、五次forward起点0/2/3/4/5与长prompt原ID保留；保留标签仍真实运行1次forward再换错误，空/仅system/非法角色/末尾assistant与batch5/长度129六反例均未新增forward。全模型状态前后精确相同，无训练或优化更新。
+
+[本轮结果JSON](outputs/基础讲解验证.json) 记录当前笔记/代码块/脚本/原件/材料hash、版本、真实ID、logits形状、调用轨迹和命令。随机生成内容只验证路径，不展示语言能力。未新增采样、受控EOS或logprobs实验；旧结果在下方保留，不当作本轮重跑。
+
+原图由 [extract_paper_image.py](scripts/extract_paper_image.py) 从Llama 2 v2 PDF第16页直接渲染裁剪Figure9，pypdfium2/Pillow使用独立PDF工具环境。原图及两课程PNG均已实际查看；[截图来源](outputs/论文截图来源.json) 记录PDF版本/页码/裁剪框、PNG和课程图hash。重做：
+
+```powershell
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' 'lessons/15 Llama 2 text 与 chat completion/复现/scripts/extract_paper_image.py' --pdf 'G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/原论文.pdf'
+```
+
+先实际查看新PNG，再加 `--confirmed-visual-review` 重做视觉标记；本轮已完成检查。未重绘/改字，图中GAtt对话不是本轮随机输出。正文就地解释其训练与推理接口边界。
+
+本轮状态：**部分成功**。无原7B/13B权重、build/NCCL/torchrun/CUDA/FP16/MP2+、训练/GAtt或质量/性能评估。以下全部是此前完整交付及历史验证范围。
+
 ## 新增完整交付与真实模型验证
 
 **部分成功**：主12格/3代码、补充16格/9代码，全部28格说明与代码/Markdown详注；两原件、两原PNG、四派生版、两Python阅读版。新增运行使用完整固定官方源码、真实FairScale0.4.13单进程Gloo和随机小型Transformer，没有替代generate或模型API。早期fixture检查在本文后半保留，不能当成模型运行。

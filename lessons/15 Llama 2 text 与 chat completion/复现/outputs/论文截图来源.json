@@ -1,0 +1,45 @@
+{
+  "method": "Original PDF rendered and cropped, no redraw or relabel.",
+  "paper": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+  "version": "arXiv:2307.09288v2",
+  "pdf_url": "https://arxiv.org/pdf/2307.09288v2",
+  "pdf_path": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+  "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+  "pdf_pages": 77,
+  "page_1based": 16,
+  "figure": "Figure 9",
+  "image": "图片/Llama2原论文_Figure9_多轮要求.png",
+  "image_sha256": "c1b964309bbb543bf8cc72ece66106d031956693cc23b4cebf95e955dc55c162",
+  "pixels": [
+    1680,
+    944
+  ],
+  "crop_points_top_left": [
+    96,
+    68,
+    516,
+    304
+  ],
+  "scale": 4,
+  "visually_inspected": true,
+  "course_images": [
+    {
+      "file": "代码/imgs/llama2-weights.png",
+      "sha256": "b6d4da59848976285342057d1415e8f2cc0ce05aa0972a4dd0fec624ba1d6a7c"
+    },
+    {
+      "file": "代码/imgs/llama_weights.png",
+      "sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69"
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "command": [
+    "C:\\Users\\hgfhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "lessons/15 Llama 2 text 与 chat completion/复现/scripts/extract_paper_image.py",
+    "--pdf",
+    "G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/原论文.pdf",
+    "--confirmed-visual-review"
+  ],
+  "script_sha256": "d95b804c6e9ce13c33540b8dd500cc19025aec43757b4520f57e9401bf1394c2",
+  "cwd": "G:\\zzz\\personal-chatgpt-notes"
+}

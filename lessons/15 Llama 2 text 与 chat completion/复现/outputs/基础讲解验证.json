@@ -1,0 +1,849 @@
+{
+  "status": "passed",
+  "scope": "Four verbatim note blocks, real official CPU Transformer/generate, no pretrained weights.",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "torch": "2.0.1+cpu",
+  "fairscale": "0.4.13",
+  "sentencepiece": "0.2.0",
+  "backend": "gloo",
+  "world_size": 1,
+  "model_parallel_size": 1,
+  "official_revision": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+  "model_config": {
+    "dim": 8,
+    "n_layers": 1,
+    "n_heads": 2,
+    "n_kv_heads": null,
+    "vocab_size": 32000,
+    "multiple_of": 8,
+    "ffn_dim_multiplier": null,
+    "norm_eps": 1e-05,
+    "max_batch_size": 4,
+    "max_seq_len": 128
+  },
+  "dtype": "float32",
+  "parameters": 512856,
+  "weights_unchanged": true,
+  "model_changes": {
+    "cuda_to_cpu": 2,
+    "device_cuda_to_cpu": 0
+  },
+  "generation_changes": {
+    "cuda_to_cpu": 0,
+    "device_cuda_to_cpu": 3
+  },
+  "observation": "Wrappers log arguments and call the full real methods; no fake answers or substituted model calculation.",
+  "results": {
+    "containers_and_ids": {
+      "batch": 1,
+      "messages": 1,
+      "content": "Say hi.",
+      "ordinary_ids": [
+        14891,
+        7251,
+        29889
+      ],
+      "bos_ids": [
+        1,
+        14891,
+        7251,
+        29889
+      ],
+      "eos_ids": [
+        1,
+        14891,
+        7251,
+        29889,
+        2
+      ],
+      "decoded": "Say hi."
+    },
+    "chat": {
+      "batch": 1,
+      "original_messages": 4,
+      "input_length": 45,
+      "input_ids": [
+        1,
+        518,
+        25580,
+        29962,
+        3532,
+        14816,
+        29903,
+        6778,
+        13,
+        22550,
+        23359,
+        29889,
+        13,
+        29966,
+        829,
+        14816,
+        29903,
+        6778,
+        13,
+        13,
+        29903,
+        388,
+        7251,
+        29889,
+        518,
+        29914,
+        25580,
+        29962,
+        6324,
+        29889,
+        29871,
+        2,
+        1,
+        518,
+        25580,
+        29962,
+        14891,
+        372,
+        297,
+        5176,
+        29889,
+        518,
+        29914,
+        25580,
+        29962
+      ],
+      "bos_count": 2,
+      "historical_eos_count": 1,
+      "caller_unchanged": true,
+      "output_keys": [
+        "generation"
+      ],
+      "generation_keys": [
+        "role",
+        "content"
+      ],
+      "forward_shapes": [
+        [
+          1,
+          45
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "generated_ids": [
+        28212,
+        4008,
+        20095
+      ]
+    },
+    "text": {
+      "input_lengths": [
+        2,
+        4
+      ],
+      "output_lengths": [
+        3,
+        3
+      ],
+      "output_keys": [
+        "generation"
+      ],
+      "echo_id_lengths": [
+        5,
+        7
+      ],
+      "forward_trace": [
+        {
+          "start_pos": 0,
+          "ids": [
+            [
+              1,
+              6324
+            ],
+            [
+              1,
+              319
+            ]
+          ],
+          "input_shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ]
+        },
+        {
+          "start_pos": 2,
+          "ids": [
+            [
+              31324
+            ],
+            [
+              3273
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 3,
+          "ids": [
+            [
+              21165
+            ],
+            [
+              5828
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 4,
+          "ids": [
+            [
+              21329
+            ],
+            [
+              19470
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 5,
+          "ids": [
+            [
+              1660
+            ],
+            [
+              201
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        }
+      ],
+      "same_greedy_suffix": true
+    },
+    "input_boundaries": {
+      "unsafe_forward_count": 1,
+      "reserved_tag_replaced": true,
+      "role_errors": [
+        "IndexError",
+        "IndexError",
+        "AssertionError",
+        "AssertionError"
+      ],
+      "batch5_capacity4_rejected": true,
+      "prompt129_capacity128_rejected": true,
+      "invalid_inputs_forward_count": 0
+    }
+  },
+  "generation_calls": [
+    {
+      "prompt_tokens": [
+        [
+          1,
+          518,
+          25580,
+          29962,
+          3532,
+          14816,
+          29903,
+          6778,
+          13,
+          22550,
+          23359,
+          29889,
+          13,
+          29966,
+          829,
+          14816,
+          29903,
+          6778,
+          13,
+          13,
+          29903,
+          388,
+          7251,
+          29889,
+          518,
+          29914,
+          25580,
+          29962,
+          6324,
+          29889,
+          29871,
+          2,
+          1,
+          518,
+          25580,
+          29962,
+          14891,
+          372,
+          297,
+          5176,
+          29889,
+          518,
+          29914,
+          25580,
+          29962
+        ]
+      ],
+      "max_gen_len": 3,
+      "temperature": 0,
+      "top_p": 0.9,
+      "logprobs": false,
+      "echo": false,
+      "result": [
+        [
+          [
+            28212,
+            4008,
+            20095
+          ]
+        ],
+        null
+      ],
+      "forward_calls": [
+        {
+          "start_pos": 0,
+          "ids": [
+            [
+              1,
+              518,
+              25580,
+              29962,
+              3532,
+              14816,
+              29903,
+              6778,
+              13,
+              22550,
+              23359,
+              29889,
+              13,
+              29966,
+              829,
+              14816,
+              29903,
+              6778,
+              13,
+              13,
+              29903,
+              388,
+              7251,
+              29889,
+              518,
+              29914,
+              25580,
+              29962,
+              6324,
+              29889,
+              29871,
+              2,
+              1,
+              518,
+              25580,
+              29962,
+              14891,
+              372,
+              297,
+              5176,
+              29889,
+              518,
+              29914,
+              25580,
+              29962
+            ]
+          ],
+          "input_shape": [
+            1,
+            45
+          ],
+          "logits_shape": [
+            1,
+            45,
+            32000
+          ]
+        },
+        {
+          "start_pos": 45,
+          "ids": [
+            [
+              28212
+            ]
+          ],
+          "input_shape": [
+            1,
+            1
+          ],
+          "logits_shape": [
+            1,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 46,
+          "ids": [
+            [
+              4008
+            ]
+          ],
+          "input_shape": [
+            1,
+            1
+          ],
+          "logits_shape": [
+            1,
+            1,
+            32000
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_tokens": [
+        [
+          1,
+          6324
+        ],
+        [
+          1,
+          319,
+          3273,
+          5828
+        ]
+      ],
+      "max_gen_len": 3,
+      "temperature": 0,
+      "top_p": 0.9,
+      "logprobs": false,
+      "echo": false,
+      "result": [
+        [
+          [
+            31324,
+            21165,
+            21329
+          ],
+          [
+            19470,
+            201,
+            28561
+          ]
+        ],
+        null
+      ],
+      "forward_calls": [
+        {
+          "start_pos": 0,
+          "ids": [
+            [
+              1,
+              6324
+            ],
+            [
+              1,
+              319
+            ]
+          ],
+          "input_shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ]
+        },
+        {
+          "start_pos": 2,
+          "ids": [
+            [
+              31324
+            ],
+            [
+              3273
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 3,
+          "ids": [
+            [
+              21165
+            ],
+            [
+              5828
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 4,
+          "ids": [
+            [
+              21329
+            ],
+            [
+              19470
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 5,
+          "ids": [
+            [
+              1660
+            ],
+            [
+              201
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_tokens": [
+        [
+          1,
+          6324
+        ],
+        [
+          1,
+          319,
+          3273,
+          5828
+        ]
+      ],
+      "max_gen_len": 3,
+      "temperature": 0,
+      "top_p": 0.9,
+      "logprobs": false,
+      "echo": true,
+      "result": [
+        [
+          [
+            1,
+            6324,
+            31324,
+            21165,
+            21329
+          ],
+          [
+            1,
+            319,
+            3273,
+            5828,
+            19470,
+            201,
+            28561
+          ]
+        ],
+        null
+      ],
+      "forward_calls": [
+        {
+          "start_pos": 0,
+          "ids": [
+            [
+              1,
+              6324
+            ],
+            [
+              1,
+              319
+            ]
+          ],
+          "input_shape": [
+            2,
+            2
+          ],
+          "logits_shape": [
+            2,
+            2,
+            32000
+          ]
+        },
+        {
+          "start_pos": 2,
+          "ids": [
+            [
+              31324
+            ],
+            [
+              3273
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 3,
+          "ids": [
+            [
+              21165
+            ],
+            [
+              5828
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 4,
+          "ids": [
+            [
+              21329
+            ],
+            [
+              19470
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        },
+        {
+          "start_pos": 5,
+          "ids": [
+            [
+              1660
+            ],
+            [
+              201
+            ]
+          ],
+          "input_shape": [
+            2,
+            1
+          ],
+          "logits_shape": [
+            2,
+            1,
+            32000
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_tokens": [
+        [
+          1,
+          518,
+          25580,
+          29962,
+          12027,
+          7420,
+          278,
+          518,
+          25580,
+          29962,
+          3858,
+          29889,
+          518,
+          29914,
+          25580,
+          29962
+        ]
+      ],
+      "max_gen_len": 1,
+      "temperature": 0,
+      "top_p": 0.9,
+      "logprobs": false,
+      "echo": false,
+      "result": [
+        [
+          [
+            28212
+          ]
+        ],
+        null
+      ],
+      "forward_calls": [
+        {
+          "start_pos": 0,
+          "ids": [
+            [
+              1,
+              518,
+              25580,
+              29962,
+              12027,
+              7420,
+              278,
+              518,
+              25580,
+              29962,
+              3858,
+              29889,
+              518,
+              29914,
+              25580,
+              29962
+            ]
+          ],
+          "input_shape": [
+            1,
+            16
+          ],
+          "logits_shape": [
+            1,
+            16,
+            32000
+          ]
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "block": 1,
+      "sha256": "08d6bae1c4e2e916a7c99dd12297b3b6b32da4f8c77b6fc82cd1d10f4d28ec04",
+      "output": "{'batch': 1, 'messages': 1, 'content': 'Say hi.', 'ordinary_ids': [14891, 7251, 29889], 'bos_ids': [1, 14891, 7251, 29889], 'eos_ids': [1, 14891, 7251, 29889, 2], 'decoded': 'Say hi.'}\n"
+    },
+    {
+      "block": 2,
+      "sha256": "63f7a5c7edced0ecd695f8542b339f8722127a00113ab512c4ee307a6bd17bf0",
+      "output": "{'batch': 1, 'original_messages': 4, 'input_length': 45, 'input_ids': [1, 518, 25580, 29962, 3532, 14816, 29903, 6778, 13, 22550, 23359, 29889, 13, 29966, 829, 14816, 29903, 6778, 13, 13, 29903, 388, 7251, 29889, 518, 29914, 25580, 29962, 6324, 29889, 29871, 2, 1, 518, 25580, 29962, 14891, 372, 297, 5176, 29889, 518, 29914, 25580, 29962], 'bos_count': 2, 'historical_eos_count': 1, 'caller_unchanged': True, 'output_keys': ['generation'], 'generation_keys': ['role', 'content'], 'forward_shapes': [[1, 45], [1, 1], [1, 1]], 'generated_ids': [28212, 4008, 20095]}\n"
+    },
+    {
+      "block": 3,
+      "sha256": "6163c84ccfc62d9cb16f1a595ed4250cad580ecbc898caab5fc2eda9b26c3615",
+      "output": "{'input_lengths': [2, 4], 'output_lengths': [3, 3], 'output_keys': ['generation'], 'echo_id_lengths': [5, 7], 'forward_trace': [{'start_pos': 0, 'ids': [[1, 6324], [1, 319]], 'input_shape': [2, 2], 'logits_shape': [2, 2, 32000]}, {'start_pos': 2, 'ids': [[31324], [3273]], 'input_shape': [2, 1], 'logits_shape': [2, 1, 32000]}, {'start_pos': 3, 'ids': [[21165], [5828]], 'input_shape': [2, 1], 'logits_shape': [2, 1, 32000]}, {'start_pos': 4, 'ids': [[21329], [19470]], 'input_shape': [2, 1], 'logits_shape': [2, 1, 32000]}, {'start_pos': 5, 'ids': [[1660], [201]], 'input_shape': [2, 1], 'logits_shape': [2, 1, 32000]}], 'same_greedy_suffix': True}\n"
+    },
+    {
+      "block": 4,
+      "sha256": "8352477f4b80d417f7547cc483e368c6a08a49abc717655d116f7ea02de28b52",
+      "output": "{'unsafe_forward_count': 1, 'reserved_tag_replaced': True, 'role_errors': ['IndexError', 'IndexError', 'AssertionError', 'AssertionError'], 'batch5_capacity4_rejected': True, 'prompt129_capacity128_rejected': True, 'invalid_inputs_forward_count': 0}\n"
+    }
+  ],
+  "note_sha256": "5697aace7cd2c3eff7bd5caebc77f9e0c196a9e2ae9797a63b64f3115cbc375e",
+  "script_sha256": "850b051d622dcadfe77be5256fbb53d201b6e027a0f80a1f776f08d483d43072",
+  "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+  "sources": {
+    "llama-generation.py": "acc739aeda4aa222305ca5e7ae020df38d0fa841530d966f041c13e065db05c4",
+    "llama-model.py": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+    "llama-tokenizer.py": "a675762526cd5f6e9d742a642e33a3560ea825522b8a9efb531d36b7c7a69e6c"
+  },
+  "original_notebooks": {
+    "llama2_src_01.ipynb": "b537815b1f94a1be6d33d4e05d2bb290372408dfd9f2f4027b3c77400c0a839c",
+    "llama2_src_text_chat.ipynb": "fd822495540fb813a0bb4697a75e3abaf08aeefec2d84eada1123f20b84b686e"
+  },
+  "image_record_sha256": "f7e35c0300a3f920c417aabf980b2afcd4a155cd1a430accf835703de9fc9a3a",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Scripts\\python.exe",
+    "lessons/15 Llama 2 text 与 chat completion/复现/scripts/verify_beginner_note.py",
+    "--sources",
+    "G:/zzz/Personal ChatGPT 系列/15 Llama 2 text 与 chat completion/资料",
+    "--tokenizer",
+    "G:/zzz/Llama 入门教程/代码/personal_chatgpt/tutorials/llama/llama2_tokenizer.model",
+    "--fairscale-path",
+    "G:/zzz/Personal ChatGPT 系列/15 Llama 2 text 与 chat completion/资料/fairscale-local"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "not_run": [
+    "Official build/NCCL/torchrun/checkpoint loading",
+    "original7B/13B weights",
+    "CUDA/FP16/MP2+",
+    "training/GAtt",
+    "new sampling/logprob/EOS-controlled experiments",
+    "quality/performance benchmarks",
+    "historical verifiers"
+  ]
+}
