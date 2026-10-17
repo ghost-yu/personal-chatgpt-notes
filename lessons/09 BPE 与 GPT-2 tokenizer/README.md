@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：字符、byte、token、ID、BPE规则和语料消费流程。
+1. [先看中文讲解](解释.md)：从三个短词手算BPE，再讲UTF-8、ID和新词表；论文Figure1、Algorithm1原截图及课程流程图就地内嵌。
 2. 纯文本阅读：[基础 Python版](代码/tutorials/tokenizer_basics_代码注释.py) → [训练 Python版](代码/tutorials/gpt2_train_tokenizer_代码注释.py)，不用看JSON。
 3. 代码注释按这个顺序读：[基础与GPT-2分词](代码/tutorials/代码注释.ipynb) → [训练新tokenizer](代码/tutorials/gpt2_train_tokenizer_代码注释.ipynb)。两份主文件共66格，全部有说明和代码内注释。
 

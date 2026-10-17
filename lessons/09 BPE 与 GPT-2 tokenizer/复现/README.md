@@ -2,7 +2,30 @@
 
 状态：**部分成功**。三份原notebook/一张原配图、全部72格中文说明、52个代码格逐项核对、六份派生notebook、三份Python阅读版已交付；真实小语料BPE训练和保存重载通过。原课程10/20万代码数据、讲师Hub发布及语言模型训练未运行。
 
-## 本次环境与执行范围
+## 2026-10-17 基础讲解与原图内嵌改写
+
+以下是本轮新增证据；下方原/注释单元、2000行数据与早期16片段实验都是历史记录，本轮未重跑。
+
+- 从当前解释.md折叠区前提取三个Python块原样执行：手写字符BPE、UTF-8/256-byte映射、真实本地GPT-2 fast分词器上的7行自建代码训练。
+- 手算频次4/5/2、三条合并a+b/a+a/ab+a、未见词abaab切为[aba,ab]和[4,2]一致；2字符为7 bytes，欧元3 bytes、emoji4 bytes，256项映射全部可逆。
+- 固定GPT-2本地资产SHA逐文件匹配source_download。真实训练数据7条、批次2/2/2/1，旧50257项不变、新300项/43 merges，结束token旧ID50256/新0；原emoji两ID分别decode为替代字符，整体decode恢复。全部7条及额外tab/CRLF/不换行空格完整往返、临时保存重载IDs相同、临时目录清理通过。
+- 实际环境Python3.12.14、Transformers4.44.2、tokenizers0.19.1/CPU。首次加载出现clean_up_tokenization_spaces未来默认值警告；本例完整文本往返显式False，没有改库和全局环境。具体stdout、当前正文/代码/语料哈希及范围见[基础改写验证](outputs/基础改写验证.json)。
+- ACL2016正式BPE论文P16-1162 PDF第4页Figure1与Algorithm1直接截图并逐张查看；课程token_steps原图也查看、SHA与上游来源记录一致，三图都在对应中文解释旁。截图坐标、PDF哈希与工具版本见[论文截图来源](outputs/论文截图来源.json)。未提交整份外部PDF。
+- 原notebook、派生注释、历史输出不改；未运行原十万/二十万数据、T5旧验证、语言模型权重/翻译论文训练、Hub上传或质量/性能测量。
+
+使用已有共享CPU环境，从本讲复现目录执行：
+
+```powershell
+python scripts/verify_foundation_examples.py
+```
+
+脚本直接执行当前正文三块代码，需已准备正文CACHE指向的固定GPT-2资产；不下载模型。图片重截另需pypdfium2，`--pdf`指定ACL正式论文：
+
+```powershell
+python scripts/extract_paper_images.py --pdf "BPE_P16-1162.pdf"
+```
+
+## 历史验证环境与执行范围
 
 Windows11、Python3.12.14、Transformers4.44.2、tokenizers0.19.1、datasets2.19.2、pyarrow16.1.0、sentencepiece0.2.0、tqdm4.70.1、IPython8.37.0、nbformat5.10.4；requirements锁定这些CPU/tokenizer验证依赖。没有下载模型权重、远程Wikitext或课程codeparrot。仅下载固定GPT-2/T5的配置与tokenizer资产，留在本地缓存，不额外把完整资产快照推入阅读仓库。
 

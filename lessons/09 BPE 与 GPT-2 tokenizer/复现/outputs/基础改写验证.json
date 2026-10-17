@@ -1,0 +1,202 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "58aa8a5de400cd9acd92c2f5f7cc5f9c0398dae22acad18cb0e6a8031848b50c",
+  "executed": "Three Python blocks extracted verbatim before historical details in current 解释.md",
+  "code_sha256": [
+    "a38e3640fcf8bd8a1859534351635d8d75c56abe01cb9dac19d11b24381287f6",
+    "2a1912975e84f43a5d6429e935670076704789e9dd1c4cfcccac360a0fac9235",
+    "738bae99153416b783f43a25b0386ffa61e428a7ae86cb03152396c332fe5fb8"
+  ],
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Scripts\\python.exe",
+    "G:\\zzz\\personal-chatgpt-notes\\lessons\\09 BPE 与 GPT-2 tokenizer\\复现\\scripts\\verify_foundation_examples.py"
+  ],
+  "working_directory": "G:\\zzz",
+  "python": "3.12.14",
+  "transformers": "4.44.2",
+  "tokenizers": "0.19.1",
+  "device": "CPU",
+  "stdout": "轮次、计数、选择: 1 {('a', 'a'): 4, ('a', 'b'): 5, ('b', 'a'): 2} ('a', 'b')\n轮次、计数、选择: 2 {('a', 'a'): 4, ('ab', 'a'): 2} ('a', 'a')\n轮次、计数、选择: 3 {('ab', 'a'): 2} ('ab', 'a')\n新词切分、编号、拼回: ['aba', 'ab'] [4, 2] abaab\n字符数、bytes: 2 [226, 130, 172, 240, 159, 152, 128]\n欧元码点、欧元bytes: 8364 [226, 130, 172]\n映射项数、空格/换行/回车: 256 Ġ Ċ č\nbyte映射后显示: âĤ¬ðŁĺĢ\n完整恢复: €😀\n原emoji编号: [47249, 222]\n逐个解码: ['�', '�']\n整体解码: 😀\n旧/新词表大小: 50257 300\n新编码与完整恢复: [159, 225, 106, 173, 254, 247, 223, 259, 266, 267, 161, 122, 255, 162, 99, 122, 285, 199] €😀\n    print('你好')\n\n旧词表是否原样保留: True\n旧/新结束标记ID: 50256 0\n保存/重载编号一致: True\n",
+  "manual_bpe": {
+    "word_frequency": {
+      "aa": 4,
+      "ab": 3,
+      "aba": 2
+    },
+    "merges": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "a"
+      ],
+      [
+        "ab",
+        "a"
+      ]
+    ],
+    "final_splits": {
+      "aa": [
+        "aa"
+      ],
+      "ab": [
+        "ab"
+      ],
+      "aba": [
+        "aba"
+      ]
+    },
+    "unseen_word": "abaab",
+    "pieces": [
+      "aba",
+      "ab"
+    ],
+    "ids": [
+      4,
+      2
+    ]
+  },
+  "byte_mapping": {
+    "input": "€😀",
+    "byte_values": [
+      226,
+      130,
+      172,
+      240,
+      159,
+      152,
+      128
+    ],
+    "all_256_entries_bijective": true,
+    "display": "âĤ¬ðŁĺĢ"
+  },
+  "real_tokenizer_training": {
+    "corpus": [
+      "def add(a, b):\n    return a + b\n",
+      "def hello(name):\n    print('Hello', name)\n",
+      "for i in range(10):\n    print(i)\n",
+      "if x > 0:\n    value = x * 2\n",
+      "class Example:\n    pass\n",
+      "import math\nprint(math.sqrt(4))\n",
+      "# 中文注释 €😀\n    print('你好')\n"
+    ],
+    "corpus_sha256": "640d86c8230f29cbd039eb188616bbc6b0e441620d88bc630962f48dae604f12",
+    "rows": 7,
+    "batch_sizes": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "base_vocabulary": 50257,
+    "new_vocabulary": 300,
+    "merges": 43,
+    "base_unchanged": true,
+    "base_eos_id": 50256,
+    "new_eos_id": 0,
+    "emoji_ids": [
+      47249,
+      222
+    ],
+    "emoji_individual_decode": [
+      "�",
+      "�"
+    ],
+    "probe": "€😀\n    print('你好')\n",
+    "new_ids": [
+      159,
+      225,
+      106,
+      173,
+      254,
+      247,
+      223,
+      259,
+      266,
+      267,
+      161,
+      122,
+      255,
+      162,
+      99,
+      122,
+      285,
+      199
+    ],
+    "all_corpus_roundtrip": true,
+    "save_reload_same_ids": true,
+    "temporary_directory_cleaned": true
+  },
+  "verified_gpt2_assets": [
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "config.json",
+      "bytes": 665,
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer_config.json",
+      "bytes": 26,
+      "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+    },
+    {
+      "tokenizer": "gpt2",
+      "repository": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "file": "tokenizer.json",
+      "bytes": 1355256,
+      "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+    }
+  ],
+  "source_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "paper_images": [
+    {
+      "figure_or_algorithm": "Figure 1",
+      "page_1based": 4,
+      "printed_page": 1718,
+      "image": "图片/BPE原论文_Figure1_合并规则.png",
+      "image_sha256": "1e299b8423f2513ce5e47cc12af3b99455e9af8ef007d6b36bfbe3b05cb0c92e",
+      "crop_points_top_left": [
+        72,
+        319,
+        291,
+        397
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        876,
+        312
+      ]
+    },
+    {
+      "figure_or_algorithm": "Algorithm 1",
+      "page_1based": 4,
+      "printed_page": 1718,
+      "image": "图片/BPE原论文_Algorithm1_学习合并.png",
+      "image_sha256": "3b73d8642c59c950f2ecdb877ca4608e26a36d2931b8a58d1a517929d2357e96",
+      "crop_points_top_left": [
+        72,
+        62,
+        291,
+        311
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        876,
+        996
+      ]
+    }
+  ],
+  "paper_images_visually_inspected": true,
+  "course_image_sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66",
+  "course_image_visually_inspected": true,
+  "limits": "Independent character-BPE, UTF-8 map, seven-row real fast-tokenizer training only. No model weights, old 2000-row/runtime/T5 verifier rerun, codeparrot data, original 100k/200k experiment, Hub upload, language/translation quality or performance test."
+}

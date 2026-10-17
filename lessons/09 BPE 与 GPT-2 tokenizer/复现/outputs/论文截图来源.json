@@ -1,0 +1,49 @@
+{
+  "paper": "Neural Machine Translation of Rare Words with Subword Units",
+  "version": "ACL 2016, P16-1162 proceedings PDF",
+  "pdf_url": "https://aclanthology.org/P16-1162.pdf",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\09 BPE 与 GPT-2 tokenizer\\资料\\BPE_P16-1162.pdf",
+  "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+  "method": "Original fixed PDF rendered and directly cropped; no redraw",
+  "role": "Supplementary character-BPE algorithm source; not a GPT-2 architecture figure",
+  "images": [
+    {
+      "figure_or_algorithm": "Figure 1",
+      "page_1based": 4,
+      "printed_page": 1718,
+      "image": "图片/BPE原论文_Figure1_合并规则.png",
+      "image_sha256": "1e299b8423f2513ce5e47cc12af3b99455e9af8ef007d6b36bfbe3b05cb0c92e",
+      "crop_points_top_left": [
+        72,
+        319,
+        291,
+        397
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        876,
+        312
+      ]
+    },
+    {
+      "figure_or_algorithm": "Algorithm 1",
+      "page_1based": 4,
+      "printed_page": 1718,
+      "image": "图片/BPE原论文_Algorithm1_学习合并.png",
+      "image_sha256": "3b73d8642c59c950f2ecdb877ca4608e26a36d2931b8a58d1a517929d2357e96",
+      "crop_points_top_left": [
+        72,
+        62,
+        291,
+        311
+      ],
+      "render_scale": 4,
+      "pixel_size": [
+        876,
+        996
+      ]
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "script_sha256": "5835f9918b4e03c4d99d71a845b4f644307474500c8b1a6dbc971de21313432f"
+}
