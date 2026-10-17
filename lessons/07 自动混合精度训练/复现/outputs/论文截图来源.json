@@ -1,0 +1,26 @@
+{
+  "paper": "Mixed Precision Training",
+  "version": "arXiv:1710.03740v3",
+  "pdf_url": "https://arxiv.org/pdf/1710.03740v3",
+  "page_1based": 3,
+  "figure": "Figure 1",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\07 自动混合精度训练\\资料\\Mixed_Precision_Training_1710.03740v3.pdf",
+  "pdf_sha256": "3bbff2f757abdcfe4c5a4cee338f7b7d888110b9013ec4a934e334016f527c78",
+  "image": "图片/MixedPrecision原论文_Figure1_单层训练.png",
+  "image_sha256": "088ef8a2f83bf6b92ddc784b7911b6326dcda4cdec4112acb05610abce3e5950",
+  "crop_points_top_left": [
+    168,
+    79,
+    446,
+    224
+  ],
+  "render_scale": 4,
+  "pixel_size": [
+    1112,
+    580
+  ],
+  "method": "Original PDF rendered and directly cropped; no redraw",
+  "role": "Supplementary method figure; original notebook is a framework tutorial",
+  "pypdfium2": "5.14.0",
+  "script_sha256": "218e3defd75dce7627df5f2769d3a559a1b5469afc9b4cdd34c322b7ef359326"
+}

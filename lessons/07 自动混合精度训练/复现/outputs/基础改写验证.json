@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "38395e8920c032056fe2ce49957a3fe4dd53122f37325ddfc780df2c7cee735f",
+  "executed": "three Python blocks extracted verbatim from current 解释.md",
+  "code_sha256": [
+    "9feea379a3cf7279ab067a391b8cc4a5839c06ccb6ea7d49a07cd4d7e1a01751",
+    "e6b3211c893925b6560b9a312caeb13086babdd9d6c6763ed120ba31e21aa4b4",
+    "08a9cb106cc8a0abcd42593c82444dcad20de96146b67b0cea31fddbb9755168"
+  ],
+  "stdout": "直接转FP16: 0.0\n先放大再转换、再还原: 1.0011717677116394e-08\n放大梯度/还原梯度: 256.0 2.0\n更新后参数/scale: 0.800000011920929 256.0\nInf后参数/scale: 0.800000011920929 128.0\n参数/输入dtype: torch.float32 torch.float32\n输出/loss dtype: torch.float16 torch.float32\n输出/loss shape: [2, 2] []\n",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "device": "CPU",
+  "small_conversion": {
+    "input": 9.99999993922529e-09,
+    "direct": 0.0,
+    "scaled_then_recovered": 1.0011717677116394e-08
+  },
+  "real_scaler": {
+    "enabled": true,
+    "scaled_gradient": 256.0,
+    "unscaled_gradient": 2.0,
+    "initial_parameter": 1.0,
+    "finite_updated_parameter": 0.800000011920929,
+    "initial_scale": 128.0,
+    "after_finite_scale": 256.0,
+    "after_injected_inf_parameter": 0.800000011920929,
+    "after_injected_inf_scale": 128.0,
+    "inf_update_skipped": true,
+    "optimizer": "SGD lr0.1",
+    "loss": "p squared"
+  },
+  "real_autocast": {
+    "device": "cpu",
+    "dtype": "float16",
+    "parameter_dtype": "torch.float32",
+    "input_dtype": "torch.float32",
+    "logits_dtype": "torch.float16",
+    "loss_dtype": "torch.float32",
+    "logits_shape": [
+      2,
+      2
+    ],
+    "loss_shape": [],
+    "loss_value": 0.9689756631851196,
+    "forward_only_no_optimizer_update": true
+  },
+  "paper_image": "图片/MixedPrecision原论文_Figure1_单层训练.png",
+  "paper_image_sha256": "088ef8a2f83bf6b92ddc784b7911b6326dcda4cdec4112acb05610abce3e5950",
+  "paper_image_visually_inspected": true,
+  "limits": "No old CNN/meta/training verifier rerun, MNIST download, original large CNN, original CUDA AMP, GPU/3090 memory, performance or quality experiment."
+}

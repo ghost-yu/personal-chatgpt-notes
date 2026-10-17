@@ -78,3 +78,28 @@ python "工具/check_documents.py"
 原CUDA AMP API在当前版有弃用/无CUDA警告，按实际记录保存；迁移只在补充函数发生，不修改公开原代码。固定参考实现为[PyTorch2.5.1 GradScaler](https://github.com/pytorch/pytorch/blob/v2.5.1/torch/amp/grad_scaler.py)。
 
 未进行原MNIST训练、精确最大batch搜索、RTX3090峰值显存、性能/准确率对比；原summary不匹配问题保留并解释。129或257是否能跑、其他设备是否同样翻倍，均没有本次证据。
+
+
+## 2026-10-17：基础说明、论文原图与正文算例
+
+本轮从当前解释.md原样提取三块Python代码，使用既有Python3.12.14、PyTorch2.5.1+cpu实际执行；不下载MNIST或权重、不分配原大CNN。三块分别隔离数值转换、真实GradScaler、autocast前向，未假装成原网络整套训练。
+
+| 本轮检查 | 实际结果 |
+|---|---|
+| 1e-8直接转FP16 | 0 |
+| 放大1024→FP16→FP32→除1024 | 约1.00117177e-8，保留非零但仍有舍入 |
+| 真实CPU scaler、p²、SGD lr0.1 | 放大梯度256，还原为2，p从1变约0.8 |
+| growth_interval=1教学设置 | 有限更新后scale128→256 |
+| 下一轮人为注入Inf梯度 | 不更新参数，scale256→128 |
+| CPU FP16 autocast，2×2 Linear | 参数/输入FP32，logits FP16[2,2]，交叉熵FP32标量 |
+
+完整输出、正文代码指纹与环境见[本轮验证](outputs/基础改写验证.json)。单参数例子明确不包含autocast；另一个线性层例子仅核对前向/loss的dtype，没有优化更新；原代码怎样将两部分合入一个循环已在正文对照。
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/07 自动混合精度训练/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/07 自动混合精度训练/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/07 自动混合精度训练/资料/Mixed_Precision_Training_1710.03740v3.pdf'
+```
+
+补充方法论文为Mixed Precision Training，arXiv:1710.03740v3；Figure1在PDF第3页，直接渲染裁剪，未重画。已实际查看截图，前向/两种反向、主权重转换、FP32更新箭头及图号完整。来源/坐标/哈希见[截图记录](outputs/论文截图来源.json)。PDF留本地，公开PNG嵌入正文；其他机器重做时从记录中的官方URL取得同版本PDF再替换--pdf路径。正文区分论文概念图与PyTorch AMP实现，没有把它当成本notebook论文实验复现。
+
+原notebook、原注释文件和历史输出保持不变。上文meta形状、8/16通道合成CNN两步训练及原版/注释版比较仍是历史记录，本轮未重跑。没有CUDA/GPU AMP、MNIST原3epoch、RTX3090显存上限、速度或准确率新结果。
