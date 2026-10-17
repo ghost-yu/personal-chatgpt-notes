@@ -1,0 +1,231 @@
+{
+  "date_utc": "2026-10-17T11:53:42.202287+00:00",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.4",
+  "device": "cpu",
+  "blocks": [
+    {
+      "block": 1,
+      "stdout": "torch.Size([1, 2, 2, 4]) torch.Size([1, 2, 2, 2, 2]) torch.Size([1, 2, 2, 2])\n[[1.0, 2.0], [3.0, 4.0]]\n[(1+2j), (3+4j)]\n"
+    },
+    {
+      "block": 2,
+      "stdout": "torch.Size([1, 2, 1, 2]) torch.Size([1, 2, 2, 2]) torch.Size([1, 2, 2, 2, 2]) torch.Size([1, 2, 2, 4])\n[1.0, 2.0, 3.0, 4.0]\n[-1.1426396369934082, 1.9220755100250244, 2.959850788116455, 4.029799461364746]\n"
+    },
+    {
+      "block": 3,
+      "stdout": "torch.Size([1, 2, 2, 4]) torch.Size([1, 2, 2, 4])\n[1.0, 2.0, 3.0, 4.0]\n[-1.1426396369934082, 1.9220755100250244, 2.959850788116455, 4.029799461364746]\n7.347314357757568\n"
+    },
+    {
+      "block": 4,
+      "stdout": "7.725471496582031 7.725471496582031\n[0.23913359642028809, 2.2232441902160645, 0.9999499917030334, 0.009999833069741726]\n[2.2232441902160645, 0.23913359642028809, 3.039849281311035, 3.9698004722595215]\n"
+    },
+    {
+      "block": 5,
+      "stdout": "31.5 32.5\n6.412619851181159\n113\n"
+    }
+  ],
+  "official_model_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "original_notebook_sha256": "59fb6124d4c14dfe40c1cb1053a43458f0b745183447195abab18e3609d94f1e",
+  "note_sha256": "d8fc580f07189048fe4d17aa46555b72f9749e561f49e6faece28a2aa6991da0",
+  "verifier_sha256": "b66ea83241777cbc505e3c6f32b24eb532c2f575fdeaf79b99ad17cbdbf9054a",
+  "original_apply_ast_identical": true,
+  "official_apply_helper_ast_identical_ignoring_docstrings": true,
+  "original_phase_sum_ast_identical": true,
+  "official_frequency_exact": true,
+  "q_shape": [
+    1,
+    2,
+    2,
+    4
+  ],
+  "k_shape": [
+    1,
+    2,
+    1,
+    4
+  ],
+  "paired_shape": [
+    1,
+    2,
+    2,
+    2,
+    2
+  ],
+  "complex_shape": [
+    1,
+    2,
+    2,
+    2
+  ],
+  "broadcast_shape": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "broadcast_view_shares_storage": true,
+  "inputs_unchanged": true,
+  "q_output": [
+    [
+      [
+        [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        [
+          5.0,
+          6.0,
+          7.0,
+          8.0
+        ]
+      ],
+      [
+        [
+          -1.1426396369934082,
+          1.9220755100250244,
+          2.959850788116455,
+          4.029799461364746
+        ],
+        [
+          -2.3473143577575684,
+          7.4491682052612305,
+          6.919651508331299,
+          8.069599151611328
+        ]
+      ]
+    ]
+  ],
+  "k_output": [
+    [
+      [
+        [
+          2.0,
+          1.0,
+          1.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.23913359642028809,
+          2.2232441902160645,
+          0.9999499917030334,
+          0.009999833069741726
+        ]
+      ]
+    ]
+  ],
+  "forward_reference_max_error": 5.539870908677358e-07,
+  "wrong_axis_max_error": 7.347314357757568,
+  "wrong_axis_same_shape": true,
+  "score": 7.725471496582031,
+  "shifted_score": 7.725471496582031,
+  "score_q_gradient": [
+    [
+      [
+        [
+          0.23913359642028809,
+          2.2232441902160645,
+          0.9999499917030334,
+          0.009999833069741726
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ]
+  ],
+  "score_k_gradient": [
+    [
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          2.2232441902160645,
+          0.23913359642028809,
+          3.039849281311035,
+          3.9698004722595215
+        ]
+      ]
+    ]
+  ],
+  "official_gradients_exact": true,
+  "full_q_inverse_gradient_max_error": 8.935305784163461e-08,
+  "full_k_inverse_gradient_max_error": 5.149395443382332e-08,
+  "nonzero_start_pos": 3,
+  "nonzero_position_reset_max_error": 15.15504264831543,
+  "dtype_cases": [
+    {
+      "input_output_dtype": "torch.float16",
+      "finite_gradients": true
+    },
+    {
+      "input_output_dtype": "torch.bfloat16",
+      "finite_gradients": true
+    },
+    {
+      "input_output_dtype": "torch.float32",
+      "finite_gradients": true
+    },
+    {
+      "input_output_dtype": "torch.float64",
+      "finite_gradients": true
+    }
+  ],
+  "invalid_stride_error": "Tensor must have a last dimension with stride 1",
+  "contiguous_fixed": true,
+  "original_missing_helper_error": "name 'reshape_for_broadcast' is not defined",
+  "original_with_official_helper_exact": true,
+  "tokenizer_ids": [
+    1,
+    306,
+    4658,
+    278,
+    6593,
+    310,
+    2834,
+    338
+  ],
+  "degree_matrix_composition_checked": true,
+  "phase_curve": {
+    "course_first": 31.5,
+    "course_last": 6.412619851181159,
+    "paper_range_first": 32.5,
+    "paper_range_last": 6.781111550573342,
+    "increases": 113,
+    "independent_course_max_error": 5.329070518200751e-15,
+    "endpoint_identity_max_error": 6.439293542825908e-15,
+    "abel_identity_max_error": 2.6362595803518882e-14,
+    "cited_bound_checked": true,
+    "bound_positions": 256,
+    "bound_pairs": 64
+  },
+  "scope": "正文五块、完整固定官方三个RoPE函数、原分词两格与数学；未重跑旧15格整notebook或模型任务"
+}

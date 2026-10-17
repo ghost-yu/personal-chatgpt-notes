@@ -1,5 +1,28 @@
 # 第19讲复现记录
 
+## 2026-10-17 基础讲解与原论文截图
+
+正文以Q[1,2,2,4]/K[1,2,1,4]贯穿配对、complex view、[1,T,1,P]广播、复数乘法与flatten，包含完整原apply与官方helper。RoFormer v4 p5 Figure1、p7公式34、p8 Figure2原PDF直接截图，三张均视觉检查。公式34截图末对排版按二维旋转规则就地说明；第8节直接解释论文35–37的内容项、Abel上界及论文/课程端点差异。旧讲解完整折叠保留，原件与注释代码不变。
+
+执行命令（仓库根目录）：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' -X utf8 'lessons/19 RoPE apply_rotary_emb/复现/scripts/verify_foundation_examples.py'
+```
+
+[新脚本](scripts/verify_foundation_examples.py)从当前正文第一个折叠前提取五块Python代码，真实顺序执行。Python3.12.14/Torch2.5.1+cpu/NumPy1.26.4，完整官方文件导入仍使用第15讲FairScale本地target。原apply与正文AST相同；官方apply/helper去docstring后AST相同，原s函数AST相同。实际导入完整固定model.py且检查SHA，执行三个RoPE函数。
+
+[新报告](outputs/基础讲解验证.json)记录当前笔记/脚本哈希、stdout和数值：
+
+- Q配对[1,2,2,2,2]→complex[1,2,2,2]，频率view[1,2,1,2]与原表共享存储；手工各步、正文完整函数和官方输出精确一致，输入数值不变。位置1/head0约[-1.142640,1.922076,2.959851,4.029799]。独立float64两分量参考最大差5.54e-7。
+- T=H=2时，省略频率reshape得到相同输出shape却错用head轴，最大差7.34731436。位置1/head0错误保留原值。
+- 两位置的原始/共同后移7点积均7.725471497；正文与官方该分数的全输入梯度精确一致。另用覆盖全部Q/K分量的线性loss核对独立逆旋转梯度，最大差8.94e-8/5.15e-8。绝对位置3/4切片与独立角度对照通过，错误重置到0/1改变Q约15.15504。
+- 四种FP16/BF16/FP32/FP64真实输出保留输入dtype、梯度有限；末stride2真实失败，contiguous整理后通过。单独执行原16格定义并调用时缺helper的NameError被捕获，显式提供同提交官方helper后与官方输出相同；原文件未改。
+- 课程相位曲线C0=31.5、C255=6.412619851、113个上升区间，与独立cumsum误差5.33e-15；论文求和范围C0=32.5、C255=6.781111551，端点差恒等式误差6.44e-15。另以64对复数内容、256个距离验证引用的Abel恒等式与上界。
+- 原6格R函数的30+60/逆30+60合成验证通过；只在原相对目录执行18/19分词两格，读取原499723byte tokenizer得到历史8个ID。
+
+[截图来源](outputs/论文截图来源.json)记录版本、页码、top-left坐标、3倍渲染和PDF/图片哈希。本次运行正文、官方函数、矩阵/分词子集与数学；旧15格整notebook运行未重跑，完整Attention/cache/原权重/GPU/论文任务留待后续。
+
 状态：部分成功。原版/注释版全部15代码格、真实tokenizer、完整固定Meta模块的三个RoPE函数、独立数学与autograd验证通过；没有运行整模型或论文训练。
 
 ## 环境与资源

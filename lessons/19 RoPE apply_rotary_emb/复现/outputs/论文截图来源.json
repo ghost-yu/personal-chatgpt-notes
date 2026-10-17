@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 5,
+    "crop_points_top_left": [
+      140,
+      365,
+      475,
+      581
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p5_Figure1.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "6a4156ce253d2994153038ca0b75eeda4889ae696baacefad2d90ea6be1d5997"
+  },
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 7,
+    "crop_points_top_left": [
+      155,
+      538,
+      552,
+      633
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p7_公式34.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "ce55e94aa9c07ec0c6e28178612039756577ead4b518f9fe1aa3efa2fc7dc48b"
+  },
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 8,
+    "crop_points_top_left": [
+      135,
+      68,
+      480,
+      270
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p8_Figure2.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "9aa540f6862dbd763af024a027ef8b4790d27a373a24b3382e34e46b46ae2a85"
+  }
+]
