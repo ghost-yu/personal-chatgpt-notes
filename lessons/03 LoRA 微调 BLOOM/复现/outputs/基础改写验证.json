@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "0d4c8ac1e8de3f37fbf7578a9c048d26fbde6e17081e3059689f7855c4008fa8",
+  "executed": "two Python blocks copied from the current 解释.md, no substitutions",
+  "stdout": "Be yourself. ->: ['life']\n有效目标数: 6\nloss: 1.791759\n等概率的理论值: 1.791759\n",
+  "valid_next_token_targets": 6,
+  "loss": 1.7917594909667969,
+  "expected_loss": 1.791759469228055,
+  "ignored_and_unused_positions_have_zero_gradient": true,
+  "valid_positions_have_nonzero_gradient": true,
+  "paper_image": "图片\\LoRA原论文_Figure1_双分支.png",
+  "paper_image_sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+  "paper_image_visually_inspected": true,
+  "torch": "2.5.1+cpu",
+  "limits": "Synthetic IDs and logits only; old tiny-model training not rerun; original 7B configuration not run."
+}

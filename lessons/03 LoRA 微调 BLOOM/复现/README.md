@@ -57,3 +57,15 @@ verify_pipeline读取原文件和可选注释版，按原编号提取上述单�
 首次安装时未固定Arrow，解析到pyarrow26.0.0，与现有NumPy1.26.4冲突，实际报`ImportError: pyarrow requires NumPy 2.0 or newer`。随后固定pyarrow16.1.0与pandas2.2.2，导入与上述完整验证通过。[环境修复记录](outputs/environment_setup.json)保留失败和修复命令；requirements已使用修复后的组合。
 
 没有执行原watermark环境、bitsandbytes/CUDA加载、7B量化训练、原两条生成示例、真实数据任务指标或论文benchmark。完整大模型/数据revision、历史dev库SHA和泛化能力仍未证明，不能把全部注释覆盖或小模型2步训练升级为原论文成功复现。
+
+
+## 2026-10-17：基础讲解与原论文截图
+
+本轮只执行当前解释.md中的两块新教学代码，验证字符串拼接、labels位移、6个有效目标和忽略位置的零梯度。等概率六选一的交叉熵为1.791759，与log(6)一致。使用既有Torch CPU环境，不下载权重或数据，不重跑上文历史Trainer实验。结果见[基础改写验证](outputs/基础改写验证.json)。
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' './lessons/03 LoRA 微调 BLOOM/复现/scripts/extract_paper_images.py' --pdf 'G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf'
+```
+
+Figure1直接从固定v2原PDF第1页渲染后裁剪，未重画；截图已实际查看，x/h、两路箭头、W/A/B及相加位置完整。PDF在本地，公开仓库包含正文直接使用的PNG及[来源坐标和哈希](outputs/论文截图来源.json)。若在其他电脑重做，先从记录中的官方地址取得同版本PDF，并修改--pdf路径。原notebook和注释代码未改。
