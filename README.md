@@ -1,34 +1,28 @@
 # Personal ChatGPT 中文讲解与代码注释
 
-**本页是唯一课程总目录。选好讲次后，只需看下面三种文件。**
+从下面的课程表选择讲次，按这个顺序阅读：
 
-用 VS Code 阅读时，打开本项目的 [课程阅读.code-workspace](课程阅读.code-workspace)，再从本页选讲次。侧栏会直接列出“00 课程总目录”和各讲，不用再逐层寻找 `lessons/`。这个阅读视图会收起维护脚本、验证结果、配套图片和对照版本：存在同名 Python 注释版的原 notebook 会自动隐藏，注释 notebook 继续显示。所有文件仍保留在磁盘上。需要查看全部文件时，用“打开文件夹”打开项目目录即可。
-
-| 阅读顺序 | 文件 | 用途 |
+| 顺序 | 文件 | 内容 |
 |---|---|---|
-| 1 | `解释.md` | 看中文讲解、公式和整体流程 |
-| 2 | `…_代码注释.py` | 直接看代码及详细中文注释，最适合文本阅读 |
-| 3 | `代码注释.ipynb` | 在 GitHub 或 Jupyter 中逐格对照、查看输出 |
+| 1 | `解释.md` | 概念、手算例子、论文原图、公式和代码流程 |
+| 2 | `…_代码注释.py` | 原代码及详细中文注释，适合直接阅读 |
+| 3 | `代码注释.ipynb` | 在GitHub或Jupyter中逐格查看代码与输出 |
 
-**先看 [第 01 讲](lessons/01%20LLaMA%20introduction/README.md)。01–30 讲已按讲次交付，实际运行范围见各讲复现记录。**
+可以先打开[第01讲](lessons/01%20LLaMA%20introduction/解释.md)。第01–15讲已补充基础讲解和内嵌原图，并调整为直接讲解的写法；第16–30讲接着更新。[各讲进度](资料/基础讲解与内嵌原图进度.md)
 
-正在按“从基础讲起、论文原图直接截进笔记”的新要求逐篇改写。第01–15讲已完成本轮改写：[第01讲](lessons/01%20LLaMA%20introduction/%E8%A7%A3%E9%87%8A.md)、[第02讲](lessons/02%20LoRA%20-%20Low-Rank%20Adaptation%20of%20Large%20Language%20Models/%E8%A7%A3%E9%87%8A.md)、[第03讲](lessons/03%20LoRA%20%E5%BE%AE%E8%B0%83%20BLOOM/%E8%A7%A3%E9%87%8A.md)、[第04讲](lessons/04%20PEFT%20LoRA%20%E6%BA%90%E7%A0%81/%E8%A7%A3%E9%87%8A.md)、[第05讲](lessons/05%20FP16%20%E4%B8%8E%20BF16/%E8%A7%A3%E9%87%8A.md)、[第06讲](lessons/06%20Alpaca%20LoRA%20%E6%8E%A8%E7%90%86/%E8%A7%A3%E9%87%8A.md)、[第07讲](lessons/07%20%E8%87%AA%E5%8A%A8%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83/%E8%A7%A3%E9%87%8A.md)、[第08讲](lessons/08%20LLM.int8%28%29%20-%208-bit%20Matrix%20Multiplication%20for%20Transformers%20at%20Scale/%E8%A7%A3%E9%87%8A.md)、[第09讲](lessons/09%20BPE%20%E4%B8%8E%20GPT-2%20tokenizer/%E8%A7%A3%E9%87%8A.md)、[第10讲](lessons/10%20%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E6%96%99%E3%80%81memory%20mapping%20%E4%B8%8E%20streaming/%E8%A7%A3%E9%87%8A.md)、[第11讲](lessons/11%20%E6%A2%AF%E5%BA%A6%E7%B4%AF%E7%A7%AF%20gradient%20accumulation/%E8%A7%A3%E9%87%8A.md)、[第12讲](lessons/12%20LLM%20SFT%20%E4%B8%8E%20SFTTrainer/%E8%A7%A3%E9%87%8A.md)、[第13讲](lessons/13%20Gradient%20checkpointing/%E8%A7%A3%E9%87%8A.md)、[第14讲](lessons/14%20Llama%202%20introduction%20%E4%B8%8E%20Guanaco/%E8%A7%A3%E9%87%8A.md)、[第15讲](lessons/15%20Llama%202%20text%20%E4%B8%8E%20chat%20completion/%E8%A7%A3%E9%87%8A.md)。第16–30讲待逐篇改写；各讲的具体更新与验证范围见[本轮进度](资料/基础讲解与内嵌原图进度.md)。
-
-在项目文件夹里找文件时，按这个顺序打开：
+在VS Code中打开[课程阅读.code-workspace](课程阅读.code-workspace)，侧栏会列出总目录和各讲。维护资料收在阅读视图之外，需要时可通过“打开文件夹”查看完整项目。
 
 ```text
 lessons/
 └── 讲次 名称/
-    ├── 解释.md                     ← 第一步：中文讲解
-    ├── README.md                   ← 本讲全部阅读链接
+    ├── 解释.md                     ← 先读中文讲解
+    ├── README.md                   ← 本讲阅读链接
     └── 代码/tutorials/…/
-        ├── 原文件名_代码注释.py     ← 第二步：详细代码注释
-        └── 代码注释.ipynb           ← 可选：逐格查看输出
+        ├── 原文件名_代码注释.py     ← 再看代码
+        └── 代码注释.ipynb           ← 逐格查看输出
 ```
 
-**日常阅读只需 `解释.md` 和以 `_代码注释.py` 结尾的文件。** 部分讲次的代码在 `llama/`、`peft/` 等子目录，直接点击下表的“文本代码”即可。Notebook 请在 GitHub 或 Jupyter 中查看；文本编辑器显示的是 JSON，Python 阅读版更适合直接看代码。
-
-每讲目录中的 `README.md` 也按上述顺序提供入口。原 notebook、带说明对照版、来源 JSON、验证脚本和结果用于查证，放在各讲入口的折叠栏里。旁边三个本地资料目录仍供复现使用；日常阅读进入本项目即可。
+原notebook、来源和运行记录放在各讲入口的补充栏中。Notebook用GitHub或Jupyter打开；直接阅读代码时，选表中的“文本代码”。
 
 ## 选一讲开始阅读
 
