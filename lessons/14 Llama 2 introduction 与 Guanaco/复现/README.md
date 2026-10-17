@@ -1,5 +1,31 @@
 # 第 14 讲复现记录
 
+## 2026-10-17：基础讲解与内嵌原图改写
+
+本节属于新一轮正文验证，下面旧记录完整保留且未重跑。当前笔记前半部分四个Python块由 [verify_beginner_note.py](scripts/verify_beginner_note.py) 原样提取到同一进程执行，不另写一套替代实现。运行环境仍为Python3.11.0、Torch2.0.1+cpu、Transformers4.31.0、TRL0.5.0、PEFT0.4.0，无bitsandbytes/GPU参与。
+
+从仓库根目录运行，材料准备和hash与下方旧记录同源；`--tokenizer`、`--reference-script` 可以指向自己的缓存路径，但内容hash必须相同。脚本会设置正文所需的 `LESSON14_TOKENIZER` 环境变量：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/llama2-sft/Scripts/python.exe' 'lessons/14 Llama 2 introduction 与 Guanaco/复现/scripts/verify_beginner_note.py' --tokenizer 'G:/zzz/Llama 入门教程/代码/personal_chatgpt/tutorials/llama/llama2_tokenizer.model' --reference-script 'G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/资料/sft-script-v0.5.0.py'
+```
+
+正文分词器直接用固定本地SentencePiece，先复制到ASCII临时目录，避免已知Windows中文路径限制；没有重新从Hub加载tokenizer。其普通句9token、格式句32token含BOS，固定旧pipeline实际31token不加BOS；3候选各新增3token、完整/续写/ID返回一致，推理前后权重未改。
+
+本轮自编两行长度20/23，未触发24上限，右补3位为`[2,23]`，Human有labels；这不是旧五行Guanaco左补齐实验。随机H8/1层/词表32000、512664参数模型，q/v的r2/alpha4共64可训练数，FP32真实2更新。四个A/B张量变化，基础冻结不变且grad None，optimizer参数集合匹配；保存adapter并用相同基础重载，全状态精确一致，logits最大差0。损失约10.374217只来自这两行随机教学运行，不能解释为训练质量或原规模速度。
+
+固定官方TRL0.5.0参考脚本只提取 `ScriptArguments` 类，并用真实 `HfArgumentParser` 解析原CLI，确认512/r64/alpha16/3epoch等默认值；不执行脚本其余远程加载/训练逻辑。旧的完整参考脚本两步CPU运行未重跑，讲师修改版仍未找到。[本轮JSON](outputs/基础讲解验证.json) 保存四块哈希、捕获输出、当前笔记/脚本/输入哈希和版本；旧输出文件均未覆盖。
+
+原图由 [extract_paper_images.py](scripts/extract_paper_images.py) 使用pypdfium2渲染、PIL裁剪：Llama 2 v2 PDF第5页Figure4、第6页Table1；LoRA v2 PDF第1页Figure1。[来源记录](outputs/论文截图来源.json) 包含PDF哈希、页码、裁剪框和PNG哈希。三张已逐张视觉检查，未重绘/改字。重做截图命令：
+
+```powershell
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' 'lessons/14 Llama 2 introduction 与 Guanaco/复现/scripts/extract_paper_images.py' --llama2-pdf 'G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/原论文.pdf' --lora-pdf 'G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf'
+```
+
+首次重做后来源记录的视觉标记为false；实际查看三图后才可加 `--confirmed-visual-review` 重做记录。本轮已查看并使用该标记。截图环境Python3.12的pypdfium2/Pillow与上方训练环境分开，版本记录见JSON。
+
+本轮状态：**部分成功**，没有原7B/全量Guanaco三轮/4bit CUDA/官方RLHF或论文能力、安全实验。下方为原交付记录。
+
 状态：**部分成功**。23格说明、16代码格及Markdown15三命令注释完整交付；原字节、元数据、历史输出、AST和schema通过。新增真实CPU运行覆盖Fast tokenizer、pipeline、完整固定TRL示例两步LoRA及adapter保存重载。随机小LLaMA和固定Guanaco前五行不代表原7B量化训练或论文评估。
 
 ## 1. 环境与材料

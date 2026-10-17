@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [中文讲解](解释.md)：base/chat、prompt、Guanaco监督、训练命令与实际运行范围。
+1. [先看中文讲解](解释.md)：从模型/文字编号讲起，直接内嵌Llama 2训练阶段图、配置表和LoRA原图；沿模板→生成→对话监督→训练/保存解释，四块正文代码实际执行，旧完整讲解折叠保留。
 2. [Python 文本阅读版](代码/tutorials/llama2_introduction_代码注释.py)：不用阅读JSON。
 3. [详细代码注释](代码/tutorials/代码注释.ipynb)：全部23格说明、16代码格及Markdown训练命令注释。
 

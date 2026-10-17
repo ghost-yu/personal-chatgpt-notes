@@ -1,0 +1,88 @@
+{
+  "method": "Original PDF pages rendered and cropped. No redraw, relabel, or content edits.",
+  "papers": [
+    {
+      "paper": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "version": "arXiv:2307.09288v2",
+      "pdf_url": "https://arxiv.org/pdf/2307.09288v2",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+      "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+      "pdf_pages": 77,
+      "images": [
+        {
+          "file": "图片/Llama2原论文_Figure4_训练阶段.png",
+          "page_1based": 5,
+          "crop_points_top_left": [
+            82,
+            70,
+            531,
+            277
+          ],
+          "render_scale": 4,
+          "pixel_size": [
+            1796,
+            828
+          ],
+          "sha256": "bba9c58da1ed15e09fd52f8e4692f1a1ff86f46f3be074ef93c2bca50c0a20c7",
+          "visually_inspected": true
+        },
+        {
+          "file": "图片/Llama2原论文_Table1_模型配置.png",
+          "page_1based": 6,
+          "crop_points_top_left": [
+            82,
+            71,
+            530,
+            202
+          ],
+          "render_scale": 4,
+          "pixel_size": [
+            1792,
+            524
+          ],
+          "sha256": "f3d43fec297bf3df47f0130eed89e13f5fcd6de4271c4e65cf6ae7521ba34b71",
+          "visually_inspected": true
+        }
+      ]
+    },
+    {
+      "paper": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "version": "arXiv:2106.09685v2",
+      "pdf_url": "https://arxiv.org/pdf/2106.09685v2",
+      "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\02 LoRA - Low-Rank Adaptation of Large Language Models\\资料\\LoRA_2106.09685v2.pdf",
+      "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "pdf_pages": 26,
+      "images": [
+        {
+          "file": "图片/LoRA原论文_Figure1_双分支.png",
+          "page_1based": 1,
+          "crop_points_top_left": [
+            386,
+            519,
+            507,
+            635
+          ],
+          "render_scale": 4,
+          "pixel_size": [
+            484,
+            464
+          ],
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca",
+          "visually_inspected": true
+        }
+      ]
+    }
+  ],
+  "command": [
+    "C:\\Users\\hgfhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "lessons/14 Llama 2 introduction 与 Guanaco/复现/scripts/extract_paper_images.py",
+    "--llama2-pdf",
+    "G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/原论文.pdf",
+    "--lora-pdf",
+    "G:/zzz/Personal ChatGPT 前七讲/02 LoRA - Low-Rank Adaptation of Large Language Models/资料/LoRA_2106.09685v2.pdf",
+    "--confirmed-visual-review"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "pypdfium2": "5.14.0",
+  "script_sha256": "d1bba9da5ebe6c409e4c61342a00cea307bdbe2d03d96529e7f0dde30e8526c5"
+}

@@ -1,0 +1,250 @@
+{
+  "status": "passed",
+  "scope": "Four verbatim note blocks, CPU random tiny Llama; reference dataclass/CLI parsing only.",
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Scripts\\python.exe",
+    "lessons/14 Llama 2 introduction 与 Guanaco/复现/scripts/verify_beginner_note.py",
+    "--tokenizer",
+    "G:/zzz/Llama 入门教程/代码/personal_chatgpt/tutorials/llama/llama2_tokenizer.model",
+    "--reference-script",
+    "G:/zzz/Personal ChatGPT 系列/14 Llama 2 introduction 与 Guanaco/资料/sft-script-v0.5.0.py"
+  ],
+  "cwd": "G:\\zzz\\personal-chatgpt-notes",
+  "versions": {
+    "torch": "2.0.1+cpu",
+    "transformers": "4.31.0",
+    "trl": "0.5.0",
+    "peft": "0.4.0",
+    "datasets": "2.13.1",
+    "accelerate": "0.21.0"
+  },
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "note_sha256": "2f935297a772803cda74df7090d2ca1bc5f230c528546a59623d5e343dab3c81",
+  "script_sha256": "f477df41c9531568617ab5295c2406508b794887bb3b004b363f660efbdf0d46",
+  "tokenizer_sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+  "reference_script_sha256": "e75c36b75daa03445ef9e763847b8e1450b561fbc222f345e1daa65f46687aec",
+  "original_notebook_sha256": "b27440095f45a608b79666bf967276621f256ab252e7b156b758e22b73435ab6",
+  "blocks": [
+    {
+      "block": 1,
+      "sha256": "16604135976e60b5f394eaf8a93f3de363d4e76336b50fc5bc9f32163a26db10",
+      "output": "You are using the legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This means that tokens that come after special tokens will not be properly handled. We recommend you to read the related pull request available at https://github.com/huggingface/transformers/pull/24565\n{'plain_length': 9, 'formatted_length': 32, 'formatted_ids': [1, 518, 25580, 29962, 3532, 14816, 29903, 6778, 13, 22550, 23359, 29889, 13, 29966, 829, 14816, 29903, 6778, 13, 13, 1123, 2055, 355, 263, 2706, 1048, 2913, 29889, 518, 29914, 25580, 29962], 'duplicate_bos': [1, 1], 'human_marker_ids': [835, 12968, 29901], 'logical_7b_parameters': 6738415616, 'fp16_weight_gib': 12.551277160644531}\n"
+    },
+    {
+      "block": 2,
+      "sha256": "ccf6f1ff678305e305805d16854336e1310d124550d66df9f38c269477340b48",
+      "output": "{'parameters': 512664, 'input_shape': [1, 31], 'returned_shape': [3, 34], 'all_requires_grad': True, 'weights_unchanged': True, 'generated_ids': [[24359, 10426, 23369], [341, 24053, 29323], [3603, 24486, 14789]]}\n"
+    },
+    {
+      "block": 3,
+      "sha256": "e78e2a9a3a400c5dfb4b80f39bb785cca530cc6ffee300204f1b14c805b186aa",
+      "output": "{'raw_lengths': [20, 23], 'truncated_lengths': [20, 23], 'batch_shape': [2, 23], 'padding_count': 3, 'labels': [[1, 835, 12968, 29901, 1724, 338, 29871, 29896, 718, 29871, 29906, 29973, 2277, 29937, 4007, 22137, 29901, 29871, 29941, 29889, -100, -100, -100], [1, 835, 12968, 29901, 14891, 7251, 29889, 2277, 29937, 4007, 22137, 29901, 6324, 29889, 2277, 29937, 12968, 29901, 14891, 372, 297, 5176, 29889]], 'human_text_supervised': True, 'automatic_eos': False}\n"
+    },
+    {
+      "block": 4,
+      "sha256": "69a8da156e727445e154f27fa7fa9d88cbdd8d987bf94374d3db1dd1c048d415",
+      "output": "\rMap:   0%|          | 0/2 [00:00<?, ? examples/s]\r                                                 \rG:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\llama2-sft\\Lib\\site-packages\\transformers\\optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning\n  warnings.warn(\n{'train_runtime': 0.0648, 'train_samples_per_second': 61.697, 'train_steps_per_second': 30.849, 'train_loss': 10.37421703338623, 'epoch': 2.0}\n{'trainable_parameters': 64, 'updates': 2, 'changed_parameters': ['base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight', 'base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight', 'base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight'], 'frozen_unchanged': True, 'optimizer_matches': True, 'training_loss': 10.37421703338623, 'adapter_files': ['README.md', 'adapter_config.json', 'adapter_model.bin'], 'reloaded_state_equal': True, 'logits_shape': [2, 23, 32000], 'reload_max_logit_difference': 0.0}\n"
+    }
+  ],
+  "results": {
+    "tokenization": {
+      "plain_length": 9,
+      "formatted_length": 32,
+      "formatted_ids": [
+        1,
+        518,
+        25580,
+        29962,
+        3532,
+        14816,
+        29903,
+        6778,
+        13,
+        22550,
+        23359,
+        29889,
+        13,
+        29966,
+        829,
+        14816,
+        29903,
+        6778,
+        13,
+        13,
+        1123,
+        2055,
+        355,
+        263,
+        2706,
+        1048,
+        2913,
+        29889,
+        518,
+        29914,
+        25580,
+        29962
+      ],
+      "duplicate_bos": [
+        1,
+        1
+      ],
+      "human_marker_ids": [
+        835,
+        12968,
+        29901
+      ],
+      "logical_7b_parameters": 6738415616,
+      "fp16_weight_gib": 12.551277160644531
+    },
+    "generation": {
+      "parameters": 512664,
+      "input_shape": [
+        1,
+        31
+      ],
+      "returned_shape": [
+        3,
+        34
+      ],
+      "all_requires_grad": true,
+      "weights_unchanged": true,
+      "generated_ids": [
+        [
+          24359,
+          10426,
+          23369
+        ],
+        [
+          341,
+          24053,
+          29323
+        ],
+        [
+          3603,
+          24486,
+          14789
+        ]
+      ]
+    },
+    "supervision": {
+      "raw_lengths": [
+        20,
+        23
+      ],
+      "truncated_lengths": [
+        20,
+        23
+      ],
+      "batch_shape": [
+        2,
+        23
+      ],
+      "padding_count": 3,
+      "labels": [
+        [
+          1,
+          835,
+          12968,
+          29901,
+          1724,
+          338,
+          29871,
+          29896,
+          718,
+          29871,
+          29906,
+          29973,
+          2277,
+          29937,
+          4007,
+          22137,
+          29901,
+          29871,
+          29941,
+          29889,
+          -100,
+          -100,
+          -100
+        ],
+        [
+          1,
+          835,
+          12968,
+          29901,
+          14891,
+          7251,
+          29889,
+          2277,
+          29937,
+          4007,
+          22137,
+          29901,
+          6324,
+          29889,
+          2277,
+          29937,
+          12968,
+          29901,
+          14891,
+          372,
+          297,
+          5176,
+          29889
+        ]
+      ],
+      "human_text_supervised": true,
+      "automatic_eos": false
+    },
+    "training": {
+      "trainable_parameters": 64,
+      "updates": 2,
+      "changed_parameters": [
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+        "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+        "base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight"
+      ],
+      "frozen_unchanged": true,
+      "optimizer_matches": true,
+      "training_loss": 10.37421703338623,
+      "adapter_files": [
+        "README.md",
+        "adapter_config.json",
+        "adapter_model.bin"
+      ],
+      "reloaded_state_equal": true,
+      "logits_shape": [
+        2,
+        23,
+        32000
+      ],
+      "reload_max_logit_difference": 0.0
+    }
+  },
+  "reference_arguments": {
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "dataset_name": "timdettmers/openassistant-guanaco",
+    "dataset_text_field": "text",
+    "log_with": null,
+    "learning_rate": 1.41e-05,
+    "batch_size": 16,
+    "seq_length": 512,
+    "gradient_accumulation_steps": 2,
+    "load_in_8bit": false,
+    "load_in_4bit": true,
+    "use_peft": true,
+    "trust_remote_code": true,
+    "output_dir": "output",
+    "peft_lora_r": 64,
+    "peft_lora_alpha": 16,
+    "logging_steps": 1,
+    "use_auth_token": true,
+    "num_train_epochs": 3,
+    "max_steps": -1
+  },
+  "image_record_sha256": "9af6c53037f6bed4efe38c05bb87c0c78fa66acf2337689104c6b22ed7a911b1",
+  "limits": [
+    "No pretrained 7B weights, GPU, bitsandbytes, original 3-epoch CLI run, full Guanaco, or quality evaluation.",
+    "Historical verification files unchanged and not rerun."
+  ]
+}
