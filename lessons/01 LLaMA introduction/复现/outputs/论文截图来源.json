@@ -1,0 +1,45 @@
+{
+  "paper": "LLaMA: Open and Efficient Foundation Language Models",
+  "version": "arXiv:2302.13971v1",
+  "pdf_url": "https://arxiv.org/pdf/2302.13971v1",
+  "pdf_sha256": "2e663675ae36ad12adb2f5a05281bac2747ecf8d23d92bedd9f937a89fee7136",
+  "local_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\01 LLaMA introduction\\资料\\LLaMA_2302.13971v1.pdf",
+  "images": [
+    {
+      "file": "图片/LLaMA原论文_Table2_模型规格.png",
+      "page_1based": 3,
+      "crop_points_top_left": [
+        112,
+        67,
+        483,
+        154
+      ],
+      "render_scale": 3,
+      "pixel_size": [
+        1113,
+        261
+      ],
+      "sha256": "78d5c32f1e6989d16b207289ef2316b48255dab5acf45d53773e5f7908648b1b",
+      "method": "Original PDF rendered and cropped; no redraw or data edits"
+    },
+    {
+      "file": "图片/LLaMA原论文_Figure1_训练曲线.png",
+      "page_1based": 3,
+      "crop_points_top_left": [
+        302,
+        191,
+        526,
+        345
+      ],
+      "render_scale": 3,
+      "pixel_size": [
+        672,
+        462
+      ],
+      "sha256": "a79a1f83de6693b86cbac6ceb4f080ecc1861b922e71c95b4a36619cae733cf7",
+      "method": "Original PDF rendered and cropped; no redraw or data edits"
+    }
+  ],
+  "pypdfium2": "5.14.0",
+  "script_sha256": "6eefe2e0cbc1529b7d1f3490d7e17692a7cbe595a1d2de53520e1e3f8988604c"
+}
