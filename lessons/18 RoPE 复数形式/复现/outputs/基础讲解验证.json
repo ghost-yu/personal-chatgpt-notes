@@ -1,0 +1,167 @@
+{
+  "date_utc": "2026-10-17T11:43:35.447474+00:00",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "device": "cpu",
+  "official_model_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "note_sha256": "5f574434b71a921b66adb7ebbe662dd3f28af1af842c67b97d7f1179a3256d7a",
+  "verifier_sha256": "1bea5e093c7a5f70634c2ae80a841b0deda41f5427431d9d523d3f9d182d24f5",
+  "blocks": [
+    {
+      "block": 1,
+      "stdout": "(-2+1.0000000000000002j)\n2.23606797749979 2.23606797749979\n1.0 2.0\n"
+    },
+    {
+      "block": 2,
+      "stdout": "torch.Size([4, 2])\ntorch.Size([4, 2])\n[(1+0j), (1+0j)]\n[(0.5403022766113281+0.8414709568023682j), (0.9999499917030334+0.009999833069741726j)]\n"
+    },
+    {
+      "block": 3,
+      "stdout": "[0.0, 1.0, 0.0, 1.0]\n[[1.0, 0.0], [1.0, 0.0]]\n[0.0, 1.0, 0.0, 1.0]\n5.960464477539063e-08\n"
+    },
+    {
+      "block": 4,
+      "stdout": "11.99499051739441 11.99499051739441 11.99499051739441\n5.477225575051661 5.477225575051661\n[0.07700375373139678, 2.234741690198506, 0.46990200329328935, 1.5096993433465333] [1.4024480171042208, -1.7415910999199666, 3.079394686773066, 3.939204026586312]\n"
+    }
+  ],
+  "notebook_function_ast_identical": true,
+  "notebook_real_class_ast_identical": true,
+  "official_math_ast_identical": true,
+  "official_precompute_exact": true,
+  "table_real_imag": [
+    [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.5403022766113281,
+        0.8414709568023682
+      ],
+      [
+        0.9999499917030334,
+        0.009999833069741726
+      ]
+    ],
+    [
+      [
+        -0.416146844625473,
+        0.9092974066734314
+      ],
+      [
+        0.9998000264167786,
+        0.019998665899038315
+      ]
+    ],
+    [
+      [
+        -0.9899924993515015,
+        0.14112000167369843
+      ],
+      [
+        0.9995500445365906,
+        0.029995499178767204
+      ]
+    ]
+  ],
+  "shape": [
+    4,
+    2
+  ],
+  "table_bytes": 64,
+  "real_view_bytes": 64,
+  "real_view_shares_storage": true,
+  "flip_new_storage": true,
+  "reconstructed_pe_max_error": 5.960464477539063e-08,
+  "score": 11.99499051739441,
+  "shifted_score": 11.99499051739441,
+  "relative_score": 11.99499051739441,
+  "norm_max_error": 0.0,
+  "q_gradient": [
+    0.07700375373139678,
+    2.234741690198506,
+    0.46990200329328935,
+    1.5096993433465333
+  ],
+  "k_gradient": [
+    1.4024480171042208,
+    -1.7415910999199666,
+    3.079394686773066,
+    3.939204026586312
+  ],
+  "q_gradient_matrix_max_error": 2.220446049250313e-16,
+  "k_gradient_matrix_max_error": 8.881784197001252e-16,
+  "default_table_shape": [
+    4096,
+    64
+  ],
+  "default_table_bytes": 2097152,
+  "slice_shape": [
+    3,
+    2
+  ],
+  "reset_position_max_error": 0.7015664577484131,
+  "missing_dim_second_frequency": 9.99999993922529e-09,
+  "original_second_class": {
+    "global6_vs_instance4_max_error": 0.10880258679389954,
+    "global6_to12_max_change": 0.4634629189968109,
+    "missing_global_name_error": true,
+    "corrected_name_count": 1,
+    "fixed_class_errors": {
+      "2": 5.960464477539063e-08,
+      "4": 5.960464477539063e-08,
+      "6": 5.960464477539063e-08,
+      "8": 5.960464477539063e-08
+    }
+  },
+  "odd_real_error": "stack expects each tensor to be equal size, but got [4, 3] at entry 0 and [4, 2] at entry 1",
+  "odd_original_complex_shape": [
+    4,
+    6
+  ],
+  "odd_official_shape": [
+    4,
+    2
+  ],
+  "screenshot_layout": {
+    "q_shape": [
+      2,
+      2,
+      3,
+      4
+    ],
+    "k_shape": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "permutation": [
+      0,
+      2,
+      1,
+      3
+    ],
+    "position_ids": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        4,
+        6
+      ]
+    ],
+    "q_max_error": 0.0,
+    "k_max_error": 0.0
+  },
+  "scope": "正文四代码块、完整官方频率函数、数学旋转及原截图转录；不重跑旧整notebook或模型任务"
+}

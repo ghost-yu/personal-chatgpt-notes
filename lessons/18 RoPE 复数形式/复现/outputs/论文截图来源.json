@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 4,
+    "crop_points_top_left": [
+      70,
+      535,
+      550,
+      676
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p4_公式12与13.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "4b59f2f750ef58c6ac2212481142b5b84ef9ff3417bc58deeae2eb5dafbf6b1a"
+  },
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 5,
+    "crop_points_top_left": [
+      65,
+      90,
+      550,
+      277
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p5_多维旋转.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "43c4c76f52320f39cd344f2b3aa97170184749ad6e769b6292d9a1e58d98b0df"
+  },
+  {
+    "url": "https://arxiv.org/pdf/2104.09864v4",
+    "pdf_page": 5,
+    "crop_points_top_left": [
+      140,
+      365,
+      475,
+      581
+    ],
+    "render_scale": 3,
+    "image": "图片/RoFormer_v4_p5_Figure1.png",
+    "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+    "image_sha256": "6a4156ce253d2994153038ca0b75eeda4889ae696baacefad2d90ea6be1d5997"
+  }
+]
