@@ -2,7 +2,26 @@
 
 状态：**部分成功**。全部 28 格说明、15 代码 AST、2 段 Markdown 循环 AST、3 schema、原输出/元数据与下载字节核对通过。原/注释各 11 格完整源码执行一致；真实 autograd/SGD 原循环及窗口修正、小随机 BERT Trainer baseline/累积训练通过。未下载 BERT-large 或复现原双卡 GPU 显存/速度。
 
-## 最新重做命令
+## 2026-10-17 基础讲解与原图内嵌改写
+
+本节是本轮新增验证；后面的原/注释11格、两段原循环、小BERT/Trainer、NVML等记录是历史实验，本轮未重跑。
+
+- 从当前解释.md折叠区前提取三个Python块原样顺序执行。Python3.12.14、torch2.5.1+cpu、float64、单参数平方误差与SGD lr0.1，不加载Transformer或模型权重。
+- 两个新forward图反传使grad2→4、参数保持1；清零后None，重新一份梯度2并step得到0.8，但grad仍2，最后清零。没有retain_graph。
+- 同一组x=1/2/3/4、目标全0，一次大批和四个micro的平均梯度均15、更新后均−0.5；窗口内w始终1，grad依次0.5/2.5/7/15。故意漏除4得到grad60、参数−5。
+- 尾窗只有x=1/2：按实际样本数得(grad5,w0.5)，固定除4得(2.5,0.75)。不等批[1,2]和[4]：正确(14,−0.4)，批均值再平均(18.5,−0.85)。后两参数有约1e−16浮点误差，断言按1e−12容差，不声称跨硬件逐位保证。
+- 课程原grad-accumulation.png实际查看、SHA与固定上游一致，直接在解释位置内嵌，无重画/重复副本。本讲未指定原创论文，PNG的明确论文出处未找到，不虚构论文截图。已核对固定PyTorch v2.5.1 AMP文档与已安装Tensor.backward docstring，并把相关含义写在正文；AMP本轮未运行。来源/hash见[原图与引用来源](outputs/原图与引用来源.json)，代码/正文hash与stdout见[基础改写验证](outputs/基础改写验证.json)。
+- 原notebook、派生注释、历史输出不改；没有旧小BERT/NVML重跑、BERT-large下载、CUDA/双卡/AMP/DDP、token-loss、质量、显存峰值或速度实验。
+
+从本讲复现目录，使用已有torch2.5.1+cpu环境执行：
+
+```powershell
+python scripts/verify_foundation_examples.py
+```
+
+脚本原样执行当前正文三块代码，写入outputs/基础改写验证.json；无需NVML驱动、模型文件或语料，也不设置代理或远端发布。
+
+## 历史完整交付的重做命令
 
 从本讲目录执行，Python3.12。NVML 验证需要实际 NVIDIA 驱动可用；CPU torch 无需 CUDA runtime，但原 NVML 函数仍调用驱动。没有 NVIDIA/NVML 的环境可先运行早期标准库算术脚本；那不覆盖真实 torch/Trainer/NVML 检查。
 

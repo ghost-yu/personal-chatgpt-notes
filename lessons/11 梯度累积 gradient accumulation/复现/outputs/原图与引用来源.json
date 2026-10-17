@@ -1,0 +1,32 @@
+{
+  "paper_figure_status": "No designated original algorithm paper or verified paper source for course PNG found",
+  "course_image": {
+    "path": "代码/imgs/grad-accumulation.png",
+    "url": "https://raw.githubusercontent.com/chunhuizhang/personal_chatgpt/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/imgs/grad-accumulation.png",
+    "commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+    "sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d",
+    "method": "Original tutorial PNG directly embedded, no redraw or duplicate copy",
+    "visually_inspected": true
+  },
+  "references": [
+    {
+      "title": "Tensor.backward",
+      "version": "PyTorch 2.5.1+cpu",
+      "reference_url": "https://github.com/pytorch/pytorch/blob/v2.5.1/torch/_tensor.py",
+      "evidence": "Actually inspected installed implementation docstring; local file hash does not claim remote file byte equality",
+      "local_source": "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Lib\\site-packages\\torch\\_tensor.py",
+      "local_source_sha256": "3b20dec78e5de4e9ab7fd5422b7a93bc1ec63db1e7a439943774d31bb2c947d2",
+      "docstring_sha256": "829065c62f386f8749e9ce750eadfb0d543e346c31fb59faa47d1cdd581cf731"
+    },
+    {
+      "title": "Gradient accumulation in AMP examples",
+      "version": "PyTorch v2.5.1",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/docs/source/notes/amp_examples.rst",
+      "local_file": "G:\\zzz\\Personal ChatGPT 系列\\11 梯度累积 gradient accumulation\\资料\\pytorch_v2.5.1_amp_examples.rst",
+      "sha256": "ca4e1c814873b1191b2ea7aae208d2be27e355d2e221f59c10e9f6afa8b874e4",
+      "section": "Gradient accumulation",
+      "read_and_explained": true,
+      "amp_experiment_run_this_turn": false
+    }
+  ]
+}

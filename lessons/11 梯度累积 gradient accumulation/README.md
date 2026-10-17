@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：梯度求和、有效 batch、loss 缩放、末批与 Trainer 更新流程。
+1. [先看中文讲解](解释.md)：先手算参数/误差/梯度，再沿课程原图讲累积；正文三块CPU代码覆盖完整窗口、尾窗和不等批。
 2. [纯文本 Python 阅读版](代码/tutorials/gradient_accumulation_代码注释.py)：原 Python 代码与中文注释，Markdown 循环以注释保留。
 3. [注释 notebook](代码/tutorials/代码注释.ipynb)：全部 28 格说明，15 代码格及 Markdown 中两段循环完整注释。
 
@@ -17,6 +17,6 @@
 
 从 `代码/tutorials` 启动内核以显示原图。原代理、BERT-large/CUDA 语句仍保留，不要把历史输出当作新运行结果。
 
-原/注释各 11 格不改源码执行一致；两段原 Markdown 循环真实执行，小 BERT 的受控 baseline/累积训练各两次更新。未下载 BERT-large 或复现双卡显存/速度实验。
+本轮正文三块标量代码已实测；以下为保留的历史验证：原/注释各11格不改源码执行一致；两段原 Markdown 循环真实执行，小 BERT 的受控 baseline/累积训练各两次更新。未下载 BERT-large 或复现双卡显存/速度实验。
 
 </details>

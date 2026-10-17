@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "date": "2026-10-17",
+  "notes_sha256": "43df5bacc688851bc6f2c0aeb874d607cb55c1cdef9fa5a9768b57eaa7158660",
+  "executed": "Three Python blocks extracted verbatim before historical details in current 解释.md",
+  "code_sha256": [
+    "2127ad46be42ffe81cf40de65bd1cf9a3308aad66b423ff82975058362f60f4b",
+    "928bd78058402f40871eb2c520131cf53ad26d8792d794330db3b1c0f50859cf",
+    "e52d433e71437ce2741b40edb4354ee073e46a9a0d75ea555ee93b33c7225371"
+  ],
+  "command": [
+    "G:\\zzz\\Personal ChatGPT 系列\\共享运行环境\\torch-cpu\\Scripts\\python.exe",
+    "G:\\zzz\\personal-chatgpt-notes\\lessons\\11 梯度累积 gradient accumulation\\复现\\scripts\\verify_foundation_examples.py"
+  ],
+  "working_directory": "G:\\zzz",
+  "python": "3.12.14",
+  "torch": "2.5.1+cpu",
+  "device": "CPU",
+  "dtype": "float64",
+  "stdout": "两次梯度、参数仍为: 2.0 4.0 1.0\n清零后grad: None\n更新后参数/仍保留的梯度: 0.8 2.0\n一次大批/累积梯度: 15.0 15.0\n累计梯度/窗口内参数: [0.5, 2.5, 7.0, 15.0] [1.0, 1.0, 1.0, 1.0]\n一次大批/累积更新后: -0.5 -0.5\n漏除4的梯度/更新后: 60.0 -5.0\n尾窗正确/固定除4的(梯度,参数): (5.0, 0.5) (2.5, 0.75)\n不等批正确/均值再平均: (14.0, -0.40000000000000013) (18.5, -0.8500000000000001)\n",
+  "scalar_buffer": {
+    "first_backward": 2.0,
+    "second_new_graph_backward": 4.0,
+    "parameter_before_step": 1.0,
+    "one_gradient_updated_parameter": 0.8,
+    "gradient_still_after_step": 2.0,
+    "final_zero_grad_none": true,
+    "retain_graph_used": false
+  },
+  "complete_window": {
+    "inputs": [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "targets": "all zero",
+    "mean_loss": 7.5,
+    "full_gradient": 15.0,
+    "micro_gradient": 15.0,
+    "gradient_trace": [
+      0.5,
+      2.5,
+      7.0,
+      15.0
+    ],
+    "parameter_trace": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "full_updated": -0.5,
+    "micro_updated": -0.5,
+    "missing_division_gradient": 60.0,
+    "missing_division_updated": -5.0
+  },
+  "tail_two_single_sample_microbatches": {
+    "correct": [
+      5.0,
+      0.5
+    ],
+    "fixed_mean_divisor_4": [
+      2.5,
+      0.75
+    ]
+  },
+  "unequal_two_plus_one_samples": {
+    "inputs": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        4.0
+      ]
+    ],
+    "correct": [
+      14.0,
+      -0.40000000000000013
+    ],
+    "mean_of_means": [
+      18.5,
+      -0.8500000000000001
+    ]
+  },
+  "tuple_order": "gradient before update, parameter after one SGD lr0.1 update",
+  "course_image_sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d",
+  "course_image_visually_inspected": true,
+  "source_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "limits": "Independent one-parameter CPU float64 squared-error/SGD examples only. No old notebook/Markdown-loop/BERT/Trainer/NVML verifier rerun, model weights, CUDA, two-GPU, AMP/DDP, token loss, model quality or memory/speed benchmark. No original algorithm paper figure claimed."
+}
