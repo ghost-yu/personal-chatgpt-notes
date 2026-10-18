@@ -1,3 +1,37 @@
+# 第21讲基础讲解运行记录（2026-10-18）
+
+本轮执行当前解释.md第一个折叠区之前的五个Python代码块，并用固定Meta完整模块比较分组Attention的前向、梯度和缓存。Python3.12.14、Torch2.5.1+cpu、NumPy1.26.4，已有FairScale0.4.13本地目标目录，Gloo单rank。原notebook、注释版及旧运行报告保持原样。
+
+## 重做当前正文例子
+
+从仓库根目录执行：
+
+```powershell
+$lessonPython = 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe'
+& $lessonPython 'lessons/21 GQA 与分组查询注意力/复现/scripts/verify_foundation_examples.py'
+```
+
+脚本复用第20讲verify_foundation_examples.py中的CPU模块加载器。默认读取第15讲资料下的固定llama-model.py和fairscale-local；换位置时传入`--meta-source`、`--fairscale`。独立执行正文代码时，可用环境变量`LESSON20_META_SOURCE`、`LESSON20_FAIRSCALE`指定这两个路径，然后按正文顺序执行五块。
+
+加载器先核对固定源码SHA，将原两处cache.cuda分配改到CPU；Attention.forward和repeat_kv函数体保持原样。完整类仍使用真实FairScale投影层。原文件不改写，当前脚本、笔记、加载器和官方源码哈希一起写入报告。
+
+## 本轮结果
+
+- 两个Q头读同一组K/V，得到两种概率与输出：约[.6698,.3302]/[.3302,.6698]，输出[1.3395,1.3210]/[.6605,2.6790]。它们属于同一个位置的两个查询头。
+- 正文repeat_kv与官方函数AST一致，真实官方调用同值；[1,2,2,2]输入重复为[1,2,4,2]，按连续组排列。expand共享存储，当前G2/R2合并后的reshape另分配；R1直接返回原对象。四副本加权的共享梯度为[3,7]。权重平均例得到两组首项8/40。
+- 正文实际FP32 Attention：D8、H4、G4/2/1、batch1、容量8。三个模块参数为256/192/160，缓存512/256/128bytes，输出均[1,3,8]；所有权重显式seed21正态初始化。
+- 独立逐头参考用矩阵乘法直接读取四投影权重，以实数分量旋转Q/K、逐头选择连续组并计算softmax。真实FairScale原类与它的最大前向差4.4925245e-9，输入及全部四投影梯度最大差2.2068796e-8。这里模型参数为double，但原RoPE和softmax内部仍按固定源码使用float32；没有把整Attention称为纯double gradcheck。
+- 组映射误写为循环交错时，当前输出差.31522184。真实GQA先3token再1/1/1，缓存保持G2，各次有效K形状[1,3–6,2,2]，旧K/V前缀不变；对比全前缀计算最大差2.0816682e-17。
+- 将MHA组内K/V权重绑定为相同值时，与GQA前向精确同值；输入/投影梯度比较包含组内KV梯度求和，最大差3.3717441e-9。将该绑定权重平均可恢复原GQA权重；一般随机MHA直接平均会改变计算，当前输出差.06576518。
+
+数值及逐块stdout见[基础讲解验证.json](outputs/基础讲解验证.json)。未加载原预训练权重，也未重跑旧全套交付验证、T5 uptraining、论文评估或GPU计时。
+
+## 原论文截图
+
+使用本地已有[GQA v3 PDF](https://arxiv.org/pdf/2305.13245v3)，第2页Figure2、第1页Figure1和第3页Table1三张原图按3倍像素渲染裁剪，已逐张视觉检查。原PDF保存在外部课程资料中；坐标、页码与PDF/PNG哈希见[截图来源](outputs/论文截图来源.json)。正文翻译并解释了分组、按组平均、继续预训练和表中时间/任务分数的含义。
+
+---
+
 # 第21讲复现记录
 
 状态：**部分成功**。原文件与详细注释完整交付，原两代码格实际执行，固定官方模块的GQA前向/梯度/缓存与分组边界验证通过。没有运行原Llama2权重或GQA论文T5训练/评估。

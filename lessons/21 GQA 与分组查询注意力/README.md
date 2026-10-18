@@ -2,11 +2,11 @@
 
 [返回总目录](../../README.md)
 
-1. [中文讲解](解释.md)：共享方向、分组公式、shape、缓存和权重转换。
+1. [中文讲解](解释.md)：从四个查询头、两组K/V讲起，配论文原图、手算例子、repeat_kv与完整Attention。
 2. [核心 Python 代码阅读版](代码/tutorials/GQA核心源码_代码注释.py)：固定官方 `repeat_kv` 与完整 `Attention` 类，带详细中文注释。
 3. [原 notebook 的详细中文注释](代码/tutorials/代码注释.ipynb)：全部5格，含Markdown源码的逐语句说明。
 
-原 notebook 只有导入和展示图片两格代码。真正的 GQA 运算请看上面第三个文件；它依赖完整官方模块的导入和helper，作为源码阅读材料使用。
+原notebook以配图和shape摘录介绍GQA。核心Python阅读版提供repeat_kv与完整Attention源码；中文讲解补充小张量与真实模块的运行例子。
 
 <details>
 <summary>原版、其他阅读版本与验证结果</summary>

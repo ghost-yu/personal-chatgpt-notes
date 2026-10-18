@@ -1,0 +1,203 @@
+{
+  "note_sha256": "f269d18a128a102ac1591bdd9fb6a04d3ee1b3c0ecc339c1cc55672e3b39ecb4",
+  "script_sha256": "55c5aa13dc41bf86538fa2a5f4b6d8f404c528eee354fd09db74bb6c0de0457b",
+  "cpu_loader_sha256": "037de285eb31bb845b1468b3e8b0a5e91c36cae0be353c5e4ca8fde05a7dcfe4",
+  "official_source_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "official_commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+  "cpu_allocation_edits": 2,
+  "attention_forward_or_repeat_body_edits": 0,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.5.1+cpu",
+  "blocks": [
+    {
+      "block": 1,
+      "stdout": "tensor([[0.6698, 0.3302],\n        [0.3302, 0.6698]])\ntensor([[1.3395, 1.3210],\n        [0.6605, 2.6790]])\n"
+    },
+    {
+      "block": 2,
+      "stdout": "torch.Size([1, 2, 2, 2]) torch.Size([1, 2, 2, 2, 2]) torch.Size([1, 2, 4, 2])\ntensor([[10., 11.],\n        [10., 11.],\n        [20., 21.],\n        [20., 21.]])\n"
+    },
+    {
+      "block": 3,
+      "stdout": "> initializing model parallel with size 1\n> initializing ddp with size 1\n> initializing pipeline with size 1\n[(4, [1, 3, 8], 256, 512), (2, [1, 3, 8], 192, 256), (1, [1, 3, 8], 160, 128)]\n"
+    },
+    {
+      "block": 4,
+      "stdout": "tensor([[[[3.],\n          [7.]]]])\n"
+    },
+    {
+      "block": 5,
+      "stdout": "torch.Size([4, 2, 8]) torch.Size([2, 2, 8]) torch.Size([4, 8])\ntensor([[ 8.,  9., 10., 11., 12., 13., 14., 15.],\n        [40., 41., 42., 43., 44., 45., 46., 47.]])\n"
+    }
+  ],
+  "official_repeat_function_ast_equal": true,
+  "teaching_rows": [
+    [
+      4,
+      [
+        1,
+        3,
+        8
+      ],
+      256,
+      512
+    ],
+    [
+      2,
+      [
+        1,
+        3,
+        8
+      ],
+      192,
+      256
+    ],
+    [
+      1,
+      [
+        1,
+        3,
+        8
+      ],
+      160,
+      128
+    ]
+  ],
+  "shared_kv_probabilities": [
+    [
+      0.6697615385055542,
+      0.3302384614944458
+    ],
+    [
+      0.3302384614944458,
+      0.6697615385055542
+    ]
+  ],
+  "shared_kv_outputs": [
+    [
+      1.3395230770111084,
+      1.3209538459777832
+    ],
+    [
+      0.6604769229888916,
+      2.679046154022217
+    ]
+  ],
+  "repeat_gradient": [
+    3.0,
+    7.0
+  ],
+  "repeat_shape": [
+    1,
+    2,
+    4,
+    2
+  ],
+  "expanded_view_shares_storage": true,
+  "reshape_shares_storage": false,
+  "pool_first_elements": [
+    8.0,
+    40.0
+  ],
+  "full_attention": {
+    "three_modes": [
+      {
+        "kv_heads": 4,
+        "output_shape": [
+          1,
+          3,
+          8
+        ],
+        "parameters": 256,
+        "forward_component_reference_error": 4.492524546817478e-09,
+        "gradient_errors": {
+          "input": 1.9301504700086625e-09,
+          "wq.weight": 5.073915024245146e-09,
+          "wk.weight": 5.07391503118404e-09,
+          "wv.weight": 2.206879590183064e-08,
+          "wo.weight": 1.2285315875715241e-08
+        }
+      },
+      {
+        "kv_heads": 2,
+        "output_shape": [
+          1,
+          3,
+          8
+        ],
+        "parameters": 192,
+        "forward_component_reference_error": 0.0,
+        "gradient_errors": {
+          "input": 5.260585994593114e-10,
+          "wq.weight": 4.255800149788325e-09,
+          "wk.weight": 2.53695751559202e-09,
+          "wv.weight": 0.0,
+          "wo.weight": 0.0
+        }
+      },
+      {
+        "kv_heads": 1,
+        "output_shape": [
+          1,
+          3,
+          8
+        ],
+        "parameters": 160,
+        "forward_component_reference_error": 1.5144076548345708e-09,
+        "gradient_errors": {
+          "input": 5.176775431936509e-10,
+          "wq.weight": 9.513590683470075e-10,
+          "wk.weight": 4.8523531512301155e-09,
+          "wv.weight": 8.899343484358724e-09,
+          "wo.weight": 1.065535604194423e-08
+        }
+      }
+    ],
+    "wrong_cyclic_group_output_error": 0.31522183759296807,
+    "incremental_3_1_1_1_errors": [
+      0.0,
+      1.734723475976807e-17,
+      6.938893903907228e-18,
+      2.0816681711721685e-17
+    ],
+    "cache_read_shapes": [
+      [
+        1,
+        3,
+        2,
+        2
+      ],
+      [
+        1,
+        4,
+        2,
+        2
+      ],
+      [
+        1,
+        5,
+        2,
+        2
+      ],
+      [
+        1,
+        6,
+        2,
+        2
+      ]
+    ],
+    "cache_preserves_old_prefix": true,
+    "persistent_cache_kv_heads": 2,
+    "tied_mha_forward_error": 0.0,
+    "tied_mha_summed_kv_gradient_errors": {
+      "input": 1.9271506439266783e-10,
+      "wq.weight": 0.0,
+      "wk.weight": 3.3717440818537003e-09,
+      "wv.weight": 2.220446049250313e-16,
+      "wo.weight": 0.0
+    },
+    "general_mean_pool_output_change": 0.06576517552492743,
+    "pooling_tied_heads_recovers_original_weights": true
+  },
+  "scope": "Five current blocks; complete fixed Meta Attention with two CPU cache allocation edits; random weights and synthetic hidden states. No pretrained Llama, T5 uptraining, task scores or GPU timing."
+}

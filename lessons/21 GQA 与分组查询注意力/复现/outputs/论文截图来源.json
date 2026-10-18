@@ -1,0 +1,44 @@
+{
+  "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+  "source_url": "https://arxiv.org/pdf/2305.13245v3",
+  "version": "arXiv v3, 2023-12-23",
+  "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+  "images": [
+    {
+      "file": "图片/原论文_Figure2_分组共享.png",
+      "page": 2,
+      "crop_points_top_left": [
+        68,
+        72,
+        526,
+        253
+      ],
+      "scale": 3,
+      "sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+    },
+    {
+      "file": "图片/原论文_Figure1_权重平均.png",
+      "page": 1,
+      "crop_points_top_left": [
+        305,
+        598,
+        526,
+        749
+      ],
+      "scale": 3,
+      "sha256": "934043124d15b99146b549f64bd1a7d37737410f712640fe1dc2dc12c055c20b"
+    },
+    {
+      "file": "图片/原论文_Table1_质量与耗时.png",
+      "page": 3,
+      "crop_points_top_left": [
+        68,
+        68,
+        526,
+        214
+      ],
+      "scale": 3,
+      "sha256": "e7bc12869e81e8a880e2b58d608a315b6cce76fd0730bf092b4a2b09849faeb7"
+    }
+  ]
+}
