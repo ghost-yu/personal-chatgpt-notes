@@ -76,3 +76,17 @@ H4/d_h4/D16，KV头G4/2/1；真实完整Attention分别1024/768/640个参数。�
 官方HF config.json请求因TLS EOF失败；网络浏览部分GitHub/HF页面也不可达，来源边界如实记录。当前torch环境没有pypdf，论文段落核对改用已提供的文档运行时读取已有本地PDF，未安装新依赖。历史缓存/位置接口发出弃用warning，保留实际调用，不宣称适用于最新Transformers。
 
 未运行：原远程7B/8B权重/原双4090分配、完整训练/数据集、论文能力分数、内存峰值或速度测量、原Markdown2 Meta checkpoint加载、原Markdown9缺上下文摘录。原图只有URL展示对象，没有远程内容结论。
+
+## 讲解改版前的运行说明
+
+## 10. 小模型中的加载、前向与缓存
+
+1. 原24格、15代码格全部说明；原6格只有注释，23格为空，均明确保留。原notebook固定Git字节，两个派生版各49格，历史输出和元数据不改。代码AST及非注释token一致，Markdown9/21围栏源码也核对，阅读.py可解析。
+2. 完整meta路线：原5/7格改为`from_config`并在`torch.device('meta')`下构造，其他代码格照原语句执行，原/注释版结果一致。没有冒称原BF16远程加载成功。
+3. 实际本地小模型路线：仅原4格把两个Hub字符串改成本地随机checkpoint路径；5/7格保留原`from_pretrained(..., torch_dtype=torch.bfloat16, device_map='auto')`。实际CPU BF16加载、前向有限值、参数统计与模型展示通过。没有伪造AutoModel、Embedding或Linear。
+4. 训练补充明确转FP32：2层、D32、query heads4、KV heads4/1、F86/112、词表64/128，自建2×6整数序列，AdamW lr=0.001各3步。验证shift loss、每个参数梯度、状态变化、两版状态精确一致、保存重载和逐token缓存对照。它是形状类似的小模型，不是真正的7B/8B能力缩影。
+5. 完整HF核心对象7个可导入，AST与安装源一致。eager Attention和独立逐head参考比较前向及所有输入/权重梯度；SDPA比较前向。完整MLP与独立SiLU公式比较，并用`torch.func.functional_call`对实际类进行double gradcheck。
+
+另有真实失败反例：隐藏维不能整除query头时构造报错；H=4、G=3虽可创建投影，但实际前向的head轴不匹配；越界token报IndexError；`strict=False`仍因lm_head形状不同报错。从这些报错可以看到，配置整除、head匹配和参数shape分别在哪一步被检查。
+
+细节及实际数值以 [复现记录](README.md) 和 [验证输出](outputs/delivery_verification.json) 为准。
