@@ -13,7 +13,7 @@
 # %% [markdown]
 # ## 单元 0：为什么读源码
 #
-# 【建议会】这是Markdown学习动机。引用源码能澄清自动注入、默认目标和冻结；文字“后续直接改源码”是参考资料描述，不是本次要求修改第三方库。此次没有修改官方源码，只另生成教学注释文件。
+# 这是Markdown学习动机。引用源码能澄清自动注入、默认目标和冻结；文字“后续直接改源码”是参考资料描述，不是本次要求修改第三方库。此次没有修改官方源码，只另生成教学注释文件。
 
 # %% [markdown]
 # - 源码面前，了无秘密
@@ -23,7 +23,7 @@
 # %% [markdown]
 # ## 单元 1：type 标题
 #
-# 【必须会】Markdown标题引出三种类型。它不调用type()，也不创建Python类型变量。
+# Markdown标题引出三种类型。它不调用type()，也不创建Python类型变量。
 
 # %% [markdown]
 # ## type
@@ -31,7 +31,7 @@
 # %% [markdown]
 # ## 单元 2：任务映射与适配方法映射
 #
-# 【必须会】两个围栏均为字典源码节选，Markdown不会执行。键选择实现类；值为**类对象**，不是已创建的模型实例。冒号是键值对应，逗号分隔项，大括号构造dict；下划线/大写名字表示常量命名习惯，不保证不可修改。
+# 两个围栏均为字典源码节选，Markdown不会执行。键选择实现类；值为**类对象**，不是已创建的模型实例。冒号是键值对应，逗号分隔项，大括号构造dict；下划线/大写名字表示常量命名习惯，不保证不可修改。
 #
 # 第一张映射：SEQ_CLS对应序列分类包装；SEQ_2_SEQ_LM对应编码器-解码器语言模型包装；CAUSAL_LM对应因果LM包装；TOKEN_CLS对应逐token分类包装。虽然常量叫MODEL_TYPE，它在这里按task_type选择任务外层，不是按bloom/llama架构选择。
 #
@@ -47,7 +47,7 @@
 #     - `LoraConfig(task_type='CAUSAL_LM')`
 #
 #     ```
-#     # 【必须会】这是任务类型到包装类的dict，依赖这些类名已导入；Markdown本身不执行。
+#     # 这是任务类型到包装类的dict，依赖这些类名已导入；Markdown本身不执行。
 #     # 字符串键对应task_type，值是类对象而不是构造好的模型；这里并非bloom/llama架构映射。
 #     # 按任务类型选外层包装，值是类对象而不是模型实例。
 #     MODEL_TYPE_TO_PEFT_MODEL_MAPPING = {
@@ -87,7 +87,7 @@
 # %% [markdown]
 # ## 单元 3：PeftModel 标题
 #
-# 【建议会】Markdown标题中的反引号是展示代码样式；本格没有调用PeftModel构造器。
+# Markdown标题中的反引号是展示代码样式；本格没有调用PeftModel构造器。
 
 # %% [markdown]
 # ## `PeftModel`
@@ -95,15 +95,15 @@
 # %% [markdown]
 # ## 单元 4：包装对象的初始化属性
 #
-# 【必须会】这段依赖方法内部self、传入的model和adapter_name。self.base_model=model保存对象引用；self.config=self.base_model.config复用配置引用；active_adapter保存当前adapter名字，通常为'default'。字符串'default'是adapter标识，不是任务CAUSAL_LM。
+# 这段依赖方法内部self、传入的model和adapter_name。self.base_model=model保存对象引用；self.config=self.base_model.config复用配置引用；active_adapter保存当前adapter名字，通常为'default'。字符串'default'是adapter标识，不是任务CAUSAL_LM。
 #
 # 这三条赋值不复制基权重，也没有完成LoRA注入。v0.3.0完整PeftModel.__init__随后把base_model进一步包装为LoraModel。只看这个节选不能以为最后base_model永远是裸BLOOM。
 #
-# 普通顶层会因self未定义失败，故原围栏不是可独立运行文件。新增验证在明确隔离的属性上下文检查引用关系，同时实际调用官方构造器检查最终外层→LoraModel→原BLOOM结构，二者的证据范围分开记录。没有Tensor运算或shape变换。
+# 普通顶层会因self未定义失败，故原围栏不是可独立运行文件。新增验证在明确隔离的属性上下文检查引用关系，同时实际调用官方构造器检查最终外层→LoraModel→原BLOOM结构，二者的证据范围分开记录。这里关注的是Python对象之间的引用关系。
 
 # %% [markdown]
 # ```
-# # 【必须会】这是方法内部的初始化节选，需要已有self、model和adapter_name。
+# # 这是方法内部的初始化节选，需要已有self、model和adapter_name。
 # # self是正在构造的包装实例；三条赋值保存引用与名字，无Tensor计算或权重复制。
 # # 完整PeftModel构造器随后会继续包装base_model；节选没有展示整个注入过程。
 # # 保存传入模型引用；is可核对身份，没有clone/deepcopy或权重分配。
@@ -118,7 +118,7 @@
 # %% [markdown]
 # ## 单元 5：配置与注入模块标题
 #
-# 【必须会】Markdown对比LoraConfig与LoraModel：前者存超参数，后者管理注入和adapter；二者不是同一个对象，也不是两个顺序运行的大模型。
+# Markdown对比LoraConfig与LoraModel：前者存超参数，后者管理注入和adapter；配置对象保存选项，模型对象按配置管理各层。
 
 # %% [markdown]
 # ## LoraConfig 与 LoraModel
@@ -126,7 +126,7 @@
 # %% [markdown]
 # ## 单元 6：LoraConfig 标题
 #
-# 【建议会】引出数据类源码节选。标题不定义类，不运行dataclass装饰器。
+# 引出数据类源码节选。标题不定义类，不运行dataclass装饰器。
 
 # %% [markdown]
 # ### LoraConfig
@@ -134,7 +134,7 @@
 # %% [markdown]
 # ## 单元 7：不完整的 dataclass 源码
 #
-# 【必须会】@dataclass为装饰器，给类生成__init__等方法；LoraConfig继承PeftConfig；冒号为类型注解，field保存默认值/metadata。metadata中的help是说明，不是算法或校验代码。类型注解不会自动验证传入参数。
+# @dataclass为装饰器，给类生成__init__等方法；LoraConfig继承PeftConfig；冒号为类型注解，field保存默认值/metadata。metadata中的help是说明，不是算法或校验代码。类型注解不会自动验证传入参数。
 #
 # | 源字段 | 原节选含义 | 限制 |
 # |---|---|---|
@@ -171,7 +171,7 @@
 # %% [markdown]
 # ## 单元 8：默认目标字典与模块扫描
 #
-# 【必须会】本格两段源码分别是架构映射与扫描逻辑。开头“default:query_key_value”只适用于BLOOM等对应架构，不是全部模型的统一默认。
+# 本格两段源码分别是架构映射与扫描逻辑。开头“default:query_key_value”只适用于BLOOM等对应架构，不是全部模型的统一默认。
 #
 # 目标字典的值为list[str]：t5/mt5用q/v；bart、opt、gptj、gpt_neo、llama用q_proj/v_proj；gpt2用c_attn；bloom、gpt_neox、chatglm用query_key_value；blip-2同时列q/v/q_proj/v_proj；bert、roberta、xlm-roberta、electra、layoutlm用query/value；deberta-v2用query_proj/value_proj；deberta用in_proj。中文注释逐项解释其为各架构的模块名，不能在BLOOM上换成LLaMA名字。
 #
@@ -193,7 +193,7 @@
 #
 #
 # ```
-# # 【必须会】这是模型架构到默认目标后缀列表的dict，不是task_type或peft_type映射。
+# # 这是模型架构到默认目标后缀列表的dict，不是task_type或peft_type映射。
 # # BLOOM用融合query_key_value；LLaMA用分离q_proj/v_proj，不能在不同架构间照搬名字。
 # # 按架构选择默认模块名；query_key_value不是所有模型的默认。
 # TRANSFORMERS_MODELS_TO_LORA_TARGET_MODULES_MAPPING = {
@@ -263,13 +263,13 @@
 # %% [markdown]
 # ## 单元 9：真正构造配置对象
 #
-# 【必须会】from peft导入已安装/已选源码路径中的完整LoraConfig，而不是单元7未执行的Markdown类。实例config字段为r16、alpha32、dropout.05、bias none、task CAUSAL_LM；scale=2。没有真正模型输入/输出Tensor。
+# from peft导入已安装/已选源码路径中的完整LoraConfig，而不是单元7未执行的Markdown类。实例config字段为r16、alpha32、dropout.05、bias none、task CAUSAL_LM；scale=2。没有真正模型输入/输出Tensor。
 #
 # target_modules那行仍是注释，q_proj/v_proj不生效，默认由架构bloom映射融合QKV。本格默认构造可训练adapter配置，未进入forward、冻结或替换。metadata帮助手段不影响此处数值。
 
 # %%
 # 使用包中完整LoraConfig构造实例，非Markdown节选；r16、alpha32、scale2。
-# 【必须会】from peft import LoraConfig 导入包中的完整配置类，并未执行Markdown7的节选。
+# from peft import LoraConfig 导入包中的完整配置类，并未执行Markdown7的节选。
 # LoraConfig(...) 创建配置对象config，无输入token、logits或参数梯度。
 # 原实例r=16、alpha=32，标准缩放为2；dropout和bias策略由后面注入层使用。
 # target_modules那行是注释，没有选择q_proj/v_proj；BLOOM默认选择融合query_key_value。
@@ -291,7 +291,7 @@ config = LoraConfig(
 # %% [markdown]
 # ## 单元 10：model 到 loramodel 标题
 #
-# 【建议会】Markdown标题表示接下来加载及包装流程。箭头不是Python运算，不复制权重。
+# Markdown标题表示接下来加载及包装流程。箭头不是Python运算，不复制权重。
 
 # %% [markdown]
 # ### model => loramodel
@@ -299,7 +299,7 @@ config = LoraConfig(
 # %% [markdown]
 # ## 单元 11：导入 Auto 接口
 #
-# 【必须会】导入AutoTokenizer、AutoConfig、AutoModelForCausalLM三个类；实际后续只用最后一个加载。前两者在本notebook未被调用，不能据导入宣称词表/config另下载成功。导入不构造7B模型。
+# 导入AutoTokenizer、AutoConfig、AutoModelForCausalLM三个类；实际后续只用最后一个加载。前两者在本notebook未被调用，不能据导入宣称词表/config另下载成功。导入不构造7B模型。
 
 # %%
 # 导入三个Auto类；本文件实际仅调用AutoModelForCausalLM加载。
@@ -311,7 +311,7 @@ from transformers import AutoTokenizer, AutoConfig, AutoModelForCausalLM
 # %% [markdown]
 # ## 单元 12：7B 量化加载
 #
-# 【必须会】AutoModelForCausalLM.from_pretrained为类方法，模型ID为bigscience/bloom-7b1，load_in_8bit=True请求旧式bitsandbytes量化，device_map='auto'自动设备分派。返回BLOOM因果LM对象，并可能联网/缓存/分配设备内存；原代码没有model revision。
+# AutoModelForCausalLM.from_pretrained为类方法，模型ID为bigscience/bloom-7b1，load_in_8bit=True请求旧式bitsandbytes量化，device_map='auto'自动设备分派。返回BLOOM因果LM对象，并可能联网/缓存/分配设备内存；原代码没有model revision。
 #
 # 8bit不表示所有参数或激活均int8；auto不等于数据并行world_size。加载的参数与结构让后面库决定用Linear8bitLt适配路径。历史下载widget不是这次执行证据。本次未执行原单元12，改用独立补充代码构造小型CPU随机BLOOM，非量化、无远程下载。
 
@@ -333,18 +333,18 @@ model = AutoModelForCausalLM.from_pretrained(
 # %% [markdown]
 # ## 单元 13：查看原模型
 #
-# 【建议会】末尾model让notebook显示repr；普通脚本不自动显示。此时它是裸BLOOM对象引用，没有forward、注入或clone。实际CPU验证执行该表达式但在明确的教学模型上下文，不能称原7B加载成功。
+# 末尾model让notebook显示repr；普通脚本不自动显示。此时它是裸BLOOM对象引用，没有forward、注入或clone。实际CPU验证执行该表达式但在明确的教学模型上下文，不能称原7B加载成功。
 
 # %%
-# 展示裸模型repr；没有forward、复制或注入。
+# 展示基础模型的模块层次，方便与注入LoRA后的结构对照。
 # 末尾表达式返回当前裸模型对象，notebook显示repr；普通Python不自动显示。
-# 没有输入Tensor，所以不计算[B,S,V] logits，也不复制/冻结/替换权重。
+# 通过模块名定位后续要替换的线性层。
 model
 
 # %% [markdown]
 # ## 单元 14：导入注入函数
 #
-# 【必须会】get_peft_model是包级普通函数，非model实例方法；输入为模型模块与PeftConfig，返回PEFT包装。导入本身不改变模型，也不定义另一套随机权重。
+# get_peft_model是包级普通函数，非model实例方法；输入为模型模块与PeftConfig，返回PEFT包装。导入本身不改变模型，也不定义另一套随机权重。
 
 # %%
 # 导入包级普通函数get_peft_model；导入尚不修改模型。
@@ -355,7 +355,7 @@ from peft import get_peft_model
 # %% [markdown]
 # ## 单元 15：真正执行 LoRA 注入
 #
-# 【必须会】调用get_peft_model(model,config)，赋回model名字。原BLOOM内的目标子层被改造，外层为PeftModelForCausalLM，中间base_model为LoraModel，其model指向原BLOOM；包装不是三个完整网络，也不是深拷贝。
+# 调用get_peft_model(model,config)，赋回model名字。原BLOOM内的目标子层被改造，外层为PeftModelForCausalLM，中间base_model为LoraModel，其model指向原BLOOM；包装不是三个完整网络，也不是深拷贝。
 #
 # 官方v0.3.0的_find_and_replace找到目标，_replace_module用setattr改变父属性，并把旧weight/bias对象引用交给新层。mark_only_lora_as_trainable将非lora_参数冻结。bias='none'不训练原偏置，但前向仍使用它。
 #
@@ -363,7 +363,7 @@ from peft import get_peft_model
 
 # %%
 # 包装并替换内部目标子层；复用旧基权重对象，不是深拷贝。
-# 【必须会】get_peft_model(model,config) 接收已有模型对象和LoraConfig，返回PEFT任务包装。
+# get_peft_model(model,config) 接收已有模型对象和LoraConfig，返回PEFT任务包装。
 # 赋回model重新绑定名字；原BLOOM对象保留，在内部被LoraModel引用，没有深拷贝整网。
 # task_type选择PeftModelForCausalLM，peft_type选择LoraModel，model_type=bloom选择默认目标名。
 # 官方_find_and_replace扫描模块树，_replace_module通过setattr替换父模块的子层属性。
@@ -376,21 +376,20 @@ model = get_peft_model(model, config)
 # %% [markdown]
 # ## 单元 16：查看注入后模型
 #
-# 【必须会】表达式model显示包装和lora_A/lora_B等模块。repr有助于查看层次，但不能证明参数值已训练、已保存adapter或权重requires_grad全部正确。本格没有loss/backward/optimizer。
+# 表达式model显示包装和lora_A/lora_B等模块。repr有助于查看层次，但不能证明参数值已训练、已保存adapter或权重requires_grad全部正确。本格没有loss/backward/optimizer。
 #
 # 固定源码CPU验证将两层H16融合QKV替换成真实适配Linear，A[16,16]、B[48,16]，scale2；新增2048个可训练参数。这是小模型尺寸，与原7B的4096/12288/30层不同，原尺寸对应的参数推导见主文。
 
 # %%
-# 展示注入后结构；不能证明已经训练或保存adapter。
+# 展示注入后的模块结构，可在输出中找到lora_A和lora_B。
 # 外层为PeftModelForCausalLM，中间base_model为LoraModel，其model指向原BLOOM。
 # 这些是包装层次，不是三份完整模型；结构repr无法证明requires_grad或权重已训练。
-# 本格没有loss/backward/optimizer，也没有保存adapter。
 model
 
 # %% [markdown]
 # ## 单元 17：空代码格
 #
-# 【可以暂时不掌握】原source为空，outputs也为空。保留空格及原元数据，说明版不删它；中文注释版仅加入“原为空，没有运算”的注释，AST仍是空Module。不能把原空格算作模型运行或补写训练代码。
+# 原source为空，outputs也为空。保留空格及原元数据，说明版不删它；中文注释版仅加入“原为空，没有运算”的注释，AST仍是空Module。不能把原空格算作模型运行或补写训练代码。
 
 # %%
 # 原单元为空，没有运算；保留原元数据和输出，仅加入此说明注释。
