@@ -199,7 +199,7 @@ Image('../imgs/float16.png', width=400)
 #
 # `import torch`导入PyTorch模块；`torch.cuda.is_bf16_supported()`是cuda子模块的函数，不是tensor方法，无显式参数，返回bool。
 # 本次固定PyTorch2.5.1函数签名为`is_bf16_supported(including_emulation=True)`。当前CPU构建cuda不可用，返回False；这不判断CPU BF16能力，也不创建模型。
-# 该版本先看HIP，再看cuda可用性、CUDA版本和GPUcompute capability；允许emulation时还会尝试创建BF16设备tensor。旧老师环境没有完整锁定，不用本版本签名冒充当时接口。
+# 该版本先看HIP，再看cuda可用性、CUDA版本和GPUcompute capability；允许emulation时还会尝试创建BF16设备tensor。这里按当前记录的PyTorch版本解释接口；不同版本的参数见各自API定义。
 # 查询可能在其他环境访问/初始化设备；当前CPU路径提前返回。调用链是notebook表达式→torch.cuda函数→环境检查，结果不是训练精度、吞吐或GPU实测。
 
 # %% 原单元 16
@@ -215,7 +215,7 @@ torch.cuda.is_bf16_supported()
 #
 # `torch.bfloat16`是torch模块的dtype对象；最后一行让notebook显示其repr。
 # 本格没有tensor、shape、数值、device或梯度，也没调用转换。真正构造需要如`torch.tensor([1.001], dtype=torch.bfloat16)`，这是补充例子，原格并未执行。
-# 访问dtype名能成功，不代表单元18能拿到CUDA设备。CPU补充会把float64标量列表转成shape[N]的FP16/BF16 tensor，明确区分名称展示与真实转换。
+# torch.bfloat16是数据类型对象；CUDA设备可用性由当前PyTorch环境与驱动共同决定。CPU补充会把float64标量列表转成shape[N]的FP16/BF16 tensor，明确区分名称展示与真实转换。
 
 # %% 原单元 17
 # 查看torch.bfloat16这个数据类型对象；创建张量时可将它传给dtype参数。
@@ -228,7 +228,7 @@ torch.bfloat16
 # 先执行内层`torch.cuda.current_device()`，无显式输入，返回当前CUDA设备索引int；再把这个int传给外层`torch.cuda.get_device_properties(device)`，返回设备属性对象。
 # 对象含name、major/minor、total_memory等属性；其显示文本是repr，不是tensor的shape或实时已占用显存。两个函数读取运行时状态，可能触发CUDA惰性初始化。
 # CPU版torch在内层就报`AssertionError: Torch not compiled with CUDA enabled`，外层不会被调用。本次保留原表达式并记录该预期失败；没有用假设备属性伪造成功，也不自动把查询改为CPU。
-# 要运行此格，需要兼容的CUDA版PyTorch、驱动和可用设备；显卡在nvidia-smi出现不能证明当前这个Python环境可用CUDA。
+# 要运行此格，需要兼容的CUDA版PyTorch、驱动和可用设备；可用torch.cuda.is_available()检查当前Python环境是否能使用CUDA。
 
 # %% 原单元 18
 # 内层current_device先返回设备索引int，再传给get_device_properties。
