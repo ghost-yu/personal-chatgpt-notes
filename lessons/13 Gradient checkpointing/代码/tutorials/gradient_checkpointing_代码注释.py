@@ -270,7 +270,7 @@ print_summary(result)
 # %% [markdown]
 # ## 单元 19（code）：只导入checkpoint_sequential
 #
-# 这是torch.utils.checkpoint模块函数，原格没有调用。segments为段数，旧版前segments-1段重算、最后段普通执行；输入/输出单Tensor。真实使用/梯度/RNG边界在独立教学补充中，不伪装原单元已有调用。
+# 这是torch.utils.checkpoint模块函数，原格没有调用。segments为段数，旧版前segments-1段重算、最后段普通执行；输入/输出单Tensor。独立教学补充继续展示函数调用、梯度和随机数状态的变化。
 
 # %% 原单元 19
 # 只导入checkpoint_sequential；原语句保留，实际教学运行另记。
