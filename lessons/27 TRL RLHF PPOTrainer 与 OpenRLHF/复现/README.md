@@ -63,3 +63,23 @@ source-dir结构：trl-0.8.6/trl下对应trainer/ppo_trainer.py、trainer/utils.
 原GPT2预训练权重与原语言输出、真实Reward Model/偏好数据训练、人类或自动质量评测、PPO原论文MuJoCo/Atari、OpenRLHF Ray/DeepSpeed/vLLM/CUDA/多机、性能表、长期稳定性。成功的是教学规模真实模型优化和明确范围的源码/数学验证，不是完整论文或生产RLHF复现。
 
 来源补充：TRL v0.8.6远端标签源码下载实际遇到TLS握手失败，本次只将安装RECORD与源码hash作为精确验证证据，不声称已与远端tag逐字节比对。OpenRLHF历史源码/README/license下载成功。
+
+### 整理工具的修正记录
+
+初次整理复制了上游工作树CRLF notebook，字节审计发现它与固定Git blob不同；改为直接读取Git对象原字节后通过。源码方法抽取时也修复了会改变docstring内部空格的通用dedent；随后用AST核对完整对象。验证工具最初误认为基础state_dict键都带pretrained_model前缀，以及beta断言混用float32/float64，这些是验证器错误，已更正并重新完整执行，不是模型或论文错误。没有删掉失败边界，也没有把原训练效果夸大为完整复现。
+
+## 讲解改版前的运行说明
+
+## 10. 一次小模型 PPO 更新
+
+结果见 [复现说明](README.md)。本次执行使用Python3.12.14、torch2.5.1+cpu、Transformers4.44.2、TRL0.8.6和真实GPT2词表50257。一层、H=16、2 heads、上下文64的随机GPT2加17参数value head，共808465参数；外置seed27，checkpoint初始化seed270。不是预训练GPT2权重。
+
+每版25代码格中，22格按原语句执行（含空/仅注释格），7/12两格仅三个gpt2加载字符串替换为同一个临时本地资产路径；0格代理/NCCL设置跳过，其Image导入在外部提供。**没有声称25格原样全部执行**。两版输出、训练统计（排除墙钟耗时）及最终全部active/ref状态相同；两版各4次真实Adam更新，骨干与value head变化、ref不变、optimizer参数只含active可训练参数。checkpoint实际保存重载后，基础权重/value head以及logits/value精确相同，临时权重不公开。
+
+额外诊断覆盖shift/gather、mask边界、old/ref区别、sample/full KL、末token score、GAE/白化、policy/value裁剪和梯度、beta更新、不同长度padding、OpenRLHF归约/score裁剪差异。注意以下真实边界：
+
+- B=1时ppo/std_scores、queries_len_std和responses_len_std使用无偏样本标准差，得到NaN；这些是统计量，不是证明本次训练loss为NaN。记录保留含义，JSON用明确字符串表示未定义统计。
+- 有效mask全零时compute_rewards找不到最后位置，实际IndexError；scores写Python float而非tensor时安全检查报ValueError。
+- masked_var只有1个有效token时N/(N-1)导致NaN；不能因为batch有一条样本，就假定必失败，关键是有效token数。
+- 左padding实际差异与独立position_ids修正分开记录；原文件没有悄悄修正。
+- 保存含value head的checkpoint重新加载时，基础GPT2加载阶段会提示v_head键不用；随后TRL包装器恢复head。已实际比较全部状态，不能只据这条提示判断head丢失。
