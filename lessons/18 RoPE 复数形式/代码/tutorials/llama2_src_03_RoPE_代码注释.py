@@ -4,10 +4,10 @@
 # %% 0
 # ### 单元 0（code）：导入展示与Torch
 #
-# 【建议会】Image读取配图，不执行注意力；torch/nn提供位置表计算。
-# 导入配图展示类，不执行attention。
+# Image读取配图，不执行注意力；torch/nn提供位置表计算。
+# 导入Image类，展示后面的配图。
 from IPython.display import Image
-# 导入实/复数Tensor与自动求导模块，不加载模型。
+# 导入PyTorch，使用实数、复数张量和自动求导。
 import torch
 # 导入Module基类，供位置表类继承。
 from torch import nn
@@ -15,13 +15,13 @@ from torch import nn
 # %% 1
 # ### 单元 1（markdown）：基础章节
 #
-# 【建议会】整理位置机制背景。
+# 整理位置机制背景。
 # ## basics
 
 # %% 2
 # ### 单元 2（markdown）：RoFormer来源
 #
-# 【必须会】固定v4论文的二维/多维旋转；博客仅辅助，模型依赖不能与bert4keras路线混用。
+# 固定v4论文的二维/多维旋转；博客仅辅助，模型依赖不能与bert4keras路线混用。
 # - RoPE: rotary position embeddings
 #     - https://arxiv.org/pdf/2104.09864v4.pdf
 #         - ROFORMER, Jianlin Su
@@ -34,7 +34,7 @@ from torch import nn
 # %% 3
 # ### 单元 3（markdown）：相对点积公式纠正
 #
-# 【必须会】分数仍依赖内容q/k；复数点积必须Re(zq*conj(zk))，原简写省略内容共轭与取实部。m-n和n-m要随约定一致。0<epsilon<2π/N不是Meta多频率函数的限制，不能据此断言可无限外推。
+# 分数仍依赖内容q/k；复数点积必须Re(zq*conj(zk))，原简写省略内容共轭与取实部。m-n和n-m要随约定一致。0<epsilon<2π/N不是Meta多频率函数的限制，不能据此断言可无限外推。
 # - position encoding：位置编码核心要做的事情
 #     - token embedding $\mathbf x$, position $\ell$，其 position embedding 为
 #     $$
@@ -58,13 +58,13 @@ from torch import nn
 # %% 4
 # ### 单元 4（markdown）：sin位置表章节
 #
-# 【必须会】传统表作为比较，不是已应用RoPE。
+# 传统表作为比较，不是已应用RoPE。
 # ## sin encoding
 
 # %% 5
 # ### 单元 5（markdown）：共享频率公式
 #
-# 【必须会】偶数通道i用sin、奇数通道i用cos且频率索引i-1；分母指数必须除d_model。
+# 偶数通道i用sin、奇数通道i用cos且频率索引i-1；分母指数必须除d_model。
 # $$
 # \begin{split}
 # PE(t,2i)&=\sin(\frac{t}{10000^{\frac{2i}{d_{model}}}})\\
@@ -78,7 +78,7 @@ from torch import nn
 # %% 6
 # ### 单元 6（code）：配置
 #
-# 【必须会】位置10、通道6为小例子，不是7B的配置。
+# 位置10、通道6为小例子，不是7B的配置。
 # 位置数量10，对应0..9，端点不包含10。
 max_sequence_length = 10
 # 教学通道数6；真实模型频率dim应使用head_dim。
@@ -87,7 +87,7 @@ d_model = 6
 # %% 7
 # ### 单元 7（code）：奇偶通道
 #
-# 【必须会】float32[3]偶数/奇数索引，打印值；后续频率配对。
+# float32[3]偶数/奇数索引，打印值；后续频率配对。
 # 偶数通道0/2/4，float32[3]；右端不含。
 even_i = torch.arange(0, d_model, 2).float()
 # 展示偶数通道索引，不修改数值。
@@ -100,7 +100,7 @@ print(odd_i)
 # %% 8
 # ### 单元 8（code）：二维位置列
 #
-# 【必须会】arange→[10]，reshape(-1,1)→float32[10,1]，-1推断第一轴；用于和[3]广播。主notebook改为一维outer，二者不是同一shape。
+# arange→[10]，reshape(-1,1)→float32[10,1]，-1推断第一轴；用于和[3]广播。主notebook改为一维outer，二者不是同一shape。
 # 位置列[10,1]，-1推断10，用广播计算[10,3]。
 position = torch.arange(max_sequence_length, dtype=torch.float).reshape(-1, 1)
 # Notebook展示当前位置tensor；普通Python不自动显示。
@@ -109,7 +109,7 @@ position
 # %% 9
 # ### 单元 9（code）：广播计算sin/cos
 #
-# 【必须会】位置[10,1]/频率分母[3]→[10,3]角度，再逐元素三角函数；不需要outer但公式一致。
+# 位置[10,1]/频率分母[3]→[10,3]角度，再逐元素三角函数；不需要outer但公式一致。
 # [10,1]和[3]广播→[10,3]，先按频率产生角度再sin。
 even_pe = torch.sin(position / torch.pow(10000, even_i/d_model))
 # 奇数列使用odd_i-1的配对频率，输出[10,3]。
@@ -118,21 +118,21 @@ odd_pe = torch.cos(position / torch.pow(10000, (odd_i - 1)/d_model))
 # %% 10
 # ### 单元 10（code）：查看sin表
 #
-# 【必须会】even_pe float32[10,3]，不改变对象。
+# even_pe float32[10,3]，不改变对象。
 # 展示sin表，不更新对象。
 even_pe
 
 # %% 11
 # ### 单元 11（code）：查看cos表
 #
-# 【必须会】odd_pe float32[10,3]；位置0全1。
+# odd_pe float32[10,3]；位置0全1。
 # 展示cos表，不更新对象。
 odd_pe
 
 # %% 12
 # ### 单元 12（code）：堆叠shape
 #
-# 【必须会】stack dim2→[10,3,2]；shape是torch.Size对象，不是数值表。
+# stack dim2→[10,3,2]；shape是torch.Size对象，不是数值表。
 # 新轴2堆叠→[10,3,2]，末轴[sin,cos]。
 stacked = torch.stack([even_pe, odd_pe], dim=2)
 # 查看torch.Size([10,3,2])，不是数值归约。
@@ -141,14 +141,14 @@ stacked.shape
 # %% 13
 # ### 单元 13（code）：展平通道
 #
-# 【必须会】flatten轴1到2→[10,6]按sin/cos交错，不合并位置轴。
+# flatten轴1到2→[10,6]按sin/cos交错，不合并位置轴。
 # 交错展平→[10,6]，没有求和或丢数据。
 torch.flatten(stacked, start_dim=1, end_dim=2)
 
 # %% 14
 # ### 单元 14（code）：广播位置类
 #
-# 【必须会】无可学习参数，每次forward创建位置[10,1]、broadcast sin/cos、stack/flatten；与主实数类公式一致但实现路径不同。
+# 无可学习参数，每次forward创建位置[10,1]、broadcast sin/cos、stack/flatten；与主实数类公式一致但实现路径不同。
 # 定义位置表模块；同名重定义只改变名称指向，不改变旧对象。
 class SinPositionEncoding(nn.Module):
     # 构造配置：位置数、偶数通道数、默认频率基数10000；没有Parameter。
@@ -181,7 +181,7 @@ class SinPositionEncoding(nn.Module):
 # %% 15
 # ### 单元 15（code）：调用位置类
 #
-# 【必须会】创建spe并返回[10,6]，没有传入embedding。
+# 创建spe并返回[10,6]，没有传入embedding。
 # 创建实例，不自动forward；后面同名类重新创建新对象。
 spe = SinPositionEncoding(max_sequence_length=10, d_model=6)
 # 通过Module调用forward，返回传统位置表[10,6]。
@@ -190,13 +190,13 @@ spe()
 # %% 16
 # ### 单元 16（markdown）：RoPE章节
 #
-# 【必须会】下面定位旋转结构和预计算函数。
+# 下面定位旋转结构和预计算函数。
 # ## RoPE
 
 # %% 17
 # ### 单元 17（markdown）：二维旋转矩阵
 #
-# 【必须会】R(mθ)是[2,2]正交矩阵，负sin在右上，正sin在左下，列向量约定正角逆时针。
+# R(mθ)是[2,2]正交矩阵，负sin在右上，正sin在左下，列向量约定正角逆时针。
 # - 2d rotation matrix
 #
 # $$
@@ -209,7 +209,7 @@ spe()
 # %% 18
 # ### 单元 18（markdown）：先投影再按通道对旋转
 #
-# 【必须会】x→Wq/Wk投影再R，矩阵乘次序不可任意交换；多维R为d/2个2×2块，[d,d]。每对独立θj。实现使用成对乘加/复数乘法，不必分配稀疏大矩阵。
+# x→Wq/Wk投影再R，矩阵乘次序不可任意交换；多维R为d/2个2×2块，[d,d]。每对独立θj。实现使用成对乘加/复数乘法，不必分配稀疏大矩阵。
 # - 如下将 2d $\mathbf x$ 旋转 $m\theta$（$\theta$ 表示刻度，）
 #     - 这里将 query 和 key 已经 position encoding 组装在一起
 #
@@ -251,20 +251,20 @@ spe()
 # %% 19
 # ### 单元 19（code）：原配图中的实数实现
 #
-# 【必须会】Image从../imgs/hf_llama_rope.png读取600像素宽截图。图中rotate_half把末维前后两半配对，cat(-x2,x1)；apply_rotary_pos_emb将cos/sin按position_ids选取后unsqueeze轴1，广播到Q/K。此半区布局与Meta相邻通道复数配对不同，需要一致的通道排列；不能把图当成箭头示意或混用频率布局。转录详注见代码/配图_RoPE源码阅读.py，来源是此固定截图，未找到截图对应的HF版本。
+# Image从../imgs/hf_llama_rope.png读取600像素宽截图。图中rotate_half把末维前后两半配对，cat(-x2,x1)；apply_rotary_pos_emb将cos/sin按position_ids选取后unsqueeze轴1，广播到Q/K。此半区布局与Meta相邻通道复数配对不同，需要一致的通道排列；不能把图当成箭头示意或混用频率布局。转录详注见代码/配图_RoPE源码阅读.py，来源是此固定截图，未找到截图对应的HF版本。
 # 读取保留的原配图，宽度600只控制显示；须在tutorials目录运行。
 Image('../imgs/hf_llama_rope.png', width=600)
 
 # %% 20
 # ### 单元 20（markdown）：频率函数章节
 #
-# 【必须会】先生成固定因子，实际旋转调用归第19讲。
+# 先生成固定因子，实际旋转调用归第19讲。
 # ### precompute_freqs_cis
 
 # %% 21
 # ### 单元 21（markdown）：Markdown源码与公式不一致
 #
-# 【必须会】六行函数含device=freqs.device与/div dim的正确频率。下方公式省略/dim且把端点写成包含2*max_seq_len，均需纠正；正确索引0..end-1。complex64不减少两实通道的字节数。4096/32=128是head_dim，预留2048×64不是两倍上下文质量保证。源码块在Markdown不执行，仍加逐行注释。
+# 六行函数含device=freqs.device与/div dim的正确频率。下方公式省略/dim且把端点写成包含2*max_seq_len，均需纠正；正确索引0..end-1。complex64不减少两实通道的字节数。4096/32=128是head_dim，预留2048×64不是两倍上下文质量保证。源码块在Markdown不执行，仍加逐行注释。
 # ```
 # # 普通函数：dim为偶数通道，end位置数量，theta频率base默认10000；不旋转Q/K。
 # def precompute_freqs_cis(dim: int, end: int, theta: float = 10000.0):
@@ -313,14 +313,14 @@ Image('../imgs/hf_llama_rope.png', width=600)
 # %% 22
 # ### 单元 22（code）：重复导入
 #
-# 【建议会】再次import torch使用已导入模块，不重新建立模型。
-# 导入实/复数Tensor与自动求导模块，不加载模型。
+# 再次import torch使用已导入模块，不重新建立模型。
+# 导入PyTorch，使用实数、复数张量和自动求导。
 import torch
 
 # %% 23
 # ### 单元 23（code）：CPU示例频率函数
 #
-# 【必须会】与正确公式一致，t未显式device，依赖默认设备；本次CPU可运行但不能声称GPU通用。返回[end,dim/2] complex64，无shape打印或状态更新。
+# 与正确公式一致，t未显式device，依赖默认设备；本次CPU可运行但不能声称GPU通用。返回[end,dim/2] complex64，无shape打印或状态更新。
 # 普通函数：dim为偶数通道，end位置数量，theta频率base默认10000；不旋转Q/K。
 def precompute_freqs_cis(dim: int, end: int, theta: float = 10000.0):
     # 偶数索引除dim作指数→幂倒数频率[dim/2]；//整数除法，不能漏/div dim。
@@ -337,7 +337,7 @@ def precompute_freqs_cis(dim: int, end: int, theta: float = 10000.0):
 # %% 24
 # ### 单元 24（code）：生成5行正确表
 #
-# 【必须会】dim6/end5→[5,3]，与主例end10区别；end是数量，最后位置4。
+# dim6/end5→[5,3]，与主例end10区别；end是数量，最后位置4。
 # 小配置6通道、5位置，与主notebook的end10不同。
 dim, end = 6, 5
 # 正确函数返回[5,3]，不旋转输入内容。
@@ -348,7 +348,7 @@ freqs_cis
 # %% 25
 # ### 单元 25（code）：遗漏维度分母反例
 #
-# 【必须会】原手写频率1/(10000**[0,2,4])为[1,1e-8,1e-16]，遗漏/dim，不等价于正确函数。theta为int，整数幂后倒数按Torch类型转换；polar产生[5,3]。保留错误原代码用于比较，不偷偷修正。
+# 原手写频率1/(10000**[0,2,4])为[1,1e-8,1e-16]，遗漏/dim，不等价于正确函数。theta为int，整数幂后倒数按Torch类型转换；polar产生[5,3]。保留错误原代码用于比较，不偷偷修正。
 # 手算例频率基数，整数。
 theta = 10000
 # 原错误省略/dim，频率变成1/1e8/1e16，不等于正确表；这里变量其实是角度。
@@ -361,19 +361,19 @@ complex_tensor
 # %% 26
 # ### 单元 26（code）：查看错误表shape
 #
-# 【必须会】torch.Size([5,3])与正确表相同不能证明值正确。
+# torch.Size([5,3])与正确表相同不能证明值正确。
 # 查看[5,3]，形状与正确表一致但数值不同。
 complex_tensor.shape
 
 # %% 27
 # ### 单元 27（code）：查看实虚视图
 #
-# 【必须会】错误complex_tensor的view_as_real为float32[5,3,2]，末轴实/虚；shape正确不能修复频率。
+# 错误complex_tensor的view_as_real为float32[5,3,2]，末轴实/虚；shape正确不能修复频率。
 # 共享存储的float32[5,3,2]实/虚视图，没有修复错误频率。
 torch.view_as_real(complex_tensor)
 
 # %% 28
 # ### 单元 28（code）：空格
 #
-# 【建议会】不包含计算，保留原空单元和编号。
+# 不包含计算，保留原空单元和编号。
 # 原空代码格保留，不添加计算。
