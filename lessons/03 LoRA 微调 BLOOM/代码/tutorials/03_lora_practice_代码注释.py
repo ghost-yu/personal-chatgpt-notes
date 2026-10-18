@@ -397,7 +397,7 @@ model
 #
 # import transformers绑定包名，后面trainer接口使用；from datasets导入load_dataset。load_dataset('Abirate/english_quotes')可能联网、缓存并返回DatasetDict；原调用没固定revision，也没指定split，后面取train。
 #
-# 数据字段quote/author通常为str，tags为list[str]。这里还不是GPU Tensor、DataLoader或模型输出。本次不联网下载该数据，使用5条明确新编记录测试同样的Dataset API，不能冒充原2508条数据。
+# 数据字段quote/author通常为str，tags为list[str]。读取后得到Dataset中的Python对象；配套算例使用5条自编记录展示取行、取列等Dataset操作。
 
 # %%
 # 加载原名言数据，可能联网/写缓存；原ID未锁revision；本次不下载该数据。
@@ -455,7 +455,7 @@ dataset['train']['quote'][:4]
 # %% [markdown]
 # ## 单元 30：author 列的前四条
 #
-# 与前格相同的取列再切片，返回作者字符串列表。后面的merge没有使用author，查看它不代表作者被训练目标利用。
+# 与前格相同的取列再切片，返回作者字符串列表。后面的merge选用quote和tags构造训练文本。
 
 # %%
 # 取前四个作者字符串；作者没有参与后面的训练文本拼接。
