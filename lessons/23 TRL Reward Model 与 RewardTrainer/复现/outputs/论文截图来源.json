@@ -1,0 +1,49 @@
+{
+  "paper": "Training language models to follow instructions with human feedback",
+  "version": "arXiv:2203.02155v1, 2022-03-04",
+  "url": "https://arxiv.org/pdf/2203.02155v1",
+  "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+  "render_scale": 3,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "crops": [
+    {
+      "file": "图片/01_论文_三阶段流程.png",
+      "page": 3,
+      "bounds_top_left_points": [
+        112,
+        70,
+        500,
+        300
+      ],
+      "figure_or_equation": "Figure 2, diagram only",
+      "sha256": "4e6862cbe4d2372cb34a25773b5ad65fa8b1e9cbf27e56e1b9185a1bb74cb361"
+    },
+    {
+      "file": "图片/02_论文_奖励模型阶段.png",
+      "page": 3,
+      "bounds_top_left_points": [
+        242,
+        70,
+        364,
+        291
+      ],
+      "figure_or_equation": "Figure 2, Step 2",
+      "sha256": "76b9f45564f0eda9e4411ac234989233a5731f1f8f77fe56c3fb3d964cfe317a"
+    },
+    {
+      "file": "图片/03_论文_偏好损失.png",
+      "page": 8,
+      "bounds_top_left_points": [
+        172,
+        615,
+        508,
+        648
+      ],
+      "figure_or_equation": "Equation 1",
+      "sha256": "e582c7862243887089b9709866eb422bc8f918ec09a5d80ecf490cf46bf7088d"
+    }
+  ]
+}

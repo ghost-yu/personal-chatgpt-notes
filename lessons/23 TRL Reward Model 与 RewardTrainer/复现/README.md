@@ -1,4 +1,42 @@
-# 第 23 讲复现记录
+# 第23讲：基础讲解例子的复现
+
+2026-10-18。当前正文四个Python块由verify_foundation_examples.py直接提取执行；完整固定TRL类、真实OPT/PEFT、两条自编偏好对、CPU两次AdamW更新。结果见[基础讲解验证.json](outputs/基础讲解验证.json)。
+
+## 重做当前正文例子
+
+从仓库根目录执行：
+
+```powershell
+$lessonPython = 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe'
+& $lessonPython 'lessons/23 TRL Reward Model 与 RewardTrainer/复现/scripts/verify_foundation_examples.py'
+```
+
+默认来源目录是`G:/zzz/Personal ChatGPT 系列/23 TRL Reward Model 与 RewardTrainer/资料`，包含runtime-libs与opt-tokenizer。迁移目录时用环境变量`LESSON23_SOURCES`指定。脚本启用离线模式；先核对真实安装的reward_trainer.py、trainer_utils.py、reward_config.py与来源清单SHA，再读取固定OPT分词资产。
+
+环境为Python3.12.14、Torch2.5.1+cpu、Transformers4.44.2、TRL0.8.6、PEFT0.12.0、Accelerate0.34.2、Datasets2.19.2。额外TRL依赖位于本讲runtime-libs，共享主包保持现有版本。
+
+## 本轮配置与结果
+
+- 分数手算：两分数初始0，单对负logsigmoid损失0.693147；梯度[-.5,.5]，学习率.1更新为[.05,-.05]，损失0.644397。
+- 当前预处理完整函数与原notebook第14格AST相同。正文显式设置tokenizer.model_max_length=1024：首次运行发现本地资产没有给出默认上限，已经把配置补入代码并重跑。两侧实际padding形状[2,21]/[2,19]；600次very的长样本长度601，按512筛选剔除。默认collator的max_length512只参与padding配置，实测600token输入仍返回600，不送入小模型。
+- OPT配置H8、FFN16、1层、2头、容量64、词表50272、单输出、dropout0；基础403312参数。LoRA r2/alpha4，q/v共64参数加score8，72个可训练参数；包装后总403384，包含score原模块与活动副本。seed23，CPU、batch2、梯度累积1、两次更新、lr.01、adamw_torch。
+- 五个可训练张量均变化：q/v的A/B及score.modules_to_save.default.weight；所有冻结张量不变，优化器参数集合准确对应可训练集合。训练同两对的loss为0.6809351444→0.6311371922。
+- 完整RewardTrainer.compute_loss的两侧分数梯度与[-sigmoid(-差值)/B,+sigmoid(-差值)/B]相同；loss与独立softplus相同。prediction_step输出[2,2]、labels全0，chosen概率约[.547858,.516575]，与sigmoid差值相同。
+- 用真实decoder隐藏状态直接乘活动score权重，再独立选择最后mask=1的位置，两侧与模型分数差均0。单条与padding批次一致，左右padding分数差0。
+- 真正保存4个LoRA权重和score.weight五项；重载到匹配基础后，所有state_dict张量精确相同，两侧完整分数均精确相同。推理与重载核对后模型全部参数等于训练刚结束的状态。
+- 可选margin分支用真实collator和compute_loss测试：[B]减[B,1]产生[B,B]；传入列形margin后按pair计算。独立非均匀例混合均值.59370744、正确逐pair.54816663。默认tie accuracy包含第一列平分，稳定极值loss/梯度和共同平移不变均核对。
+
+本轮未加载原OPT350M权重、全HH数据或4bit后端，未执行原1000步、PPO、人类持出评估与GPU实验。旧完整交付运行保留在下方，本轮没有重跑其全部原格项目。
+
+## 论文截图
+
+[InstructGPT v1](https://arxiv.org/pdf/2203.02155v1)，2022-03-04：第3页Figure2图形部分、同图奖励模型阶段放大、第8页公式1，共三张原PDF截图。3倍像素渲染并裁剪，逐张视觉检查；总图补足底端、公式补足上边距后再次检查。正文逐栏解释SFT/RM/PPO、排名数据、分数与差值、公式符号及比较对平均。
+
+原PDF保存在外部课程`G:/zzz/Personal ChatGPT 系列/23 TRL Reward Model 与 RewardTrainer/原论文.pdf`，由第12讲已有的相同v1 PDF复制；来源URL、PDF/PNG哈希、页码与裁剪坐标见[论文截图来源](outputs/论文截图来源.json)。原notebook两个远程图URL保持原样，当前正文直接使用上述本地图。
+
+---
+
+## 此前交付记录
 
 状态：**部分成功**。原文件/派生件静态核对、两份真实CPU小OPT/LoRA RewardTrainer各两步及保存重载通过；原4bit OPT350M/全HH训练未运行。
 

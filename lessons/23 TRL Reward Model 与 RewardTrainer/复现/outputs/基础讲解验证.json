@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-18",
+  "note_sha256": "249144ea350c4a23b8efc192be7bef562b65972e19b48d5293ef02b53c4212b6",
+  "script_sha256": "ac126fa73a5b39911025c0cc6a91363ca7bc9adf8ad76d68c8eded205025b224",
+  "official_source_sha256": {
+    "reward_trainer.py": "f496262efc35b3e50f9d899531a4a8cb08bcd1a57dd0669ebf5da945ff4b7787",
+    "trainer_utils.py": "efc0bda563040376282642ef2bb42bb228fe6ffbaad001b3072f70282f3e5ca0",
+    "reward_config.py": "f566e90ec99ea24331d931b6d59123abd0046bd5e7b6232f93fb5110ba26f02b"
+  },
+  "tokenizer_source": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\资料\\opt-tokenizer",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "trl": "0.8.6",
+    "peft": "0.12.0",
+    "accelerate": "0.34.2",
+    "datasets": "2.19.2"
+  },
+  "main_blocks": 4,
+  "stdout": [
+    "[-0.5, 0.5]\n0.05000000074505806 -0.05000000074505806\n0.6931471824645996 0.6443966627120972\n",
+    "{'input_ids_chosen': (2, 21), 'attention_mask_chosen': (2, 21), 'input_ids_rejected': (2, 19), 'attention_mask_rejected': (2, 19)}\n",
+    "{'train_runtime': 0.0775, 'train_samples_per_second': 51.585, 'train_steps_per_second': 25.793, 'train_loss': 0.6641885042190552, 'epoch': 2.0}\n可训练参数： 72\n训练前后loss： 0.6809351444244385 0.6311371922492981\n重载分数最大差： 0.0\n",
+    "每对的分数差： [0.19202002882957458, 0.0663231834769249]\nchosen胜出的概率： [0.5478580594062805, 0.5165746808052063]\n评估输出的shape： (2, 2)\n标签： [0.0, 0.0]\n"
+  ],
+  "preprocess_ast_matches_original": true,
+  "checks": {
+    "base_parameters": 403312,
+    "wrapped_parameters": 403384,
+    "trainable_parameters": 72,
+    "optimizer_steps": 2,
+    "changed_trainable_names": [
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.score.modules_to_save.default.weight"
+    ],
+    "frozen_parameter_tensors": 19,
+    "optimizer_matches_trainable": true,
+    "loss_before": 0.6809351444244385,
+    "loss_after": 0.6311371922492981,
+    "batch_shapes": {
+      "input_ids_chosen": [
+        2,
+        21
+      ],
+      "attention_mask_chosen": [
+        2,
+        21
+      ],
+      "input_ids_rejected": [
+        2,
+        19
+      ],
+      "attention_mask_rejected": [
+        2,
+        19
+      ]
+    },
+    "chosen_scores": [
+      [
+        0.10562737286090851
+      ],
+      [
+        -0.020050883293151855
+      ]
+    ],
+    "rejected_scores": [
+      [
+        -0.08639265596866608
+      ],
+      [
+        -0.08637406677007675
+      ]
+    ],
+    "pair_probabilities": [
+      [
+        0.5478580594062805,
+        0.4521419405937195
+      ],
+      [
+        0.5165746808052063,
+        0.4834252595901489
+      ]
+    ],
+    "chosen_score_gradients": [
+      [
+        -0.22607097029685974
+      ],
+      [
+        -0.24171262979507446
+      ]
+    ],
+    "rejected_score_gradients": [
+      [
+        0.22607097029685974
+      ],
+      [
+        0.24171262979507446
+      ]
+    ],
+    "independent_pool_errors": {
+      "chosen": 0.0,
+      "rejected": 0.0
+    },
+    "single_sequence_padding_errors": {
+      "chosen": 0.0,
+      "rejected": 0.0
+    },
+    "left_right_padding_error": 0.0,
+    "reload_error": 0.0,
+    "checkpoint_keys": [
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.q_proj.lora_B.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_A.weight",
+      "base_model.model.model.decoder.layers.0.self_attn.v_proj.lora_B.weight",
+      "base_model.model.score.weight"
+    ],
+    "reload_all_state_tensors_equal": true,
+    "reload_chosen_and_rejected_scores_equal": true,
+    "margin_shape": [
+      2
+    ],
+    "broadcast_shape": [
+      2,
+      2
+    ],
+    "margin_loss": 0.9069560170173645,
+    "column_margin_loss": 0.9114794731140137,
+    "independent_mixed_margin_loss": 0.5937074422836304,
+    "independent_paired_margin_loss": 0.5481666326522827,
+    "tie_accuracy": {
+      "accuracy": 1.0
+    },
+    "tie_warning": [
+      "There are 1 out of 2 instances where the predictions for both options are equal. As a consequence the accuracy can be misleading."
+    ],
+    "stable_loss": [
+      1000.0,
+      0.6931471824645996,
+      0.0
+    ],
+    "stable_gradients": [
+      -1.0,
+      -0.5,
+      -0.0
+    ],
+    "collator_did_not_truncate_600_tokens": true,
+    "tokenizer_max_length": 1024,
+    "long_pair_chosen_length": 601,
+    "scoring_and_reload_preserve_trained_parameters": true
+  },
+  "scope": "Real CPU OPT/LoRA and full fixed TRL, two optimizer updates on two synthetic preference pairs; no original weights, HH corpus, 4bit, PPO, human quality evaluation or GPU."
+}

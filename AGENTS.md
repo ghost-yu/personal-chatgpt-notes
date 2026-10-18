@@ -1,5 +1,7 @@
 # 本项目工作约定
 
+2026-10-18 第23讲基础改写完成：同题两回答→分数/差值/概率→负logsigmoid/梯度→原preprocess→双侧padding→OPT pooling→LoRA/score→真实训练/保存。InstructGPT v1 p3 Figure2/Step2放大/p8式1三原PDF截图已视觉检查。正文四CPU块执行，原预处理AST一致、完整固定TRL三源码SHA一致；H8一层OPT基础403312、72可训练、两AdamW，loss.680935→.631137，五可训练张量变化/冻结和optimizer集合正确。独立pooling、单条/左右padding差0，两侧梯度与概率对齐；保存重载全状态及双侧分数精确相同，推理参数不变。补显式tokenizer上限1024，collator长度/margin/tie和稳定极值核对。旧正文逐字折叠，原代码及历史报告保留；原权重/全HH/4bit/GPU/人类评价待验证。基础改写01–23完成，下一讲24。
+
 2026-10-18 第22讲基础改写完成：用2/4提示词、两行七列token表讲分词/batch、固定mask、位置/缓存、温度/top-p、EOS、echo/容量及logprobs顺序。核采样v2 p3式1/p6式4/p5 Figure5/p4式2/p5式3五原PDF截图已视觉检查。正文六CPU块通过，完整generate/sample_top_p AST对应官方；完整固定Meta仅2/3设备改动，1,029,840参数真实模型，五forward与全前缀差8.94e-8、提示保护/单条batch/echo/采样/EOS/参数不变及移动CE后首logp−10.07020验证。旧正文逐字折叠，原代码与历史记录保留。基础改写01–22完成，下一讲23。
 
 2026-10-18 补齐阅读入口的行文修订：01–30讲共80份派生notebook同步现有单元说明，34份Python阅读文件调整说明或注释；删除相邻代码格的612处重复代码块，精简辅助单元的未做事项和重复学习标签。逐一验证1246个代码格的执行token不变、说明版988个原单元不变，历史输出/元数据不变；notebook格式与30讲文档检查通过。后续修改讲解须同步notebook与Python阅读入口。

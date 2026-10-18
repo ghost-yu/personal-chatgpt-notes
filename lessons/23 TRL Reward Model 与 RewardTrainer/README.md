@@ -2,7 +2,7 @@
 
 [返回课程总目录](../../README.md)
 
-1. [中文讲解](解释.md)：完整跟踪偏好数据、打分、loss、LoRA、训练与保存。
+1. [中文讲解](解释.md)：从同一问题的两个回答讲起，手算分数差、概率、损失和梯度，再运行分词、padding、OPT/LoRA训练与保存；论文流程图和公式就地内嵌。
 2. [原课程代码的中文注释](代码/tutorials/reward_model/trl_reward_trainer_代码注释.py)：全部 29 个代码格，直接看文本。
 3. [注释 notebook](代码/tutorials/reward_model/代码注释.ipynb)：37 个原单元、逐格说明和原历史输出。
 
@@ -15,8 +15,8 @@
 - [全部单元说明](代码单元解释.md)、[复现记录与重做命令](复现/README.md)。
 - [来源清单](来源清单.json)、[实际验证输出](复现/outputs/runtime_verification.json)。
 
-课程固定提交 `7fbc29824171fd07dc2c30fe922e61ebc018ad1d`。参考实现固定 TRL0.8.6 / `e90e8d9…`，并不声称找到了讲师精确环境。原图是两个外部URL引用，原URL与HTML保留；没有本地图片附件，不声称核验远端图片内容。
+课程固定提交 `7fbc29824171fd07dc2c30fe922e61ebc018ad1d`，源码对照使用TRL0.8.6 / `e90e8d9…`。当前正文从InstructGPT原PDF截取Figure 2、奖励模型阶段放大图和公式1；原notebook中的两个外部图片URL继续保留。
 
-原代码的代理/全量数据下载未执行。CPU教学两版各用真实小OPT与LoRA训练两步，非原4bit OPT350M或1000步训练。量化缺依赖、旧历史评分/参数计数差异、默认collator的长度和margin边界都有明确说明。
+当前四个正文例子使用CPU小OPT、两条自编偏好对、72个可训练参数，完成两次更新和保存重载。此前原格教学运行和4bit/完整数据的运行范围，见[复现记录](复现/README.md)。
 
 </details>
