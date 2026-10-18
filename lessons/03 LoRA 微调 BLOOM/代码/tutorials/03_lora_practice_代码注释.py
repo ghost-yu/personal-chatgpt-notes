@@ -13,7 +13,7 @@
 # %% [markdown]
 # ## 单元 0：安装命令
 #
-# 【必须会】三条`!pip install`由IPython转交shell；不是标准Python语法。`-q`减少日志；第一条安装bitsandbytes、datasets、accelerate、loralib，后两条从Git安装Transformers的main与PEFT默认分支。main不固定SHA，原watermark的dev版本无法精确重建。
+# 三条`!pip install`由IPython转交shell；不是标准Python语法。`-q`减少日志；第一条安装bitsandbytes、datasets、accelerate、loralib，后两条从Git安装Transformers的main与PEFT默认分支。main不固定SHA，原watermark的dev版本无法精确重建。
 #
 # 安装会改环境并联网，不应把本次注释静态核对算作实际安装。原单元没有安装watermark。loralib虽被安装，后面走的是PEFT接口。中文注释说明三条命令各自用途，原命令不改；验证时转换为IPython AST，但不执行这些安装命令。
 
@@ -32,7 +32,7 @@
 # %% [markdown]
 # ## 单元 1：summary 标题
 #
-# 【可以暂时不掌握】Markdown二级标题，为总体流程分节，不创建模型或参数。它不是训练入口。
+# Markdown二级标题，为总体流程分节，不创建模型或参数。它不是训练入口。
 
 # %% [markdown]
 # ## summary
@@ -40,7 +40,7 @@
 # %% [markdown]
 # ## 单元 2：任务与流程概要
 #
-# 【必须会】原任务是把名言映射到标签文本，模型是BLOOM。LoRA冻结原权重、加低秩参数；PEFT为实现库。MLM通常预测被遮盖位置，CLM预测下一token，本实现选择后者。
+# 原任务是把名言映射到标签文本，模型是BLOOM。LoRA冻结原权重、加低秩参数；PEFT为实现库。MLM通常预测被遮盖位置，CLM预测下一token，本实现选择后者。
 #
 # 原文字把MLM/CLM称作unsupervised，是强调可从文本自动构造token目标，不表示这个有quote/tags关系的任务没有监督信息。pipeline在这里是流程概念，原文件未调用`transformers.pipeline()`。
 
@@ -63,7 +63,7 @@
 # %% [markdown]
 # ## 单元 3：base model 与 adapters 标题
 #
-# 【建议会】Markdown标题区分共享大模型与任务增量；不是Python代码，不执行冻结或注入。
+# Markdown标题区分共享大模型与任务增量；不是Python代码，不执行冻结或注入。
 
 # %% [markdown]
 # ## base model & lora adapters
@@ -71,7 +71,7 @@
 # %% [markdown]
 # ## 单元 4：导入依赖
 #
-# 【必须会】torch提供Tensor/autograd，`torch.nn as nn`绑定神经网络模块别名；bitsandbytes绑定bnb，但后续没有直接调用bnb函数，量化由Transformers加载路径触发。三个Auto类按配置选对应的tokenizer/config/因果LM；LoraConfig与get_peft_model分别描述adapter配置和执行注入。
+# torch提供Tensor/autograd，`torch.nn as nn`绑定神经网络模块别名；bitsandbytes绑定bnb，但后续没有直接调用bnb函数，量化由Transformers加载路径触发。三个Auto类按配置选对应的tokenizer/config/因果LM；LoraConfig与get_peft_model分别描述adapter配置和执行注入。
 #
 # 导入不下载7B权重，但包可能检查CUDA等依赖；缺包时整个单元可提前失败。本次CPU验证不导入bitsandbytes，不声称该量化依赖已通过。
 
@@ -90,7 +90,7 @@ from peft import LoraConfig, get_peft_model
 # %% [markdown]
 # ## 单元 5：加载 watermark 扩展
 #
-# 【建议会】`%load_ext watermark`调用IPython扩展加载机制，需要另有watermark包。状态是当前kernel加载扩展；不改变模型。标准Python脚本直接解析百分号会失败，所以注释核对先做IPython语法转换。
+# `%load_ext watermark`调用IPython扩展加载机制，需要另有watermark包。状态是当前kernel加载扩展；不改变模型。标准Python脚本直接解析百分号会失败，所以注释核对先做IPython语法转换。
 
 # %%
 # 加载watermark扩展，要求包已安装；不是普通Python语法。
@@ -101,40 +101,39 @@ from peft import LoraConfig, get_peft_model
 # %% [markdown]
 # ## 单元 6：查看已导入库版本
 #
-# 【建议会】`%watermark --iversions`打印当前会话导入模块的版本，用于环境记录。没有Tensor输入/输出。保存的历史输出来自老师环境，不是这次CPU环境；没有Git SHA的dev版本字符串不能固定源码。
+# `%watermark --iversions`打印当前会话导入模块的版本，用于环境记录。没有Tensor输入/输出。保存的历史输出来自老师环境，不是这次CPU环境；没有Git SHA的dev版本字符串不能固定源码。
 
 # %%
-# 打印当前导入模块版本；保留的历史报告不能当作本次环境。
+# 打印当前导入模块的版本，便于选择对应版本的API文档。
 # --iversions 报告当前内核导入模块的版本；保存的旧输出不是当前运行环境。
-# 没有模型输入/输出或参数更新；版本字符串中的 dev0 仍不足以确定 Git 提交。
+# 版本字符串中的dev0表示开发版；精确定位源码还需要Git提交号。
 # IPython原指令（在notebook中执行）：%watermark --iversions
 
 # %% [markdown]
 # ## 单元 7：函数方式查看环境
 #
-# 【建议会】从watermark导入同名函数，`packages`传逗号分隔的包名str，返回报告字符串交给print。它与前格magic是两种调用方式，不是模型评估。报告里没有列bitsandbytes，不能据此证明量化组件版本。
+# 从watermark导入同名函数，`packages`传逗号分隔的包名str，返回报告字符串交给print。它与前格magic是两种调用方式，不是模型评估。报告里没有列bitsandbytes，不能据此证明量化组件版本。
 
 # %%
 # 使用函数方式打印指定包的版本；返回字符串，不做模型计算。
 # watermark 此时是从同名包导入的独立函数；packages 接收逗号分隔的 str。
-# 返回环境报告字符串，print 显示它；没有训练/评估调用，报告也未列 bitsandbytes。
+# 返回环境报告字符串，再用print显示所列库的版本。
 from watermark import watermark
 print(watermark(packages='peft,torch,loralib,transformers,accelerate,datasets'))
 
 # %% [markdown]
 # ## 单元 8：加载模型与 tokenizer
 #
-# 【必须会】AutoModelForCausalLM.from_pretrained为类方法，输入模型ID字符串、load_in_8bit=True、device_map='auto'，返回因果LM模块；可能下载权重、分配设备内存和设置dispatch hook。AutoTokenizer.from_pretrained单独加载匹配的分词器，不加载Transformer权重。
+# AutoModelForCausalLM.from_pretrained为类方法，输入模型ID字符串、load_in_8bit=True、device_map='auto'，返回因果LM模块；可能下载权重、分配设备内存和设置dispatch hook。AutoTokenizer.from_pretrained单独加载匹配的分词器，不加载Transformer权重。
 #
-# 8bit是旧式bitsandbytes量化入口，不是所有参数/激活均为int8；auto是设备分派策略，不是数据并行副本数。这里未指定revision，无法精确锁定模型/词表快照。本次未执行这个7B加载单元；中文注释分别解释三个参数和tokenizer调用。
+# 8bit是旧式bitsandbytes量化入口，不是所有参数/激活均为int8；auto是设备分派策略，不是数据并行副本数。这里未指定revision，无法精确锁定模型/词表快照。三个加载参数与tokenizer调用的作用见相邻注释，运行条件见复现说明。
 
 # %%
 # 加载BLOOM因果模型和匹配分词器；可能下载权重并分配设备内存。
-# 【必须会】from_pretrained 是类方法；模型ID为 str，可触发配置/权重下载与设备内存分配。
+# from_pretrained 是类方法；模型ID为 str，可触发配置/权重下载与设备内存分配。
 # 返回 model: nn.Module；原 BLOOM-7b1 的隐藏宽度 H=4096、词表 V=250880。
 # 尚无输入 token；加载模型不会自动得到 logits 或生成回答。
 # tokenizer 是独立分词器对象；其ID及特殊token必须与预训练模型相容。
-# 原文未固定 model/tokenizer revision；本次CPU教学使用随机小模型，不执行本格7B加载。
 model = AutoModelForCausalLM.from_pretrained(
     "bigscience/bloom-7b1",
     # 旧版bitsandbytes量化加载；不保证全部参数或激活都是int8。
@@ -149,7 +148,7 @@ tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-7b1")
 # %% [markdown]
 # ## 单元 9：查看配置
 #
-# 【必须会】第一行`# model.config`未执行；实际调用AutoConfig.from_pretrained返回配置对象。它读配置而不是再次加载全部权重，也不把返回值赋给model。参数值应以固定模型revision核对，原文件缺revision。
+# 第一行`# model.config`未执行；实际调用AutoConfig.from_pretrained返回配置对象。它读取配置并返回独立配置对象，供后面的属性查看使用。参数值应以固定模型revision核对，原文件缺revision。
 
 # %%
 # 读取结构配置；注释中的model.config不执行；这里不再次加载全部权重。
@@ -162,18 +161,18 @@ AutoConfig.from_pretrained("bigscience/bloom-7b1")
 # %% [markdown]
 # ## 单元 10：查看原模型结构
 #
-# 【建议会】末尾表达式model让notebook渲染repr；普通脚本不会自动打印。返回的是原模型对象引用，没有forward、训练或clone。结构可帮助定位融合query_key_value投影。
+# 末尾表达式model让notebook渲染repr；普通脚本不会自动打印。返回的是原模型对象引用，没有forward、训练或clone。结构可帮助定位融合query_key_value投影。
 
 # %%
-# notebook显示原模型repr，没有forward或训练；普通脚本不自动显示。
+# notebook显示模型的模块结构；普通Python脚本中可用print(model)查看。
 # model 是前面创建的模块对象；单独写对象名字会让 notebook 显示 repr。
-# 没有输入 [B,S] token IDs，因此没有 forward、loss 或 logits；普通脚本不会自动显示。
+# 查看模型的模块结构，沿层名寻找embedding、attention和输出层。
 model
 
 # %% [markdown]
 # ## 单元 11：查看输入 embedding
 #
-# 【必须会】注释里的具体属性访问不执行；实际`model.get_input_embeddings()`是实例方法，返回输入Embedding模块，未对任何ID做查表。其权重通常为`[V,H]`，实际lookup将int64输入`[B,S]`变成浮点激活`[B,S,H]`。
+# 注释里的具体属性访问不执行；实际`model.get_input_embeddings()`是实例方法，返回输入Embedding模块，未对任何ID做查表。其权重通常为`[V,H]`，实际lookup将int64输入`[B,S]`变成浮点激活`[B,S,H]`。
 #
 # 本格不解冻权重；返回模块也不是复制一份参数。默认参数为空，模块无输入Tensor。
 
@@ -188,18 +187,18 @@ model.get_input_embeddings()
 # %% [markdown]
 # ## 单元 12：查看 tokenizer
 #
-# 【建议会】显示tokenizer对象的配置/特殊token等repr，不给文本分词。没有生成input_ids，没有模型运算。
+# 显示tokenizer对象的配置/特殊token等repr，不给文本分词。没有生成input_ids，没有模型运算。
 
 # %%
-# 展示分词器对象；没有输入文本，所以尚未分词。
-# tokenizer 是分词器对象；本格只显示它的表示，没有文本实参。
+# 展示分词器对象，可查看词表和特殊token配置。
+# tokenizer是分词器对象；向它传入文本时，会返回对应的token编号。
 # 真正分词在36/38/44/45，调用 tokenizer(text) 才会创建 BatchEncoding。
 tokenizer
 
 # %% [markdown]
 # ## 单元 13：冻结标题
 #
-# 【必须会】Markdown标题指出接下来冻结基权重。标题本身不改变requires_grad。
+# Markdown标题指出接下来冻结基权重。标题本身不改变requires_grad。
 
 # %% [markdown]
 # ### freeze original weights
@@ -207,7 +206,7 @@ tokenizer
 # %% [markdown]
 # ## 单元 14：只看首个参数 dtype
 #
-# 【必须会】model.parameters返回迭代器，list将其收集为参数引用列表，`[0]`取第一个Parameter，`.dtype`返回类型对象。参数必须存在。
+# model.parameters返回迭代器，list将其收集为参数引用列表，`[0]`取第一个Parameter，`.dtype`返回类型对象。参数必须存在。
 #
 # 只观察第一项，不能把结果推广到全部Linear8bitLt/norm/adapter。没有Tensor拷贝或dtype转换，后格才实际修改。
 
@@ -220,12 +219,12 @@ list(model.parameters())[0].dtype
 # %% [markdown]
 # ## 单元 15：冻结和一维参数转 FP32
 #
-# 【必须会】`enumerate(model.parameters())`给每个Parameter提供编号i和param；i只用于原注释中的调试打印，没有参与计算。循环将requires_grad=False，再用ndim==1选择一维权重/偏置，把底层data转为float32。shape保持，参数存储/类型改变。
+# `enumerate(model.parameters())`给每个Parameter提供编号i和param；i只用于原注释中的调试打印，没有参与计算。循环将requires_grad=False，再用ndim==1选择一维权重/偏置，把底层data转为float32。shape保持，参数存储/类型改变。
 #
 # 一维条件不是“所有小参数”或“只有LayerNorm”。二维Embedding仍被冻结而不被此条件cast；冻结不等于跳过其计算。`.data`绕过一般autograd跟踪，是原历史写法；注释版保留，未擅自改算法。本次在小型真实BLOOM上执行该循环，核对所有基参数冻结。
 
 # %%
-# 冻结所有现有权重，将一维参数转FP32；shape不变，不代表跳过反向链。
+# 冻结现有权重，将一维参数转为FP32；梯度仍可沿这些运算传回可训练的LoRA参数。
 # param 是 Parameter；requires_grad=False 阻止其梯度累积，后面才加入可训练LoRA因子。
 # 冻结权重不等于关闭整条计算图，adapter学习仍需要梯度穿过模型中间运算。
 # ndim 是维度数，一维参数也可能是 bias；这里不是只选择LayerNorm。
@@ -245,7 +244,7 @@ for i, param in enumerate(model.parameters()):
 # %% [markdown]
 # ## 单元 16：checkpointing 与输入激活梯度
 #
-# 【必须会】两个实例方法无显式参数。gradient_checkpointing_enable改变模型的激活保存/重算设置；不把训练checkpoint写入磁盘。enable_input_require_grads安装hook，使Embedding输出激活requires_grad=True；不会把Embedding.weight解冻。
+# 两个实例方法无显式参数。gradient_checkpointing_enable改变模型的激活保存/重算设置；不把训练checkpoint写入磁盘。enable_input_require_grads安装hook，使Embedding输出激活requires_grad=True；不会把Embedding.weight解冻。
 #
 # 目的在于冻结模型与激活重算时维持adapter所需梯度链。实际CPU验证核对Embedding权重仍False，而输出激活为True，并检查小模型开启重算标志。
 
@@ -263,7 +262,7 @@ model.enable_input_require_grads()
 # %% [markdown]
 # ## 单元 17：lm_head 输出转 FP32
 #
-# 【必须会】CastOutputToFloat是nn.Sequential子类；forward(self,x)覆盖父方法，super().forward先运行被包装lm_head，再把返回Tensor转float32。它接收`[B,S,H]`，返回`[B,S,V]`，shape不因cast改变。
+# CastOutputToFloat是nn.Sequential子类；forward(self,x)覆盖父方法，super().forward先运行被包装lm_head，再把返回Tensor转float32。它接收`[B,S,H]`，返回`[B,S,V]`，shape不因cast改变。
 #
 # 把model.lm_head赋为包装对象修改模块树，原head变成其子模块；不是创建另一个词表，也不是解冻head。class/继承/self/super分别是类型定义、复用父实现、当前实例和父方法访问。没有自写__init__，沿用Sequential构造行为。
 
@@ -285,7 +284,7 @@ model.lm_head = CastOutputToFloat(model.lm_head)
 # %% [markdown]
 # ## 单元 18：LoRA 标题
 #
-# 【建议会】Markdown过渡到adapter部分，本格未注入任何矩阵。
+# Markdown过渡到adapter部分，本格未注入任何矩阵。
 
 # %% [markdown]
 # ### LoRa Adapters
@@ -293,7 +292,7 @@ model.lm_head = CastOutputToFloat(model.lm_head)
 # %% [markdown]
 # ## 单元 19：统计可训练参数的函数
 #
-# 【必须会】print_trainable_parameters(model)是独立函数，无默认参数。named_parameters迭代名字与Parameter，`_`忽略名字；numel统计元素数。all_param计全部，trainable_params仅计requires_grad=True，再用f-string打印比例。返回None，不改参数。
+# print_trainable_parameters(model)是独立函数，无默认参数。named_parameters迭代名字与Parameter，`_`忽略名字；numel统计元素数。all_param计全部，trainable_params仅计requires_grad=True，再用f-string打印比例。返回None，不改参数。
 #
 # 第一行docstring是函数说明str，不是运行命令；定义时不会调用统计循环，单元21才调用。全空模型会除零，原函数未处理；真实BLOOM有参数。量化参数元素计数不是实际显存字节数。
 
@@ -326,13 +325,13 @@ def print_trainable_parameters(model):
 # %% [markdown]
 # ## 单元 20：LoRA 配置
 #
-# 【必须会】重复导入一般复用模块缓存，不是重复安装。LoraConfig构造配置对象：r=16，lora_alpha=32，标准scale=32/16=2；dropout=0.05只用于adapter支路；bias='none'不额外训练偏置；task_type='CAUSAL_LM'选择因果LM包装。
+# 重复导入一般复用模块缓存，不是重复安装。LoraConfig构造配置对象：r=16，lora_alpha=32，标准scale=32/16=2；dropout=0.05只用于adapter支路；bias='none'不额外训练偏置；task_type='CAUSAL_LM'选择因果LM包装。
 #
 # target_modules整行是注释，q_proj/v_proj不生效；BLOOM默认映射为query_key_value，不是LLaMA的分离投影名。配置对象本身没有执行模型forward。r控制形状，alpha控制缩放，不能互换。
 
 # %%
-# 创建LoRA配置；r是瓶颈宽度，alpha/r=2是增量缩放；尚未执行注入。
-# config 是 LoraConfig 实例，没有token数据或训练张量；后面get_peft_model才使用配置。
+# 创建LoRA配置：r为瓶颈宽度，alpha/r=2为增量缩放系数。
+# config是LoraConfig实例，后面的get_peft_model读取它来注入LoRA模块。
 # 融合QKV输入 [B,S,H]；标准LoRA分支经 A:[r,H]、B:[3H,r] 后输出 [B,S,3H]。
 # 图与库采用nn.Linear权重[out,in]布局，不能混用上一讲行向量因子的存储方向。
 # target_modules 行是注释；核对版本中BLOOM默认映射为 query_key_value，不是 q_proj/v_proj。
@@ -354,7 +353,7 @@ config = LoraConfig(
 # %% [markdown]
 # ## 单元 21：注入并统计参数
 #
-# 【必须会】get_peft_model(model,config)返回PEFT包装，并改造原模型内部目标模块；赋回model名字，因此后续调用使用adapter模型。不是对原模型深拷贝。随后调用前格函数打印计数。
+# get_peft_model(model,config)返回PEFT包装，并改造原模型内部目标模块；赋回model名字，因此后续调用使用adapter模型。不是对原模型深拷贝。随后调用前格函数打印计数。
 #
 # 原7B的融合QKV权重方向为`[12288,4096]`，新增A`[16,4096]`、B`[12288,16]`；激活为`[B,S,4096]→[B,S,16]→[B,S,12288]`再与基输出相加。每层新增262144个参数，30层推得7864320；真实目标/计数仍应检查版本与模型。新CPU验证使用2层H=16的随机模型，结果按它的真实尺寸单独记录。
 
@@ -369,7 +368,7 @@ print_trainable_parameters(model)
 # %% [markdown]
 # ## 单元 22：查看包装后的模型
 #
-# 【建议会】末尾model显示PeftModel包装与插入模块。repr不是训练结果，也通常不显示全部requires_grad状态，需结合参数统计/遍历。对象为注入后的同一model名字。
+# 末尾model显示PeftModel包装与插入模块。repr不是训练结果，也通常不显示全部requires_grad状态，需结合参数统计/遍历。对象为注入后的同一model名字。
 
 # %%
 # 显示注入后的模型结构，不能用repr代替训练结果或冻结状态核对。
@@ -380,7 +379,7 @@ model
 # %% [markdown]
 # ## 单元 23：pipeline 标题
 #
-# 【可以暂时不掌握】Markdown流程标题，不调用任何pipeline类或函数。
+# Markdown流程标题，不调用任何pipeline类或函数。
 
 # %% [markdown]
 # ## pipeline
@@ -388,7 +387,7 @@ model
 # %% [markdown]
 # ## 单元 24：data 标题
 #
-# 【可以暂时不掌握】Markdown引出数据检查，尚未下载dataset。
+# Markdown引出数据检查，尚未下载dataset。
 
 # %% [markdown]
 # ### data
@@ -396,7 +395,7 @@ model
 # %% [markdown]
 # ## 单元 25：加载名言数据
 #
-# 【必须会】import transformers绑定包名，后面trainer接口使用；from datasets导入load_dataset。load_dataset('Abirate/english_quotes')可能联网、缓存并返回DatasetDict；原调用没固定revision，也没指定split，后面取train。
+# import transformers绑定包名，后面trainer接口使用；from datasets导入load_dataset。load_dataset('Abirate/english_quotes')可能联网、缓存并返回DatasetDict；原调用没固定revision，也没指定split，后面取train。
 #
 # 数据字段quote/author通常为str，tags为list[str]。这里还不是GPU Tensor、DataLoader或模型输出。本次不联网下载该数据，使用5条明确新编记录测试同样的Dataset API，不能冒充原2508条数据。
 
@@ -412,7 +411,7 @@ dataset = load_dataset("Abirate/english_quotes")
 # %% [markdown]
 # ## 单元 26：查看 DatasetDict
 #
-# 【建议会】表达式dataset显示split列表/字段/行数。对象是split名称到Dataset的映射，不是模型batch。没有tokenize或训练。
+# 表达式dataset显示split列表/字段/行数。对象是split名称到Dataset的映射，不是模型batch。没有tokenize或训练。
 
 # %%
 # 显示DatasetDict的split结构；还不是Tensor训练batch。
@@ -423,18 +422,18 @@ dataset
 # %% [markdown]
 # ## 单元 27：取得 train split
 #
-# 【必须会】dataset['train']按名称取Dataset；与list索引不同。必须存在train键，缺少会报KeyError。返回数据集对象，不是某一行，也未转Tensor。
+# dataset['train']按名称取Dataset；与list索引不同。必须存在train键，缺少会报KeyError。返回数据集对象，不是某一行，也未转Tensor。
 
 # %%
 # 按名称取得train Dataset，返回整个split，不是单行。
-# 字典键train选择一个split，返回整个Dataset；还没有选样本或字段。
-# 不是随机划分、不是取batch，也没有把全部数据转换为Tensor。
+# 通过train键取出训练集Dataset，后续再选择行或字段。
+# 这里按名称选择已有的数据划分。
 dataset['train']
 
 # %% [markdown]
 # ## 单元 28：转 pandas 表格
 #
-# 【建议会】to_pandas返回DataFrame，便于查看列和行；可能物化大量数据到内存。不会改变Dataset字段，也不会把数据送到GPU。大数据不应默认全部转表。
+# to_pandas返回DataFrame，便于查看列和行；可能物化大量数据到内存。不会改变Dataset字段，也不会把数据送到GPU。大数据不应默认全部转表。
 
 # %%
 # 转换为pandas表格以查看数据，可能将数据物化到内存。
@@ -445,7 +444,7 @@ dataset['train'].to_pandas()
 # %% [markdown]
 # ## 单元 29：quote 列的前四条
 #
-# 【必须会】先`['quote']`取列，再`[:4]`切前四项，结果为list[str]。从0开始、不含右端点4。这里不是四个token，而是四条完整名言文本。
+# 先`['quote']`取列，再`[:4]`切前四项，结果为list[str]。从0开始、不含右端点4。这里不是四个token，而是四条完整名言文本。
 
 # %%
 # 先取quote列，再切前四条完整文本；不是前四个token。
@@ -456,7 +455,7 @@ dataset['train']['quote'][:4]
 # %% [markdown]
 # ## 单元 30：author 列的前四条
 #
-# 【建议会】与前格相同的取列再切片，返回作者字符串列表。后面的merge没有使用author，查看它不代表作者被训练目标利用。
+# 与前格相同的取列再切片，返回作者字符串列表。后面的merge没有使用author，查看它不代表作者被训练目标利用。
 
 # %%
 # 取前四个作者字符串；作者没有参与后面的训练文本拼接。
@@ -467,7 +466,7 @@ dataset['train']['author'][:4]
 # %% [markdown]
 # ## 单元 31：同时看前四条的所有列
 #
-# 【必须会】Dataset的`[:4]`按行批取，结果为dict，各列值是长度4的列表；不是list[dict]。与单元29只取quote列不同。后续batched map同样处理按列组织的批次字典。
+# Dataset的`[:4]`按行批取，结果为dict，各列值是长度4的列表；不是list[dict]。与单元29只取quote列不同。后续batched map同样处理按列组织的批次字典。
 
 # %%
 # 批取前四行，返回各字段对应列表的dict，不是list[dict]。
@@ -478,7 +477,7 @@ dataset['train'][:4]
 # %% [markdown]
 # ## 单元 32：把标签列表变成字符串
 #
-# 【必须会】先取tags列再取第0条list[str]，str将其转成带方括号/引号的Python列表展示文本。不是JSON序列化、不是类别ID，也未tokenize。空列表会成为'[]'，之后模型学的是这类字符串形式。
+# 先取tags列再取第0条list[str]，str将其转成带方括号/引号的Python列表展示文本。不是JSON序列化、不是类别ID，也未tokenize。空列表会成为'[]'，之后模型学的是这类字符串形式。
 
 # %%
 # 将第一条tags列表转成Python展示字符串，非JSON或类别ID。
@@ -489,7 +488,7 @@ str(dataset['train']['tags'][0])
 # %% [markdown]
 # ## 单元 33：merge 函数与 Dataset.map
 #
-# 【必须会】merge(row)为独立函数，无默认参数；row是单行dict。它取quote字符串，加固定分隔符' ->: '，再加str(tags)，原地添加prediction键并返回同一dict。没有调用model，prediction是字段名而非模型预测。
+# merge(row)为独立函数，无默认参数；row是单行dict。它取quote字符串，加固定分隔符' ->: '，再加str(tags)，原地添加prediction键并返回同一dict。没有调用model，prediction是字段名而非模型预测。
 #
 # Dataset.map逐行调用函数并返回新Dataset，再赋回train split；原API不是对整个Dataset直接原地添列。其他split若存在不会在此合并，后续DatasetDict.map访问prediction时可能失败。作者字段保留但没有拼进文本。
 #
@@ -512,18 +511,18 @@ dataset['train'] = dataset['train'].map(merge)
 # %% [markdown]
 # ## 单元 34：查看拼接后前五条
 #
-# 【建议会】取prediction列再[:5]，结果为list[str]，比前面检查多一条。要求单元33已成功创建字段；没有model.generate。
+# 取prediction列再[:5]，结果为list[str]，比前面检查多一条。要求单元33已成功创建字段；没有model.generate。
 
 # %%
 # 查看新增prediction列的前五条；要求merge/map已成功。
 # prediction列为list[str]；前五条用于核对merge的格式、分隔符和标签列表文本。
-# 不会调用generate，也没有评估预测与真实标签是否相同。
+# 这一格展示拼接后的训练文本，可检查问题、名言和标签的排列。
 dataset['train']['prediction'][:5]
 
 # %% [markdown]
 # ## 单元 35：查看第五条记录
 #
-# 【必须会】Dataset整数索引[4]返回单行dict，各字段为标量/列表，和[:4]的列列表字典不同。五条以下的数据会越界；本次教学数据明确有5条。
+# Dataset整数索引[4]返回单行dict，各字段为标量/列表，和[:4]的列列表字典不同。五条以下的数据会越界；本次教学数据明确有5条。
 
 # %%
 # 按从0开始的索引取第五条单行dict；与切片[:4]返回形态不同。
@@ -534,7 +533,7 @@ dataset['train'][4]
 # %% [markdown]
 # ## 单元 36：试分词前四条
 #
-# 【必须会】调用tokenizer对象的__call__，输入list[str]，返回BatchEncoding，默认是input_ids/attention_mask等列表，不是torch Tensor。原调用没padding/truncation，长度可不同，未截断超长序列。
+# 调用tokenizer对象的__call__，输入list[str]，返回BatchEncoding，默认是input_ids/attention_mask等列表，不是torch Tensor。原调用没padding/truncation，长度可不同，未截断超长序列。
 #
 # 默认可能加入该词表定义的特殊token，精确ID取决于tokenizer快照。试调用没有把返回值赋回dataset；正式转换在38。新教学tokenizer不是BLOOM真实词表，ID仅用于API和loss路径验证。
 
@@ -548,7 +547,7 @@ tokenizer(dataset['train']['prediction'][:4])
 # %% [markdown]
 # ## 单元 37：tokenize 标题
 #
-# 【建议会】Markdown标题标记正式数据转换阶段，无函数调用。
+# Markdown标题标记正式数据转换阶段，无函数调用。
 
 # %% [markdown]
 # ### tokenize
@@ -556,7 +555,7 @@ tokenizer(dataset['train']['prediction'][:4])
 # %% [markdown]
 # ## 单元 38：批量 map 分词
 #
-# 【必须会】lambda samples为匿名函数，取samples['prediction']字符串列表，调用tokenizer。batched=True让map传入列列表字典，默认非此文件指定的固定微批大小；不等于训练batch_size=4。
+# lambda samples为匿名函数，取samples['prediction']字符串列表，调用tokenizer。batched=True让map传入列列表字典，默认非此文件指定的固定微批大小；不等于训练batch_size=4。
 #
 # dataset为DatasetDict，map对所有split执行并返回新对象；添加input_ids与attention_mask列，原quote/tags等列默认仍保留。因未指定padding/truncation，后面collator负责动态补齐。Trainer通常移除forward不接收的文本列；直接调用collator时应只传模型输入字段。
 
@@ -571,10 +570,10 @@ dataset = dataset.map(lambda samples: tokenizer(samples['prediction']), batched=
 # %% [markdown]
 # ## 单元 39：查看分词后数据集
 #
-# 【建议会】注释列出input_ids/attention_mask，实际表达式dataset显示结构。两列是列表数据，Dataset展示不是完整训练Tensor；并不证明所有长度都在模型上限内。
+# 注释列出input_ids/attention_mask，实际表达式dataset显示结构。两列是列表数据，Dataset展示不是完整训练Tensor；并不证明所有长度都在模型上限内。
 
 # %%
-# 展示分词后字段；原注释未执行；不意味着已经得到GPU Tensor。
+# 展示分词后的字段；当前保存的是token编号和mask列表。
 # 注释中的字段名只帮助阅读；实际表达式dataset显示token列和split结构。
 # 本格不构造 [B,S] Tensor；转换和补齐发生在后面collator。
 # 'input_ids', 'attention_mask'
@@ -583,7 +582,7 @@ dataset
 # %% [markdown]
 # ## 单元 40：training 标题
 #
-# 【必须会】Markdown转入训练，标题不更新权重。
+# Markdown转入训练，标题不更新权重。
 
 # %% [markdown]
 # ### training
@@ -591,7 +590,7 @@ dataset
 # %% [markdown]
 # ## 单元 41：导入训练接口
 #
-# 【必须会】Trainer组织训练，TrainingArguments保存调度/批次/精度等配置，DataCollatorForLanguageModeling构造语言模型批次和labels。导入不开始训练，也不是定义模型loss公式；BLOOM内部处理CLM位移。
+# Trainer组织训练，TrainingArguments保存调度/批次/精度等配置，DataCollatorForLanguageModeling构造语言模型批次和labels。导入不开始训练，也不是定义模型loss公式；BLOOM内部处理CLM位移。
 
 # %%
 # 导入训练调度、训练参数和CLM批次构造接口；导入不会启动训练。
@@ -602,7 +601,7 @@ from transformers import Trainer, TrainingArguments, DataCollatorForLanguageMode
 # %% [markdown]
 # ## 单元 42：构造 Trainer 并训练
 #
-# 【必须会】Trainer接收model、train Dataset、TrainingArguments和collator。原参数无独立eval_dataset，不能从训练日志推出验证集效果。
+# Trainer接收model、train Dataset、TrainingArguments和collator。原参数无独立eval_dataset，不能从训练日志推出验证集效果。
 #
 # | 参数 | 值与含义 | 容易混淆的边界 |
 # |---|---|---|
@@ -623,7 +622,7 @@ from transformers import Trainer, TrainingArguments, DataCollatorForLanguageMode
 
 # %%
 # 构造Trainer后执行训练；会改变adapter和训练状态，原7B训练本次未运行。
-# 【必须会】样本列表 -> collator -> int64 input_ids/attention_mask/labels [B,Smax]。
+# 样本列表 -> collator -> int64 input_ids/attention_mask/labels [B,Smax]。
 # mlm=False：复制input_ids作为labels，padding目标设-100，让交叉熵忽略补齐位置。
 # BLOOM输出logits [B,S,V]；logits[:,:-1,:]与labels[:,1:]配对，预测下一token。
 # 原目标对整段非padding文本计算loss，没有只保留回答标签段的mask。
@@ -665,7 +664,7 @@ trainer.train()
 # %% [markdown]
 # ## 单元 43：inference 标题
 #
-# 【建议会】Markdown开始生成示例，未自动切换eval模式或关闭梯度。
+# Markdown开始生成示例，未自动切换eval模式或关闭梯度。
 
 # %% [markdown]
 # ### inference
@@ -673,7 +672,7 @@ trainer.train()
 # %% [markdown]
 # ## 单元 44：第一条生成示例
 #
-# 【必须会】tokenizer输入一个留有' ->: '的str，return_tensors='pt'才返回torch整数Tensor`[1,S]`。batch为BatchEncoding映射，不是训练Dataset。with打开CUDA autocast上下文，只改变部分浮点运算的精度策略，不搬运输入到CUDA。
+# tokenizer输入一个留有' ->: '的str，return_tensors='pt'才返回torch整数Tensor`[1,S]`。batch为BatchEncoding映射，不是训练Dataset。with打开CUDA autocast上下文，只改变部分浮点运算的精度策略，不搬运输入到CUDA。
 #
 # `**batch`把input_ids/attention_mask作为关键字实参传给model.generate；max_new_tokens=50限制新增token，输出整数`[1,S+G]`且G≤50。`output_tokens[0]`取一行；decode(...,skip_special_tokens=True)返回str，通常仍包含输入前缀。print额外输出换行。
 #
@@ -700,7 +699,7 @@ print('\n\n', tokenizer.decode(output_tokens[0], skip_special_tokens=True))
 # %% [markdown]
 # ## 单元 45：第二条生成示例
 #
-# 【必须会】与44完全相同的API路径，只把prompt换成更长的论文风格句子。开头空白行保留；长文本使S变化，不是新的模型、独立验证集或分类head。
+# 与44完全相同的API路径，只把prompt换成更长的论文风格句子。开头空白行保留；长文本使S变化，不是新的模型、独立验证集或分类head。
 #
 # 字符串中的引号、标点也被tokenize。max_new_tokens仍50，autocast仍不搬设备，decode仍包含前缀。两条prompt都需解释，不能用“同上”替代本格的输入差别及评估边界。
 
@@ -708,7 +707,7 @@ print('\n\n', tokenizer.decode(output_tokens[0], skip_special_tokens=True))
 # 更长的第二条prompt，路径与前格相同；不是独立评估集，原CUDA生成未运行。
 # 第二条prompt更长，所以输入长度S与第一条不同；仍使用同一model与tokenizer。
 # 输出上限是新增50个token，不是总长度50；更长prompt不会自动产生独立验证集。
-# autocast、**batch、decode与上一格一致；这两条生成不能证明名言标签任务准确率。
+# 沿用上一格的autocast、**batch和decode，查看两条提示词的生成结果。
 
 # 第二条更长prompt使S变化；相同tokenizer和同一model。
 batch = tokenizer("“An important paradigm of natural language processing consists of large-scale pre-training on general domain data and adaptation to particular tasks or domains.” ->: ", return_tensors='pt')
@@ -724,12 +723,12 @@ print('\n\n', tokenizer.decode(output_tokens[0], skip_special_tokens=True))
 # %% [markdown]
 # ## 单元 46：查看 collator
 #
-# 【必须会】访问trainer.data_collator对象并显示repr，无样本实参，没有真正构造批次或计算loss。必须先成功构造trainer；若42的训练失败但trainer已赋值，对象也可能存在，显示它不能证明train成功。
+# 访问trainer.data_collator对象并显示repr，无样本实参，没有真正构造批次或计算loss。必须先成功构造trainer；若42的训练失败但trainer已赋值，对象也可能存在，显示它不能证明train成功。
 #
 # 实际batch转换是调用该collator(samples)，需要样本列表；新验证通过真实collator检查padding labels=-100、shift与BLOOM返回loss一致。
 
 # %%
-# 查看Trainer持有的collator；没有传samples，所以不真正构造batch。
+# 查看Trainer持有的collator；训练时它负责把样本整理成batch。
 # trainer.data_collator 是可调用批次构造对象；本格仅取属性并显示repr，返回该对象。
-# 需要另调用collator(samples)才会padding并建立labels；查看属性不能证明训练已成功。
+# 调用collator(samples)时，才会对样本做padding并建立labels。
 trainer.data_collator
