@@ -376,7 +376,7 @@ model = get_peft_model(model, config)
 # %% [markdown]
 # ## 单元 16：查看注入后模型
 #
-# 表达式model显示包装和lora_A/lora_B等模块。repr有助于查看层次，但不能证明参数值已训练、已保存adapter或权重requires_grad全部正确。本格没有loss/backward/optimizer。
+# 表达式model显示包装和lora_A/lora_B等模块。沿repr中的层名，可以找到基线性层及新加入的lora_A、lora_B；用requires_grad查看对应权重是否参与训练。
 #
 # 固定源码CPU验证将两层H16融合QKV替换成真实适配Linear，A[16,16]、B[48,16]，scale2；新增2048个可训练参数。这是小模型尺寸，与原7B的4096/12288/30层不同，原尺寸对应的参数推导见主文。
 
