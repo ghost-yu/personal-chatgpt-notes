@@ -1,0 +1,98 @@
+[
+  {
+    "paper": "PPO-v2.pdf",
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "page_1_based": 3,
+    "part": "§3 equation 7",
+    "crop_top_left_points": [
+      68,
+      260,
+      530,
+      310
+    ],
+    "scale": 3,
+    "published_path": "图片/PPO_v2_p3_公式7.png",
+    "png_sha256": "f68525c01fa282495d74984b84ce722422a7fc981327239b521f603e9e8d5165"
+  },
+  {
+    "paper": "PPO-v2.pdf",
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "page_1_based": 3,
+    "part": "Figure 1",
+    "crop_top_left_points": [
+      68,
+      448,
+      530,
+      640
+    ],
+    "scale": 3,
+    "published_path": "图片/PPO_v2_p3_Figure1.png",
+    "png_sha256": "1a36875edac4c4ec4b24edceece8c96fe410f803823df4857e60e502059864c8"
+  },
+  {
+    "paper": "PPO-v2.pdf",
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "page_1_based": 5,
+    "part": "equations 11–12",
+    "crop_top_left_points": [
+      68,
+      362,
+      530,
+      400
+    ],
+    "scale": 3,
+    "published_path": "图片/PPO_v2_p5_GAE.png",
+    "png_sha256": "d60a0a76a35ec305735053a13fdd987e0f97cebbf683ecff3861219ec68d2620"
+  },
+  {
+    "paper": "PPO-v2.pdf",
+    "url": "https://arxiv.org/pdf/1707.06347v2",
+    "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+    "page_1_based": 5,
+    "part": "Algorithm 1",
+    "crop_top_left_points": [
+      68,
+      463,
+      530,
+      590
+    ],
+    "scale": 3,
+    "published_path": "图片/PPO_v2_p5_Algorithm1.png",
+    "png_sha256": "2bdbdd7de41d3a6e32df26fa4b95a49eaa08b3387924367a7ff4eb623955d194"
+  },
+  {
+    "paper": "HumanPreferences-v2.pdf",
+    "url": "https://arxiv.org/pdf/1909.08593v2",
+    "pdf_sha256": "f3004c3128281cb373f71e0f22aef81cdc295cef9b07450d1fa07cdc79abe5b2",
+    "page_1_based": 3,
+    "part": "equation 2 and preceding explanation",
+    "crop_top_left_points": [
+      52,
+      300,
+      293,
+      388
+    ],
+    "scale": 3,
+    "published_path": "图片/HumanPreferences_v2_p3_奖励公式2.png",
+    "png_sha256": "2a0de49e62914dcd756a91ad71bab0e942b474ee3face1c9e43b0deb9d99953f"
+  },
+  {
+    "paper": "OpenRLHF-v1.pdf",
+    "url": "https://arxiv.org/pdf/2405.11143v1",
+    "pdf_sha256": "b6500e315302c7a9eb47528ba3941f864fe0f3472e8954afa79b5c9b87095f70",
+    "page_1_based": 3,
+    "part": "Figure 1 and caption",
+    "crop_top_left_points": [
+      88,
+      87,
+      526,
+      309
+    ],
+    "scale": 3,
+    "published_path": "图片/OpenRLHF_v1_p3_Figure1.png",
+    "png_sha256": "7d49fc44d1ec2c3b98b2058ec1f658ed9defbb35822379877c1704132124d14a"
+  }
+]

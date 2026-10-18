@@ -1,0 +1,251 @@
+{
+  "status": "passed",
+  "date": "2026-10-18",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "trl": "0.8.6",
+    "accelerate": "0.34.2",
+    "device": "cpu"
+  },
+  "note_sha256": "313aeef32d3cace5227c610e9e28e80f64d2f8befac24b87d54ba9409953b2b6",
+  "script_sha256": "5ffa83a6e2488f1459ae77c955b2ee41021eaa6afedd7bdccb2a70ab9a172084",
+  "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "trl_sources_sha256": {
+    "trl/trainer/ppo_trainer.py": "7aff1820d6162416f242dcc5d231a6d64e8c2b33721256354b475ec1474aa941",
+    "trl/trainer/utils.py": "efc0bda563040376282642ef2bb42bb228fe6ffbaad001b3072f70282f3e5ca0",
+    "trl/models/modeling_value_head.py": "ebc6a0797fc0504c2ea25d32be51a99d5c1f9ba287934aa69b0c870bf716f014",
+    "trl/core.py": "9956107d8314968eab3ac3436798972361476ef805c88c8bd7891ebd1ad94966"
+  },
+  "openrlhf_sources_sha256": {
+    "openrlhf-models-utils.py": "f5492fc5e99098264c2573a8c6ea9fee21e21900fcd8d31fc4928e694d2ff517",
+    "openrlhf-loss.py": "5912a1fd1e25d9804226e4eea1dbdacd61117099f90cb20e85cd5cabcc5c9569",
+    "openrlhf-experience_maker.py": "4241cca6d06a764b368b58dc38c8cd56e2ee0148380af6b479ed94f3da4a2dab"
+  },
+  "source_fidelity": {
+    "cells": 33,
+    "code_cells": 25,
+    "schemas": 3,
+    "derived_cells": 67,
+    "raw_git_blobs": true,
+    "history_and_metadata": true,
+    "comment_only_ast_tokens": true,
+    "reading_ast": true,
+    "full_trl_objects": [
+      "PPOTrainer",
+      "AdaptiveKLController",
+      "FixedKLController",
+      "ValueHead",
+      "AutoModelForCausalLMWithValueHead",
+      "logprobs_from_logits",
+      "masked_mean",
+      "masked_var",
+      "masked_whiten",
+      "clip_by_value"
+    ],
+    "trl_record_hashes": true,
+    "openrlhf_objects": [
+      "compute_approx_kl",
+      "compute_reward",
+      "log_probs_from_logits",
+      "masked_mean",
+      "PolicyLoss",
+      "ValueLoss",
+      "make_experience",
+      "get_advantages_and_returns"
+    ]
+  },
+  "published_blocks": [
+    {
+      "block": 1,
+      "stdout": "[0.2, -0.3, 0.1]\n[-0.04, 0.06, 0.98]\n",
+      "warnings": []
+    },
+    {
+      "block": 2,
+      "stdout": "[0.72725, 0.555, 0.9]\n[0.92725, 0.955, 1.0]\n[-0.00097, -0.99952, 1.00048]\n",
+      "warnings": []
+    },
+    {
+      "block": 3,
+      "stdout": "0.05\n[[0.0, -0.175, 0.325, 0.0]]\n",
+      "warnings": []
+    },
+    {
+      "block": 4,
+      "stdout": "[1212, 3329, 314, 1816, 284, 262, 220] [28387, 38716, 3748]\n[1, 10] [1, 9]\n[6, 7, 8]\n",
+      "warnings": [
+        "`clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884",
+        "No dataset is provided. Make sure to set config.batch_size to the correct value before training."
+      ]
+    },
+    {
+      "block": 5,
+      "stdout": "4 18 True\n0.001074\n",
+      "warnings": [
+        "std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\builder\\windows\\pytorch\\aten\\src\\ATen\\native\\ReduceOps.cpp:1823.)",
+        "std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\builder\\windows\\pytorch\\aten\\src\\ATen\\native\\ReduceOps.cpp:1823.)",
+        "std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\builder\\windows\\pytorch\\aten\\src\\ATen\\native\\ReduceOps.cpp:1823.)"
+      ]
+    },
+    {
+      "block": 6,
+      "stdout": "0.05 0.0\n",
+      "warnings": []
+    }
+  ],
+  "model": {
+    "parameters": 403465,
+    "value_head_parameters": 9,
+    "query_ids": [
+      1212,
+      3329,
+      314,
+      1816,
+      284,
+      262,
+      220
+    ],
+    "response_ids": [
+      28387,
+      38716,
+      3748
+    ],
+    "input_shape": [
+      1,
+      10
+    ],
+    "logits_shape": [
+      1,
+      10,
+      50257
+    ],
+    "shift_shape": [
+      1,
+      9
+    ],
+    "mask_indices": [
+      6,
+      7,
+      8
+    ],
+    "no_duplicate_query": true,
+    "manual_logprob_exact": true,
+    "value_shift_exact": true,
+    "optimizer_updates": 4,
+    "changed_parameters": [
+      "pretrained_model.transformer.wte.weight",
+      "pretrained_model.transformer.wpe.weight",
+      "pretrained_model.transformer.h.0.ln_1.weight",
+      "pretrained_model.transformer.h.0.ln_1.bias",
+      "pretrained_model.transformer.h.0.attn.c_attn.weight",
+      "pretrained_model.transformer.h.0.attn.c_attn.bias",
+      "pretrained_model.transformer.h.0.attn.c_proj.weight",
+      "pretrained_model.transformer.h.0.attn.c_proj.bias",
+      "pretrained_model.transformer.h.0.ln_2.weight",
+      "pretrained_model.transformer.h.0.ln_2.bias",
+      "pretrained_model.transformer.h.0.mlp.c_fc.weight",
+      "pretrained_model.transformer.h.0.mlp.c_fc.bias",
+      "pretrained_model.transformer.h.0.mlp.c_proj.weight",
+      "pretrained_model.transformer.h.0.mlp.c_proj.bias",
+      "pretrained_model.transformer.ln_f.weight",
+      "pretrained_model.transformer.ln_f.bias",
+      "v_head.summary.weight",
+      "v_head.summary.bias"
+    ],
+    "reference_unchanged": true,
+    "initial_actor_reference_equal": true,
+    "optimizer_only_actor": true,
+    "next_rollout_ratio_one": true,
+    "current_reference_logprob_max_difference": 0.0010738372802734375,
+    "current_rollout_probability_ratios": [
+      0.9997987747192383,
+      0.9999780654907227,
+      0.9989267587661743
+    ]
+  },
+  "mathematics": {
+    "sample_log_ratios": [
+      [
+        0.2,
+        -0.30000000000000004,
+        0.09999999999999998
+      ]
+    ],
+    "shaped_reward": [
+      [
+        -0.04000000000000001,
+        0.06000000000000001,
+        0.98
+      ]
+    ],
+    "score_last_valid_once": [
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "raw_advantages": [
+      0.72725,
+      0.5549999999999999,
+      0.9
+    ],
+    "returns": [
+      [
+        0.9272499999999999,
+        0.955,
+        1.0
+      ]
+    ],
+    "whitened_advantages": [
+      [
+        -0.0009661830743013079,
+        -0.999516390364813,
+        1.000482573439115
+      ]
+    ],
+    "policy_loss": 0.050000000000000044,
+    "policy_logprob_gradient": [
+      [
+        0.0,
+        -0.175,
+        0.325,
+        0.0
+      ]
+    ],
+    "weighted_value_loss": 0.006500000000000001,
+    "value_gradient": [
+      [
+        0.0125,
+        -0.0125,
+        0.0025000000000000005,
+        -0.0025000000000000005
+      ]
+    ],
+    "pessimistic_value_clip_loss": 0.03200000000000001,
+    "adaptive_beta": 0.20040000000000002
+  },
+  "openrlhf": {
+    "complete_source_math_objects": [
+      "ValueLoss",
+      "__builtins__",
+      "compute_approx_kl",
+      "log_probs_from_logits",
+      "compute_reward",
+      "PolicyLoss",
+      "get_advantages_and_returns",
+      "masked_mean"
+    ],
+    "reward_gae_equal": true,
+    "single_sequence_policy_value_equal": true,
+    "score20_clipped_to10": true,
+    "TRL_token_mean": 4.333333333333333,
+    "OpenRLHF_sequence_mean": 5.5,
+    "distributed_training_run": false
+  },
+  "paper_crops_verified": 6,
+  "scope": "Random CPU GPT2 with real GPT2 tokenizer and complete TRL 0.8.6; complete pinned OpenRLHF mathematical objects. Original pretrained GPT2, distributed OpenRLHF and paper task metrics not run."
+}

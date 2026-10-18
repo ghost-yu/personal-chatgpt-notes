@@ -1,3 +1,60 @@
+# 第27讲复现说明
+
+## 2026-10-18 正文基础算例
+
+状态：**部分成功**。正文六个Python代码块在共享CPU环境执行通过，完整TRL 0.8.6完成真实小GPT2生成与一次PPO step；OpenRLHF执行固定历史源码中的数学对象。
+
+| 内容 | 当前运行结果 |
+|---|---|
+| 三步形状奖励 | log比0.2/−0.3/0.1，reward −0.04/0.06/0.98；整句score只加在最后有效位置 |
+| 三步GAE | raw A=0.72725/0.555/0.9，return=0.92725/0.955/1；无偏方差白化和detach与完整TRL对应 |
+| 四种clip分支 | policy loss 0.05，dL/dlogp=[0,−0.175,0.325,0]；新旧动作概率均在有效范围内 |
+| value损失 | 加权loss 0.0065，四位置梯度0.0125/−0.0125/0.0025/−0.0025；悲观裁剪例loss 0.032 |
+| 完整模型 | GPT2 V=50257、H=8、1层、2头、context64、dropout全0；403465参数，其中value head 9参数 |
+| 真实分词与生成 | 提示7 ID，回答3 ID，输入[1,10]；logits[1,10,50257]，shift/value/mask[1,9]，有效索引6/7/8 |
+| Adam更新 | 一次step内4次更新，18个参数张量改变，包括主干和value head；reference全参数固定，optimizer只含actor |
+| old/reference | 初始参数及采样logprob相同；更新后当前/reference最大logprob差0.0010738373；下一批old刷新时new/old=1 |
+| OpenRLHF对应 | 原完整reward、GAE、PolicyLoss、ValueLoss与独立例子同值；score20→10及长度2/1时13/3对5.5两差异已执行 |
+| 自适应beta | beta0.2、target6、observed12、n100、horizon10000，更新为0.2004 |
+| 来源与原件 | 原notebook/三PNG固定Git blob、两派生notebook原输出/元数据、完整源码AST和TRL发行RECORD核对通过 |
+| 原论文截图 | PPO v2式7/Figure1/式11–12/Algorithm1、Human Preferences v2式2、OpenRLHF v1 Figure1，6图全部核对PDF和PNG SHA并视觉检查 |
+
+本轮真实生成的新ID为28387/38716/3748，随机小模型用于展示数据与更新流程。原notebook的预训练GPT2加载、20token生成和历史输出保留；本轮未重跑其原权重。OpenRLHF的Ray/DeepSpeed/vLLM多卡训练、论文任务指标与回答质量尚待验证。此前完整20token本地变体和保存/重载证据保留在下方历史记录。
+
+### 环境与运行
+
+实际环境：Windows，Python3.12.14，Torch2.5.1+cpu，Transformers4.44.2，TRL0.8.6，Accelerate0.34.2。沿用第23讲隔离安装的依赖与共享Torch环境，无新增全局依赖或下载预训练权重。
+
+从仓库根目录执行：
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' '工具/check_documents.py'
+```
+
+在其他机器运行时可通过环境变量指定：
+
+- `LESSON27_LIBS`：TRL0.8.6的完整安装目录，含`trl-0.8.6.dist-info/RECORD`。
+- `LESSON27_LOCAL`：本讲外部资料目录，含固定TRL与OpenRLHF源码，及三份原PDF。
+- `GPT2_TOKENIZER_JSON`：真实GPT2的`tokenizer.json`。本机复用第09讲保存的文件。
+
+原件Git对象检查还使用`verify_delivery.py`中UPSTREAM指定的本地课程仓库；移机时可修改该路径或在调用前给模块设置UPSTREAM。本机对应`G:/zzz/Llama 入门教程/代码/personal_chatgpt`，固定提交见本讲来源清单。
+
+验证器从`解释.md`首个历史折叠前提取全部六个Python块，按顺序执行共享变量；随后对完整真实库方法进行独立数值、梯度、mask、参数集合和来源核对。正文的`PPOConfig`显式种子27，模型初始化也用27。生成时设置min/max_new_tokens均为3，便于逐位置说明；此设置和随机小模型属于新增教学算例。
+
+单条回答下，TRL的score与长度样本标准差统计会产生自由度不足警告，记录在报告的对应代码块；训练使用的优势有3个有效位置，loss/模型参数均有限。其他提示包括未提供dataset（本例手动传step）和Fast tokenizer的调用效率提醒，均保留原信息。
+
+### 当前产物
+
+- [正文算例与来源验证](outputs/基础讲解验证.json)：代码块输出、警告、当前脚本与正文hash、模型/梯度和真实运行结果。
+- [论文截图来源](outputs/论文截图来源.json)：PDF版本URL、页码、左上原点裁剪坐标（point）、3倍渲染和PDF/PNG SHA。
+- [原交付验证](outputs/delivery_verification.json)：保留其原运行日期和对应文件hash。
+
+旧正文逐字保留在主笔记的历史折叠中。原代码、派生阅读文件和此前机器报告保持原内容；本轮新增基础讲解及独立验证脚本。下列旧构建脚本面向当时交付，不应用来覆盖当前已改写正文。
+
+## 此前交付记录
+
 # 第27讲验证记录
 
 状态：**部分成功**。静态保真、实际CPU小模型PPO与独立数学检查通过；未复现原GPT2能力或OpenRLHF分布式训练。

@@ -2,7 +2,7 @@
 
 [返回课程总目录](../../README.md)
 
-1. [中文讲解](解释.md)：先分清reference、old policy、score、value，再读PPO更新。
+1. [中文讲解](解释.md)：从三个生成位置讲score、reward、value和优势，配六张论文截图，再沿真实PPOTrainer完成更新。
 2. [原notebook的Python注释阅读版](代码/tutorials/trl_hf/trl_ppotrainer_helloworld_代码注释.py)：33格按原顺序讲解。
 3. [完整TRL核心源码注释](代码/tutorials/trl_hf/PPOTrainer核心源码_代码注释.py)：完整PPOTrainer类、价值头、控制器和数学工具。
 4. [OpenRLHF历史核心源码注释](代码/tutorials/trl_hf/OpenRLHF核心源码_代码注释.py)：框架图如何对应experience、reward、GAE与loss。
@@ -18,7 +18,8 @@
 - [全部代码和Markdown单元说明](代码单元解释.md)。
 - [来源清单](来源清单.json)，记录固定提交和hash。
 - [实际验证说明与命令](复现/README.md)。
-- [机器验证报告](复现/outputs/delivery_verification.json)。
+- [正文六段算例验证](复现/outputs/基础讲解验证.json)。
+- [此前机器验证报告](复现/outputs/delivery_verification.json)。
 
 来源为[课程固定版本](https://github.com/chunhuizhang/personal_chatgpt/blob/7fbc29824171fd07dc2c30fe922e61ebc018ad1d/tutorials/trl_hf/trl_ppotrainer_helloworld.ipynb)。三张原图位于代码/imgs，原notebook中的../../imgs路径可保留使用。历史输出不是本次执行结果。
 
