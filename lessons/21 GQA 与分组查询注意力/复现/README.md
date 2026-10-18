@@ -39,3 +39,24 @@ builder用git show读取原blob，不重新序列化原notebook；`--upstream`�
 初次自编校验脚本在求和后的KV权重梯度形状比较中漏合并G/d轴，出现8与4维不匹配；修正为sum后reshape回`[G*d,D]`再比较，完整重跑通过。这个错误属于验证脚本，不是原Meta模型缺陷。旧notebook缺cell id的nbformat兼容警告保留，未为消除警告改写原始metadata。
 
 未运行：原Llama2/GQA论文权重、T5 uptraining与评估集、GPU计时、多rank通信、论文质量指标。原2格执行成功不能代替这些实验，随机小模块输出也不代表语言能力。
+
+## 讲解改版前的运行说明
+
+## 12. 小模型中的分组注意力
+
+下面在CPU小模型中比较原代码、分组计算和官方Attention的输出。数值见[运行报告](outputs/完整交付验证.json)，配置与命令见[复现说明](README.md)。
+
+| 检查 | 实际证据 |
+|---|---|
+| 原文件/派生版 | 原notebook与PNG哈希，3schema、原元数据/历史输出、2代码AST/token、六Markdown语句与官方核心阅读AST/token |
+| notebook执行 | 两版各2原格真实执行，图片100287字节、hash及width完全一致 |
+| Markdown上下文 | 六条原赋值真实执行，Q=[1,2,64,128]，K/V=[1,2,8,128]，R=8 |
+| repeat_kv | 四种G/R、正确连续重复、R1对象相同、存储共享与分配、非连续输入、上游梯度求和、double gradcheck |
+| 官方Attention | 完整固定模块只将两次cache.cuda改CPU；真实FairScale/Gloo、world_size=1，显式随机初始化 |
+| MHA/GQA/MQA | H4/G4、H4/G2、H4/G1分别与逐head参考前向及x/Wq/Wk/Wv/Wo梯度吻合；分组einsum前向一致 |
+| 错误重复顺序 | G2的循环配对输出差约0.575，真实反例不是示意猜测 |
+| 绑定与池化 | 特殊绑定MHA前向同值、KV梯度求和吻合；相同heads平均恢复，一般池化改变输出 |
+| 增量缓存 | 先3 token再1/1/1，输出与完整前缀重算最大差约6.94e-17；持久cache始终G2，非repeat后的H4 |
+| 配置边界 | H6/G4真实matmul失败；默认None退化MHA；D18/H4被//截断但仍能返回18通道，不能把整除当成已有assert |
+
+最后一个D18案例只验证shape及截断事实，mask=None的多token调用不作为因果语义验证。R=0也会返回空head轴而非主动报错，不能作为有效GQA配置；负R与rank3输入的实际异常保存在报告。
