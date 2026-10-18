@@ -1,0 +1,267 @@
+{
+  "status": "passed",
+  "scope": "Six published examples; full meta architecture counts; CPU tiny forward/cache/generation; complete core forward and gradients",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "threads": 1
+  },
+  "preservation": {
+    "cells": 24,
+    "code_cells": 15,
+    "schemas": 3,
+    "derived_cells": 49,
+    "original_git_bytes": true,
+    "metadata_historical_outputs": true,
+    "code_ast_tokens": true,
+    "markdown_blocks_9_21_ast_tokens": true,
+    "reading_ast": true,
+    "official_complete_objects": [
+      "rotate_half",
+      "apply_rotary_pos_emb",
+      "repeat_kv",
+      "LlamaRMSNorm",
+      "LlamaMLP",
+      "LlamaAttention",
+      "LlamaSdpaAttention"
+    ],
+    "official_installed_record_match": true,
+    "core_import": true,
+    "modeling_llama_sha256": "1d5c442c438c212b96a1a199126540ac4551512c11ed14e2a6443ea3939b8c98"
+  },
+  "original_parameter_function_ast_equal": true,
+  "executions": [
+    {
+      "block": 1,
+      "stdout": "[[[0.0, 1.0], [1.0, 1.0]]] [1, 2, 2]\n[[[0.0, 1.0, 1.0, -1.0], [1.0, 1.0, 2.0, -2.0]]] [1, 2, 4]\n8 8\nFalse\n",
+      "warnings": []
+    },
+    {
+      "block": 2,
+      "stdout": "Llama2\ntrainable params: 6738415616 || all params: 6738415616 || trainable%: 100.0\nLlama3\ntrainable params: 8030261248 || all params: 8030261248 || trainable%: 100.0\n",
+      "warnings": []
+    },
+    {
+      "block": 3,
+      "stdout": "[0.2689414322376251, 0.7310585975646973, 0.7310585975646973, 0.2689414322376251]\n[17.31058692932129, 12.689414978027344]\n",
+      "warnings": []
+    },
+    {
+      "block": 4,
+      "stdout": "4.38635147178003 3\n",
+      "warnings": []
+    },
+    {
+      "block": 5,
+      "stdout": "{'embedding': 131072000, 'lm_head': 131072000, 'attention': 2147483648, 'mlp': 4328521728, 'norms': 266240} 6738415616\nBF16 权重 GB / GiB: 13.476831232 12.551277160644531\n{'embedding': 525336576, 'lm_head': 525336576, 'attention': 1342177280, 'mlp': 5637144576, 'norms': 266240} 8030261248\nBF16 权重 GB / GiB: 16.060522496 14.957527160644531\n长度 4096 的 BF16 KV cache GiB: 2.0\n长度 4096 的 BF16 KV cache GiB: 0.5\n",
+      "warnings": []
+    },
+    {
+      "block": 6,
+      "stdout": "MHA 7280 [1, 4, 32] [1, 4, 4, 4]\n缓存误差: 2.2351741790771484e-08 生成编号: [[1, 4, 7, 13, 16, 28]]\nGQA 8784 [1, 4, 64] [1, 1, 4, 4]\n缓存误差: 2.2351741790771484e-08 生成编号: [[1, 4, 7, 10, 22, 28]]\n",
+      "warnings": []
+    }
+  ],
+  "meta_parts": [
+    {
+      "embedding": 131072000,
+      "lm_head": 131072000,
+      "attention": 2147483648,
+      "mlp": 4328521728,
+      "norms": 266240
+    },
+    {
+      "embedding": 525336576,
+      "lm_head": 525336576,
+      "attention": 1342177280,
+      "mlp": 5637144576,
+      "norms": 266240
+    }
+  ],
+  "meta_totals": [
+    6738415616,
+    8030261248
+  ],
+  "delta": 1291845632,
+  "bf16_weights_GiB": [
+    12.551277160644531,
+    14.957527160644531
+  ],
+  "bf16_fixed_length_4096_KV_GiB": [
+    2.0,
+    0.5
+  ],
+  "tiny": {
+    "MHA": {
+      "parameters": 7280,
+      "logits_shape": [
+        1,
+        4,
+        32
+      ],
+      "cache_shape": [
+        1,
+        4,
+        4,
+        4
+      ],
+      "cache_difference": 2.2351741790771484e-08,
+      "generated_ids": [
+        [
+          1,
+          4,
+          7,
+          13,
+          16,
+          28
+        ]
+      ],
+      "manual_full_prefix_greedy_equal": true,
+      "parameters_unchanged": true,
+      "no_parameter_gradients": true
+    },
+    "GQA": {
+      "parameters": 8784,
+      "logits_shape": [
+        1,
+        4,
+        64
+      ],
+      "cache_shape": [
+        1,
+        1,
+        4,
+        4
+      ],
+      "cache_difference": 2.2351741790771484e-08,
+      "generated_ids": [
+        [
+          1,
+          4,
+          7,
+          10,
+          22,
+          28
+        ]
+      ],
+      "manual_full_prefix_greedy_equal": true,
+      "parameters_unchanged": true,
+      "no_parameter_gradients": true
+    }
+  },
+  "complete_core": {
+    "attention": {
+      "4": {
+        "parameters": 1024,
+        "independent_forward_max_error": 0.0,
+        "all_input_weight_gradient_max_error": 0.0,
+        "sdpa_eager_max_error": 3.052884089971286e-08,
+        "group_mapping": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "2": {
+        "parameters": 768,
+        "independent_forward_max_error": 0.0,
+        "all_input_weight_gradient_max_error": 0.0,
+        "sdpa_eager_max_error": 1.7957739878449175e-08,
+        "group_mapping": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "1": {
+        "parameters": 640,
+        "independent_forward_max_error": 0.0,
+        "all_input_weight_gradient_max_error": 4.440892098500626e-16,
+        "sdpa_eager_max_error": 2.0576433779062597e-08,
+        "group_mapping": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "mlp": {
+      "parameters": 1152,
+      "forward_max_error": 1.1102230246251565e-16,
+      "all_input_weight_gradient_max_error": 8.881784197001252e-16,
+      "double_gradcheck": true
+    }
+  },
+  "boundaries": {
+    "hidden_not_divisible": {
+      "exception": "ValueError",
+      "message": "hidden_size must be divisible by num_heads (got `hidden_size`: 15 and `num_heads`: 4)."
+    },
+    "heads_not_divisible_by_kv": {
+      "exception": "RuntimeError",
+      "message": "The size of tensor a (4) must match the size of tensor b (3) at non-singleton dimension 1"
+    }
+  },
+  "paper_crops": [
+    {
+      "paper": "Llama2_v2.pdf",
+      "url": "https://arxiv.org/pdf/2307.09288v2",
+      "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+      "page_1_based": 5,
+      "part": "section 2.2 architecture paragraph",
+      "crop_top_left_points": [
+        70,
+        597,
+        543,
+        664
+      ],
+      "scale": 3,
+      "published_path": "图片/Llama2_v2_p5_架构段落.png",
+      "png_sha256": "14e8fe5042281898ac187dcac3c06ccc08ff87dce9c8df0a01d24f106dbbcf56"
+    },
+    {
+      "paper": "GQA_v3.pdf",
+      "url": "https://arxiv.org/pdf/2305.13245v3",
+      "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+      "page_1_based": 2,
+      "part": "Figure 2",
+      "crop_top_left_points": [
+        68,
+        72,
+        526,
+        253
+      ],
+      "scale": 3,
+      "published_path": "图片/GQA_v3_p2_Figure2.png",
+      "png_sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+    },
+    {
+      "paper": "GLU_v1.pdf",
+      "url": "https://arxiv.org/pdf/2002.05202v1",
+      "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+      "page_1_based": 2,
+      "part": "equation 6 and width explanation",
+      "crop_top_left_points": [
+        65,
+        190,
+        550,
+        334
+      ],
+      "scale": 3,
+      "published_path": "图片/GLU_v1_p2_公式6与宽度.png",
+      "png_sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+    }
+  ],
+  "note_sha256": "eefc6703264ba21f28bea63b0498537457c0a129bc50461eba3256df275f7fed",
+  "script_sha256": "e436b2faada697c98ce388c4a854417422c089087818ed9b00e40b9f41008169",
+  "not_run": [
+    "Original 7B/8B checkpoint loading, inference and quality assessment",
+    "GPU memory or speed measurements",
+    "New optimizer training"
+  ]
+}

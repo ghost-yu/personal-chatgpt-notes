@@ -2,7 +2,7 @@
 
 [返回课程总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：词表、GQA、SwiGLU、精确参数账与内存。
+1. [先看中文讲解](解释.md)：从四词查表开始，讲共享 K/V、三矩阵 MLP、完整参数账与内存；三张论文截图就地解释。
 2. [原 notebook 的 Python 注释版](代码/tutorials/llama/llama2_7b_llama3_8b_代码注释.py)：全部原代码及 Markdown 摘录的中文解释。
 3. [完整 HF 核心实现注释版](代码/tutorials/llama/Llama核心实现_代码注释.py)：Attention、SDPA、MLP、RMSNorm 和三个辅助函数。
 4. [注释 notebook](代码/tutorials/llama/代码注释.ipynb)：用 GitHub 或 Jupyter 逐格查看；历史输出保留。

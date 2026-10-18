@@ -1,5 +1,7 @@
 # 本项目工作约定
 
+2026-10-18 第29讲基础改写完成：参数/四词查表→32层流程→两代尺寸→GQA两查询共享例→三矩阵SwiGLU→完整参数账→权重/缓存→真实小模型。Llama2 v2架构段落/GQA v3 Figure2/GLU v1式6三原PDF截图逐张检查。六正文块执行，原完整参数函数AST相同，完整meta计数6738415616/8030261248、净增1291845632；7280/8784参数随机两层Llama缓存差2.24e-8、generate/独立greedy相同。旧preservation及完整核心三头配置前向/输入与权重梯度/MLP gradcheck通过，最大梯度差8.89e-16。旧正文逐字折叠，原代码和历史报告不变。原7B/8B与GPU/质量未运行，本轮无新优化训练。基础01–29完成，下一讲30。
+
 2026-10-18 第28讲基础改写完成：三位置Q/K/V与mask→原完整RoPE函数→句号门/软门→插值/梯度→高效点积→完整CoPE/SelfAttn→原表实验。固定CoPE v2 PDF下载成功17页；Figure1/式3–4/式5–6/式7–9/Table2五原PDF截图视觉核对，课程两图内嵌。六正文CPU块通过，原函数/两个类AST一致，纯NumPy普通注意力与独立旋转、位置1.25/bias5/梯度12与真实logit梯度3/2.25；8参数原表真实5Adam1.670743→1.444804，优化/密集参考前向差0、四输入梯度最大2.22e-16、gradcheck、零表/整数/饱和和因果前缀验证。旧正文逐字折叠，原代码/历史报告不变；manifest补PDF来源。基础改写01–28完成，下一讲29。
 
 2026-10-18 第27讲基础改写完成：三个动作/四角色→old与reference→末尾score和sample KL→三步GAE/白化→正负clip/value→真实小GPT2 step→OpenRLHF调度。PPO v2式7/Figure1/式11–12/Algorithm1、Human Preferences v2式2、OpenRLHF v1 Figure1六原PDF裁剪内嵌并视觉检查，课程两公式图就地解释。六正文CPU块通过，完整TRL0.8.6及OpenRLHF来源AST/RECORD匹配；403465参数H8真实词表，7+3输入，shift9和mask6/7/8，logsoftmax/gather精确，四Adam/18张量改变/reference固定；GAE/正负clip及梯度/value悲观裁剪、beta/score截断/均值差异验证。旧正文逐字折叠，原代码/历史报告不变。基础改写01–27完成，下一讲28。

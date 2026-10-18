@@ -1,0 +1,50 @@
+[
+  {
+    "paper": "Llama2_v2.pdf",
+    "url": "https://arxiv.org/pdf/2307.09288v2",
+    "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+    "page_1_based": 5,
+    "part": "section 2.2 architecture paragraph",
+    "crop_top_left_points": [
+      70,
+      597,
+      543,
+      664
+    ],
+    "scale": 3,
+    "published_path": "图片/Llama2_v2_p5_架构段落.png",
+    "png_sha256": "14e8fe5042281898ac187dcac3c06ccc08ff87dce9c8df0a01d24f106dbbcf56"
+  },
+  {
+    "paper": "GQA_v3.pdf",
+    "url": "https://arxiv.org/pdf/2305.13245v3",
+    "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+    "page_1_based": 2,
+    "part": "Figure 2",
+    "crop_top_left_points": [
+      68,
+      72,
+      526,
+      253
+    ],
+    "scale": 3,
+    "published_path": "图片/GQA_v3_p2_Figure2.png",
+    "png_sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+  },
+  {
+    "paper": "GLU_v1.pdf",
+    "url": "https://arxiv.org/pdf/2002.05202v1",
+    "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+    "page_1_based": 2,
+    "part": "equation 6 and width explanation",
+    "crop_top_left_points": [
+      65,
+      190,
+      550,
+      334
+    ],
+    "scale": 3,
+    "published_path": "图片/GLU_v1_p2_公式6与宽度.png",
+    "png_sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+  }
+]
