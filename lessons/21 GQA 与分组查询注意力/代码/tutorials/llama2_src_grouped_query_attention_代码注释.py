@@ -2,7 +2,7 @@
 # 原课程只导入Image并展示配图；核心官方代码见GQA核心源码_代码注释.py。
 
 # %% 原代码单元 0
-# 导入展示类，不加载模型或计算GQA。
+# 导入Image类，供后面的GQA配图展示使用。
 from IPython.display import Image
 
 # %% 原代码单元 2
