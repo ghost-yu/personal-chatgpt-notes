@@ -26,7 +26,7 @@ from transformers import BitsAndBytesConfig
 # %% [markdown]
 # ## 单元 2（markdown）：4-bit与8-bit互斥
 #
-# 原Markdown提示load_in_8bit/load_in_4bit二选一为true。更准确是两者不能同时True，可以都False（不开这两种量化）；配置校验不是模型能力证明。实际BitsAndBytesConfig(load_in_8bit=True,load_in_4bit=True)应抛ValueError；开启4bit的配置还可能查询bitsandbytes安装版本。本次不安装4bit后端。
+# 原Markdown提示load_in_8bit/load_in_4bit二选一为true。更准确是两者不能同时True，可以都False（不开这两种量化）；配置对象负责检查这两个选项的组合。实际BitsAndBytesConfig(load_in_8bit=True,load_in_4bit=True)应抛ValueError；开启4bit的配置还可能查询bitsandbytes安装版本。4bit加载所需后端及版本见复现说明。
 #
 # 原Markdown（保留原符号/伪代码，可与上面中文说明对照）：
 #
