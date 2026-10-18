@@ -472,7 +472,7 @@ class Linear:
             weight_A = weight_A.float()
             weight_B = weight_B.float()
 
-        # get_delta_weight在这里乘源scaling；这是双重缩放审计的关键一半。
+        # get_delta_weight在这里乘源adapter的scaling；继续沿调用链查看后续是否再次缩放。
         output_tensor = transpose(weight_B @ weight_A, self.fan_in_fan_out) * self.scaling[adapter]
 
         if cast_to_fp32:
@@ -562,7 +562,7 @@ class Embedding:
             weight_A = weight_A.float()
             weight_B = weight_B.float()
 
-        # get_delta_weight在这里乘源scaling；这是双重缩放审计的关键一半。
+        # get_delta_weight在这里乘源adapter的scaling；继续沿调用链查看后续是否再次缩放。
         output_tensor = transpose(weight_B @ weight_A, True) * self.scaling[adapter]
 
         if cast_to_fp32:
