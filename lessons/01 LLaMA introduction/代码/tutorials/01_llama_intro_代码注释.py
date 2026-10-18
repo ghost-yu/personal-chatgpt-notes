@@ -10,40 +10,30 @@
 # 工作目录应为本讲代码/tutorials；原版、图片和 Python 阅读版均随仓库提供。
 
 # %% [markdown]
-# ## 单元 0：导入 Image
+# ## 单元0：导入 Image
 #
-# 【必须会】原代码是 `from IPython.display import Image`。它从IPython的display模块导入Image类，让当前会话能够使用这个名字。`from ... import ...` 不等于创建模型，也不会读取图片或加载权重。
-#
-# Image是类，不是torch.Tensor；下一格实际调用它才产生对象。这里没有B、T、D、dtype或模型shape，没有可学习参数。状态变化只是在notebook命名空间绑定Image。若跳过本格，单元4会因为Image未定义而失败。
-#
-# 代码中的中文注释会直接写明“导入notebook图片展示类；仅建立名字，尚未加载LLaMA或图片”。无需给这一行虚构attention公式对应关系；它是展示辅助代码，Paper ↔ Code模型映射为不适用。
+# `from IPython.display import Image` 从IPython的display模块导入Image类。`from`后面写模块路径，`import`后面写要使用的名字。执行后，当前notebook就能通过`Image(...)`创建图片展示对象；单元4会用到它。
 
 # %%
-# 【必须会】这行准备 notebook 的图片展示工具，后面的单元 4 会用到。
-# from 包.模块 import 名称：从 IPython.display 模块导入 Image 类。
-# Image 是类；本行只把这个类绑定到当前内核的名字 Image，还没有创建实例。
-# import 会加载展示模块，但不会读取 llama_weights.png、下载模型或分配模型张量。
-# 本单元没有输入参数和返回表达式；状态变化是命名空间中新增 Image。
-# 先运行本格，再运行单元 4；否则 Image 未定义会触发 NameError。
-# 它是展示辅助代码，未实现论文中的 Attention、RMSNorm 或训练损失。
+# 从IPython.display导入Image类，后面用它显示配图。
 from IPython.display import Image
 
 # %% [markdown]
-# ## 单元 1：summary 标题
+# ## 单元1：summary 标题
 #
-# 【可以暂时不掌握】这是Markdown标题，不是Python语句。`##` 控制渲染层级，不创建变量、不调用函数。它为后面家族介绍分节；它没有模型运行结果。
+# 这是Markdown标题，用来组织后面的模型介绍。Markdown中的`##`表示二级标题，渲染后显示为标题文字。
 
 # %% [markdown]
 # ## summary
 
 # %% [markdown]
-# ## 单元 2：模型家族和历史链接
+# ## 单元2：LLaMA、Alpaca 与 Vicuna
 #
-# 【必须会】本格是Markdown资料。LLaMA指基础预训练模型；Alpaca在LLaMA基础上进行指令微调；Vicuna在LLaMA基础上进行对话微调。原来的链式箭头可用于表示教程介绍顺序，不能据此要求Vicuna一定从Alpaca权重继续训练。
+# LLaMA是基础预训练模型；Alpaca在LLaMA上做指令微调；Vicuna在LLaMA上做对话微调。原格的箭头可按介绍顺序阅读：先认识基础模型，再看它的两个应用方向。
 #
-# `self instruct` 指数据构造思想，SFT才是以监督样本更新参数。prompt/answer为训练样本的输入/目标，不是本notebook定义的Python变量。ShareGPT对话也不是checkpoint文件。
+# `self instruct`指构造指令数据的方法，SFT指用输入与目标回答进行监督微调。prompt/answer表示训练样本中的两部分；ShareGPT提供对话数据。
 #
-# 链接指向外部仓库与发布说明，打开链接不会自动安装依赖。原文字段有拼写和历史措辞，例如`text-davini-003`，应按历史的`text-davinci-003`类接口类比理解，不能推断所有基础模型有相同能力。关于权重许可的表述是2023年材料，不作为后续所有版本的现行使用结论。本篇未改写原Markdown，只在其前添加校正说明。
+# 这格的链接指向外部仓库和发布说明。原文`text-davini-003`应读作历史接口名`text-davinci-003`。许可描述对应2023年的材料，具体模型的使用条件见对应版本的发布说明。
 
 # %% [markdown]
 # - llama => alpaca => vicuna
@@ -62,75 +52,60 @@ from IPython.display import Image
 # - https://lmsys.org/blog/2023-03-30-vicuna/
 
 # %% [markdown]
-# ## 单元 3：llama weights 标题
+# ## 单元3：llama weights 标题
 #
-# 【可以暂时不掌握】同样为Markdown。引出checkpoint目录截图，不产生weights变量、不分配GPU显存。下一格读的是截图，不是截图显示的任何权重文件。
+# 引出下一格的权重目录截图。读图时要区分模型结构、训练后的参数和分词器文件。
 
 # %% [markdown]
 # ## llama weights
 
 # %% [markdown]
-# ## 单元 4：显示权重目录截图
+# ## 单元4：展示权重目录图片
 #
-# 【必须会】原语句是 `Image('../imgs/llama_weights.png', width=300)`。调用Image构造器，位置实参为str图片路径，关键字实参width为int展示宽度。返回IPython.display.Image对象；notebook会渲染最后表达式，普通Python脚本不会自动显示它。
+# `Image('../imgs/llama_weights.png', width=300)`调用Image构造器。第一个参数是图片路径字符串，`width=300`指定展示宽度。
 #
-# 相对路径根据内核当前工作目录解析：如果工作目录为教程仓库tutorials，`..`先退到仓库根，再进入imgs。它不天然根据`.ipynb`文件所在目录解析。本地注释版保存在配套的`代码/tutorials`下，邻近`代码/imgs`包含原图片，因此在该tutorials工作目录可运行原语句。
+# 相对路径从notebook内核的当前工作目录开始解析。工作目录为`代码/tutorials`时，`..`回到`代码`，随后进入`imgs`读取原图。复制notebook后若图片无法显示，先检查工作目录和图片位置。
 #
-# 数据流为 `路径字符串 → PNG文件字节 → Image对象 → 展示输出`。width=300并不修改PNG原始像素，也不是embedding_dim；本次实际读取333093字节，PNG签名有效，width属性为300。没有`[B,C,H,W]`模型输入张量，也没有视觉编码器。
+# 这一步的数据流是：路径字符串 → 读取PNG字节 → 创建Image对象 → notebook显示图片。`width`控制页面上的展示尺寸，原PNG像素保持原样。普通Python脚本中要显式调用展示接口，才会出现notebook里的显示效果。
 #
-# 截图中的7B/13B等为参数规模目录；`.pth`是权重分片，params.json为结构配置，tokenizer.model为分词模型。截图不能证明本机持有这些文件。图中的30B与命令的33B还有历史命名差别，需要核对真实目录；不要根据图片强行改写路径。
-#
-# 中文代码注释会明确相对路径、300的含义和返回对象，不把显示操作注释成“加载LLaMA”。
+# 截图中，7B、13B等目录名表示模型参数规模；`.pth`保存权重分片，`params.json`保存结构配置，`tokenizer.model`保存分词模型。运行推理需要在本地准备这些配套文件。图中的30B和后面命令的33B有历史命名差别，路径应以实际文件为准。
 
 # %%
-# 【必须会】本行展示权重目录的 PNG 截图，便于认识 checkpoint 文件布局。
-# Image(...) 调用上一格导入的类，构造 IPython.display.Image 实例。
-# 第一个位置实参是 str 路径；在本例中它被当作本地文件读取。
-# 相对路径基于内核当前工作目录：先由 .. 返回上一级，再进入 imgs。
-# 请从本讲的代码/tutorials 目录启动内核；配套图片位于代码/imgs。
-# 若从仓库根目录执行，此路径可能指向错误位置，并触发 FileNotFoundError。
-# width=300 是关键字实参，类型为 int，表示前端展示宽度为 300 像素。
-# 该参数不重新采样 PNG，也不是 embedding_dim、batch_size 或模型参数量。
-# 数据流：路径字符串 -> PNG 文件字节 -> Image 对象 -> notebook 展示输出。
-# 默认 embed=None；本地文件情形会嵌入图片数据，文件内容保存在对象的 data 属性。
-# 这里没有 torch.Tensor，也没有 [B,C,H,W] 或 [B,T,D] 的模型 shape。
-# 返回对象没有赋给变量；IPython 会显示本格最后一个表达式的展示表示。
-# 普通 Python 脚本运行这行只创建对象；要显示需额外使用 display 或 notebook。
-# 截图中的 .pth、params.json、tokenizer.model 只是图片内容，并未被本行加载。
-# 原格保留的图片输出是作者历史记录；本次重新读取的结果另记在复现文档。
+# 读取权重目录截图，以300像素宽度显示。
+# 从代码/tutorials运行时，..返回代码目录，再进入imgs。
 Image('../imgs/llama_weights.png', width=300)
 
 # %% [markdown]
-# ## 单元 5：inference/sample/generator 标题
+# ## 单元5：inference / sample / generator 标题
 #
-# 【建议会】它是Markdown标题，用于引出外部example.py启动命令。inference为使用既有权重做前向；sample是从概率分布选择token；generator为生成循环。此处未定义名叫generator的Python对象。
+# 这三个词对应生成过程的不同环节：inference使用已有权重计算输出；sample从概率分布选出一个token；generator重复计算、选择和追加token。
 #
-# 主教程目录没有本格命令所需的第一代example.py与大模型权重，所以不能在tutorials中直接照抄就完成推理。主文读取官方llama_v1源码补充调用链，两份材料的角色不同。
+# 后面的命令调用外部`example.py`。主讲解补充了官方第一代LLaMA实现，可沿入口脚本、模型加载和生成循环继续读。
 
 # %% [markdown]
 # ## inference/sample/generator：example.py
 
 # %% [markdown]
-# ## 单元 6：三条空格赋值风格的 torchrun 命令
+# ## 单元6：三条 torchrun 启动命令
 #
-# 【必须会】代码块在Markdown中，只展示命令；“Run Cell”不会在终端启动它。它含三条独立命令，分别面向7B、13B、33B。
+# 本格用Markdown展示7B、13B、33B的三条命令。需要在准备好源码和权重后，把命令交给终端执行。
 #
-# | 部分 | 类型/作用 | 常见误读 |
-# |---|---|---|
-# | torchrun | 进程启动器，可执行命令 | 不是LLaMA模型类 |
-# | --nproc_per_node 1/2/4 | 每节点启动进程数，供启动器消费 | 不是batch_size或token数量 |
-# | example.py | 启动器运行的外部脚本 | 不会因文件名而自动下载源码 |
-# | --ckpt_dir ./weights/7B等 | 传给example.py的checkpoint目录 | 不是单个tokenizer文件 |
-# | --tokenizer_path ./weights/tokenizer.model | 传给脚本的分词模型路径 | 不是Transformer权重 |
-# | 行尾反斜杠 | Bash/POSIX shell的续行写法 | 不是PowerShell续行符 |
+# | 部分 | 作用 |
+# |---|---|
+# | `torchrun` | 启动运行脚本所需的进程 |
+# | `--nproc_per_node 1/2/4` | 每个节点启动的进程数 |
+# | `example.py` | 各进程执行的入口脚本 |
+# | `--ckpt_dir ./weights/7B`等 | 入口脚本读取的权重目录 |
+# | `--tokenizer_path ./weights/tokenizer.model` | 分词模型路径 |
+# | 行末反斜杠 | Bash/POSIX shell中的续行符 |
 #
-# 参数在脚本名前后的位置决定由启动器还是被启动脚本消费。官方第一代加载路径要求模型并行进程数与checkpoint分片相匹配，不能随意把2改1以适配显存。命令的1/2/4是历史示例，应核对实际权重与配置。
+# 脚本名前的参数由torchrun处理，脚本名后的参数交给`example.py`。第一代官方加载逻辑要求模型并行进程数与checkpoint分片匹配，因此选择进程数时要同时查看权重文件。
 #
-# Windows/PowerShell查看这些命令时，可将每条完整命令写为一行理解；不应直接把Bash的反斜杠跨行写法复制过去。这里不实际启动模型，因为没有配套checkpoint；只核对参数解析和依赖位置，不产生推理结果。
+# PowerShell的续行语法与Bash不同；阅读这些命令时，可以先将每条命令写成一行，理清启动器、脚本和参数的关系。
 
 # %% [markdown]
 # ```
-# # 【必须会】下面展示 7B 的历史推理启动命令；本次没有执行。
+# # 下面展示 7B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 1 表示每节点启动 1 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -144,7 +119,7 @@ Image('../imgs/llama_weights.png', width=300)
 #     --ckpt_dir ./weights/7B \
 #     --tokenizer_path ./weights/tokenizer.model
 #
-# # 【必须会】下面展示 13B 的历史推理启动命令；本次没有执行。
+# # 下面展示 13B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 2 表示每节点启动 2 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -158,7 +133,7 @@ Image('../imgs/llama_weights.png', width=300)
 #     --ckpt_dir ./weights/13B \
 #     --tokenizer_path ./weights/tokenizer.model
 #
-# # 【必须会】下面展示 33B 的历史推理启动命令；本次没有执行。
+# # 下面展示 33B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 4 表示每节点启动 4 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -174,17 +149,17 @@ Image('../imgs/llama_weights.png', width=300)
 # ```
 
 # %% [markdown]
-# ## 单元 7：等号赋值风格的三条命令
+# ## 单元7：等号形式的命令参数
 #
-# 【必须会】它对应前格的三条命令，将参数写成`--名称=值`。对于这里的启动器参数解析，`--nproc_per_node=1`与`--nproc_per_node 1`表示同一数值；不是新增模型配置，也不是赋值给Python局部变量。
+# 这里再次展示三条命令，把参数写成`--名称=值`。例如`--nproc_per_node=1`与前格的`--nproc_per_node 1`表达同一项配置。
 #
-# ckpt_dir、tokenizer_path在这个历史入口由Fire解析为main参数。两格强调命令参数书写风格，没有两个不同生成算法，也不能把重复展示算作两次运行。续行规则和工作目录问题仍与前格相同。
+# 历史入口通过Fire将`ckpt_dir`、`tokenizer_path`等命令行字段传给`main`。把两格并排读，可以看出命令行参数的两种书写方式。
 #
-# 注释版在每条完整 Markdown 命令前插入 Bash 注释，逐项解释进程数、入口脚本、checkpoint 和 tokenizer 路径、续行及等号格式。不在反斜杠续行中间插入注释；去除新增注释后，两个原命令块逐字一致。六条命令均记录为“展示/静态核对，未启动”。
+# 注释版在完整命令前解释各字段。续行中的反斜杠应保持连贯，说明性注释放在整条命令之前。
 
 # %% [markdown]
 # ```
-# # 【必须会】下面展示 7B 的历史推理启动命令；本次没有执行。
+# # 下面展示 7B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 1 表示每节点启动 1 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -198,7 +173,7 @@ Image('../imgs/llama_weights.png', width=300)
 #     --ckpt_dir=./weights/7B \
 #     --tokenizer_path=./weights/tokenizer.model
 #
-# # 【必须会】下面展示 13B 的历史推理启动命令；本次没有执行。
+# # 下面展示 13B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 2 表示每节点启动 2 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -212,7 +187,7 @@ Image('../imgs/llama_weights.png', width=300)
 #     --ckpt_dir=./weights/13B \
 #     --tokenizer_path=./weights/tokenizer.model
 #
-# # 【必须会】下面展示 33B 的历史推理启动命令；本次没有执行。
+# # 下面展示 33B 的历史推理启动命令；本次没有执行。
 # # torchrun 是分布式进程启动器；不是模型类，也不会自动提供权重。
 # # --nproc_per_node 的值 4 表示每节点启动 4 个进程，不是 batch_size。
 # # example.py 是外部入口；启动器之后的参数由该脚本解析。
@@ -228,13 +203,13 @@ Image('../imgs/llama_weights.png', width=300)
 # ```
 
 # %% [markdown]
-# ## 单元 8：启动器和环境变量
+# ## 单元8：启动器与环境变量
 #
-# 【必须会】此格依然是Markdown。现代torchrun对应`python -m torch.distributed.run`，原格列出的`python -m torch.distributed.launch`是旧启动器，不能当成完全相同模块名。`python -m`表示把已安装包中的模块作为程序运行，不是读取任意名叫torch.py的文件。
+# `python -m`把已安装包中的模块作为程序运行。现代torchrun对应`python -m torch.distributed.run`；原格还列出了旧启动器`python -m torch.distributed.launch`。
 #
-# LOCAL_RANK是当前节点内的进程编号，WORLD_SIZE是参与任务的总进程数；它们由分布式启动环境提供，不是模型权重或可训练参数。单节点两进程通常local_rank为0和1，world_size=2。多节点时每节点进程数与总进程数不同。
+# `LOCAL_RANK`表示进程在当前节点内的编号，`WORLD_SIZE`表示整个任务的总进程数。例如单节点启动两个进程，LOCAL_RANK分别为0和1，WORLD_SIZE均为2。多节点时，WORLD_SIZE还要乘上参与的节点数。
 #
-# 这一格不设置环境变量，也没有真正初始化分布式通信。需要在启动后的脚本中读取这些值并选择设备/并行组，详见主文的setup_model_parallel调用链。
+# 启动器提供这些环境变量，入口脚本再读取它们，选择设备并初始化并行组。主讲解的`setup_model_parallel`调用链解释了后续步骤。
 
 # %% [markdown]
 # - `torchrun`
