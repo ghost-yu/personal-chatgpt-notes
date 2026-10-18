@@ -1,0 +1,586 @@
+{
+  "date": "2026-10-18",
+  "note_sha256": "b3fcb500fe78a2ced7f36309d3bc1824f9bd1128b457f7662cb8d092fd842a4d",
+  "script_sha256": "4f07a8b4697da8132df45b93f30463ab750ca46d01194d5fa2b2f79d275ff52d",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "tiktoken": "0.7.0",
+    "regex": "2026.9.29"
+  },
+  "official_source_sha256": {
+    "tiktoken/core.py": "36919c6f79fca600e3284d7f540caceff74d38719a0697129cecb63b2904929f",
+    "tiktoken/registry.py": "f5f8660fc2f5d4bbbffed5dfe94a1cc3d8ce663646b4ffcc8b831aa855bb5207",
+    "tiktoken/load.py": "e34b1936e4dce14312789ca835096d7b217acc090aa795358dbfb1a2da958ead",
+    "tiktoken/_educational.py": "eeef0798b02083f2ca14b423bf752333a6cce05709883d482699bc84668ac96c",
+    "tiktoken_ext/openai_public.py": "b2c616cc1821fb36e461070edcf63842687e57af3c15029bb6439dee20a02713",
+    "tiktoken-0.7.0.dist-info/LICENSE": "258463fc3788f1f9b6a3f1820d8a87481ac24018d53167597e25d3e9031851ca"
+  },
+  "loaded_rust_binary": {
+    "file": "tiktoken/_tiktoken.cp312-win_amd64.pyd",
+    "sha256": "e15083808ff3e3fbe25803e8da88ccf03f3c4ac7f3c6fa3e5ba8abc4cfad5014",
+    "matches_wheel_record": true
+  },
+  "vocab_sha256": {
+    "cl100k_base": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "o200k_base": "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d"
+  },
+  "main_blocks": 6,
+  "stdout": [
+    "Python字符数: 2\nUTF-8字节数: 6\n十进制字节: [228, 189, 160, 229, 165, 189]\n十六进制字节: e4 bd a0 e5 a5 bd\n还原文字: 你好\n",
+    "ab优先的合并过程:\n[b'a', b'b', b'c']\n[b'ab', b'c']\n\nab优先的ID: [256, 99]\nbc优先的ID: [97, 256]\n",
+    "cl100k 英文ID: [72, 3021, 6369, 70, 418]\ncl100k 中文token数量: 34\ncl100k 数字分块: ['123', '4', '+', '456', '7']\no200k 英文ID: [72, 3047, 7999, 70, 555]\no200k 中文token数量: 24\no200k 数字分块: ['123', '4', '+', '456', '7']\nworld与空格world: [14957] [1917]\nAIM: [14660] [32, 2833]\n",
+    "逐行累计: 990508 703303\n旧/新倍率: 1.408365953223575\n减少比例: 0.2899572744490706\n全文一次编码: [989904, 702799]\n",
+    "cl100k_base [9468, 100, 239, 9468, 237, 121, 378, 235, 93273, 119]\n逐token显示: ����������\n整体解码: 🧑🏽‍💻\no200k_base [4103, 100, 239, 52622, 121, 2524, 31446, 119]\n逐token显示: �����‍��\n整体解码: 🧑🏽‍💻\n作为控制标记: [199999]\n作为普通文本: [27, 91, 419, 1440, 919, 91, 29]\n",
+    "n_vocab/有效ID: 200019 200000\n未分配编号: [199998, 200000, 200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008, 200009, 200010, 200011, 200012, 200013, 200014, 200015, 200016, 200017]\n单独不完整UTF-8的有效token: 1562\n最长5项的ID与字符数: [(181081, 11), (185118, 11), (147058, 10), (170996, 10), (187716, 10)]\n原符号正则: {'abc': False, '123': False, '中文': False, '___': True, '🙂': True}\n"
+  ],
+  "original_corpus_loop_ast_equal_except_path": true,
+  "original_regex_ast_equal": true,
+  "corpus": {
+    "file_sha256": "52709f91a86a76fc408178638c2b7cbeaa6f00cf892a1dd7ebcd2b79fde44411",
+    "text_mode_characters": 727731,
+    "lines": 4020,
+    "line_counts": [
+      990508,
+      703303
+    ],
+    "whole_counts": [
+      989904,
+      702799
+    ],
+    "line_minus_whole": [
+      604,
+      504
+    ],
+    "old_over_new": 1.408365953223575,
+    "reduction": 0.2899572744490706,
+    "batch_iterator_recount_equal": true
+  },
+  "vocabularies": [
+    {
+      "encoding": "cl100k_base",
+      "ordinary": 100256,
+      "special": 5,
+      "valid_ids": 100261,
+      "n_vocab": 100277,
+      "holes": [
+        100256,
+        100261,
+        100262,
+        100263,
+        100264,
+        100265,
+        100266,
+        100267,
+        100268,
+        100269,
+        100270,
+        100271,
+        100272,
+        100273,
+        100274,
+        100275
+      ],
+      "incomplete_single_token_utf8": 773,
+      "han_candidates": 840,
+      "longest_five_id_and_length": [
+        [
+          64960,
+          7
+        ],
+        [
+          64179,
+          5
+        ],
+        [
+          98128,
+          5
+        ],
+        [
+          65053,
+          4
+        ],
+        [
+          65884,
+          4
+        ]
+      ]
+    },
+    {
+      "encoding": "o200k_base",
+      "ordinary": 199998,
+      "special": 2,
+      "valid_ids": 200000,
+      "n_vocab": 200019,
+      "holes": [
+        199998,
+        200000,
+        200001,
+        200002,
+        200003,
+        200004,
+        200005,
+        200006,
+        200007,
+        200008,
+        200009,
+        200010,
+        200011,
+        200012,
+        200013,
+        200014,
+        200015,
+        200016,
+        200017
+      ],
+      "incomplete_single_token_utf8": 1562,
+      "han_candidates": 7534,
+      "longest_five_id_and_length": [
+        [
+          181081,
+          11
+        ],
+        [
+          185118,
+          11
+        ],
+        [
+          147058,
+          10
+        ],
+        [
+          170996,
+          10
+        ],
+        [
+          187716,
+          10
+        ]
+      ]
+    }
+  ],
+  "encoding_checks": {
+    "short_samples_rust_and_full_official_python_equal": [
+      {
+        "encoding": "cl100k_base",
+        "text": "i love chatgpt",
+        "ids": [
+          72,
+          3021,
+          6369,
+          70,
+          418
+        ],
+        "pretokenized": [
+          "i",
+          " love",
+          " chatgpt"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "你好，我的名字是GPT-4o。我是一种新型的语言模型，很高兴见到你!",
+        "ids": [
+          57668,
+          53901,
+          3922,
+          98711,
+          13372,
+          19113,
+          21043,
+          38,
+          2898,
+          12,
+          19,
+          78,
+          1811,
+          37046,
+          21043,
+          15120,
+          87502,
+          17039,
+          25287,
+          9554,
+          73981,
+          78244,
+          54872,
+          25287,
+          3922,
+          17599,
+          230,
+          45736,
+          6708,
+          112,
+          90070,
+          28037,
+          57668,
+          0
+        ],
+        "pretokenized": [
+          "你好",
+          "，我的名字是GPT",
+          "-",
+          "4",
+          "o",
+          "。我是一种新型的语言模型",
+          "，很高兴见到你",
+          "!"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "你好，世界！",
+        "ids": [
+          57668,
+          53901,
+          3922,
+          3574,
+          244,
+          98220,
+          6447
+        ],
+        "pretokenized": [
+          "你好",
+          "，世界",
+          "！"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "hello world",
+        "ids": [
+          15339,
+          1917
+        ],
+        "pretokenized": [
+          "hello",
+          " world"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": " world",
+        "ids": [
+          1917
+        ],
+        "pretokenized": [
+          " world"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "1234+4567",
+        "ids": [
+          4513,
+          19,
+          10,
+          10961,
+          22
+        ],
+        "pretokenized": [
+          "123",
+          "4",
+          "+",
+          "456",
+          "7"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "café é",
+        "ids": [
+          936,
+          59958,
+          384,
+          54939
+        ],
+        "pretokenized": [
+          "café",
+          " e",
+          "́"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "🧑🏽‍💻",
+        "ids": [
+          9468,
+          100,
+          239,
+          9468,
+          237,
+          121,
+          378,
+          235,
+          93273,
+          119
+        ],
+        "pretokenized": [
+          "🧑🏽‍💻"
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "\t\n  ",
+        "ids": [
+          1602,
+          256
+        ],
+        "pretokenized": [
+          "\t\n",
+          "  "
+        ]
+      },
+      {
+        "encoding": "cl100k_base",
+        "text": "HTTPServer_v2",
+        "ids": [
+          9412,
+          5592,
+          2325,
+          17
+        ],
+        "pretokenized": [
+          "HTTPServer",
+          "_v",
+          "2"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "i love chatgpt",
+        "ids": [
+          72,
+          3047,
+          7999,
+          70,
+          555
+        ],
+        "pretokenized": [
+          "i",
+          " love",
+          " chatgpt"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "你好，我的名字是GPT-4o。我是一种新型的语言模型，很高兴见到你!",
+        "ids": [
+          177519,
+          40824,
+          1616,
+          103582,
+          3221,
+          162016,
+          12,
+          19,
+          78,
+          140148,
+          122958,
+          20033,
+          3711,
+          14951,
+          1616,
+          108329,
+          184232,
+          108159,
+          5319,
+          30853,
+          27041,
+          6946,
+          12370,
+          0
+        ],
+        "pretokenized": [
+          "你好",
+          "，我的名字是",
+          "GPT",
+          "-",
+          "4",
+          "o",
+          "。我是一种新型的语言模型",
+          "，很高兴见到你",
+          "!"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "你好，世界！",
+        "ids": [
+          177519,
+          979,
+          28428,
+          3393
+        ],
+        "pretokenized": [
+          "你好",
+          "，世界",
+          "！"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "hello world",
+        "ids": [
+          24912,
+          2375
+        ],
+        "pretokenized": [
+          "hello",
+          " world"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": " world",
+        "ids": [
+          2375
+        ],
+        "pretokenized": [
+          " world"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "1234+4567",
+        "ids": [
+          7633,
+          19,
+          10,
+          19354,
+          22
+        ],
+        "pretokenized": [
+          "123",
+          "4",
+          "+",
+          "456",
+          "7"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "café é",
+        "ids": [
+          66,
+          103112,
+          319,
+          13430
+        ],
+        "pretokenized": [
+          "café",
+          " é"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "🧑🏽‍💻",
+        "ids": [
+          4103,
+          100,
+          239,
+          52622,
+          121,
+          2524,
+          31446,
+          119
+        ],
+        "pretokenized": [
+          "🧑🏽‍💻"
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "\t\n  ",
+        "ids": [
+          2775,
+          256
+        ],
+        "pretokenized": [
+          "\t\n",
+          "  "
+        ]
+      },
+      {
+        "encoding": "o200k_base",
+        "text": "HTTPServer_v2",
+        "ids": [
+          17893,
+          6444,
+          5390,
+          17
+        ],
+        "pretokenized": [
+          "HTTPServer",
+          "_v",
+          "2"
+        ]
+      }
+    ],
+    "original_ordinary_long_token_id": 177431,
+    "original_ordinary_long_token_old_count": 12,
+    "special_policy_default_rejected_allowed_and_ordinary_checked": true,
+    "utf8_emoji_checks": {
+      "cl100k_base": {
+        "ids": [
+          9468,
+          100,
+          239,
+          9468,
+          237,
+          121,
+          378,
+          235,
+          93273,
+          119
+        ],
+        "bytes": [
+          "f09f",
+          "a7",
+          "91",
+          "f09f",
+          "8f",
+          "bd",
+          "e280",
+          "8d",
+          "f09f92",
+          "bb"
+        ],
+        "per_token": "����������",
+        "whole": "🧑🏽‍💻"
+      },
+      "o200k_base": {
+        "ids": [
+          4103,
+          100,
+          239,
+          52622,
+          121,
+          2524,
+          31446,
+          119
+        ],
+        "bytes": [
+          "f09f",
+          "a7",
+          "91",
+          "f09f8f",
+          "bd",
+          "e2808d",
+          "f09f92",
+          "bb"
+        ],
+        "per_token": "�����‍��",
+        "whole": "🧑🏽‍💻"
+      }
+    },
+    "original_regex_results": {
+      "abc": false,
+      "123": false,
+      "中文": false,
+      "___": true,
+      "🙂": true
+    },
+    "encoding_registry_reuses_object": true
+  },
+  "scope": "Complete fixed tiktoken 0.7.0, both complete public vocabularies and original novel; six CPU examples, all o200k IDs and independent both-vocabulary valid-ID scans. No language-model inference, model training, paid API or language-detector full rerun."
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Neural Machine Translation of Rare Words with Subword Units",
+  "version": "ACL 2016, P16-1162 proceedings PDF",
+  "url": "https://aclanthology.org/P16-1162/",
+  "pdf_url": "https://aclanthology.org/P16-1162.pdf",
+  "pdf_local_path": "G:\\zzz\\Personal ChatGPT 系列\\26 GPT-4o tokenizer 与 o200k_base\\原论文.pdf",
+  "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+  "role": "Background character-subword BPE learning; actual tiktoken example uses byte BPE and fixed ranks, not a GPT-4o training diagram",
+  "crops": [
+    {
+      "file": "图片/BPE_原论文_Figure1.png",
+      "page": 4,
+      "printed_page": 1718,
+      "bounds_points_top_left": [
+        72,
+        319,
+        291,
+        397
+      ],
+      "render_scale": 4,
+      "sha256": "1e299b8423f2513ce5e47cc12af3b99455e9af8ef007d6b36bfbe3b05cb0c92e"
+    },
+    {
+      "file": "图片/BPE_原论文_Algorithm1.png",
+      "page": 4,
+      "printed_page": 1718,
+      "bounds_points_top_left": [
+        72,
+        62,
+        291,
+        311
+      ],
+      "render_scale": 4,
+      "sha256": "3b73d8642c59c950f2ecdb877ca4608e26a36d2931b8a58d1a517929d2357e96"
+    }
+  ]
+}

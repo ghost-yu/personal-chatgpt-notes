@@ -1,5 +1,36 @@
 # 第26讲复现记录
 
+## 2026-10-18：基础讲解与论文截图
+
+正文从字符/字节/ID讲到BPE学习与固定rank、真实编码、文本压缩、原全文计数、UTF-8片段和词表遍历。此前解释逐字保存在末尾折叠栏。六段正文Python直接由验证器提取执行；结果见[基础讲解验证.json](outputs/基础讲解验证.json)，含当前解释与脚本SHA。
+
+| 项目 | 条件与结果 |
+|---|---|
+| 环境 | Python3.12，完整tiktoken0.7.0与regex2026.9.29；源文件同时与来源清单、本地原源码、发行包RECORD核对 |
+| 词表加载 | 两份完整公开词表按官方URL的SHA1缓存键复制到临时缓存；get_encoding沿真实注册、读取、摘要验证与Rust构造路径运行 |
+| 字节/BPE | 你好为6bytes；abc的ab优先为[256,99]，bc优先为[97,256]；官方教育函数与真实Rust一致 |
+| 原英文/中文 | 英文两编码各5token；指定中文34/24；AIM旧1新2；数字三位分段与前导空格检查 |
+| 原全文路径 | 原第11格AST仅open的路径实参不同；原文件SHA保留，4020行、文本模式727731字符；逐行990508/703303，全文989904/702799 |
+| 独立全文重计 | 重新按文件迭代器读取、每256行encode_batch，完整累计与正文相同；两种口径相差604/504 |
+| 完整词表 | 正文遍历全部200019个o200k候选ID；独立按普通/特殊词表成员集合枚举两套有效ID，排序/筛选逐项相同 |
+| 词表统计 | cl/o有效100261/200000、空位16/19、单独非完整UTF-8的有效token773/1562；含Han普通词条840/7534，最长项ID与长度记在JSON |
+| 短样例对照 | 十种输入×两套编码，实际正则切段后完整官方Python bpe_encode与Rust逐ID相同；字节拼接及整句解码还原原输入 |
+| 原观察与规则 | 原15格字符串直接从AST提取，o普通177431、cl12个token；原符号正则AST相同，abc/123/中文通过not条件，纯符号被排除 |
+| 特殊标记/emoji | 默认拒绝、显式允许、作为普通文本三分支；组合emoji逐token显示有替换字符，整体字节还原正确 |
+
+截图来自ACL 2016 BPE原PDF第4页Figure1与Algorithm1，以4倍比例裁剪并逐张查看。两图与中文解释直接嵌入正文；[论文截图来源.json](outputs/论文截图来源.json)保存页码、裁剪坐标与PDF/PNG摘要。本地PDF为 `G:/zzz/Personal ChatGPT 系列/26 GPT-4o tokenizer 与 o200k_base/原论文.pdf`。论文讲字符子词合并，正文另外说明实际tiktoken的字节BPE及预切分。
+
+重做本轮：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/lessons/26 GPT-4o tokenizer 与 o200k_base/复现/scripts/verify_foundation_examples.py'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/工具/check_documents.py'
+```
+
+沿用下文LESSON26_LOCAL、LESSON26_TIKTOKEN_LIBS、LESSON26_EXTRA_LIBS环境变量可更换依赖路径。本轮未重跑历史langdetect全量扫描或其裸except/panic路径，原报告保留；当前验证使用完整词表、指定异常类型及独立成员枚举。本讲模型训练原因、GPT-4o回答与付费API不在本轮运行中。
+
+## 此前交付记录
+
 本讲只需要CPU，不加载模型，不调用GPT-4o API，无token费用。原课公开tokenizer操作可验证，原文训练过滤因果解释与历史GPT回答不在已证实范围。
 
 ## 环境与来源

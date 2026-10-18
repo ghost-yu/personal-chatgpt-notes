@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：字节BPE、压缩率、词表洞位和观察边界。
+1. [先看中文讲解](解释.md)：从“你好”的六个字节讲到BPE、真实词表、中文压缩和原扫描；论文合并图、算法截图及数值结果就在对应段落。
 2. [主notebook详细Python注释](代码/tutorials/tokenizer/tokenizer_gpt4o_代码注释.py)。
 3. [配套数字/空格接口注释](代码/tutorials/tokenizer/tokenizer_supply_代码注释.py) 与 [tiktoken完整核心对象注释](代码/tutorials/tokenizer/tiktoken核心源码_代码注释.py)。
 4. 需要逐格输出时看 [主注释notebook](代码/tutorials/tokenizer/代码注释.ipynb) 和 [补充注释notebook](代码/tutorials/tokenizer/supp_代码注释.ipynb)。
