@@ -395,6 +395,6 @@ def compute_accuracy(eval_pred) -> Dict[str, float]:
     # 选择分数较高的候选；完全相等时argmax偏向第一列。
     predictions = np.argmax(predictions, axis=1)
 
-    # 得到本批候选选择准确率，不代表人类总体认可率。
+    # 计算本批数据中，模型选中的回答与偏好标签一致的比例。
     accuracy = np.array(predictions == labels, dtype=float).mean().item()
     return {"accuracy": accuracy}
