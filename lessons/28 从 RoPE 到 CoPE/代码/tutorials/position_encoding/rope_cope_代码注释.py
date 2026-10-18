@@ -3,7 +3,7 @@
 
 # ===== 原单元 0 =====
 # 导入Image、torch、math、NumPy；不下载模型、不建立网络。Image(url=...)构造展示对象，不等于浏览器已获取图片。
-# 中文说明：导入Jupyter展示对象；输出url对象不代表网络图片已验证。
+# 中文说明：导入Jupyter图片展示类，用Image引用配图。
 from IPython.display import Image
 # 中文说明：真实PyTorch提供张量和autograd，后续不是NumPy模拟模型。
 import torch
