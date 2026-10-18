@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [先看中文讲解](解释.md)：词表、GQA、SwiGLU、参数量与聊天模板。
+1. [先看中文讲解](解释.md)：从四词查表与选词，读到真实词表、参数量、GQA、SwiGLU、聊天模板与生成；论文原图和代码结果就在对应段落。
 2. [主notebook Python注释代码](代码/tutorials/llama/llama3_0419_代码注释.py)。
 3. [补充配置Python注释代码](代码/tutorials/llama/llama3_supp_data_config_代码注释.py)，再看 [完整FeedForward / ModelArgs注释](代码/tutorials/llama/Llama3核心源码_代码注释.py) 与 [完整Tokenizer / ChatFormat注释](代码/tutorials/llama/tokenizer_代码注释.py)。
 4. 需要逐格输出时看 [主注释notebook](代码/tutorials/llama/代码注释.ipynb) 和 [补充注释notebook](代码/tutorials/llama/supp_代码注释.ipynb)。

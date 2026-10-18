@@ -1,0 +1,39 @@
+{
+  "scope": "April 2024 initial Llama 3: component papers explain GQA and SwiGLU; specifications use original configuration and model card",
+  "crops": [
+    {
+      "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+      "version": "arXiv:2305.13245v3",
+      "url": "https://arxiv.org/abs/2305.13245v3",
+      "pdf_local_path": "G:\\zzz\\Personal ChatGPT 系列\\25 Llama 3 introduction\\资料\\GQA_v3.pdf",
+      "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+      "file": "图片/GQA_原论文_Figure2.png",
+      "page": 2,
+      "bounds_points_top_left": [
+        68,
+        72,
+        526,
+        253
+      ],
+      "render_scale": 3,
+      "sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+    },
+    {
+      "title": "GLU Variants Improve Transformer",
+      "version": "arXiv:2002.05202v1",
+      "url": "https://arxiv.org/abs/2002.05202v1",
+      "pdf_local_path": "G:\\zzz\\Personal ChatGPT 系列\\25 Llama 3 introduction\\资料\\GLU_v1.pdf",
+      "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+      "file": "图片/GLU_原论文_公式6与宽度.png",
+      "page": 2,
+      "bounds_points_top_left": [
+        65,
+        190,
+        550,
+        334
+      ],
+      "render_scale": 3,
+      "sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+    }
+  ]
+}

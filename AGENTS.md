@@ -1,5 +1,7 @@
 # 本项目工作约定
 
+2026-10-18 第25讲基础改写完成：四词查表/分数→模型尺寸/参数→GQA/SwiGLU→真实词表→22token聊天模板→完整随机Llama/缓存/pipeline。GQA v3 p2 Figure2、GLU v1 p2式6两原PDF截图及课程模块树就地解释并视觉检查，代际规格限定2024-04首发。五正文CPU块通过；原词表、完整MetaTokenizer/ChatFormat、精确两代meta计数、补充宽度赋值AST、全部256特殊ID核对；2053080参数随机Llama缓存/全前缀差2.98e-8，manual/generate/pipeline新ID62446/9649/50490相同、推理参数/grad不变。完整固定Meta FFN单rankGloo、2688参数对独立NumPy前向/输入及三权重解析梯度最大3.06e-16；FairScale旧torch.Tensor分配会忽略meta上下文，原大FFN仅CPU形状/计数未前向，HF完整模型则确为meta。旧正文逐字折叠，原代码和旧报告不变。基础改写01–25完成，下一讲26。
+
 2026-10-18 第24讲基础改写完成：两数线性层→双支路→2×2加权和/秩/SVD→原DummyModel与配置→真实PEFT创建/激活/折叠→词表/Embedding转置。LoRA v2 p1 Figure1/p4式3两原PDF截图已视觉检查。五正文CPU块通过，原类/配置AST相同，128000可训练与初始梯度核对；真实PEFT0.12.0的cat、旧SVD双缩放、按目标SVD、linear交叉项/负系数、异秩异缩放验证。936参数小Llama词表16→21、九目标层、缺少来源筛选、Embedding查表、density不变、激活与折叠/greedy核对，logits差2.98e-8，来源与基础参数不变。旧正文逐字折叠，原代码/历史报告不变。基础改写01–24完成，下一讲25。
 
 2026-10-18 补改此前逐格说明的行文：16讲残留的未做事项、自证与重复提醒改为代码用途、输入输出和具体条件，同步28份派生notebook、13份Python阅读文件。原代码带说明版的446个原单元保持相同，执行代码、公式与图片保留。正文继续采用anti-defensive-writing，直接解释概念和代码，运行资料集中到复现入口。

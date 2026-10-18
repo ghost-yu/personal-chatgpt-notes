@@ -1,5 +1,39 @@
 # 第25讲实际验证记录
 
+## 2026-10-18：基础讲解与原图
+
+正文沿四词Embedding/输出头→模型尺寸→参数量→GQA→SwiGLU→原词表→聊天协议→真实forward/generate/pipeline展开。原讲解逐字收进末尾折叠栏，原代码与历史报告保持本轮开始时的内容。
+
+运行结果：[基础讲解验证.json](outputs/基础讲解验证.json)。验证器提取正文折叠栏前的五段Python，按阅读顺序执行，随后进行独立数值比较。环境为Python3.12、Torch2.5.1 CPU、Transformers4.44.2、tiktoken0.7.0、SentencePiece0.2.0、FairScale0.4.13；精确版本与文件摘要在JSON。
+
+| 项目 | 当前结果 |
+|---|---|
+| 四词例子 | 输入[1,1]→向量[1,1,2]→分数[1,1,4]；logits[0,3,1,0]选择编号1“吃” |
+| 完整两代结构 | HF Llama2/Llama3全部权重确为meta；参数分别6738415616/8030261248；按四部分独立公式累加相同，输入/输出权重不共享 |
+| 宽度与容量 | 原补充第6/8格四个赋值AST相同；中间14336；半精度权重14.957527GiB；KV元素存储2/0.5/1GiB计算核对 |
+| 真实英文切分 | Hello, world!：Llama2为[15043,29892,3186,29991]，Llama3为[9906,11,1917,0]；均还原原文 |
+| 词表与模板 | 完整固定MetaTokenizer/ChatFormat；中文、数字、组合音符、emoji、空白/空串往返；全部256特殊ID；EOS/EOT文字三种编码分支 |
+| 聊天拼接 | 两条简短消息共22token；独立按协议拼ID、Meta类、本地显式Jinja/HF三者相同；BOS一次、EOT两次，字符串再编码相同 |
+| 真实CPU小模型 | V128256/D8/FF32/1层/2Q/1KV，共2053080参数；hidden[1,22,8]、logits[1,22,128256]、K/V[1,1,22,4] |
+| 三条生成路径 | 完整前缀手写greedy、实际generate和实际pipeline的新增ID均为[62446,9649,50490] |
+| 缓存与参数 | 增量/完整前缀logits最大差2.98023e-8；末隐藏状态乘输出权重等于实际logits；重跑推理后所有参数精确相同且grad=None |
+| 完整官方FFN | 原补充第7格类AST等固定官方类；单rankGloo，D16/M56/2688参数，显式初始化；与NumPy独立前向及输入、三权重解析梯度核对，最大梯度误差3.05312e-16 |
+
+两张3倍原PDF截图分别为GQA v3第2页Figure2、GLU v1第2页公式6与宽度说明，并逐张检查；原课程模块树直接内嵌。[论文截图来源.json](outputs/论文截图来源.json)记录PDF版本、来源、页码、裁剪坐标与摘要。PDF副本在本地资料/GQA_v3.pdf、GLU_v1.pdf。首发Llama3规格使用2024年4月发布介绍、固定模型卡和原配置，组件论文用于解释GQA/SwiGLU。
+
+初次验证把FairScale原类在meta上下文中构造的大FFN也预期为meta，实际其旧`torch.Tensor`构造仍分配CPU权重，断言失败。已按真实行为记录为CPU形状/参数计数，仅查看其14336宽度与176160768参数，不使用未初始化的权重做前向。正文的HF完整两代配置另行逐项验证确为meta。小FFN全部数值显式初始化，实际前向和解析梯度比较完成。固定Transformers对旧tuple缓存的兼容警告不影响本次结果。
+
+重做本轮：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/lessons/25 Llama 3 introduction/复现/scripts/verify_foundation_examples.py'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/工具/check_documents.py'
+```
+
+本轮仍使用下文说明的LESSON25_LOCAL、LESSON25_RUNTIME_LIBS、LESSON25_FAIRSCALE路径配置。无原7B/8B权重、GPU或语言质量基准；随机模型演示推理数据流。
+
+## 此前交付记录
+
 状态：**部分成功**。文件完整性、分词、meta结构和真实CPU小模型验证成功；没有原7B/8B权重、GPU、官方benchmark或训练复现。
 
 ## 环境和输入

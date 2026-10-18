@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-18",
+  "note_sha256": "8fb7d2ee35439ac2f880cc56cedf445faa539e832109a5a347b6dfa0d60f38a7",
+  "script_sha256": "1b7807852c4d74c8d8061817f3252a5dc4b19d69a1b2510204d44de886e7e3ae",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "tiktoken": "0.7.0",
+    "sentencepiece": "0.2.0",
+    "numpy": "1.26.4",
+    "fairscale": "0.4.13"
+  },
+  "official_source_sha256": {
+    "llama/model.py": "20d93de2fdb2c98fff085a1f1026d20cc4172e40809a0891e384d5c10bbb6965",
+    "llama/tokenizer.py": "e29045cbbae33e07bb1ad92bd8249032c4a802f7d9676f115c19aeebd114f9cd",
+    "llama/generation.py": "8297c9911f79ac74aa707cadd5d8da74d256c8115862c9834077c6228725bdac",
+    "MODEL_CARD.md": "4fe9a75ff3079a4b8e0efddd5f5a3a53606e9919c98710f262fdc5cc5c77acad",
+    "LICENSE": "4fa551d4f938f68b8c1e6afa9d28befb70e3f33f75d0753248d530364aeea40f",
+    "README.md": "c573638d83b2263dc7e2cdd112b8540026c7a6ee96e6401305e4b2f2383412b7"
+  },
+  "main_blocks": 5,
+  "stdout": [
+    "输入/向量/分数形状: [1, 1] [1, 1, 2] [1, 1, 4]\n分数: [[[0.0, 3.0, 1.0, 0.0]]]\n接着选择: 吃\n",
+    "Llama2 6738415616\nLlama3 8030261248\n前馈中间宽度: 14336\nLlama3半精度权重GiB: 14.957527160644531\n",
+    "词表大小: 32000 128256\nLlama2: [15043, 29892, 3186, 29991] Hello, world!\nLlama3: [9906, 11, 1917, 0] Hello, world!\nBOS/EOS/EOT: 128000 128001 128009\n",
+    "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nBe brief.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n\n聊天ID数量: 22\n",
+    "输入形状: [1, 22]\n隐藏/分数形状: [1, 22, 8] [1, 22, 128256]\n缓存K形状: [1, 1, 22, 4]\n新增ID: [62446, 9649, 50490]\npipeline返回字段: ['generated_text']\n"
+  ],
+  "parameters": {
+    "totals": {
+      "Llama2": 6738415616,
+      "Llama3": 8030261248
+    },
+    "breakdown": {
+      "Llama2": {
+        "embedding_and_head": 262144000,
+        "attention": 2147483648,
+        "feed_forward": 4328521728,
+        "norm": 266240
+      },
+      "Llama3": {
+        "embedding_and_head": 1050673152,
+        "attention": 1342177280,
+        "feed_forward": 5637144576,
+        "norm": 266240
+      }
+    },
+    "deltas": {
+      "embedding_and_head": 788529152,
+      "attention": -805306368,
+      "feed_forward": 1308622848,
+      "norm": 0
+    },
+    "width_assignments_ast_match_original": true,
+    "intermediate_width": 14336,
+    "full_weight_gib_at_two_bytes": 14.957527160644531,
+    "physical_pretrained_weight_data": false,
+    "kv_bytes": {
+      "Llama2_4096": 2147483648,
+      "Llama3_4096": 536870912,
+      "Llama3_8192": 1073741824
+    }
+  },
+  "tokenizer": {
+    "english_text": "Hello, world!",
+    "llama2_ids": [
+      15043,
+      29892,
+      3186,
+      29991
+    ],
+    "llama3_ids": [
+      9906,
+      11,
+      1917,
+      0
+    ],
+    "roundtrip_samples": [
+      {
+        "text": "",
+        "ids": []
+      },
+      {
+        "text": "你好，世界！",
+        "ids": [
+          57668,
+          53901,
+          3922,
+          102616,
+          6447
+        ]
+      },
+      {
+        "text": "1234567890",
+        "ids": [
+          4513,
+          10961,
+          16474,
+          15
+        ]
+      },
+      {
+        "text": "café",
+        "ids": [
+          936,
+          1897,
+          54939
+        ]
+      },
+      {
+        "text": "🙂",
+        "ids": [
+          9468,
+          19044
+        ]
+      },
+      {
+        "text": "  a\n\tb  ",
+        "ids": [
+          220,
+          264,
+          198,
+          2282,
+          256
+        ]
+      }
+    ],
+    "chat_ids": [
+      128000,
+      128006,
+      9125,
+      128007,
+      271,
+      3513,
+      10015,
+      13,
+      128009,
+      128006,
+      882,
+      128007,
+      271,
+      15546,
+      527,
+      499,
+      30,
+      128009,
+      128006,
+      78191,
+      128007,
+      271
+    ],
+    "chat_length": 22,
+    "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nBe brief.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nWho are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+    "meta_hf_chat_ids_equal": true,
+    "all_256_special_ids_preserved": true,
+    "literal_special_token_branches_checked": true
+  },
+  "inference": {
+    "base_parameters": 2053080,
+    "input_shape": [
+      1,
+      22
+    ],
+    "hidden_shape": [
+      1,
+      22,
+      8
+    ],
+    "logit_shape": [
+      1,
+      22,
+      128256
+    ],
+    "kv_shape": [
+      1,
+      1,
+      22,
+      4
+    ],
+    "cache_full_prefix_logit_error": 2.9802322387695312e-08,
+    "final_head_matmul_equal": true,
+    "generated_new_ids": [
+      62446,
+      9649,
+      50490
+    ],
+    "pipeline_and_manual_generate_ids_equal": true,
+    "pipeline_result_fields": [
+      "generated_text"
+    ],
+    "inference_replay_preserves_all_parameters_and_no_gradients": true
+  },
+  "full_official_feed_forward": {
+    "full_source_sha256": "20d93de2fdb2c98fff085a1f1026d20cc4172e40809a0891e384d5c10bbb6965",
+    "original_class_ast_equal": true,
+    "small_input_shape": [
+      2,
+      3,
+      16
+    ],
+    "small_intermediate_width": 56,
+    "small_parameters": 2688,
+    "numpy_forward_error": 8.326672684688674e-17,
+    "numpy_analytic_input_and_three_weight_gradient_errors": [
+      3.469446951953614e-17,
+      1.3877787807814457e-16,
+      1.5265566588595902e-16,
+      3.0531133177191805e-16
+    ],
+    "full_width_parameters": 176160768,
+    "full_width_weight_devices": [
+      "cpu"
+    ],
+    "full_width_weights_uninitialized_no_forward": true,
+    "full_intermediate_width": 14336,
+    "world_size": 1,
+    "backend": "gloo"
+  },
+  "scope": "Initial April 2024 Llama 3; original tokenizers; meta full configurations; random CPU one-layer model, complete fixed tokenizer and FFN, single-rank Gloo. No pretrained 7B/8B weights, GPU, benchmarks or language-quality claim."
+}
