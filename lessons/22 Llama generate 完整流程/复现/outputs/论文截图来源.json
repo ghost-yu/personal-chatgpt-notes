@@ -1,0 +1,73 @@
+{
+  "paper": "The Curious Case of Neural Text Degeneration",
+  "version": "arXiv:1904.09751v2, 2020-02-14",
+  "url": "https://arxiv.org/pdf/1904.09751v2",
+  "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+  "render_scale": 3,
+  "page_size_points": [
+    612,
+    792
+  ],
+  "crops": [
+    {
+      "file": "图片/01_论文_自回归分解.png",
+      "page": 3,
+      "bounds_top_left_points": [
+        220,
+        636,
+        509,
+        675
+      ],
+      "figure_or_equation": "Equation 1",
+      "sha256": "0770588dd970da361c9f9a4b74a126187e05ef7414da346451bd0b6be997f8f5"
+    },
+    {
+      "file": "图片/02_论文_温度公式.png",
+      "page": 6,
+      "bounds_top_left_points": [
+        226,
+        266,
+        509,
+        296
+      ],
+      "figure_or_equation": "Equation 4",
+      "sha256": "977d1b610f85e01494c444ce3b079ff89371b2e0950bcbb5cfd51ddba6a93136"
+    },
+    {
+      "file": "图片/03_论文_平坦与尖锐分布.png",
+      "page": 5,
+      "bounds_top_left_points": [
+        105,
+        253,
+        508,
+        382
+      ],
+      "figure_or_equation": "Figure 5, plot only",
+      "sha256": "29ee975c8f319d393589a60ce25dd34a3acd16892aac25142b76ef2797170864"
+    },
+    {
+      "file": "图片/04_论文_top_p集合.png",
+      "page": 4,
+      "bounds_top_left_points": [
+        220,
+        701,
+        509,
+        740
+      ],
+      "figure_or_equation": "Equation 2",
+      "sha256": "a89dd93e2d344975679f736260678fa804c53dc8c86b83fda063dc8a1aad0faf"
+    },
+    {
+      "file": "图片/05_论文_重新归一化.png",
+      "page": 5,
+      "bounds_top_left_points": [
+        190,
+        477,
+        509,
+        511
+      ],
+      "figure_or_equation": "Equation 3",
+      "sha256": "e35afa5de457299eb1ff0f9111d35c7d8c6ae3afa317d2f0a36d3cd01eb61e95"
+    }
+  ]
+}

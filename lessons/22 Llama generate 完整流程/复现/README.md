@@ -1,4 +1,40 @@
-# 第 22 讲复现记录
+# 第22讲：基础讲解例子的复现
+
+2026-10-18。当前正文六个Python代码块由脚本直接提取执行，随后补充完整固定Meta模型的控制流与独立前缀参考检查。结果见[基础讲解验证.json](outputs/基础讲解验证.json)。
+
+## 重做当前例子
+
+从仓库根目录执行：
+
+```powershell
+$lessonPython = 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe'
+& $lessonPython 'lessons/22 Llama generate 完整流程/复现/scripts/verify_foundation_examples.py'
+```
+
+脚本默认读取第15讲资料中的llama-model.py、llama-generation.py、llama-tokenizer.py及fairscale-local。换位置时设置环境变量`LESSON22_META_SOURCES`为包含这四项的文件夹。完整Meta文件固定到7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e，并逐文件核对SHA；源码文件在运行中保持原样。
+
+CPU会话复用第20讲的模型加载器，将两处cache.cuda分配改为CPU；generation另将三处device常量改为CPU。Tokenizer完整类不改，分词模型复制到临时路径，以兼容Windows中文目录。完整模块保留真实FairScale层，单rank Gloo，每次会话结束释放进程组。
+
+## 本轮结果
+
+- 模型D16、2层、Q4/KV2、词表32000、容量32、batch上限2，共1,029,840参数；seed22显式初始化，norm置1，矩阵normal(0,.02)，eval。
+- 正文六块执行通过。原句8个分词ID、两行七列token表与保护mask、torch.where输出[21,9]、温度三组概率、CE目标先PAD后写入的差异均核对。正文完整generate与sample_top_p去除docstring后的AST和固定官方函数一致。
+- 两条2/4token提示，真实forward起点0/2/3/4/5、长度2/1/1/1/1；输入无负ID，两轮保护长提示词。每步用另一个同权重模型完整重算前缀，logits最大差8.940696716308594e-8；greedy编号与提示词保护逐步核对，单条/批次与echo结果一致。
+- 旧生成概率记录全为0；独立内存教学版仅把整个CE块移动到写回后，采样ID不变，逐步对齐原log_softmax，首新增位置约-10.07020092。受控EOS用真实全零attention/MLP和少数指定embedding/output权重，两个forward实际选中[2,6]、[6,2]，返回空列表与[6]。
+- top-p四组分布各真实抽样4096次；独立按原始概率累加构造候选集合，核对支持集、原ID映射、输入不变和经验频率，绝对容差0.035。覆盖p恰好等于累计质量的严格比较边界；seed220整段采样重放相同。
+- text_completion、容量截取、零预算、负温度的旧分支通过；生成前后模型全部参数相同，全部参数grad为None。
+
+本轮未加载原预训练权重，未执行论文GPT-2续写评测或GPU多rank实验。旧交付验证记录保留在下方，本轮没有重跑其全部项目。下方build_delivery.py是历史派生文件生成命令；当前例子用上面的verify_foundation_examples.py重做。
+
+## 论文截图
+
+[The Curious Case of Neural Text Degeneration v2](https://arxiv.org/pdf/1904.09751v2)，2020-02-14：第3页式1、第6页式4、第5页Figure5图形部分、第4页式2、第5页式3，共五张。以3倍像素渲染原PDF并裁剪，逐张视觉检查；式1再次调整边界，去掉下一段文字。正文就地解释了每个符号、平坦/尖锐分布、概率质量阈值与重新归一化。
+
+PDF在外部课程资料`G:/zzz/Personal ChatGPT 系列/22 Llama generate 完整流程/原论文.pdf`；源URL、PDF哈希、页码、裁剪坐标及PNG哈希见[论文截图来源](outputs/论文截图来源.json)。报告同时保存当前笔记、脚本、第20讲加载器、三个Meta文件和tokenizer的哈希。
+
+---
+
+## 此前交付记录
 
 状态：**部分成功**。原四格分词代码、全部静态完整性及真实小型固定 Meta Transformer 控制流验证通过；没有原权重质量或论文实验复现。
 
