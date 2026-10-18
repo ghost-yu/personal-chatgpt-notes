@@ -353,7 +353,7 @@ freqs_cis
 theta = 10000
 # 原错误省略/dim，频率变成1/1e8/1e16，不等于正确表；这里变量其实是角度。
 my_freqs_cis = torch.outer(torch.arange(end), 1./(theta ** (torch.arange(0, 6, 2))))
-# 按错误频率生成[5,3]单位复数；模长1或shape对不代表频率正确。
+# 按错误频率生成[5,3]单位复数；频率需逐项与定义核对。
 complex_tensor = torch.polar(torch.ones_like(my_freqs_cis), my_freqs_cis)
 # 显示原错误频率例，注释版不偷偷修正。
 complex_tensor
@@ -361,7 +361,7 @@ complex_tensor
 # %% 26
 # ### 单元 26（code）：查看错误表shape
 #
-# torch.Size([5,3])与正确表相同不能证明值正确。
+# 输出形状仍为torch.Size([5,3])；逐项比较频率值才能定位这里的错误。
 # 查看[5,3]，形状与正确表一致但数值不同。
 complex_tensor.shape
 
