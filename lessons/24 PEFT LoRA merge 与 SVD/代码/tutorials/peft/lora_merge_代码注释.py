@@ -47,7 +47,7 @@ from IPython.display import Image
 #     self.scaling[adapter_name] = lora_alpha / r
 
 # %% 原代码单元 6
-# 远程Medium图，只保留URL和历史HTML引用。width400不是矩阵维数，本次没有验证远程图片内容。
+# 这里通过URL引用Medium配图，width=400指定页面上的展示宽度。
 # 返回远程图片HTML引用，width仅为显示宽度。
 Image(url='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*EnUd1eXLvXCxRZj9NW2BeA.png', width=400)
 
@@ -78,7 +78,7 @@ config = PeftConfig.from_pretrained(peft_model_id)
 config
 
 # %% 原代码单元 12
-# 原模型4bit/device_map auto加载需要相应量化后端及权重，本次不执行。CPU变体从本地随机Llama小checkpoint加载FP32，并加载自建真实SentencePiece词表，不冒充原模型。
+# 原加载配置使用4bit和device_map="auto"，需要对应的量化后端与模型权重。CPU算例从本地随机Llama小checkpoint加载FP32权重，搭配自建SentencePiece词表演示加载过程。
 # 加载基础因果语言模型；原4bit路径未在CPU执行。
 model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, load_in_4bit=True, device_map="auto")
 # 加载分词器和特殊token规则，不加载神经权重。
