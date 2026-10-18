@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-18",
+  "note_sha256": "21219298a3ea617877efd2d0e30d0d87b652251a1f2584f0dc1c17562a1a5845",
+  "script_sha256": "766e6b46d7b5cc1bc1449314799c00fdb02f613ecb5f25f8ebab19382a9225fa",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.5.1+cpu",
+    "peft": "0.12.0",
+    "transformers": "4.44.2",
+    "accelerate": "0.34.2",
+    "numpy": "1.26.4"
+  },
+  "official_source_sha256": {
+    "mapping.py": "50fb0435f1352f46f8ccf342c751fd3758a8055f209400047ee4bdc8609a11ab",
+    "tuners/lora/model.py": "315dbc2b690bf4b116e5e01dd0badfebebaea65e6bde34ae224d891ec5ed717a",
+    "tuners/lora/layer.py": "4667be1d279ae5546255f81bbe632a47074ac648ed8f2a35ad5f40458d18767b",
+    "utils/save_and_load.py": "acf74f3e3c6999cd0c4c883cc0c72d100d7a46adceb4bb29e9d36c381b72d1e1"
+  },
+  "original_notebook_commit": "7fbc29824171fd07dc2c30fe922e61ebc018ad1d",
+  "main_blocks": 5,
+  "stdout": [
+    "基础输出: [[5.0, 11.0]]\n双支路输出: [[6.0, 11.5]]\n写回权重后的输出: [[6.0, 11.5]]\n",
+    "合并增量: [[1.0, 0.5], [0.5, 1.0]]\n奇异值: [1.4999999999999998, 0.5000000000000001]\nrank1近似: [[0.7499999999999998, 0.7499999999999997], [0.7499999999999998, 0.7499999999999997]]\n误差: 0.5\n完整/精简Vh: [5, 5] [2, 5]\n",
+    "输出形状: [1, 8, 100]\nA/B形状: [64, 1000] [1000, 64]\n可训练参数: 128000\n",
+    "创建后仍在用: left\ncat_exact [[1.0, 0.5], [0.5, 1.0]]\nsvd_old [[1.4999999999999996, 1.4999999999999993], [1.4999999999999996, 1.4999999999999993]]\nsvd_once [[0.7499999999999998, 0.7499999999999997], [0.7499999999999998, 0.7499999999999997]]\n",
+    "left [[6.0, 11.5]]\ncat_exact [[7.0, 13.5]]\nsvd_old [[9.499999999999998, 15.499999999999998]]\nsvd_once [[7.249999999999999, 13.25]]\n折叠后层类型: Linear\n"
+  ],
+  "main_checks": {
+    "dummy_class_and_config_ast_match_original": true,
+    "dummy_trainable_parameters": 128000,
+    "zero_B_initial_output_preserved": true,
+    "first_A_gradient_zero_B_gradient_nonzero_base_gradients_none": true,
+    "singular_values": [
+      1.4999999999999998,
+      0.5000000000000001
+    ],
+    "rank1_error": 0.5,
+    "actual_peft_matrix_outputs": {
+      "left": [
+        [
+          6.0,
+          11.5
+        ]
+      ],
+      "cat_exact": [
+        [
+          7.0,
+          13.5
+        ]
+      ],
+      "svd_old": [
+        [
+          9.499999999999998,
+          15.499999999999998
+        ]
+      ],
+      "svd_once": [
+        [
+          7.249999999999999,
+          13.25
+        ]
+      ]
+    },
+    "folded_weight_error": 0.0,
+    "source_deltas_unchanged_during_switch_and_fold": true
+  },
+  "additional_matrix_checks": {
+    "linear_cross_term_error": 1.5811387326680524,
+    "linear_negative_weight_math_domain_error": true,
+    "cat_negative_weight_exact": true,
+    "cat_unequal_rank_and_scaling_exact": true,
+    "unequal_svd_reconstructs_sourcewise_extra_scaling_not_global_factor": true
+  },
+  "tiny_llama": {
+    "config": {
+      "initial_vocab": 16,
+      "resized_vocab": 21,
+      "hidden": 8,
+      "intermediate": 16,
+      "layers": 1,
+      "query_heads": 2,
+      "kv_heads": 1,
+      "source_rank": 2,
+      "source_scaling": 2
+    },
+    "base_parameters": 936,
+    "shared_new_embedding_and_head_rows": true,
+    "active_after_creation": "norobots",
+    "layers": [
+      {
+        "layer": "base_model.model.model.embed_tokens",
+        "embedding": true,
+        "source_adapters": [
+          "norobots",
+          "adcopy"
+        ],
+        "delta_shape": [
+          21,
+          8
+        ],
+        "cat_error": 7.2334298550913445e-09,
+        "svd_error": 0.024727245792746544,
+        "singular_value_tail": 0.024727247655391693
+      },
+      {
+        "layer": "base_model.model.model.layers.0.self_attn.q_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          8,
+          8
+        ],
+        "cat_error": 7.383889055745385e-09,
+        "svd_error": 0.040347542613744736,
+        "singular_value_tail": 0.04034753888845444
+      },
+      {
+        "layer": "base_model.model.model.layers.0.self_attn.k_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          4,
+          8
+        ],
+        "cat_error": 4.8406940678091814e-09,
+        "svd_error": 0.01759920082986355,
+        "singular_value_tail": 0.01759920082986355
+      },
+      {
+        "layer": "base_model.model.model.layers.0.self_attn.v_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          4,
+          8
+        ],
+        "cat_error": 4.425313893108296e-09,
+        "svd_error": 0.01816851831972599,
+        "singular_value_tail": 0.01816851831972599
+      },
+      {
+        "layer": "base_model.model.model.layers.0.self_attn.o_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          8,
+          8
+        ],
+        "cat_error": 8.552367702918673e-09,
+        "svd_error": 0.03063267096877098,
+        "singular_value_tail": 0.030632663518190384
+      },
+      {
+        "layer": "base_model.model.model.layers.0.mlp.gate_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          16,
+          8
+        ],
+        "cat_error": 8.309382515392372e-09,
+        "svd_error": 0.039900120347738266,
+        "singular_value_tail": 0.039900124073028564
+      },
+      {
+        "layer": "base_model.model.model.layers.0.mlp.up_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          16,
+          8
+        ],
+        "cat_error": 8.221562097787682e-09,
+        "svd_error": 0.03996535763144493,
+        "singular_value_tail": 0.03996536135673523
+      },
+      {
+        "layer": "base_model.model.model.layers.0.mlp.down_proj",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy",
+          "sql"
+        ],
+        "delta_shape": [
+          8,
+          16
+        ],
+        "cat_error": 8.429868358916792e-09,
+        "svd_error": 0.04709356278181076,
+        "singular_value_tail": 0.04709356278181076
+      },
+      {
+        "layer": "base_model.model.lm_head",
+        "embedding": false,
+        "source_adapters": [
+          "norobots",
+          "adcopy"
+        ],
+        "delta_shape": [
+          21,
+          8
+        ],
+        "cat_error": 1.1832630875119321e-08,
+        "svd_error": 0.021545730531215668,
+        "singular_value_tail": 0.02154572494328022
+      }
+    ],
+    "embedding_lookup_matches_folded_weight": true,
+    "activation_max_logit_change": 0.0819477066397667,
+    "fold_max_logit_error": 2.9802322387695312e-08,
+    "input_ids": [
+      [
+        1,
+        4,
+        16,
+        20
+      ]
+    ],
+    "generated_ids": [
+      [
+        1,
+        4,
+        16,
+        20,
+        20,
+        20,
+        20
+      ]
+    ],
+    "folded_greedy_ids_equal": true,
+    "source_and_base_parameters_unchanged": true
+  },
+  "scope": "CPU FP64 hand-computable PEFT examples and FP32 random one-layer Llama; no original pretrained weights, 4bit, GPU or downstream quality evaluation."
+}

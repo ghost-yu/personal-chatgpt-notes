@@ -1,0 +1,37 @@
+{
+  "paper": "LoRA: Low-Rank Adaptation of Large Language Models",
+  "version": "arXiv:2106.09685v2, 2021-10-16",
+  "url": "https://arxiv.org/abs/2106.09685v2",
+  "pdf_local_path": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+  "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+  "page_size_points": [
+    612,
+    792
+  ],
+  "crops": [
+    {
+      "file": "图片/LoRA_原论文_Figure1.png",
+      "page": 1,
+      "bounds_points_top_left": [
+        386,
+        523,
+        505,
+        660
+      ],
+      "render_scale": 3,
+      "sha256": "81e0c7507080f02faff03e10feef54642664ac6f1922f4d584367ba6e861639e"
+    },
+    {
+      "file": "图片/LoRA_原论文_公式3.png",
+      "page": 4,
+      "bounds_points_top_left": [
+        225,
+        457,
+        505,
+        474
+      ],
+      "render_scale": 3,
+      "sha256": "3bc3f0727d1f71e4a3f6b95117f6ca98c43feee7d5657e5e03e5777db090234c"
+    }
+  ]
+}

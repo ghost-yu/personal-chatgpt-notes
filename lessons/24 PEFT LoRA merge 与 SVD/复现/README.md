@@ -1,5 +1,39 @@
 # 第24讲实际验证
 
+## 2026-10-18：基础讲解与论文截图
+
+正文按“线性运算→LoRA增量→两套相加→SVD压缩→原类注入→真实PEFT→激活与折叠→词表和Embedding”重写。此前的解释完整保留在正文末尾折叠栏。原notebook、代码阅读文件和历史运行报告保持本轮开始时的内容。
+
+当前结果：[基础讲解验证.json](outputs/基础讲解验证.json)。验证器直接提取并依次执行解释.md折叠栏前的五个Python代码块，再进行独立比较；正文与脚本摘要均写入报告。
+
+| 项目 | 条件与结果 |
+|---|---|
+| 环境 | Python 3.12、Torch 2.5.1 CPU、Transformers 4.44.2、PEFT 0.12.0；精确版本见JSON |
+| 手算矩阵 | float64；基础输出[5,11]，双支路[6,11.5]；M=[[1,.5],[.5,1]]，奇异值1.5/.5，rank1误差0.5 |
+| 原类与配置 | 完整DummyModel与LoraConfig赋值AST对应原inject的单元2/3；同对象注入、原子层引用、初始输出、128000可训练参数均核对 |
+| 初始梯度 | B=0时A梯度全零、B有非零梯度，冻结参数grad为None |
+| 真实合并 | cat精确重建M；旧版SVD给出2M的rank1近似；按M单次缩放得到M1；四套活动结果分别[6,11.5]、[7,13.5]、[9.5,15.5]、[7.25,13.25] |
+| 独立比较 | 外积重建、linear交叉项误差1.5811387、负权重cat、linear负权重异常、异秩/异缩放cat与旧SVD来源重加权 |
+| 端到端模型 | 随机Llama，H8/FF16/1层/2Q/1KV，词表16→21，基础936参数；来源r2/alpha4，norobots/adcopy九目标，sql七投影 |
+| 每个目标层 | 共九层，cat最大矩阵误差1.1833e-8；SVD误差与奇异值尾范数最大差7.451e-9；Embedding只组合两个来源，按转置查表独立核对 |
+| 活动与折叠 | 创建后仍为norobots；显式切换最大logit变化0.0819477；折叠最大logit差2.98023e-8；greedy新增3个ID及完整序列相同 |
+| 参数与纯SVD选项 | 原来源/基础权重未改，旧词表前16行不变；density .2/.9在旧版纯SVD中结果相同 |
+
+正文中直接嵌入LoRA v2第1页Figure1与第4页公式(3)，两图均从原PDF以3倍比例渲染裁剪并检查可读性。[论文截图来源.json](outputs/论文截图来源.json)保存版本、URL、页码、左上原点裁剪坐标、PDF及PNG摘要；完整PDF留在本地 `G:/zzz/Personal ChatGPT 系列/24 PEFT LoRA merge 与 SVD/原论文.pdf`。
+
+固定PEFT四个源文件摘要同时与来源清单、安装发行包RECORD核对。本轮使用完整PEFT/Transformers包运行，未改写其合并方法。原课程源码固定于来源清单中的上游提交。
+
+重做本轮基础算例：
+
+```powershell
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/lessons/24 PEFT LoRA merge 与 SVD/复现/scripts/verify_foundation_examples.py'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'G:/zzz/personal-chatgpt-notes/工具/check_documents.py'
+```
+
+本轮为CPU小矩阵及随机小模型的机制验证。原TinyLlama权重、任务adapter、4bit/GPU与任务质量未运行。运行中的旧tuple形式past_key_values兼容警告来自固定Transformers包，生成与比较均完成。
+
+## 此前交付记录
+
 状态：**部分成功**。原 DummyModel 与原 SVD basics 全部代码真实执行；原主讲在显式离线 CPU 变体中执行。未下载或运行 TinyLlama1.1B 预训练模型、三种原任务 adapter 和4bit CUDA。
 
 ## 环境和来源
