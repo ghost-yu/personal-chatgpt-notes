@@ -75,3 +75,20 @@ $sources = 'G:/zzz/Personal ChatGPT 系列/23 TRL Reward Model 与 RewardTrainer
 原20格无bitsandbytes的PackageNotFoundError是实际边界，CPU变体明确关闭4bit。padding max_length被忽略、max_steps覆盖epoch、模型输入非标准四列无法估算FLOPs、tie accuracy等提示均真实保留，没有将其当作原实验成功。
 
 未运行：OPT350M预训练权重、CUDA/4bit后端、16进程预处理、HH160800全量、原1000步/09:13计时、多卡、PPO、概率校准、人类持出胜率或InstructGPT完整实验。讲师精确依赖、原历史异常loss字段和两份score可训练的版本原因未确认，本讲独立字幕未找到。训练loss下降与保存契约不能证明语言或偏好质量。
+
+## 讲解改版前的运行说明
+
+## 11. 小模型中的成对训练
+
+环境：Windows / Python3.12.14 / torch2.5.1+cpu / Transformers4.44.2 / TRL0.8.6 / PEFT0.12.0 / Accelerate0.34.2 / Datasets2.19.2。仅把TRL及其额外依赖安装到本讲本地runtime-libs，保留共享环境主包；未安装bitsandbytes。模型807648参数，配置与全部版本见[复现记录](README.md)。
+
+通过项：
+
+- 原件字节、全部元数据/历史输出/单元顺序、3schema；29代码的IPython转换AST及非注释token一致；两个阅读文件的相关AST与原代码/官方完整对象一致。
+- 两版各21格原语句成功执行；另6格明确本地CPU变体成功；代理/远程数据2格跳过。原4bit格另实际尝试并记录缺包失败，具体错误见复现记录。
+- pinfo2真实检查OPT forward；两图只核对HTML引用，不下载/冒称检查远端图片。
+- 原preprocess真实map/filter、截断顺序反例、真实padding/单序列pooling与两侧不同长度。
+- 真实pairwise前向/梯度、softplus/logsigmoid一致、预测概率与差值sigmoid一致、共同平移/单score不校准、稳定极值/平分accuracy与margin广播反例。
+- 真实两次两步LoRA训练、冻结/optimizer/更新、两版状态精确一致、adapter与score保存/重载差0。
+
+初次验证在pinfo2输出断言失败，因为IPython高亮ANSI把`def forward`字符分开；给**捕获文本**去掉ANSI后检查通过，未替换源码检查或模型实现。nbformat对旧单元缺id给提示，但验证通过；不为消除提示篡改原元数据。原4bit缺包是预期边界，不是已经解决了量化支持。
