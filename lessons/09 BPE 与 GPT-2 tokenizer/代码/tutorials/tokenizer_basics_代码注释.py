@@ -5,7 +5,7 @@
 # %% [markdown]
 # ## 单元 0（code）：图片显示接口
 #
-# 【建议会】从IPython.display导入Image类；导入不读图，单元17才使用。返回显示对象并由Jupyter渲染，不负责tokenizer训练。
+# 从IPython.display导入Image类；导入不读图，单元17才使用。返回显示对象并由Jupyter渲染，不负责tokenizer训练。
 
 # %% 原单元 0
 # 图片显示接口；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -15,7 +15,7 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 1（markdown）：基础概念入口
 #
-# 【必须会】先区分字符、UTF8 bytes、token字符串和整数ID，再讨论词表训练。Markdown不执行代码。
+# 先区分字符、UTF8 bytes、token字符串和整数ID，再讨论词表训练。Markdown不执行代码。
 
 # %% [markdown] 原单元 1
 # ## basics
@@ -23,7 +23,19 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 2（markdown）：常见词与padding设置代码块
 #
-# 【必须会】常见词反复切分可能增加token数量，但词表预算/频率/算法都影响边界，不能保证每个常见词单token。Markdown代码块依次设置对象属性：padding_side先left后right，最终为right；pad_token=eos_token只是把已有EOS复用为填充标记，不新增embedding。attention_mask与loss屏蔽仍须正确处理。原“Fix weird overflow”是经验注释，不是所有FP16任务的保证。本块需要预先存在tokenizer，不是完整可运行程序；已加逐行注释而保留原赋值。
+# 常见词反复切分可能增加token数量，但词表预算/频率/算法都影响边界，不能保证每个常见词单token。Markdown代码块依次设置对象属性：padding_side先left后right，最终为right；pad_token=eos_token只是把已有EOS复用为填充标记，不新增embedding。attention_mask与loss屏蔽仍须正确处理。原“Fix weird overflow”记录了作者对特定运行问题的处理。本块需要预先存在tokenizer，不是完整可运行程序；已加逐行注释而保留原赋值。
+#
+# 原Markdown中的设置代码（未作为Python执行格）：
+#
+# - 常见词最好不要再切分
+#     - 否则会显著地增加 token 的长度
+# - 设置
+#
+# ```
+# tokenizer.padding_side = "left"
+# tokenizer.pad_token = tokenizer.eos_token
+# tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+# ```
 
 # %% [markdown] 原单元 2
 # - 常见词最好不要再切分
@@ -39,7 +51,7 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 3（code）：AutoTokenizer类
 #
-# 【必须会】transformers.AutoTokenizer根据checkpoint配置选择实现；from_pretrained负责文件加载，use_fast默认倾向可用的fast类。导入不加载权重。fast的backend_tokenizer/tokens()接口后续会使用，slow对象不一定支持。
+# transformers.AutoTokenizer根据checkpoint配置选择实现；from_pretrained负责文件加载，use_fast默认倾向可用的fast类。导入不加载权重。fast的backend_tokenizer/tokens()接口后续会使用，slow对象不一定支持。
 
 # %% 原单元 3
 # AutoTokenizer类；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -49,7 +61,7 @@ from transformers import AutoTokenizer
 # %% [markdown]
 # ## 单元 4（code）：封装逐ID解码函数
 #
-# 【必须会】def定义普通函数，tokenizer参数为可调用对象、text为str。调用tokenizer(text,add_special_tokens=False)返回BatchEncoding，取input_ids为list[int]；列表推导式对每个ID调用decode返回list[str]。没有模型参数更新。byte-level token可能只含部分UTF8字符，单ID解码可能是�；整体decode与convert_ids_to_tokens用途不同。
+# def定义普通函数，tokenizer参数为可调用对象、text为str。调用tokenizer(text,add_special_tokens=False)返回BatchEncoding，取input_ids为list[int]；列表推导式对每个ID调用decode返回list[str]。byte-level token可能只含部分UTF8字符，单ID解码可能是�；整体decode与convert_ids_to_tokens用途不同。
 
 # %% 原单元 4
 # 封装逐ID解码函数；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -63,7 +75,7 @@ def tokenize_str(tokenizer, text):
 # %% [markdown]
 # ## 单元 5（code）：加载T5 tokenizer作比较
 #
-# 【建议会】AutoTokenizer.from_pretrained(t5-base)返回T5 tokenizer，可能联网/缓存，算法不是GPT2 byte-level BPE。本次独立补充只把路径字符串换成固定本地T5资产并设local_files_only；未下载T5模型权重。原调用和历史输出保留。
+# AutoTokenizer.from_pretrained(t5-base)返回T5 tokenizer，可能联网/缓存，算法不是GPT2 byte-level BPE。本次独立补充只把路径字符串换成固定本地T5资产并设local_files_only；未下载T5模型权重。原调用和历史输出保留。
 
 # %% 原单元 5
 # 加载T5 tokenizer作比较；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -73,7 +85,7 @@ tokenizer_t5 = AutoTokenizer.from_pretrained('t5-base')
 # %% [markdown]
 # ## 单元 6（code）：普通词的T5切分
 #
-# 【建议会】先print(tokenize_str(...hello))，再展示sex的切分。返回是list[str]，print返回None；函数行为沿用单元4。切得更碎不能单独证明训练语料过滤。示例仅用于分词观察，不是模型语义输出。
+# 先print(tokenize_str(...hello))，再展示sex的切分。返回是list[str]，print返回None；函数行为沿用单元4。切得更碎不能单独证明训练语料过滤。示例仅用于分词观察，不是模型语义输出。
 
 # %% 原单元 6
 # 普通词的T5切分；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -86,7 +98,7 @@ tokenize_str(tokenizer_t5, 'sex')
 # %% [markdown]
 # ## 单元 7（markdown）：Python代码分词标题
 #
-# 【必须会】Python换行、缩进、标点都可能有语义，要整体往返而非先清空白。
+# Python换行、缩进、标点都可能有语义，要整体往返而非先清空白。
 
 # %% [markdown] 原单元 7
 # ## tokenize python code
@@ -94,7 +106,7 @@ tokenize_str(tokenizer_t5, 'sex')
 # %% [markdown]
 # ## 单元 8（markdown）：BPE基础符号与合并
 #
-# 【必须会】原文说明从256个byte值开始，反复合并当前高频相邻pair。143859是原笔记提及的Unicode数量，没有在本次确认其统计版本，也不是GPT2词表大小。BPE学习统计/merges，不训练神经网络权重；新pair可含已经合并的片段。
+# 原文说明从256个byte值开始，反复合并当前高频相邻pair。143859是原笔记提及的Unicode数量，没有在本次确认其统计版本，也不是GPT2词表大小。BPE学习统计/merges，不训练神经网络权重；新pair可含已经合并的片段。
 
 # %% [markdown] 原单元 8
 # - 256 ~ 143,859
@@ -104,7 +116,17 @@ tokenize_str(tokenizer_t5, 'sex')
 # %% [markdown]
 # ## 单元 9（code）：多行原始字符串样本
 #
-# 【必须会】r三引号定义一个str，保留反斜杠、换行和缩进；里面def/print是字符串内容，不是在此格定义/调用say_hello。末尾print仅打印这个字符串。四空格空行也保留，不能在阅读版自动strip。Python阅读版用相邻字符串字面量表示同一个值，AST字符串常量核对相等。
+# r三引号定义一个str，保留反斜杠、换行和缩进；里面def/print是字符串内容，不是在此格定义/调用say_hello。末尾print仅打印这个字符串。四空格空行也保留，不能在阅读版自动strip。Python阅读版用相邻字符串字面量表示同一个值，AST字符串常量核对相等。
+#
+# ```python
+# python_code = r'''def say_hello():
+#     print('Hello, World!')
+#
+# # print hello
+# say_hello()
+# '''
+# print(python_code)
+# ```
 
 # %% 原单元 9
 # 多行原始字符串样本；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -123,7 +145,7 @@ print(python_code)
 # %% [markdown]
 # ## 单元 10（code）：加载GPT2并查看IDs和tokens
 #
-# 【必须会】加载返回fast tokenizer；对python_code调用对象，input_ids是list[int]，tokens()是BatchEncoding方法，返回byte映射后的token字符串列表。两次编码是重复调用，没有训练。原远程路径未在验证时直接调用；本地固定资产补充仅改加载路径/local_files_only，并逐项审计；后两行真实执行。
+# 加载返回fast tokenizer；对python_code调用对象，input_ids是list[int]，tokens()是BatchEncoding方法，返回byte映射后的token字符串列表。两次编码是重复调用，没有训练。原远程路径未在验证时直接调用；本地固定资产补充仅改加载路径/local_files_only，并逐项审计；后两行真实执行。
 
 # %% 原单元 10
 # 加载GPT2并查看IDs和tokens；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -137,7 +159,7 @@ print(tokenizer(python_code).tokens())
 # %% [markdown]
 # ## 单元 11（code）：检查normalizer
 #
-# 【建议会】backend_tokenizer是Rust后端对象，normalizer为属性，可是None。GPT2没有BERT式先小写/去重音步骤；None不表示没有预切分/BPE。此格不改变状态。
+# backend_tokenizer是Rust后端对象，normalizer为属性，可是None。GPT2没有BERT式先小写/去重音步骤；None不表示没有预切分/BPE。此格不改变状态。
 
 # %% 原单元 11
 # 检查normalizer；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -148,7 +170,7 @@ tokenizer.backend_tokenizer.normalizer
 # %% [markdown]
 # ## 单元 12（code）：预切分与offset
 #
-# 【必须会】pre_tokenizer.pre_tokenize_str接收str，返回list[(片段str,(start,end))]。这是预切分，不是最终BPE tokens；offset对应原文本位置，映射字符长度可能不同。直接读取方法没有重新训练。
+# pre_tokenizer.pre_tokenize_str接收str，返回list[(片段str,(start,end))]。这是预切分，不是最终BPE tokens；offset对应原文本位置，映射字符长度可能不同。直接读取方法没有重新训练。
 
 # %% 原单元 12
 # 预切分与offset；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -160,7 +182,7 @@ tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(python_code)
 # %% [markdown]
 # ## 单元 13（code）：一个byte的整数值
 #
-# 【必须会】ord接受单字符str或长度1的bytes；b\xe2是一个byte，结果226。它可能是欧元UTF8的首byte，不是欧元Unicode码点8364。
+# ord接受单字符str或长度1的bytes；b\xe2是一个byte，结果226。它可能是欧元UTF8的首byte，不是欧元Unicode码点8364。
 
 # %% 原单元 13
 # 一个byte的整数值；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -170,7 +192,7 @@ ord(b'\xe2')
 # %% [markdown]
 # ## 单元 14（code）：Unicode与UTF8逐字节
 #
-# 【必须会】u前缀在Python3与普通str一样；a和€是字符。a.encode为一个byte，ord可读97；€.encode返回三个bytes[226,130,172]，原注释4 bytes不准确。迭代bytes时i已是int，chr后ord又回到同一整数，等价list(e.encode)。两条f字符串展示对象，不修改字符内容。
+# u前缀在Python3与普通str一样；a和€是字符。a.encode为一个byte，ord可读97；€.encode返回三个bytes[226,130,172]，原注释4 bytes不准确。迭代bytes时i已是int，chr后ord又回到同一整数，等价list(e.encode)。两条f字符串展示对象，不修改字符内容。
 
 # %% 原单元 14
 # Unicode与UTF8逐字节；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -196,7 +218,7 @@ print(f"{e}, {e.encode('utf-8')}, {byte}")
 # %% [markdown]
 # ## 单元 15（markdown）：训练tokenizer标题
 #
-# 【必须会】开始读处理流水线与学习规则；没有forward/backward、optimizer或梯度。
+# 开始读处理流水线与学习规则；没有forward/backward、optimizer或梯度。
 
 # %% [markdown] 原单元 15
 # ## training a tokenizer
@@ -204,7 +226,7 @@ print(f"{e}, {e.encode('utf-8')}, {byte}")
 # %% [markdown]
 # ## 单元 16（markdown）：处理流水线与三种子词算法
 #
-# 【必须会】normalization规范文本，pretokenization先划片段，tokenizer model应用子词规则/词表ID，postprocessing补模型标记。BPE逐步添加合并，WordPiece使用不同训练规则，Unigram可迭代删减候选；它们不是同一种算法。原拼写postprocesssing指后处理。
+# normalization规范文本，pretokenization先划片段，tokenizer model应用子词规则/词表ID，postprocessing补模型标记。BPE逐步添加合并，WordPiece使用不同训练规则，Unigram可迭代删减候选；它们不是同一种算法。原拼写postprocesssing指后处理。
 
 # %% [markdown] 原单元 16
 # - 不涉及权重或者反向传播
@@ -223,7 +245,7 @@ print(f"{e}, {e.encode('utf-8')}, {byte}")
 # %% [markdown]
 # ## 单元 17（code）：token_steps原图
 #
-# 【必须会】Image读取相对路径../imgs/token_steps.png，width=600是展示像素，返回显示对象。图中小写/去重音及CLS/SEP是类似BERT的示例，不是GPT2固定行为。文字→规范化→预切分→子词→ID/特殊标记；没有embedding或训练loss。配图已下载到代码/imgs，建议从代码/tutorials打开notebook。
+# Image读取相对路径../imgs/token_steps.png，width=600是展示像素，返回显示对象。图中小写/去重音及CLS/SEP是类似BERT的示例，不是GPT2固定行为。文字→规范化→预切分→子词→ID/特殊标记；没有embedding或训练loss。配图已下载到代码/imgs，建议从代码/tutorials打开notebook。
 
 # %% 原单元 17
 # token_steps原图；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -233,7 +255,7 @@ Image('../imgs/token_steps.png', width=600)
 # %% [markdown]
 # ## 单元 18（markdown）：BERT示例入口
 #
-# 【建议会】下方是WordPiece示意，不属于GPT2 BPE完整实现；不要把不同模型的特殊标记混为一谈。
+# 下方是WordPiece示意，不属于GPT2 BPE完整实现；不要把不同模型的特殊标记混为一谈。
 
 # %% [markdown] 原单元 18
 # ### BERT
@@ -241,7 +263,7 @@ Image('../imgs/token_steps.png', width=600)
 # %% [markdown]
 # ## 单元 19（markdown）：官方搭建tokenizer示例链接
 #
-# 【建议会】原Colab指向Hugging Face课程notebook，可用于对照流水线；链接不是本次运行证据，不据此认为当前课程格已完整实现。
+# 原Colab指向Hugging Face课程notebook，可用于对照流水线；链接不是本次运行证据，不据此认为当前课程格已完整实现。
 
 # %% [markdown] 原单元 19
 # - https://colab.research.google.com/github/huggingface/notebooks/blob/master/course/videos/building_tokenizer.ipynb
@@ -249,7 +271,7 @@ Image('../imgs/token_steps.png', width=600)
 # %% [markdown]
 # ## 单元 20（code）：导入数据加载函数
 #
-# 【建议会】datasets.load_dataset是模块函数，配置路径/name/split/streaming决定返回Dataset或IterableDataset等。导入本身不下载Wikitext。
+# datasets.load_dataset是模块函数，配置路径/name/split/streaming决定返回Dataset或IterableDataset等。导入本身不下载Wikitext。
 
 # %% 原单元 20
 # 导入数据加载函数；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -259,7 +281,7 @@ from datasets import load_dataset
 # %% [markdown]
 # ## 单元 21（code）：Wikitext与文本批生成器
 #
-# 【必须会】load_dataset(wikitext,name=wikitext-2-raw-v1,split=train)涉及远程语料。本次原数据调用未执行；另在小型真实Dataset上下文执行原get_training_corpus定义。len(dataset)为总行数，range步长1000，dataset[i:i+1000]切片返回dict[list]，取text为list[str]；yield按需交出一批，末批可不足1000。这与train notebook中的逐next流式函数不同。
+# load_dataset(wikitext,name=wikitext-2-raw-v1,split=train)涉及远程语料。本次原数据调用未执行；另在小型真实Dataset上下文执行原get_training_corpus定义。len(dataset)为总行数，range步长1000，dataset[i:i+1000]切片返回dict[list]，取text为list[str]；yield按需交出一批，末批可不足1000。这与train notebook中的逐next流式函数不同。
 
 # %% 原单元 21
 # Wikitext与文本批生成器；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -276,7 +298,7 @@ def get_training_corpus(dataset):
 # %% [markdown]
 # ## 单元 22（code）：保留原悬空逗号语法错误
 #
-# 【必须会】第一行from tokenizers import Tokenizer, models,末尾逗号且无括号，普通Python编译即SyntaxError，第二行不会执行。注释版保留这个错误，静态报告不宣称此格AST可解析。去掉最后一个逗号后可构造Tokenizer(models.WordPiece(unk_token=[UNK]))，仅有模型对象，缺少normalizer、pretokenizer、trainer和保存，仍不是完整BPE训练。修正版只作独立补充。Python阅读版将整格列作注释，避免掩盖原错误或悄悄修复。
+# 第一行from tokenizers import Tokenizer, models,末尾逗号且无括号，普通Python编译即SyntaxError，第二行不会执行。注释版保留这个错误，静态报告不宣称此格AST可解析。去掉最后一个逗号后可构造Tokenizer(models.WordPiece(unk_token=[UNK]))，仅有模型对象，缺少normalizer、pretokenizer、trainer和保存，仍不是完整BPE训练。修正版只作独立补充。Python阅读版将整格列作注释，避免掩盖原错误或悄悄修复。
 
 # %% 原单元 22
 # 保留原悬空逗号语法错误；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -287,7 +309,7 @@ def get_training_corpus(dataset):
 # %% [markdown]
 # ## 单元 23（markdown）：GPT2映射入口
 #
-# 【必须会】下面恢复GPT2接口；上面的BERT/WordPiece片段与它分开。
+# 下面恢复GPT2接口；上面的BERT/WordPiece片段与它分开。
 
 # %% [markdown] 原单元 23
 # ### gpt2
@@ -295,7 +317,7 @@ def get_training_corpus(dataset):
 # %% [markdown]
 # ## 单元 24（markdown）：byte到显示字符表
 #
-# 【必须会】表中byte13→č、32→Ġ、10→Ċ；这些字符是映射符号，不是原文真的输入它们。非断行空格U+00A0实际UTF8是194/160两bytes，不能把单个160当完整字符。byte映射256种，而完整GPT2词表50257项。
+# 表中byte13→č、32→Ġ、10→Ċ；这些字符是映射符号，不是原文真的输入它们。非断行空格U+00A0实际UTF8是194/160两bytes，不能把单个160当完整字符。byte映射256种，而完整GPT2词表50257项。
 
 # %% [markdown] 原单元 24
 # -
@@ -311,7 +333,7 @@ def get_training_corpus(dataset):
 # %% [markdown]
 # ## 单元 25（code）：导入bytes_to_unicode
 #
-# 【必须会】函数所属transformers.models.gpt2.tokenization_gpt2，返回dict[int,str]，从256种byte值到256个唯一可打印显示字符；不是Unicode语义翻译。
+# 函数所属transformers.models.gpt2.tokenization_gpt2，返回dict[int,str]，从256种byte值到256个唯一可打印显示字符；不是Unicode语义翻译。
 
 # %% 原单元 25
 # 导入bytes_to_unicode；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -321,7 +343,7 @@ from transformers.models.gpt2.tokenization_gpt2 import bytes_to_unicode
 # %% [markdown]
 # ## 单元 26（code）：建立正向byte映射
 #
-# 【必须会】调用无参函数并绑定字典bytes_to_unicode_map，末行展示全表。映射保持可逆；此格不是将字符投到embedding。
+# 调用无参函数并绑定字典bytes_to_unicode_map，末行展示全表。映射保持可逆；此格不是将字符投到embedding。
 
 # %% 原单元 26
 # 建立正向byte映射；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -333,7 +355,7 @@ bytes_to_unicode_map
 # %% [markdown]
 # ## 单元 27（code）：构造反向映射
 #
-# 【必须会】.items()迭代(byte,显示字符)，生成器表达式(v,k)交换，dict收集为dict[str,int]。原注释string to id指byte整数，不是GPT2训练词表的token ID；对象单独展示不改变状态。
+# .items()迭代(byte,显示字符)，生成器表达式(v,k)交换，dict收集为dict[str,int]。原注释string to id指byte整数，不是GPT2训练词表的token ID；对象单独展示不改变状态。
 
 # %% 原单元 27
 # 构造反向映射；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -347,7 +369,7 @@ unicode_to_bytes_map
 # %% [markdown]
 # ## 单元 28（code）：映射长度
 #
-# 【必须会】len(dict)返回Python整数256，统计字典项，不等于文本字符数或GPT2完整vocab_size。
+# len(dict)返回Python整数256，统计字典项，不等于文本字符数或GPT2完整vocab_size。
 
 # %% 原单元 28
 # 映射长度；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -357,7 +379,7 @@ len(bytes_to_unicode_map)
 # %% [markdown]
 # ## 单元 29（code）：基础alphabet的顺序
 #
-# 【必须会】keys()给显示字符，list收集256项并保留插入顺序；base_vocab[0]/[-1]取首尾。列表下标不是原byte值；base_vocab[10]不可当byte10查询。print输出显示符号。
+# keys()给显示字符，list收集256项并保留插入顺序；base_vocab[0]/[-1]取首尾。列表下标不是原byte值；base_vocab[10]不可当byte10查询。print输出显示符号。
 
 # %% 原单元 29
 # 基础alphabet的顺序；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -369,7 +391,7 @@ print(base_vocab[0], base_vocab[-1])
 # %% [markdown]
 # ## 单元 30（code）：查询换行byte的显示符号
 #
-# 【必须会】用字典键10读取Ċ；与原文换行字符串\n/Unicode码点分别区分。
+# 用字典键10读取Ċ；与原文换行字符串\n/Unicode码点分别区分。
 
 # %% 原单元 30
 # 查询换行byte的显示符号；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -379,7 +401,7 @@ print(bytes_to_unicode_map[10])
 # %% [markdown]
 # ## 单元 31（code）：再次加载并预切分
 #
-# 【必须会】重新绑定tokenizer为GPT2，调用pre_tokenize_str(python_code)。原格不会学习新merges；只读已有规则。本次加载路径补充固定本地资产，保留其他原语句；读取与单元12结果核对一致。
+# 重新绑定tokenizer为GPT2，调用pre_tokenize_str(python_code)。原格不会学习新merges；只读已有规则。本次加载路径补充固定本地资产，保留其他原语句；读取与单元12结果核对一致。
 
 # %% 原单元 31
 # 再次加载并预切分；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -391,7 +413,7 @@ tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(python_code)
 # %% [markdown]
 # ## 单元 32（markdown）：空白保留规则
 #
-# 【必须会】原英文：连续空格保留且可能作为一个预片段，一个词前的空格可附着到后面的词。ĊĠĠĠ表示换行和三个空格，不是真实拉丁字符输入。预切分片段不等于最终token，不能保证四空格缩进仅占一项。
+# 原英文：连续空格保留且可能作为一个预片段，一个词前的空格可附着到后面的词。ĊĠĠĠ表示换行和三个空格，不是真实拉丁字符输入。预切分片段不等于最终token，不能保证四空格缩进仅占一项。
 
 # %% [markdown] 原单元 32
 # - Spaces, and in particular consecutive spaces, are conserved (for instance, the three spaces in 'ĊĠĠĠ').
@@ -401,7 +423,7 @@ tokenizer.backend_tokenizer.pre_tokenizer.pre_tokenize_str(python_code)
 # %% [markdown]
 # ## 单元 33（code）：展示tokenizer对象
 #
-# 【建议会】裸变量表达式展示类型、词表规模等repr，不生成文本、不改变词表。
+# 裸变量表达式展示类型、词表规模等repr，不生成文本、不改变词表。
 
 # %% 原单元 33
 # 展示tokenizer对象；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -411,7 +433,7 @@ tokenizer
 # %% [markdown]
 # ## 单元 34（markdown）：词表训练标题
 #
-# 【必须会】本notebook后续主要看现有词表；完整train_new_from_iterator在另一个train notebook。
+# 本notebook后续主要看现有词表；完整train_new_from_iterator在另一个train notebook。
 
 # %% [markdown] 原单元 34
 # ### train a tokenizer
@@ -419,7 +441,7 @@ tokenizer
 # %% [markdown]
 # ## 单元 35（markdown）：endoftext特殊token
 #
-# 【必须会】GPT2词表末尾特殊token<|endoftext|>，原资产ID50256。重新训练后的ID可能改变；EOS、PAD、BOS的使用要看配置，不能类比BERT CLS/SEP。
+# GPT2词表末尾特殊token<|endoftext|>，原资产ID50256。重新训练后的ID可能改变；EOS、PAD、BOS的使用要看配置，不能类比BERT CLS/SEP。
 
 # %% [markdown] 原单元 35
 # - `<|endoftext|>`, is the special token used to specify the end of a text sequence and was added after the BPE vocabulary was built
@@ -427,7 +449,7 @@ tokenizer
 # %% [markdown]
 # ## 单元 36（code）：按token表示长度降序
 #
-# 【建议会】tokenizer.vocab是dict[str,int]，items给二元组；sorted返回新list，lambda x:len(x[0])按表示字符串长度，reverse=True降序。[:10]左闭右开；推导式逐token转展示文本。长度不是语料词频，也不是token原文byte数；可能含不完整UTF8片段。 原sort没有同长度的第二排序键，词表字典遍历次序可不同；前10项若跨并列边界，两次列表可能不同。本次保留两次输出并核对前10项长度/转换契约，不能把不同列表冒充完全相同。
+# tokenizer.vocab是dict[str,int]，items给二元组；sorted返回新list，lambda x:len(x[0])按表示字符串长度，reverse=True降序。[:10]左闭右开；推导式逐token转展示文本。长度不是语料词频，也不是token原文byte数；可能含不完整UTF8片段。 原sort没有同长度的第二排序键，词表字典遍历次序可不同；前10项若跨并列边界，两次列表可能不同。本次保留两次输出并核对前10项长度/转换契约，不能把不同列表冒充完全相同。
 
 # %% 原单元 36
 # 按token表示长度降序；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -439,7 +461,7 @@ tokens = sorted(tokenizer.vocab.items(), key=lambda x: len(x[0]), reverse=True)
 # %% [markdown]
 # ## 单元 37（code）：按ID降序
 #
-# 【建议会】lambda x:x[1]按ID，reverse=True从大到小；前12项不自动等于最常见词。convert_tokens_to_string接收list[str]，拼接/反byte映射，不训练模型。
+# lambda x:x[1]按ID，reverse=True从大到小；前12项不自动等于最常见词。convert_tokens_to_string接收list[str]，拼接/反byte映射，不训练模型。
 
 # %% 原单元 37
 # 按ID降序；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -451,7 +473,7 @@ tokens = sorted(tokenizer.vocab.items(), key=lambda x: x[1], reverse=True)
 # %% [markdown]
 # ## 单元 38（code）：空代码格
 #
-# 【可以暂时不掌握】原source空，保留编号与元数据；注释版只加入说明性注释，AST仍为空。
+# 原source空，保留编号与元数据；注释版只加入说明性注释，AST仍为空。
 
 # %% 原单元 38
 # 空代码格；原执行语句保留，详细参数/shape/边界见本格说明。

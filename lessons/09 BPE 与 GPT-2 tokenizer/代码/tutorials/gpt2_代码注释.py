@@ -5,7 +5,7 @@
 # %% [markdown]
 # ## 单元 0（markdown）：数据辅助片段标题
 #
-# 【建议会】仅探查本地路径和缓存，不是BPE算法或完整训练。
+# 仅探查本地路径和缓存，不是BPE算法或完整训练。
 
 # %% [markdown] 原单元 0
 # ## datasets
@@ -13,7 +13,7 @@
 # %% [markdown]
 # ## 单元 1（code）：Linux shell cd
 #
-# 【建议会】!是IPython shell语法，非普通Python；/media/whaow为讲师Linux路径。单次子shell cd通常不改变内核后续cwd，本次Windows跳过此命令。注释版保留命令，阅读版转换为等价get_ipython().system调用，需IPython环境。
+# !是IPython shell语法，非普通Python；/media/whaow为讲师Linux路径。单次子shell cd通常不改变内核后续cwd，本次Windows跳过此命令。注释版保留命令，阅读版转换为等价get_ipython().system调用，需IPython环境。
 
 # %% 原单元 1
 # Linux shell cd；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -23,7 +23,7 @@ get_ipython().system('cd /media/whaow/')
 # %% [markdown]
 # ## 单元 2（code）：数据加载与构建器接口
 #
-# 【建议会】load_dataset读数据，DownloadConfig控制下载，load_dataset_builder构造加载器并探查缓存。导入不加载课程codeparrot语料。
+# load_dataset读数据，DownloadConfig控制下载，load_dataset_builder构造加载器并探查缓存。导入不加载课程codeparrot语料。
 
 # %% 原单元 2
 # 数据加载与构建器接口；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -33,7 +33,7 @@ from datasets import load_dataset, DownloadConfig, load_dataset_builder
 # %% [markdown]
 # ## 单元 3（code）：全部注释的代理示例
 #
-# 【建议会】原行全以#开头，不修改任何环境。HTTP/HTTPS/all_proxy分别对应代理配置，CURL_CA_BUNDLE空串是原示意，不能当成读者通用网络修复。
+# 原行全以#开头，不修改任何环境。HTTP/HTTPS/all_proxy分别对应代理配置，CURL_CA_BUNDLE空串是原示意，不能当成读者通用网络修复。
 
 # %% 原单元 3
 # 全部注释的代理示例；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -46,7 +46,7 @@ from datasets import load_dataset, DownloadConfig, load_dataset_builder
 # %% [markdown]
 # ## 单元 4（code）：shell工作目录查询
 #
-# 【建议会】!pwd要求shell支持，Windows通常没有该命令；与内核Python cwd不是同一个概念。仅进行IPython语法转换AST核对，不执行Linux命令。
+# !pwd要求shell支持，Windows通常没有该命令；与内核Python cwd不是同一个概念。仅进行IPython语法转换AST核对，不执行Linux命令。
 
 # %% 原单元 4
 # shell工作目录查询；原执行语句保留，详细参数/shape/边界见本格说明。
@@ -56,7 +56,7 @@ get_ipython().system('pwd')
 # %% [markdown]
 # ## 单元 5（code）：探查原本地dataset缓存
 #
-# 【建议会】load_dataset_builder(./dataset/codeparrot/).cache_dir取得构建器缓存路径字符串，不等于已经加载完整dataset。原DownloadConfig与load_dataset行都是注释，路径和缓存历史属于讲师。本次原路径缺失故跳过，独立临时JSONL/json builder实际检查cache_dir属性。
+# load_dataset_builder(./dataset/codeparrot/).cache_dir取得构建器缓存路径字符串，不等于已经加载完整dataset。原DownloadConfig与load_dataset行都是注释，路径和缓存历史属于讲师。本次原路径缺失故跳过，独立临时JSONL/json builder实际检查cache_dir属性。
 
 # %% 原单元 5
 # 探查原本地dataset缓存；原执行语句保留，详细参数/shape/边界见本格说明。
