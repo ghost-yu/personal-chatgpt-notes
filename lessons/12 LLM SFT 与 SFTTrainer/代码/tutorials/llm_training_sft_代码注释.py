@@ -43,7 +43,7 @@ from trl import SFTTrainer
 # %% [markdown]
 # ## 单元 3（code）：作者的本机代理设置
 #
-# os.environ为当前进程环境；HTTP_PROXY/HTTPS_PROXY写入后影响后续网络请求，7890必须有真实代理服务。不是模型设备参数。本次不执行，不修改用户代理；原格保留。
+# os.environ为当前进程环境；HTTP_PROXY/HTTPS_PROXY写入后影响后续网络请求，7890必须有真实代理服务。模型设备由模型加载与迁移配置决定；这里的两个变量只控制网络请求的代理。
 
 # %% 原单元 3
 # 作者的本机代理设置；原语句与历史输出保留，实测另存。
@@ -57,7 +57,7 @@ os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
 # %% [markdown]
 # ## 单元 4（code）：从Hub加载Alpaca训练分区
 #
-# load_dataset函数第一个字符串为数据集名，split=train选择训练分区，返回HF Dataset，不是Tensor。历史52002行，instruction/input/output/text四列；本次不用当前Hub行数替代历史。实际教学用明确自建的六行同字段数据，不称为Alpaca全量下载。
+# load_dataset函数第一个字符串为数据集名，split=train选择训练分区，返回HF Dataset，不是Tensor。历史输出有52002行，包含instruction/input/output/text四列。配套算例用六行自建数据保留相同字段，方便逐条查看处理结果。
 
 # %% 原单元 4
 # 从Hub加载Alpaca训练分区；原语句与历史输出保留，实测另存。
@@ -241,7 +241,7 @@ model.resize_token_embeddings(len(tokenizer))
 # %% [markdown]
 # ## 单元 22（code）：int8名称的k-bit准备alias
 #
-# PEFT0.4.0的prepare_model_for_int8_training转调kbit准备，旧名字不代表把4bit改成8bit。先冻结基础参数，部分FP16/BF16提升FP32；真正低比特模型可开启checkpointing与输入梯度路径。输入激活可求梯度≠embedding权重解冻。CPU全精度例子演示参数冻结和dtype提升；四位模型的准备路径见对应加载配置。
+# PEFT0.4.0的prepare_model_for_int8_training转调kbit准备，这个旧名称沿用至该版本，实际准备逻辑由kbit函数处理。先冻结基础参数，部分FP16/BF16提升FP32；真正低比特模型可开启checkpointing与输入梯度路径。输入激活可求梯度≠embedding权重解冻。CPU全精度例子演示参数冻结和dtype提升；四位模型的准备路径见对应加载配置。
 
 # %% 原单元 22
 # int8名称的k-bit准备alias；原语句与历史输出保留，实测另存。
@@ -308,7 +308,7 @@ trainer = SFTTrainer(
     train_dataset=train_dataset,
     # 取text列；不自动只监督Response。
     dataset_text_field="text",
-    # 拼接切块长度1024，不代表模型最大8192上下文。
+    # 按1024切分拼接文本，得到训练片段；模型的最大上下文配置为8192。
     max_seq_length=1024,
     # 提供分词对象及EOS/pad配置，避免隐式重新加载。
     tokenizer=tokenizer,
