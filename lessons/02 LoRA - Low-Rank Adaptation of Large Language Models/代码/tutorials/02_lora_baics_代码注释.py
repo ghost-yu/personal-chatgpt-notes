@@ -12,22 +12,22 @@
 # %% [markdown]
 # ## 单元 0：导入图片展示类
 #
-# 【必须会】`from IPython.display import Image` 从模块导入Image类，在当前命名空间绑定Image名字。它不创建神经网络，也不读取图片。后续六次Image调用依赖这一格；跳过导入会触发NameError。
+# `from IPython.display import Image` 从模块导入Image类，在当前命名空间绑定Image名字。它不创建神经网络，也不读取图片。后续六次Image调用依赖这一格；跳过导入会触发NameError。
 #
-# `from` 指模块来源，`import` 指绑定对象；Image是类，调用它才会构造实例。这一格没有Tensor、dtype或模型shape。中文注释直接写明它仅准备图片展示API，没有加载BLOOM或LoRA。
+# `from` 指模块来源，`import` 指绑定对象；Image是类，调用它才会构造实例。Image供后面的图片展示单元调用。
 
 # %%
-# 导入notebook图片展示类；不创建模型，也不读取权重。
+# 导入notebook图片展示类，后面用Image显示配图。
 # from 模块 import 名称：把 IPython.display 中的 Image 类绑定到当前内核名字。
 # 类是创建对象的模板；这里只导入类，尚未调用 Image(...) 创建展示对象。
 # 后续六格需要先运行本格；否则会因为 Image 未定义触发 NameError。
-# 本格没有参数张量、dtype、shape、loss 或参数更新；它是展示辅助代码。
+# 后面的Image调用会使用这个导入的类。
 from IPython.display import Image
 
 # %% [markdown]
 # ## 单元 1：summary 标题
 #
-# 【可以暂时不掌握】Markdown的`##`表示二级标题，不是Python注释单元。运行/渲染本格不会修改参数，只为后面的概念概述分节。
+# Markdown的`##`表示二级标题，不是Python注释单元。运行/渲染本格不会修改参数，只为后面的概念概述分节。
 
 # %% [markdown]
 # ## summary
@@ -35,7 +35,7 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 2：LoRA 的定义与冻结关系
 #
-# 【必须会】本格是文字与论文链接。Low-Rank Adaptation指用两个小矩阵表示权重增量；不是要求原始大权重本身低秩。原文Adaption为拼写差异，论文用Adaptation。
+# 本格是文字与论文链接。Low-Rank Adaptation指用两个小矩阵表示权重增量；不是要求原始大权重本身低秩。原文Adaption为拼写差异，论文用Adaptation。
 #
 # `freezes`对应基权重不参与参数更新；`injects`对应在选定线性映射中加可训练分支。本格没调用`requires_grad_(False)`或PEFT注入API，不能从概念文字推断冻结代码已经执行。
 #
@@ -60,7 +60,7 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 3：从完整增量到少量训练参数
 #
-# 【必须会】本格中的Phi是模型参数集合，Delta Phi是微调后的增量，Theta是编码增量的小参数集合。`|Phi|`这里表示参数个数，不是一个标量参数的绝对值。完整微调与LoRA的比较是需要优化/保存的任务参数规模；不能按比例推导整个模型显存。
+# 本格中的Phi是模型参数集合，Delta Phi是微调后的增量，Theta是编码增量的小参数集合。`|Phi|`这里表示参数个数，不是一个标量参数的绝对值。完整微调与LoRA的比较是需要优化/保存的任务参数规模；不能按比例推导整个模型显存。
 #
 # 对于一个输入宽k、输出宽d的线性层，完整增量有kd个参数；低秩因子有r(k+d)个参数。基权重仍需加载，激活也仍参与前向和必要的反向。Q/K/V/O是注意力投影矩阵，不是输入token或输出文本；本格没有具体实现attention。
 
@@ -78,14 +78,14 @@ from IPython.display import Image
 # %% [markdown]
 # ## 单元 4：展示论文公式图片
 #
-# 【建议会】代码第一行`# https://arxiv.org/abs/2106.09685`只是Python注释，不发起网络请求。下一行`Image('../imgs/lora.png', width=600)`读取本地PNG，返回Image对象；notebook显示末尾表达式。
+# 代码第一行`# https://arxiv.org/abs/2106.09685`只是Python注释，不发起网络请求。下一行`Image('../imgs/lora.png', width=600)`读取本地PNG，返回Image对象；notebook显示末尾表达式。
 #
-# 路径为str，width为int展示宽度600，没有模型shape或可训练变量。相对路径基于内核工作目录，配套代码的tutorials上一级imgs存放原图。把notebook复制到别处并不保证图片路径可用。Image的data是字节，不是`[B,C,H,W]`模型输入。
+# 路径是str，width是int，指定展示宽度600。相对路径基于内核工作目录，配套代码的tutorials上一级imgs存放原图。把notebook复制到别处并不保证图片路径可用。Image的data属性保存图片字节。
 #
 # 公式图与论文第4.1节相连：冻结W0，用两个因子表示Delta W，再把两个分支输出相加。图片展示不执行公式。原链接注释完整保留，新增中文注释解释图片用途及路径。
 
 # %%
-# 读取LoRA论文公式截图；width=600仅指定展示宽度，公式没有在此执行。
+# 读取LoRA论文公式截图，以600像素宽度显示。
 # Image(...) 调用展示类构造实例；第一个位置实参是 str 本地图片路径。
 # 原路径 ../imgs/lora.png 由内核当前工作目录解析，不自动以 notebook 文件位置为基准。
 # 从本讲代码/tutorials 启动内核，.. 才会指向代码，再到配套 imgs 目录。
@@ -94,7 +94,6 @@ from IPython.display import Image
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 原 arxiv URL 是 Python 注释，不会发起请求或下载论文。
 # 图对应论文低秩公式：列向量 W0 x + BAx；本教程后文采用行向量 xW + x(W_AW_B)。
 # https://arxiv.org/abs/2106.09685
@@ -103,7 +102,7 @@ Image('../imgs/lora.png', width=600)
 # %% [markdown]
 # ## 单元 5：ft vs. lora 标题
 #
-# 【建议会】ft在这里是fine-tuning简称，不是Python函数。标题引出完整更新与低秩更新的表示关系，本格没有训练循环。
+# ft在这里是fine-tuning简称，不是Python函数。标题引出完整更新与低秩更新的表示关系，本格没有训练循环。
 
 # %% [markdown]
 # ## ft vs. lora
@@ -111,7 +110,7 @@ Image('../imgs/lora.png', width=600)
 # %% [markdown]
 # ## 单元 6：完整微调的函数表示
 #
-# 【必须会】Markdown的LaTeX表示输入x经参数W控制的函数得到h，微调后改用W+Delta W。f不一定只是线性函数；对后面线性层例子，可以具体写h=xW。
+# Markdown的LaTeX表示输入x经参数W控制的函数得到h，微调后改用W+Delta W。f不一定只是线性函数；对后面线性层例子，可以具体写h=xW。
 #
 # W是已有权重，Delta W是任务更新量，h是输出特征。若X为`[N,k]`、W为`[k,d]`，输出为`[N,d]`。本格没有定义名叫f_W的Python函数，也没有更新Tensor。箭头表示概念转变，不是反向传播API。
 
@@ -128,7 +127,7 @@ Image('../imgs/lora.png', width=600)
 # %% [markdown]
 # ## 单元 7：完整微调示意图
 #
-# 【建议会】`Image('../imgs/regular-finetuning.png', width=600)`的API、类型和相对路径规则与单元4相同，但展示的对象换成完整参数更新图。图从左到右是原模型前向、反向获得完整Delta W、更新后模型前向；每个前向框内部从下往上读输入→权重→h。权重块拥有参数，箭头不拥有参数。
+# `Image('../imgs/regular-finetuning.png', width=600)`的API、类型和相对路径规则与单元4相同，但展示的对象换成完整参数更新图。图从左到右是原模型前向、反向获得完整Delta W、更新后模型前向；每个前向框内部从下往上读输入→权重→h。权重块拥有参数，箭头不拥有参数。
 #
 # 这里的600只改变展示尺寸。没有读取checkpoint、没有调用optimizer。原执行输出是历史PNG展示，本次验证只确认同一图片能真实读取并产生Image。
 
@@ -142,14 +141,13 @@ Image('../imgs/lora.png', width=600)
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 图示输入 -> 原权重 -> 输出，再经完整微调更新权重；图中的箭头不是 autograd 调用。
 Image('../imgs/regular-finetuning.png', width=600)
 
 # %% [markdown]
 # ## 单元 8：把完整更新拆成两个分支
 #
-# 【必须会】`Image('../imgs/regular-finetuning-alt.png', width=500)`展示等价分解：基分支xW，增量分支xDelta W，在相加处得到同shape输出。两路均为`[N,d]`，相加不是拼接。
+# `Image('../imgs/regular-finetuning-alt.png', width=500)`展示等价分解：基分支xW，增量分支xDelta W，在相加处得到同shape输出。两路均为`[N,d]`，相加不是拼接。
 #
 # 完整Delta W依然是`[k,d]`的大矩阵；“多画一条支路”本身不产生参数节省。LoRA的下一步才把这一块分解成小因子。width=500不意味着模型hidden_size=500，本格返回Image而非矩阵。
 
@@ -163,7 +161,6 @@ Image('../imgs/regular-finetuning.png', width=600)
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 数学上 x(W+Delta W)=xW+xDelta W；两路输出均 [N,d]，相加不是 cat 拼接。
 # 完整 Delta W 仍为 [k,d]；增加一条画出来的分支本身不节省参数。
 Image('../imgs/regular-finetuning-alt.png', width=500)
@@ -171,7 +168,7 @@ Image('../imgs/regular-finetuning-alt.png', width=500)
 # %% [markdown]
 # ## 单元 9：低秩分解和参数量算例
 #
-# 【必须会】本格用A/B作维度名，WA/WB作矩阵名，容易与论文的A/B因子混淆。采用本篇统一的k/d后：W为`[k,d]`，WA为`[k,r]`，WB为`[r,d]`，Delta W=WA WB为`[k,d]`。
+# 本格用A/B作维度名，WA/WB作矩阵名，容易与论文的A/B因子混淆。采用本篇统一的k/d后：W为`[k,d]`，WA为`[k,r]`，WB为`[r,d]`，Delta W=WA WB为`[k,d]`。
 #
 # $$P_{\mathrm{full}}=kd,\qquad P_{\mathrm{LoRA}}=r(k+d),\qquad \rho=\frac{r(k+d)}{kd}.$$
 #
@@ -196,14 +193,14 @@ Image('../imgs/regular-finetuning-alt.png', width=500)
 # %% [markdown]
 # ## 单元 10：LoRA 双分支图
 #
-# 【必须会】`Image('../imgs/lora-weights.png', width=600)`显示灰色基权重和紫色两个小因子。沿图从下往上：输入X `[N,k]`分流，左路XW `[N,d]`；右路XWA `[N,r]`再乘WB `[r,d]`得到`[N,d]`；相加为H。
+# `Image('../imgs/lora-weights.png', width=600)`显示灰色基权重和紫色两个小因子。沿图从下往上：输入X `[N,k]`分流，左路XW `[N,d]`；右路XWA `[N,r]`再乘WB `[r,d]`得到`[N,d]`；相加为H。
 #
 # 左侧W冻结，右侧因子可训练，加法和箭头无参数。图未画出alpha/r缩放，实际实现需核对scale。输出标成Embedding h是中间特征，不意味着本格调用`nn.Embedding`。
 #
 # 这条未合并分支在训练及未合并推理时存在；无dropout干扰的线性情况下，可将scale WA WB合并进W。图片不能证明任意量化模型合并完全无误差。单元只显示图，不实现合并。
 
 # %%
-# 展示低秩增量的双分支结构；没有在此构造WA/WB或进行训练。
+# 展示低秩增量的双分支结构，可对照图中的W、A、B阅读公式。
 # Image(...) 调用展示类构造实例；第一个位置实参是 str 本地图片路径。
 # 原路径 ../imgs/lora-weights.png 由内核当前工作目录解析，不自动以 notebook 文件位置为基准。
 # 从本讲代码/tutorials 启动内核，.. 才会指向代码，再到配套 imgs 目录。
@@ -212,15 +209,14 @@ Image('../imgs/regular-finetuning-alt.png', width=500)
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 右支路 X:[N,k] -> XW_A:[N,r] -> XW_AW_B:[N,d]，再与 XW 相加。
-# 基 W 冻结，两个小因子可训练；本单元只展示关系，不创建这些参数。
+# 图中基矩阵W冻结，两个小因子A、B参与训练。
 Image('../imgs/lora-weights.png', width=600)
 
 # %% [markdown]
 # ## 单元 11：alpha 标题
 #
-# 【建议会】本格标题写alpha参数，但下一格实际讨论rank。本篇把alpha与r区分：r控制瓶颈宽度，alpha通常用于缩放s=alpha/r。两者都是超参数；alpha未在原单元13赋值，不能从标题推断已有定义。
+# 本格标题写alpha参数，但下一格实际讨论rank。本篇把alpha与r区分：r控制瓶颈宽度，alpha通常用于缩放s=alpha/r。两者都是超参数；alpha未在原单元13赋值，不能从标题推断已有定义。
 
 # %% [markdown]
 # ## 伪代码
@@ -228,7 +224,7 @@ Image('../imgs/lora-weights.png', width=600)
 # %% [markdown]
 # ## 单元 12：rank 的容量与代价
 #
-# 【必须会】原英文的意思是：较小r使小矩阵参数更少、适配容量受限；较大r提供更多可学习自由度，但训练成本及过拟合风险依任务而定。不是r越大指标一定越好，也不是设小r就总能获得同比例加速。
+# 原英文的意思是：较小r使小矩阵参数更少、适配容量受限；较大r提供更多可学习自由度，但训练成本及过拟合风险依任务而定。不是r越大指标一定越好，也不是设小r就总能获得同比例加速。
 #
 # r为int；必须与因子对应维度一致。若k=d=768、r=8，降维后最后一维是8，而非完整矩阵的768。原文没有实验指标、最优rank或任务数据，本篇不虚构消融结果。
 
@@ -242,7 +238,7 @@ Image('../imgs/lora-weights.png', width=600)
 # %% [markdown]
 # ## 单元 13：Markdown 中的 LoRA 伪代码
 #
-# 【必须会】这一格是代码围栏包住的文本，notebook不会执行它。中文注释版给每条有意义语句加说明，但不修缩进、不替换省略号、不填入alpha，从而保持原资料与原AST。单独可运行的[教学实现](../../复现/scripts/verify_lora.py)明确是新编补充。
+# 这一格是代码围栏包住的文本，notebook不会执行它。中文注释版给每条有意义语句加说明，但不修缩进、不替换省略号、不填入alpha，从而保持原资料与原AST。单独可运行的[教学实现](复现/scripts/verify_lora.py)明确是新编补充。
 #
 # | 语句/名字 | 类型、shape与作用 | 依赖或状态变化 |
 # |---|---|---|
@@ -275,7 +271,7 @@ Image('../imgs/lora-weights.png', width=600)
 
 # %% [markdown]
 # ```
-# # 【必须会】input_dim 是整数配置，记作输入特征宽度 k=768，不是 batch_size。
+# # input_dim 是整数配置，记作输入特征宽度 k=768，不是 batch_size。
 # # 本格是 Markdown 文本，不会随 notebook 的 Run Cell 执行。
 # # 原文未导入 torch、torch.nn as nn 和 math；此注释版不补写执行语句。
 # input_dim = 768  # e.g., the hidden size of the pre-trained model
@@ -348,7 +344,7 @@ Image('../imgs/lora-weights.png', width=600)
 # %% [markdown]
 # ## 单元 14：BLOOM 模型结构截图
 #
-# 【必须会】`Image('../imgs/bloom.png')`没有显式width参数，使用Image API默认展示行为。代码读取图片，不执行截图里的`BloomForCausalLM`构造，不实例化bitsandbytes层，也不下载7B权重。
+# `Image('../imgs/bloom.png')`没有显式width参数，使用Image API默认展示行为。代码读取图片，不执行截图里的`BloomForCausalLM`构造，不实例化bitsandbytes层，也不下载7B权重。
 #
 # 图片实际列出Embedding(250880,4096)、30个BloomBlock、融合QKV投影4096→12288、Attention输出4096→4096、MLP4096→16384→4096、最后lm_head4096→250880。这些是截图配置，不能说适用于全部BLOOM模型。
 #
@@ -364,16 +360,15 @@ Image('../imgs/lora-weights.png', width=600)
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 截图配置：Embedding 后 [batch,time,4096]；融合 QKV 投影得到 [batch,time,12288]。
 # 12288=3*4096 是融合输出宽度，不是 attention head 数；MLP 中间宽度16384。
-# 截图中的 BloomForCausalLM 和 Linear8bitLt 都没有被本行实例化。
+# 截图展示BloomForCausalLM的模块层次，其中Linear8bitLt是8位线性层。
 Image('../imgs/bloom.png')
 
 # %% [markdown]
 # ## 单元 15：插入 LoRA 后的 BLOOM 截图
 #
-# 【必须会】`Image('../imgs/bloom_lora.png')`也不传width，仅显示历史打印截图。外层PeftModelForCausalLM、LoraModel表示包装结构；基模型仍是BLOOM，不是另一个预训练模型。
+# `Image('../imgs/bloom_lora.png')`也不传width，仅显示历史打印截图。外层PeftModelForCausalLM、LoraModel表示包装结构；基模型仍是BLOOM，不是另一个预训练模型。
 #
 # 目标是融合`query_key_value`投影，原4096→12288保留；新增lora_A为4096→16，lora_B为16→12288。这张图的r=16，不是单元13的r=8。PEFT Linear存储权重方向为`[out,in]`，所以A权重`[16,4096]`、B权重`[12288,16]`；这与行向量WA/WB是转置关系。
 #
@@ -391,9 +386,8 @@ Image('../imgs/bloom.png')
 # 返回 IPython.display.Image 对象，data 属性包含嵌入的 PNG 字节。
 # 数据流为 str 路径 -> PNG bytes -> Image 实例 -> notebook 展示，无 torch.Tensor。
 # notebook 显示单元末尾表达式；普通 Python 脚本不会自动渲染这个对象。
-# 保留的图片输出是作者历史记录；本次实际读取与哈希比较另存复现记录。
 # 图中 adapter r=16，A 权重 [16,4096]、B 权重 [12288,16]（nn.Linear 的 [out,in] 方向）。
 # 输入 [batch,time,4096] -> 瓶颈 [batch,time,16] -> 增量 [batch,time,12288]。
-# 单个融合 QKV 的因子数 16*(4096+12288)=262144；不代表整网总参数比例。
+# 单个融合QKV层的LoRA因子数为16*(4096+12288)=262144；整网统计需累加所有目标层。
 # 图中 rank 与 Markdown13 的 r=8 不同；图片未给 alpha，不能据此推断缩放值。
 Image('../imgs/bloom_lora.png')
