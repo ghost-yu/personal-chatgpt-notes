@@ -1,0 +1,205 @@
+{
+  "note_sha256": "b8d154f2884ce1e04534a41cb5c654c17e4f5a8ab7c15c35a7e146ed61ed9df9",
+  "script_sha256": "037de285eb31bb845b1468b3e8b0a5e91c36cae0be353c5e4ca8fde05a7dcfe4",
+  "official_source_sha256": "56a45f1833eedb70dd94d31dfe9d9be378a9f33458f2f5137e681873a7603754",
+  "official_commit": "7565eb6fee2175b2d4fe2cfb45067a61b35d7f5e",
+  "cpu_allocation_changes": 2,
+  "teaching_cache_four_assignments_ast_equal": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.4",
+  "fairscale": "0.4.13 (local source target)",
+  "blocks": [
+    {
+      "block": 1,
+      "stdout": "tensor([[0.7071, 0.0000, 0.7071, 0.7071]])\ntensor([[0.2863, 0.1412, 0.2863, 0.2863]])\ntensor([[2.2902, 1.1372]])\n"
+    },
+    {
+      "block": 2,
+      "stdout": "torch.Size([1, 8, 1, 2]) torch.Size([1, 4, 1, 2])\ntensor([[ 1.,  0.],\n        [ 0.,  1.],\n        [ 1.,  1.],\n        [ 1., -1.]])\n"
+    },
+    {
+      "block": 3,
+      "stdout": "> initializing model parallel with size 1\n> initializing ddp with size 1\n> initializing pipeline with size 1\n[3, 1, 1, 1] [3, 4, 5, 6]\n[0.0, 1.1920928955078125e-07, 9.033828973770142e-08, 5.960464477539063e-08]\n"
+    },
+    {
+      "block": 4,
+      "stdout": "tensor([[0., 0., 0., 0., -inf],\n        [0., 0., 0., 0., 0.]])\n"
+    }
+  ],
+  "manual_attention_output": [
+    [
+      2.290249824523926,
+      1.1371877193450928
+    ]
+  ],
+  "manual_attention_numpy_error": 1.5202260783553356e-08,
+  "model": {
+    "config": {
+      "dim": 8,
+      "n_layers": 2,
+      "n_heads": 2,
+      "n_kv_heads": 1,
+      "vocab_size": 16,
+      "multiple_of": 4,
+      "ffn_dim_multiplier": null,
+      "norm_eps": 1e-05,
+      "max_batch_size": 1,
+      "max_seq_len": 8
+    },
+    "parameters": 1832,
+    "all_qkv_projection_lengths": {
+      "cached/layer0/wq": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "cached/layer0/wk": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "cached/layer0/wv": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "cached/layer1/wq": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "cached/layer1/wk": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "cached/layer1/wv": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "reference/layer0/wq": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reference/layer0/wk": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reference/layer0/wv": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reference/layer1/wq": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reference/layer1/wk": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "reference/layer1/wv": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "prefix_comparisons": [
+      {
+        "start_pos": 0,
+        "input_length": 3,
+        "logits_shape": [
+          1,
+          3,
+          16
+        ],
+        "max_error": 0.0
+      },
+      {
+        "start_pos": 3,
+        "input_length": 1,
+        "logits_shape": [
+          1,
+          1,
+          16
+        ],
+        "max_error": 1.1920928955078125e-07
+      },
+      {
+        "start_pos": 4,
+        "input_length": 1,
+        "logits_shape": [
+          1,
+          1,
+          16
+        ],
+        "max_error": 9.033828973770142e-08
+      },
+      {
+        "start_pos": 5,
+        "input_length": 1,
+        "logits_shape": [
+          1,
+          1,
+          16
+        ],
+        "max_error": 5.960464477539063e-08
+      }
+    ],
+    "every_layer_old_kv_unchanged": true,
+    "every_layer_future_capacity_unwritten": true,
+    "allocated_cache_bytes": 512,
+    "effective_3_token_bytes": 192,
+    "post_rope_k_componentwise_error": 3.9907271792705146e-09,
+    "v_is_unrotated_projection": true,
+    "independent_attention_float64_error": 2.515123258967078e-09,
+    "future_changes_do_not_affect_prefix": true,
+    "dirty_tail_excluded": true,
+    "mismatched_prefix_logit_error": 0.09333935379981995,
+    "old_mask_error": "The size of tensor a (5) must match the size of tensor b (2) at non-singleton dimension 3",
+    "rectangular_mask_cases": 15,
+    "chunk_mask_assignment_changes": 1,
+    "chunk_3_2_1_errors": [
+      0.0,
+      5.960464477539063e-08,
+      5.960464477539063e-08
+    ],
+    "greedy_ids": [
+      11,
+      14,
+      2,
+      2
+    ],
+    "all_parameters_unchanged": true,
+    "all_parameter_grads_none": true
+  },
+  "sentencepiece_ids_with_bos": [
+    1,
+    306,
+    4658,
+    278,
+    6593,
+    310,
+    2834,
+    338
+  ],
+  "scope": "Four current teaching blocks; full fixed Meta file with two CPU allocation edits; independent one-mask repair comparison. Random small model, no pretrained weights or GPU timing."
+}

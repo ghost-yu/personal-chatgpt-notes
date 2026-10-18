@@ -1,0 +1,56 @@
+{
+  "source_url": "https://arxiv.org/pdf/1706.03762v5",
+  "title": "Attention Is All You Need",
+  "version": "arXiv v5, 2017-12-06",
+  "pdf_sha256": "bfaaec89262875f927cf1b38b2da2d775f3309b7bea3537f29b606ca67e79065",
+  "images": [
+    {
+      "file": "图片/原论文_Figure1_模型结构.png",
+      "page": 3,
+      "crop_points_top_left": [
+        165,
+        62,
+        425,
+        420
+      ],
+      "scale": 3,
+      "sha256": "fac362643080bb9989ab5ba65ffc5d0196ebb0cd404b449e71b2a9759178890d"
+    },
+    {
+      "file": "图片/原论文_Decoder_因果条件.png",
+      "page": 3,
+      "crop_points_top_left": [
+        105,
+        558,
+        510,
+        640
+      ],
+      "scale": 3,
+      "sha256": "c255855c00790a056e26140fcae6fece7b2231d4a995d32fa83f15c8c4d479c9"
+    },
+    {
+      "file": "图片/原论文_Figure2_注意力.png",
+      "page": 4,
+      "crop_points_top_left": [
+        105,
+        65,
+        510,
+        270
+      ],
+      "scale": 3,
+      "sha256": "f87b36d1bcdb82714dccff484ecd925a2d06e757380d84f9260ca90d6bd766dc"
+    },
+    {
+      "file": "图片/原论文_公式1_注意力.png",
+      "page": 4,
+      "crop_points_top_left": [
+        205,
+        430,
+        510,
+        468
+      ],
+      "scale": 3,
+      "sha256": "7578b12832f1921acf161b8dea6c815a136ed48c15f00cf6b5f3e7400fcfb007"
+    }
+  ]
+}

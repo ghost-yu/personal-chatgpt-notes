@@ -2,7 +2,7 @@
 
 [返回总目录](../../README.md)
 
-1. [中文讲解](解释.md)：为什么能复用 KV、张量形状、缓存切片和位置对齐。
+1. [中文讲解](解释.md)：从三个token讲QKV、缓存槽位、prefill/decode与矩形mask；论文原图和公式在对应段落内。
 2. [Python 阅读版](代码/tutorials/llama2_src_cache_kv_代码注释.py)：直接阅读原课程代码与中文注释。
 3. [详细中文代码注释](代码/tutorials/代码注释.ipynb)：全部 25 个原单元的说明，包含 Markdown 中的 Attention 摘录。
 

@@ -1,3 +1,36 @@
+# 第20讲基础讲解运行记录（2026-10-18）
+
+本轮执行当前解释.md第一个折叠区之前的四个Python代码块，按同一个作用域顺序运行。教学例使用PyTorch2.5.1+cpu、NumPy1.26.4、SentencePiece0.2.0、FairScale0.4.13；Python3.12.14，Gloo单进程。原notebook、注释版和此前完整交付报告保持原样。
+
+## 重做当前正文例子
+
+从仓库根目录执行：
+
+```powershell
+$lessonPython = 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe'
+& $lessonPython 'lessons/20 KV cache 与增量推理/复现/scripts/verify_foundation_examples.py'
+```
+
+脚本默认使用第15讲资料中的固定`llama-model.py`和`fairscale-local`。在其他位置运行时，传入`--meta-source`和`--fairscale`。独立执行正文代码时，用环境变量`LESSON20_META_SOURCE`、`LESSON20_FAIRSCALE`指定这两个路径，并按正文顺序执行四块。脚本先核对原文件SHA，再加载完整模块；原`.cuda()`缓存分配共两处改为`.to('cpu')`，原文件不改写。多token mask修正另开模块，额外只替换一条mask赋值，调用正文的make_causal_mask函数。
+
+## 当前例子的结果
+
+- 四行K/V注意力：概率约`[.2863,.1412,.2863,.2863]`，输出`[2.2902498,1.1371877]`，与独立NumPy计算一致；槽位例缓存形状`[1,8,1,2]`，有效前缀`[1,4,1,2]`，旧三行不变。正文的四条缓存切片赋值与完整原Attention对应语句AST相同。
+- 完整随机Meta Transformer：2层、D8、Q2/KV1、每头4、V16、batch1、容量8，共1832参数。每一矩阵显式seed20正态初始化，归一化增益设1；相同参数分别运行增量与完整前缀重算。每层三投影均观察到`[3,1,1,1]`与`[3,4,5,6]`，logits最大差1.1920929e-7，所有层有效K/V一致，旧前缀不变、未来槽未写。
+- 直接使用真实Attention再处理位置6：缓存K与独立float64分量旋转最大差3.9907272e-9，V等于未旋转投影；独立float64旋转、注意力与输出矩阵路径最大差2.5151233e-9。
+- 实际缓存分配512bytes，三个token有效部分192bytes。state_dict和named_buffers不含cache；所有参数前后相同、grad为None。改变未来token不影响前四位置，旧尾部填入123/456也不影响短会话输出；错误前缀的logit差约.09334。四步greedy两条路径相同，ID为11/14/2/2。
+- 原固定实现P3/S2时报末轴5与2不匹配；独立单赋值mask修正后`[3,2,1]`分块最大差5.9604645e-8。正文mask与逐元素参考比较15组P/S。真实SentencePiece分词得到原8个ID。
+
+结果及当前笔记、脚本哈希见[基础讲解验证.json](outputs/基础讲解验证.json)。没有加载原预训练权重，也没有重跑原GPT-2完整计时或GPU实验。
+
+## 原论文截图
+
+来自[Attention Is All You Need v5](https://arxiv.org/pdf/1706.03762v5)，原PDF保存在外部课程资料目录。第3页Figure1、decoder因果段落，以及第4页Figure2、公式(1)共四张，按3倍像素渲染裁剪，已逐张检查。页码、左上角坐标与PDF/PNG哈希见[截图来源](outputs/论文截图来源.json)。课程三张QKV原PNG和两动画直接内嵌；动画另抽取中间帧查看复用颜色与遮罩。
+
+整理时，初次AST比较多取了原函数后续对keys/values的重新赋值，改为只比较四条切片赋值。SentencePiece读取含中文的Windows文件路径失败，改用同一文件的model_proto字节。随后四块正文和全部本轮对照完整通过。
+
+---
+
 # 第20讲复现记录
 
 状态：**部分成功**。原文件与注释一致性、真实随机小型 Meta Transformer/FairScale/Gloo 及真实 GPT-2 缓存路径通过。没有复现原预训练权重和原性能实验。
