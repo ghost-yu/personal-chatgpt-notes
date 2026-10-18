@@ -79,7 +79,7 @@ Image('../imgs/ppo_algo.png', width=600)
 # %% 10
 # ## 单元 10（markdown）：SFT安装与启动命令
 #
-# 三条shell逻辑命令：pip安装、clone源码、python执行示例。原未锁版本；model base7B、Guanaco、4bit/PEFT、micro4/K2单卡有效batch8。Bash反斜杠不能照搬PowerShell；本次不运行此GPU命令。
+# 三条shell逻辑命令：pip安装、clone源码、python执行示例。原未锁版本；model base7B、Guanaco、4bit/PEFT、micro4/K2单卡有效batch8。Bash用反斜杠续行；在PowerShell中执行时，需要改用其续行语法或写成一行。GPU运行环境见复现说明。
 # ```
 # # 安装库；原未锁版本。
 # pip install trl
@@ -155,7 +155,7 @@ from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
 # %% 17
 # ## 单元 17（code）：设置随机种子函数
 #
-# def定义函数，调用42设置Torch/CUDA/NumPy/Python状态；CPU环境CUDA设种不代表运行GPU。cudnn.deterministic约束相关kernel；PPOConfig默认seed0会在Trainer初始化覆盖种子。
+# 定义设种函数；传入42时设置Torch/CUDA/NumPy/Python的随机状态。cudnn.deterministic约束相关kernel；Trainer初始化还会使用PPOConfig的seed，默认是0。
 # 设置随机种子函数；原语句/历史输出保留。
 # 定义函数，调用时修改几类随机状态。
 def setup_seed(seed):
@@ -205,7 +205,7 @@ model.pretrained_model
 # %% 21
 # ## 单元 21（code）：查看value head
 #
-# Dropout+Linear(H,1)，GPT2 H768时769参数，小模型H16时17参数；Flatten repr不代表forward调用它。
+# Dropout+Linear(H,1)，GPT2的H=768时有769个参数，H=16时有17个；forward的具体操作见下方方法定义。
 # 查看value head；原语句/历史输出保留。
 # 查看critic的标量输出头。
 model.v_head
@@ -279,7 +279,7 @@ response_tensor = ppo_trainer.generate([item for item in query_tensor], return_p
 # decode完整返回；原语句/历史输出保留。
 # 第一返回样本ID解码为完整字符串。
 response_txt = tokenizer.decode(response_tensor[0])
-# 显示包含query的结果，不代表微调质量。
+# 显示包含query的生成结果，便于对照输入与续写部分。
 response_txt
 
 # %% 28
@@ -407,7 +407,7 @@ last_hidden_state = base_model_output.hidden_states[-1]
 print(last_hidden_state.shape)
 # 取词表分数[T,50257]。
 lm_logits = base_model_output.logits
-# 打印词表维度，不代表value。
+# 打印logits的词表维度；value由独立的value head输出。
 print(lm_logits.shape)
 # loss = base_model_output.loss
 # print(loss.shape)
