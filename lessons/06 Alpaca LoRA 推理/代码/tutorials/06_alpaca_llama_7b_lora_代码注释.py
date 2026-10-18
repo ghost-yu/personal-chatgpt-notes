@@ -8,7 +8,7 @@
 #
 # 两条`!pip install -q git+...`分别用HTTPS和SSH从Git安装Transformers；`!`是IPython调用shell，`pip install`安装，`-q`减少输出，`git+`声明源码来源。
 # 它们是替代方式，通常选一条，不需要顺序安装两次。SSH依赖已有身份/配置；原命令没固定SHA或tag，不能据此重建老师4.30.0.dev0。
-# 本次不执行此格。注释版保留原指令，Python阅读版把它们变成注释，重做验证的固定环境见复现文档。此格会修改环境，不是模型推理代码。
+# 这些安装指令用于准备依赖环境。Python阅读版将它们写成注释，便于查看；依赖版本与安装步骤见复现文档。
 #
 # ```ipython
 # # https 协议
@@ -97,7 +97,7 @@ from transformers import LlamaTokenizer, LlamaForCausalLM, GenerationConfig
 # ## 单元 8（code）：原代理配置保持注释
 #
 # 原三行均为注释：没import os，也没写HTTP_PROXY或HTTPS_PROXY。127.0.0.1:7890是示例代理地址，不是模型端口。
-# 如果自行去掉#，会改变进程网络环境；本次不启用代理，也不执行附件里的口述命令。空操作也纳入覆盖审计。
+# 去掉#后，赋值会设置当前进程的网络代理；保留#时，这一行是注释。代理地址应填写为本机实际运行的服务地址。
 
 # %% 原单元 8
 # 原代理示例以注释保留；使用时把地址改为本机代理的实际地址。
@@ -119,7 +119,7 @@ from transformers import LlamaTokenizer, LlamaForCausalLM, GenerationConfig
 # `LlamaForCausalLM.from_pretrained(...)`输入历史Hub标识str及关键字参数，返回LlamaForCausalLM实例，绑定model；不传训练数据。
 # load_in_8bit=True使用旧式bitsandbytes量化加载，可能保留embedding/norm等浮点参数；device_map='auto'交给Accelerate自动分派，不等于两张卡各放一半或数据并行。
 # 预期input_ids为int64[B,S]，模型内部embedding为浮点[B,S,H]，LM logits为[B,S,V]。历史7B常见H4096、V32000；本次未实测原权重。
-# 本格可能下载大文件并分配内存。本次不执行它，教学补充用本地随机小型LLaMA FP32模型，绝不把它写成原8bit7B复现。
+# 加载时会读取模型文件并为权重分配内存。配套算例使用本地随机小型LLaMA和FP32权重，便于观察加载过程。
 
 # %% 原单元 10
 # 类方法加载历史基模型标识；此格可能下载7B权重，本次未执行。
@@ -221,7 +221,7 @@ from peft import PeftModel
 # `PeftModel.from_pretrained(model, adapter_id)`第一参数是现有基模型对象，第二参数是adapter目录/Hub标识。返回任务对应的PEFT对象，再绑定model。
 # 在固定v0.3.0，adapter_name默认'default'，is_trainable默认False：读取配置、根据任务选包装、注入目标层、加载adapter权重并进入推理状态；不是新训练步骤。
 # LoRA目标层复用基权重，并增A/B低秩支路。对4096→4096、rank r的投影，A[r,4096]、B[4096,r]，x[B,S,4096]→[B,S,r]→[B,S,4096]。
-# 本次不调用原远程adapter标识；补充明确加载自编非零adapter的本地文件，核对保存/重载后前向一致、default键及冻结，不把随机adapter当成Alpaca训练成果。
+# 配套算例从本地文件加载自编的非零adapter，比较保存前后的输出，并查看default名称与参数冻结状态。原代码中的远程标识指向Alpaca训练得到的adapter。
 
 # %% 原单元 19
 # 现有基模型+已训练adapter标识→PEFT对象，再绑定model。
@@ -374,7 +374,7 @@ def inference(instruction, input=None):
 # ## 单元 26（code）：交互输入会等待人
 #
 # Python先调用内置input('Instruction: ')，向终端要字符串，再把返回值作为inference第一个位置参数。不是给函数局部input参数重新赋值。
-# 本格会等待键盘，可能随后生成256token，本次不自动执行交互格。核心函数用明确测试字符串调用；静态审计仍保留并核对本格AST。
+# 运行到这里时，程序等待键盘输入，再调用生成函数，最多生成256个新token。也可以直接给核心函数传入字符串，观察同样的处理过程。
 
 # %% 原单元 26
 # 内置input会等键盘；返回str传给inference，本次不自动执行交互格。
