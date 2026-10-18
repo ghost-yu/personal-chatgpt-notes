@@ -10,9 +10,11 @@
     "代码/imgs/rope_paper.png": "e5b679083a93e80ffed49bcfb19ea537f528c9694ba80f56aa0afb5d6c6d8907"
   },
   "paper": "https://arxiv.org/abs/2405.18719v2",
-  "paper_code": "Appendix B Listing1，已通过PDF文本逐行核对；不是Git仓库原文件",
+  "paper_code": "原notebook第39格；2026-10-18与本地固定v2论文第12–13页Appendix B Listing1完整两个类再次逐行核对。",
   "official_repository": "未找到可核实并锁定的独立官方工程；论文附录为本讲实现依据",
   "subtitle": "E:/05717ac9-bf18-46c2-b4c4-3ea2f2c1a2ca.txt，仅本地保存",
   "remote_image_cell4": "URL原样保留；未验证图片内容",
-  "pdf_download": "系统curl TLS握手失败；通过web读取固定v2 PDF，不声明本地原论文.pdf存在"
+  "pdf_download": "2026-10-18已从arxiv固定v2下载本地原论文.pdf，17页；正文使用原PDF裁剪图。此前TLS失败记录保留在历史复现说明。",
+  "paper_pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+  "paper_pdf_pages": 17
 }

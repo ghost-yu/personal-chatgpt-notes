@@ -1,3 +1,52 @@
+# 第28讲复现说明
+
+## 2026-10-18 正文基础算例
+
+状态：**部分成功**。正文六个Python块已在真实CPU PyTorch执行，完整原CoPE/SelfAttn前向与梯度、真实Adam更新通过。固定v2原PDF已成功下载到本地，补充5张原图/原公式/原表裁剪。
+
+| 内容 | 本轮结果 |
+|---|---|
+| 普通注意力 | Q/K/V为[1,3,2]，三角mask；逐行纯NumPy标量参考与Torch权重/输出吻合 |
+| 原RoPE函数 | 两个完整函数AST等于原11/23格；相位[3,2] complex64，两点积约1.806731，与独立double半区旋转一致（原矩阵FP32精度） |
+| CoPE计数 | 论文12token句号门得到2/2/2/2/1/1/1/1/0/0/0/0；软门后缀和1.5/1.5/1.25/.75；全1门计数含当前项 |
+| 插值 | p1.25得到向量[3,1]、bias5、位置导数12、表两槽梯度[.75,1.5]/[.25,.5]；真实CoPE输出5，输入logit梯度3/2.25 |
+| 完整类 | 新正文CoPE与SelfAttn整个类AST等于原Markdown39；原两派生版及Python阅读版的源代码/输出/元数据核对通过 |
+| Adam训练 | 原位置表8参数、固定三组Q/K/V、全0目标，5次真实Adam；optimizer状态step=5；MSE1.6707432132→1.4448043604 |
+| 独立向量插值参考 | 优化实现/密集向量参考前向误差0；Q/K/V/表四种梯度最大误差2.22e-16 |
+| 数值导数 | 通过torch.autograd.gradcheck核对Q/K/V/位置表四个输入，避开整数和饱和结点 |
+| 梯度路径 | 零表位置支路gate梯度0、表梯度非0；更新后gate路径非0；整数结点和clamp饱和的门梯度0 |
+| 因果性 | 完整输出与三个独立前缀误差0；修改未来Q/K/V不影响过去；全屏蔽行实际返回NaN |
+| 原PDF | 17页，首面明确2405.18719v2；第12–13页Listing1与原两个类人工逐行核对；Table2及任务条件重新读取 |
+| 原图 | Figure1、式3–4、式5–6、式7–9、Table2共5截图，全部视觉检查；页码/坐标/PDF与PNG SHA记录完整 |
+
+本轮没有重跑原25格全部历史数值实验，保留此前原样执行报告；当前实际执行范围为正文六块、完整原函数与类及独立参考。论文Flip-Flop/Selective Copy/Counting/语言建模训练、全Transformer、GPU、KV cache与性能指标尚待验证。
+
+### 环境与命令
+
+Windows，Python3.12.14，Torch2.5.1+cpu；NumPy版本见[本轮报告](outputs/基础讲解验证.json)。沿用共享CPU环境，不增加依赖或下载预训练模型。PDF处理使用现有内置Python的pypdf/pypdfium2。
+
+从课程仓库根目录执行：
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+& 'G:/zzz/Personal ChatGPT 系列/共享运行环境/torch-cpu/Scripts/python.exe' 'lessons/28 从 RoPE 到 CoPE/复现/scripts/verify_foundation_examples.py'
+& 'C:/Users/hgfhg/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' '工具/check_documents.py'
+```
+
+`LESSON28_PDF`可覆盖本地原PDF位置，默认`G:/zzz/Personal ChatGPT 系列/28 从 RoPE 到 CoPE/原论文.pdf`。原件来源审计沿用旧验证器的UPSTREAM路径，默认`G:/zzz/Llama 入门教程/代码/personal_chatgpt`，要求固定Git提交仍可读取。正文六块本身只依赖Torch；来源及图片校验另需这些本地资料。
+
+### 图片与来源
+
+2026-10-18从https://arxiv.org/pdf/2405.18719v2下载本地原论文，固定17页v2；此前TLS失败属于下方历史记录。截图按3倍渲染，裁剪坐标为PDF point、左上原点。第2页Figure1、第4页式3–6、第5页式7–9、第6页Table2均放入主笔记。原课程rope_1与rel_position_matrix两图原字节保留并在正文说明。
+
+- [本轮基础讲解验证](outputs/基础讲解验证.json)：全部正文输出、环境、当前正文/脚本/PDF hash及数值/梯度证据。
+- [原论文截图来源](outputs/论文截图来源.json)：固定PDF URL、页码、裁剪坐标及图像hash。
+- [此前原交付报告](outputs/delivery_verification.json)：保留其原运行日期、原实验和脚本hash。
+
+原讲解逐字放入主笔记的历史折叠，原notebook/派生注释文件/历史运行报告保持原内容。来源清单更新了PDF本地下载状态与SHA。旧build_delivery面向原交付，勿用来覆盖当前基础改写正文。
+
+## 此前交付记录
+
 # 第28讲验证记录
 
 状态：**部分成功**。原代码与完整附录类、前向/反向、微训练通过；论文任务与完整语言模型未复现。

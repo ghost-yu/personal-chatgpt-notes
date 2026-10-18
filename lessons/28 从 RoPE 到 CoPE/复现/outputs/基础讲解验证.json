@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "date": "2026-10-18",
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "device": "cpu",
+    "threads": 1
+  },
+  "note_sha256": "c3fe779400a4308303fbdee3328ad400537fb6e5088885d015ef851cb6210ec3",
+  "script_sha256": "4494fdebed7acb9da2fd2bc958c1cd86b283867ea19d073215a686a6f85131fd",
+  "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+  "preservation": {
+    "cells": 40,
+    "code_cells": 25,
+    "schemas": 3,
+    "derived_cells": 81,
+    "raw_git_bytes": true,
+    "metadata_historical_outputs": true,
+    "code_ast_and_tokens": true,
+    "markdown_code_blocks_5_9_39": true,
+    "python_reading_ast": true,
+    "complete_cope_and_selfattn_ast": true
+  },
+  "complete_original_functions_ast_equal": [
+    "precompute_freqs_cis",
+    "get_rope_matrix"
+  ],
+  "complete_original_classes_ast_equal": [
+    "CoPE",
+    "SelfAttn"
+  ],
+  "published_blocks": [
+    {
+      "block": 1,
+      "stdout": "[[[1.0, 0.0, 0.0], [0.3302, 0.6698, 0.0], [0.2483, 0.2483, 0.5035]]]\n[[[1.0, 0.0], [0.3302, 1.3395], [1.7587, 2.007]]]\n",
+      "warnings": []
+    },
+    {
+      "block": 2,
+      "stdout": "[3, 2] torch.complex64\n1.806731 1.806731\n",
+      "warnings": []
+    },
+    {
+      "block": 3,
+      "stdout": "[2.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]\n[1.5, 1.5, 1.25, 0.75]\n",
+      "warnings": []
+    },
+    {
+      "block": 4,
+      "stdout": "[3.0, 1.0] 5.0\n12.0\n",
+      "warnings": []
+    },
+    {
+      "block": 5,
+      "stdout": "",
+      "warnings": []
+    },
+    {
+      "block": 6,
+      "stdout": "8\n[1.670743, 1.624484, 1.578647, 1.533344, 1.488692, 1.444804]\n",
+      "warnings": []
+    }
+  ],
+  "ordinary_attention": {
+    "weights": [
+      [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.33023845067334306,
+          0.6697615493266569,
+          0.0
+        ],
+        [
+          0.24825507825772308,
+          0.24825507825772308,
+          0.5034898434845538
+        ]
+      ]
+    ],
+    "output": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.33023845067334306,
+          1.3395230986533138
+        ],
+        [
+          1.7587246087113846,
+          2.0069796869691077
+        ]
+      ]
+    ],
+    "independent_scalar_numpy_equal": true
+  },
+  "RoPE": {
+    "phase_shape": [
+      3,
+      2
+    ],
+    "phase_dtype": "torch.complex64",
+    "left_dot": 1.8067307472229004,
+    "relative_dot": 1.8067307472229004,
+    "independent_double_dot": 1.8067304541090508,
+    "orthogonality_max_error": 5.960464477539063e-08
+  },
+  "counting": {
+    "sentence_positions": [
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "soft_positions": [
+      1.5,
+      1.5,
+      1.25,
+      0.75
+    ],
+    "all_gates_one_counts_inclusive": true
+  },
+  "interpolation": {
+    "vector": [
+      3.0,
+      1.0
+    ],
+    "bias": 5.0,
+    "position_derivative": 12.0,
+    "real_CoPE_bias": 5.0,
+    "real_CoPE_logit_gradient": [
+      [
+        [
+          3.0,
+          2.25
+        ]
+      ]
+    ]
+  },
+  "training": {
+    "parameters": 8,
+    "Adam_updates": 5,
+    "optimizer_steps_verified_from_state": true,
+    "losses": [
+      1.6707432132204225,
+      1.6244843942864853,
+      1.5786465063929407,
+      1.5333440862632362,
+      1.4886920698898278,
+      1.4448043604366703
+    ],
+    "initial_equals_plain_exactly": true,
+    "first_row_output_unchanged": true,
+    "only_position_table_optimized": true,
+    "QKV_fixed": true
+  },
+  "independent_reference": {
+    "forward_max_error": 0.0,
+    "Q_K_V_table_gradient_max_errors": [
+      2.220446049250313e-16,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "double_gradcheck_all_four_inputs": true
+  },
+  "gradient_paths": {
+    "zero_table_gate_gradient_zero": true,
+    "zero_table_table_gradient_nonzero": true,
+    "trained_table_gate_gradient_max": 0.0999082517705827,
+    "integer_knot_gate_gradient": [
+      [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "saturated_gate_gradient": [
+      [
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ]
+  },
+  "causality": {
+    "full_vs_prefix_errors": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "future_does_not_change_prefix": true,
+    "all_masked_rows_NaN": true
+  },
+  "paper_crops_verified": 5,
+  "scope": "Six CPU examples, complete original notebook functions and Appendix-B classes; no full paper tasks, language model, GPU or KV-cache benchmark."
+}

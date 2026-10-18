@@ -1,0 +1,87 @@
+[
+  {
+    "paper": "Contextual Position Encoding: Learning to Count What’s Important",
+    "version": "arxiv2405.18719v2",
+    "url": "https://arxiv.org/pdf/2405.18719v2",
+    "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+    "page_1_based": 2,
+    "part": "Figure 1",
+    "crop_top_left_points": [
+      107,
+      70,
+      506,
+      293
+    ],
+    "scale": 3,
+    "published_path": "图片/CoPE_v2_p2_Figure1.png",
+    "png_sha256": "3b80ad45b1b248d249ca3c090d67bb30a05cdbac2572c8e211e0f2d2309a9f64"
+  },
+  {
+    "paper": "Contextual Position Encoding: Learning to Count What’s Important",
+    "version": "arxiv2405.18719v2",
+    "url": "https://arxiv.org/pdf/2405.18719v2",
+    "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+    "page_1_based": 4,
+    "part": "equations 3–4 and gate explanation",
+    "crop_top_left_points": [
+      107,
+      366,
+      506,
+      535
+    ],
+    "scale": 3,
+    "published_path": "图片/CoPE_v2_p4_公式3和4.png",
+    "png_sha256": "aba7927715a83c84e3536732c0e68f1fdd3930c63516ba39985e112fdc9da5d8"
+  },
+  {
+    "paper": "Contextual Position Encoding: Learning to Count What’s Important",
+    "version": "arxiv2405.18719v2",
+    "url": "https://arxiv.org/pdf/2405.18719v2",
+    "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+    "page_1_based": 4,
+    "part": "equations 5–6 and interpolation explanation",
+    "crop_top_left_points": [
+      107,
+      583,
+      506,
+      700
+    ],
+    "scale": 3,
+    "published_path": "图片/CoPE_v2_p4_公式5和6.png",
+    "png_sha256": "b0c1c568f8d6e506046c94dfeaf0ef490c7d61e410b226559cf2c71d25333a36"
+  },
+  {
+    "paper": "Contextual Position Encoding: Learning to Count What’s Important",
+    "version": "arxiv2405.18719v2",
+    "url": "https://arxiv.org/pdf/2405.18719v2",
+    "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+    "page_1_based": 5,
+    "part": "equations 7–9",
+    "crop_top_left_points": [
+      107,
+      72,
+      506,
+      139
+    ],
+    "scale": 3,
+    "published_path": "图片/CoPE_v2_p5_公式7至9.png",
+    "png_sha256": "589530c594eb1c9c9c85b96e40e6a64618966b71bbb945500388d3136620543b"
+  },
+  {
+    "paper": "Contextual Position Encoding: Learning to Count What’s Important",
+    "version": "arxiv2405.18719v2",
+    "url": "https://arxiv.org/pdf/2405.18719v2",
+    "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+    "page_1_based": 6,
+    "part": "Table 2",
+    "crop_top_left_points": [
+      107,
+      75,
+      506,
+      178
+    ],
+    "scale": 3,
+    "published_path": "图片/CoPE_v2_p6_Table2.png",
+    "png_sha256": "fc2f8749a9287c829669b001d658dc181e1447e3f837275bf25f3dafbd3f5ff8"
+  }
+]
