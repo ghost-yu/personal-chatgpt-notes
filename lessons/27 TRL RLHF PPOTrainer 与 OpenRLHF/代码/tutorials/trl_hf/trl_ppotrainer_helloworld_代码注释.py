@@ -129,7 +129,7 @@ ppo_trainer = PPOTrainer(config, model, model_ref, tokenizer)
 # model, ... = self.accelerator.prepare(model, ...)
 
 # ===== 原单元 17 =====
-# print两个设备。CPU验证两者均cpu；设备相同不代表两者参数都会被优化。应实际核对optimizer参数集合与ref状态。
+# print两个设备。CPU算例中两者均位于cpu。参与更新的权重由optimizer的参数集合决定；ref模型保持固定，为策略变化提供比较基准。
 # 中文说明：输出用于人工检查，不改变模型权重。
 print(model.pretrained_model.device)
 # 中文说明：输出用于人工检查，不改变模型权重。
