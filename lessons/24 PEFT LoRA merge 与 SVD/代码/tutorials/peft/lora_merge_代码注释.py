@@ -117,7 +117,7 @@ _ = model.load_adapter("smangrul/tinyllama_lora_sql", adapter_name="sql")
 _ = model.load_adapter("smangrul/tinyllama_lora_adcopy", adapter_name="adcopy")
 
 # %% 原代码单元 19
-# 展示配置字典，各键对应命名adapter，并不是三个独立基础模型。
+# 展示配置字典，各键对应同一基础模型上命名的adapter。
 # 读取各adapter配置或keys视图，不表示激活状态。
 model.peft_config
 
@@ -165,7 +165,7 @@ for adapter in adapters:
     print(adapter, model.peft_config[adapter].target_modules)
 
 # %% 原代码单元 27
-# 再次展示结构，新增merge的A/B可见，但可见不代表激活。
+# 再次展示结构，可以看到新建merge的A/B矩阵；当前前向使用哪个adapter，由active_adapter及set_adapter决定。
 model
 
 # %% 原代码单元 28
@@ -271,7 +271,7 @@ Vh = Vh[:8, :]
 Vh.shape, U.shape
 
 # %% 原代码单元 44
-# 单独看Vh不能证明整块ΔW一致，奇异向量有符号/简并旋转不唯一性。
+# 比较分解结果时，应重建UΣVh并对照ΔW。奇异向量允许成对变号，重根对应的子空间还允许旋转，因此单独的Vh可能有不同表示。
 Vh
 
 # %% 原代码单元 45

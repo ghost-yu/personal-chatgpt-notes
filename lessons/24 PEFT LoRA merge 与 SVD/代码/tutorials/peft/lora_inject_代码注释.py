@@ -83,7 +83,7 @@ model = inject_adapter_in_model(lora_config, model)
 model
 
 # %% 原代码单元 11
-# 对比类型：embedding仍是Embedding，linear为PEFT的Linear。类名字相同不代表实现相同，应看完整模块路径。
+# 对比类型：embedding仍是Embedding，linear为PEFT的Linear；完整模块路径可区分同名类。
 # 读取实际Python类，注意torch和PEFT的Linear是不同类。
 type(model.embedding), type(model.linear)
 
