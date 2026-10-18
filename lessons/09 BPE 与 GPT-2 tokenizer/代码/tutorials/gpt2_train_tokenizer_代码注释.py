@@ -292,7 +292,7 @@ os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
 # %% [markdown]
 # ## 单元 25（code）：原讲师组织Hub上传
 #
-# ckpt/org为字符串，new_tokenizer.push_to_hub会向远程写文件，organization为历史API用法。本次不执行、不模拟上传返回值；源码保留，验证补充只做本地save_pretrained/AutoTokenizer重载。
+# ckpt/org为字符串，new_tokenizer.push_to_hub会向远程写文件，organization为历史API用法。上传会将词表文件保存到Hub仓库；若先在本地查看，可用save_pretrained保存，再用AutoTokenizer重载。
 
 # %% 原单元 25
 # 原讲师组织Hub上传；原执行语句保留，详细参数/shape/边界见本格说明。
