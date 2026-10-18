@@ -348,14 +348,14 @@ freqs_cis
 # %% 25
 # ### 单元 25（code）：遗漏维度分母反例
 #
-# 原手写频率1/(10000**[0,2,4])为[1,1e-8,1e-16]，遗漏/dim，不等价于正确函数。theta为int，整数幂后倒数按Torch类型转换；polar产生[5,3]。保留错误原代码用于比较，不偷偷修正。
+# 原手写频率1/(10000**[0,2,4])为[1,1e-8,1e-16]，遗漏/dim，不等价于正确函数。theta为int，整数幂后倒数按Torch类型转换；polar产生[5,3]。保留这段原写法，与后面的正确频率逐项比较。
 # 手算例频率基数，整数。
 theta = 10000
 # 原错误省略/dim，频率变成1/1e8/1e16，不等于正确表；这里变量其实是角度。
 my_freqs_cis = torch.outer(torch.arange(end), 1./(theta ** (torch.arange(0, 6, 2))))
 # 按错误频率生成[5,3]单位复数；频率需逐项与定义核对。
 complex_tensor = torch.polar(torch.ones_like(my_freqs_cis), my_freqs_cis)
-# 显示原错误频率例，注释版不偷偷修正。
+# 显示原频率例，随后对照包含/dim的写法。
 complex_tensor
 
 # %% 26
