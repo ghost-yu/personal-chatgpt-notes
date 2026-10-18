@@ -444,7 +444,7 @@ dataset['train'].to_pandas()
 # %% [markdown]
 # ## 单元 29：quote 列的前四条
 #
-# 先`['quote']`取列，再`[:4]`切前四项，结果为list[str]。从0开始、不含右端点4。这里不是四个token，而是四条完整名言文本。
+# 先`['quote']`取列，再`[:4]`切前四项，结果为list[str]。从0开始、不含右端点4。列表的每一项是一条完整名言文本。
 
 # %%
 # 先取quote列，再切前四条完整文本；不是前四个token。
@@ -723,7 +723,7 @@ print('\n\n', tokenizer.decode(output_tokens[0], skip_special_tokens=True))
 # %% [markdown]
 # ## 单元 46：查看 collator
 #
-# 访问trainer.data_collator对象并显示repr，无样本实参，没有真正构造批次或计算loss。必须先成功构造trainer；若42的训练失败但trainer已赋值，对象也可能存在，显示它不能证明train成功。
+# 访问trainer.data_collator并显示其类型和配置。调用这个对象并传入样本后，它才会把样本整理成训练批次。
 #
 # 实际batch转换是调用该collator(samples)，需要样本列表；新验证通过真实collator检查padding labels=-100、shift与BLOOM返回loss一致。
 
