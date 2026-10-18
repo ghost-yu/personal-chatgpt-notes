@@ -55,3 +55,15 @@ Markdown39的完整类在真实torch.nn命名空间单独执行，不使用假�
 CoPE依据固定论文v2 Appendix B Listing1与原notebook第39格逐行文本核对，没有找到并锁定独立官方训练仓库。官方候选地址请求失败也不作为“仓库不存在”的证据。web读取固定PDF文本成功；系统curl多次TLS失败，因此没有本地原论文.pdf。字幕匹配后仅留本地；六张原图随仓库提供，远程图不伪装成本地图。
 
 未复现原论文selective copy/counting/Flip-Flop、Wikipedia/代码建模训练、perplexity、8GPU资源配置、长文本性能、完整LM、多head/多层、KV cache、CUDA或峰值显存。教学5步更新不能替代这些实验。
+
+## 讲解改版前的运行说明
+
+## 10. 小张量中的位置与梯度
+
+[复现说明](README.md)记录命令与边界。两版各25个原代码格**无替换、无跳过**执行，展示/打印一致；其中Image对象只证明构造成功。另在真实torch.nn上下文执行两版Markdown39完整类，并核对独立Python文件可导入。
+
+CoPE优化实现与独立“先插值完整向量再点积”的double参考前向最大差约1.11e-16；Q/K/V/位置表四种梯度最大差不超过4.45e-16。原SelfAttn通过真实torch.autograd.gradcheck。因果完整/前缀输出误差为0；两版得到相同结果。
+
+用原类的24个位置参数、固定随机Q/K/V、随机MSE target做5次真实Adam更新，lr=.02，loss从1.2536735降至1.2374721；没有语言训练数据或完整Transformer。原CoPE/SelfAttn体未改，教学数据、double精度和优化器都在独立验证中声明。
+
+补充导入验证最初未把动态加载模块注册到sys.modules，inspect误认为类是内置对象；按标准模块加载方式注册后重新核对。这也是验证工具问题，不是CoPE类无法导入。
