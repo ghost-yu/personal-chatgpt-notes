@@ -2,7 +2,7 @@
 # 原notebook全部29代码格的中文注释阅读版；运行前阅读复现范围，不自动执行网络/GPU/1000步训练。
 
 # %% 原代码单元 0
-# 设置当前Python进程的HTTP/HTTPS代理为本机7890，不是安装代理服务。只有机器上确有代理才有效。本次不执行此格，以免把后续离线验证指向不存在的服务。
+# 设置当前Python进程的HTTP/HTTPS代理为本机7890。后续网络请求会使用该地址，因此端口应对应本机已运行的代理服务。
 # os访问进程环境，下面代理设置只对本进程及子进程生效。
 import os
 # 设置网络代理；没有本地服务时这个地址会导致下载失败。
@@ -35,7 +35,7 @@ Image(url='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9VLZAgJnKbY4
 
 # %% 原代码单元 9
 # load_dataset(name,split="train")返回Arrow Dataset。历史160800行是原运行状态，不是本次下载结果。本次提供8条明确自建偏好对，跳过此远程下载；后续同一preprocess在这个教学数据上真实执行。
-# 下载/读取人类偏好训练split；历史行数不代表本次执行。
+# 下载或读取人类偏好数据的训练split，结果按样本逐行存放。
 train_dataset = load_dataset("Anthropic/hh-rlhf", split="train")
 
 # %% 原代码单元 10
@@ -180,7 +180,7 @@ model
 total_params = 0
 # 遍历名字与Parameter；LoRA注入前后对象不同。
 for name, para in model.named_parameters():
-    # 只统计允许训练的参数，不代表本步梯度已非零。
+    # 统计requires_grad=True的参数；反向传播后可继续查看各参数的grad。
     if para.requires_grad:
         print(name)
         # numel返回参数张量的元素数。
@@ -261,7 +261,7 @@ trainer = RewardTrainer(
 total_params = 0
 # 遍历名字与Parameter；LoRA注入前后对象不同。
 for name, para in trainer.model.named_parameters():
-    # 只统计允许训练的参数，不代表本步梯度已非零。
+    # 统计requires_grad=True的参数；反向传播后可继续查看各参数的grad。
     if para.requires_grad:
         print(name, para.shape)
         # numel返回参数张量的元素数。
