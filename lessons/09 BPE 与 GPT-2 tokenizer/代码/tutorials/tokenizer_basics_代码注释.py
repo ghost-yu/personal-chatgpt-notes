@@ -449,7 +449,7 @@ tokenizer
 # %% [markdown]
 # ## 单元 36（code）：按token表示长度降序
 #
-# tokenizer.vocab是dict[str,int]，items给二元组；sorted返回新list，lambda x:len(x[0])按表示字符串长度，reverse=True降序。[:10]左闭右开；推导式逐token转展示文本。长度不是语料词频，也不是token原文byte数；可能含不完整UTF8片段。 原sort没有同长度的第二排序键，词表字典遍历次序可不同；前10项若跨并列边界，两次列表可能不同。本次保留两次输出并核对前10项长度/转换契约，不能把不同列表冒充完全相同。
+# tokenizer.vocab是dict[str,int]，items给二元组；sorted返回新list，lambda x:len(x[0])按表示字符串长度，reverse=True降序。[:10]左闭右开；推导式逐token转展示文本。长度不是语料词频，也不是token原文byte数；可能含不完整UTF8片段。 原sort没有同长度的第二排序键，词表字典遍历次序可不同；前10项若跨并列边界，两次列表可能不同。比较两次前10项时，先看长度与转换结果，再检查并列项的排列。
 
 # %% 原单元 36
 # 按token表示长度降序；原执行语句保留，详细参数/shape/边界见本格说明。
