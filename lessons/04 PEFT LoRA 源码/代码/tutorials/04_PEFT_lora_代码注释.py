@@ -87,7 +87,7 @@
 # %% [markdown]
 # ## 单元 3：PeftModel 标题
 #
-# Markdown标题中的反引号是展示代码样式；本格没有调用PeftModel构造器。
+# 这是介绍PeftModel的Markdown标题，反引号让类名按代码样式显示。
 
 # %% [markdown]
 # ## `PeftModel`
