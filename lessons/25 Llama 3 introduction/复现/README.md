@@ -70,3 +70,13 @@ JSONC移除整行//后解析，启动器字段匹配，未执行CLI。原CUDA默
 初次tiktoken.__version__属性不存在，改为importlib.metadata.version；本地Jinja明确对content先trim。之后Windows错误子进程解码失败，改PYTHONIOENCODING=utf-8及errors=replace，完整重跑通过。均为本次工具修正，不是源模型bug。缺cell id、Transformers空白清理默认值、旧tuple缓存接口有兼容警告，未因此改原单元。
 
 无原7B/8B权重、原Hub完整配置、NCCL/CUDA、多rank、原海盗答案、全量训练、完整语料、质量benchmark或速度结论。全课程尚未完成，下一讲26。
+
+## 讲解改版前的运行说明
+
+## 10. 小模型的结构与推理
+
+下面用小模型观察词表、网络结构和生成接口。原代码及运行配置可在本讲的代码目录与复现说明中对照。
+
+见 [复现记录](README.md) 和 [机器可读证据](outputs/delivery_verification.json)。两版各22格原语句、4格明确CPU变体，代理格跳过；时钟只比类型并分别记录真实时间。两版可比输出及最终随机小模型状态核对相同。完整7B/8B仅meta结构计数；真实生成用D16/一层/原128256词表随机Llama，新增预算改4。
+
+真实FairScale单rankSwiGLU与独立NumPy公式、输入有限差分、所有输入/权重梯度对照及两种嵌入查表/梯度验证。没有原checkpoint、CUDA/NCCL、多rank、全量训练、原采样答案、质量或速度复现。脚本初次读取tiktoken不存在的__version__属性失败，改为发行元数据；CPU错误子进程输出编码失败后明确UTF8，均属于验证工具修正，非源模型bug。
