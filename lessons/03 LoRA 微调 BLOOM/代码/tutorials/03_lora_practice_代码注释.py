@@ -1,7 +1,7 @@
 # 第03讲 PEFT / BLOOM 代码注释阅读版
 # 来源：chunhuizhang/personal_chatgpt，提交 7fbc29824171fd07dc2c30fe922e61ebc018ad1d。
 # 无JSON或历史输出；# %% 分格。建议在配套notebook中按单元检查依赖后执行。
-# IPython的!/%指令记为注释，普通Python语句保留；不是独立CPU训练脚本。
+# Python 阅读版把 IPython 的 !/% 命令列为注释，并按原顺序保留普通 Python 语句。
 # 离线CPU教学调用链见复现/scripts/verify_pipeline.py。
 
 # %% [markdown]
@@ -32,7 +32,7 @@
 # %% [markdown]
 # ## 单元 1：summary 标题
 #
-# Markdown二级标题，为总体流程分节，不创建模型或参数。它不是训练入口。
+# 这个 Markdown 二级标题引出接下来的总体流程。
 
 # %% [markdown]
 # ## summary
@@ -73,7 +73,7 @@
 #
 # torch提供Tensor/autograd，`torch.nn as nn`绑定神经网络模块别名；bitsandbytes绑定bnb，但后续没有直接调用bnb函数，量化由Transformers加载路径触发。三个Auto类按配置选对应的tokenizer/config/因果LM；LoraConfig与get_peft_model分别描述adapter配置和执行注入。
 #
-# 导入不下载7B权重，但包可能检查CUDA等依赖；缺包时整个单元可提前失败。本次CPU验证不导入bitsandbytes，不声称该量化依赖已通过。
+# 导入依赖包，供后面的模型加载与量化调用使用；bitsandbytes 需要与 CUDA 和相关包版本匹配，环境信息见复现说明。
 
 # %%
 # 导入Tensor/神经网络、量化加载、Auto接口及LoRA配置/注入；导入不等于加载7B。
@@ -112,7 +112,7 @@ from peft import LoraConfig, get_peft_model
 # %% [markdown]
 # ## 单元 7：函数方式查看环境
 #
-# 从watermark导入同名函数，`packages`传逗号分隔的包名str，返回报告字符串交给print。它与前格magic是两种调用方式，不是模型评估。报告里没有列bitsandbytes，不能据此证明量化组件版本。
+# 从 watermark 导入同名函数，packages 接收逗号分隔的包名字符串，返回版本报告供 print 输出。它与前格 magic 提供两种调用方式；量化组件的版本可另行加入 packages 查询。
 
 # %%
 # 使用函数方式打印指定包的版本；返回字符串，不做模型计算。
@@ -161,7 +161,7 @@ AutoConfig.from_pretrained("bigscience/bloom-7b1")
 # %% [markdown]
 # ## 单元 10：查看原模型结构
 #
-# 末尾表达式model让notebook渲染repr；普通脚本不会自动打印。返回的是原模型对象引用，没有forward、训练或clone。结构可帮助定位融合query_key_value投影。
+# 末尾表达式 model 让 notebook 展示模型树；普通脚本中可使用 print(model)。沿模型树找到融合的 query_key_value 投影。
 
 # %%
 # notebook显示模型的模块结构；普通Python脚本中可用print(model)查看。
@@ -187,7 +187,7 @@ model.get_input_embeddings()
 # %% [markdown]
 # ## 单元 12：查看 tokenizer
 #
-# 显示tokenizer对象的配置/特殊token等repr，不给文本分词。没有生成input_ids，没有模型运算。
+# 展示 tokenizer 的配置、特殊 token 等信息；下一步传入文本时再进行编码。
 
 # %%
 # 展示分词器对象，可查看词表和特殊token配置。
@@ -211,7 +211,7 @@ tokenizer
 # 只观察第一项，不能把结果推广到全部Linear8bitLt/norm/adapter。没有Tensor拷贝或dtype转换，后格才实际修改。
 
 # %%
-# 只观察首个参数dtype，不能据此判断全模型精度。
+# 查看首个参数的 dtype；需要了解各层精度时，可继续遍历全部参数。
 # parameters() 返回参数迭代器；list(...) 将其物化，索引[0]取得第一个 Parameter。
 # .dtype 是类型属性；这不是全模型dtype统计，也不证明量化权重、激活和adapter精度一致。
 list(model.parameters())[0].dtype
@@ -327,7 +327,7 @@ def print_trainable_parameters(model):
 #
 # 重复导入一般复用模块缓存，不是重复安装。LoraConfig构造配置对象：r=16，lora_alpha=32，标准scale=32/16=2；dropout=0.05只用于adapter支路；bias='none'不额外训练偏置；task_type='CAUSAL_LM'选择因果LM包装。
 #
-# target_modules整行是注释，q_proj/v_proj不生效；BLOOM默认映射为query_key_value，不是LLaMA的分离投影名。配置对象本身没有执行模型forward。r控制形状，alpha控制缩放，不能互换。
+# target_modules 这一行处于注释中，当前 BLOOM 使用默认的 query_key_value 目标映射。r 决定低秩矩阵的尺寸，alpha 决定修正分支的缩放。
 
 # %%
 # 创建LoRA配置：r为瓶颈宽度，alpha/r=2为增量缩放系数。
@@ -368,7 +368,7 @@ print_trainable_parameters(model)
 # %% [markdown]
 # ## 单元 22：查看包装后的模型
 #
-# 末尾model显示PeftModel包装与插入模块。repr不是训练结果，也通常不显示全部requires_grad状态，需结合参数统计/遍历。对象为注入后的同一model名字。
+# 展示注入 LoRA 后的 model，沿 PeftModel 包装找到新增模块。可结合参数遍历和 requires_grad 查看哪些权重参与训练。
 
 # %%
 # 显示注入后的模型结构，不能用repr代替训练结果或冻结状态核对。
@@ -400,7 +400,7 @@ model
 # 数据字段quote/author通常为str，tags为list[str]。读取后得到Dataset中的Python对象；配套算例使用5条自编记录展示取行、取列等Dataset操作。
 
 # %%
-# 加载原名言数据，可能联网/写缓存；原ID未锁revision；本次不下载该数据。
+# 加载名言数据集，并按需访问网络或缓存。原数据集 ID 使用 Hub 默认版本；配套运行数据见复现说明。
 # load_dataset 是独立函数；模型与数据加载相互独立，不会因为load_dataset而训练模型。
 # 原ID是 str，返回DatasetDict，train是一个split；未固定revision，样本快照可能变化。
 # 本次教学用明确新编的5条本地数据，未下载原Abirate数据。
@@ -411,10 +411,10 @@ dataset = load_dataset("Abirate/english_quotes")
 # %% [markdown]
 # ## 单元 26：查看 DatasetDict
 #
-# 表达式dataset显示split列表/字段/行数。对象是split名称到Dataset的映射，不是模型batch。没有tokenize或训练。
+# dataset 展示各个 split、字段和行数。DatasetDict 将 split 名称映射到相应 Dataset，随后再进行文本处理和分词。
 
 # %%
-# 显示DatasetDict的split结构；还不是Tensor训练batch。
+# 显示 DatasetDict 的 split 结构，便于选择后续处理的训练集。
 # dataset 是 DatasetDict，按split名映射到Dataset；本格只显示结构。
 # 此时字段如 quote/author/tags 是数据记录，不是GPU Tensor。
 dataset
@@ -458,9 +458,9 @@ dataset['train']['quote'][:4]
 # 与前格相同的取列再切片，返回作者字符串列表。后面的merge选用quote和tags构造训练文本。
 
 # %%
-# 取前四个作者字符串；作者没有参与后面的训练文本拼接。
+# 取前四条记录的作者字段，查看数据内容；后续训练文本由 quote 和 tags 拼成。
 # author列的前四个字符串仅用于查看；后面merge不把author拼入训练文本。
-# 知道作者是谁与模型训练目标不是同一个字段，不能据此宣称训练作者分类。
+# 作者字段用于了解样本来源，训练目标由后面的 quote 与 tags 字段组成。
 dataset['train']['author'][:4]
 
 # %% [markdown]
@@ -488,7 +488,7 @@ str(dataset['train']['tags'][0])
 # %% [markdown]
 # ## 单元 33：merge 函数与 Dataset.map
 #
-# merge(row)为独立函数，无默认参数；row是单行dict。它取quote字符串，加固定分隔符' ->: '，再加str(tags)，原地添加prediction键并返回同一dict。没有调用model，prediction是字段名而非模型预测。
+# merge(row) 接收单行 dict，取 quote，加上固定分隔符 ' ->: ' 和 str(tags)，把拼接结果写入 prediction 字段，再返回该记录。这里 prediction 是整理好的训练文本。
 #
 # Dataset.map逐行调用函数并返回新Dataset，再赋回train split；原API不是对整个Dataset直接原地添列。其他split若存在不会在此合并，后续DatasetDict.map访问prediction时可能失败。作者字段保留但没有拼进文本。
 #
@@ -496,10 +496,10 @@ str(dataset['train']['tags'][0])
 
 # %%
 # 拼接名言、固定分隔符和标签字符串；prediction是文本列名，不是模型预测。
-# row:dict 来自Dataset的一条记录；quote:str，tags:list[str]，函数没有默认参数。
+# row 是 Dataset 的一条 dict 记录，quote 为字符串，tags 为字符串列表；调用时传入这条记录。
 # 输入名言和标签经字符串拼接形成prediction:str；prediction不是model的推理结果。
 # 返回同一个被添加字段的row；外层Dataset.map返回新Dataset，赋回train split。
-# 独立函数接收单行dict，没有默认参数。
+# 这个独立函数接收一条 dict 记录。
 def merge(row):
     # 给传入dict原地添加prediction字段；author不参与拼接。
     row['prediction'] = row['quote'] + ' ->: ' + str(row['tags'])
@@ -570,7 +570,7 @@ dataset = dataset.map(lambda samples: tokenizer(samples['prediction']), batched=
 # %% [markdown]
 # ## 单元 39：查看分词后数据集
 #
-# 注释列出input_ids/attention_mask，实际表达式dataset显示结构。两列是列表数据，Dataset展示不是完整训练Tensor；并不证明所有长度都在模型上限内。
+# 展示分词后的数据结构，重点看 input_ids 与 attention_mask 两列；数据整理器随后将列表组合成训练张量。
 
 # %%
 # 展示分词后的字段；当前保存的是token编号和mask列表。
@@ -618,7 +618,7 @@ from transformers import Trainer, TrainingArguments, DataCollatorForLanguageMode
 #
 # model.config.use_cache=False修改配置，使训练与checkpointing配合；不冻结参数或关闭autograd。trainer.train实际组织forward/loss/backward/累积与optimizer更新，改变adapter和训练状态并可能写文件。auto设备分派不是数据并行world_size，不能直接按GPU数扩大有效batch。
 #
-# 本次没有执行该单元的原FP16/200步7B训练；另用真实Trainer对随机小型CPU BLOOM训练2步，明确改为CPU、fp16=False、微批2、累积2、warmup0、无保存。原notebook完全不改。
+# 配套 CPU 算例使用随机小型 BLOOM 和真实 Trainer 训练2步：fp16=False、微批2、累积2、warmup0。原训练配置及历史输出保留在 notebook 中，运行记录见复现说明。
 
 # %%
 # 构造Trainer后执行训练；会改变adapter和训练状态，原7B训练本次未运行。
@@ -672,11 +672,11 @@ trainer.train()
 # %% [markdown]
 # ## 单元 44：第一条生成示例
 #
-# tokenizer输入一个留有' ->: '的str，return_tensors='pt'才返回torch整数Tensor`[1,S]`。batch为BatchEncoding映射，不是训练Dataset。with打开CUDA autocast上下文，只改变部分浮点运算的精度策略，不搬运输入到CUDA。
+# tokenizer 接收带有 ' ->: ' 的字符串，return_tensors='pt' 使 BatchEncoding 内的编号成为 [1,S] 整数张量。CUDA autocast 控制浮点运算的精度；输入设备由后续迁移操作决定。
 #
 # `**batch`把input_ids/attention_mask作为关键字实参传给model.generate；max_new_tokens=50限制新增token，输出整数`[1,S+G]`且G≤50。`output_tokens[0]`取一行；decode(...,skip_special_tokens=True)返回str，通常仍包含输入前缀。print额外输出换行。
 #
-# 原代码未显式model.eval()/inference_mode或输入设备搬运；实际运行需核对模式、dispatch hook与设备。生成质量不能由训练loss或这个单例证明。本次未执行原CUDA示例；CPU教学生成显式eval、no_grad、3个新token，不作质量评价。
+# 生成前检查 model 的模式、输入设备与 dispatch hook。CPU 配套例子显式调用 eval 和 no_grad，生成3个新增 token，便于观察输入前缀与续写结果。
 
 # %%
 # 将第一条prompt分词为Tensor，生成最多50个新token，再decode；autocast不搬设备。
