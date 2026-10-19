@@ -259,7 +259,7 @@ torch.flip(torch.view_as_real(precompute_freqs_cis(6, 10)), dims=(2, )).flatten(
 # %% 24
 # ### 单元 24（markdown）：实虚部排列
 #
-# exp(ix)实部cos、虚部sin；传统表顺序sin/cos相反，故重建时flip。complex64含两个float32，元素数减半不代表存储减半。
+# exp(ix) 的实部为 cos、虚部为 sin；重建传统 sin/cos 交替表时用 flip 调整顺序。complex64 由两个 float32 构成，所以元素数减半时总存储字节保持相同。
 # $$
 # e^{ix} = \cos x + i\sin x
 # $$
