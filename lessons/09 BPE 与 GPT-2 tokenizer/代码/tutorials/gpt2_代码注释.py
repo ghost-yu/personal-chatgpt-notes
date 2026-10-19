@@ -5,7 +5,7 @@
 # %% [markdown]
 # ## 单元 0（markdown）：数据辅助片段标题
 #
-# 仅探查本地路径和缓存，不是BPE算法或完整训练。
+# 查看本地路径和缓存目录，了解文件保存的位置。
 
 # %% [markdown] 原单元 0
 # ## datasets
@@ -61,7 +61,7 @@ get_ipython().system('pwd')
 # %% 原单元 5
 # 探查原本地dataset缓存；原执行语句保留，详细参数/shape/边界见本格说明。
 # config = DownloadConfig(delete_extracted=True)
-# 仅构建加载器并取cache_dir，不代表数据全量加载。
+# 构建数据加载器并读取 cache_dir，查看缓存位置。
 load_dataset_builder('./dataset/codeparrot/').cache_dir
 # load_dataset('./dataset/codeparrot', split='train')
 # /media/whaow/.cache/huggingface/datasets/json/codeparrot-ed48b0160d7b840d/0.0.0/0f7e3662623656454fcd2b650f34e886a7db4b9104504885bd462096cc7a9f51
