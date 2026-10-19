@@ -19,7 +19,7 @@ T1 = tiktoken.get_encoding('cl100k_base')
 T2 = tiktoken.get_encoding('o200k_base')
 
 # %% 原代码单元 4
-# cl100k把此英文句子转5个ID。ID是词表行号，不是Unicode码点；没有embedding/模型前向。
+# cl100k 将这句英文编码为5个 token ID，各 ID 指向词表中的相应条目。
 # 确定性字符串→list[int]，不是模型forward。
 T1.encode('i love chatgpt')
 
@@ -44,7 +44,7 @@ len(T1.encode('你好，我的名字是GPT-4o。我是一种新型的语言模�
 len(T2.encode('你好，我的名字是GPT-4o。我是一种新型的语言模型，很高兴见到你!'))
 
 # %% 原代码单元 11
-# with确保文件关闭，encoding指定UTF8；readlines一次读入全部文本再逐行编码累加，不是流式训练。相对路径./xyj.txt配套原文件完整发布，保留原字节/原换行；Python文本模式会规范化换行。
+# with 保证结束后关闭文件，encoding 指定 UTF-8。readlines 先读入全部文本，循环再逐行编码累加。./xyj.txt 是配套原文；Python 文本模式会规范化读取到的换行。
 # 旧编码计数清零。
 token_ids_len1 = 0
 # 新编码计数清零。
