@@ -83,7 +83,7 @@ model_ref = AutoModelForCausalLMWithValueHead.from_pretrained("gpt2")
 #     $$
 
 # ===== 原单元 9 =====
-# 展示自适应beta公式。beta乘以1+clip(KL/target-1,-0.2,0.2)*n_steps/horizon。n_steps是经验条数；在正常步长下KL偏高会提高beta。它没有把参数硬投影回某个KL球。
+# 自适应控制器按 beta×(1+clip(KL/target−1,−0.2,0.2)×n_steps/horizon) 调整 KL 惩罚强度。n_steps 是经验条数；在通常步长下，KL 偏高会提高 beta，增强后续更新的惩罚。
 # 中文说明：构造展示对象；相对路径以notebook位置为基准。
 Image(url='../../imgs/adap_kl_coef.png', width=500)
 
@@ -182,7 +182,7 @@ response_txt
 # )[0])
 
 # ===== 原单元 25 =====
-# 外部人工指定分数1.0，scores为长度B的list，元素是float32零维tensor。这里只模拟Reward Model接口，没有训练或调用真实偏好评分模型；所有回答常数1不提供质量区分。
+# 用常数1.0模拟奖励接口。scores 是长度为 B 的列表，元素为 float32 标量张量；每条回答收到相同分数，便于先观察 PPO 的接口与张量流。
 # 5. define a reward for response
 # (this could be any reward such as human feedback or output from another model)
 # 中文说明：零维浮点分数，没有从生成文本得到的计算图；不是序列标签。
@@ -275,7 +275,7 @@ train_stats = ppo_trainer.step(queries=[query_tensor[0]],
 Image(url='../../imgs/trl_ppo_loss.png', width=500)
 
 # ===== 原单元 30 =====
-# ratio=exp(new_logprob-old_logprob)是当前策略与rollout旧策略对同一个已采样动作的概率比。这里分母不是固定reference；使用log差避免先算极小概率再相除，但exp仍可能溢出，不能宣称绝对数值安全。
+# ratio=exp(new_logprob−old_logprob) 比较当前策略和 rollout 旧策略对同一动作的概率。用 log 差计算可绕开两个极小概率直接相除；最后的 exp 仍需留意浮点范围。
 # - `ratio = torch.exp(logprobs - old_logprobs)`
 #
 # $$
@@ -290,4 +290,4 @@ for key in train_stats.keys():
     print(key)
 
 # ===== 原单元 32 =====
-# 空代码单元：没有输入输出，不运行训练。保留原位置，避免单元编号错位。
+# 这是一个空白代码单元，保留在原编号位置，可用于追加计算。
