@@ -24,7 +24,7 @@ from tqdm.notebook import tqdm
 from IPython.display import Image
 
 # %% 原代码单元 5
-# Image(url=...,width=600)创建带远程URL的HTML显示对象；代码本身不下载本地PNG。原URL和历史HTML保留；本次只核对HTML，不声称验证远端图片内容、可用性或归属许可。讲解另给可读的数据流图。
+# Image(url=...,width=600) 创建远程图片的显示对象并设置宽度。正文直接给出论文原图及数据流解释，方便沿当前页面阅读。
 # 创建远程HTML图片引用，width是展示宽度，不是Tensor尺寸。
 Image(url='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*46Nx65cgFCftQVX2Hnj2Uw.png', width=600)
 
@@ -34,7 +34,7 @@ Image(url='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*46Nx65cgFCft
 Image(url='https://miro.medium.com/v2/resize:fit:1400/format:webp/1*9VLZAgJnKbY4-anUgTX8RA.png', width=600)
 
 # %% 原代码单元 9
-# load_dataset(name,split="train")返回Arrow Dataset。历史160800行是原运行状态，不是本次下载结果。本次提供8条明确自建偏好对，跳过此远程下载；后续同一preprocess在这个教学数据上真实执行。
+# load_dataset(name,split="train") 返回训练 split 的 Arrow Dataset。配套例子准备8条偏好对，再沿相同 preprocess 观察分词与长度筛选；数据与运行条件见复现说明。
 # 下载或读取人类偏好数据的训练split，结果按样本逐行存放。
 train_dataset = load_dataset("Anthropic/hh-rlhf", split="train")
 
@@ -59,7 +59,7 @@ print('============================')
 print(train_dataset[4]['chosen'])
 
 # %% 原代码单元 13
-# 加载facebook/opt-350m的真实分词配置和BPE词表，不会在这一句加载350M神经网络权重。本次只把模型名替换为固定版本本地tokenizer目录；PAD=1、BOS/EOS=2。
+# 加载 facebook/opt-350m 的分词配置与 BPE 词表，得到对应 tokenizer。PAD=1，BOS/EOS=2；配套 CPU 例子从固定本地目录读取相同分词资产。
 # 只加载分词资产，不加载神经网络权重。
 tokenizer = AutoTokenizer.from_pretrained("facebook/opt-350m")
 
@@ -97,7 +97,7 @@ def preprocess(examples):
     return new_examples
 
 # %% 原代码单元 15
-# Dataset.map(batched=True)把一批列表送给preprocess，并默认保留原chosen/rejected列；num_proc=16请求16进程，不是训练batch16。filter检查两侧长度均<=512，不满足就整行删除，不做补齐或裁剪。Windows教学运行只把两处num_proc改1；tokenizer上限显式1024，8条中2条长对被过滤成6条。若上限先设512，截断后filter可能不再筛掉原超长样本。
+# Dataset.map(batched=True) 把一批列表传入 preprocess，并默认保留原 chosen/rejected 列；num_proc=16 请求16个处理进程。filter 保留两侧长度均<=512的整行。应结合 tokenizer 的截断设置理解筛选结果；Windows 配套例子使用 num_proc=1，8条样本筛为6条。
 # 批量预处理，默认保留原字符串列。
 train_dataset = train_dataset.map(
     preprocess,
@@ -269,7 +269,7 @@ for name, para in trainer.model.named_parameters():
 total_params
 
 # %% 原代码单元 31
-# train做真实优化更新；save_pretrained保存PEFT adapter及modules_to_save中的score，不是完整独立OPT350M基础权重。重载必须配同一基础模型/配置/词表。教学CPU两版各两步并保存到临时目录，检查基础冻结、adapter更新和重载logits。原历史1000/1000、09:13是旧运行，loss50步.8431至1000步.7520，日志窗口/样本不同且有波动，不是持出评估或本次计时；历史还提示checkpoint目录非空，不能忽略后当干净复现。
+# train 执行优化更新；save_pretrained 保存 PEFT adapter 和 modules_to_save 中的 score。重载时配合同一基础模型、配置与词表。配套 CPU 例子训练两步，再检查冻结权重、adapter 更新和重载 logits；原 notebook 中1000步的日志按其历史运行阅读，详细运行条件见复现说明。
 # 实际执行前向→成对loss→反向→AdamW调度。
 trainer.train()
 # 保存adapter与score副本，基础模型仍需另行匹配。
@@ -288,7 +288,7 @@ trainer.model(input_ids=torch.tensor(train_dataset[4]['input_ids_chosen']).unsqu
 torch.sigmoid(torch.tensor([0.1196]))
 
 # %% 原代码单元 35
-# rejected侧同样转[1,L]并返回完整SequenceClassifierOutputWithPast对象，而不是只取.logits。未传labels时正常loss=None；原历史loss=dict属于当时环境输出异常，不能当通用接口定义或由本次捏造复现。
+# rejected 侧同样编码成 [1,L]，模型返回 SequenceClassifierOutputWithPast，其中 logits 保存分数。当前接口在未传 labels 时返回 loss=None；偏好 loss 在训练器中由 chosen/rejected 分数计算。
 # 整数序列加batch轴后打分；原格未显式移动设备或关闭梯度。
 trainer.model(input_ids=torch.tensor(train_dataset[4]['input_ids_rejected']).unsqueeze(0),
         # mask从[L]加成[1,L]，1为有效token，0为补齐。
