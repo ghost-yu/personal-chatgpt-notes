@@ -1,6 +1,6 @@
 # CoPE/SelfAttn完整实现，来自原单元39，对照论文2405.18719v2附录B Listing1。
 # 作者Olga Golovneva, Tianlu Wang, Jason Weston, Sainbayar Sukhbaatar，FAIR at Meta。
-# 本交付新增中文注释与必要imports；未找到并锁定独立官方工程，不冒称其Git源码。
+# 独立 Python 阅读版补充了导入和中文注释，方便运行与追踪这段课程实现；来源记录见本讲复现资料。
 import math
 import torch
 from torch import nn

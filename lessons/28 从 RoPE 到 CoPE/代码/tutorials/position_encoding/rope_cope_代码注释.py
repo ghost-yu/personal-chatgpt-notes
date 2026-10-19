@@ -2,7 +2,7 @@
 # Markdown中的CoPE完整实现另见CoPE核心源码_代码注释.py。
 
 # ===== 原单元 0 =====
-# 导入Image、torch、math、NumPy；不下载模型、不建立网络。Image(url=...)构造展示对象，不等于浏览器已获取图片。
+# 导入 Image、torch、math 和 NumPy。Image 用来显示图像，其他模块用于张量、数学函数与数组计算。
 # 中文说明：导入Jupyter图片展示类，用Image引用配图。
 from IPython.display import Image
 # 中文说明：真实PyTorch提供张量和autograd，后续不是NumPy模拟模型。
@@ -34,11 +34,11 @@ import numpy as np
 #     - 也就是一句话的含义，肯定跟 token 的组织有序有关
 
 # ===== 原单元 3 =====
-# BERT/GPT示例标题；不能据此概括所有名为GPT的后续模型。
+# 这一标题引出 BERT 与早期 GPT 的绝对位置编码例子。
 # ## bert, gpt
 
 # ===== 原单元 4 =====
-# 远程示意图URL保留，实际只构造HTML图片对象。没有验证该远程图片内容；本讲用公式与实际小模型embedding解释，不把外链可构造当图已下载。
+# 创建远程示意图的显示对象。正文已将原论文截图、公式与小模型示例放在对应位置，可沿本页顺序阅读。
 # 中文说明：保留原相对图片路径；公开目录带有对应本地原图，远程URL另标未验证。
 Image(url='https://miro.medium.com/v2/resize:fit:786/format:webp/1*iJqlhZz-g6ZQJ53-rE9VvA.png', width=500)
 
@@ -66,7 +66,7 @@ Image(url='https://miro.medium.com/v2/resize:fit:786/format:webp/1*iJqlhZz-g6ZQJ
 # ### sin position encoding
 
 # ===== 原单元 7 =====
-# 偶数通道sin、奇数通道cos，位置t与通道i不能混淆；相邻两通道共享一个频率。d_model=4时频率1与0.01，pos0是[0,1,0,1]。没有可训练位置参数，但仍能通过相位关系表达相对距离。
+# 偶数通道存 sin，奇数通道存 cos，相邻通道共用频率；t 表示位置，i 表示通道。d_model=4时频率为1和0.01，位置0得到[0,1,0,1]。这份固定函数表通过相位关系表达位置。
 # - 无需训练; 依然是绝对位置编码
 # - transformers 原始论文
 #
@@ -177,7 +177,7 @@ cis
 torch.polar(torch.tensor([1.]), torch.tensor([2.]))
 
 # ===== 原单元 15 =====
-# 手写[3,2]角度矩阵、ones_like幅值和polar，验证与预计算相位表相同。ones_like继承shape/dtype，不是创建训练Parameter。
+# 用手写 [3,2] 角度矩阵、ones_like 幅值和 polar 构造单位复数，与预计算相位表对照。ones_like 保留输入的 shape 与 dtype。
 theta_matrix = torch.tensor([
     [0.0, 0.0],
     [1.0, 0.01],
@@ -194,7 +194,7 @@ e_j_theta_matrix = torch.polar(r_matrix, theta_matrix)
 e_j_theta_matrix
 
 # ===== 原单元 16 =====
-# 苏剑林RoPE推导链接，属于作者解释材料；本讲保留来源，不把外链当命令。
+# 这条链接指向苏剑林的 RoPE 推导，可与正文的旋转矩阵和复数写法对照。
 # ### https://spaces.ac.cn/archives/8265
 
 # ===== 原单元 17 =====
@@ -274,7 +274,7 @@ def get_rope_matrix(d, theta):
     return mat
 
 # ===== 原单元 24 =====
-# d=4；列表推导逐一把角度换成弧度。theta_m/n各[2]，只是展示两组角，不是训练得到的位置向量。若要推广到m/n任意位置，应保持同一组基础频率的线性关系。
+# d=4，列表推导把角度逐项转成弧度；theta_m/n 的 shape 均为[2]，表示两个位置的旋转角。推广到任意 m/n 时，保持相同基础频率和位置的线性关系。
 # 示例向量的维度
 d = 4  # 必须是偶数
 theta_m = torch.tensor([i * math.pi / 180 for i in range(d//2)])
@@ -342,7 +342,7 @@ result_3
 # ## CoPE：Contextual Position Encoding: Learning to Count What’s Important
 
 # ===== 原单元 35 =====
-# 论文和第三方链接保留。CoPE根据query/key门控来计数，可能学到句子/词等单位；这不是保证未经训练就能识别句子。普通相对PE并非在所有任务都无法定位句子，论文的简化假设和实验需分开看。
+# CoPE 用 query/key 计算门值，再累加为内容相关的位置；训练让这些门值适应句子或词等计数单位。正文结合论文的简化例子与任务结果说明其作用。
 # - https://arxiv.org/pdf/2405.18719
 # - https://www.zhihu.com/question/657761483/answer/3517582623
 # - 相对位置编码
@@ -395,7 +395,7 @@ Image(url='../../imgs/rel_position_matrix.png', width=400)
 # $$
 
 # ===== 原单元 39 =====
-# 这格是Markdown，但含完整CoPE和SelfAttn两个nn.Module类，必须阅读和实际核对。提取到独立Python并导入真实torch.nn即可运行。CoPE返回位置logit偏置[B,Q,K]，SelfAttn返回对V加权后的[B,Q,Dv]；这里没有QKV投影、head拆分、残差或完整语言模型。Parameter位置表零初始化，第一步位置bias为0，需训练后才产生非零位置作用。
+# 这个 Markdown 格包含完整的 CoPE 和 SelfAttn 两个 nn.Module 类。CoPE 返回位置 logit 偏置 [B,Q,K]，SelfAttn 将其加进注意力后返回 [B,Q,Dv]。零初始化的位置表使初始 bias 为0，训练随后改变位置作用；完整语言模型还可在外层接入 QKV 投影、多头和残差。
 # ```
 # class CoPE(nn.Module):
 #     def __init__(self, npos_max, head_dim):
