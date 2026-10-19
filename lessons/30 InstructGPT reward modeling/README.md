@@ -2,13 +2,13 @@
 
 [返回课程总目录](../../README.md)
 
-1. [中文讲解](解释.md)：Bradley–Terry、交叉熵、分组比较、梯度与原文校正。
+1. [中文讲解](解释.md)：从两个回答开始，讲概率、损失、梯度与分组训练；五张论文原图就地解释。
 2. [主 notebook Python 详细注释](代码/tutorials/reward_model/reward_model_Bradley_Terry_model_代码注释.py)：原公式与全部绘图/数值代码。
 3. [补充 BFGS 估计代码注释](代码/tutorials/reward_model/bradley_terry_modeling_代码注释.py)：四队、五品牌的真实最大似然估计。
 4. [偏好损失与真实小模型训练补充](代码/tutorials/reward_model/偏好损失_教学补充.py)、[完整 Llama 奖励打分类注释](代码/tutorials/reward_model/Llama奖励打分源码_代码注释.py)。
 5. 需要逐格输出时看 [主注释 notebook](代码/tutorials/reward_model/代码注释.ipynb) 和 [补充注释 notebook](代码/tutorials/reward_model/bradley_terry_modeling_代码注释.ipynb)。
 
-原版代码与历史输出保留；“log10与自然对数混用”“分差3以后梯度为0”等表述在新增解释中校正。所有实际结果和原模型未运行范围分开记录。
+原版代码与历史输出保留；“log10与自然对数混用”“分差3以后梯度为0”等表述在新增解释中校正。正文给出六段可运行算例，详细结果见复现记录。
 
 <details>
 <summary>原版、来源与验证记录</summary>

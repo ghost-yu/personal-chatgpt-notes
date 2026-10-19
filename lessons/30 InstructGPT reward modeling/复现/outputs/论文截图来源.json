@@ -1,0 +1,82 @@
+[
+  {
+    "paper": "InstructGPT_v1.pdf",
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "page_1_based": 3,
+    "part": "Figure 2, diagram",
+    "crop_top_left_points": [
+      112,
+      70,
+      500,
+      300
+    ],
+    "scale": 3,
+    "published_path": "图片/InstructGPT_v1_p3_Figure2.png",
+    "png_sha256": "f7a7458537f74e9c7b0130e41d00bee747339dcb5188d52855b7c5b55daf8701"
+  },
+  {
+    "paper": "InstructGPT_v1.pdf",
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "page_1_based": 8,
+    "part": "Equation 1",
+    "crop_top_left_points": [
+      172,
+      615,
+      508,
+      648
+    ],
+    "scale": 3,
+    "published_path": "图片/InstructGPT_v1_p8_公式1.png",
+    "png_sha256": "e582c7862243887089b9709866eb422bc8f918ec09a5d80ecf490cf46bf7088d"
+  },
+  {
+    "paper": "InstructGPT_v1.pdf",
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "page_1_based": 8,
+    "part": "log odds and grouped comparisons paragraphs",
+    "crop_top_left_points": [
+      106,
+      454,
+      508,
+      588
+    ],
+    "scale": 3,
+    "published_path": "图片/InstructGPT_v1_p8_分组比较.png",
+    "png_sha256": "cbcd1b494c0bae64449c258685b79ca0136ad7b810e26c68875d5eba0e9ff8f7"
+  },
+  {
+    "paper": "InstructGPT_v1.pdf",
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "page_1_based": 41,
+    "part": "Appendix C.2",
+    "crop_top_left_points": [
+      106,
+      516,
+      508,
+      724
+    ],
+    "scale": 3,
+    "published_path": "图片/InstructGPT_v1_p41_C2.png",
+    "png_sha256": "7bb574077a1f7df469b1d147fb02b158755f66b5469b18547844cfc2d1be7a18"
+  },
+  {
+    "paper": "InstructGPT_v1.pdf",
+    "url": "https://arxiv.org/pdf/2203.02155v1",
+    "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+    "page_1_based": 42,
+    "part": "Appendix C.2 continued: ties and batch size",
+    "crop_top_left_points": [
+      106,
+      70,
+      508,
+      101
+    ],
+    "scale": 3,
+    "published_path": "图片/InstructGPT_v1_p42_平局与批量.png",
+    "png_sha256": "a267d09b42d50cd21c44636f5df7311842f66d7c1dba35940696da21f1e7473f"
+  }
+]

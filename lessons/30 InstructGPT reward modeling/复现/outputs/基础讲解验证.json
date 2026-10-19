@@ -1,0 +1,365 @@
+{
+  "status": "passed",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.5.1+cpu",
+    "transformers": "4.44.2",
+    "scipy": "1.13.1",
+    "threads": 1
+  },
+  "preservation": {
+    "notebooks": {
+      "reward_model_Bradley_Terry_model": {
+        "cells": 27,
+        "code_cells": 12,
+        "derived_cells": 55,
+        "schemas": 3,
+        "original_git_bytes": true,
+        "metadata_historical_outputs": true,
+        "ast_tokens": true,
+        "reading_ast": true
+      },
+      "bradley_terry_modeling": {
+        "cells": 8,
+        "code_cells": 5,
+        "derived_cells": 17,
+        "schemas": 3,
+        "original_git_bytes": true,
+        "metadata_historical_outputs": true,
+        "ast_tokens": true,
+        "reading_ast": true
+      }
+    },
+    "schemas": 6,
+    "full_official_class_ast": true,
+    "core_import": true,
+    "installed_source_record": true
+  },
+  "executions": [
+    {
+      "block": 1,
+      "stdout": "0.7310585786300049 0.31326168751822286\n-0.2689414213699951 0.2689414213699951\n",
+      "warnings": []
+    },
+    {
+      "block": 2,
+      "stdout": "0.6931471824645996 0.3010299956639812\n[1000.0, 0.6931471805599453, -0.0] [1000.0, 0.6931471805599453, 0.0]\n[inf, 0.6931471805599453, -0.0]\n",
+      "warnings": []
+    },
+    {
+      "block": 3,
+      "stdout": "",
+      "warnings": [
+        "invalid escape sequence '\\l'",
+        "invalid escape sequence '\\l'",
+        "invalid escape sequence '\\s'",
+        "FigureCanvasAgg is non-interactive, and thus cannot be shown"
+      ]
+    },
+    {
+      "block": 4,
+      "stdout": "[(2, 0), (3, 0), (2, 1), (3, 1), (3, 2)] [(0, 1), (0, 2), (1, 2)]\n1.3001499983186302\n",
+      "warnings": []
+    },
+    {
+      "block": 5,
+      "stdout": "参数量: 2880\n每次更新前及最后更新后的损失: [0.6914561986923218, 0.6735998392105103, 0.6130867004394531, 0.5236562490463257, 0.46112239360809326] 0.42022398114204407\n七个候选的最终分数: [-0.4757668375968933, -0.4778483510017395, 0.457491934299469, 0.45851442217826843, 0.4602943956851959, 0.2162669599056244, -0.482959121465683]\n",
+      "warnings": []
+    },
+    {
+      "block": 6,
+      "stdout": "Optimization converged after 2 iterations.\n团队强度参数 p_i：\n团队 A 的强度参数 p_A = 1.0000\n团队 B 的强度参数 p_B = 1.6306\n团队 C 的强度参数 p_C = 1.0312\n团队 D 的强度参数 p_D = 3.5484\n\n归一化的团队强度参数 p_i (总和为1)：\n团队 A 的归一化强度参数 p_A = 0.1387\n团队 B 的归一化强度参数 p_B = 0.2262\n团队 C 的归一化强度参数 p_C = 0.1430\n团队 D 的归一化强度参数 p_D = 0.4921\n",
+      "warnings": []
+    }
+  ],
+  "original_plot_and_team_cell_AST_equal": true,
+  "original_plot_png_equal": true,
+  "loss_math": {
+    "four_loss_forms_equal": true,
+    "first_second_derivative_equal": true,
+    "double_gradcheck": true,
+    "points": [
+      {
+        "delta": -6.0,
+        "loss": 6.00247568513773,
+        "probability": 0.0024726231566347743,
+        "gradient": -0.9975273768433652
+      },
+      {
+        "delta": 0.0,
+        "loss": 0.6931471805599453,
+        "probability": 0.5,
+        "gradient": -0.5
+      },
+      {
+        "delta": 1.0,
+        "loss": 0.31326168751822286,
+        "probability": 0.7310585786300049,
+        "gradient": -0.2689414213699951
+      },
+      {
+        "delta": 3.0,
+        "loss": 0.048587351573742055,
+        "probability": 0.9525741268224334,
+        "gradient": -0.04742587317756679
+      },
+      {
+        "delta": 10.0,
+        "loss": 4.539889921686465e-05,
+        "probability": 0.9999546021312976,
+        "gradient": -4.5397868702434395e-05
+      }
+    ],
+    "equal_scores_ln_loss": 0.6931471805599453,
+    "equal_scores_log10_loss": 0.3010299956639812,
+    "extreme_stable_losses": [
+      1000.0,
+      -0.0
+    ],
+    "extreme_stable_gradients": [
+      -1.0,
+      -0.0
+    ],
+    "naive_nonfinite_count": 1,
+    "tie_example_strict_pairs": 5,
+    "K9_pairs": 36,
+    "K9_B64_max_pairs": 2304,
+    "group_prompt_mean": 1.3001499983186302,
+    "flat_pair_mean": 1.08445607705371,
+    "common_prompt_shift_invariant": true,
+    "prompt_shift_gradients": [
+      1.3877787807814457e-17,
+      0.0
+    ],
+    "scale_not_invariant": true,
+    "empty_comparison_error": {
+      "exception": "ValueError",
+      "message": "该prompt没有严格偏好对"
+    }
+  },
+  "scipy_likelihood": {
+    "team_observations": 22,
+    "team_negative_log_likelihood": 13.428450079974613,
+    "team_independent_max_free_gradient": 6.151165202750164e-06,
+    "team_anchored_hessian_eigenvalues": [
+      0.614700959686309,
+      1.796961935850005,
+      4.817075200458472
+    ],
+    "team_pair_probabilities": [
+      [
+        0.5,
+        0.3801410828396505,
+        0.492314281437617,
+        0.21985881197973622
+      ],
+      [
+        0.6198589171603495,
+        0.5,
+        0.6125880639537129,
+        0.31485033764592096
+      ],
+      [
+        0.507685718562383,
+        0.38741193604628704,
+        0.5,
+        0.2251776656987265
+      ],
+      [
+        0.7801411880202638,
+        0.685149662354079,
+        0.7748223343012736,
+        0.5
+      ]
+    ],
+    "brand_observations": 1000,
+    "brand_negative_log_likelihood": 657.8018160575676,
+    "brand_independent_max_gradient": 2.719959309871456e-05,
+    "naive_team_extreme_finite": false,
+    "naive_team_warning_types": [
+      "RuntimeWarning"
+    ],
+    "stable_brand_extreme_finite": true,
+    "full_log_strength_common_shift_invariant": true
+  },
+  "original_supplement_execution": [
+    {
+      "cell": 0,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 2,
+      "status": "literal",
+      "stdout": "Optimization converged after 2 iterations.\n团队强度参数 p_i：\n团队 A 的强度参数 p_A = 1.0000\n团队 B 的强度参数 p_B = 1.6306\n团队 C 的强度参数 p_C = 1.0312\n团队 D 的强度参数 p_D = 3.5484\n\n归一化的团队强度参数 p_i (总和为1)：\n团队 A 的归一化强度参数 p_A = 0.1387\n团队 B 的归一化强度参数 p_B = 0.2262\n团队 C 的归一化强度参数 p_C = 0.1430\n团队 D 的归一化强度参数 p_D = 0.4921\n",
+      "display": null
+    },
+    {
+      "cell": 5,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    },
+    {
+      "cell": 6,
+      "status": "literal",
+      "stdout": "Estimated Ability Scores:\nDunlop: 0.3335\nModi: 0.1618\nCeat: 0.1908\nGoodYear: 0.2005\nMRF: 0.1134\n",
+      "display": null
+    },
+    {
+      "cell": 7,
+      "status": "literal",
+      "stdout": "",
+      "display": null
+    }
+  ],
+  "new_neural": {
+    "parameters": 2880,
+    "ids_shape": [
+      7,
+      6
+    ],
+    "hidden_shape": [
+      7,
+      6,
+      16
+    ],
+    "head_shape": [
+      1,
+      16
+    ],
+    "updates": 5,
+    "trace_before_updates": [
+      0.6914561986923218,
+      0.6735998392105103,
+      0.6130867004394531,
+      0.5236562490463257,
+      0.46112239360809326
+    ],
+    "loss_after_last_update": 0.42022398114204407,
+    "rewards": [
+      -0.4757668375968933,
+      -0.4778483510017395,
+      0.457491934299469,
+      0.45851442217826843,
+      0.4602943956851959,
+      0.2162669599056244,
+      -0.482959121465683
+    ],
+    "changed_state_entries": [
+      "model.embed_tokens.weight",
+      "model.layers.0.self_attn.q_proj.weight",
+      "model.layers.0.self_attn.k_proj.weight",
+      "model.layers.0.self_attn.v_proj.weight",
+      "model.layers.0.self_attn.o_proj.weight",
+      "model.layers.0.mlp.gate_proj.weight",
+      "model.layers.0.mlp.up_proj.weight",
+      "model.layers.0.mlp.down_proj.weight",
+      "model.layers.0.input_layernorm.weight",
+      "model.layers.0.post_attention_layernorm.weight",
+      "model.norm.weight",
+      "score.weight"
+    ],
+    "all_parameter_gradients_finite": true,
+    "manual_last_valid_pooling_equal": true,
+    "extra_right_padding_invariant": true,
+    "unique_candidate_rows": 7,
+    "duplicated_pair_rows": 16,
+    "reused_loss": 0.42022398114204407,
+    "independent_pair_BCE_loss": 0.4202239513397217,
+    "all_parameter_gradient_max_error": 4.172325134277344e-07,
+    "complete_exported_class_outputs_equal": true,
+    "save_reload_states_and_scores_equal": true
+  },
+  "paper_crops": [
+    {
+      "paper": "InstructGPT_v1.pdf",
+      "url": "https://arxiv.org/pdf/2203.02155v1",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "page_1_based": 3,
+      "part": "Figure 2, diagram",
+      "crop_top_left_points": [
+        112,
+        70,
+        500,
+        300
+      ],
+      "scale": 3,
+      "published_path": "图片/InstructGPT_v1_p3_Figure2.png",
+      "png_sha256": "f7a7458537f74e9c7b0130e41d00bee747339dcb5188d52855b7c5b55daf8701"
+    },
+    {
+      "paper": "InstructGPT_v1.pdf",
+      "url": "https://arxiv.org/pdf/2203.02155v1",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "page_1_based": 8,
+      "part": "Equation 1",
+      "crop_top_left_points": [
+        172,
+        615,
+        508,
+        648
+      ],
+      "scale": 3,
+      "published_path": "图片/InstructGPT_v1_p8_公式1.png",
+      "png_sha256": "e582c7862243887089b9709866eb422bc8f918ec09a5d80ecf490cf46bf7088d"
+    },
+    {
+      "paper": "InstructGPT_v1.pdf",
+      "url": "https://arxiv.org/pdf/2203.02155v1",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "page_1_based": 8,
+      "part": "log odds and grouped comparisons paragraphs",
+      "crop_top_left_points": [
+        106,
+        454,
+        508,
+        588
+      ],
+      "scale": 3,
+      "published_path": "图片/InstructGPT_v1_p8_分组比较.png",
+      "png_sha256": "cbcd1b494c0bae64449c258685b79ca0136ad7b810e26c68875d5eba0e9ff8f7"
+    },
+    {
+      "paper": "InstructGPT_v1.pdf",
+      "url": "https://arxiv.org/pdf/2203.02155v1",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "page_1_based": 41,
+      "part": "Appendix C.2",
+      "crop_top_left_points": [
+        106,
+        516,
+        508,
+        724
+      ],
+      "scale": 3,
+      "published_path": "图片/InstructGPT_v1_p41_C2.png",
+      "png_sha256": "7bb574077a1f7df469b1d147fb02b158755f66b5469b18547844cfc2d1be7a18"
+    },
+    {
+      "paper": "InstructGPT_v1.pdf",
+      "url": "https://arxiv.org/pdf/2203.02155v1",
+      "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+      "page_1_based": 42,
+      "part": "Appendix C.2 continued: ties and batch size",
+      "crop_top_left_points": [
+        106,
+        70,
+        508,
+        101
+      ],
+      "scale": 3,
+      "published_path": "图片/InstructGPT_v1_p42_平局与批量.png",
+      "png_sha256": "a267d09b42d50cd21c44636f5df7311842f66d7c1dba35940696da21f1e7473f"
+    }
+  ],
+  "note_sha256": "0da22dc2533b82c48282d89a96cf4d22730759aec0b66beca0d25d4f3584b6e3",
+  "script_sha256": "a0ed73e76f299dbcbfe64b8d4a408c0e3f769f9a9efdfaf62b25b268da27cdc5",
+  "not_run": [
+    "Original GPT-3/InstructGPT 6B weights and human preference training data",
+    "System quality or generalization assessment",
+    "PPO or GPU measurements"
+  ]
+}

@@ -2,7 +2,7 @@
 # 所有原代码保留；绘图使用matplotlib，补充BFGS需要真实SciPy。
 
 # %% 原单元 0 · markdown
-# 原参考入口：Bradley–Terry概念、OpenAI InstructGPT介绍和论文。外链是来源，不是指令；本次以固定InstructGPT v1的§3.5/附录C.2为准。
+# 参考资料包括 Bradley–Terry 概念、OpenAI InstructGPT 介绍和论文；主要对应 InstructGPT v1 的§3.5与附录C.2。
 # - references
 #     - https://en.wikipedia.org/wiki/Bradley%E2%80%93Terry_model
 #     - InstructGPT:
@@ -10,64 +10,59 @@
 #         - https://arxiv.org/abs/2203.02155
 
 # %% 原单元 1 · code
-# 从IPython.display导入Image类，供notebook展示图片；导入不下载权重。
-# 从IPython.display导入Image类，供notebook展示图片；导入不下载权重。
-# 导入实际Image展示对象；不验证远程图片内容。
+# 从 IPython.display 导入 Image 类，供 notebook 展示图片。
+# Image 根据图片路径或 URL 创建可显示的图像对象。
 from IPython.display import Image
 
 
 # %% 原单元 2 · code
-# torch/nn/F提供Tensor与稳定logsigmoid，NumPy计算数组，pyplot画函数。这里nn虽导入但原notebook没有神经网络模型/训练；不要编造原模型。
-# torch/nn/F提供Tensor与稳定logsigmoid，NumPy计算数组，pyplot画函数。这里nn虽导入但原notebook没有神经网络模型/训练；不要编造原模型。
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# torch 提供张量，F 提供 logsigmoid 等函数，NumPy 计算数组，pyplot 绘制概率与损失曲线；nn 用于构建神经网络模块。
+# 导入后续计算使用的模块或函数。
 import torch
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 导入后续计算使用的模块或函数。
 from torch import nn
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 导入后续计算使用的模块或函数。
 import torch.nn.functional as F
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 导入后续计算使用的模块或函数。
 import numpy as np
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 导入后续计算使用的模块或函数。
 import matplotlib.pyplot as plt
 
 
 # %% 原单元 3 · markdown
-# InstructGPT标题；本文分析其reward modeling，不将2022年论文当作ChatGPT全部工程实现公开。
+# InstructGPT 这一节介绍奖励模型在三阶段训练路线中的位置。
 # ### instructGPT
 
 # %% 原单元 4 · code
-# 远程图Image(url=...)只构造HTML对象。本次未验证远程图内容，不能根据其URL宣称看过图片或把它当实验结果。
-# 远程图Image(url=...)只构造HTML对象。本次未验证远程图内容，不能根据其URL宣称看过图片或把它当实验结果。
+# Image(url=...) 创建远程图片的显示对象，width=500 指定展示宽度。正文内嵌了论文三阶段流程图，可结合阅读。
 # 构造HTML图对象；url只是来源或相对路径。
 Image(url='https://miro.medium.com/v2/resize:fit:1100/format:webp/1*R8D4ixMVWxSOyvvIoc_T-w.png', width=500)
 
 
 # %% 原单元 5 · markdown
-# 论文Eq.(1)：delta是同prompt下chosen与rejected的标量reward之差；每对损失为-log sigmoid(delta)。binom(K,2)表示K个候选的无序比较对上限；实现要明确sum与mean边界，已经对pair求mean后不能再无意除一次组合数。
+# 论文公式1以同题 chosen/rejected 的分差 delta 计算每对损失 -log sigmoid(delta)。binom(K,2) 是 K 个候选的无序比较对上限；实现时先计算每对损失，再按约定对比较和问题取均值。
 # $$
 # \text{loss}(\theta) = -\frac{1}{\binom{K}{2}} \mathbb{E}_{(x, y_w, y_l) \sim D} \left[ \log \left( \sigma \left( r_\theta(x, y_w) - r_\theta(x, y_l) \right) \right) \right]
 # $$
 
 # %% 原单元 6 · code
-# 原OpenAI流程图远程URL保留；只验证Image对象。流程用论文Figure 2的文字说明核对：SFT→偏好排序/训练RM→PPO。预训练基础模型在三个阶段之前，不能把第1阶段直接等同于从头预训练。
-# 原OpenAI流程图远程URL保留；只验证Image对象。流程用论文Figure 2的文字说明核对：SFT→偏好排序/训练RM→PPO。预训练基础模型在三个阶段之前，不能把第1阶段直接等同于从头预训练。
+# 展示 OpenAI 的训练流程图，width=600 控制宽度。顺序为 SFT→偏好排序与RM训练→PPO；三阶段都从已有的预训练语言能力出发。正文已内嵌论文 Figure 2。
 # 构造HTML图对象；url只是来源或相对路径。
 Image(url='https://images.ctfassets.net/kftzwdyauwt9/690sZjaYwbes9IMEgfyJ7O/f536896b496b13749518f53d4caaa713/Methods_Diagram_dark_mode.jpg?w=2048&q=80&fm=webp', width=600)
 
 
 # %% 原单元 7 · markdown
-# D>C>A=B有4个候选：总无序对6，其中A/B平局。按论文丢弃ties，只留下5个严格偏好对；不把平局随意设成chosen标签1。
+# D>C>A=B 有4个候选、6个无序对；A/B平局。按论文去掉平局后，保留 C>A、C>B、D>A、D>B、D>C 五个严格偏好对。
 # - D>C>A=B
 
 # %% 原单元 8 · code
-# 本地quality-labels.png使用url参数构造HTML相对链接；cwd需为本notebook目录。原图实际是单输出质量1–7分和若干属性的标注界面，不是四候选排序界面；原Git字节保留并已视觉查看。
-# 本地quality-labels.png使用url参数构造HTML相对链接；cwd需为本notebook目录。原图实际是单输出质量1–7分和若干属性的标注界面，不是四候选排序界面；原Git字节保留并已视觉查看。
+# quality-labels.png 展示单个回答的1–7分质量评分及属性标注。url 使用相对路径，工作目录应位于 notebook 所在文件夹；正文也直接展示了这张图。
 # 构造HTML图对象；url只是来源或相对路径。
 Image(url='./imgs/quality-labels.png', width=500)
 
 
 # %% 原单元 9 · markdown
-# 单个绝对rating可能受标注人打分尺度影响，pairwise更关注相对选择，但不保证消除所有偏好分歧。siamese类比指同一个参数共享的打分器分别处理(x,yw)/(x,yl)，不等于两个独立reward网络，也不一定是cross-encoder一次输入两答案。
+# 绝对评分依赖标注者的分数尺度，成对比较直接记录同题两个回答的相对选择。这里用 siamese 作类比：同一个打分器共享参数，分别处理 (x,yw) 与 (x,yl)，得到两个分数。
 # - 单个的标注（监督学习，直接回归 rating），rating 未必是全局唯一的，
 #     - labeler A 认为的 3分在 labeler B 的 4分或者2分，即 rating 的 scale 未必对所有的 labelers 都是适用的；
 #     - 李克特量表（Likert scale）
@@ -75,7 +70,7 @@ Image(url='./imgs/quality-labels.png', width=500)
 #     - 双输入，siamese network；
 
 # %% 原单元 10 · markdown
-# 损失理解标题；后续从概率假设推导，不把分数本身当概率。
+# 这一节从偏好概率推导损失，并解释分数与概率的转换。
 # #### 损失函数的理解
 
 # %% 原单元 11 · markdown
@@ -83,7 +78,7 @@ Image(url='./imgs/quality-labels.png', width=500)
 # #### 概率建模
 
 # %% 原单元 12 · markdown
-# 假定logit(p)=rw-rl=delta。先指数化得odds，再解p=sigmoid(delta)，最后对观察到chosen胜出的标签1取负log。不是“模型必然已给chosen更大分”的假设；delta可以为负。
+# 设 logit(p)=rw-rl=delta，先求赔率，再解出 p=sigmoid(delta)。观察到 chosen 胜出时，损失为 -log(p)。delta 可以为负，表示当前模型把 chosen 排在了后面。
 # $$
 # \begin{split}
 # \delta=r_w-r_l&=\log {odds}=\log \frac{p}{1-p}\\
@@ -95,7 +90,7 @@ Image(url='./imgs/quality-labels.png', width=500)
 # $$
 
 # %% 原单元 13 · markdown
-# p是给定prompt和两响应时人类偏好chosen的模型概率，不是确定标量rw>rl这个事件的随机概率。BCE一般形式含y和1-y；按chosen/rejected定向后y=1。自然对数概率可以用于似然/交叉熵，但看到log并不总是交叉熵。
+# p 表示给定问题与两回答时，人类选择 chosen 的模型概率。二元交叉熵一般包含 y 和 1-y 两项；按 chosen/rejected 定向存储后 y=1，保留 -log(p) 这一项。
 # - log odds（对数赔率，赔率的对数）：$r_w-r_l=\log odds$
 #     - $p=p(y_w\gt y_l)$
 #     - 奖励差，表示人类更可能偏好响应1（$r_w$，$r_\text{chosen}$）而非响应2（$r_\ell$，$r_\text{rejected}$）的对数赔率。
@@ -105,8 +100,7 @@ Image(url='./imgs/quality-labels.png', width=500)
 # - 多数时候我们看到 log probability 的时候基本就是在计算交叉熵；
 
 # %% 原单元 14 · code
-# np.linspace取100个概率点[.01,.99]，shape[100] float64；np.log为自然对数，log_odds=log(p/(1-p))。plt.figure创建画布、plot绘二维曲线、xlabel/ylabel/title/grid只设置显示。不是训练曲线，没有需要学习的参数。
-# np.linspace取100个概率点[.01,.99]，shape[100] float64；np.log为自然对数，log_odds=log(p/(1-p))。plt.figure创建画布、plot绘二维曲线、xlabel/ylabel/title/grid只设置显示。不是训练曲线，没有需要学习的参数。
+# np.linspace 取0.01到0.99之间的100个概率点；np.log 计算自然对数，得到 log_odds=log(p/(1-p))。figure 创建画布，plot 画出概率与 log odds 的关系，后续函数设置轴标签、标题和网格。
 # 创建包含两端点的均匀float64数组，长度为num参数。
 p = np.linspace(0.01, 0.99, 100)
 # 自然对数赔率；p/(1-p)是odds，结果不是概率。
@@ -144,9 +138,8 @@ plt.grid(True)
 #  $C_k^2$ 个排序对，使得整个问题变得复杂一点，缓解了过拟合
 
 # %% 原单元 17 · code
-# math.comb(9,2)=36是整数无序组合数，乘64返回int2304；不是64×9条独立prompt，也不包括反向重复对。
-# math.comb(9,2)=36是整数无序组合数，乘64返回int2304；不是64×9条独立prompt，也不包括反向重复对。
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# math.comb(9,2)=36，表示9个候选的无序比较对数；64个问题最多形成64×36=2304个比较。
+# 导入后续计算使用的模块或函数。
 import math
 # 无序组合数C(9,2)=36，64个prompt至多2304对。
 64 * math.comb(9, 2)
@@ -157,8 +150,7 @@ import math
 # ### Bradley-Terry model
 
 # %% 原单元 19 · code
-# 远程Bradley–Terry示意图只构造HTML，不验证内容；概率公式由原Markdown与实际损失实现独立核对。
-# 远程Bradley–Terry示意图只构造HTML，不验证内容；概率公式由原Markdown与实际损失实现独立核对。
+# 创建 Bradley–Terry 示意图的显示对象，宽度为400。概率关系与推导见正文第2节。
 # 构造HTML图对象；url只是来源或相对路径。
 Image(url='https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0605ace1-cc21-400a-941f-154a1faa103c_1600x1427.png', width=400)
 
@@ -179,19 +171,17 @@ Image(url='https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive
 # - loss is proportional to the log odds that the first resp is greater than the second;
 
 # %% 原单元 22 · code
-# 相等分数delta=0：-F.logsigmoid是自然对数loss ln2=.693147；第二项np.log10给.301030。二者对数底不同，不是两个算法给同一单位的loss。该格原样保留，说明中纠正。
-# 相等分数delta=0：-F.logsigmoid是自然对数loss ln2=.693147；第二项np.log10给.301030。二者对数底不同，不是两个算法给同一单位的loss。该格原样保留，说明中纠正。
+# 相等分数时 delta=0。第一项使用自然对数，结果 ln2≈0.693147；第二项用 log10，结果约0.301030。把后者乘以 ln10，即可统一到自然对数单位。
 # `r1=r2` 时的 loss
 # PyTorch稳定计算log(sigmoid)；第二项log10不是同底数。
 -F.logsigmoid(torch.tensor(0.)), -np.log10(1/(1+np.exp(-0)))
 
 
 # %% 原单元 23 · code
-# delta为1000个float64点[-10,10]；用sigmoid、负log和sigma-1得到两条解析函数曲线。蓝线loss非负，红线导数在(-1,0)，不是两次训练。np.exp/先sigmoid再log在极端输入会溢出，补充用稳定softplus/logsigmoid核对。
-# delta为1000个float64点[-10,10]；用sigmoid、负log和sigma-1得到两条解析函数曲线。蓝线loss非负，红线导数在(-1,0)，不是两次训练。np.exp/先sigmoid再log在极端输入会溢出，补充用稳定softplus/logsigmoid核对。
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 在[-10,10]上取1000个 float64 分差，计算 sigmoid、负对数损失和导数 sigma-1。蓝线展示非负的损失，红色虚线展示(-1,0)内的导数。极端分差的稳定计算写法见正文 logsigmoid 例子。
+# 导入后续计算使用的模块或函数。
 import numpy as np
-# 导入本段实际用到的模块或函数，不在此行下载模型。
+# 导入后续计算使用的模块或函数。
 import matplotlib.pyplot as plt
 
 # Define the delta range
@@ -234,16 +224,14 @@ plt.show()
 
 
 # %% 原单元 24 · markdown
-# delta=3时loss=.048587、梯度约-.047426，仍非0；不是硬阈值，也不是达3后无法继续优化。有限实数上loss始终随delta减小，极限delta→+inf时趋0；有限精度数值饱和另说。
+# delta=3 时 loss≈0.048587，梯度≈-0.047426。随着 delta 继续增大，损失与梯度幅度平滑减小，loss 在 delta→+inf 时趋于0。
 # - $\delta=r_1-r_2\geq 3$ 以后 loss 接近于0，且基本没有梯度了，；
 
 # %% 原单元 25 · code
-# 依次计算delta=1/3/-6的自然对数loss，约.313262/.048587/6.002476；负差惩罚大，对delta梯度趋-1而非无界增大。
 # 依次计算delta=1/3/-6的自然对数loss，约.313262/.048587/6.002476；负差惩罚大，对delta梯度趋-1而非无界增大。
 -np.log(1/(1+np.exp(-1))), -np.log(1/(1+np.exp(-3))), -np.log(1/(1+np.exp(-(-6))))
 
 
 # %% 原单元 26 · code
-# delta=-6的sigmoid约.002473，表示模型当前认为chosen胜出的概率很低，不改变人工chosen标签；它推动训练修正错误排序。
 # delta=-6的sigmoid约.002473，表示模型当前认为chosen胜出的概率很低，不改变人工chosen标签；它推动训练修正错误排序。
 1/(1+np.exp(-(-6)))

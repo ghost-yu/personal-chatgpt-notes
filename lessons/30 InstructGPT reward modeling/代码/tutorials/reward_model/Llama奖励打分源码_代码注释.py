@@ -1,6 +1,6 @@
 # Transformers4.44.2 LlamaForSequenceClassification完整类，只增中文注释。
 # Copyright HuggingFace Inc. Apache-2.0，见同目录LICENSE.transformers。
-# 这是本次随机教学RM使用的相关实现，不是OpenAI InstructGPT官方工程。
+# 这个完整类实现了教学算例使用的 Llama 序列打分流程。
 from transformers.models.llama import modeling_llama as _official
 globals().update({name:value for name,value in vars(_official).items() if not name.startswith("__")})
 

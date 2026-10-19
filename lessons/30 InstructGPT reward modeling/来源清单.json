@@ -9,8 +9,9 @@
   "official_class": "LlamaForSequenceClassification",
   "official_class_sha256": "d440a0334ac21bcfcba817d99dd8f438c1027b3398df006ffddf31b757f71968",
   "paper": "https://arxiv.org/pdf/2203.02155v1",
-  "paper_scope": "§3.5 Eq1/Figure2/AppendixC.2，web PDF文本已读；本地下载TLS失败，未声明原论文.pdf已保存",
+  "paper_scope": "InstructGPT v1，68页本地PDF；§3.5 Eq1/Figure2/AppendixC.2已读，关键内容直接裁剪内嵌",
   "subtitle": "E:/8adc33be-d8dd-428f-a921-70a0b0849a21.txt，仅本地",
   "remote_images": "主4/6/19只构造URL展示对象，远程图内容未验证",
-  "official_training_repository": "未找到本讲原6B RM训练checkpoint及完整训练工程；HF小模型和SciPy都是明确教学/相关实现"
+  "official_training_repository": "未找到本讲原6B RM训练checkpoint及完整训练工程；HF小模型和SciPy都是明确教学/相关实现",
+  "paper_local_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98"
 }
