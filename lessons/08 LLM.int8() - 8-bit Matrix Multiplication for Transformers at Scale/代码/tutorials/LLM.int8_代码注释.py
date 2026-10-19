@@ -72,7 +72,7 @@ Image('../imgs/floats-rep.png', width=500)
 # %% [markdown]
 # ## 单元 4（markdown）：单向量演示标题
 #
-# 从一个向量的最大幅度开始，观察一套尺度如何影响每个元素；不是网络训练。
+# 从一个向量的最大幅度开始，观察统一缩放、舍入与反量化怎样影响每个元素。
 #
 # 原Markdown（保留原符号/伪代码，可与上面中文说明对照）：
 #
@@ -263,7 +263,7 @@ a[-1] = -5
 a_max = torch.abs(a).max()
 # 仍是浮点缩放，不改变dtype。
 scaled = a/a_max*127
-# int7val是原拼写，round并不代表7bit。
+# int7val 是原变量名；这里通过 round 将缩放结果四舍五入，位宽由数值范围和保存类型决定。
 int7val = torch.round(scaled)
 # 重建float32向量。
 fp32val = int7val * a_max / 127
@@ -604,7 +604,7 @@ np.kron(Cx, Cw)
 # %% [markdown]
 # ## 单元 43（code）：恢复普通贡献
 #
-# Out_i32逐元素乘输出尺度/127²，得到Out_f16_1[3,2]；原输入float64，结果仍float64，不是FP16。缩放/逆缩放抵消，本例结果接近X_reg@W_reg。没有量化舍入，所以不能由此得出8bit无误差。
+# Out_i32 逐元素乘输出尺度/127²，得到 [3,2] 的 Out_f16_1。输入是 float64，结果也沿用 float64；这段浮点缩放与逆缩放相互抵消，展示尺度关系。加入实际整数舍入后，可在配套例子观察量化误差。
 
 # %% 原单元 43
 # 恢复普通贡献：详见本格中文说明，原执行语句保持不变。
@@ -649,7 +649,7 @@ Out_f16_1 + Out_f16_2
 # %% [markdown]
 # ## 单元 47（markdown）：Hugging Face集成入口
 #
-# 前面讲算法，后面通过预训练OPT模型展示集成入口；原notebook没有训练loss/optimizer/dataset，也没有论文C4评测。
+# 前面解释量化计算，后面通过预训练 OPT 模型展示 Transformers 的量化加载与生成入口。
 #
 # 原Markdown（保留原符号/伪代码，可与上面中文说明对照）：
 
@@ -670,11 +670,11 @@ Out_f16_1 + Out_f16_2
 # %% [markdown]
 # ## 单元 49（code）：导入Auto加载接口
 #
-# AutoTokenizer和AutoModelForCausalLM是transformers类，from_pretrained是类加载入口：根据checkpoint的配置选择具体tokenizer/因果语言模型。导入本身不下载6.7B权重；返回对象、网络下载和设备迁移发生在下一几格。
+# AutoTokenizer 与 AutoModelForCausalLM 是自动选择实现的接口；后续调用 from_pretrained 时，根据 checkpoint 配置选择具体分词器或因果语言模型，并加载相应文件。
 
 # %% 原单元 49
 # 导入Auto加载接口：详见本格中文说明，原执行语句保持不变。
-# Auto类根据checkpoint配置选择具体实现，导入不下载OPT。
+# 导入 Auto 类，后续根据 checkpoint 配置选择具体的分词器和模型实现。
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # %% [markdown]
@@ -703,7 +703,7 @@ MAX_NEW_TOKENS = 128
 # 远程OPT6.7B模型标识；加载可能下载大权重/tokenizer。
 ckpt = 'facebook/opt-6.7b'
 
-# 一条英文输入字符串，不是训练dataset。
+# 定义一条英文提示词，作为后面生成接口的输入。
 sample = 'hello, who are you?'
 # 类加载入口下载/缓存tokenizer文件，本次原格未执行。
 tokenizer = AutoTokenizer.from_pretrained(ckpt)
@@ -715,7 +715,7 @@ input_ids
 # %% [markdown]
 # ## 单元 52（code）：加载并量化OPT底座
 #
-# from_pretrained的ckpt指定预训练模型；device_map=auto要求加载机制根据资源分配层；load_in_8bit=True触发历史bitsandbytes集成与线性层替换。返回model并涉及权重、量化状态、设备内存；不是把全部参数/激活/cache改成int8，也不是数据并行训练。6.7B权重未下载，此格未执行。CPU小OPT和参数遍历仅验证共享生成接口，不替代量化加载。
+# ckpt 指定预训练模型；device_map=auto 根据资源分配模块；load_in_8bit=True 接入历史 bitsandbytes 量化与线性层替换。相关层保存量化权重与尺度，激活和 cache 的类型由各自计算路径决定。原加载环境和 CPU 小 OPT 接口算例见复现说明。
 
 # %% 原单元 52
 # 加载并量化OPT底座：详见本格中文说明，原执行语句保持不变。
@@ -752,7 +752,7 @@ for i, para in enumerate(model.named_parameters()):
 # %% [markdown]
 # ## 单元 55（code）：空代码格
 #
-# 原source为空，保留编号、元数据和历史输出字段。空格没有模型逻辑，不凭空添加训练/评价内容；注释版只加入说明性注释，AST仍为空。
+# 原单元为空，保留编号和历史元数据，便于与上游逐格对照。
 
 # %% 原单元 55
 # 空代码格：详见本格中文说明，原执行语句保持不变。
