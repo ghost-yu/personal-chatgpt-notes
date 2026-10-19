@@ -1,0 +1,2927 @@
+{
+  "status": "passed",
+  "date": "2026-10-19",
+  "scope": "Current basic reading, original figures, citations, code examples and preserved source artifacts across lectures 01–30",
+  "requirements": [
+    {
+      "request": "从基础概念和具体例子讲解",
+      "evidence": "Per-lecture learning paths reviewed; examples/formulas/shapes mapped in the current main explanations"
+    },
+    {
+      "request": "论文原图与引用内容放在对应段落",
+      "evidence": "Every listed crop is inline; original PDF hash and independently rendered pixels match; source/version/page and Chinese explanations accompany the figures"
+    },
+    {
+      "request": "详细注释全部原notebook",
+      "evidence": "Current source audit: 40 originals, 988 cells, 623 code cells, 80 preserving derivatives and Python readings"
+    },
+    {
+      "request": "清楚直接的写法，阅读入口同步",
+      "evidence": "Main explanations, cell notes, notebook notes and Python comments revised; file/token checks preserve formulas and original computations"
+    },
+    {
+      "request": "保留旧讲解供第二遍读",
+      "evidence": "All 30 historical folds match their foundation revision exactly"
+    }
+  ],
+  "totals": {
+    "lectures": 30,
+    "inline_image_occurrences": 115,
+    "original_PDF_crop_occurrences": 81,
+    "original_course_image_occurrences": 30
+  },
+  "lessons": [
+    {
+      "lecture": "01 LLaMA introduction",
+      "learning_path_review": "接着写字→token编号→向量/shape→softmax→参数存储；原Table2与训练曲线配解释",
+      "note_sha256": "bd342aba656583aebb6b268f4cb8c969a10635333d63ac2cf24684681fa29f16",
+      "foundation_commit": "a3d9101b3b533d6615a3d5dab77c51820e951b26",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "scope": "Current ordinary Python softmax example executed by this audit",
+        "probabilities": [
+          0.6652409557748219,
+          0.24472847105479764,
+          0.09003057317038046
+        ],
+        "stdout": "[0.6652409557748219, 0.24472847105479764, 0.09003057317038046]\n"
+      },
+      "main_images": [
+        {
+          "file": "lessons/01 LLaMA introduction/图片/LLaMA原论文_Table2_模型规格.png",
+          "caption": "LLaMA原论文Table 2：模型规格原表截图",
+          "sha256": "78d5c32f1e6989d16b207289ef2316b48255dab5acf45d53773e5f7908648b1b"
+        },
+        {
+          "file": "lessons/01 LLaMA introduction/代码/imgs/llama_weights.png",
+          "caption": "原教程中的权重目录截图",
+          "sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69"
+        },
+        {
+          "file": "lessons/01 LLaMA introduction/图片/LLaMA原论文_Figure1_训练曲线.png",
+          "caption": "LLaMA原论文Figure 1：训练损失曲线原图截图",
+          "sha256": "a79a1f83de6693b86cbac6ceb4f080ecc1861b922e71c95b4a36619cae733cf7"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/01 LLaMA introduction/代码/imgs/llama_weights.png",
+          "upstream_path": "imgs/llama_weights.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/LLaMA原论文_Table2_模型规格.png",
+          "pdf_sha256": "2e663675ae36ad12adb2f5a05281bac2747ecf8d23d92bedd9f937a89fee7136",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\01 LLaMA introduction\\资料\\LLaMA_2302.13971v1.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1113,
+            261
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/LLaMA原论文_Figure1_训练曲线.png",
+          "pdf_sha256": "2e663675ae36ad12adb2f5a05281bac2747ecf8d23d92bedd9f937a89fee7136",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\01 LLaMA introduction\\资料\\LLaMA_2302.13971v1.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            672,
+            462
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "02 LoRA - Low-Rank Adaptation of Large Language Models",
+      "learning_path_review": "两数矩阵乘法→修正量→低秩→双支路→参数比→初始化与缩放",
+      "note_sha256": "d15b0d655120e34801d8e6d3cf3f7c7a4307842ea9c4a876468fcd2ec5946cf5",
+      "foundation_commit": "3e2d4c09e18361579bffaf0b25ba5404086dcfa9",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/复现/outputs/基础改写验证.json",
+        "report_sha256": "44af1de17d2f63b7ba844b4f903335f7bb5dedf7811712d295f22e56dcaad45b",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA论文Figure 1原图：冻结权重与可训练分支",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        },
+        {
+          "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/图片/LoRA原论文_Equation3_更新公式.png",
+          "caption": "LoRA论文第4页公式3原截图",
+          "sha256": "cbc467c7f23c15d6de4a33692a4606d308cff9c27813ae90a5c7714560d1e23d"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/LoRA原论文_Equation3_更新公式.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1108,
+            88
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "03 LoRA 微调 BLOOM",
+      "learning_path_review": "名言字典/列表→分词与padding→位移labels→交叉熵→LoRA更新",
+      "note_sha256": "985e4ad1810c8e3ac16d1d353d5e056531fffb62541655b38fe954dcd8fa16b8",
+      "foundation_commit": "039fb5627f172aecd9921f8204e8de67687603c3",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/03 LoRA 微调 BLOOM/复现/outputs/基础改写验证.json",
+        "report_sha256": "a2c0f6046c147f11edacf50c36907b2217b59d40c82b9ffbb3b39b357c014296",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/03 LoRA 微调 BLOOM/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA论文原图：输入同时经过冻结主分支和可训练低秩分支",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "04 PEFT LoRA 源码",
+      "learning_path_review": "模块/参数/输入→对象引用→目标匹配与替换→权重复用与冻结",
+      "note_sha256": "80b0a455f86b9152b4c906a37ae744729a341f76995424c09a146a50de4bc982",
+      "foundation_commit": "7ae96a2b0f55e250526274da6e26eba5cd1d8842",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/04 PEFT LoRA 源码/复现/outputs/基础改写验证.json",
+        "report_sha256": "97efecfdc8e71f85d1437588fc7cf1421b4ef671c3c6d1c84c6b9cb6e5469f2d",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/04 PEFT LoRA 源码/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA论文Figure1原图：冻结的W和可训练的A、B两路相加",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        },
+        {
+          "file": "lessons/04 PEFT LoRA 源码/图片/LoRA原论文_Equation3_更新公式.png",
+          "caption": "LoRA原论文第4页公式3：原输出加低秩修正",
+          "sha256": "cbc467c7f23c15d6de4a33692a4606d308cff9c27813ae90a5c7714560d1e23d"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/LoRA原论文_Equation3_更新公式.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1108,
+            88
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "05 FP16 与 BF16",
+      "learning_path_review": "bit/byte→二进制科学记数→6.5解码→正常/次正规→范围/精度",
+      "note_sha256": "0dcc4530d8eb98b3eb755c04ad875ccbb4e2e820f5cc56fedeaa46f343b3f75e",
+      "foundation_commit": "7df62af77872ca31e3f05cfd3db66764e1de4f5a",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/05 FP16 与 BF16/复现/outputs/基础改写验证.json",
+        "report_sha256": "ee15d9dff75e2255254cc97aa332acd1f8155af1808d2ed294095306cc1e705d",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/05 FP16 与 BF16/代码/imgs/float16.png",
+          "caption": "原课程FP16位布局",
+          "sha256": "31e887c939136a581f40e485e7df99e67d504033e2733bc759d01762a268dd80"
+        },
+        {
+          "file": "lessons/05 FP16 与 BF16/图片/BFLOAT16原论文_Table1_格式对照.png",
+          "caption": "BFLOAT16论文原表：FP32、FP16和BFLOAT16的位数与数值范围",
+          "sha256": "c2042a0e28ef7867ac81d76d3000c5063287dd9d0ebad8e51cb5a7737852fb2a"
+        },
+        {
+          "file": "lessons/05 FP16 与 BF16/代码/imgs/bf-float.png",
+          "caption": "原课程三种格式对照图",
+          "sha256": "9d2b2377fda2759a7835aa0eb786bf6b9aef6bcc362576a87d01f328c4c53b42"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/05 FP16 与 BF16/代码/imgs/float16.png",
+          "upstream_path": "imgs/float16.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/05 FP16 与 BF16/代码/imgs/bf-float.png",
+          "upstream_path": "imgs/bf-float.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/BFLOAT16原论文_Table1_格式对照.png",
+          "pdf_sha256": "d0fb0b6754bca4515214b76c8ea7a2c81212ad1843e7c246a1b2f84c81c54069",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\05 FP16 与 BF16\\资料\\BFLOAT16_1905.12322v3.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1508,
+            332
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "06 Alpaca LoRA 推理",
+      "learning_path_review": "基模型/tokenizer/adapter→原模板→编号→beam/采样→回答边界",
+      "note_sha256": "c189c0b0f09cf3cb8387865836bbeb8de569d8a2a9d78b3f38d7c1a02b4c23dd",
+      "foundation_commit": "f054f2b473a1699cdfc76eb27677c6bd25612450",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/06 Alpaca LoRA 推理/复现/outputs/基础改写验证.json",
+        "report_sha256": "f988e92c6eb9d9e3f8f944fcc61524aae960ca658004be9f0783055e6a16ddc7",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/06 Alpaca LoRA 推理/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA论文原图：基础分支与低秩分支共同产生输出",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "07 自动混合精度训练",
+      "learning_path_review": "图片分类→10分数/误差→梯度→loss scaling→autocast实际dtype",
+      "note_sha256": "32cb0ae48f48180db00b5c63428941ac6992a95b1db6b3031d725cd7126d5d7b",
+      "foundation_commit": "8ef504c814d093fad958cca5ebeded8a9181e88e",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/07 自动混合精度训练/复现/outputs/基础改写验证.json",
+        "report_sha256": "5a16e284c5e04067d40f06cc8be98a1d3d72bbcf809ede7c57f9247785b67b02",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/07 自动混合精度训练/图片/MixedPrecision原论文_Figure1_单层训练.png",
+          "caption": "Mixed Precision Training论文原图：单层前向、反向和FP32权重更新",
+          "sha256": "088ef8a2f83bf6b92ddc784b7911b6326dcda4cdec4112acb05610abce3e5950"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/MixedPrecision原论文_Figure1_单层训练.png",
+          "pdf_sha256": "3bbff2f757abdcfe4c5a4cee338f7b7d888110b9013ec4a934e334016f527c78",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 前七讲\\07 自动混合精度训练\\资料\\Mixed_Precision_Training_1710.03740v3.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1112,
+            580
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale",
+      "learning_path_review": "整数近似→缩放/舍入→矩阵乘→异常列分支→论文质量表与模型加载",
+      "note_sha256": "e53c3cd8c071df87d2113cff17a1dd24b88d9788807f83255410c28ab282dbfa",
+      "foundation_commit": "b9541126088cc15a442dfb76e8eb2bb859b95ed2",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/复现/outputs/基础改写验证.json",
+        "report_sha256": "4090229c112c30fad96e80a1ed5a1b135bcf5ea4161b5dd60acbd60173a44846",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/floats-rep.png",
+          "caption": "课程原图：浮点格式的符号、指数与精度",
+          "sha256": "f35ce5d6776b44643daf10c94a0299dd89df578e82c6a3e183cae972d266b068"
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/quant-freeze.png",
+          "caption": "课程原图：求最大绝对值、缩放、整数化与反量化",
+          "sha256": "77f49147ee2f69632f62c744ed8b235f9efb7f25c123e7c093f9acfddd196523"
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/图片/LLMint8原论文_Figure2_计算路径.png",
+          "caption": "LLM.int8原论文Figure2：普通值与异常特征的计算路径",
+          "sha256": "73d66a496128e30cac811e37127a976fcd310336e07d24c0b09bea6c342918d1"
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/llm-int8.png",
+          "caption": "课程原图：LLM.int8计算示意与原图注",
+          "sha256": "df22197e2a262f4cc05025be48638535215ee71ac56cffea1868c7c25663d048"
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/图片/LLMint8原论文_Table1_C4结果.png",
+          "caption": "LLM.int8原论文Table1：C4验证集困惑度",
+          "sha256": "e8567e99908c4167bba022f0fb68f618799cee5ea5d5257da9606dbf6e86b01b"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/floats-rep.png",
+          "upstream_path": "imgs/floats-rep.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/quant-freeze.png",
+          "upstream_path": "imgs/quant-freeze.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/imgs/llm-int8.png",
+          "upstream_path": "imgs/llm-int8.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/LLMint8原论文_Figure2_计算路径.png",
+          "pdf_sha256": "40da3ce2d38eb3baa8b638cab093bd048178205c1eb4d0671e79c108f72906bf",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale\\资料\\LLM_int8_2208.07339v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1604,
+            624
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/LLMint8原论文_Table1_C4结果.png",
+          "pdf_sha256": "40da3ce2d38eb3baa8b638cab093bd048178205c1eb4d0671e79c108f72906bf",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale\\资料\\LLM_int8_2208.07339v2.pdf",
+          "page": 6,
+          "raster_exact": true,
+          "size": [
+            1496,
+            544
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "09 BPE 与 GPT-2 tokenizer",
+      "learning_path_review": "三个词三轮合并→未见词→byte映射→预切分→真实词表训练",
+      "note_sha256": "4a3813b062bb63053d14e37cf318d723996d9a095198e008e1553144147f7c32",
+      "foundation_commit": "4983327899636832cf8433c25e4dc598efc7b0a7",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/09 BPE 与 GPT-2 tokenizer/复现/outputs/基础改写验证.json",
+        "report_sha256": "56b10b85112e068157e033d79c22a7c8c8e08faa9425078f5d27a11a6b2ad800",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/图片/BPE原论文_Figure1_合并规则.png",
+          "caption": "BPE原论文Figure1：已经学到的合并操作",
+          "sha256": "1e299b8423f2513ce5e47cc12af3b99455e9af8ef007d6b36bfbe3b05cb0c92e"
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/图片/BPE原论文_Algorithm1_学习合并.png",
+          "caption": "BPE原论文Algorithm1：统计当前相邻对并反复合并",
+          "sha256": "3b73d8642c59c950f2ecdb877ca4608e26a36d2931b8a58d1a517929d2357e96"
+        },
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/imgs/token_steps.png",
+          "caption": "课程原图：文本处理到token的流程",
+          "sha256": "4db0802ef4f6593b0120d5e3bdf29cdba7eab16324c57a1c9b54a9be4f842c66"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/imgs/token_steps.png",
+          "upstream_path": "imgs/token_steps.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/BPE原论文_Figure1_合并规则.png",
+          "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\26 GPT-4o tokenizer 与 o200k_base\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            876,
+            312
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/BPE原论文_Algorithm1_学习合并.png",
+          "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\26 GPT-4o tokenizer 与 o200k_base\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            876,
+            996
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "10 预训练语料、memory mapping 与 streaming",
+      "learning_path_review": "六行JSONL→磁盘/内存/缓存→Arrow映射与迭代器→批次输入",
+      "note_sha256": "c9d0b598fad3b5a097d63aa51c599fdf3f42e549a68f15283716eaba9e11d231",
+      "foundation_commit": "8b8f2bf53916b5baaecbb7ef1f01b4bd68bd897f",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/10 预训练语料、memory mapping 与 streaming/复现/outputs/基础改写验证.json",
+        "report_sha256": "0592b25ac8abd091b6492d055aa40637ffa124c482f39a744f7acf13adda1bb0",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/imgs/en-dataset.png",
+          "caption": "课程原图：英文数据来源",
+          "sha256": "d2322618c13eb85cb8a8e688e84221310675967737f306cb880d804e538fadce"
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/imgs/ch-dataset.png",
+          "caption": "课程原图：中文数据来源",
+          "sha256": "dc8cdeedef63df0e5dd9aa6cf04dbb845a33409bf2ddb85218a9a637209a8d71"
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/图片/C4原论文_Table1_三个版本.png",
+          "caption": "C4原论文Table1：三个版本的规模及统计口径",
+          "sha256": "ca04dc264807158e96a4cac9e54f0a9375f3eac9bd6023ffb51b1bfcf79ae85e"
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/图片/Pile原论文_Table1_语料组成.png",
+          "caption": "Pile原论文Table1：原始大小、采样倍率与有效大小",
+          "sha256": "7e2a2dbd579bbff7f8f62bc08d5775dd827f527666d05dbf218b3a616490d3ad"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/imgs/en-dataset.png",
+          "upstream_path": "imgs/en-dataset.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/imgs/ch-dataset.png",
+          "upstream_path": "imgs/ch-dataset.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/C4原论文_Table1_三个版本.png",
+          "pdf_sha256": "db6e910a20f22b312a530a1a6878122b7341ebd4a032ebb98a42e5c8459ee5ae",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\C4_EMNLP2021.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            924,
+            452
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/Pile原论文_Table1_语料组成.png",
+          "pdf_sha256": "f75f972e587cd9dc1ebdc69d11bab0c966fe75a3b0a9b7314abfd7d53cef2f5f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\10 预训练语料、memory mapping 与 streaming\\资料\\Pile_2101.00027v1.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1836,
+            1656
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "11 梯度累积 gradient accumulation",
+      "learning_path_review": "单参数更新→微批/窗口→平均梯度→短窗口/不等批次→原循环",
+      "note_sha256": "603606e0f7c701e1011b7418a7bf470653fab2865eceae9ae8f55cb273166eea",
+      "foundation_commit": "51ebfb2bbc58fdd36c746f03cc026d98735aacf8",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/11 梯度累积 gradient accumulation/复现/outputs/基础改写验证.json",
+        "report_sha256": "8e0671b1b73aea229b6f225f60d752ae113341dbbeecdaa328b35480b169457e",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/代码/imgs/grad-accumulation.png",
+          "caption": "课程原图：多个小批次汇入一次参数更新",
+          "sha256": "2ea922add3bb4c788a56d345afa965445382094e549e53b60f3f236881b48b2d"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/11 梯度累积 gradient accumulation/代码/imgs/grad-accumulation.png",
+          "upstream_path": "imgs/grad-accumulation.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": []
+    },
+    {
+      "lecture": "12 LLM SFT 与 SFTTrainer",
+      "learning_path_review": "任务与参考回答→字典/text→packing→位移目标→LoRA与Trainer",
+      "note_sha256": "84183b3851fca058ac2b2c58a524b2d1d571ec91e3044ef41c1dd3c182b57291",
+      "foundation_commit": "d1d32d7e929663d0b3acdcfde965fb734b4b3562",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/12 LLM SFT 与 SFTTrainer/复现/outputs/基础改写验证.json",
+        "report_sha256": "9a4a39146ae3ffd0d30bb723717a906d3ec0f36e524d3e840f02220326cc0ed9",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/图片/InstructGPT原论文_Figure2_三阶段.png",
+          "caption": "InstructGPT原论文Figure2：示范监督、偏好排序、PPO三个阶段",
+          "sha256": "28ff5e0a8d7923d7e72713cc11b2ad5e748eaf16377cf2b3b264082a1688d132"
+        },
+        {
+          "file": "lessons/12 LLM SFT 与 SFTTrainer/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA原论文Figure1：冻结基础分支与可训练低秩分支",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/InstructGPT原论文_Figure2_三阶段.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1600,
+            920
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "13 Gradient checkpointing",
+      "learning_path_review": "单数链式求导→保存中间值→边界与重算→随机数→BERT开关",
+      "note_sha256": "aea64890713aba577f71edafabd79499c7f11ebc988a46c197a6d0bfb58df6c7",
+      "foundation_commit": "e9ea95c9ac7f336b436b0aad365bd211cf07ad24",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/13 Gradient checkpointing/复现/outputs/基础改写验证.json",
+        "report_sha256": "c946f979cee1deaf8890e7b31f020d1ad6d5a36e7216ce8c3dc5ca6526f0ab3d",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/13 Gradient checkpointing/图片/原论文_Figure1_计算图与存储复用.png",
+          "caption": "原论文Figure1：前向网络、梯度依赖与存储复用",
+          "sha256": "c3f4afa969c484f749bca372d159ed2a068bc5898f755d63630eacc537869b04"
+        },
+        {
+          "file": "lessons/13 Gradient checkpointing/图片/原论文_Figure3_重算计算图.png",
+          "caption": "原论文Figure3：普通梯度图与带重算分支的梯度图",
+          "sha256": "ca075f86d1ccc92d61eed4be8e751364639be90432c9e2ffee251f287f149ebc"
+        },
+        {
+          "file": "lessons/13 Gradient checkpointing/图片/原论文_Algorithm1_分段重算.png",
+          "caption": "原论文Algorithm1：保存段入口并在反向逐段重算",
+          "sha256": "5bbccbb522d5e6081d15614bb1f53db68e04b7c1752fb665f83bbe1854001f26"
+        },
+        {
+          "file": "lessons/13 Gradient checkpointing/图片/原论文_公式1_内存权衡.png",
+          "caption": "原论文公式1：段内临时空间与保留边界之间的权衡",
+          "sha256": "47327d36a747ced8345973937785aad1b5dcce4c38e84296dd3efa6dc9467380"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/原论文_Figure1_计算图与存储复用.png",
+          "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\13 Gradient checkpointing\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1588,
+            512
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/原论文_Algorithm1_分段重算.png",
+          "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\13 Gradient checkpointing\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1600,
+            980
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_公式1_内存权衡.png",
+          "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\13 Gradient checkpointing\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1368,
+            116
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_Figure3_重算计算图.png",
+          "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\13 Gradient checkpointing\\原论文.pdf",
+          "page": 6,
+          "raster_exact": true,
+          "size": [
+            1252,
+            580
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "14 Llama 2 introduction 与 Guanaco",
+      "learning_path_review": "四种模型/方法名→参数与上下文→输入/生成→对话目标→原命令",
+      "note_sha256": "a74bc4ab64f7a0ce975c8529a2eacb511b19ee564d2f624b5c5cdab973310f40",
+      "foundation_commit": "ca80b7e9e13d8d015e5664d0403977d27f04e35a",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/14 Llama 2 introduction 与 Guanaco/复现/outputs/基础讲解验证.json",
+        "report_sha256": "630d5498e213ecce55651a976ac908bef48bd82d76289f62c7065c2ca374254f",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/图片/Llama2原论文_Figure4_训练阶段.png",
+          "caption": "Llama 2原论文第5页Figure4，训练阶段",
+          "sha256": "bba9c58da1ed15e09fd52f8e4692f1a1ff86f46f3be074ef93c2bca50c0a20c7"
+        },
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/图片/Llama2原论文_Table1_模型配置.png",
+          "caption": "Llama 2原论文第6页Table1，模型配置",
+          "sha256": "f3d43fec297bf3df47f0130eed89e13f5fcd6de4271c4e65cf6ae7521ba34b71"
+        },
+        {
+          "file": "lessons/14 Llama 2 introduction 与 Guanaco/图片/LoRA原论文_Figure1_双分支.png",
+          "caption": "LoRA原论文第1页Figure1，冻结和增量分支",
+          "sha256": "06da5f91041fd2dfe4c095472f7d19ff036f5267c4819c5286a455487c3cf3ca"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/Llama2原论文_Figure4_训练阶段.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1796,
+            828
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/Llama2原论文_Table1_模型配置.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 6,
+          "raster_exact": true,
+          "size": [
+            1792,
+            524
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/LoRA原论文_Figure1_双分支.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            484,
+            464
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "15 Llama 2 text 与 chat completion",
+      "learning_path_review": "文本/消息/对话/批次→聊天序列化→生成→长度与返回边界",
+      "note_sha256": "ccc0dd540fe2ffda6a8456b346cea198b79ea1d63ad9e45837fd1f78babde011",
+      "foundation_commit": "d6cc509c54901851b32670f4850549f5b272b1df",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/15 Llama 2 text 与 chat completion/复现/outputs/基础讲解验证.json",
+        "report_sha256": "15c7a04a086011b82d6ec4a0aa71557823960d0e47d5842dc9ab3b4f8330cf3a",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/图片/Llama2原论文_Figure9_多轮要求.png",
+          "caption": "Llama 2原论文Figure9，多轮对话要求",
+          "sha256": "c1b964309bbb543bf8cc72ece66106d031956693cc23b4cebf95e955dc55c162"
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/imgs/llama_weights.png",
+          "caption": "课程原图，第一代LLaMA权重目录",
+          "sha256": "3776c793a5e42414a58a34570d0f13c4f66124c1dc6ea3b5a63aa932960e7a69"
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/imgs/llama2-weights.png",
+          "caption": "课程原图，Llama2的base和Chat目录",
+          "sha256": "b6d4da59848976285342057d1415e8f2cc0ce05aa0972a4dd0fec624ba1d6a7c"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/imgs/llama_weights.png",
+          "upstream_path": "imgs/llama_weights.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/15 Llama 2 text 与 chat completion/代码/imgs/llama2-weights.png",
+          "upstream_path": "imgs/llama2-weights.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/Llama2原论文_Figure9_多轮要求.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 16,
+          "raster_exact": true,
+          "size": [
+            1680,
+            944
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/Llama2原论文_Figure9_多轮要求.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 16,
+          "raster_exact": true,
+          "size": [
+            1680,
+            944
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/Llama2原论文_Figure9_多轮要求.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 16,
+          "raster_exact": true,
+          "size": [
+            1680,
+            944
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "16 TRL 基础与 reward PPOTrainer",
+      "learning_path_review": "示范/偏好/反馈→四角色→token与value→末尾score/GAE/clip→更新",
+      "note_sha256": "e7db9257e3a973265c25e1ccba239d4c3bb96d1acda18c11271d9e21f329a0d0",
+      "foundation_commit": "1e76b642b1ba0917eeb9833a4e9a8b1922c58181",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/16 TRL 基础与 reward PPOTrainer/复现/outputs/基础讲解验证.json",
+        "report_sha256": "08b54758dea6bb9478f1a7a05c14f329173f0e6cd7f8e7f24c4a9976e6bc8c57",
+        "recorded_status": "部分成功"
+      },
+      "main_images": [
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/图片/InstructGPT原论文_Figure2_训练流程.png",
+          "caption": "InstructGPT原论文Figure2：示范、偏好比较、PPO三个阶段",
+          "sha256": "30964ad145208586e90f315a0a2e01d241507e5c0755a2fa6d57b60ca1936baf"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl_steps.png",
+          "caption": "课程原图：SFTTrainer、RewardTrainer、PPOTrainer",
+          "sha256": "3b0f99c81004d76ec084e1f7b707e0931470926a51489910abc4e1d7d88b4aca"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl-sft.png",
+          "caption": "课程原图：SFT损失、轮数和学习率",
+          "sha256": "1fd278749313be2f63b11f4d2bfa406277d0869b3809a304c4c19db5d59d0b92"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl_overview.png",
+          "caption": "课程原图：生成、评分、优化",
+          "sha256": "4a636e24cbce526aae13012e6813065b483c6dfd6ad9280f74ed1995454f5537"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/图片/PPO原论文_公式7.png",
+          "caption": "PPO原论文第3页公式7",
+          "sha256": "9ebefe3f227b7fff7482fac6b3e050294f6c1cbeafc8fc1a7290b8d438dfb2cd"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/图片/PPO原论文_Figure1_裁剪目标.png",
+          "caption": "PPO原论文Figure1：正优势与负优势下的裁剪",
+          "sha256": "e9bb523ed3f5844ba6e69d16304deb7add3c98ac303ee319f55b4daee44581d8"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/rm_ppo.png",
+          "caption": "课程原图：奖励训练与PPO",
+          "sha256": "a0a424d75bae08ef1e6147e41e9b74836eeb7605212955c42e6b857bc549c7e2"
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/ppo_algo.png",
+          "caption": "课程原图：带自适应KL惩罚的算法概览",
+          "sha256": "92033ef5911579c5222be4e6c7c11f0dbfcffeb91f79405a3d1b98733e33a460"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl_steps.png",
+          "upstream_path": "imgs/trl_steps.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl-sft.png",
+          "upstream_path": "imgs/trl-sft.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/trl_overview.png",
+          "upstream_path": "imgs/trl_overview.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/rm_ppo.png",
+          "upstream_path": "imgs/rm_ppo.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/imgs/ppo_algo.png",
+          "upstream_path": "imgs/ppo_algo.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/InstructGPT原论文_Figure2_训练流程.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1020,
+            746
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/PPO原论文_Figure1_裁剪目标.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1160,
+            480
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/PPO原论文_公式7.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1160,
+            122
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "17 RMSNorm 与 SwiGLU",
+      "learning_path_review": "一排数→RMS与均值→SiLU三点→双分支乘法→真实FeedForward",
+      "note_sha256": "c51d6e971ec0b3df05bbb372457b466ee7949753882182d31348dacd8ba2057e",
+      "foundation_commit": "9ea0a6d574eeba9a33d13e85746f3fc7d4d05252",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/17 RMSNorm 与 SwiGLU/复现/outputs/基础讲解验证.json",
+        "report_sha256": "a9e7c163aa682f1ac219a245becdf4615d4f9a88b1ad25262bc21be16779fec1",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/图片/RMSNorm_v1_p3_公式4.png",
+          "caption": "RMSNorm论文原公式4",
+          "sha256": "9435edfb80146a1b8b5452b0e5ce7a9be339b88c0e880714220fbd13ba36e0fd"
+        },
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/图片/RMSNorm_v1_p3_LayerNorm公式.png",
+          "caption": "RMSNorm论文中介绍的LayerNorm公式",
+          "sha256": "9e895aa6f7f430d6ebf9d18347bfd79e39bec7f17a5a1228f6b02473b30d7c0c"
+        },
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/图片/Swish_v1_p2_Figure1.png",
+          "caption": "Swish论文原Figure1",
+          "sha256": "b45b475333dac0117f0ee6b6c3f7a14a8496a398d34962a03c83e544b71c46c4"
+        },
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/复现/outputs/silu_curve.png",
+          "caption": "课程第23格实际绘制的SiLU曲线",
+          "sha256": "1b2652924aa8d71cf8914ddac78496324237bbeca4b7ea8ecdbfa40b920d57c6"
+        },
+        {
+          "file": "lessons/17 RMSNorm 与 SwiGLU/图片/GLU_v1_p2_公式6与宽度.png",
+          "caption": "GLU论文原公式6与中间宽度说明",
+          "sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/RMSNorm_v1_p3_LayerNorm公式.png",
+          "pdf_sha256": "a38ab771022fc10525d2b6b23de40307b2ca7b2bf463f5219da6a0ba1c41225f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1230,
+            327
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/RMSNorm_v1_p3_公式4.png",
+          "pdf_sha256": "a38ab771022fc10525d2b6b23de40307b2ca7b2bf463f5219da6a0ba1c41225f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1230,
+            201
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/GLU_v1_p2_公式6与宽度.png",
+          "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\资料\\GLU.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1455,
+            432
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/Swish_v1_p2_Figure1.png",
+          "pdf_sha256": "8601571a76e36a43793c9b9ef5c79535c2a0b2620ee3a5d54190e48bbc4e7b65",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\资料\\Swish.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            930,
+            486
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "18 RoPE 复数形式",
+      "learning_path_review": "位置→二维旋转→复数→频率表→相邻通道→相对位置关系",
+      "note_sha256": "2eb6ba9f602b28647c0b3933280f02f48d26b734fd4ef70b6b79b58694c45d59",
+      "foundation_commit": "175600166bfc49d20b1d6bf41b027688ea0e0761",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/18 RoPE 复数形式/复现/outputs/基础讲解验证.json",
+        "report_sha256": "eb2a913ddcd910e3e9a970f09e5f0aff42785c82cb054d6529369c566f2c20ae",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/18 RoPE 复数形式/复现/outputs/unit_circle.png",
+          "caption": "课程第5格的单位圆运行图",
+          "sha256": "25940e9f9d1038c8033195941f8ba2aa36090d495c05afcd7769c98700e04cf0"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/图片/complex_rotation.png",
+          "caption": "本讲既有的二维旋转与频率教学图",
+          "sha256": "e1def15323df4787c5404e991b56be6b824ccfef7890eee6898523bac0fd62ae"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/图片/RoFormer_v4_p4_公式12与13.png",
+          "caption": "RoFormer原论文二维复数式与旋转矩阵",
+          "sha256": "4b59f2f750ef58c6ac2212481142b5b84ef9ff3417bc58deeae2eb5dafbf6b1a"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/图片/RoFormer_v4_p5_多维旋转.png",
+          "caption": "RoFormer原论文多维成对旋转矩阵",
+          "sha256": "43c4c76f52320f39cd344f2b3aa97170184749ad6e769b6292d9a1e58d98b0df"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/图片/RoFormer_v4_p5_Figure1.png",
+          "caption": "RoFormer原论文Figure1",
+          "sha256": "6a4156ce253d2994153038ca0b75eeda4889ae696baacefad2d90ea6be1d5997"
+        },
+        {
+          "file": "lessons/18 RoPE 复数形式/代码/imgs/hf_llama_rope.png",
+          "caption": "课程原配图中的rotate_half与apply_rotary_pos_emb",
+          "sha256": "9317d3375d0336efb8e48ab3d2aff8c4d6ab816943c3cecb3631015c67f87c68"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/18 RoPE 复数形式/代码/imgs/hf_llama_rope.png",
+          "upstream_path": "imgs/hf_llama_rope.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/RoFormer_v4_p4_公式12与13.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1440,
+            423
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/RoFormer_v4_p5_多维旋转.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1455,
+            561
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/RoFormer_v4_p5_Figure1.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1005,
+            648
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "19 RoPE apply_rotary_emb",
+      "learning_path_review": "Q/K各轴→复数打包→广播→绝对位置旋转→相对点积/远距曲线",
+      "note_sha256": "0bb3384807f84ce1701af596c8c569d1abb8de36da4786bb36eec87ea2f9eefa",
+      "foundation_commit": "3073bfddff21dcddbfa982eefc0e8ed582d88802",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/19 RoPE apply_rotary_emb/复现/outputs/基础讲解验证.json",
+        "report_sha256": "68c759439832057067cba826e1d946d21ac58647b281e9735b53b599b8324b55",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/图片/RoFormer_v4_p5_Figure1.png",
+          "caption": "RoFormer原论文Figure1",
+          "sha256": "6a4156ce253d2994153038ca0b75eeda4889ae696baacefad2d90ea6be1d5997"
+        },
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/图片/RoFormer_v4_p7_公式34.png",
+          "caption": "RoFormer原论文公式34",
+          "sha256": "ce55e94aa9c07ec0c6e28178612039756577ead4b518f9fe1aa3efa2fc7dc48b"
+        },
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/图片/RoFormer_v4_p8_Figure2.png",
+          "caption": "RoFormer原论文Figure2远距曲线",
+          "sha256": "9aa540f6862dbd763af024a027ef8b4790d27a373a24b3382e34e46b46ae2a85"
+        },
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/复现/outputs/notebook_phase_curve.png",
+          "caption": "原第25格的相位部分和曲线",
+          "sha256": "e9592bf7190bbde80d5b3db7cb6b5dc45fed334e6d6b62640e64d5c9f2c34575"
+        },
+        {
+          "file": "lessons/19 RoPE apply_rotary_emb/图片/phase_sum_and_counterexample.png",
+          "caption": "相位统计量与单频率点积的教学对照",
+          "sha256": "ca39dc3918a260cd4ee857cd3dc2572a5e8b3076536b63d23b19c1cb648ed68e"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/RoFormer_v4_p5_Figure1.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1005,
+            648
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/RoFormer_v4_p7_公式34.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 7,
+          "raster_exact": true,
+          "size": [
+            1191,
+            285
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/RoFormer_v4_p8_Figure2.png",
+          "pdf_sha256": "3ee5a47d55394d068f5aaa9c190b3ecc95a68b4b46990d96a95c13cbef0d9ad7",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\18 RoPE 复数形式\\原论文.pdf",
+          "page": 8,
+          "raster_exact": true,
+          "size": [
+            1035,
+            606
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "20 KV cache 与增量推理",
+      "learning_path_review": "续写→因果复用→四行注意力→缓存写读→prefill/decode→mask",
+      "note_sha256": "b8d154f2884ce1e04534a41cb5c654c17e4f5a8ab7c15c35a7e146ed61ed9df9",
+      "foundation_commit": "9e4a85189d3787cc11470fbe24d3a8d9204eada7",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/20 KV cache 与增量推理/复现/outputs/基础讲解验证.json",
+        "report_sha256": "676dec8f0669383ebc7c395eb96452260539c2b5d2bd13d52edec36d53dcbf2e",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/gpt-2-autoregression-2.gif",
+          "caption": "课程中的自回归生成动画",
+          "sha256": "58430f275e37cfd7e988338b2afa9616af74ff5355e1dd421da2b2a89671b3dc"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/qkv.png",
+          "caption": "课程中的QKV三路投影",
+          "sha256": "7b66e3359857cb75dbd8cb2452200ca9da74bdf7ee177ba7b08f692c287ba13e"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/kvmatrices.png",
+          "caption": "课程中的新查询与历史键值",
+          "sha256": "55d0baff628492d959558f8a6585d63f69f862611c862e3a4f8798937c4840a5"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/图片/原论文_Figure1_模型结构.png",
+          "caption": "Transformer原论文Figure1",
+          "sha256": "fac362643080bb9989ab5ba65ffc5d0196ebb0cd404b449e71b2a9759178890d"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/图片/原论文_Decoder_因果条件.png",
+          "caption": "原论文关于decoder因果遮罩的段落",
+          "sha256": "c255855c00790a056e26140fcae6fece7b2231d4a995d32fa83f15c8c4d479c9"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/图片/原论文_Figure2_注意力.png",
+          "caption": "原论文Figure2注意力计算图",
+          "sha256": "f87b36d1bcdb82714dccff484ecd925a2d06e757380d84f9260ca90d6bd766dc"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/图片/原论文_公式1_注意力.png",
+          "caption": "原论文公式1",
+          "sha256": "7578b12832f1921acf161b8dea6c815a136ed48c15f00cf6b5f3e7400fcfb007"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/decoding-qkv.png",
+          "caption": "单次解码中的一行Q与多行KV",
+          "sha256": "d967ee2fd0946058ddad93342fee6c457b4e9d7ce2ba23f5b9095607ac5de593"
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/kv-cache.gif",
+          "caption": "课程中的缓存与前缀重算动画",
+          "sha256": "822ebca522907db05c72257c9c42f12314e76016bb6f8d30d70366cd9d701591"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/gpt-2-autoregression-2.gif",
+          "upstream_path": "imgs/gpt-2-autoregression-2.gif",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/qkv.png",
+          "upstream_path": "imgs/qkv.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/kvmatrices.png",
+          "upstream_path": "imgs/kvmatrices.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/decoding-qkv.png",
+          "upstream_path": "imgs/decoding-qkv.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/20 KV cache 与增量推理/代码/imgs/kv-cache.gif",
+          "upstream_path": "imgs/kv-cache.gif",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/原论文_Figure1_模型结构.png",
+          "pdf_sha256": "bfaaec89262875f927cf1b38b2da2d775f3309b7bea3537f29b606ca67e79065",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\20 KV cache 与增量推理\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            780,
+            1074
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_Decoder_因果条件.png",
+          "pdf_sha256": "bfaaec89262875f927cf1b38b2da2d775f3309b7bea3537f29b606ca67e79065",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\20 KV cache 与增量推理\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1215,
+            246
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_Figure2_注意力.png",
+          "pdf_sha256": "bfaaec89262875f927cf1b38b2da2d775f3309b7bea3537f29b606ca67e79065",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\20 KV cache 与增量推理\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1215,
+            615
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_公式1_注意力.png",
+          "pdf_sha256": "bfaaec89262875f927cf1b38b2da2d775f3309b7bea3537f29b606ca67e79065",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\20 KV cache 与增量推理\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            915,
+            114
+          ],
+          "render_method": "full-page raster then pixel crop"
+        }
+      ]
+    },
+    {
+      "lecture": "21 GQA 与分组查询注意力",
+      "learning_path_review": "位置/头→共享KV→两查询不同输出→repeat与梯度→参数和缓存",
+      "note_sha256": "f269d18a128a102ac1591bdd9fb6a04d3ee1b3c0ecc339c1cc55672e3b39ecb4",
+      "foundation_commit": "dc409aa0fd0710bcca99db19280e44c1fcfb1e2a",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/21 GQA 与分组查询注意力/复现/outputs/基础讲解验证.json",
+        "report_sha256": "cdb7b7375f5129957a7164d2bba0cf5f3a1043d0ab461794a1652c5e7a6dab7e",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/图片/原论文_Figure2_分组共享.png",
+          "caption": "GQA原论文Figure2：三种head共享关系",
+          "sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+        },
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/代码/imgs/gqa.png",
+          "caption": "课程原GQA配图",
+          "sha256": "56eb977d8a99e40d9ef47444a9dc980fdf22fb20cec26effc0d3b272dfbeb911"
+        },
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/图片/原论文_Figure1_权重平均.png",
+          "caption": "原论文Figure1：平均原K/V投影",
+          "sha256": "934043124d15b99146b549f64bd1a7d37737410f712640fe1dc2dc12c055c20b"
+        },
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/图片/原论文_Table1_质量与耗时.png",
+          "caption": "GQA原论文Table1",
+          "sha256": "e7bc12869e81e8a880e2b58d608a315b6cce76fd0730bf092b4a2b09849faeb7"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/21 GQA 与分组查询注意力/代码/imgs/gqa.png",
+          "upstream_path": "imgs/gqa.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/原论文_Figure2_分组共享.png",
+          "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\21 GQA 与分组查询注意力\\原论文.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1374,
+            543
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_Figure1_权重平均.png",
+          "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\21 GQA 与分组查询注意力\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            663,
+            453
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/原论文_Table1_质量与耗时.png",
+          "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\21 GQA 与分组查询注意力\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1374,
+            438
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "22 Llama generate 完整流程",
+      "learning_path_review": "分词与批次表→最短提示词→逐个生成→温度/top-p/EOS→输出",
+      "note_sha256": "9407d7ca7bb437717e5681cafa48a3445cff1230d625876d34edfb2f53c1ca86",
+      "foundation_commit": "33727ad35bbe988690919970661198d6a9c60cb9",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/22 Llama generate 完整流程/复现/outputs/基础讲解验证.json",
+        "report_sha256": "e5bdb8ae823701efd63610ef7b94eb553affcd7e932a206f4c6b3f1fe5e252fd",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/22 Llama generate 完整流程/图片/01_论文_自回归分解.png",
+          "caption": "论文公式1：从左到右分解序列概率",
+          "sha256": "0770588dd970da361c9f9a4b74a126187e05ef7414da346451bd0b6be997f8f5"
+        },
+        {
+          "file": "lessons/22 Llama generate 完整流程/图片/02_论文_温度公式.png",
+          "caption": "论文公式4：带温度的softmax",
+          "sha256": "977d1b610f85e01494c444ce3b079ff89371b2e0950bcbb5cfd51ddba6a93136"
+        },
+        {
+          "file": "lessons/22 Llama generate 完整流程/图片/03_论文_平坦与尖锐分布.png",
+          "caption": "论文Figure 5：不同上下文的概率分布",
+          "sha256": "29ee975c8f319d393589a60ce25dd34a3acd16892aac25142b76ef2797170864"
+        },
+        {
+          "file": "lessons/22 Llama generate 完整流程/图片/04_论文_top_p集合.png",
+          "caption": "论文公式2：top-p候选集合",
+          "sha256": "a89dd93e2d344975679f736260678fa804c53dc8c86b83fda063dc8a1aad0faf"
+        },
+        {
+          "file": "lessons/22 Llama generate 完整流程/图片/05_论文_重新归一化.png",
+          "caption": "论文公式3：保留项重新归一化",
+          "sha256": "e35afa5de457299eb1ff0f9111d35c7d8c6ae3afa317d2f0a36d3cd01eb61e95"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/01_论文_自回归分解.png",
+          "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\22 Llama generate 完整流程\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            867,
+            117
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/02_论文_温度公式.png",
+          "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\22 Llama generate 完整流程\\原论文.pdf",
+          "page": 6,
+          "raster_exact": true,
+          "size": [
+            849,
+            90
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/03_论文_平坦与尖锐分布.png",
+          "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\22 Llama generate 完整流程\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1209,
+            387
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/04_论文_top_p集合.png",
+          "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\22 Llama generate 完整流程\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            867,
+            117
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/05_论文_重新归一化.png",
+          "pdf_sha256": "f0749cc4db8afeb82006a20785b2cd3615fcbced8a29886872b6174485ced21b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\22 Llama generate 完整流程\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            957,
+            102
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "23 TRL Reward Model 与 RewardTrainer",
+      "learning_path_review": "同题两回答→分数差/概率→偏好loss→padding/pooling→LoRA与更新",
+      "note_sha256": "249144ea350c4a23b8efc192be7bef562b65972e19b48d5293ef02b53c4212b6",
+      "foundation_commit": "89f37729863239549d7b2d12f4582120b13bab56",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/23 TRL Reward Model 与 RewardTrainer/复现/outputs/基础讲解验证.json",
+        "report_sha256": "0644898bd3ab20ab6334788dc547dc1079462f3c11a607916b407b8355d09975",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/23 TRL Reward Model 与 RewardTrainer/图片/01_论文_三阶段流程.png",
+          "caption": "InstructGPT论文Figure 2：SFT、奖励模型和PPO",
+          "sha256": "4e6862cbe4d2372cb34a25773b5ad65fa8b1e9cbf27e56e1b9185a1bb74cb361"
+        },
+        {
+          "file": "lessons/23 TRL Reward Model 与 RewardTrainer/图片/02_论文_奖励模型阶段.png",
+          "caption": "放大Figure 2的奖励模型阶段",
+          "sha256": "76b9f45564f0eda9e4411ac234989233a5731f1f8f77fe56c3fb3d964cfe317a"
+        },
+        {
+          "file": "lessons/23 TRL Reward Model 与 RewardTrainer/图片/03_论文_偏好损失.png",
+          "caption": "InstructGPT论文公式1：奖励模型的偏好损失",
+          "sha256": "e582c7862243887089b9709866eb422bc8f918ec09a5d80ecf490cf46bf7088d"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/01_论文_三阶段流程.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1164,
+            690
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/02_论文_奖励模型阶段.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            366,
+            663
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/03_论文_偏好损失.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 8,
+          "raster_exact": true,
+          "size": [
+            1008,
+            99
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "24 PEFT LoRA merge 与 SVD",
+      "learning_path_review": "单线性层→双支路→加权和→矩阵秩/SVD→实际adapter组合与折叠",
+      "note_sha256": "21219298a3ea617877efd2d0e30d0d87b652251a1f2584f0dc1c17562a1a5845",
+      "foundation_commit": "8d18e8cf3ea54059ce98eedd93b16803434cd8ec",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/24 PEFT LoRA merge 与 SVD/复现/outputs/基础讲解验证.json",
+        "report_sha256": "277ce291e04d3fca55175894fd29f50f115aa1566c80cb9714476357d0e0887b",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/图片/LoRA_原论文_Figure1.png",
+          "caption": "LoRA v2 第1页 Figure 1：冻结基础权重，训练A和B",
+          "sha256": "81e0c7507080f02faff03e10feef54642664ac6f1922f4d584367ba6e861639e"
+        },
+        {
+          "file": "lessons/24 PEFT LoRA merge 与 SVD/图片/LoRA_原论文_公式3.png",
+          "caption": "LoRA v2 第4页公式3：基础输出与低秩增量相加",
+          "sha256": "3bc3f0727d1f71e4a3f6b95117f6ca98c43feee7d5657e5e03e5777db090234c"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/LoRA_原论文_Figure1.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 1,
+          "raster_exact": true,
+          "size": [
+            357,
+            411
+          ],
+          "render_method": "full-page raster then pixel crop"
+        },
+        {
+          "image": "图片/LoRA_原论文_公式3.png",
+          "pdf_sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\24 PEFT LoRA merge 与 SVD\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            840,
+            51
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "25 Llama 3 introduction",
+      "learning_path_review": "四词查表/打分→两代尺寸→GQA/SwiGLU→真实词表/模板→生成",
+      "note_sha256": "8fb7d2ee35439ac2f880cc56cedf445faa539e832109a5a347b6dfa0d60f38a7",
+      "foundation_commit": "473c462fc1a9c52f9646d2a7f84f3fab64fb4b4d",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/25 Llama 3 introduction/复现/outputs/基础讲解验证.json",
+        "report_sha256": "9ceb4d41bf032d0fdb9c17bfa33c28404eb271b2ac9425742c14f76cfcff6f40",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/25 Llama 3 introduction/代码/imgs/meta-llama-model.png",
+          "caption": "原课程中的Meta模型模块树",
+          "sha256": "f330b785c85e0d69e62d0f1ae9ebdd929dc15c122d9da2f8e2b0b11e46db6e50"
+        },
+        {
+          "file": "lessons/25 Llama 3 introduction/图片/GQA_原论文_Figure2.png",
+          "caption": "GQA v3 第2页 Figure 2：MHA、GQA、MQA的共享关系",
+          "sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+        },
+        {
+          "file": "lessons/25 Llama 3 introduction/图片/GLU_原论文_公式6与宽度.png",
+          "caption": "GLU v1第2页公式6与中间宽度说明",
+          "sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/25 Llama 3 introduction/代码/imgs/meta-llama-model.png",
+          "upstream_path": "imgs/meta-llama-model.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/GQA_原论文_Figure2.png",
+          "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\21 GQA 与分组查询注意力\\原论文.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1374,
+            543
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/GLU_原论文_公式6与宽度.png",
+          "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\资料\\GLU.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1455,
+            432
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "26 GPT-4o tokenizer 与 o200k_base",
+      "learning_path_review": "字符/字节/ID→BPE与rank→两套编码→全文计数→UTF8与有效ID",
+      "note_sha256": "b3fcb500fe78a2ced7f36309d3bc1824f9bd1128b457f7662cb8d092fd842a4d",
+      "foundation_commit": "cb4bc580f0e4d5fedd7f9d1c2534196e45f2a154",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/26 GPT-4o tokenizer 与 o200k_base/复现/outputs/基础讲解验证.json",
+        "report_sha256": "9a7da7c81d239c2202a0651064890864b0a66db35898148e04e7dac4324c1a47",
+        "recorded_status": "detailed checks without aggregate status"
+      },
+      "main_images": [
+        {
+          "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/图片/BPE_原论文_Figure1.png",
+          "caption": "BPE原论文Figure1：从相邻符号逐步合并片段",
+          "sha256": "1e299b8423f2513ce5e47cc12af3b99455e9af8ef007d6b36bfbe3b05cb0c92e"
+        },
+        {
+          "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/图片/BPE_原论文_Algorithm1.png",
+          "caption": "BPE原论文Algorithm1：统计相邻对，学习合并",
+          "sha256": "3b73d8642c59c950f2ecdb877ca4608e26a36d2931b8a58d1a517929d2357e96"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/BPE_原论文_Figure1.png",
+          "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\26 GPT-4o tokenizer 与 o200k_base\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            876,
+            312
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/BPE_原论文_Algorithm1.png",
+          "pdf_sha256": "ebf5b38456ca47ca5e8dc194e9df50ba6dda5fa5a841c8b6de18741774ecd9ce",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\26 GPT-4o tokenizer 与 o200k_base\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            876,
+            996
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "27 TRL RLHF PPOTrainer 与 OpenRLHF",
+      "learning_path_review": "三个动作→old/reference→逐token奖励→三步GAE→clip→真实step",
+      "note_sha256": "313aeef32d3cace5227c610e9e28e80f64d2f8befac24b87d54ba9409953b2b6",
+      "foundation_commit": "3e255c31dfc4ad750dcde4de8f609cc2d64a1ee8",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/复现/outputs/基础讲解验证.json",
+        "report_sha256": "5995ab48e30306783bd8747163527c3379898062fc24fd2c7633e64a8e7d230e",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/HumanPreferences_v2_p3_奖励公式2.png",
+          "caption": "Human Preferences v2第3页公式2",
+          "sha256": "2a0de49e62914dcd756a91ad71bab0e942b474ee3face1c9e43b0deb9d99953f"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/imgs/adap_kl_coef.png",
+          "caption": "原课程自适应KL系数图",
+          "sha256": "2ff518debb3d1cb2314c6d288be78c15fa13e10c532c2410e732ba91ed8c76c0"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/PPO_v2_p5_GAE.png",
+          "caption": "PPO v2第5页GAE公式11和12",
+          "sha256": "d60a0a76a35ec305735053a13fdd987e0f97cebbf683ecff3861219ec68d2620"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/PPO_v2_p3_公式7.png",
+          "caption": "PPO v2第3页公式7",
+          "sha256": "f68525c01fa282495d74984b84ce722422a7fc981327239b521f603e9e8d5165"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/PPO_v2_p3_Figure1.png",
+          "caption": "PPO v2第3页Figure1",
+          "sha256": "1a36875edac4c4ec4b24edceece8c96fe410f803823df4857e60e502059864c8"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/PPO_v2_p5_Algorithm1.png",
+          "caption": "PPO v2第5页Algorithm1",
+          "sha256": "2bdbdd7de41d3a6e32df26fa4b95a49eaa08b3387924367a7ff4eb623955d194"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/imgs/trl_ppo_loss.png",
+          "caption": "原课程PPO损失公式图",
+          "sha256": "ab138d091763d1b2d16d093140b920436f80b09211c6264950680d89e09cf511"
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/图片/OpenRLHF_v1_p3_Figure1.png",
+          "caption": "OpenRLHF v1第3页Figure1",
+          "sha256": "7d49fc44d1ec2c3b98b2058ec1f658ed9defbb35822379877c1704132124d14a"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/imgs/adap_kl_coef.png",
+          "upstream_path": "imgs/adap_kl_coef.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/imgs/trl_ppo_loss.png",
+          "upstream_path": "imgs/trl_ppo_loss.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/PPO_v2_p3_公式7.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1386,
+            150
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/PPO_v2_p3_Figure1.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1386,
+            576
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/PPO_v2_p5_GAE.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1386,
+            114
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/PPO_v2_p5_Algorithm1.png",
+          "pdf_sha256": "e78feadadbdbb0b601b3c2bcc81404722cd431a489b307545f9b7bea1e8c4f5b",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\16 TRL 基础与 reward PPOTrainer\\资料\\PPO_1707.06347v2.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1386,
+            381
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/HumanPreferences_v2_p3_奖励公式2.png",
+          "pdf_sha256": "f3004c3128281cb373f71e0f22aef81cdc295cef9b07450d1fa07cdc79abe5b2",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\27 TRL RLHF PPOTrainer 与 OpenRLHF\\资料\\HumanPreferences-v2.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            723,
+            264
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/OpenRLHF_v1_p3_Figure1.png",
+          "pdf_sha256": "b6500e315302c7a9eb47528ba3941f864fe0f3472e8954afa79b5c9b87095f70",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\27 TRL RLHF PPOTrainer 与 OpenRLHF\\资料\\OpenRLHF-v1.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1314,
+            666
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "28 从 RoPE 到 CoPE",
+      "learning_path_review": "三位置注意力→旋转→句号/软门计数→小数插值→完整类与参数更新",
+      "note_sha256": "c3fe779400a4308303fbdee3328ad400537fb6e5088885d015ef851cb6210ec3",
+      "foundation_commit": "4b3f7fa4ebcb1f5a426943d6d36c371b1ce67bc8",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/28 从 RoPE 到 CoPE/复现/outputs/基础讲解验证.json",
+        "report_sha256": "2c4efaa4ed1d14e5b76486579b63786d9a7847b1fa9e7036e0047c27e9933111",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/代码/imgs/rope_1.png",
+          "caption": "原课程的RoPE旋转与相对点积图",
+          "sha256": "00063bab91b9823fc801abb320ddb83ca0f2942c8ffe31174d3612f74b6e5a39"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/图片/CoPE_v2_p2_Figure1.png",
+          "caption": "CoPE v2第2页Figure1",
+          "sha256": "3b80ad45b1b248d249ca3c090d67bb30a05cdbac2572c8e211e0f2d2309a9f64"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/代码/imgs/rel_position_matrix.png",
+          "caption": "原课程的固定距离与CoPE累计位置矩阵",
+          "sha256": "de381c6bfa2df8460552685e535d3f55a7560e0f324461e384fe72fb9c961b66"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/图片/CoPE_v2_p4_公式3和4.png",
+          "caption": "CoPE v2第4页公式3和4",
+          "sha256": "aba7927715a83c84e3536732c0e68f1fdd3930c63516ba39985e112fdc9da5d8"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/图片/CoPE_v2_p4_公式5和6.png",
+          "caption": "CoPE v2第4页公式5和6",
+          "sha256": "b0c1c568f8d6e506046c94dfeaf0ef490c7d61e410b226559cf2c71d25333a36"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/图片/CoPE_v2_p5_公式7至9.png",
+          "caption": "CoPE v2第5页公式7至9",
+          "sha256": "589530c594eb1c9c9c85b96e40e6a64618966b71bbb945500388d3136620543b"
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/图片/CoPE_v2_p6_Table2.png",
+          "caption": "CoPE v2第6页Table2",
+          "sha256": "fc2f8749a9287c829669b001d658dc181e1447e3f837275bf25f3dafbd3f5ff8"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/代码/imgs/rope_1.png",
+          "upstream_path": "imgs/rope_1.png",
+          "exact_bytes": true
+        },
+        {
+          "file": "lessons/28 从 RoPE 到 CoPE/代码/imgs/rel_position_matrix.png",
+          "upstream_path": "imgs/rel_position_matrix.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/CoPE_v2_p2_Figure1.png",
+          "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\28 从 RoPE 到 CoPE\\原论文.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1197,
+            669
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/CoPE_v2_p4_公式3和4.png",
+          "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\28 从 RoPE 到 CoPE\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1197,
+            507
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/CoPE_v2_p4_公式5和6.png",
+          "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\28 从 RoPE 到 CoPE\\原论文.pdf",
+          "page": 4,
+          "raster_exact": true,
+          "size": [
+            1197,
+            351
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/CoPE_v2_p5_公式7至9.png",
+          "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\28 从 RoPE 到 CoPE\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1197,
+            201
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/CoPE_v2_p6_Table2.png",
+          "pdf_sha256": "9a019603f698d228653a2a2743c8d47f52900b6103cb1efc37421a9f8395583f",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\28 从 RoPE 到 CoPE\\原论文.pdf",
+          "page": 6,
+          "raster_exact": true,
+          "size": [
+            1197,
+            309
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "29 Llama2 7B vs Llama3 8B",
+      "learning_path_review": "单数参数→四词查表→两代尺寸→共享KV/三矩阵→完整参数账",
+      "note_sha256": "eefc6703264ba21f28bea63b0498537457c0a129bc50461eba3256df275f7fed",
+      "foundation_commit": "ea9d2e891f1569ec7c35df3abbe82f8c0c394123",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/29 Llama2 7B vs Llama3 8B/复现/outputs/基础讲解验证.json",
+        "report_sha256": "80b65663757fb38d74638eea1e12b2b5105df351ebb12f7c8104616794be1abc",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/29 Llama2 7B vs Llama3 8B/图片/Llama2_v2_p5_架构段落.png",
+          "caption": "Llama 2 论文的架构段落",
+          "sha256": "14e8fe5042281898ac187dcac3c06ccc08ff87dce9c8df0a01d24f106dbbcf56"
+        },
+        {
+          "file": "lessons/29 Llama2 7B vs Llama3 8B/图片/GQA_v3_p2_Figure2.png",
+          "caption": "MHA、GQA 和 MQA 的共享方式",
+          "sha256": "e1047d314bd8963481db514eb78db5f9b86c884ff58a72d8c83f592043c921d9"
+        },
+        {
+          "file": "lessons/29 Llama2 7B vs Llama3 8B/图片/GLU_v1_p2_公式6与宽度.png",
+          "caption": "SwiGLU 的三矩阵公式与宽度说明",
+          "sha256": "fdb4e2ea8053f9474b09324102ee73256b9d8605e12943af716f1bf5596792a1"
+        }
+      ],
+      "original_course_images": [],
+      "paper_crops": [
+        {
+          "image": "图片/Llama2_v2_p5_架构段落.png",
+          "pdf_sha256": "1df284ce95f783002074bfe8f21d47c646b396ceb1736ea3ec0ea212fc070d91",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\14 Llama 2 introduction 与 Guanaco\\原论文.pdf",
+          "page": 5,
+          "raster_exact": true,
+          "size": [
+            1419,
+            201
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/GQA_v3_p2_Figure2.png",
+          "pdf_sha256": "ba9094fe73db9bf515d47ae8b2d502fee9d8a6c7b1327e197ddb160f4c63b94a",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\21 GQA 与分组查询注意力\\原论文.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1374,
+            543
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/GLU_v1_p2_公式6与宽度.png",
+          "pdf_sha256": "7398ae8b163722a6b5410fb975722adbe6b5f6f9c7f1efa584f1c6b79eaa93e2",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\17 RMSNorm 与 SwiGLU\\资料\\GLU.pdf",
+          "page": 2,
+          "raster_exact": true,
+          "size": [
+            1455,
+            432
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    },
+    {
+      "lecture": "30 InstructGPT reward modeling",
+      "learning_path_review": "同题两回答→BT概率→负对数/梯度→分组→小RM→四队似然",
+      "note_sha256": "0da22dc2533b82c48282d89a96cf4d22730759aec0b66beca0d25d4f3584b6e3",
+      "foundation_commit": "c87f1c5e61640f08608f5edc210e7176445e2798",
+      "current_python_blocks_AST_equal_to_executed_revision": true,
+      "historical_fold_exact_since_foundation": true,
+      "execution_evidence": {
+        "report": "lessons/30 InstructGPT reward modeling/复现/outputs/基础讲解验证.json",
+        "report_sha256": "1cbcdacea5fd5f2f7bc6f222222798a9259ff9cd6fa70a0eae045113691588d4",
+        "recorded_status": "passed"
+      },
+      "main_images": [
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/InstructGPT_v1_p3_Figure2.png",
+          "caption": "InstructGPT 三阶段训练流程",
+          "sha256": "f7a7458537f74e9c7b0130e41d00bee747339dcb5188d52855b7c5b55daf8701"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/InstructGPT_v1_p8_公式1.png",
+          "caption": "InstructGPT 的奖励模型损失公式",
+          "sha256": "e582c7862243887089b9709866eb422bc8f918ec09a5d80ecf490cf46bf7088d"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/pair_loss_gradient.png",
+          "caption": "原代码绘出的损失及导数曲线",
+          "sha256": "f5c850a1ac5f7349f336f18157c83ce810406d437d338db41051231fc79df9fc"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/InstructGPT_v1_p8_分组比较.png",
+          "caption": "论文对分组比较的说明",
+          "sha256": "cbcd1b494c0bae64449c258685b79ca0136ad7b810e26c68875d5eba0e9ff8f7"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/InstructGPT_v1_p41_C2.png",
+          "caption": "InstructGPT 附录C.2的奖励模型设置",
+          "sha256": "7bb574077a1f7df469b1d147fb02b158755f66b5469b18547844cfc2d1be7a18"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/图片/InstructGPT_v1_p42_平局与批量.png",
+          "caption": "附录C.2续页中的平局处理和批量上限",
+          "sha256": "a267d09b42d50cd21c44636f5df7311842f66d7c1dba35940696da21f1e7473f"
+        },
+        {
+          "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/imgs/quality-labels.png",
+          "caption": "课程原始单回答质量标注界面",
+          "sha256": "3c0b3deabf3324885e2d0de033230f68c03e4f31b16e791eb9f8ba24fb10999c"
+        }
+      ],
+      "original_course_images": [
+        {
+          "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/imgs/quality-labels.png",
+          "upstream_path": "tutorials/reward_model/imgs/quality-labels.png",
+          "exact_bytes": true
+        }
+      ],
+      "paper_crops": [
+        {
+          "image": "图片/InstructGPT_v1_p3_Figure2.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 3,
+          "raster_exact": true,
+          "size": [
+            1164,
+            690
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/InstructGPT_v1_p8_公式1.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 8,
+          "raster_exact": true,
+          "size": [
+            1008,
+            99
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/InstructGPT_v1_p8_分组比较.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 8,
+          "raster_exact": true,
+          "size": [
+            1206,
+            402
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/InstructGPT_v1_p41_C2.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 41,
+          "raster_exact": true,
+          "size": [
+            1206,
+            624
+          ],
+          "render_method": "PDF window render"
+        },
+        {
+          "image": "图片/InstructGPT_v1_p42_平局与批量.png",
+          "pdf_sha256": "c1984bb50a5b90fddb895fdc3a0f72e5bc977148c9f63ef6040cbe7a3e1f0d98",
+          "source_pdf": "G:\\zzz\\Personal ChatGPT 系列\\23 TRL Reward Model 与 RewardTrainer\\原论文.pdf",
+          "page": 42,
+          "raster_exact": true,
+          "size": [
+            1206,
+            93
+          ],
+          "render_method": "PDF window render"
+        }
+      ]
+    }
+  ],
+  "source_audit_sha256": "220f2df83914c6f6bafbc754a956d8f29b4a71786378d2f0968e82c6988a84af",
+  "final_prose_revision": {
+    "base_commit": "c87f1c5e61640f08608f5edc210e7176445e2798",
+    "counts": {
+      "markdown": 23,
+      "python": 35,
+      "notebooks": 55,
+      "original_cells_exact": 756
+    },
+    "files": [
+      {
+        "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/02_lora_baics_代码注释.py",
+        "sha256": "c1646e9d75221a0884304c8be1fd1c9ad003366350ffde70d760ecaf24cb2a6b"
+      },
+      {
+        "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/代码注释.ipynb",
+        "sha256": "7ffbd675f57e9f673c3aafb85d177676178072edf10fa421b454469eaafffa11"
+      },
+      {
+        "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "1be1237c0594de4c91607999e7ece978aa705d0759c8c9f71d7a7c95438fd843"
+      },
+      {
+        "file": "lessons/02 LoRA - Low-Rank Adaptation of Large Language Models/代码单元解释.md",
+        "sha256": "66debfdba2c6c528556dcc8180df248485dd6deeba5d91ea69cefebedb1a33a1"
+      },
+      {
+        "file": "lessons/03 LoRA 微调 BLOOM/代码/tutorials/03_lora_practice_代码注释.py",
+        "sha256": "d878f120195a981aa4e54652fede946486212fe0c75fd5385157e9735f641d49"
+      },
+      {
+        "file": "lessons/03 LoRA 微调 BLOOM/代码/tutorials/代码注释.ipynb",
+        "sha256": "475da8dec2349a1a665751171733999552858789495f834a4c9e26491f4fb3cd"
+      },
+      {
+        "file": "lessons/03 LoRA 微调 BLOOM/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "876884e31fb016b2ceed9cd2e6e72153c11fab9ff559d0cbe0dd78e3d9a9da0a"
+      },
+      {
+        "file": "lessons/03 LoRA 微调 BLOOM/代码单元解释.md",
+        "sha256": "aa33233cd113282ba97d8c159043bf93ebccd0b13022381e6d8b174a0fc36c3d"
+      },
+      {
+        "file": "lessons/04 PEFT LoRA 源码/代码/tutorials/04_PEFT_lora_代码注释.py",
+        "sha256": "fdda66d20a44b7ce89fdd8b0170dcee3b76853f32f3a4274a9c5c11142a8dc49"
+      },
+      {
+        "file": "lessons/04 PEFT LoRA 源码/代码/tutorials/代码注释.ipynb",
+        "sha256": "e5fbf0bf86676c78125a9f40b1be3e8d832a99cd7f16c20241e07b24ddc0134f"
+      },
+      {
+        "file": "lessons/04 PEFT LoRA 源码/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "eee82abc82295af11f5d6f85ceea21f187f002104f8474f9e95d01b8ca218b31"
+      },
+      {
+        "file": "lessons/04 PEFT LoRA 源码/代码单元解释.md",
+        "sha256": "076d1b514f68565b25d804a3dfb52dbd786efe4700f7df24a54bb0e6963ba2ad"
+      },
+      {
+        "file": "lessons/05 FP16 与 BF16/代码/tutorials/05_float16_bf16_代码注释.py",
+        "sha256": "c72c8d6fdb1e4f9c789b0fee7aaf8b4bd76b75b588bf27d4b8133218f2f88e5a"
+      },
+      {
+        "file": "lessons/05 FP16 与 BF16/代码/tutorials/代码注释.ipynb",
+        "sha256": "d88a2a9bc073b84fe8b0f13aae24a5a3e2862ac7704585c6dfd8eb7837fbedff"
+      },
+      {
+        "file": "lessons/05 FP16 与 BF16/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "4c44177dd60357cd9be36884a93c8750a13e9a9b59b606f96d6c9c6a15a104af"
+      },
+      {
+        "file": "lessons/05 FP16 与 BF16/代码单元解释.md",
+        "sha256": "7c669a509ad088d3104e3118ee826d370a80fc7ebe60b115ba6ea8d07ef092c3"
+      },
+      {
+        "file": "lessons/06 Alpaca LoRA 推理/代码/tutorials/06_alpaca_llama_7b_lora_代码注释.py",
+        "sha256": "da3286814df5031ff48745411dd30ff521abf7ffabee2d47d3a2c73c9a5879a2"
+      },
+      {
+        "file": "lessons/06 Alpaca LoRA 推理/代码/tutorials/代码注释.ipynb",
+        "sha256": "7be001b4dc2c99232dc2617fa4471c4eb1ad7ea9088a9d74c79dd60e0e2f8a57"
+      },
+      {
+        "file": "lessons/06 Alpaca LoRA 推理/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "49c7b0a08baab7c0139e7a896482ca5b325cceac5e772b4035cbd9e841c40cec"
+      },
+      {
+        "file": "lessons/06 Alpaca LoRA 推理/代码单元解释.md",
+        "sha256": "b108093669384f01934f4c93b3ef2d591f9954a55025978182c28fc00ec1fefd"
+      },
+      {
+        "file": "lessons/07 自动混合精度训练/代码/tutorials/07_fp16_mixed_precision_training_代码注释.py",
+        "sha256": "e330d1972e2ef5702ee42cf1eb47adeb3344680281a8ce6f563989cccc19c3ce"
+      },
+      {
+        "file": "lessons/07 自动混合精度训练/代码/tutorials/代码注释.ipynb",
+        "sha256": "fae20697c2722a377d9be13bb1797a7eb93bfc8fef1ea331ab2a37217bb5a361"
+      },
+      {
+        "file": "lessons/07 自动混合精度训练/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "4a15a62a93e52309b55aa736d7a3ba67730ca8aa9855c9e760654d8745466174"
+      },
+      {
+        "file": "lessons/07 自动混合精度训练/代码单元解释.md",
+        "sha256": "7bc6e1dd2ae42f74363403588a169a8b58d687eddc9210b70d484ec7e2771f5f"
+      },
+      {
+        "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/LLM.int8_代码注释.py",
+        "sha256": "9aca7ad9ee1420f075bde92ece5fb8f2dc8c93048b362a1c6827f86cadf5bfa9"
+      },
+      {
+        "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/代码注释.ipynb",
+        "sha256": "272bb566327c5ba094a89b9e9dca052801f00d956f4ca749c0282b1236b6f889"
+      },
+      {
+        "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "b3d2249f6e6b7c14634011287964d7047313e3534ddf96567d36212e6440f1b3"
+      },
+      {
+        "file": "lessons/08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale/代码单元解释.md",
+        "sha256": "ab4f7dbf3dba9222a60eb45b46c5a16925373992b79f164ec86dd3192982e704"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_代码注释.ipynb",
+        "sha256": "4495ff7780fa12122a229098a191a1eb1877e1e493f87414ea9293e31044d7ef"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_代码注释.py",
+        "sha256": "192fc3f61809719449bb1fe142d1d5652165254e79ce44dde56d259ba62897ba"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/gpt2_原代码_带说明.ipynb",
+        "sha256": "d49f61b38d9a50eecb741bbe2d8212d06f4e4b3fd0e0cd6da6eb89323cb46506"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/tokenizer_basics_代码注释.py",
+        "sha256": "81f40c740038acd5968d43534a1a0f29ea8b605861dcdbd17103002a94e29700"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/代码注释.ipynb",
+        "sha256": "9540421bf6a6e0f0beb247bf456e8b2479d3a1f5561d1e95f90c1b069cac8515"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "bee34b236c702b5f3aa4b43bf35a7ec8fc0a5c388a79e2973dd682131f52dba4"
+      },
+      {
+        "file": "lessons/09 BPE 与 GPT-2 tokenizer/代码单元解释.md",
+        "sha256": "f9fc9b1c0300a4dc854867f5a393b06510016fac0a9a9ccaeaa3bd92f9e37eb4"
+      },
+      {
+        "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/pretrain_corpus_大模型预训练语料_代码注释.py",
+        "sha256": "318a9cecfa0e46cd52b0407f2c783e60c5fadf381d6b3794c295175b133b6325"
+      },
+      {
+        "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/代码注释.ipynb",
+        "sha256": "b70b060e29e1acf9308e51ca1aabe8f5464eb246e8250496e2f1e649accf7a92"
+      },
+      {
+        "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "06f3e27d76b3333068213eb1af1aa3ba866f248994a2a1e8f2d3d0434bbd715c"
+      },
+      {
+        "file": "lessons/10 预训练语料、memory mapping 与 streaming/代码单元解释.md",
+        "sha256": "c266d71ed8dc0960704e56748225d12f681912fdbc662a241b5fd0c61f981a10"
+      },
+      {
+        "file": "lessons/11 梯度累积 gradient accumulation/代码/tutorials/gradient_accumulation_代码注释.py",
+        "sha256": "2279f63c22c1164afb6ccf41e0e404d776e887c76927a0f9b0c320b8b1c27e32"
+      },
+      {
+        "file": "lessons/11 梯度累积 gradient accumulation/代码/tutorials/代码注释.ipynb",
+        "sha256": "9ee94d3f7ca85a5f63136d1bfedfc3f8834e3e5a3d0c87bc90ea7be755e3b8cd"
+      },
+      {
+        "file": "lessons/11 梯度累积 gradient accumulation/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "1d53dd947bbca1ced6547fca218aa76e3ccf9353f92f20163dd1a66574145dbd"
+      },
+      {
+        "file": "lessons/11 梯度累积 gradient accumulation/代码单元解释.md",
+        "sha256": "73d344d09cb92fd539f66a5ac9973ebdf876c4e84c34083bc8904db085bcb970"
+      },
+      {
+        "file": "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/llm_training_sft_代码注释.py",
+        "sha256": "ab9d3c3f38899a4bc68b8d8b1fc90e787ee9be350c37b794793fbba6aea56de4"
+      },
+      {
+        "file": "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/代码注释.ipynb",
+        "sha256": "01d9c2957feed9df38b76442fda8694d86c8ec955d21272ec31629526583d550"
+      },
+      {
+        "file": "lessons/12 LLM SFT 与 SFTTrainer/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "2987ffebadc315f95c8d97d3aa274d1e6abab6561721807f32773ff26194cc9b"
+      },
+      {
+        "file": "lessons/12 LLM SFT 与 SFTTrainer/代码单元解释.md",
+        "sha256": "6f895e24f63c22a4f2e398d2d5237816f0b198edb21bf7bbf15fbe9133850176"
+      },
+      {
+        "file": "lessons/13 Gradient checkpointing/代码/tutorials/gradient_checkpointing_代码注释.py",
+        "sha256": "9b2916a3e98c6fbfe984dcf21def9e6143d6af1f6dd419647ede0997afdf4557"
+      },
+      {
+        "file": "lessons/13 Gradient checkpointing/代码/tutorials/代码注释.ipynb",
+        "sha256": "2275de0db8f4535cefa932376689271c3aad82426bf45c1700cef3475695f1e6"
+      },
+      {
+        "file": "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/llama2_introduction_代码注释.py",
+        "sha256": "6b552e7ef504b02a652225fedd84f3845cc8f65e59dafddf0c10ad37f8fdf0be"
+      },
+      {
+        "file": "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/代码注释.ipynb",
+        "sha256": "f76bd23e3ce3d4116e4d3bf9f214da53c1d464cd37596eafbf678ad43f0e5316"
+      },
+      {
+        "file": "lessons/14 Llama 2 introduction 与 Guanaco/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "b4fad2136c86f98a6307d564b1f6bd482f7765b8abad3622cf28d052fccddbff"
+      },
+      {
+        "file": "lessons/14 Llama 2 introduction 与 Guanaco/代码单元解释.md",
+        "sha256": "f287409eb0732021285f968b3fbefc1aa24f55e16529ea3240606ec13aa83e50"
+      },
+      {
+        "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/trl_basics_代码注释.py",
+        "sha256": "5102d80cffc5d55caefc60fcae238b2b8083d24df6e5a64284057c2a15beca09"
+      },
+      {
+        "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/代码注释.ipynb",
+        "sha256": "7a0e2bdcb8c41424bad8f91911787ca0bb06a39ede56deb96bfb1d608e3a33cf"
+      },
+      {
+        "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码/tutorials/trl_hf/原代码_带说明.ipynb",
+        "sha256": "40e0bd5cb4ece6cf283ee9024d9b4a7f32da8ef7ba8419e54a7648973343603b"
+      },
+      {
+        "file": "lessons/16 TRL 基础与 reward PPOTrainer/代码单元解释.md",
+        "sha256": "4e46650157dcbf58e7a231be43343bb09fb6a419a8358dbf7bded04df656a744"
+      },
+      {
+        "file": "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/llama2_src_02_RMSNorm_SwiGLU_代码注释.py",
+        "sha256": "fb546798a2f9145af2802ce45f912b5a61be971e6f133915546c6e58523ad3ef"
+      },
+      {
+        "file": "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/代码注释.ipynb",
+        "sha256": "00f1f5c492ac738fdde7418a261ca3cc0d51ab1146423a3ae32d64d9374eb0a3"
+      },
+      {
+        "file": "lessons/17 RMSNorm 与 SwiGLU/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "f244d3d51262b61c8ff5cfc8c55614fea61365e2a2d80a4367af79b0d8dd16ae"
+      },
+      {
+        "file": "lessons/17 RMSNorm 与 SwiGLU/代码单元解释.md",
+        "sha256": "06580a72de2a6d5d10ca4b5534956c92ccd062657a9da84989affb742bf5b74c"
+      },
+      {
+        "file": "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE_01_complex_position_encoding_代码注释.py",
+        "sha256": "a551a7f434245992a81e92b2a9ceae3041f124039413cdfb43ad2befd541523f"
+      },
+      {
+        "file": "lessons/18 RoPE 复数形式/代码/tutorials/llama2_src_03_RoPE_代码注释.py",
+        "sha256": "03e19b46dbbaa08da606e10d23a743f2ebb74b124479114643744b6fc73f45f3"
+      },
+      {
+        "file": "lessons/18 RoPE 复数形式/代码/tutorials/代码注释_RoPE总览.ipynb",
+        "sha256": "e59c381aa7fd9ddc5de388d090370598fe2eb3fb6113df64ad54bf746c6865c5"
+      },
+      {
+        "file": "lessons/18 RoPE 复数形式/代码/tutorials/原代码_带说明_RoPE总览.ipynb",
+        "sha256": "b7d91cc8644e7568e4921f89d8d7557b1138c96200fef3bf9f10236f307c4d81"
+      },
+      {
+        "file": "lessons/18 RoPE 复数形式/代码单元解释.md",
+        "sha256": "416de94074f99828237356fe62b9fba867e9ae98e908c56354125c981bcb0cce"
+      },
+      {
+        "file": "lessons/19 RoPE apply_rotary_emb/代码/tutorials/llama2_src_03_RoPE_apply_rotary_emb_代码注释.py",
+        "sha256": "eceba5337c353bf04f9a97a4d0f7ca8bf4835d113b7e94ca65e0c72390090925"
+      },
+      {
+        "file": "lessons/19 RoPE apply_rotary_emb/代码/tutorials/代码注释.ipynb",
+        "sha256": "0b23ed98424f7351e1d0f1c760a8347ab9915b72c40715287d159f13648514b7"
+      },
+      {
+        "file": "lessons/19 RoPE apply_rotary_emb/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "b964c02b66763f2d0750b83018823cabd5ca42dc33016cc98600685db4f1858f"
+      },
+      {
+        "file": "lessons/19 RoPE apply_rotary_emb/代码单元解释.md",
+        "sha256": "ddb47dcbcf529b700a616d3f6156c5d0ac1834b0bfcdecc4c9e611eec4ad89b6"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码/tutorials/Attention官方源码_代码注释.py",
+        "sha256": "3b04575f31d660979e47552514d0ffaff586afc50039be5863a940b09f28f63a"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码/tutorials/Attention摘录_代码注释.py",
+        "sha256": "2f5f617fda159692079b62c30e4bcae1cc132fc52e466ae74ecfd5e318a49459"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码/tutorials/llama2_src_cache_kv_代码注释.py",
+        "sha256": "363aa614bed0bd4759753b8069fdaef46b13ff8a58f72008cc7a143faa0993a9"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码/tutorials/代码注释.ipynb",
+        "sha256": "6305ff1e2b3fceace5fd3233422c2cfa52961c194ea5bfb6f1cc5afe3d27b8b4"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码/tutorials/原代码_带说明.ipynb",
+        "sha256": "756266e6094fe3bb072ccf4e63b5d5342cb54af77352299103ecf14a54a8070d"
+      },
+      {
+        "file": "lessons/20 KV cache 与增量推理/代码单元解释.md",
+        "sha256": "149ec4025edda90334cad81c561f82c5abc90c2bfd5a2e77e7979532fb195cff"
+      },
+      {
+        "file": "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/trl_reward_trainer_代码注释.py",
+        "sha256": "6ab21d09eedd207d9439c7640256daaad9bd5a485034a4c6889978977cdf2b6c"
+      },
+      {
+        "file": "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/代码注释.ipynb",
+        "sha256": "ebdf9665ee97ee669ec716ea476faa630060c2271cdb1815334f84dc1215338b"
+      },
+      {
+        "file": "lessons/23 TRL Reward Model 与 RewardTrainer/代码/tutorials/reward_model/原代码_带说明.ipynb",
+        "sha256": "8bbf891563398cbdda46ce153c8a6fb984f971a7068c387d2cd085c53d6c9153"
+      },
+      {
+        "file": "lessons/23 TRL Reward Model 与 RewardTrainer/代码单元解释.md",
+        "sha256": "d3bbf30baeed160e9669af2b3ee624ad3ded8a984910ac55cab432b47cfbee22"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/PEFT合并核心源码_代码注释.py",
+        "sha256": "1e43e841b221ae942357156e2f5d46463a411df72699472a627ee5985efa79a5"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/inject_代码注释.ipynb",
+        "sha256": "f602ef66501d634b8a563a3a05b4af1231bc86ee60eb1dfd53b91211c4f7a0ca"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/inject_原代码_带说明.ipynb",
+        "sha256": "592764b7b776c9ffaf0db825046ce4edaed0ca60df2258236e4243013ae4224d"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_inject_代码注释.py",
+        "sha256": "3d3bd3a7281f7ff8f4eab10a0c048877d3d5673478f645c7a52fcafdd3958a8d"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/lora_merge_代码注释.py",
+        "sha256": "6e752879ddb7a1fab9356d89c6b769262f9b9da78af5c5d0544b3fcdd7355609"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/代码注释.ipynb",
+        "sha256": "c3300a3091b2ef6e1f0062b501165b08afef8aac58609ed6cc3d7cb87f378ce5"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码/tutorials/peft/原代码_带说明.ipynb",
+        "sha256": "b4f516f3d778268b37032626999d32a031a39b7f243d46df824cab1bd8a61f97"
+      },
+      {
+        "file": "lessons/24 PEFT LoRA merge 与 SVD/代码单元解释.md",
+        "sha256": "40498a26a24a4f424c3801a52fa2c2f86e8eb1a39ded6b3cfa5ba5849b7952b1"
+      },
+      {
+        "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/Llama3核心源码_代码注释.py",
+        "sha256": "09f6421a1c6c9a986f152cd836fa9123249688a50d37cec45d73da4706b84f9f"
+      },
+      {
+        "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/llama3_0419_代码注释.py",
+        "sha256": "02668ba3207b18b16f47928c84f9bb8fe2ed30e91f85854ee1248907239ad8ac"
+      },
+      {
+        "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/代码注释.ipynb",
+        "sha256": "48069946982f7b202a98b795f3d1203011e442f72b475b185e1849f7565a86cd"
+      },
+      {
+        "file": "lessons/25 Llama 3 introduction/代码/tutorials/llama/原代码_带说明.ipynb",
+        "sha256": "0f61ee5ea09b0ca473a4c9fb608de29cbbd0993b006913b5b06a530525ba51b6"
+      },
+      {
+        "file": "lessons/25 Llama 3 introduction/代码单元解释.md",
+        "sha256": "56d82976834b934006ca8ea2d8696fe13e2131bae2ceb6af06244f38a6c8d83a"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/supp_代码注释.ipynb",
+        "sha256": "adb128bf6d26339da0993acb89934f91578d01dddf7d549e71341568b53957e1"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/supp_原代码_带说明.ipynb",
+        "sha256": "5eec2235d3d69ea7f14d22d41cbcc7f8f32e768b509b5a684be3a844613d7607"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_gpt4o_代码注释.py",
+        "sha256": "6a7d24b0b255783408e4e5b5675c21fc8258b6184df369647cdc18552c50abd7"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/tokenizer_supply_代码注释.py",
+        "sha256": "e1ea48d1b1228ef9f4708cb399b5fe01bcc46ec356a551bfb4ee5f3f167e2702"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/代码注释.ipynb",
+        "sha256": "7dd8bb75e97db4db7bf42a3e43beed7b3c583b14328391b292de25ca2737f3a0"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码/tutorials/tokenizer/原代码_带说明.ipynb",
+        "sha256": "e074e07c0afddcdc629a8ff01af47e24157af0f5af601d1d9256bfa7e0a17d91"
+      },
+      {
+        "file": "lessons/26 GPT-4o tokenizer 与 o200k_base/代码单元解释.md",
+        "sha256": "83fa818bf97596f7dc07b595ea44f133de099d5244315cc8e3ecdbe0affd233e"
+      },
+      {
+        "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/trl_ppotrainer_helloworld_代码注释.py",
+        "sha256": "d138ba1a8459f0b0bdcd90a1b87c9b2f9847f2495e0138a89dae93456024cfbc"
+      },
+      {
+        "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/代码注释.ipynb",
+        "sha256": "fd7645484f186d99bf97231303460f258340e2179d077eae7cb9b7346ff33626"
+      },
+      {
+        "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码/tutorials/trl_hf/原代码_带说明.ipynb",
+        "sha256": "a9dcbb5b65a0fc310ffe33e83e9e4c986e12559c57ca26227ada595b35920a67"
+      },
+      {
+        "file": "lessons/27 TRL RLHF PPOTrainer 与 OpenRLHF/代码单元解释.md",
+        "sha256": "0892d3a39b5d730adcc3bb049bd20d8fb99e70a868c5f2375b33d812528a3241"
+      },
+      {
+        "file": "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/CoPE核心源码_代码注释.py",
+        "sha256": "e10fd583ddc8747ecd378170893f3798be436f380f3ac6aaf73fff22fea480b7"
+      },
+      {
+        "file": "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/rope_cope_代码注释.py",
+        "sha256": "d7f44306e608086c18bf44ec1a77f53d96430673321c9d65e6b0493a93f1504c"
+      },
+      {
+        "file": "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/代码注释.ipynb",
+        "sha256": "13606dd456e12ee51a7e9215615af7fe78377f8ad5d0d7b3a796712dd276f04b"
+      },
+      {
+        "file": "lessons/28 从 RoPE 到 CoPE/代码/tutorials/position_encoding/原代码_带说明.ipynb",
+        "sha256": "f007dcfe23c2e351445cb0f8d6103a767ac1b37ef43cf9c9f11c1bb3b597a21a"
+      },
+      {
+        "file": "lessons/28 从 RoPE 到 CoPE/代码单元解释.md",
+        "sha256": "7df3d6ec9df369d9687742c9ea34a22c2dabbf9a962ed7e3e2ae21d499faafa8"
+      },
+      {
+        "file": "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/llama2_7b_llama3_8b_代码注释.py",
+        "sha256": "5e22639945f9c67a8cbe3fe3edd2a708f4b553ca0ddc2bb91a030bca52fd00f3"
+      },
+      {
+        "file": "lessons/29 Llama2 7B vs Llama3 8B/代码/tutorials/llama/代码注释.ipynb",
+        "sha256": "a3fa8d02490e072c6b9a6cbe0312bf9ba11231f8050243b997c0cc99636f6ebc"
+      },
+      {
+        "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/reward_model_Bradley_Terry_model_代码注释.py",
+        "sha256": "fdf84865481a0bdfff89e34215377ff9ddcb89b4563bf4b521bd5ee6389d4dac"
+      },
+      {
+        "file": "lessons/30 InstructGPT reward modeling/代码/tutorials/reward_model/代码注释.ipynb",
+        "sha256": "82791bd2c83dee4fad7aaf437bf17b2bdee989d4cb1676467f29fcd8a5d963f1"
+      }
+    ],
+    "lectures": [
+      "02 LoRA - Low-Rank Adaptation of Large Language Models",
+      "03 LoRA 微调 BLOOM",
+      "04 PEFT LoRA 源码",
+      "05 FP16 与 BF16",
+      "06 Alpaca LoRA 推理",
+      "07 自动混合精度训练",
+      "08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale",
+      "09 BPE 与 GPT-2 tokenizer",
+      "10 预训练语料、memory mapping 与 streaming",
+      "11 梯度累积 gradient accumulation",
+      "12 LLM SFT 与 SFTTrainer",
+      "13 Gradient checkpointing",
+      "14 Llama 2 introduction 与 Guanaco",
+      "16 TRL 基础与 reward PPOTrainer",
+      "17 RMSNorm 与 SwiGLU",
+      "18 RoPE 复数形式",
+      "19 RoPE apply_rotary_emb",
+      "20 KV cache 与增量推理",
+      "23 TRL Reward Model 与 RewardTrainer",
+      "24 PEFT LoRA merge 与 SVD",
+      "25 Llama 3 introduction",
+      "26 GPT-4o tokenizer 与 o200k_base",
+      "27 TRL RLHF PPOTrainer 与 OpenRLHF",
+      "28 从 RoPE 到 CoPE",
+      "29 Llama2 7B vs Llama3 8B",
+      "30 InstructGPT reward modeling"
+    ]
+  },
+  "audit_script_sha256": "739610382d82247c478b98ad994eb8495470ed0b6ac908f2a4dc2ec364debfce",
+  "execution_scope": "Checks historical executed-example semantics against current examples and reruns the current lesson01 ordinary Python example; does not rerun every historical model experiment.",
+  "publication_preflight": {
+    "repository": "https://github.com/ghost-yu/personal-chatgpt-notes",
+    "anonymous_raw_readme": {
+      "url": "https://raw.githubusercontent.com/ghost-yu/personal-chatgpt-notes/main/README.md",
+      "http_status": 200,
+      "authentication_header_supplied": false,
+      "checked_date": "2026-10-19"
+    },
+    "independent_foundation_commits": 30,
+    "final_prose_commits": [
+      {
+        "lesson": "02 LoRA - Low-Rank Adaptation of Large Language Models",
+        "files": 4,
+        "commit": "3822ea47678ef786db19086cd8f4b8588b6c513a"
+      },
+      {
+        "lesson": "03 LoRA 微调 BLOOM",
+        "files": 4,
+        "commit": "571bc8c7f1e3abae96cac5829d95ce1f85ac02b6"
+      },
+      {
+        "lesson": "04 PEFT LoRA 源码",
+        "files": 4,
+        "commit": "e9f877d2ec953e3ead4baf01313d3416537d2b60"
+      },
+      {
+        "lesson": "05 FP16 与 BF16",
+        "files": 4,
+        "commit": "a62d78863ddff1553c350150f564f69d54d429d8"
+      },
+      {
+        "lesson": "06 Alpaca LoRA 推理",
+        "files": 4,
+        "commit": "232f8a2bf7bbda267be47166cba0a8e234239546"
+      },
+      {
+        "lesson": "07 自动混合精度训练",
+        "files": 4,
+        "commit": "137dccebc603841d17fa679b7e35c81eb63caa9c"
+      },
+      {
+        "lesson": "08 LLM.int8() - 8-bit Matrix Multiplication for Transformers at Scale",
+        "files": 4,
+        "commit": "9a37bd33b19928a53cba8537b6d802b33c282360"
+      },
+      {
+        "lesson": "09 BPE 与 GPT-2 tokenizer",
+        "files": 7,
+        "commit": "833501c972b6b09d0a3f187d35860a8798e36284"
+      },
+      {
+        "lesson": "10 预训练语料、memory mapping 与 streaming",
+        "files": 4,
+        "commit": "eb2fd8118f6c13da97cd5d3d0defa8a6763a3a62"
+      },
+      {
+        "lesson": "11 梯度累积 gradient accumulation",
+        "files": 4,
+        "commit": "327bcf9fbb76ec67f5cafe1da71c85527613ab06"
+      },
+      {
+        "lesson": "12 LLM SFT 与 SFTTrainer",
+        "files": 4,
+        "commit": "dc3521c63e5f8940fb017af1e37c40a63445a62f"
+      },
+      {
+        "lesson": "13 Gradient checkpointing",
+        "files": 2,
+        "commit": "5b3404bff16425a9f79e29858bac6475f13d6b9f"
+      },
+      {
+        "lesson": "14 Llama 2 introduction 与 Guanaco",
+        "files": 4,
+        "commit": "599f9351ed1461680cd0718341dc5f40901bb957"
+      },
+      {
+        "lesson": "16 TRL 基础与 reward PPOTrainer",
+        "files": 4,
+        "commit": "1f7e062c962a0ee2b91a192bac13e9927572a5f6"
+      },
+      {
+        "lesson": "17 RMSNorm 与 SwiGLU",
+        "files": 4,
+        "commit": "a475ad68afc940e76e3efb761504b4f8ecbe0244"
+      },
+      {
+        "lesson": "18 RoPE 复数形式",
+        "files": 5,
+        "commit": "55e3baa0873461f9f7a2dc0a333639932e411852"
+      },
+      {
+        "lesson": "19 RoPE apply_rotary_emb",
+        "files": 4,
+        "commit": "0d816c5866567880f51f46ebcafaf0223a7a6074"
+      },
+      {
+        "lesson": "20 KV cache 与增量推理",
+        "files": 6,
+        "commit": "3096aa3e84d1f7f78994f5591e6947da5cf75016"
+      },
+      {
+        "lesson": "23 TRL Reward Model 与 RewardTrainer",
+        "files": 4,
+        "commit": "489da4dd0294639b17a62170872c51993c21f202"
+      },
+      {
+        "lesson": "24 PEFT LoRA merge 与 SVD",
+        "files": 8,
+        "commit": "0905900fa2d6c7d56d1b629faec853bfd7e1cfe2"
+      },
+      {
+        "lesson": "25 Llama 3 introduction",
+        "files": 5,
+        "commit": "2e2b280b399f2c92f0fbb2a18e90a7ab0d59f2e5"
+      },
+      {
+        "lesson": "26 GPT-4o tokenizer 与 o200k_base",
+        "files": 7,
+        "commit": "006f9b2d265b40ff0979c71777d6a9b0889b6fa2"
+      },
+      {
+        "lesson": "27 TRL RLHF PPOTrainer 与 OpenRLHF",
+        "files": 4,
+        "commit": "9a2ceb57c5bcf9b8254513f85b0988ac01166dbb"
+      },
+      {
+        "lesson": "28 从 RoPE 到 CoPE",
+        "files": 5,
+        "commit": "95dfd9e647cf4481d04ce331abeb05303a210000"
+      },
+      {
+        "lesson": "29 Llama2 7B vs Llama3 8B",
+        "files": 2,
+        "commit": "0fca8b486ba98909d0a02d6b8dfa45d33261fdd8"
+      },
+      {
+        "lesson": "30 InstructGPT reward modeling",
+        "files": 2,
+        "commit": "1b634ab5fa326e8005b0303a04130e138759421e"
+      }
+    ],
+    "push_and_remote_head_equality": "Verified separately after publishing this audit commit"
+  }
+}
