@@ -20,14 +20,14 @@ class ModelArgs:
     multiple_of: int = 256  # make SwiGLU hidden layer size multiple of large power of 2
     # SwiGLU宽度额外倍率，8B实际为1.3，None则不乘。
     ffn_dim_multiplier: Optional[float] = None
-    # RMSNorm分母稳定项1e-5，不是可训练参数。
+    # RMSNorm 在均方根内加上固定的1e-5，稳定接近零时的计算。
     norm_eps: float = 1e-5
     # 位置旋转频率底数500000，不是上下文长度。
     rope_theta: float = 500000
 
     # 运行缓存batch容量，默认32，可被CLI覆盖。
     max_batch_size: int = 32
-    # 运行缓存序列容量默认2048，不是8k训练上下文声明。
+    # 这份运行配置默认预留2048个缓存位置；缓存容量和模型训练上下文分别由相应配置指定。
     max_seq_len: int = 2048
 
 

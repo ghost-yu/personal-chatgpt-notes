@@ -2,7 +2,7 @@
 # 原课程代码阅读版；原GPU/大模型加载保留，CPU变体另见复现脚本。
 
 # %% 原代码单元 0
-# datetime是类，now()返回当前本地datetime对象，不参与模型运算；Image稍后展示原图。历史时间2024年4月不是本次运行时间。
+# datetime.now() 返回当前本地时间，Image 用于后面展示图片。notebook 保存了课程运行时的时间输出。
 # 从模块导入指定对象；后续调用名由此绑定。
 from datetime import datetime
 # 从模块导入指定对象；后续调用名由此绑定。
@@ -25,7 +25,7 @@ os.environ['https_proxy'] = 'http://127.0.0.1:7890'
 # !pip install -U accelerate
 
 # %% 原代码单元 3
-# 导入Transformers适配库与PyTorch张量库；import本身不下载权重，不产生GPU模型。
+# 导入 Transformers 模型接口和 PyTorch 张量工具。
 # 导入依赖；不等于下载或构造模型。
 import transformers
 # 导入依赖；不等于下载或构造模型。
@@ -52,7 +52,7 @@ from transformers import AutoModelForCausalLM
 
 # %% 原代码单元 15
 # 原格下载2-7B并自动放置FP16权重。CPU教学明确替换为相同完整配置在meta设备构造，只验证真实模块shape/参数量，不伪称加载预训练权重。
-# 保存Hub仓库ID字符串；赋值本身不下载。
+# 保存 Hub 仓库 ID，后续加载时用它定位文件。
 model_id = "meta-llama/Llama-2-7b-hf"
 # 原逻辑加载7B真实权重，CPU验证明确改为完整meta配置。
 llama2_7b = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
@@ -77,7 +77,7 @@ total_params
 
 # %% 原代码单元 19
 # 原格下载3-8B FP16权重。教学同样只替换加载语句为完整配置的meta模型；词表128256/KV8/MLP14336/rope500000。
-# 保存Hub仓库ID字符串；赋值本身不下载。
+# 保存 Hub 仓库 ID，后续加载时用它定位文件。
 model_id = "meta-llama/Meta-Llama-3-8B"
 # 原逻辑加载8B真实权重，CPU验证明确改为完整meta配置。
 llama3_8b = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
@@ -97,7 +97,7 @@ for name, para in llama3_8b.named_parameters():
 total_params
 
 # %% 原代码单元 22
-# 精确参数量乘2bytes=14.957527160644531GiB权重；BF16和FP16都是2bytes，不代表推理总显存或训练显存。
+# 精确参数量乘以2 bytes，得到约14.957527 GiB的16位权重存储；推理还需容纳激活、cache和临时空间，训练还涉及梯度与优化器状态。
 # FP16/BF16两字节权重存储估计，不含缓存/激活。
 8030261248 * 2 / (1024*1024*1024)
 
@@ -130,7 +130,7 @@ llama3_tokenizer.n_words
 
 # %% 原代码单元 34
 # text-generation为任务；model为基础模型ID；model_kwargs只传给模型加载，BF16是权重dtype；device_map auto需相应加载支持。教学用真实随机CPU小Llama与原词表转换的Fast tokenizer，并显式限制4个新增token，不比较语言质量。
-# 保存Hub仓库ID字符串；赋值本身不下载。
+# 保存 Hub 仓库 ID，后续加载时用它定位文件。
 model_id = "meta-llama/Meta-Llama-3-8B"
 
 # model-00001-of-00004.safetensors
@@ -149,9 +149,9 @@ pipeline = transformers.pipeline("text-generation",
 pipeline("Hey how are you doing today?")
 
 # %% 原代码单元 36
-# messages是list[dict]，apply_chat_template返回带角色头的str；add_generation_prompt补assistant开头。terminators含EOS和EOT，任一可结束；max_new_tokens是新增预算，temperature/top_p控制采样。输出默认含prompt，用字符len(prompt)切掉前缀；本次模型随机且预算明确改4，不冒称海盗回答复现。
+# messages 是 list[dict]。apply_chat_template 整理角色头，add_generation_prompt 补出 assistant 开头；terminators 包含 EOS/EOT。max_new_tokens 控制新增预算，temperature/top_p 控制采样；返回文本包含 prompt 时，用 len(prompt) 截取续写部分。配套随机模型使用4个新增 token 观察这条路径。
 
-# 保存Hub仓库ID字符串；赋值本身不下载。
+# 保存 Hub 仓库 ID，后续加载时用它定位文件。
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 # 构造生成流水线，返回可调用TextGenerationPipeline对象。
