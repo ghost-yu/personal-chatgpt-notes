@@ -115,7 +115,7 @@ plt.plot(p, log_odds)
 plt.xlabel('Probability (p)')
 # 设置纵轴含义；区分loss与梯度的数值。
 plt.ylabel('Log Odds')
-# 设置图标题，不是模型训练名称。
+# 设置绘图标题，帮助识别图中函数。
 plt.title('Log Odds Curve')
 # 显示辅助网格。
 plt.grid(True)
@@ -209,7 +209,7 @@ plt.axhline(0, color='black', linewidth=0.5, linestyle=':')
 # 在指定x处绘垂直参考线。
 plt.axvline(0, color='black', linewidth=0.5, linestyle=':')
 
-# 设置图标题，不是模型训练名称。
+# 设置绘图标题，帮助识别图中函数。
 plt.title('Plot of $-log(\sigma(\delta))$ and its Gradient')
 # 设置横轴含义，不参与数值计算。
 plt.xlabel('delta')
