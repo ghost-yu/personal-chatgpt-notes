@@ -69,7 +69,7 @@ Image('../imgs/float16.png', width=400)
 # ## 单元 6（markdown）：分清指数域和实际指数
 #
 # 符号位s为0/1；5位指数域E是无符号整数0…31；10位小数域F是整数0…1023。这些是解码字段，不是tensor shape。
-# E=1…30是正常数，实际指数q=E−15，对应−14…15。15是格式偏置β，不是运行时可训练参数。
+# E=1…30 表示正常数，实际指数 q=E−15，对应−14…15。常数15是该格式的指数偏置 β。
 # 小数值F/1024=F/2^10；正常数有效数为1+F/1024。E=0和E=31另有规则，不能先统一套正常数公式再修正。
 
 # %% [markdown] 原单元 6
@@ -88,7 +88,7 @@ Image('../imgs/float16.png', width=400)
 # %% [markdown]
 # ## 单元 7（markdown）：进入FP16解码公式
 #
-# 接下来的公式把存储的三个整数域还原成实数。原格是标题；公式位于单元8，不是Python函数或训练loss。
+# 这一标题引出后面的解码公式：把符号、指数和小数三个存储字段还原成实数。公式位于单元8。
 
 # %% [markdown] 原单元 7
 # ### 计算
@@ -200,10 +200,10 @@ Image('../imgs/float16.png', width=400)
 # `import torch`导入PyTorch模块；`torch.cuda.is_bf16_supported()`是cuda子模块的函数，不是tensor方法，无显式参数，返回bool。
 # 本次固定PyTorch2.5.1函数签名为`is_bf16_supported(including_emulation=True)`。当前CPU构建cuda不可用，返回False；这不判断CPU BF16能力，也不创建模型。
 # 该版本先看HIP，再看cuda可用性、CUDA版本和GPUcompute capability；允许emulation时还会尝试创建BF16设备tensor。这里按当前记录的PyTorch版本解释接口；不同版本的参数见各自API定义。
-# 查询可能在其他环境访问/初始化设备；当前CPU路径提前返回。调用链是notebook表达式→torch.cuda函数→环境检查，结果不是训练精度、吞吐或GPU实测。
+# 调用链为 notebook 表达式→torch.cuda 查询函数→运行环境检查。查询结果用于了解设备能力和当前设置，CPU 环境按对应分支返回。
 
 # %% 原单元 16
-# 导入真实PyTorch；不下载模型、数据或权重。
+# 导入 PyTorch，后续用它构造张量并查看浮点格式。
 # is_bf16_supported是torch.cuda的函数，默认查询当前CUDA/ROCm环境，返回bool。
 # PyTorch2.5.1有including_emulation=True默认参数；版本差异见单元说明。
 # 本次CPU版返回False，不能用这个结果否定CPU可创建BF16 tensor。
@@ -234,7 +234,7 @@ torch.bfloat16
 # 内层current_device先返回设备索引int，再传给get_device_properties。
 # 外层返回属性对象（name、compute capability、total_memory等），不是tensor。
 # 此访问可能初始化CUDA；CPU包在内层报错，外层不执行。
-# 本次记录实际预期失败，保留原代码；原GPU历史输出不当作本机结果。
+# 这条 CUDA 查询需要可用设备；CPU 环境的对应结果见复现说明。
 torch.cuda.get_device_properties(torch.cuda.current_device())
 
 # %% [markdown]
@@ -265,7 +265,7 @@ torch.version.hip
 # %% 原单元 20
 # 双问号是IPython源代码查看语法，通过pinfo2展示可获取的函数实现。
 # 不等于调用函数；普通Python会报SyntaxError，阅读版将原指令保留为注释。
-# 本次实际核对显示的2.5.1源码，不能据此冒充原作者旧版本实现。
+# 配套源码说明对应 PyTorch 2.5.1；阅读时结合所用版本的函数定义。
 # IPython原指令：torch.cuda.is_bf16_supported??
 
 # %% [markdown]
@@ -294,7 +294,7 @@ torch.version.hip
 # 正常数1≤E≤254：
 # $$x=(-1)^s\,2^{E-127}(1+F/128).$$
 # s/E/F为整数标量，128=2^7，输出实数标量。E=127、F=1、s=0时x=1.0078125，即1以上首个BF16数。
-# E=0需使用2^−126×F/128；E=255需区分Inf/NaN。解码次序与FP16相同，偏置和小数位不同；没有额外模型forward/loss。
+# E=0 时按 2^−126×F/128 解码，E=255 时区分 Inf/NaN。解码顺序与 FP16 相同，采用 BF16 的偏置和小数位数。
 
 # %% [markdown] 原单元 23
 # $$
@@ -330,7 +330,7 @@ torch.version.hip
 # ## 单元 25（markdown）：比较三种格式
 #
 # 比较固定shape元素的存储、正常指数范围、小数位/间距三项。FP16和BF16每元素都是2 byte，FP32为4 byte。
-# BF16与FP32指数位同为8，小数位分别7和23；FP16指数5、小数10。BF16的范围更大但在1附近比FP16更粗。标题不是实验结果。
+# BF16 与 FP32 都有8个指数位，小数位分别为7和23；FP16 有5个指数位和10个小数位。BF16 覆盖更大范围，FP16 在1附近具有更细的间距。
 
 # %% [markdown] 原单元 25
 # ## float16/float32, bf16
@@ -340,7 +340,7 @@ torch.version.hip
 #
 # `Image('../imgs/bf-float.png')`使用Image类，不传width，按图片自身尺寸由前端显示。路径与单元5同样依据工作目录；返回图片对象，不返回FP16 tensor。
 # 图自上而下的三行是BF16、FP32、FP16：左侧S为1位，绿色E为指数，红色M为显式小数。数出8/8/5个E和7/23/10个M即可核对，不把颜色当作计算操作。
-# FP32行比16位行长，反映存储bit数。没有模型输入输出或训练/推理分支。本次核对展示PNG的哈希/尺寸和原代码参数；图来自固定上游，不是本次性能测量。
+# 图中 FP32 行较长，对应32个存储位；FP16/BF16 各有16位。沿颜色标出的符号、指数和小数部分对照解码公式。
 
 # %% 原单元 26
 # 读取BF16/FP32/FP16位布局图，返回可显示的Image对象。
