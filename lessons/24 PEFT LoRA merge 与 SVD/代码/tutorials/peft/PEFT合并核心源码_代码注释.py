@@ -223,7 +223,7 @@ class LoraModel:
                 else:
                     continue
 
-                # 写入新适配器A；源adapter不在此行被改写。
+                # 把算出的 A 写入新适配器，源 adapter 继续保留原来的权重。
                 target_lora_A.data = target_lora_A.data * 0.0
                 # 写入新适配器B；.data是这里官方源码的绕过autograd赋值方式。
                 target_lora_B.data = target_lora_B.data * 0.0
@@ -456,7 +456,7 @@ class Linear:
             adapter (str):
                 The name of the adapter for which the delta weight should be computed.
         """
-        # 记录设备字符串；本行没有移动模型。
+        # 保存设备名称字符串，供后续迁移模型或输入时使用。
         device = self.lora_B[adapter].weight.device
         dtype = self.lora_B[adapter].weight.dtype
 
@@ -546,7 +546,7 @@ class Embedding:
             adapter (str):
                 The name of the adapter for which the delta weight should be computed.
         """
-        # 记录设备字符串；本行没有移动模型。
+        # 保存设备名称字符串，供后续迁移模型或输入时使用。
         device = self.lora_embedding_B[adapter].device
         dtype = self.lora_embedding_A[adapter].dtype
 

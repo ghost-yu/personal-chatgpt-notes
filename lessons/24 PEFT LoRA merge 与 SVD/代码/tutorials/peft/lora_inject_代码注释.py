@@ -2,7 +2,7 @@
 # 原课程代码中文注释阅读版；不是直接运行原GPU/远程权重的承诺。
 
 # %% 原代码单元 1
-# 导入inspect检查继承/源码，torch和nn构造张量/模块，inject_adapter_in_model直接改模型内部结构；导入本身不下载模型。
+# inspect 用于查看继承和源码，torch/nn 构造张量与模块，inject_adapter_in_model 将适配器接入现有模型。
 # 导入模块命名空间供后续使用。
 import inspect
 # 导入模块命名空间供后续使用。
@@ -13,7 +13,7 @@ from torch import nn
 from peft import inject_adapter_in_model, LoraConfig
 
 # %% 原代码单元 2
-# DummyModel继承nn.Module。__init__注册embedding、linear、lm_head；super调用父初始化；forward定义调用流程。输入int64[B,L]→Embedding float32[B,L,1000]→Linear[B,L,1000]→lm_head[B,L,100]。没有激活、softmax或loss，不是训练完的语言模型。
+# DummyModel 继承 nn.Module，在 __init__ 注册 embedding、linear 和 lm_head，super 初始化父类。forward 沿 int64[B,L]→Embedding[B,L,1000]→Linear[B,L,1000]→lm_head[B,L,100] 计算，方便观察适配器接入后的结构。
 # 定义nn.Module子类；类是结构模板，实例才持有实际参数。
 class DummyModel(torch.nn.Module):
     # 构造方法，实例创建时注册子层。
@@ -59,7 +59,7 @@ lora_config = LoraConfig(
 lora_config
 
 # %% 原代码单元 6
-# 实例化三个随机层。nn.Module的注册让parameters/state_dict能递归查找子模块；此时没有预训练权重。
+# 实例化三个随机初始化的层。nn.Module 注册子模块后，parameters/state_dict 可以递归找到它们。
 # 实例化三个随机基础层，不加载预训练权重。
 model = DummyModel()
 model
