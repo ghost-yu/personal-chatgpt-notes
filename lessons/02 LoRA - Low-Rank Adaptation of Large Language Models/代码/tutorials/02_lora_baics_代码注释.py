@@ -259,13 +259,13 @@ Image('../imgs/lora-weights.png', width=600)
 # | x@(WA@WB)*alpha | `[N,768]`，再乘缩放 | 若alpha指论文超参数，通常还应除r；原文语义不确定 |
 # | h+=... | 原地累加到h | 不更新W，返回前输出仍为`[N,768]` |
 #
-# `torch.empty`的dtype/设备由运行环境默认值决定，原文未指定。Kaiming按二维Tensor的第二维解释fan_in：原行向量WA的第二维是r，与PEFT Linear的`[r,k]`权重初始化方向不同，不能宣称数值分布完全相同。
+# `torch.empty` 使用运行环境的默认 dtype 和设备。Kaiming 按二维张量的第二维确定 fan_in：这里 WA 的第二维是 r；PEFT Linear 的 A 权重形状为 [r,k]，fan_in 则是 k，因此初始化尺度随矩阵方向变化。
 #
 # 所需导入torch、nn、math都缺失。两个return缺少函数内缩进，W是占位，alpha未赋值，也没有optimizer、loss、数据及迭代。不能只修一处就宣称完整训练代码已可用。
 #
 # 新编实现使用`H=XW+s(XWA)WB`，s=alpha/r；两次小乘法避免构造完整增量。原代码表达式的数学结合律在实数下成立，浮点运算只在容差内相等。
 #
-# 以X=[1,2]、W=I、WA=[[1],[2]]、WB=[[3,4]]、s=1为例，XWA=5，增量=[15,20]，总输出=[16,22]。用真实CPU PyTorch检查前向、权重合并、Linear转置方向和梯度；这不是BLOOM任务训练。
+# 取 X=[1,2]、W=I、WA=[[1],[2]]、WB=[[3,4]]、s=1，可得 XWA=5、增量=[15,20]、总输出=[16,22]。配套 CPU 算例进一步观察前向、权重合并、Linear 的转置方向和梯度。
 #
 # 初始化WB=0时，WA初始梯度为0，WB通常有非零梯度；一步更新WB后WA可获得梯度。基权重被冻结，`.grad`保持None，不等于所有中间激活都无需反传。两因子都为0时两边初始梯度都为0，该失败边界也实际核对。
 
@@ -283,7 +283,7 @@ Image('../imgs/lora-weights.png', width=600)
 # # 原大矩阵有 kd=589824 个参数；这里比较可训练因子数，不等于整体显存比例。
 # rank = 8  # The rank 'r' for the low-rank adaptation
 #
-# # ... 是 Python 的 Ellipsis 对象，不是自动读取预训练权重的指令。
+# # ... 是 Python 的 Ellipsis 对象，在这里为待补充的权重或计算内容占位。
 # # 真实行向量约定需要 W 为浮点 Tensor [k,d]=[768,768]，与 X 设备及 dtype 相容。
 # # 完整 LoRA 实现还应冻结基权重；本赋值既没有真实 Tensor，也没有 requires_grad_(False)。
 # # nn.Linear 存储权重为 [out,in]=[d,k]；不能直接把它的 weight 当成本例 W 而忽略转置。
@@ -303,14 +303,14 @@ Image('../imgs/lora-weights.png', width=600)
 # # 原地随机初始化 W_A；末尾下划线表示修改传入 Tensor 的内容。
 # # a=math.sqrt(5) 是初始化分布参数，不是 LoRA 的 alpha 或 alpha/r。
 # # 按本例 [k,r] 布局，二维初始化的 fan_in 是第二维 r。
-# # PEFT Linear 的 A 权重通常存为 [r,k]，其 fan_in 是 k；不能宣称初始化分布相同。
+# # PEFT Linear 的 A 权重形状通常是 [r,k]，fan_in 为 k；初始化时要按实际权重方向计算尺度。
 # nn.init.kaiming_uniform_(W_A, a=math.sqrt(5))
 # # 原地把 W_B 全部置零，使初始 W_A @ W_B=0，初始输出等于基模型输出。
 # # 若之后有非零损失梯度，B 通常先获得梯度；因 B=0，A 的第一次梯度为零。
 # # 这不表示 A 永远不学习；更新 B 后，A 可以有非零梯度。两因子均为零会让两边起始梯度都为零。
 # nn.init.zeros_(W_B)
 #
-# # def 定义独立函数，不是类方法；没有 self，也没有默认参数。
+# # def 定义独立函数，括号列出调用时需要传入的参数。
 # # 预期输入 x:[N,k] 与 W:[k,d]，计算基线性层输出 [N,d]。
 # # 函数体由缩进划定；下面原 return 未缩进，因此原文件不能直接编译执行。
 # def regular_forward_matmul(x, W):
@@ -319,7 +319,7 @@ Image('../imgs/lora-weights.png', width=600)
 #     h = x @ W
 # # 【原文缺陷】此 return 没有缩进到函数体，compile 会报 return outside function。
 # # 只有放进函数体的 return 才会向调用者返回 h；注释版保留原行，不静默修复。
-# # 原格也没有数据、loss、optimizer 或训练循环；可运行补充见复现/scripts/verify_lora.py。
+# # 配套可运行算例见复现/scripts/verify_lora.py。
 # return h
 #
 # # 独立函数接收 x、W、W_A、W_B，没有默认值；alpha 将从外部作用域查找。
@@ -337,21 +337,21 @@ Image('../imgs/lora-weights.png', width=600)
 #     h += x @ (W_A @ W_B) * alpha # use scaled LoRA weights
 # # 【原文缺陷】此 return 没有缩进到函数体，compile 会报 return outside function。
 # # 只有放进函数体的 return 才会向调用者返回 h；注释版保留原行，不静默修复。
-# # 原格也没有数据、loss、optimizer 或训练循环；可运行补充见复现/scripts/verify_lora.py。
+# # 配套可运行算例见复现/scripts/verify_lora.py。
 # return h
 # ```
 
 # %% [markdown]
 # ## 单元 14：BLOOM 模型结构截图
 #
-# `Image('../imgs/bloom.png')`没有显式width参数，使用Image API默认展示行为。代码读取图片，不执行截图里的`BloomForCausalLM`构造，不实例化bitsandbytes层，也不下载7B权重。
+# Image('../imgs/bloom.png') 读取并显示历史 BLOOM 模型树截图，使用 API 默认展示尺寸。图中的 BloomForCausalLM 和 bitsandbytes 层名帮助定位结构。
 #
 # 图片实际列出Embedding(250880,4096)、30个BloomBlock、融合QKV投影4096→12288、Attention输出4096→4096、MLP4096→16384→4096、最后lm_head4096→250880。这些是截图配置，不能说适用于全部BLOOM模型。
 #
 # 以输入ID `[batch,time]`为例，Embedding后为`[batch,time,4096]`；融合投影后为`[batch,time,12288]`，12288=3×4096。它包括Q/K/V，不是12288个attention head。MLP中间宽16384=4×4096。Linear8bitLt是量化线性层名字，图片本身不验证其dtype、显存或性能。
 
 # %%
-# 展示历史BLOOM结构截图；不下载模型；省略width使用默认展示行为。
+# 展示历史 BLOOM 结构截图；省略 width 时采用 Image 的默认展示尺寸。
 # Image(...) 调用展示类构造实例；第一个位置实参是 str 本地图片路径。
 # 原路径 ../imgs/bloom.png 由内核当前工作目录解析，不自动以 notebook 文件位置为基准。
 # 从本讲代码/tutorials 启动内核，.. 才会指向代码，再到配套 imgs 目录。
@@ -368,13 +368,13 @@ Image('../imgs/bloom.png')
 # %% [markdown]
 # ## 单元 15：插入 LoRA 后的 BLOOM 截图
 #
-# `Image('../imgs/bloom_lora.png')`也不传width，仅显示历史打印截图。外层PeftModelForCausalLM、LoraModel表示包装结构；基模型仍是BLOOM，不是另一个预训练模型。
+# Image('../imgs/bloom_lora.png') 显示加入 LoRA 后的模型树。外层 PeftModelForCausalLM 与 LoraModel 包装原 BLOOM，在目标层中增加适配器分支。
 #
 # 目标是融合`query_key_value`投影，原4096→12288保留；新增lora_A为4096→16，lora_B为16→12288。这张图的r=16，不是单元13的r=8。PEFT Linear存储权重方向为`[out,in]`，所以A权重`[16,4096]`、B权重`[12288,16]`；这与行向量WA/WB是转置关系。
 #
 # 输入`[batch,time,4096]`在LoRA分支先经dropout(p=0.05)，再变为`[batch,time,16]`、`[batch,time,12288]`，与基分支相加。ModuleDict用default名字管理adapter；空ParameterDict不表示额外embedding参数正在训练。lm_head的CastOutputToFloat是历史包装，不能凭截图确定所有梯度/参数dtype。
 #
-# 该QKV层新增参数16×(4096+12288)=262144，原矩阵50331648个权重，比例约0.5208%；仅按图中30层同类目标估计共7864320个因子参数。bias与其他目标未计入，截图没有给alpha、冻结标记或训练统计，不能声称已证明整网可训练比例。
+# 该 QKV 层新增16×(4096+12288)=262144个参数，原矩阵有50331648个权重，新增比例约0.5208%。若30层都采用相同目标，共有7864320个因子参数；整网统计还需结合其他目标和 bias 配置。
 
 # %%
 # 展示LoRA插入融合QKV后的历史截图；图中rank=16，不是伪代码的8。
@@ -389,5 +389,5 @@ Image('../imgs/bloom.png')
 # 图中 adapter r=16，A 权重 [16,4096]、B 权重 [12288,16]（nn.Linear 的 [out,in] 方向）。
 # 输入 [batch,time,4096] -> 瓶颈 [batch,time,16] -> 增量 [batch,time,12288]。
 # 单个融合QKV层的LoRA因子数为16*(4096+12288)=262144；整网统计需累加所有目标层。
-# 图中 rank 与 Markdown13 的 r=8 不同；图片未给 alpha，不能据此推断缩放值。
+# 这张图采用自己的 rank 设置；对照 Markdown13 的 r=8 时，分别读取各例的 r 与 alpha，再计算 alpha/r。
 Image('../imgs/bloom_lora.png')
