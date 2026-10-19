@@ -166,7 +166,7 @@ print_gpu_utilization()
 # 原BERT-large加载与CUDA移动；原语句保留，实际教学运行另记。
 # 配置驱动的序列分类工厂类，默认输出两类logits。
 from transformers import AutoModelForSequenceClassification
-# 原BERT-large加载后移动CUDA；本次CPU随机小模型替换单独记录，不下载原权重。
+# 加载 BERT-large 并移到 CUDA。配套 CPU 路径使用随机小模型，具体配置与结果见复现说明。
 model = AutoModelForSequenceClassification.from_pretrained('bert-large-uncased').to('cuda')
 # 调用已定义NVML函数，只查询此刻整卡占用。
 print_gpu_utilization()
