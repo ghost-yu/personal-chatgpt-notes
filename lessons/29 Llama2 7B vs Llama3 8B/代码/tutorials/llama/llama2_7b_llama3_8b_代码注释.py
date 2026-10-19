@@ -3,16 +3,16 @@
 
 # %% 原单元 0 · code
 # 导入Transformers、PyTorch、自动因果语言模型工厂与Image。os.environ两行会修改当前进程代理，127.0.0.1:7890只适用于讲师环境；不是加载模型的必需设置。本次在独立验证进程执行并恢复原代理。
-# 导入实际使用的模块或对象；不在此行下载模型。
+# 导入后续使用的模块或对象。
 import transformers
-# 导入实际使用的模块或对象；不在此行下载模型。
+# 导入后续使用的模块或对象。
 import torch
-# 导入实际使用的模块或对象；不在此行下载模型。
+# 导入后续使用的模块或对象。
 from transformers import AutoModelForCausalLM
 
-# 导入实际使用的模块或对象；不在此行下载模型。
+# 导入后续使用的模块或对象。
 from IPython.display import Image
-# 导入实际使用的模块或对象；不在此行下载模型。
+# 导入后续使用的模块或对象。
 import os
 # 修改进程环境变量；讲师本地代理地址不通用。
 os.environ['http_proxy'] = 'http://127.0.0.1:7890'
