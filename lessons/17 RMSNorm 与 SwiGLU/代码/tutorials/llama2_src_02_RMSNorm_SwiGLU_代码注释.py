@@ -176,7 +176,7 @@ x[0, 0, :]
 # %% 15
 # ## 单元 15（code）：查看对应归一化token
 #
-# 同一索引取x_rms[10]，幅度统一调整但不减均值；不能由显示精度判断公式严格相等。
+# 取相同索引 x_rms[10]，观察按均方根统一缩放后的各分量。显示值经过格式化舍入，精确比较可使用张量差值或 allclose。
 # 查看同一token归一化后的10维向量。
 x_rms[0, 0, :]
 
@@ -221,7 +221,7 @@ np.sqrt(embedding_dim)
 # %% 21
 # ## 单元 21（code）：NumPy sigmoid与swish
 #
-# def只定义普通函数，return返回结果；np.exp逐元素指数，两个函数保留输入数组shape。swish调用sigmoid再逐元素乘x。这里没有训练参数或β，极大负输入的朴素exp可能溢出。
+# def 定义两个独立函数，return 返回结果。np.exp 逐元素计算指数，sigmoid 保留输入 shape；swish 再逐元素乘上 x，对应固定 β=1。极大负输入的朴素 exp 计算可能溢出。
 # 定义普通函数：标量或NumPy数组到同shape sigmoid。
 def sigmoid(x):
     # 逐元素1/(1+exp(-x))；极大负数时朴素exp可溢出。
@@ -244,7 +244,7 @@ plt.rcParams['figure.dpi'] = 120
 # %% 23
 # ## 单元 23（code）：绘制SiLU曲线并改变x类型
 #
-# np.arange(-5,5,.01)生成约1000个float64值，右端5不包含。x从先前Torch三维Tensor被重新赋成NumPy[1000]；plt.plot返回Line2D列表并修改当前图。横轴输入、纵轴激活值，负侧下凹不是loss曲线或性能实验。
+# np.arange(-5,5,.01) 生成约1000个 float64 值，右端点5除外。x 在这里成为 NumPy 数组；plt.plot 返回 Line2D 并更新当前画布，横轴为输入、纵轴为激活值。
 # x重新赋成float64 NumPy[1000]；右端5不包含。
 x = np.arange(-5, 5, .01)
 # 横轴输入，纵轴SiLU；返回Line2D列表，更新当前图。
@@ -276,6 +276,6 @@ import torch.nn.functional as F
 # %% 27
 # ## 单元 27（code）：使用官方SiLU函数
 #
-# F.silu(x,inplace=False默认)返回[5]，不原地修改x；数值/梯度与β=1手算对应。训练和推理无不同分支，没有持久参数。
+# F.silu 默认 inplace=False，保留原 x，返回同形状 [5] 的结果。数值和梯度对应 β=1 的 Swish 公式。
 # 默认inplace=False，返回[5]激活；完整SwiGLU还需要三投影。
 F.silu(x)
