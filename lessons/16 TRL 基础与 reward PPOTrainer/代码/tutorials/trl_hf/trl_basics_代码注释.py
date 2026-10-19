@@ -107,7 +107,7 @@ Image('../imgs/ppo_algo.png', width=600)
 # %% 12
 # ## 单元 12（code）：SFT历史截图
 #
-# 图片是原历史材料，不是新训练日志。
+# 展示课程保存的训练材料截图，结合图中字段阅读。
 # SFT历史截图；原语句/历史输出保留。
 # 读取原配图；宽度仅展示，原相对路径需要正确工作目录。
 Image('../imgs/trl-sft.png')
@@ -137,7 +137,7 @@ Image('../imgs/trl_overview.png', width=500)
 # %% 16
 # ## 单元 16（code）：导入框架、随机模块和TRL对象
 #
-# torch/numpy/random为模块，GPT2Tokenizer为类，PPOConfig为配置类，PPOTrainer管理真实训练。仅import不下载模型。
+# torch/numpy/random 提供计算与随机状态，GPT2Tokenizer 处理文本，PPOConfig 保存配置，PPOTrainer 组织生成与策略更新。
 # 导入框架、随机模块和TRL对象；原语句/历史输出保留。
 # 导入Tensor、自动求导和随机状态模块。
 import torch
