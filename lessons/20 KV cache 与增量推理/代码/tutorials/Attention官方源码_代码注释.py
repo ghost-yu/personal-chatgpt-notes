@@ -78,7 +78,7 @@ class Attention(nn.Module):
             init_method=lambda x: x,
         )
 
-        # 预分配固定容量的普通Tensor属性；不是可训练权重。
+        # 预先分配固定容量的缓存张量，作为普通属性保存各位置的 K/V。
         self.cache_k = torch.zeros(
             (
                 # 轴0为最大batch容量，实际只使用前B行。
@@ -92,7 +92,7 @@ class Attention(nn.Module):
             )
         # 原版强制CUDA；CPU教学模块仅显式修改这两处设备调用。
         ).cuda()
-        # 预分配固定容量的普通Tensor属性；不是可训练权重。
+        # 预先分配固定容量的缓存张量，作为普通属性保存各位置的 K/V。
         self.cache_v = torch.zeros(
             (
                 # 轴0为最大batch容量，实际只使用前B行。

@@ -11,7 +11,7 @@ from IPython.display import Image
 Image('../imgs/gpt-2-autoregression-2.gif', width=700)
 
 # %% 原代码单元 6
-# 这是历史价格截图，不是当前报价或本次性能实验。
+# 展示课程当时保存的硬件价格截图，按图中时间与配置理解。
 Image('../imgs/gpt4-price.png', width=600)
 
 # %% 原代码单元 8
