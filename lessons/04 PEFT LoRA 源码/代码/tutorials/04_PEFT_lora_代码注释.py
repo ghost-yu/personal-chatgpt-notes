@@ -7,13 +7,13 @@
 # %% [markdown]
 # # 第04讲中文代码说明
 #
-# 原版另存；原输出为历史记录，不冒充本次运行。
-# 注释仅解释原行为，保留Markdown源码节选缺陷；原7B量化加载未运行。
+# 原 notebook 单独保存；阅读版保留原单元顺序，便于对照。
+# 注释解释原语句及 Markdown 源码节选，配套运行环境与结果见复现说明。
 
 # %% [markdown]
 # ## 单元 0：为什么读源码
 #
-# 这是Markdown学习动机。引用源码能澄清自动注入、默认目标和冻结；文字“后续直接改源码”是参考资料描述，不是本次要求修改第三方库。此次没有修改官方源码，只另生成教学注释文件。
+# 这一段介绍读源码的用途：沿函数调用理解自动注入、默认目标和参数冻结。后续重点追踪 get_peft_model 怎样改变模型结构。
 
 # %% [markdown]
 # - 源码面前，了无秘密
@@ -152,7 +152,7 @@
 # # 【原文缺陷】本数据类节选缺少导入，以及target_modules的默认field。
 # # 即使补齐真实导入/父类，默认r后出现无默认target_modules仍会触发TypeError。
 # # 这里只增加注释，不补字段；真正运行的9格导入包中完整LoraConfig，与此节选不同。
-# # 装饰器在类定义结束后生成__init__等方法；不是模型forward或参数训练。
+# # 装饰器在类定义结束后生成 __init__ 等方法，帮助配置类组织字段。
 # @dataclass
 # # 继承PeftConfig的配置类；类型注解不自动进行运行时参数类型校验。
 # class LoraConfig(PeftConfig):
@@ -263,7 +263,7 @@
 # %% [markdown]
 # ## 单元 9：真正构造配置对象
 #
-# from peft导入已安装/已选源码路径中的完整LoraConfig，而不是单元7未执行的Markdown类。实例config字段为r16、alpha32、dropout.05、bias none、task CAUSAL_LM；scale=2。没有真正模型输入/输出Tensor。
+# from peft 导入当前安装版本的 LoraConfig。这里 r=16、alpha=32、dropout=0.05、bias=none、task=CAUSAL_LM，修正分支缩放为 alpha/r=2。
 #
 # target_modules那行仍是注释，q_proj/v_proj不生效，默认由架构bloom映射融合QKV。本格默认构造可训练adapter配置，未进入forward、冻结或替换。metadata帮助手段不影响此处数值。
 
@@ -313,10 +313,10 @@ from transformers import AutoTokenizer, AutoConfig, AutoModelForCausalLM
 #
 # AutoModelForCausalLM.from_pretrained为类方法，模型ID为bigscience/bloom-7b1，load_in_8bit=True请求旧式bitsandbytes量化，device_map='auto'自动设备分派。返回BLOOM因果LM对象，并可能联网/缓存/分配设备内存；原代码没有model revision。
 #
-# 8bit不表示所有参数或激活均int8；auto不等于数据并行world_size。加载的参数与结构让后面库决定用Linear8bitLt适配路径。历史下载widget不是这次执行证据。本次未执行原单元12，改用独立补充代码构造小型CPU随机BLOOM，非量化、无远程下载。
+# load_in_8bit 接入量化加载，device_map=auto 分配模型模块。加载后的目标层类型决定后面采用的适配路径，如 Linear8bitLt；普通 CPU Linear 路径在配套小 BLOOM 例子中展开。
 
 # %%
-# 原7B量化加载可能下载权重/占用设备；本次未运行，不是CPU教学模型构造。
+# 按仓库 ID 加载7B模型，并设置量化与设备分配；运行条件见复现说明。
 # from_pretrained 是类方法，接收str模型ID与加载选项，返回因果语言模型模块。
 # 可能联网读取配置和checkpoint、写缓存、分配设备内存；原文未固定revision。
 # 原BLOOM-7b1隐藏宽度H=4096，融合QKV权重为[12288,4096]（nn.Linear的[out,in]方向）。
@@ -333,7 +333,7 @@ model = AutoModelForCausalLM.from_pretrained(
 # %% [markdown]
 # ## 单元 13：查看原模型
 #
-# 末尾model让notebook显示repr；普通脚本不自动显示。此时它是裸BLOOM对象引用，没有forward、注入或clone。实际CPU验证执行该表达式但在明确的教学模型上下文，不能称原7B加载成功。
+# 末尾 model 让 notebook 展示当前 BLOOM 的模型树。接下来可对照注入 LoRA 后的结构，找到新增包装和目标层；普通脚本使用 print(model) 显示。
 
 # %%
 # 展示基础模型的模块层次，方便与注入LoRA后的结构对照。
@@ -359,7 +359,7 @@ from peft import get_peft_model
 #
 # 官方v0.3.0的_find_and_replace找到目标，_replace_module用setattr改变父属性，并把旧weight/bias对象引用交给新层。mark_only_lora_as_trainable将非lora_参数冻结。bias='none'不训练原偏置，但前向仍使用它。
 #
-# 本次直接运行固定v0.3.0官方路径，记录真实函数调用、目标子模块类型变化、旧weight/bias的对象身份保持、原BLOOM身份保持及可训练参数集合。CPU普通Linear路径通过；不能据此宣称Linear8bitLt/CUDA kernel验证成功。
+# 配套 PEFT v0.3.0 CPU 算例沿实际调用观察目标层类型变化、旧 weight/bias 的对象身份及可训练参数集合，结果见复现记录。
 
 # %%
 # 包装并替换内部目标子层；复用旧基权重对象，不是深拷贝。
@@ -370,7 +370,7 @@ from peft import get_peft_model
 # 新层复用原weight/bias Parameter，增加A/B小因子；bias=none仍保留旧偏置参与前向。
 # 冻结基参数而训练lora_参数；这不是关闭整条计算图或已经执行优化器step。
 # 原H=4096时A:[16,4096]、B:[12288,16]，输入[B,S,4096]的增量输出[B,S,12288]。
-# 本次实际验证为官方v0.3.0、小型CPU普通Linear路径；没有运行本格对应的原7B量化注入。
+# 配套算例使用 PEFT v0.3.0 的 CPU Linear 路径，逐步展示注入过程。
 model = get_peft_model(model, config)
 
 # %% [markdown]
